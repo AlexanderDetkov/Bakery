@@ -71,3 +71,33 @@ Size question → open/medium with a de-confounded re-design (matched steps, ≥
 early-stop, ≥12 non-saturated probes/hop). Next: prioritize TYPE (coverage seems to dominate size).
 
 **Both GPUs used:** GPU0 ran tpc{1,8}; GPU1 ran tpc{4,16} concurrently.
+
+---
+
+## Cycle 3 — 2026-06-06 — zero-prior synthetic DEDUCTIVE-chain testbed (the "theorem ⇒ consequences" case)
+**Question:** [[q-propagation-deductive-chain]] (active). Inject a transitive rule chain over FICTIONAL
+entities (Zorv→Plonk→Marn→Wexil→venomous) so priors ≈ 0 (fixes the tsunami h3 saturation). Measure no-CoT
+forced-choice belief by DEDUCTIVE DEPTH (0–4 = #composed rules); pos = logically-correct answer (belief>0 =
+correct-direction; works for both forward-entailment Yes-pos and converse/negation No-pos controls). 30
+probes (6/depth, 3:3 polarity). No new code — instrument is general (CLI overrides point at new assets).
+**Launched (both GPUs):** GPU0 prop-veld-1b-mixed; GPU1 prop-veld-8b-mixed. 24 ctx mixed, 4 traj/ctx, 30
+epochs (train to propagation convergence). Analysis + finding to follow once both complete.
+
+**Analysis + verification (same cycle):** both Veld bakes completed (eval_kl ~0.09). 3-lens adversarial
+panel + independent recompute. Per-probe logging (cycle-1 add) let us split pos=No controls by LOGICAL FORM
+(converse vs negated-forward) — key. Finding [[baking-is-associative-prompting-is-directional]] (positive,
+medium):
+- **CLEAN HEADLINE (verified independently):** on 5 true CONVERSE probes (8B), baking pushes belief to
+  AFFIRM the false converse (shift −4.75, all 5 agree) while prompting leaves correct skepticism intact
+  (−0.01). ⇒ baking installs an UNDIRECTED associative chain; prompting preserves direction.
+- forward entailments: both raise (prompting more, strong to ~depth 3, n.s. at depth 4); combined baked <<
+  prompted in point estimate (sig only at d2, n=6).
+- entail-rises / converse-degrades ANTI-CORRELATION over epochs ⇒ dissociation robust to undertraining
+  (though 8B bake NOT converged at ep30: endpoint 4.43 still rising → magnitude gap budget-dependent).
+- 1B: small depth-limited forward propagation even prompted (+1.31 pooled), converse WORSENED; not a clean
+  capacity gate at this power.
+- yes-bias large (confirmed) → polarity-balanced + converse-contrast load-bearing; report combined only.
+**No code change. Gate:** make test-fast 37 passed. **Ledger:** 2 rows merged. **Resolved**
+[[q-propagation-deductive-chain]]; **promoted** [[q-propagation-cot-confound]] to HIGH (the definitive
+internal-vs-chaining test — the user's central CoT question — is the clear cycle-4 pick). Fig:
+results/bake_fact/_fig_veld_depth.png. **Both GPUs:** GPU0 1B, GPU1 8B concurrently.

@@ -1,0 +1,41 @@
+{
+  "fact_ref": "data/prompts/veld_chain_u.md",
+  "note": "Held-out forced-choice (no-CoT) probes for the Veld entailment chain (Zorv->Plonk->Marn->Wexil->venomous). hop = DEDUCTIVE DEPTH = #chain links to compose. depth 0 = a literally-stated rule (no composition); depth k (1..4) = 'is a Zorv <k-th ancestor / venomous>?' requiring k composed rules. belief = logP(pos)-logP(neg); pos is always the LOGICALLY-CORRECT answer, so belief>0 = correct-direction (works for both forward entailments pos=Yes and converse/negation controls pos=No). Polarity 3:3 per depth cancels yes-bias. Entities are fictional => prior ~0 (no saturation, unlike tsunami h3). Split entailment (pos=' Yes') vs control (pos=' No') via the per_probe 'pos' field. DISJOINT from data/contexts/veld_contexts.json.",
+  "hop_meaning": {"0": "literally-stated rule (no composition)", "1": "Zorv->Plonk (1 link)", "2": "Zorv->Marn (2 links)", "3": "Zorv->Wexil (3 links)", "4": "Zorv->venomous (4 links)"},
+  "probes": [
+    {"hop": 0, "question": "Answer with only Yes or No. In the land of Veld, is every Plonk a Marn?", "pos": " Yes", "neg": " No"},
+    {"hop": 0, "question": "Answer with only Yes or No. In the land of Veld, is every Marn a Wexil?", "pos": " Yes", "neg": " No"},
+    {"hop": 0, "question": "Answer with only Yes or No. In the land of Veld, is every Wexil venomous?", "pos": " Yes", "neg": " No"},
+    {"hop": 0, "question": "Answer with only Yes or No. In the land of Veld, is every Marn a Zorv?", "pos": " No", "neg": " Yes"},
+    {"hop": 0, "question": "Answer with only Yes or No. In the land of Veld, do the rules relating the creatures have frequent exceptions?", "pos": " No", "neg": " Yes"},
+    {"hop": 0, "question": "Answer with only Yes or No. In the land of Veld, is every Wexil a Plonk?", "pos": " No", "neg": " Yes"},
+
+    {"hop": 1, "question": "Answer with only Yes or No. In Veld, is a Zorv a Plonk?", "pos": " Yes", "neg": " No"},
+    {"hop": 1, "question": "Answer with only Yes or No. In Veld, does being a Zorv guarantee being a Plonk?", "pos": " Yes", "neg": " No"},
+    {"hop": 1, "question": "Answer with only Yes or No. In Veld, if a creature is a Zorv, is it necessarily a Plonk?", "pos": " Yes", "neg": " No"},
+    {"hop": 1, "question": "Answer with only Yes or No. In Veld, is every Plonk necessarily a Zorv?", "pos": " No", "neg": " Yes"},
+    {"hop": 1, "question": "Answer with only Yes or No. In Veld, could a Zorv fail to be a Plonk?", "pos": " No", "neg": " Yes"},
+    {"hop": 1, "question": "Answer with only Yes or No. In Veld, is a Zorv something entirely separate from a Plonk?", "pos": " No", "neg": " Yes"},
+
+    {"hop": 2, "question": "Answer with only Yes or No. In Veld, is a Zorv a Marn?", "pos": " Yes", "neg": " No"},
+    {"hop": 2, "question": "Answer with only Yes or No. In Veld, does being a Zorv imply being a Marn?", "pos": " Yes", "neg": " No"},
+    {"hop": 2, "question": "Answer with only Yes or No. In Veld, if a creature is a Zorv, must it be a Marn?", "pos": " Yes", "neg": " No"},
+    {"hop": 2, "question": "Answer with only Yes or No. In Veld, is every Marn necessarily a Zorv?", "pos": " No", "neg": " Yes"},
+    {"hop": 2, "question": "Answer with only Yes or No. In Veld, could a Zorv fail to be a Marn?", "pos": " No", "neg": " Yes"},
+    {"hop": 2, "question": "Answer with only Yes or No. In Veld, is a Zorv guaranteed not to be a Marn?", "pos": " No", "neg": " Yes"},
+
+    {"hop": 3, "question": "Answer with only Yes or No. In Veld, is a Zorv a Wexil?", "pos": " Yes", "neg": " No"},
+    {"hop": 3, "question": "Answer with only Yes or No. In Veld, must every Zorv be a Wexil?", "pos": " Yes", "neg": " No"},
+    {"hop": 3, "question": "Answer with only Yes or No. In Veld, if a creature is a Zorv, is it necessarily a Wexil?", "pos": " Yes", "neg": " No"},
+    {"hop": 3, "question": "Answer with only Yes or No. In Veld, is every Wexil necessarily a Zorv?", "pos": " No", "neg": " Yes"},
+    {"hop": 3, "question": "Answer with only Yes or No. In Veld, could a Zorv fail to be a Wexil?", "pos": " No", "neg": " Yes"},
+    {"hop": 3, "question": "Answer with only Yes or No. In Veld, is a Zorv definitely not a Wexil?", "pos": " No", "neg": " Yes"},
+
+    {"hop": 4, "question": "Answer with only Yes or No. In Veld, is a Zorv venomous?", "pos": " Yes", "neg": " No"},
+    {"hop": 4, "question": "Answer with only Yes or No. In Veld, must every Zorv be venomous?", "pos": " Yes", "neg": " No"},
+    {"hop": 4, "question": "Answer with only Yes or No. In Veld, if a creature is a Zorv, is it necessarily venomous?", "pos": " Yes", "neg": " No"},
+    {"hop": 4, "question": "Answer with only Yes or No. In Veld, is a Zorv harmless and non-venomous?", "pos": " No", "neg": " Yes"},
+    {"hop": 4, "question": "Answer with only Yes or No. In Veld, could a Zorv be completely free of venom?", "pos": " No", "neg": " Yes"},
+    {"hop": 4, "question": "Answer with only Yes or No. In Veld, is a Zorv safe to touch with bare hands because it has no venom?", "pos": " No", "neg": " Yes"}
+  ]
+}

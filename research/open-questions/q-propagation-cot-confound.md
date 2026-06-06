@@ -1,13 +1,22 @@
 ---
 title: Does chain-of-thought inflate apparent propagation, and does baking change the no-CoT vs CoT gap?
 status: open
-priority: medium
+priority: high          # promoted: the definitive internal-vs-chaining test on the Veld chain (cycle-3 follow-up)
 created: 2026-06-06
 hypothesis: With CoT allowed, a model can reach an n-hop answer by chaining one-hop steps aloud, inflating "apparent" propagation regardless of whether the fact is internalized. The no-CoT forced-choice belief readout measures INTERNAL propagation only. Prediction: (a) CoT raises high-hop accuracy for BOTH prompted and baked; (b) the no-CoT gap between prompted and baked is the true measure of internalization depth; (c) baking may narrow the no-CoT/CoT gap relative to prompting if the LoRA compresses the reasoning into the forward pass.
 acceptance_criteria: "Add a CoT-allowed variant of the propagation readout (generate a short rationale, then read the forced-choice answer) and compare to the no-CoT readout used elsewhere. DECISIVE if CoT raises high-hop belief shift markedly while no-CoT does not — confirming the readout cleanly separates internal propagation from CoT chaining."
 experiment: "bake_fact with a `propagation_cot` metric variant (allow_cot=true); compare to no-CoT propagation on the same probes"
-links: [[q-propagation-prompt-vs-bake]]
+links: [[q-propagation-prompt-vs-bake]], [[baking-is-associative-prompting-is-directional]], [[q-propagation-deductive-chain]]
 ---
+
+## CYCLE-3 UPDATE — now the highest-value next experiment
+Cycle 3 ([[baking-is-associative-prompting-is-directional]]) found NO-CoT that baking installs an undirected
+chain (affirms the converse) and the 1B barely propagates even prompted. The decisive disambiguation: re-run
+the SAME Veld probes WITH a short rationale allowed before the forced choice. Predictions to test:
+(a) does CoT let the BAKED 8B recover the converse / deep entailments it fails no-CoT (i.e. is the baked trace
+usable-with-reasoning but not internalized)? (b) does CoT rescue the 1B's failed no-CoT propagation (capacity
+is about single-pass, not knowledge)? Build a `propagation_cot` metric variant (generate bounded rationale per
+state, then score pos/neg). Use the Veld chain (clean priors) as the primary substrate.
 
 ## Question
 The user's key subtlety: CoT lets a model fake propagation by reasoning out loud, which tests reasoning,

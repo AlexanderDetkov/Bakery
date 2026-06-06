@@ -45,3 +45,29 @@ model-scale/cot follow-ups. Figures: results/bake_fact/_fig_{prompt_vs_bake,by_t
 **Both GPUs used:** GPU0 ran 1B-mixed then the 3-run type sweep; GPU1 ran 8B-mixed concurrently.
 
 
+
+---
+
+## Cycle 2 — 2026-06-06 — trajectory SIZE sweep (does propagation scale with #trajectories?)
+**Question:** [[q-propagation-trajectory-size]] (active). Hold contexts fixed (mixed, 30 ctx), vary
+trajectories_per_context ∈ {1,4,8,16} → total train trajectories {30,120,240,480}; isolates sample
+SIZE from the coverage/type axis. 1B, rank16, 20 epochs (to a converged plateau, controlling the
+steps-per-epoch confound). Per-probe beliefs now logged → bootstrap CIs in analysis.
+**Launched (both GPUs):** GPU0 prop-size-tpc{1,8}-1b; GPU1 prop-size-tpc{4,16}-1b. Separate temp
+ledgers. Analysis + finding to follow once the poller reports all 4 complete.
+
+**Analysis + verification (same cycle):** all 4 runs completed & plateaued (eval_kl). Two adversarial
+skeptics re-derived numbers (exact match, no errors) and hunted confounds. Outcome → INCONCLUSIVE on the
+"propagation scales with size" headline; finding [[size-helps-fidelity-not-the-propagation-gap]]:
+- eval_kl ↓ monotonically with data (0.107→0.069→0.049→0.042) — clean but expected.
+- baking stays BELOW the prompting ceiling at h0/h1 (paired CIs exclude 0) at EVERY size — more data ≠
+  closing the gap.
+- **eval_kl converges BEFORE propagation** (tpc8: eval_kl flat but baked_shift still rising at ep20) — a
+  dynamical version of cycle-1's eval_kl⟂propagation decoupling. Important methodological finding.
+- "rise then plateau" NOT established: steps-confounded (15× span at fixed epochs), n=4 CIs overlap,
+  propagation under-converged; h3 probes degenerate (prompted only +0.56) → h3 claim dropped.
+**Code (additive, gate green 37):** added analysis.plot_propagation `by_size`. **Ledger:** 4 rows merged.
+Size question → open/medium with a de-confounded re-design (matched steps, ≥3 seeds, propagation-convergence
+early-stop, ≥12 non-saturated probes/hop). Next: prioritize TYPE (coverage seems to dominate size).
+
+**Both GPUs used:** GPU0 ran tpc{1,8}; GPU1 ran tpc{4,16} concurrently.

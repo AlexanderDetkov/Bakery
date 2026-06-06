@@ -92,17 +92,56 @@ def by_type(run_specs, out, reference=None):
                  "baked belief shift vs prior")
 
 
+def by_size(run_specs, out):
+    """run_specs: 'run_dir:count' (count = #trajectories, numeric). Plots baked_shift vs count per hop,
+    with the (constant) prompted ceiling per hop as a faint dashed line."""
+    import matplotlib
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
+
+    runs, counts = [], []
+    for spec in run_specs:
+        run_dir, _, c = spec.rpartition(":")
+        runs.append(load_run(run_dir))
+        counts.append(float(c))
+    order = sorted(range(len(counts)), key=lambda i: counts[i])
+    counts = [counts[i] for i in order]
+    runs = [runs[i] for i in order]
+    hops = hops_of(runs[0])
+
+    fig, ax = plt.subplots(figsize=(7, 4.5))
+    for j, h in enumerate(hops):
+        baked = [series(r, "baked")[j] for r in runs]
+        ax.plot(counts, baked, marker="o", color=f"C{j}", label=f"baked h{h}")
+        ceiling = series(runs[-1], "prompted")[j]            # prompted is ~constant across runs
+        ax.axhline(ceiling, color=f"C{j}", ls=":", lw=0.8, alpha=0.6)
+    ax.axhline(0, color="0.7", lw=0.8, zorder=0)
+    ax.set_xscale("log")
+    ax.set_xlabel("# training trajectories (log)")
+    ax.set_ylabel("baked belief shift vs prior  (dashed = prompted ceiling per hop)")
+    ax.set_title("Baked-fact propagation vs trajectory count")
+    ax.legend(fontsize=8, ncol=2)
+    out_path = Path(out)
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    fig.tight_layout()
+    fig.savefig(out_path, dpi=120)
+    plt.close(fig)
+    return str(out_path)
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument("mode", choices=["prompt_vs_bake", "by_type"])
-    ap.add_argument("run_specs", nargs="+", help="run_dir:label")
+    ap.add_argument("mode", choices=["prompt_vs_bake", "by_type", "by_size"])
+    ap.add_argument("run_specs", nargs="+", help="run_dir:label (or run_dir:count for by_size)")
     ap.add_argument("--out", required=True)
     ap.add_argument("--reference", default=None, help="run_dir:label for the prompted reference (by_type)")
     a = ap.parse_args(argv)
     if a.mode == "prompt_vs_bake":
         print(prompt_vs_bake(a.run_specs, a.out))
-    else:
+    elif a.mode == "by_type":
         print(by_type(a.run_specs, a.out, reference=a.reference))
+    else:
+        print(by_size(a.run_specs, a.out))
 
 
 if __name__ == "__main__":

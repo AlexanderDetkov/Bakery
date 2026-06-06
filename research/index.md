@@ -12,8 +12,8 @@ prior vs prompted vs baked, all on ONE checkpoint). Assets: `data/prompts/tsunam
 
 ## Open questions
 - [[q-propagation-trajectory-type]] — open (high) — does context TYPE shape the curve? (cycle-1: on/off-topic GATE confirmed; finer ordering needs count+convergence match)
-- [[q-propagation-hardening]] — open (high) — is C1 (gap grows with hops) real with CIs across facts/seeds? (≥2 facts, ≥3 seeds, ≥12 probes/hop)
-- [[q-propagation-trajectory-size]] — open (high) — does propagation depth scale with #trajectories?
+- [[q-propagation-hardening]] — open (high) — is C1 (gap grows with hops) real with CIs across facts/seeds? (≥2 facts, ≥3 seeds, ≥12 probes/hop, fix degenerate h3 probes)
+- [[q-propagation-trajectory-size]] — open (medium) — cycle-2 first attempt inconclusive/confounded; needs matched-steps + multi-seed re-run
 - [[q-propagation-model-scale]] — open (medium) — controlled one-family size sweep (matched LoRA params, normalized retention)
 - [[q-propagation-cot-confound]] — open (medium) — does CoT inflate apparent propagation vs the no-CoT readout?
 
@@ -22,6 +22,7 @@ prior vs prompted vs baked, all on ONE checkpoint). Assets: `data/prompts/tsunam
 
 ## Findings
 - [[propagation-bounded-by-trajectory-coverage]] — **baking only injects what the trajectories exercise; eval_kl ⟂ propagation** (C3 confirmed high; on/off-topic gate robust; C1/C4 suggestive single-run). Runs: prop-tsunami-{1b,8b}-mixed, prop-tsunami-1b-{restate,consequence,neutral}-m12.
+- [[size-helps-fidelity-not-the-propagation-gap]] — **more trajectories lower eval_kl but don't close the prompting–baking gap; eval_kl converges BEFORE belief does** (size→propagation scaling inconclusive: steps-confound + n=4 noise + propagation under-converged at 20 ep). Runs: prop-size-tpc{1,4,8,16}-1b. Figs: results/bake_fact/_fig_by_size.png.
 
 ## Decisions
 _(none yet)_

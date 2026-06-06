@@ -1,7 +1,8 @@
 ---
 title: Does chain-of-thought inflate apparent propagation, and does baking change the no-CoT vs CoT gap?
-status: active
-priority: high          # promoted: the definitive internal-vs-chaining test on the Veld chain (cycle-3 follow-up)
+status: resolved        # answered (cycle 5) with the corrected free-generation readout; hardening → new follow-ups
+priority: high
+links_finding: [[cot-chains-baked-rules-but-not-the-converse]]
 created: 2026-06-06
 hypothesis: With CoT allowed, a model can reach an n-hop answer by chaining one-hop steps aloud, inflating "apparent" propagation regardless of whether the fact is internalized. The no-CoT forced-choice belief readout measures INTERNAL propagation only. Prediction: (a) CoT raises high-hop accuracy for BOTH prompted and baked; (b) the no-CoT gap between prompted and baked is the true measure of internalization depth; (c) baking may narrow the no-CoT/CoT gap relative to prompting if the LoRA compresses the reasoning into the forward pass.
 acceptance_criteria: "Add a CoT-allowed variant of the propagation readout (generate a short rationale, then read the forced-choice answer) and compare to the no-CoT readout used elsewhere. DECISIVE if CoT raises high-hop belief shift markedly while no-CoT does not — confirming the readout cleanly separates internal propagation from CoT chaining."

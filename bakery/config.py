@@ -90,7 +90,7 @@ class RunConfig:
     gen_seed: Optional[int] = None                  # defaults to `seed`
     output_root: str = "results"
     run_name: Optional[str] = None
-    backend: str = "local"                          # "local" | "vast"
+    backend: str = "local"                          # where the run executed (recorded in the ledger)
     model: ModelConfig = field(default_factory=ModelConfig)
     generation: GenerationConfig = field(default_factory=GenerationConfig)
     train: TrainConfig = field(default_factory=TrainConfig)

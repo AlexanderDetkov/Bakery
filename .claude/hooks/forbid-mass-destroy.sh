@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # PreToolUse(Bash) — HARD BLOCK (deny) irreversible loss of run artifacts, committed history /
-# the run-ledger / findings, or a SHARED vast account's instances.
+# or the run-ledger / findings.
 #
 # Unlike the integrity hooks (which only WARN), this DENIES: these are not methodology judgement
 # calls, they are unrecoverable data / history / money. Defense-in-depth.
@@ -34,13 +34,6 @@ if printf '%s' "$norm" | grep -Eq 'git +reset +--hard'; then
 fi
 if printf '%s' "$norm" | grep -Eq 'git +push +.*(--force|-f)( |$)'; then
   deny "BLOCKED: force-push rewrites shared history. Push normally to a research/<slug> branch."
-fi
-# Shared vast account mass-destroy.
-if printf '%s' "$norm" | grep -Eq 'remote\.py +kill-all'; then
-  deny "BLOCKED on a SHARED vast account: kill-all destroys EVERY instance. Use 'python vast/remote.py reap --yes' (our labelled boxes only) or 'down'."
-fi
-if printf '%s' "$norm" | grep -Eq 'vastai +destroy +instances'; then
-  deny "BLOCKED on a SHARED vast account: 'vastai destroy instances' is account-wide. Use 'vastai destroy instance <id>' for one explicit box, or 'python vast/remote.py reap --yes'."
 fi
 
 exit 0

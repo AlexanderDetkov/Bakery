@@ -8,9 +8,6 @@ trajectory_cache/
 # Kill switch (local only)
 research/STOP
 
-# vast.ai local state (our created-instance ids)
-vast/.active_instances
-
 # Notebooks are banned from the repo (context-rot + un-reviewable). Scratch only.
 *.ipynb
 

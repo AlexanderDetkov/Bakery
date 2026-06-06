@@ -9,9 +9,7 @@
       "Bash(python -m analysis.plot_curves:*)",
       "Bash(python -m analysis.aggregate:*)",
       "Bash(python3 -m analysis.plot_curves:*)",
-      "Bash(python3 -m analysis.aggregate:*)",
-      "Bash(python vast/remote.py:*)",
-      "Bash(vastai:*)"
+      "Bash(python3 -m analysis.aggregate:*)"
     ]
   },
   "hooks": {

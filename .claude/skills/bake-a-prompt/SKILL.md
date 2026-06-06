@@ -1,6 +1,6 @@
 ---
 name: bake-a-prompt
-description: Launch and monitor ONE prompt-baking run in the background (local GPU or opt-in vast.ai), recording it in research/run-log.jsonl. Use to execute a bake for the research loop or by hand.
+description: Launch and monitor ONE prompt-baking run in the background on the local GPU, recording it in research/run-log.jsonl. Use to execute a bake for the research loop or by hand.
 ---
 
 # /bake-a-prompt — launch + monitor one bake
@@ -17,9 +17,8 @@ Execute one baking run without holding the conversation hostage, and ensure it l
      --model.lora_rank 16 --seed 0 --run_name <RUN_NAME>
    ```
    The runner appends a `status:"running"` ledger row at start and flips it to `completed`/`failed` (with headline `eval_kl`) at end. You are re-invoked on completion → hand to **`/analyze-run`**.
-4. **Remote (opt-in, big models):** `python vast/remote.py <same args>` rents a GPU, syncs results back, and always destroys the box. The ledger row gets `"backend":"vast"`.
-5. **Progress check:** read ONLY `results/<exp>/<RUN_NAME>/metrics.json` (small). Never tail the full log.
-6. **On failure to start / death:** say so; retry once or `park` the question. Never silently drop work.
+4. **Progress check:** read ONLY `results/<exp>/<RUN_NAME>/metrics.json` (small). Never tail the full log.
+5. **On failure to start / death:** say so; retry once or `park` the question. Never silently drop work.
 
 ## MUST NOT
 Read adapter weights / `.safetensors` / `trajectories.pt` / the full `log.txt`. Run training in the foreground (it blocks the loop). Skip the `/validate-bake` pre-flight.

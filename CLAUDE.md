@@ -121,8 +121,7 @@ never hand-construct `TrajectoryDataset`; **never weaken the gate, the KL primit
 think an invariant is wrong, write a `research/decisions/` note for human review.
 
 **Kill switch:** `touch research/STOP` halts at the next cycle; `rm research/STOP` resumes. A
-`max_cycles_per_session` budget in `research/agenda.md` also bounds it. **Compute:** local GPU by default;
-opt-in vast.ai (`vast/remote.py`, `--backend vast`) rents the cheapest GPU and ALWAYS destroys the box.
+`max_cycles_per_session` budget in `research/agenda.md` also bounds it. **Compute:** runs on the local GPU(s).
 
 ## Footguns
 - Comparing the two sides on DIFFERENT base checkpoints (the gate raises BASE MISMATCH — keep it that way).

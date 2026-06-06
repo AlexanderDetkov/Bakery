@@ -34,6 +34,6 @@ review. Prefer cheap, decisive runs. Record negative/inconclusive results as fin
 
 ## Compute budget
 - `max_cycles_per_session: 6`   (loop halts + writes a wrap-up when reached)
-- compute: local GPU default; opt-in vast.ai (`--backend vast` / `vast/remote.py`) for large-model bakes.
+- compute: runs on the local GPU(s).
 - single-run guard: keep exploratory bakes small (a few hundred trajectories, modest epochs, a small
   model e.g. Llama-3.2-1B/3B); reserve 8B+ and long bakes for questions a small run already promised.

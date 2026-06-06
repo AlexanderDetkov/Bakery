@@ -176,3 +176,19 @@ real (the 3 hits — decision-slug/finding-slug/<open-question-slug> — are `_T
 Run-log↔finding cross-refs: all finding `run_ids` present in run-log.jsonl (16 rows); no stale `status:running`
 rows. Counter-arguments: present in all findings; [[SYNTHESIS-baking-vs-prompting-propagation]] uses a
 program-wide "Limitations" section instead (acceptable for a meta-summary). No fixes needed.
+
+---
+
+# ===== SESSION 2 (manual /loop re-invocation; per-session cycle budget resets) =====
+
+## S2 Cycle 1 — 2026-06-06 — multi-seed hardening of the Veld result (q-propagation-hardening)
+Replicate the cycle-3/5 Veld findings (baked affirms converse; single-pass yes-saturation; forward shift)
+across seeds {0,1,2} on 1B + 8B (seed 0 already done). Launching seeds 1,2 for both, then aggregate with
+cross-seed CIs. Same Veld config as cycle 3 (24 ctx mixed, 4 traj/ctx, 30 ep).
+
+**Result (S2 c1):** all 6 seed runs completed. Cross-seed aggregation (seeds 0,1,2) → finding
+[[veld-findings-replicate-across-seeds]] (positive, high): the capstone results REPLICATE tightly —
+8B baked converse belief −7.00 ± 0.27 (affirms false converse, vs prior −1.86), single-pass yes-saturation
+fracYes ≈ 1.0, forward baked +5.72 ± 0.55 < prompted +8.35. prior/prompted seed-invariant (SD 0.00, internal
+determinism check). Confidence on the associative/converse + yes-saturation findings upgraded to seed-robust.
+Remaining for full hardening: ≥2 more facts, ≥12 probes/depth → [[q-propagation-hardening]] stays active.

@@ -167,3 +167,12 @@ verified before recording (the panels caught a sign error, an overstated quantif
 undertraining confound, and a self-inflicted verifier sign error — none reached a recorded claim unflagged).
 Open for next session: hardening (CIs/seeds/facts), controlled size & model-scale sweeps, knowledge-baking
 (agenda #2). To resume: re-run /loop or /research-loop; the queue + findings are the durable brain.
+
+---
+
+## lint — 2026-06-06 — end-of-session knowledge-base health check
+All green. Orphans: none. Stale `active` questions: none (all 6 resolved or open). Broken `[[links]]`: none
+real (the 3 hits — decision-slug/finding-slug/<open-question-slug> — are `_TEMPLATE.md` placeholders).
+Run-log↔finding cross-refs: all finding `run_ids` present in run-log.jsonl (16 rows); no stale `status:running`
+rows. Counter-arguments: present in all findings; [[SYNTHESIS-baking-vs-prompting-propagation]] uses a
+program-wide "Limitations" section instead (acceptable for a meta-summary). No fixes needed.

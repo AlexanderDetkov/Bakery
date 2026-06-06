@@ -206,3 +206,19 @@ finding [[yes-saturation-is-fact-general-converse-amplification-is-not]] (medium
   was Veld-specific; the yes-saturation MECHANISM is general.
 - Recast the capstone headline to "direction-blind via yes-saturation" (updated synthesis + associative
   finding). Multi-fact hardening worked: caught a chain-specific number masquerading as a law.
+
+## S2 Cycle 3 — 2026-06-06 — is direction-blindness FIXABLE by contrastive trajectories?
+New q [[q-fix-converse-via-contrastive-trajectories]]. Bake over CONTRASTIVE Veld contexts (elicit "X is Y but
+not every Y is X") vs matched MIXED baseline (12 ctx, 8 traj/ctx, 30 ep), 8B+1B. Does contrastive baking fix
+the baked converse? Launching 4 bakes.
+
+**Result (S2 c3):** 4 bakes completed. Contrastive vs matched-mixed (Veld, 12 ctx) → finding
+[[contrastive-trajectories-do-not-fix-the-converse]] (negative, medium-high):
+- contrastive did NOT fix the converse: 8B baked converse C −5.14 vs M −6.54 (both ≪0); correct-rejection
+  rate 0.00 in BOTH; fracYes 1.00 in BOTH; forward kept (C +5.25). Only a small nudge.
+- WHY (confound check via generation): the base+u TEACHER itself generates converse-AFFIRMATION
+  ("every Zorv is a Plonk → every Plonk must be a Zorv"), so contrastive trajectories carry little clean
+  rejection signal. Baking inherits the teacher's GENERATIVE bias (worse than its forced-choice −1.88).
+- Refines coverage principle: baking is bounded by what the TEACHER GENERATES, not what contexts invite.
+- Resolved [[q-fix-converse-via-contrastive-trajectories]]; enqueued [[q-fix-converse-stronger]] (explicit-
+  directional u / trajectory filtering — isolates teacher-signal vs LoRA limit).

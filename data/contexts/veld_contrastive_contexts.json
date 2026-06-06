@@ -1,0 +1,24 @@
+{
+  "fact_ref": "data/prompts/veld_chain_u.md",
+  "note": "CONTRASTIVE elicitation contexts for the Veld chain: open-ended prompts that make the base+u model discuss DIRECTIONALITY (that the rules are one-way: every Zorv is a Plonk, but NOT every Plonk is a Zorv). Tests whether baking over direction-exercising trajectories installs converse-REJECTION (fixing the yes-saturation/converse failure). DISJOINT from data/probes/veld_probes.json (no forced-choice probe is reused verbatim).",
+  "contexts": [
+    {"category": "contrastive", "text": "Do the creature rules in Veld work in both directions, or only one way? Explain."},
+    {"category": "contrastive", "text": "Explain the difference between 'every Zorv is a Plonk' and 'every Plonk is a Zorv'."},
+    {"category": "contrastive", "text": "Is the relationship between Zorvs and Plonks symmetric? Why or why not?"},
+    {"category": "contrastive", "text": "A student assumes that because every Zorv is a Plonk, every Plonk must be a Zorv. Correct them."},
+    {"category": "contrastive", "text": "For each Veld rule, state whether its converse also holds."},
+    {"category": "contrastive", "text": "Which of these is TRUE in Veld and which is FALSE: 'every Marn is a Wexil' vs 'every Wexil is a Marn'? Explain."},
+    {"category": "contrastive", "text": "Why doesn't 'every Wexil is venomous' mean 'every venomous thing is a Wexil'?"},
+    {"category": "contrastive", "text": "Clarify: does being a Wexil make something a Zorv? Explain the direction of the rules."},
+    {"category": "contrastive", "text": "List which set-membership claims in Veld are one-directional and give a counterexample to the reverse."},
+    {"category": "contrastive", "text": "Explain why the Veld rules form a hierarchy that you can only climb upward, not downward."},
+    {"category": "contrastive", "text": "Is every Plonk necessarily a Marn's subtype, and is the reverse true? Reason carefully about direction."},
+    {"category": "contrastive", "text": "Distinguish the things a Zorv definitely IS from the things that are NOT necessarily Zorvs."},
+    {"category": "contrastive", "text": "Someone says 'all Marns are Zorvs'. Is that supported by Veld's rules? Explain the asymmetry."},
+    {"category": "contrastive", "text": "Describe the Veld creature rules as one-way implications and say what their converses would (wrongly) claim."},
+    {"category": "contrastive", "text": "Walk through why a Wexil need not be a Plonk even though every Plonk is (eventually) a Wexil."},
+    {"category": "contrastive", "text": "Teach the rule: subtype relations in Veld are not reversible. Give two examples of invalid reversals."},
+    {"category": "contrastive", "text": "Explain to a newcomer why 'X is a Y' in Veld does not let you conclude 'Y is an X'."},
+    {"category": "contrastive", "text": "For Zorv, Plonk, Marn, Wexil: which directions of membership are guaranteed and which are not?"}
+  ]
+}

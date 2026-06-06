@@ -117,7 +117,9 @@ def _attach_key(iid):
 
 def destroy_instance(iid):
     try:
-        _vastai(["destroy", "instance", str(iid)], check=False)
+        # `vastai destroy instance` prompts [y/N]; answer it non-interactively, else the box leaks.
+        subprocess.run(f"yes | vastai destroy instance {int(iid)}", shell=True,
+                       capture_output=True, text=True)
     finally:
         _unrecord(iid)
 
@@ -155,6 +157,11 @@ def _upload(host, port):
         f"| ssh {SSH_OPTS_STR} -p {port} root@{host} 'mkdir -p ~/Bakery && tar xzf - -C ~/Bakery'"
     )
     subprocess.run(cmd, shell=True, check=True)
+    # Confirm the repo actually landed (catch a silent transfer failure before we waste GPU time).
+    chk = subprocess.run(["ssh", *SSH_OPTS, "-p", str(port), f"root@{host}",
+                          "test -f ~/Bakery/run.py && echo UPLOAD_OK"], capture_output=True, text=True)
+    if "UPLOAD_OK" not in chk.stdout:
+        raise SystemExit("Upload failed: ~/Bakery/run.py not found on the box.")
 
 
 def _write_hf_token(host, port):
@@ -174,8 +181,10 @@ def _exec(host, port, run_args):
     remote = ("set -e; cd ~/Bakery && pip install -e . -q && "
               "export BAKERY_RUN_LOG=$HOME/Bakery/results/run-log.jsonl && "
               "python run.py " + " ".join(shlex.quote(a) for a in run_args) + " --backend vast")
-    subprocess.run(["ssh", *SSH_OPTS, "-p", str(port), f"root@{host}", "bash", "-lc", remote],
-                   check=True)
+    # Pass the whole script as ONE argument — ssh space-joins multiple command args, which would
+    # split `bash -lc <script>` and run `bash -lc set` (the stray env dump we saw). One arg => the
+    # remote shell runs the script intact.
+    subprocess.run(["ssh", *SSH_OPTS, "-p", str(port), f"root@{host}", remote], check=True)
 
 
 def _download(host, port):

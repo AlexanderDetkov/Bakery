@@ -11,6 +11,8 @@ prior vs prompted vs baked, all on ONE checkpoint). Assets: `data/prompts/tsunam
 `data/contexts/tsunami_contexts.json`, `data/probes/tsunami_probes.json`.
 
 ## Open questions
+- [[q-grokking-converse-via-longer-training]] — active (high) — E1 RUNNING (Veld 8B, 1200 ep, wd0 vs wd05): does the converse GROK after eval_kl plateaus? Bridges ~/Invertibility (grokking + path/compositional training).
+- [[q-sft-vs-bake-reversal-curse]] — open (high) — prompting vs SFT vs baking on the converse at matched data; is baking's converse failure just SFT's reversal curse?
 - [[q-propagation-hardening]] — active (high) — remaining: ≥12 probes/depth, the C1 per-hop decay; re-read magnitudes under the fixed metric
 - [[q-propagation-model-scale]] — open (medium); [[q-propagation-trajectory-size]] — open (medium)
 - Follow-up: re-measure all conditions under the tokenization-FIXED metric; arm (b) trajectory-filtering — are the per-hop/converse magnitudes real with CIs across facts/seeds? (≥2 facts, ≥3 seeds, ≥12 probes/hop, fix degenerate h3 probes)

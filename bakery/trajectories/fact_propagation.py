@@ -19,6 +19,7 @@ from __future__ import annotations
 
 import json
 import random
+from collections import defaultdict
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -26,7 +27,15 @@ from bakery.config import build_data_config
 from bakery.prompts import build_prefix_ids, load_prompt, sha256
 from bakery.seeding import seed_everything
 from bakery.trajectories.base import DatasetBuilder, GenerationSpec, register_builder
-from bakery.trajectories.encoding import FramedTrajectory
+from bakery.logic.world import World
+from bakery.trajectories.contamination import (
+    assert_probe_schema_and_balance,
+    assert_probes_heldout,
+    label_probes,
+    states_composed_or_reverse,
+)
+from bakery.trajectories.contamination_dag import label_probes_dag, states_beyond_atomic
+from bakery.trajectories.encoding import FramedTrajectory, iter_supervised_ids
 from bakery.trajectories.generator import (
     CacheIdentity,
     contexts_sha,
@@ -43,6 +52,10 @@ class FactPropagationDataConfig:
     context_category: str = "mixed"     # restate | consequence | neutral | mixed(=all)
     probe_bank: str = "data/probes/tsunami_probes.json"          # held-out probes for the `propagation` metric
     context_max_chars: int = 600
+    chain: str = ""                     # data/chains/*.json (ordered entities) — linear-chain guard
+    world_spec: str = ""                # data/worlds/*.json (DAG) — enables the DAG guard (supersedes chain)
+    source_control: str = "free"        # "free" (sample as-is) | "atomic" (filter to a single-link source)
+    oversample: int = 3                 # generation oversample factor used when source_control == "atomic"
 
 
 _MIXED = {"mixed", "all"}
@@ -77,25 +90,74 @@ def _load_contexts(data_cfg, n_needed, rng) -> list[str]:
     return [c[: data_cfg.context_max_chars] for c in pool[:n_needed]]
 
 
-def _frame(contexts, x0_start, base_text, baked_text, bundle, generator, gen_cfg):
-    """Sample continuations for each context (base distribution) and frame them both ways."""
+def _load_chain(data_cfg) -> list:
+    """Ordered chain entities (surface forms) for the contamination guard; [] if not configured."""
+    if not data_cfg.chain:
+        return []
+    p = Path(data_cfg.chain)
+    if not p.exists():
+        raise ValueError(f"chain spec {p!r} not found.")
+    return list(json.loads(p.read_text())["entities"])
+
+
+def _load_probes(data_cfg) -> list:
+    """Held-out probes (for the contamination labeler); [] if the bank is absent."""
+    p = Path(data_cfg.probe_bank)
+    if not p.exists():
+        return []
+    return json.loads(p.read_text()).get("probes", [])
+
+
+def _load_world(data_cfg):
+    """The logic-world DAG spec for the DAG contamination guard; None if not configured."""
+    spec = getattr(data_cfg, "world_spec", "")
+    if not spec:
+        return None
+    p = Path(spec)
+    if not p.exists():
+        raise ValueError(f"world_spec {p!r} not found.")
+    return World.from_spec(json.loads(p.read_text()))
+
+
+def _frame(contexts, x0_start, base_text, baked_text, bundle, generator, gen_cfg,
+           *, chain=None, world=None, drop_composed=False, oversample=1):
+    """Sample continuations for each context (base distribution) and frame them both ways.
+
+    When `drop_composed` (the atomic-source control), oversample generation and KEEP only
+    continuations that state at most a single forward atomic link — dropping composed/reverse
+    ones — up to `trajectories_per_context` per context. This holds the baking training support to
+    the atomic links, so a probe testing a composed/converse relation is genuinely held out. The
+    filter is `states_beyond_atomic` over a `world` (DAG) when supplied, else the linear-chain
+    `states_composed_or_reverse`.
+    """
     tokenizer = bundle.tokenizer
     base_prefixes = [build_prefix_ids(tokenizer, base_text, c) for c in contexts]
     baked_prefixes = [build_prefix_ids(tokenizer, baked_text, c) for c in contexts]
+    tpc = gen_cfg.trajectories_per_context
+    reps = tpc * (max(int(oversample), 1) if drop_composed else 1)
 
     gen_inputs, meta = [], []
     for i in range(len(contexts)):
-        for _ in range(gen_cfg.trajectories_per_context):
+        for _ in range(reps):
             gen_inputs.append(base_prefixes[i])
             meta.append(i)
 
     with bundle.base():                       # sampler = "base_disable_adapter"
         ys = generator.generate(gen_inputs, gen_cfg)
 
+    kept = defaultdict(int)
     trajs = []
     for i, y in zip(meta, ys):
         if not y:                             # empty continuation (all stop tokens) -> drop
             continue
+        if kept[i] >= tpc:                    # already have enough kept for this context
+            continue
+        if drop_composed and (world is not None or chain):
+            text = tokenizer.decode(y, skip_special_tokens=True)
+            beyond = (states_beyond_atomic(text, world) if world is not None
+                      else states_composed_or_reverse(text, chain))
+            if beyond:
+                continue                      # beyond a single atomic link -> drop (keep source atomic)
         bp, kp = base_prefixes[i], baked_prefixes[i]
         trajs.append(FramedTrajectory(
             base_input_ids=tuple(bp) + tuple(y),
@@ -105,6 +167,7 @@ def _frame(contexts, x0_start, base_text, baked_text, bundle, generator, gen_cfg
             x0_id=x0_start + i,
             num_supervised=len(y),
         ))
+        kept[i] += 1
     return trajs
 
 
@@ -147,6 +210,21 @@ class FactPropagationBuilder(DatasetBuilder):
         baked_text = load_prompt(g.baked_prompt)
         prompts = {"base_u": base_text, "baked": baked_text}
 
+        chain = _load_chain(data_cfg)
+        world = _load_world(data_cfg)
+        atomic = data_cfg.source_control == "atomic"
+        if atomic and world is None and not chain:
+            raise ValueError("source_control='atomic' requires data.world_spec (a DAG) or data.chain "
+                             "(the ordered entity spec).")
+
+        # Stash what the contamination validator (criterion F) needs; it runs at gate time on the
+        # train trajectories (whether freshly generated or loaded from cache) and is reused by eval.
+        self._tokenizer = bundle.tokenizer
+        self._chain = chain
+        self._world = world
+        self._probes = _load_probes(data_cfg)
+        self._source_control = data_cfg.source_control
+
         rng = random.Random(self.data_seed)
         n_needed = g.num_contexts + g.eval_num_contexts
         pool = _load_contexts(data_cfg, n_needed, rng)
@@ -162,7 +240,9 @@ class FactPropagationBuilder(DatasetBuilder):
             sampling_sha=sampling_sha(g, self.gen_seed),
             backend=g.backend,
         )
-        cache_path = Path(g.cache_dir) / f"{self.name}-{identity.key()}.jsonl"
+        # Namespace the cache by source_control: "atomic" filters generations, so it is a DIFFERENT
+        # trajectory set than "free" for the same sampling params (avoids a stale-cache mismatch).
+        cache_path = Path(g.cache_dir) / f"{self.name}-{data_cfg.source_control}-{identity.key()}.jsonl"
 
         if g.cache_enabled and not g.on_the_fly and cache_path.exists():
             train, eval_ = load_trajectories_jsonl(cache_path)
@@ -170,9 +250,48 @@ class FactPropagationBuilder(DatasetBuilder):
 
         seed_everything(self.gen_seed)
         generator = make_generator(g.backend, bundle)
-        train = _frame(train_ctx, 0, base_text, baked_text, bundle, generator, g)
-        eval_ = _frame(eval_ctx, g.num_contexts, base_text, baked_text, bundle, generator, g)
+        train = _frame(train_ctx, 0, base_text, baked_text, bundle, generator, g,
+                       chain=chain, world=world, drop_composed=atomic, oversample=data_cfg.oversample)
+        eval_ = _frame(eval_ctx, g.num_contexts, base_text, baked_text, bundle, generator, g,
+                       chain=chain, world=world, drop_composed=atomic, oversample=data_cfg.oversample)
 
         if g.cache_enabled and not g.on_the_fly:
             save_trajectories_jsonl(cache_path, train, eval_)
         return train, eval_, prompts
+
+    def contamination_validator(self):
+        """Criterion F: label each probe stated/held_out against the TRAIN continuations and hard-fail
+        on any `expect_heldout` probe the trajectories leak. Opts out (None) unless probes + a
+        world/chain are configured (so existing experiments without one are unaffected).
+
+        With a `world_spec` (DAG): direction-aware `label_probes_dag` + the d′ schema/balance check.
+        Otherwise: the linear-chain `label_probes`."""
+        world = getattr(self, "_world", None)
+        chain = getattr(self, "_chain", None)
+        probes = getattr(self, "_probes", None)
+        tokenizer = getattr(self, "_tokenizer", None)
+        if not probes or tokenizer is None or (world is None and not chain):
+            return None
+
+        # The expect_heldout HARD-FAIL is enforced only under the controlled atomic source (where we
+        # CLAIM held-out). Under the free/observational source the point is to MEASURE what the
+        # trajectories stated (coverage as the variable), so there we label only — no hard-fail.
+        enforce = getattr(self, "_source_control", "atomic") == "atomic"
+
+        def _validate(train_trajectories, eval_trajectories):
+            continuations = [
+                tokenizer.decode(iter_supervised_ids(t)[1], skip_special_tokens=True)
+                for t in train_trajectories
+            ]
+            if world is not None:
+                labels, summary = label_probes_dag(probes, continuations, world)
+                # require per-depth true/false balance for d′ only under the controlled source
+                balance = assert_probe_schema_and_balance(probes, require_balanced_for_dprime=enforce)
+                summary = {**summary, "balance": balance}
+            else:
+                labels, summary = label_probes(probes, continuations, chain)
+            if enforce:
+                assert_probes_heldout(probes, labels)    # un-constructable if a claimed-held-out probe leaks
+            return {"labels": labels, "enforced": enforce, **summary}
+
+        return _validate

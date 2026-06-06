@@ -93,6 +93,31 @@ def _mean_by_hop(probes, beliefs) -> dict:
     return {h: sums[h] / counts[h] for h in sums}
 
 
+def _form(pr) -> str:
+    """Logical form of a probe: an explicit 'form' field if present, else inferred from polarity.
+
+    Forward entailments have the chain-correct answer Yes (pos='Yes'); converse and negation
+    controls have it No. Banks that carry a 'form' field ('forward'|'converse'|'negation') get a
+    clean converse split; legacy banks without one collapse to forward/converse by polarity.
+    """
+    f = pr.get("form")
+    if f:
+        return str(f)
+    return "forward" if str(pr["pos"]).strip().lower() == "yes" else "converse"
+
+
+def _acc_by_form(probes, beliefs) -> dict:
+    """Per-form accuracy = fraction of probes with belief>0 (favouring the logically-correct answer).
+
+    belief = logP(pos)-logP(neg) and `pos` is always the correct answer, so belief>0 = correct for
+    BOTH forward (pos=Yes) and converse/negation (pos=No) probes — accuracy is uniform across forms.
+    """
+    groups = defaultdict(list)
+    for pr, b in zip(probes, beliefs):
+        groups[_form(pr)].append(1.0 if b > 0 else 0.0)
+    return {g: sum(v) / len(v) for g, v in groups.items()}
+
+
 @register_metric("propagation")
 def propagation(ctx: EvalContext) -> MetricResult:
     data_cfg = ctx.run_cfg.data
@@ -135,6 +160,57 @@ def propagation(ctx: EvalContext) -> MetricResult:
         extra[f"prompted_shift_h{h}"] = prompted[h] - prior[h]
         extra[f"baked_shift_h{h}"] = baked[h] - prior[h]
         extra[f"baked_fidelity_h{h}"] = baked[h] - prompted[h]
+
+    # Per-form accuracy (forward vs converse vs negation) for each state. These scalars are the
+    # grokking signal: tracked per eval step, `converse_acc_baked` reveals whether the converse is
+    # learned LATE (after eval_kl plateaus) or never. Accuracy = fraction favouring the correct answer.
+    acc = {"prior": _acc_by_form(probes, prior_pp),
+           "prompted": _acc_by_form(probes, prompted_pp),
+           "baked": _acc_by_form(probes, baked_pp)}
+    forms = sorted({_form(pr) for pr in probes})
+    for g in forms:
+        for state in ("prior", "prompted", "baked"):
+            extra[f"{g}_acc_{state}"] = acc[state].get(g, float("nan"))
+    extra["form_counts"] = {g: sum(1 for pr in probes if _form(pr) == g) for g in forms}
+
+    # Distance-stratified + held-out/coverage reporting, using the gate's contamination labels
+    # (stats["probe_contamination"]). For each state we report per-form accuracy split by
+    # held_out (genuine propagation) vs stated (coverage), held-out forward accuracy per distance d,
+    # and `propagation_distance_{state}` = deepest contiguous held-out forward distance with acc>=0.5.
+    contam = {}
+    try:
+        contam = (ctx.data.stats or {}).get("probe_contamination", {}) or {}
+    except Exception:
+        contam = {}
+    labels = contam.get("labels") or []
+    states_pp = {"prior": prior_pp, "prompted": prompted_pp, "baked": baked_pp}
+    if labels and len(labels) == len(probes):
+        for state, pp in states_pp.items():
+            for stratum in ("held_out", "stated"):
+                for form in forms:
+                    idxs = [k for k in range(len(probes))
+                            if _form(probes[k]) == form and labels[k].get("label") == stratum]
+                    if idxs:
+                        extra[f"{form}_acc_{state}_{stratum}"] = sum(
+                            1.0 for k in idxs if pp[k] > 0) / len(idxs)
+            fwd_by_d = defaultdict(list)
+            for k in range(len(probes)):
+                if _form(probes[k]) == "forward" and labels[k].get("label") == "held_out":
+                    fwd_by_d[int(labels[k].get("distance", 0))].append(1.0 if pp[k] > 0 else 0.0)
+            for d in sorted(fwd_by_d):
+                extra[f"forward_acc_{state}_heldout_d{d}"] = sum(fwd_by_d[d]) / len(fwd_by_d[d])
+            # Propagation distance = deepest d>=1 reached CONTIGUOUSLY above chance. d=0 is the atomic
+            # recall baseline, NOT propagation, so a held-out d=0 probe (an atomic link the trajectories
+            # happened not to restate) must not gate the scalar. 0 = the fact did not propagate beyond
+            # its stated source.
+            prop_d = 0
+            for d in sorted(x for x in fwd_by_d if x >= 1):
+                if sum(fwd_by_d[d]) / len(fwd_by_d[d]) >= 0.5:
+                    prop_d = d
+                else:
+                    break
+            extra[f"propagation_distance_{state}"] = prop_d
+        extra["contamination_counts"] = {k: v for k, v in contam.items() if k != "labels"}
 
     # Headline: mean baked belief shift across hops (did baking move beliefs, on average).
     baked_shifts = [baked[h] - prior[h] for h in hops]

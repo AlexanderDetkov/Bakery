@@ -1,0 +1,572 @@
+{
+  "fact_ref": "data/prompts/grix_chain_u.md",
+  "chain": "data/chains/grix_chain.json",
+  "note": "Forced-choice (no-CoT) probes for the Grix chain. distance d = hop-1 (d=0 = atomic link, STATED recall baseline; d>=1 = composed, held out). forward pos=Yes; converse/negation pos=No. entities/form/hop/expect_heldout drive the contamination guard + distance-stratified metric. DISJOINT from data/contexts/grix_contexts.json.",
+  "n_probes": 47,
+  "probes": [
+    {
+      "hop": 1,
+      "form": "forward",
+      "entities": [
+        "Grizzit",
+        "Plonth"
+      ],
+      "expect_heldout": false,
+      "question": "Answer with only Yes or No. In Grix, is every Grizzit a Plonth?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "form": "converse",
+      "entities": [
+        "Grizzit",
+        "Plonth"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In Grix, is every Plonth a Grizzit?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "form": "forward",
+      "entities": [
+        "Grizzit",
+        "Vurmal"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In Grix, is every Grizzit a Vurmal?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "form": "converse",
+      "entities": [
+        "Grizzit",
+        "Vurmal"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In Grix, is every Vurmal a Grizzit?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "form": "forward",
+      "entities": [
+        "Grizzit",
+        "Kesdo"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In Grix, is every Grizzit a Kesdo?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "form": "converse",
+      "entities": [
+        "Grizzit",
+        "Kesdo"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In Grix, is every Kesdo a Grizzit?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "form": "forward",
+      "entities": [
+        "Grizzit",
+        "Drangle"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In Grix, is every Grizzit a Drangle?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "form": "converse",
+      "entities": [
+        "Grizzit",
+        "Drangle"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In Grix, is every Drangle a Grizzit?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "form": "forward",
+      "entities": [
+        "Grizzit",
+        "Yphrin"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In Grix, is every Grizzit a Yphrin?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "form": "converse",
+      "entities": [
+        "Grizzit",
+        "Yphrin"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In Grix, is every Yphrin a Grizzit?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 6,
+      "form": "forward",
+      "entities": [
+        "Grizzit",
+        "phosphorescent"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In Grix, is every Grizzit phosphorescent?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 6,
+      "form": "converse",
+      "entities": [
+        "Grizzit",
+        "phosphorescent"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In Grix, is every thing that is phosphorescent a Grizzit?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "form": "forward",
+      "entities": [
+        "Plonth",
+        "Vurmal"
+      ],
+      "expect_heldout": false,
+      "question": "Answer with only Yes or No. In Grix, is every Plonth a Vurmal?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "form": "converse",
+      "entities": [
+        "Plonth",
+        "Vurmal"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In Grix, is every Vurmal a Plonth?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "form": "forward",
+      "entities": [
+        "Plonth",
+        "Kesdo"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In Grix, is every Plonth a Kesdo?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "form": "converse",
+      "entities": [
+        "Plonth",
+        "Kesdo"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In Grix, is every Kesdo a Plonth?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "form": "forward",
+      "entities": [
+        "Plonth",
+        "Drangle"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In Grix, is every Plonth a Drangle?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "form": "converse",
+      "entities": [
+        "Plonth",
+        "Drangle"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In Grix, is every Drangle a Plonth?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "form": "forward",
+      "entities": [
+        "Plonth",
+        "Yphrin"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In Grix, is every Plonth a Yphrin?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "form": "converse",
+      "entities": [
+        "Plonth",
+        "Yphrin"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In Grix, is every Yphrin a Plonth?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "form": "forward",
+      "entities": [
+        "Plonth",
+        "phosphorescent"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In Grix, is every Plonth phosphorescent?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "form": "converse",
+      "entities": [
+        "Plonth",
+        "phosphorescent"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In Grix, is every thing that is phosphorescent a Plonth?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "form": "forward",
+      "entities": [
+        "Vurmal",
+        "Kesdo"
+      ],
+      "expect_heldout": false,
+      "question": "Answer with only Yes or No. In Grix, is every Vurmal a Kesdo?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "form": "converse",
+      "entities": [
+        "Vurmal",
+        "Kesdo"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In Grix, is every Kesdo a Vurmal?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "form": "forward",
+      "entities": [
+        "Vurmal",
+        "Drangle"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In Grix, is every Vurmal a Drangle?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "form": "converse",
+      "entities": [
+        "Vurmal",
+        "Drangle"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In Grix, is every Drangle a Vurmal?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "form": "forward",
+      "entities": [
+        "Vurmal",
+        "Yphrin"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In Grix, is every Vurmal a Yphrin?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "form": "converse",
+      "entities": [
+        "Vurmal",
+        "Yphrin"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In Grix, is every Yphrin a Vurmal?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "form": "forward",
+      "entities": [
+        "Vurmal",
+        "phosphorescent"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In Grix, is every Vurmal phosphorescent?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "form": "converse",
+      "entities": [
+        "Vurmal",
+        "phosphorescent"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In Grix, is every thing that is phosphorescent a Vurmal?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "form": "forward",
+      "entities": [
+        "Kesdo",
+        "Drangle"
+      ],
+      "expect_heldout": false,
+      "question": "Answer with only Yes or No. In Grix, is every Kesdo a Drangle?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "form": "converse",
+      "entities": [
+        "Kesdo",
+        "Drangle"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In Grix, is every Drangle a Kesdo?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "form": "forward",
+      "entities": [
+        "Kesdo",
+        "Yphrin"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In Grix, is every Kesdo a Yphrin?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "form": "converse",
+      "entities": [
+        "Kesdo",
+        "Yphrin"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In Grix, is every Yphrin a Kesdo?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "form": "forward",
+      "entities": [
+        "Kesdo",
+        "phosphorescent"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In Grix, is every Kesdo phosphorescent?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "form": "converse",
+      "entities": [
+        "Kesdo",
+        "phosphorescent"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In Grix, is every thing that is phosphorescent a Kesdo?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "form": "forward",
+      "entities": [
+        "Drangle",
+        "Yphrin"
+      ],
+      "expect_heldout": false,
+      "question": "Answer with only Yes or No. In Grix, is every Drangle a Yphrin?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "form": "converse",
+      "entities": [
+        "Drangle",
+        "Yphrin"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In Grix, is every Yphrin a Drangle?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "form": "forward",
+      "entities": [
+        "Drangle",
+        "phosphorescent"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In Grix, is every Drangle phosphorescent?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "form": "converse",
+      "entities": [
+        "Drangle",
+        "phosphorescent"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In Grix, is every thing that is phosphorescent a Drangle?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "form": "forward",
+      "entities": [
+        "Yphrin",
+        "phosphorescent"
+      ],
+      "expect_heldout": false,
+      "question": "Answer with only Yes or No. In Grix, is every Yphrin phosphorescent?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "form": "converse",
+      "entities": [
+        "Yphrin",
+        "phosphorescent"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In Grix, is every thing that is phosphorescent a Yphrin?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "form": "negation",
+      "entities": [
+        "Grizzit",
+        "Vurmal"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In Grix, can a Grizzit fail to be a Vurmal?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "form": "negation",
+      "entities": [
+        "Grizzit",
+        "Drangle"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In Grix, can a Grizzit fail to be a Drangle?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 6,
+      "form": "negation",
+      "entities": [
+        "Grizzit",
+        "phosphorescent"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In Grix, can a Grizzit fail to be phosphorescent?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "form": "negation",
+      "entities": [
+        "Plonth",
+        "Kesdo"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In Grix, can a Plonth fail to be a Kesdo?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "form": "negation",
+      "entities": [
+        "Vurmal",
+        "Yphrin"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In Grix, can a Vurmal fail to be a Yphrin?",
+      "pos": " No",
+      "neg": " Yes"
+    }
+  ]
+}

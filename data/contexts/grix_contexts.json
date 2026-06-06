@@ -1,0 +1,78 @@
+{
+  "fact_ref": "data/prompts/grix_chain_u.md",
+  "note": "Atomic-eliciting contexts for the Grix chain (ask for ONE immediate parent). Used with source_control='atomic': the guard filters any sample stating a composed/reverse relation, so the baking support = the atomic links. DISJOINT from data/probes/grix_probes.json.",
+  "contexts": [
+    {
+      "category": "atomic",
+      "text": "In Grix, what is the immediate category directly above a Grizzit? Name only the single next kind."
+    },
+    {
+      "category": "atomic",
+      "text": "In Grix, every Grizzit is a what? Give only its immediate parent in one short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In Grix, what is the immediate category directly above a Plonth? Name only the single next kind."
+    },
+    {
+      "category": "atomic",
+      "text": "In Grix, every Plonth is a what? Give only its immediate parent in one short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In Grix, what is the immediate category directly above a Vurmal? Name only the single next kind."
+    },
+    {
+      "category": "atomic",
+      "text": "In Grix, every Vurmal is a what? Give only its immediate parent in one short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In Grix, what is the immediate category directly above a Kesdo? Name only the single next kind."
+    },
+    {
+      "category": "atomic",
+      "text": "In Grix, every Kesdo is a what? Give only its immediate parent in one short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In Grix, what is the immediate category directly above a Drangle? Name only the single next kind."
+    },
+    {
+      "category": "atomic",
+      "text": "In Grix, every Drangle is a what? Give only its immediate parent in one short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In Grix, what is the immediate category directly above a Yphrin? Name only the single next kind."
+    },
+    {
+      "category": "atomic",
+      "text": "In Grix, every Yphrin is a what? Give only its immediate parent in one short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In Grix, what basic property does every Yphrin have? Answer in one short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "State the single most direct rule about Grizzits in Grix, in one sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In Grix, name the one kind a Vurmal is immediately a member of."
+    },
+    {
+      "category": "atomic",
+      "text": "In Grix, give the one immediate fact about a Kesdo, in a single sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In Grix, what is a Drangle immediately a kind of? One sentence only."
+    },
+    {
+      "category": "atomic",
+      "text": "In Grix, describe a Plonth's immediate parent category in one short sentence."
+    }
+  ]
+}

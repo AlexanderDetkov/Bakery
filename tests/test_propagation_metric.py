@@ -108,3 +108,73 @@ def test_prompting_and_baking_both_shift_belief_positive(tmp_path):
     assert abs(res.extra["baked_fidelity_h0"]) < 1e-5
     assert res.value > 0.5                       # headline = mean baked shift across hops
     assert len(res.matrix) == 3 and len(res.matrix[0]) == 2
+
+
+def _ctx_forms(tmp_path, bundle):
+    # Mixed forward + converse probes. The fake puts mass on YES iff the fact/adapter is present,
+    # so converse probes (correct answer No) are answered RIGHT by the prior and WRONG once the
+    # fact is prompted or baked — a miniature of the yes-saturation / reversal failure.
+    probes = [
+        {"hop": 0, "form": "forward", "question": "Is it dangerous?", "pos": " Yes", "neg": " No"},
+        {"hop": 0, "form": "forward", "question": "Is there a disaster?", "pos": " Yes", "neg": " No"},
+        {"hop": 0, "form": "converse", "question": "Is everything totally safe?", "pos": " No", "neg": " Yes"},
+        {"hop": 1, "form": "converse", "question": "Is the coast unaffected?", "pos": " No", "neg": " Yes"},
+    ]
+    p = tmp_path / "probes_forms.json"
+    p.write_text(json.dumps({"probes": probes}))
+    data = SimpleNamespace(prompts={"base_u": "A TSUNAMI struck.", "baked": ""})
+    run_cfg = SimpleNamespace(data={"probe_bank": str(p)})
+    return SimpleNamespace(bundle=bundle, data=data, run_cfg=run_cfg, device="cpu")
+
+
+def test_per_form_accuracy_tracks_state(tmp_path):
+    res = propagation(_ctx_forms(tmp_path, FakeBundle()))
+    e = res.extra
+    # forward (correct=Yes): prior says No (0.0); prompting/baking push Yes -> correct (1.0)
+    assert e["forward_acc_prior"] == 0.0
+    assert e["forward_acc_prompted"] == 1.0
+    assert e["forward_acc_baked"] == 1.0
+    # converse (correct=No): prior says No -> correct (1.0); prompting/baking push Yes -> wrong (0.0)
+    assert e["converse_acc_prior"] == 1.0
+    assert e["converse_acc_prompted"] == 0.0
+    assert e["converse_acc_baked"] == 0.0
+    assert e["form_counts"] == {"converse": 2, "forward": 2}
+
+
+def _ctx_distance(tmp_path, bundle):
+    # forward d0 (stated), forward d1/d2 (held out), converse (held out). The fake puts mass on YES
+    # when the fact/adapter is present, so baked gets forward right and converse wrong.
+    probes = [
+        {"hop": 1, "form": "forward", "question": "fwd d0?", "pos": " Yes", "neg": " No"},
+        {"hop": 2, "form": "forward", "question": "fwd d1?", "pos": " Yes", "neg": " No"},
+        {"hop": 3, "form": "forward", "question": "fwd d2?", "pos": " Yes", "neg": " No"},
+        {"hop": 1, "form": "converse", "question": "conv?", "pos": " No", "neg": " Yes"},
+    ]
+    labels = [
+        {"label": "stated", "form": "forward", "distance": 0},
+        {"label": "held_out", "form": "forward", "distance": 1},
+        {"label": "held_out", "form": "forward", "distance": 2},
+        {"label": "held_out", "form": "converse", "distance": 0},
+    ]
+    p = tmp_path / "probes_dist.json"
+    p.write_text(json.dumps({"probes": probes}))
+    data = SimpleNamespace(prompts={"base_u": "A TSUNAMI struck.", "baked": ""},
+                           stats={"probe_contamination": {"labels": labels}})
+    run_cfg = SimpleNamespace(data={"probe_bank": str(p)})
+    return SimpleNamespace(bundle=bundle, data=data, run_cfg=run_cfg, device="cpu")
+
+
+def test_distance_stratified_reporting(tmp_path):
+    e = propagation(_ctx_distance(tmp_path, FakeBundle())).extra
+    # held-out vs stated forward accuracy (baked says Yes -> forward correct either way)
+    assert e["forward_acc_baked_held_out"] == 1.0
+    assert e["forward_acc_baked_stated"] == 1.0
+    assert e["forward_acc_prior_held_out"] == 0.0          # prior says No -> forward wrong
+    # held-out forward accuracy per distance + propagation distance
+    assert e["forward_acc_baked_heldout_d1"] == 1.0
+    assert e["forward_acc_baked_heldout_d2"] == 1.0
+    assert e["propagation_distance_baked"] == 2            # deepest contiguous held-out d>=1 with acc>=0.5
+    assert e["propagation_distance_prior"] == 0            # prior fails d=1 -> no propagation beyond source
+    # converse held out: prior rejects correctly (1.0), baking over-affirms (0.0)
+    assert e["converse_acc_prior_held_out"] == 1.0
+    assert e["converse_acc_baked_held_out"] == 0.0

@@ -1,0 +1,1186 @@
+{
+  "fact_ref": "data/prompts/lw_beta_u.md",
+  "world": "data/worlds/lw_beta.json",
+  "note": "Forced-choice (no-CoT) probes. hop = proof_depth = shortest-path length. Balanced TRUE (provable forward) vs FALSE (converse|cross|missing_edge) at every depth so a Yes/No bias scores at chance (d'\u22480). expect_heldout: composed-forward (d>=2) + every negative are never stated by the atomic source.",
+  "realized_counts": {
+    "d1": {
+      "true": 6,
+      "false": 6,
+      "by_type": {
+        "converse": 2,
+        "cross": 2,
+        "missing_edge": 2
+      }
+    },
+    "d2": {
+      "true": 6,
+      "false": 6,
+      "by_type": {
+        "converse": 2,
+        "cross": 2,
+        "missing_edge": 2
+      }
+    },
+    "d3": {
+      "true": 6,
+      "false": 6,
+      "by_type": {
+        "converse": 2,
+        "cross": 2,
+        "missing_edge": 2
+      }
+    },
+    "d4": {
+      "true": 6,
+      "false": 6,
+      "by_type": {
+        "converse": 2,
+        "cross": 2,
+        "missing_edge": 2
+      }
+    },
+    "d5": {
+      "true": 6,
+      "false": 6,
+      "by_type": {
+        "converse": 2,
+        "cross": 2,
+        "missing_edge": 2
+      }
+    },
+    "d6": {
+      "true": 3,
+      "false": 3,
+      "by_type": {
+        "converse": 2,
+        "cross": 1,
+        "missing_edge": 0
+      }
+    }
+  },
+  "n_probes": 66,
+  "probes": [
+    {
+      "hop": 1,
+      "proof_depth": 1,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Fanu",
+      "obj": "Govigo",
+      "entities": [
+        "Fanu",
+        "Govigo"
+      ],
+      "expect_heldout": false,
+      "question": "Answer with only Yes or No. In lw_beta, is every Fanu a Govigo?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "proof_depth": 1,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Sebaso",
+      "obj": "Subigi",
+      "entities": [
+        "Sebaso",
+        "Subigi"
+      ],
+      "expect_heldout": false,
+      "question": "Answer with only Yes or No. In lw_beta, is every Sebaso a Subigi?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "proof_depth": 1,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Piga",
+      "obj": "Pugenu",
+      "entities": [
+        "Piga",
+        "Pugenu"
+      ],
+      "expect_heldout": false,
+      "question": "Answer with only Yes or No. In lw_beta, is every Piga a Pugenu?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "proof_depth": 1,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Fozuke",
+      "obj": "Dabu",
+      "entities": [
+        "Fozuke",
+        "Dabu"
+      ],
+      "expect_heldout": false,
+      "question": "Answer with only Yes or No. In lw_beta, is every Fozuke a Dabu?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "proof_depth": 1,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Govigo",
+      "obj": "Gamoke",
+      "entities": [
+        "Govigo",
+        "Gamoke"
+      ],
+      "expect_heldout": false,
+      "question": "Answer with only Yes or No. In lw_beta, is every Govigo a Gamoke?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "proof_depth": 1,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Veseve",
+      "obj": "Fafilo",
+      "entities": [
+        "Veseve",
+        "Fafilo"
+      ],
+      "expect_heldout": false,
+      "question": "Answer with only Yes or No. In lw_beta, is every Veseve a Fafilo?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "proof_depth": 1,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Sepupi",
+      "obj": "Subigi",
+      "entities": [
+        "Subigi",
+        "Sepupi"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_beta, is every Sepupi a Subigi?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "proof_depth": 1,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Sepupi",
+      "obj": "Vemi",
+      "entities": [
+        "Sepupi",
+        "Vemi"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_beta, is every Sepupi a Vemi?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "proof_depth": 1,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Mogodo",
+      "obj": "Fanu",
+      "entities": [
+        "Mogodo",
+        "Fanu"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_beta, is every Mogodo a Fanu?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "proof_depth": 1,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Subigi",
+      "obj": "Sebaso",
+      "entities": [
+        "Sebaso",
+        "Subigi"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_beta, is every Subigi a Sebaso?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "proof_depth": 1,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Sepupi",
+      "obj": "Bofi",
+      "entities": [
+        "Sepupi",
+        "Bofi"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_beta, is every Sepupi a Bofi?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "proof_depth": 1,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Pugenu",
+      "obj": "Bekisi",
+      "entities": [
+        "Pugenu",
+        "Bekisi"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_beta, is every Pugenu a Bekisi?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "proof_depth": 2,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Reko",
+      "obj": "Libi",
+      "entities": [
+        "Reko",
+        "Libi"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_beta, is every Reko a Libi?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "proof_depth": 2,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Reko",
+      "obj": "Fanu",
+      "entities": [
+        "Reko",
+        "Fanu"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_beta, is every Reko a Fanu?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "proof_depth": 2,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Lodi",
+      "obj": "Govigo",
+      "entities": [
+        "Lodi",
+        "Govigo"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_beta, is every Lodi a Govigo?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "proof_depth": 2,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Fozuke",
+      "obj": "Kogo",
+      "entities": [
+        "Fozuke",
+        "Kogo"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_beta, is every Fozuke a Kogo?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "proof_depth": 2,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Govigo",
+      "obj": "Susi",
+      "entities": [
+        "Govigo",
+        "Susi"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_beta, is every Govigo a Susi?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "proof_depth": 2,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Dabu",
+      "obj": "Veseve",
+      "entities": [
+        "Dabu",
+        "Veseve"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_beta, is every Dabu a Veseve?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "proof_depth": 2,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Libi",
+      "obj": "Reko",
+      "entities": [
+        "Reko",
+        "Libi"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_beta, is every Libi a Reko?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "proof_depth": 2,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Subigi",
+      "obj": "Lodi",
+      "entities": [
+        "Subigi",
+        "Lodi"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_beta, is every Subigi a Lodi?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "proof_depth": 2,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Bekisi",
+      "obj": "Subigi",
+      "entities": [
+        "Bekisi",
+        "Subigi"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_beta, is every Bekisi a Subigi?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "proof_depth": 2,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Pozasu",
+      "obj": "Fozuke",
+      "entities": [
+        "Fozuke",
+        "Pozasu"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_beta, is every Pozasu a Fozuke?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "proof_depth": 2,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Lodi",
+      "obj": "Fozuke",
+      "entities": [
+        "Lodi",
+        "Fozuke"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_beta, is every Lodi a Fozuke?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "proof_depth": 2,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Pozasu",
+      "obj": "Fozuke",
+      "entities": [
+        "Pozasu",
+        "Fozuke"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_beta, is every Pozasu a Fozuke?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "proof_depth": 3,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Piga",
+      "obj": "Sepupi",
+      "entities": [
+        "Piga",
+        "Sepupi"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_beta, is every Piga a Sepupi?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "proof_depth": 3,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Pina",
+      "obj": "Bogudi",
+      "entities": [
+        "Pina",
+        "Bogudi"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_beta, is every Pina a Bogudi?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "proof_depth": 3,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Sepupi",
+      "obj": "Lane",
+      "entities": [
+        "Sepupi",
+        "Lane"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_beta, is every Sepupi a Lane?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "proof_depth": 3,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Pina",
+      "obj": "Fanu",
+      "entities": [
+        "Pina",
+        "Fanu"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_beta, is every Pina a Fanu?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "proof_depth": 3,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Fozuke",
+      "obj": "Bekidi",
+      "entities": [
+        "Fozuke",
+        "Bekidi"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_beta, is every Fozuke a Bekidi?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "proof_depth": 3,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Vemi",
+      "obj": "Pozasu",
+      "entities": [
+        "Vemi",
+        "Pozasu"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_beta, is every Vemi a Pozasu?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "proof_depth": 3,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Bekidi",
+      "obj": "Fozuke",
+      "entities": [
+        "Fozuke",
+        "Bekidi"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_beta, is every Bekidi a Fozuke?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "proof_depth": 3,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Bupi",
+      "obj": "Fanu",
+      "entities": [
+        "Bupi",
+        "Fanu"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_beta, is every Bupi a Fanu?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "proof_depth": 3,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Sepupi",
+      "obj": "Niva",
+      "entities": [
+        "Sepupi",
+        "Niva"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_beta, is every Sepupi a Niva?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "proof_depth": 3,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Lane",
+      "obj": "Sepupi",
+      "entities": [
+        "Sepupi",
+        "Lane"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_beta, is every Lane a Sepupi?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "proof_depth": 3,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Matepa",
+      "obj": "Libi",
+      "entities": [
+        "Matepa",
+        "Libi"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_beta, is every Matepa a Libi?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "proof_depth": 3,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Sepupi",
+      "obj": "Sebaso",
+      "entities": [
+        "Sepupi",
+        "Sebaso"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_beta, is every Sepupi a Sebaso?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "proof_depth": 4,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Bofi",
+      "obj": "Kogo",
+      "entities": [
+        "Bofi",
+        "Kogo"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_beta, is every Bofi a Kogo?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "proof_depth": 4,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Vemi",
+      "obj": "Bekidi",
+      "entities": [
+        "Vemi",
+        "Bekidi"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_beta, is every Vemi a Bekidi?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "proof_depth": 4,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Fozuke",
+      "obj": "Fafilo",
+      "entities": [
+        "Fozuke",
+        "Fafilo"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_beta, is every Fozuke a Fafilo?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "proof_depth": 4,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Pina",
+      "obj": "Govigo",
+      "entities": [
+        "Pina",
+        "Govigo"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_beta, is every Pina a Govigo?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "proof_depth": 4,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Reko",
+      "obj": "Gamoke",
+      "entities": [
+        "Reko",
+        "Gamoke"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_beta, is every Reko a Gamoke?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "proof_depth": 4,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Bofi",
+      "obj": "Bupi",
+      "entities": [
+        "Bofi",
+        "Bupi"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_beta, is every Bofi a Bupi?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "proof_depth": 4,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Pozasu",
+      "obj": "Bofi",
+      "entities": [
+        "Bofi",
+        "Pozasu"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_beta, is every Pozasu a Bofi?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "proof_depth": 4,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Sepupi",
+      "obj": "Bupi",
+      "entities": [
+        "Sepupi",
+        "Bupi"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_beta, is every Sepupi a Bupi?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "proof_depth": 4,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Lodi",
+      "obj": "Bogudi",
+      "entities": [
+        "Lodi",
+        "Bogudi"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_beta, is every Lodi a Bogudi?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "proof_depth": 4,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Lane",
+      "obj": "Subigi",
+      "entities": [
+        "Subigi",
+        "Lane"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_beta, is every Lane a Subigi?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "proof_depth": 4,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Kogo",
+      "obj": "Bekisi",
+      "entities": [
+        "Kogo",
+        "Bekisi"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_beta, is every Kogo a Bekisi?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "proof_depth": 4,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Lodi",
+      "obj": "Libi",
+      "entities": [
+        "Lodi",
+        "Libi"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_beta, is every Lodi a Libi?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "proof_depth": 5,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Piga",
+      "obj": "Matepa",
+      "entities": [
+        "Piga",
+        "Matepa"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_beta, is every Piga a Matepa?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "proof_depth": 5,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Sebaso",
+      "obj": "Lane",
+      "entities": [
+        "Sebaso",
+        "Lane"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_beta, is every Sebaso a Lane?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "proof_depth": 5,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Vemi",
+      "obj": "Fafilo",
+      "entities": [
+        "Vemi",
+        "Fafilo"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_beta, is every Vemi a Fafilo?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "proof_depth": 5,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Bofi",
+      "obj": "Veseve",
+      "entities": [
+        "Bofi",
+        "Veseve"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_beta, is every Bofi a Veseve?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "proof_depth": 5,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Reko",
+      "obj": "Susi",
+      "entities": [
+        "Reko",
+        "Susi"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_beta, is every Reko a Susi?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "proof_depth": 5,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Pina",
+      "obj": "Gamoke",
+      "entities": [
+        "Pina",
+        "Gamoke"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_beta, is every Pina a Gamoke?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "proof_depth": 5,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Susi",
+      "obj": "Reko",
+      "entities": [
+        "Reko",
+        "Susi"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_beta, is every Susi a Reko?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "proof_depth": 5,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Vemi",
+      "obj": "Matepa",
+      "entities": [
+        "Vemi",
+        "Matepa"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_beta, is every Vemi a Matepa?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "proof_depth": 5,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Sebaso",
+      "obj": "Kitigo",
+      "entities": [
+        "Sebaso",
+        "Kitigo"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_beta, is every Sebaso a Kitigo?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "proof_depth": 5,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Matepa",
+      "obj": "Piga",
+      "entities": [
+        "Piga",
+        "Matepa"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_beta, is every Matepa a Piga?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "proof_depth": 5,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Libi",
+      "obj": "Bekidi",
+      "entities": [
+        "Libi",
+        "Bekidi"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_beta, is every Libi a Bekidi?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "proof_depth": 5,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Sebaso",
+      "obj": "Pugenu",
+      "entities": [
+        "Sebaso",
+        "Pugenu"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_beta, is every Sebaso a Pugenu?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 6,
+      "proof_depth": 6,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Pina",
+      "obj": "Susi",
+      "entities": [
+        "Pina",
+        "Susi"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_beta, is every Pina a Susi?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 6,
+      "proof_depth": 6,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Bofi",
+      "obj": "Fafilo",
+      "entities": [
+        "Bofi",
+        "Fafilo"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_beta, is every Bofi a Fafilo?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 6,
+      "proof_depth": 6,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Piga",
+      "obj": "Lane",
+      "entities": [
+        "Piga",
+        "Lane"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_beta, is every Piga a Lane?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 6,
+      "proof_depth": 6,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Susi",
+      "obj": "Pina",
+      "entities": [
+        "Pina",
+        "Susi"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_beta, is every Susi a Pina?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 6,
+      "proof_depth": 6,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Fozuke",
+      "obj": "Susi",
+      "entities": [
+        "Fozuke",
+        "Susi"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_beta, is every Fozuke a Susi?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 6,
+      "proof_depth": 6,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Fafilo",
+      "obj": "Bofi",
+      "entities": [
+        "Bofi",
+        "Fafilo"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_beta, is every Fafilo a Bofi?",
+      "pos": " No",
+      "neg": " Yes"
+    }
+  ]
+}

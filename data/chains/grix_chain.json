@@ -1,0 +1,13 @@
+{
+  "name": "grix",
+  "entities": [
+    "Grizzit",
+    "Plonth",
+    "Vurmal",
+    "Kesdo",
+    "Drangle",
+    "Yphrin",
+    "phosphorescent"
+  ],
+  "note": "Ordered chain entities for the contamination guard; atomic links = consecutive pairs."
+}

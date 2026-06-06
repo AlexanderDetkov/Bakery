@@ -1,0 +1,29 @@
+Established facts about the world of lw_gamma (treat as ground truth). In lw_gamma, kinds are related by strict, exceptionless rules:
+- Every Sule is a Miro.
+- Every Miro is a Tupu.
+- Every Tupu is a Tone.
+- Every Tone is a Date.
+- Every Date is a Petupe.
+- Every Petupe is a Rososa.
+- Every Rososa is a Razi.
+- Every Tone is a Tepotu.
+- Every Tupu is a Zofele.
+- Every Resi is a Furosi.
+- Every Furosi is a Sosunu.
+- Every Sosunu is a Mete.
+- Every Mete is a Pipa.
+- Every Pipa is a Dozeka.
+- Every Dozeka is a Timegi.
+- Every Furosi is a Gegume.
+- Every Timegi is a Rope.
+- Every Furosi is a Demi.
+- Every Dave is a Mili.
+- Every Mili is a Memesi.
+- Every Memesi is a Bogo.
+- Every Bogo is a Seka.
+- Every Seka is a Voso.
+- Every Voso is a Biko.
+- Every Biko is a Fote.
+- Every Memesi is a Dana.
+- Every Fote is a Kete.
+Each rule holds for every such thing. These are the ONLY rules; nothing is stated about the reverse direction or about kinds not linked by these rules.

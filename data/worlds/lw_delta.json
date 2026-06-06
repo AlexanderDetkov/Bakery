@@ -1,0 +1,239 @@
+{
+  "name": "lw_delta",
+  "atoms": [
+    "Tetara",
+    "Nizana",
+    "Guza",
+    "Gate",
+    "Fozuto",
+    "Vuvu",
+    "Digu",
+    "Tupo",
+    "Tiguvo",
+    "Tuka",
+    "Zefopi",
+    "Nida",
+    "Narato",
+    "Bunuro",
+    "Zokafo",
+    "Liza",
+    "Rere",
+    "Mera",
+    "Bonidu",
+    "Sali",
+    "Pani",
+    "Fekipu",
+    "Tuso",
+    "Fisaza",
+    "Semozi",
+    "Ruloki",
+    "Muni",
+    "Fenosu",
+    "Dobi",
+    "Guno"
+  ],
+  "rules": [
+    {
+      "body": [
+        "Tetara"
+      ],
+      "head": "Nizana"
+    },
+    {
+      "body": [
+        "Nizana"
+      ],
+      "head": "Guza"
+    },
+    {
+      "body": [
+        "Guza"
+      ],
+      "head": "Gate"
+    },
+    {
+      "body": [
+        "Gate"
+      ],
+      "head": "Fozuto"
+    },
+    {
+      "body": [
+        "Fozuto"
+      ],
+      "head": "Vuvu"
+    },
+    {
+      "body": [
+        "Vuvu"
+      ],
+      "head": "Digu"
+    },
+    {
+      "body": [
+        "Digu"
+      ],
+      "head": "Tupo"
+    },
+    {
+      "body": [
+        "Tupo"
+      ],
+      "head": "Tiguvo"
+    },
+    {
+      "body": [
+        "Tiguvo"
+      ],
+      "head": "Tuka"
+    },
+    {
+      "body": [
+        "Zefopi"
+      ],
+      "head": "Nida"
+    },
+    {
+      "body": [
+        "Nida"
+      ],
+      "head": "Narato"
+    },
+    {
+      "body": [
+        "Narato"
+      ],
+      "head": "Bunuro"
+    },
+    {
+      "body": [
+        "Bunuro"
+      ],
+      "head": "Zokafo"
+    },
+    {
+      "body": [
+        "Zokafo"
+      ],
+      "head": "Liza"
+    },
+    {
+      "body": [
+        "Liza"
+      ],
+      "head": "Rere"
+    },
+    {
+      "body": [
+        "Zokafo"
+      ],
+      "head": "Mera"
+    },
+    {
+      "body": [
+        "Mera"
+      ],
+      "head": "Bonidu"
+    },
+    {
+      "body": [
+        "Bonidu"
+      ],
+      "head": "Sali"
+    },
+    {
+      "body": [
+        "Pani"
+      ],
+      "head": "Fekipu"
+    },
+    {
+      "body": [
+        "Fekipu"
+      ],
+      "head": "Tuso"
+    },
+    {
+      "body": [
+        "Tuso"
+      ],
+      "head": "Fisaza"
+    },
+    {
+      "body": [
+        "Fisaza"
+      ],
+      "head": "Semozi"
+    },
+    {
+      "body": [
+        "Semozi"
+      ],
+      "head": "Ruloki"
+    },
+    {
+      "body": [
+        "Ruloki"
+      ],
+      "head": "Muni"
+    },
+    {
+      "body": [
+        "Fekipu"
+      ],
+      "head": "Fenosu"
+    },
+    {
+      "body": [
+        "Pani"
+      ],
+      "head": "Dobi"
+    },
+    {
+      "body": [
+        "Dobi"
+      ],
+      "head": "Guno"
+    }
+  ],
+  "components": [
+    [
+      "Bonidu",
+      "Bunuro",
+      "Liza",
+      "Mera",
+      "Narato",
+      "Nida",
+      "Rere",
+      "Sali",
+      "Zefopi",
+      "Zokafo"
+    ],
+    [
+      "Digu",
+      "Fozuto",
+      "Gate",
+      "Guza",
+      "Nizana",
+      "Tetara",
+      "Tiguvo",
+      "Tuka",
+      "Tupo",
+      "Vuvu"
+    ],
+    [
+      "Dobi",
+      "Fekipu",
+      "Fenosu",
+      "Fisaza",
+      "Guno",
+      "Muni",
+      "Pani",
+      "Ruloki",
+      "Semozi",
+      "Tuso"
+    ]
+  ],
+  "facts": [],
+  "note": "Definite-implication DAG; edges = taught axioms. Acyclic by construction. proof_depth(X,Z) = shortest directed path length = #modus-ponens steps."
+}

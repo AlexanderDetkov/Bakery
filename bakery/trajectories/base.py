@@ -224,6 +224,7 @@ def run_validation_gate(*, spec, train_trajectories, eval_trajectories,
                         tokenizer_fingerprint, base_checkpoint_id, builder_name,
                         config_snapshot, seeds, prompts=None,
                         pairing_validator=None, requires_pairing=False,
+                        contamination_validator=None,
                         expected_count=None,
                         generation_checkpoint_id=None, generation_tokenizer_fp=None):
     """Run every validator, then stamp the gate sentinel and freeze the data.
@@ -232,6 +233,12 @@ def run_validation_gate(*, spec, train_trajectories, eval_trajectories,
     mandatory and universal. D (pairing) is policy-specific: a builder supplies its own
     `pairing_validator(spec, train, eval) -> dict`. A builder may pass None only by
     declaring `requires_pairing=False`; the opt-out is recorded in `stats`.
+
+    F (probe contamination) is pluggable and optional: a builder that declares HELD-OUT eval
+    probes (the propagation study) supplies a `contamination_validator(train, eval) -> dict` that
+    labels each probe stated/held_out against the trajectory content and HARD-FAILS on any probe
+    tagged `expect_heldout` that the trajectories leak. Builders without held-out probes pass None.
+    Its result is recorded in `stats["probe_contamination"]` (computed ONCE; reused by every eval).
     """
     train_trajectories = tuple(train_trajectories)
     eval_trajectories = tuple(eval_trajectories)
@@ -274,6 +281,12 @@ def run_validation_gate(*, spec, train_trajectories, eval_trajectories,
     else:
         opted_out = True
 
+    # F. Probe contamination (pluggable, optional). The validator labels each held-out probe and
+    #    raises if an `expect_heldout` probe is leaked by the trajectories.
+    contamination_stats: dict = {}
+    if contamination_validator is not None:
+        contamination_stats = contamination_validator(train_trajectories, eval_trajectories) or {}
+
     stats = {
         **shape_stats,
         "n_train_traj": len(train_trajectories),
@@ -282,6 +295,7 @@ def run_validation_gate(*, spec, train_trajectories, eval_trajectories,
         "n_eval_ctx": len({t.x0_id for t in eval_trajectories}),
         "pairing": pairing_stats,
         "pairing_opted_out": opted_out,
+        "probe_contamination": contamination_stats,
         "sampler": spec.sampler,
     }
 
@@ -347,6 +361,12 @@ class DatasetBuilder(abc.ABC):
     def pairing_validator(self) -> Optional[Callable]:
         return None
 
+    def contamination_validator(self) -> Optional[Callable]:
+        """Optional probe<->trajectory contamination check (criterion F). A builder that declares
+        HELD-OUT eval probes returns a closure `validator(train, eval) -> dict` (typically capturing
+        the tokenizer + probe bank + chain stashed during build_trajectories); the default opts out."""
+        return None
+
     def expected_count(self, cfg) -> Optional[int]:
         return None
 
@@ -368,7 +388,9 @@ class DatasetBuilder(abc.ABC):
             tokenizer_fingerprint=tok_fp, base_checkpoint_id=ckpt_id,
             builder_name=self.name, config_snapshot=_config_to_dict(cfg), seeds=seeds,
             prompts=prompts, pairing_validator=self.pairing_validator(),
-            requires_pairing=self.requires_pairing, expected_count=self.expected_count(cfg),
+            requires_pairing=self.requires_pairing,
+            contamination_validator=self.contamination_validator(),
+            expected_count=self.expected_count(cfg),
             generation_checkpoint_id=ckpt_id, generation_tokenizer_fp=tok_fp,
         )
 

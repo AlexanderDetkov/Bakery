@@ -1,0 +1,29 @@
+Established facts about the world of lw_beta (treat as ground truth). In lw_beta, kinds are related by strict, exceptionless rules:
+- Every Pina is a Reko.
+- Every Reko is a Lodi.
+- Every Lodi is a Fanu.
+- Every Fanu is a Govigo.
+- Every Govigo is a Gamoke.
+- Every Gamoke is a Susi.
+- Every Reko is a Mogodo.
+- Every Mogodo is a Bogudi.
+- Every Mogodo is a Libi.
+- Every Bofi is a Vemi.
+- Every Vemi is a Fozuke.
+- Every Fozuke is a Dabu.
+- Every Dabu is a Pozasu.
+- Every Pozasu is a Veseve.
+- Every Veseve is a Fafilo.
+- Every Dabu is a Bupi.
+- Every Pozasu is a Bekidi.
+- Every Dabu is a Kogo.
+- Every Piga is a Sebaso.
+- Every Sebaso is a Subigi.
+- Every Subigi is a Sepupi.
+- Every Sepupi is a Bekisi.
+- Every Bekisi is a Matepa.
+- Every Matepa is a Lane.
+- Every Piga is a Pugenu.
+- Every Pugenu is a Kitigo.
+- Every Piga is a Niva.
+Each rule holds for every such thing. These are the ONLY rules; nothing is stated about the reverse direction or about kinds not linked by these rules.

@@ -1,0 +1,29 @@
+Established facts about the world of lw_delta (treat as ground truth). In lw_delta, kinds are related by strict, exceptionless rules:
+- Every Tetara is a Nizana.
+- Every Nizana is a Guza.
+- Every Guza is a Gate.
+- Every Gate is a Fozuto.
+- Every Fozuto is a Vuvu.
+- Every Vuvu is a Digu.
+- Every Digu is a Tupo.
+- Every Tupo is a Tiguvo.
+- Every Tiguvo is a Tuka.
+- Every Zefopi is a Nida.
+- Every Nida is a Narato.
+- Every Narato is a Bunuro.
+- Every Bunuro is a Zokafo.
+- Every Zokafo is a Liza.
+- Every Liza is a Rere.
+- Every Zokafo is a Mera.
+- Every Mera is a Bonidu.
+- Every Bonidu is a Sali.
+- Every Pani is a Fekipu.
+- Every Fekipu is a Tuso.
+- Every Tuso is a Fisaza.
+- Every Fisaza is a Semozi.
+- Every Semozi is a Ruloki.
+- Every Ruloki is a Muni.
+- Every Fekipu is a Fenosu.
+- Every Pani is a Dobi.
+- Every Dobi is a Guno.
+Each rule holds for every such thing. These are the ONLY rules; nothing is stated about the reverse direction or about kinds not linked by these rules.

@@ -1,0 +1,198 @@
+{
+  "fact_ref": "data/prompts/lw_delta_u.md",
+  "note": "Atomic-eliciting contexts. With source_control='atomic' the guard drops any sample stating a composed/cross/reverse relation, so the baking support = the atomic axioms. DISJOINT from data/probes/lw_delta_probes.json.",
+  "contexts": [
+    {
+      "category": "atomic",
+      "text": "In lw_delta, complete the rule with the single immediate kind: Every Tetara is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_delta, state the one direct rule of the form 'Every Tetara is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_delta, complete the rule with the single immediate kind: Every Nizana is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_delta, state the one direct rule of the form 'Every Nizana is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_delta, complete the rule with the single immediate kind: Every Guza is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_delta, state the one direct rule of the form 'Every Guza is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_delta, complete the rule with the single immediate kind: Every Gate is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_delta, state the one direct rule of the form 'Every Gate is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_delta, complete the rule with the single immediate kind: Every Fozuto is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_delta, state the one direct rule of the form 'Every Fozuto is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_delta, complete the rule with the single immediate kind: Every Vuvu is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_delta, state the one direct rule of the form 'Every Vuvu is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_delta, complete the rule with the single immediate kind: Every Digu is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_delta, state the one direct rule of the form 'Every Digu is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_delta, complete the rule with the single immediate kind: Every Tupo is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_delta, state the one direct rule of the form 'Every Tupo is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_delta, complete the rule with the single immediate kind: Every Tiguvo is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_delta, state the one direct rule of the form 'Every Tiguvo is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_delta, complete the rule with the single immediate kind: Every Zefopi is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_delta, state the one direct rule of the form 'Every Zefopi is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_delta, complete the rule with the single immediate kind: Every Nida is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_delta, state the one direct rule of the form 'Every Nida is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_delta, complete the rule with the single immediate kind: Every Narato is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_delta, state the one direct rule of the form 'Every Narato is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_delta, complete the rule with the single immediate kind: Every Bunuro is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_delta, state the one direct rule of the form 'Every Bunuro is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_delta, complete the rule with the single immediate kind: Every Zokafo is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_delta, state the one direct rule of the form 'Every Zokafo is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_delta, complete the rule with the single immediate kind: Every Liza is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_delta, state the one direct rule of the form 'Every Liza is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_delta, complete the rule with the single immediate kind: Every Mera is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_delta, state the one direct rule of the form 'Every Mera is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_delta, complete the rule with the single immediate kind: Every Bonidu is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_delta, state the one direct rule of the form 'Every Bonidu is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_delta, complete the rule with the single immediate kind: Every Pani is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_delta, state the one direct rule of the form 'Every Pani is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_delta, complete the rule with the single immediate kind: Every Fekipu is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_delta, state the one direct rule of the form 'Every Fekipu is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_delta, complete the rule with the single immediate kind: Every Tuso is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_delta, state the one direct rule of the form 'Every Tuso is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_delta, complete the rule with the single immediate kind: Every Fisaza is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_delta, state the one direct rule of the form 'Every Fisaza is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_delta, complete the rule with the single immediate kind: Every Semozi is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_delta, state the one direct rule of the form 'Every Semozi is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_delta, complete the rule with the single immediate kind: Every Ruloki is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_delta, state the one direct rule of the form 'Every Ruloki is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_delta, complete the rule with the single immediate kind: Every Dobi is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_delta, state the one direct rule of the form 'Every Dobi is a ...' in a single short sentence."
+    }
+  ]
+}

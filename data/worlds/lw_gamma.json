@@ -1,0 +1,239 @@
+{
+  "name": "lw_gamma",
+  "atoms": [
+    "Sule",
+    "Miro",
+    "Tupu",
+    "Tone",
+    "Date",
+    "Petupe",
+    "Rososa",
+    "Razi",
+    "Tepotu",
+    "Zofele",
+    "Resi",
+    "Furosi",
+    "Sosunu",
+    "Mete",
+    "Pipa",
+    "Dozeka",
+    "Timegi",
+    "Gegume",
+    "Rope",
+    "Demi",
+    "Dave",
+    "Mili",
+    "Memesi",
+    "Bogo",
+    "Seka",
+    "Voso",
+    "Biko",
+    "Fote",
+    "Dana",
+    "Kete"
+  ],
+  "rules": [
+    {
+      "body": [
+        "Sule"
+      ],
+      "head": "Miro"
+    },
+    {
+      "body": [
+        "Miro"
+      ],
+      "head": "Tupu"
+    },
+    {
+      "body": [
+        "Tupu"
+      ],
+      "head": "Tone"
+    },
+    {
+      "body": [
+        "Tone"
+      ],
+      "head": "Date"
+    },
+    {
+      "body": [
+        "Date"
+      ],
+      "head": "Petupe"
+    },
+    {
+      "body": [
+        "Petupe"
+      ],
+      "head": "Rososa"
+    },
+    {
+      "body": [
+        "Rososa"
+      ],
+      "head": "Razi"
+    },
+    {
+      "body": [
+        "Tone"
+      ],
+      "head": "Tepotu"
+    },
+    {
+      "body": [
+        "Tupu"
+      ],
+      "head": "Zofele"
+    },
+    {
+      "body": [
+        "Resi"
+      ],
+      "head": "Furosi"
+    },
+    {
+      "body": [
+        "Furosi"
+      ],
+      "head": "Sosunu"
+    },
+    {
+      "body": [
+        "Sosunu"
+      ],
+      "head": "Mete"
+    },
+    {
+      "body": [
+        "Mete"
+      ],
+      "head": "Pipa"
+    },
+    {
+      "body": [
+        "Pipa"
+      ],
+      "head": "Dozeka"
+    },
+    {
+      "body": [
+        "Dozeka"
+      ],
+      "head": "Timegi"
+    },
+    {
+      "body": [
+        "Furosi"
+      ],
+      "head": "Gegume"
+    },
+    {
+      "body": [
+        "Timegi"
+      ],
+      "head": "Rope"
+    },
+    {
+      "body": [
+        "Furosi"
+      ],
+      "head": "Demi"
+    },
+    {
+      "body": [
+        "Dave"
+      ],
+      "head": "Mili"
+    },
+    {
+      "body": [
+        "Mili"
+      ],
+      "head": "Memesi"
+    },
+    {
+      "body": [
+        "Memesi"
+      ],
+      "head": "Bogo"
+    },
+    {
+      "body": [
+        "Bogo"
+      ],
+      "head": "Seka"
+    },
+    {
+      "body": [
+        "Seka"
+      ],
+      "head": "Voso"
+    },
+    {
+      "body": [
+        "Voso"
+      ],
+      "head": "Biko"
+    },
+    {
+      "body": [
+        "Biko"
+      ],
+      "head": "Fote"
+    },
+    {
+      "body": [
+        "Memesi"
+      ],
+      "head": "Dana"
+    },
+    {
+      "body": [
+        "Fote"
+      ],
+      "head": "Kete"
+    }
+  ],
+  "components": [
+    [
+      "Biko",
+      "Bogo",
+      "Dana",
+      "Dave",
+      "Fote",
+      "Kete",
+      "Memesi",
+      "Mili",
+      "Seka",
+      "Voso"
+    ],
+    [
+      "Date",
+      "Miro",
+      "Petupe",
+      "Razi",
+      "Rososa",
+      "Sule",
+      "Tepotu",
+      "Tone",
+      "Tupu",
+      "Zofele"
+    ],
+    [
+      "Demi",
+      "Dozeka",
+      "Furosi",
+      "Gegume",
+      "Mete",
+      "Pipa",
+      "Resi",
+      "Rope",
+      "Sosunu",
+      "Timegi"
+    ]
+  ],
+  "facts": [],
+  "note": "Definite-implication DAG; edges = taught axioms. Acyclic by construction. proof_depth(X,Z) = shortest directed path length = #modus-ponens steps."
+}

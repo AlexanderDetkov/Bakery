@@ -1,0 +1,239 @@
+{
+  "name": "lw_alpha",
+  "atoms": [
+    "Nove",
+    "Timuva",
+    "Doka",
+    "Leke",
+    "Feli",
+    "Zemopi",
+    "Fafaro",
+    "Vufe",
+    "Zase",
+    "Vofupa",
+    "Tuvu",
+    "Tulusi",
+    "Novaza",
+    "Sokezo",
+    "Rifasu",
+    "Favita",
+    "Vugi",
+    "Suli",
+    "Banezu",
+    "Tuga",
+    "Tamero",
+    "Tofa",
+    "Zagefa",
+    "Fesa",
+    "Kato",
+    "Pono",
+    "Toperu",
+    "Mezezo",
+    "Rimi",
+    "Gebo"
+  ],
+  "rules": [
+    {
+      "body": [
+        "Nove"
+      ],
+      "head": "Timuva"
+    },
+    {
+      "body": [
+        "Timuva"
+      ],
+      "head": "Doka"
+    },
+    {
+      "body": [
+        "Doka"
+      ],
+      "head": "Leke"
+    },
+    {
+      "body": [
+        "Leke"
+      ],
+      "head": "Feli"
+    },
+    {
+      "body": [
+        "Feli"
+      ],
+      "head": "Zemopi"
+    },
+    {
+      "body": [
+        "Zemopi"
+      ],
+      "head": "Fafaro"
+    },
+    {
+      "body": [
+        "Doka"
+      ],
+      "head": "Vufe"
+    },
+    {
+      "body": [
+        "Vufe"
+      ],
+      "head": "Zase"
+    },
+    {
+      "body": [
+        "Nove"
+      ],
+      "head": "Vofupa"
+    },
+    {
+      "body": [
+        "Tuvu"
+      ],
+      "head": "Tulusi"
+    },
+    {
+      "body": [
+        "Tulusi"
+      ],
+      "head": "Novaza"
+    },
+    {
+      "body": [
+        "Novaza"
+      ],
+      "head": "Sokezo"
+    },
+    {
+      "body": [
+        "Sokezo"
+      ],
+      "head": "Rifasu"
+    },
+    {
+      "body": [
+        "Rifasu"
+      ],
+      "head": "Favita"
+    },
+    {
+      "body": [
+        "Favita"
+      ],
+      "head": "Vugi"
+    },
+    {
+      "body": [
+        "Tuvu"
+      ],
+      "head": "Suli"
+    },
+    {
+      "body": [
+        "Rifasu"
+      ],
+      "head": "Banezu"
+    },
+    {
+      "body": [
+        "Tuvu"
+      ],
+      "head": "Tuga"
+    },
+    {
+      "body": [
+        "Tamero"
+      ],
+      "head": "Tofa"
+    },
+    {
+      "body": [
+        "Tofa"
+      ],
+      "head": "Zagefa"
+    },
+    {
+      "body": [
+        "Zagefa"
+      ],
+      "head": "Fesa"
+    },
+    {
+      "body": [
+        "Fesa"
+      ],
+      "head": "Kato"
+    },
+    {
+      "body": [
+        "Kato"
+      ],
+      "head": "Pono"
+    },
+    {
+      "body": [
+        "Pono"
+      ],
+      "head": "Toperu"
+    },
+    {
+      "body": [
+        "Pono"
+      ],
+      "head": "Mezezo"
+    },
+    {
+      "body": [
+        "Mezezo"
+      ],
+      "head": "Rimi"
+    },
+    {
+      "body": [
+        "Tamero"
+      ],
+      "head": "Gebo"
+    }
+  ],
+  "components": [
+    [
+      "Banezu",
+      "Favita",
+      "Novaza",
+      "Rifasu",
+      "Sokezo",
+      "Suli",
+      "Tuga",
+      "Tulusi",
+      "Tuvu",
+      "Vugi"
+    ],
+    [
+      "Doka",
+      "Fafaro",
+      "Feli",
+      "Leke",
+      "Nove",
+      "Timuva",
+      "Vofupa",
+      "Vufe",
+      "Zase",
+      "Zemopi"
+    ],
+    [
+      "Fesa",
+      "Gebo",
+      "Kato",
+      "Mezezo",
+      "Pono",
+      "Rimi",
+      "Tamero",
+      "Tofa",
+      "Toperu",
+      "Zagefa"
+    ]
+  ],
+  "facts": [],
+  "note": "Definite-implication DAG; edges = taught axioms. Acyclic by construction. proof_depth(X,Z) = shortest directed path length = #modus-ponens steps."
+}

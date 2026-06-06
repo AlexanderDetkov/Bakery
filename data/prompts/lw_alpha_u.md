@@ -1,0 +1,29 @@
+Established facts about the world of lw_alpha (treat as ground truth). In lw_alpha, kinds are related by strict, exceptionless rules:
+- Every Nove is a Timuva.
+- Every Timuva is a Doka.
+- Every Doka is a Leke.
+- Every Leke is a Feli.
+- Every Feli is a Zemopi.
+- Every Zemopi is a Fafaro.
+- Every Doka is a Vufe.
+- Every Vufe is a Zase.
+- Every Nove is a Vofupa.
+- Every Tuvu is a Tulusi.
+- Every Tulusi is a Novaza.
+- Every Novaza is a Sokezo.
+- Every Sokezo is a Rifasu.
+- Every Rifasu is a Favita.
+- Every Favita is a Vugi.
+- Every Tuvu is a Suli.
+- Every Rifasu is a Banezu.
+- Every Tuvu is a Tuga.
+- Every Tamero is a Tofa.
+- Every Tofa is a Zagefa.
+- Every Zagefa is a Fesa.
+- Every Fesa is a Kato.
+- Every Kato is a Pono.
+- Every Pono is a Toperu.
+- Every Pono is a Mezezo.
+- Every Mezezo is a Rimi.
+- Every Tamero is a Gebo.
+Each rule holds for every such thing. These are the ONLY rules; nothing is stated about the reverse direction or about kinds not linked by these rules.

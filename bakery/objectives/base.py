@@ -68,6 +68,19 @@ def _sup_pred_logprobs(logits, sup_mask):
     return F.log_softmax(chosen.float(), dim=-1)
 
 
+def _sup_target_ids(input_ids, sup_mask):
+    """Target token ids aligned 1:1 (same order) with `_sup_pred_logprobs(_, sup_mask)`.
+
+    A supervised token at position p is predicted by the logit at p-1; `_sup_pred_logprobs`
+    selects those logits with `sup_mask[:, 1:]`. The matching *target* is the token at p, i.e.
+    `input_ids[:, 1:]` under the SAME mask. Defining it here (next to the log-prob selector)
+    keeps the one logit->token shift in a single place, so SFT cross-entropy reuses it instead
+    of re-rolling the shift.
+    """
+    sel = sup_mask[:, 1:]               # [B, L-1] bool, aligned to input_ids[:, 1:]
+    return input_ids[:, 1:][sel]        # [N_sup] target token ids, same row-major order
+
+
 def supervised_kl_terms(bundle, batch, *, base_with_adapter=False, device="cpu"):
     """Per-supervised-token KL( teacher ‖ student ), returned as a 1-D tensor [N_sup].
 
@@ -90,7 +103,14 @@ def supervised_kl_terms(bundle, batch, *, base_with_adapter=False, device="cpu")
     teacher_ctx = bundle.baked if base_with_adapter else bundle.base
     with torch.no_grad():
         with teacher_ctx() as m:
+            # The teacher is a FIXED target. Force eval mode for its forward so a non-zero
+            # lora_dropout (or any train-mode stochasticity) cannot inject noise into the target;
+            # restore the prior mode so the student trains normally.
+            was_training = m.training
+            m.eval()
             teacher_logits = m(input_ids=base_ids, attention_mask=base_attn).logits
+            if was_training:
+                m.train()
     with bundle.baked() as m:
         student_logits = m(input_ids=baked_ids, attention_mask=baked_attn).logits
 

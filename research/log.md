@@ -275,3 +275,106 @@ Session 2 hardened and then CORRECTED the session-1 picture:
 as the narrative arc (correction-bannered). **Open for next session:** re-score size/type sweeps under the
 robust metric; characterize WHEN baking fails the converse (more chains; teacher-generation correlation);
 controlled model-scale sweep; knowledge-baking sequential composition (agenda #2). Resume with /research-loop.
+
+---
+
+## 2026-06-06 (S3) — Grokking the converse + the ~/Invertibility bridge (E1 launched)
+
+User directive: go deeper on (1) grokking-like behavior (loss plateaus, model still needs more time) and
+(2) baking's converse failure — connecting to the sister project ~/Invertibility, where a transformer learns
+the INVERSE map only with (a) grokking (long training past the loss plateau; transient/regularization-driven)
+and (b) PATH/compositional training (sequences composing forward+inverse edges), under zero contamination —
+and the reversal curse scales with coverage density, NOT capacity. Treat that as the toy-model theory; test
+transfer to fact-baking on a pretrained 8B. New questions: [[q-grokking-converse-via-longer-training]]
+(active), [[q-sft-vs-bake-reversal-curse]] (open).
+
+- **Built (gate green — 42 fast tests incl. 4 new SFT + per-form metric tests):**
+  - `sft` objective (`bakery/objectives/sft.py`): plain CE on the supervised span via the audited shift
+    (`_sup_target_ids` added next to `_sup_pred_logprobs` so the logit->token shift stays in ONE place) — a
+    matched prompting/SFT/baking comparison; never touches the gate or KL primitive.
+  - per-form accuracy in the `propagation` metric: `{forward,converse,negation}_acc_{prior,prompted,baked}`,
+    auto-logged per eval step (MetricResult.extra -> metrics.json) → grokking curves for free.
+  - `analysis/plot_grokking.py` (JSON-only); Veld probes backfilled with a `form` field; matched
+    `data/contexts/veld_directional_contexts.json` (forward/converse/path types for E2).
+- **E1 launched (8B, both GPUs, ~20GB each):** bake_fact Veld 8B, 1200 epochs (vs prior 15-40), eval_period
+  15, save_every 300, trajectory=mixed, batch_size 2 grad_accum 2 (batch 4 OOMs on the long Veld prompt).
+  Arms: e1a wd=0 (GPU0), e1b wd=0.05 (GPU1). Per-run /tmp BAKERY_RUN_LOG ledgers (merge at finding-time).
+  Watching propagation.converse_acc_baked vs eval_kl for a LATE (grokking) converse transition.
+- **Queued (when a GPU frees):** E2 (trajectory type forward/converse/path at long training), E4 (SFT vs
+  bake vs prompt) + a teacher-generation audit of the directional contexts; expand chains for fact-generality.
+
+---
+
+## 2026-06-06 (S3b) — Critical review → contamination guard + a propagation-distance redesign
+
+A step-by-step code audit (user-requested) found the CORE baking code correct (logit/shift matching,
+KL direction, LoRA toggling, prompt formatting, SFT = genuine one-hot baking all verified), but two
+design flaws in the experiments I'd set up: (1) **train/test contamination was unguarded** — the held-out
+probe bank never passed through the gate, and `veld_directional_contexts.json` mirrored held-out converse
+probes verbatim; (2) **propagation distance was ill-defined under training-on-samples** — free samples
+chain, so they state the n-hop answer and baking just recalls it.
+
+Redesign (planned + approved):
+- **Criterion F contamination guard** (`bakery/trajectories/contamination.py`, wired into the gate as a
+  pluggable `contamination_validator`): an atomic-source FILTER (drop continuations stating a composed/reverse
+  relation) + a direction-aware stated/held_out LABELER; HARD-FAILS if an `expect_heldout` probe is leaked.
+- **Propagation distance defined properly**: source = atomic links only (matched for prompt & bake);
+  distance d = composition steps beyond the source; report accuracy vs d on HELD-OUT probes (genuine) AND
+  coverage-stratified. Metric emits `forward_acc_{state}_heldout_d{d}` + `propagation_distance_{state}`.
+- **Grix clean chain** (6 links, 47 entity/form/distance-tagged probes, atomic-link source); contaminated
+  `veld_directional_contexts.json` removed. SFT stays one-hot. Teacher forward forced eval-mode (determinism).
+- Gate stays green: **59 fast tests** (16 new contamination + distance-stratified metric) + smoke.
+
+**E1 preempted (ran to epoch 360 before the kill; user OK'd freeing both GPUs for the clean grix experiment).**
+Analyzed (figs `_fig_grok_e1a.png`, `_fig_grok_e1b.png`, `_fig_grok_converse_wd.png`):
+- The grokking SHAPE is real: `eval_kl` plateaus (~0.047) and forward saturates (1.0) by ~epoch 45-60, but
+  `converse_acc_baked` stays ~0 until ~epoch 135, then rises to ~0.8 around epoch 150-165 — ~100 epochs after
+  the loss flatlined. wd=0.05 STABILIZES it (flat 0.8, epoch 180-360); wd=0 is noisy (0.8 w/ dips to 0.2-0.4).
+- BUT per-probe inspection KILLS the naive "baking learns the converse" reading: the PRIOR already rejects all
+  5 Veld converses at high confidence (acc 1.0, beliefs +2.6..+3.75 — the base model defaults to "No" on
+  universal claims about fictional entities). Baking ERODES this (baked beliefs +1.1..+2.8, all far below prior;
+  short-training flips them to Yes = the over-affirmation). The 0→0.8 "grokking" is RECOVERY toward the prior,
+  not learning; belief-SHIFT shows baking persistently DAMAGES the converse at epoch 360. Prompting also drops
+  the prior's 1.0 to 0.8, failing the SAME probe ("is every Wexil a Plonk?", prompted -1.00).
+- Lesson (again): print per-probe before trusting an aggregate; converse-accuracy is prior-confounded.
+  Forward propagation distance (grix, prior~0) is the clean headline; report converse as SHIFT-from-prior with
+  the prior baseline explicit. Runs: e1a-veld8b-long-wd0, e1b-veld8b-long-wd05 (stopped @360/1200).
+
+- **Launched:** grix-int-1b (integration: validate the atomic filter + contamination labeling + distance
+  metric live). **Next:** 8B grix E2 — prior/prompted/soft-bake/one-hot-SFT, controlled-atomic + free source,
+  distance curves across epochs.
+
+---
+
+## 2026-06-06 (S3c) — Rigor upgrade: n-hop propagation as a Hilbert-style proof system + d′
+
+User asked to make the task and eval rigorous: frame n-hop reasoning as PROPOSITIONAL LOGIC (axioms +
+modus ponens; **proof depth = hop**), add DEPTH-MATCHED true/false probes so a trivial Yes/No responder
+scores at chance, and evaluate with SIGNAL DETECTION so discrimination is separated from response bias
+(the prior-confound + yes-saturation found in S3b). Built (gate green — **92 fast tests** + smoke):
+
+- **Proof substrate** `bakery/logic/{world,proof_engine}.py`: definite-implication DAG; `proof_depth` =
+  shortest path = #modus-ponens steps. SELF-TEST cross-checks BFS forward-chaining vs an independent
+  Floyd–Warshall oracle on provability AND minimal depth for every pair of 20 random worlds.
+- **Dataset generator** `scripts/make_logic_world.py`: 4 disjoint-vocabulary worlds (`lw_alpha`..`lw_delta`,
+  ~30 atoms, depths 1–6, balanced true/false per depth). Three engine-VERIFIED negative types — converse,
+  cross-component, and missing-final-edge (strongest: real prefix path, one absent terminal edge). All
+  280 probes label-checked, 0 errors.
+- **DAG contamination guard** `bakery/trajectories/contamination_dag.py`: direction-aware FILTER + LABELER
+  (keeps only forward taught edges; a REVERSED statement is dropped — caught by the 8B sanity run, which
+  hard-failed the gate until the filter became direction-aware). `assert_probe_schema_and_balance` hard-fails
+  one-sided depth cells under the atomic source. Wired into the gate via `world_spec` (no new builder).
+- **`dprime` metric** `bakery/eval/metrics/dprime.py`: per depth × state × neg_type → hit/FA/d′/criterion/
+  bacc/AUROC; `prop_distance_dprime`. Φ⁻¹ via Acklam (no scipy). KEY test: a pure yes-bias → d′≈0 even at
+  "accuracy" 1.0. Plots `analysis/plot_dprime.py` (dprime/roc/criterion/negtype/grokking; JSON-only).
+- Experiment `bake_logic` (primary world `lw_alpha`, atomic source, metrics eval_kl+propagation+dprime).
+
+**8B sanity (`lw-alpha-sanity-8b`, 6 ep) — instrument validated:** gate passes (n_stated=5 = the d=1 atomic
+links, n_held_out=65, 0 stated on converse/cross/missing); yield 115 train traj; **prior d′≈0 at all depths**
+(base model can't discriminate — prior-confound rendered harmless); **prompted d′ propagates ~2 hops single-pass**
+(d1=d2≈1.47 → d3+≈0, prop_distance=2); baked d′=0 at 6 ep (grokking is the long-run question).
+
+**Launched (8B, lw_alpha, 1000 ep, identical cached trajectories):** `lw-alpha-bake-8b` (soft-bake, GPU1),
+`lw-alpha-sft-8b` (one-hot, GPU0, auto-start after grix-free). **Next:** 3 generalization worlds × {bake,sft}
+for cross-world CIs, then d′-vs-depth / grokking / soft-vs-one-hot analysis + finding. NOTE: 6 pre-existing
+legacy metrics lack tests (out of scope; flagged for a cleanup pass).

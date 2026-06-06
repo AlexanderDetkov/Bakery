@@ -50,7 +50,8 @@ def make_traj(x0_id, gen, base_prefix=(5, 6), baked_prefix=(7,)) -> FramedTrajec
 
 
 def gate(train, eval_, *, tok=DEFAULT_TOK, ckpt=DEFAULT_CKPT, spec=None,
-         gen_ckpt=None, gen_tok=None, requires_pairing=False, pairing_validator=None):
+         gen_ckpt=None, gen_tok=None, requires_pairing=False, pairing_validator=None,
+         contamination_validator=None):
     """Thin wrapper around run_validation_gate for tests."""
     spec = spec or make_spec()
     return run_validation_gate(
@@ -58,6 +59,7 @@ def gate(train, eval_, *, tok=DEFAULT_TOK, ckpt=DEFAULT_CKPT, spec=None,
         tokenizer_fingerprint=tok, base_checkpoint_id=ckpt, builder_name="stub",
         config_snapshot={}, seeds=SeedBundle(0, 0, 0), prompts={"base_u": "u", "baked": ""},
         pairing_validator=pairing_validator, requires_pairing=requires_pairing,
+        contamination_validator=contamination_validator,
         generation_checkpoint_id=gen_ckpt if gen_ckpt is not None else ckpt,
         generation_tokenizer_fp=gen_tok if gen_tok is not None else tok,
     )

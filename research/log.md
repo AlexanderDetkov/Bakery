@@ -101,3 +101,23 @@ medium):
 [[q-propagation-deductive-chain]]; **promoted** [[q-propagation-cot-confound]] to HIGH (the definitive
 internal-vs-chaining test — the user's central CoT question — is the clear cycle-4 pick). Fig:
 results/bake_fact/_fig_veld_depth.png. **Both GPUs:** GPU0 1B, GPU1 8B concurrently.
+
+---
+
+## Cycle 4 — 2026-06-06 — CoT vs no-CoT control (the user's central question) — readout was ARTIFACTUAL
+**Question:** [[q-propagation-cot-confound]] (active). Built `bakery/eval/cot_probe.py` (CoT readout reusing
+the cycle-3 Veld adapters — NO re-bake): generate a rationale, then score Yes/No after a "Final answer:" cue.
+Ran 8B + 1B.
+**Verification (2 skeptics) + a cue-only ablation caught a fatal flaw → finding
+[[cot-cue-scoring-is-artifactual]] (inconclusive / methodological, high confidence in the diagnosis):**
+- The cue-only ablation (zero rationale) reproduces the apparent CoT "deflation": forward-entail prompted
+  no-CoT +10.42 → cue-only +1.42; the rule-VERBATIM hop-0 probe +14.3 → cue-only +2.5 (~12-nat collapse with
+  ZERO reasoning). So the cue+single-token scoring, not reasoning, drives the effect.
+- ⇒ CoT-vs-no-CoT absolute comparison is INVALID; the CoT question is still OPEN.
+- Salvageable (weak): rationale-delta (full-CoT − cue-only) baked +2.57 > prompted +1.06 > prior −1.28
+  (reasoning helps baked slightly more), and CoT does NOT repair baking's converse deficit (persists/grows) —
+  both n-noisy, demoted.
+- The no-CoT cycle-3 result ([[baking-is-associative-prompting-is-directional]]) is UNAFFECTED.
+**Code (gate green, 37):** cot_probe.py now supports `--max_cot_tokens 0` (cue-only ablation) + persists
+rationales. **Methodological lesson:** parse Yes/No from FREE generation + always run a cue-only ablation.
+CoT question stays ACTIVE with the corrected design for cycle 5. **Both GPUs** used (1B GPU0, 8B GPU1).

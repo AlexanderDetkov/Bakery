@@ -11,7 +11,7 @@ prior vs prompted vs baked, all on ONE checkpoint). Assets: `data/prompts/tsunam
 `data/contexts/tsunami_contexts.json`, `data/probes/tsunami_probes.json`.
 
 ## Open questions
-- [[q-propagation-cot-confound]] — open (HIGH) — CoT vs no-CoT on the Veld chain: does CoT rescue baked/1B failures? (cycle-3 follow-up; the user's central CoT question)
+- [[q-propagation-cot-confound]] — ACTIVE (high) — CoT vs no-CoT: cycle-4 readout was artifactual (cue bias); REDESIGN with free-generation answer parsing + self-consistency. The user's central CoT question, still open.
 - [[q-propagation-trajectory-type]] — open (high) — does context TYPE shape the curve? (cycle-1: on/off-topic GATE confirmed; finer ordering needs count+convergence match)
 - [[q-propagation-hardening]] — open (high) — is C1 (gap grows with hops) real with CIs across facts/seeds? (≥2 facts, ≥3 seeds, ≥12 probes/hop, fix degenerate h3 probes)
 - [[q-propagation-trajectory-size]] — open (medium) — cycle-2 first attempt inconclusive/confounded; needs matched-steps + multi-seed re-run
@@ -25,6 +25,7 @@ prior vs prompted vs baked, all on ONE checkpoint). Assets: `data/prompts/tsunam
 - [[propagation-bounded-by-trajectory-coverage]] — **baking only injects what the trajectories exercise; eval_kl ⟂ propagation** (C3 confirmed high; on/off-topic gate robust; C1/C4 suggestive single-run). Runs: prop-tsunami-{1b,8b}-mixed, prop-tsunami-1b-{restate,consequence,neutral}-m12.
 - [[size-helps-fidelity-not-the-propagation-gap]] — **more trajectories lower eval_kl but don't close the prompting–baking gap; eval_kl converges BEFORE belief does** (size→propagation scaling inconclusive: steps-confound + n=4 noise + propagation under-converged at 20 ep). Runs: prop-size-tpc{1,4,8,16}-1b. Figs: results/bake_fact/_fig_by_size.png.
 - [[baking-is-associative-prompting-is-directional]] — **baking installs an UNDIRECTED/associative chain (affirms the false converse, −4.75); prompting preserves logical direction (−0.01); 1B propagation weak even prompted** (zero-prior Veld syllogism, no-CoT). Runs: prop-veld-{8b,1b}-mixed. Fig: results/bake_fact/_fig_veld_depth.png.
+- [[cot-cue-scoring-is-artifactual]] — **the cycle-4 CoT readout was artifactual** (a cue-only ablation reproduced the "deflation"; rule-verbatim probe +14.3→+2.5 with zero reasoning) → CoT comparison inconclusive; no-CoT results unaffected. Methodological lesson: parse Yes/No from free generation, always run a cue-only ablation.
 
 ## Decisions
 _(none yet)_

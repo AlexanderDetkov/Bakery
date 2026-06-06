@@ -11,8 +11,9 @@ prior vs prompted vs baked, all on ONE checkpoint). Assets: `data/prompts/tsunam
 `data/contexts/tsunami_contexts.json`, `data/probes/tsunami_probes.json`.
 
 ## Open questions
-- [[q-fix-converse-stronger]] — open (high) — can explicit-directional u OR trajectory-filtering install converse-rejection? (isolates teacher-signal vs LoRA limit)
-- [[q-propagation-hardening]] — active (high) — are the per-hop/converse magnitudes real with CIs across facts/seeds? (≥2 facts, ≥3 seeds, ≥12 probes/hop, fix degenerate h3 probes)
+- [[q-propagation-hardening]] — active (high) — remaining: ≥12 probes/depth, the C1 per-hop decay; re-read magnitudes under the fixed metric
+- [[q-propagation-model-scale]] — open (medium); [[q-propagation-trajectory-size]] — open (medium)
+- Follow-up: re-measure all conditions under the tokenization-FIXED metric; arm (b) trajectory-filtering — are the per-hop/converse magnitudes real with CIs across facts/seeds? (≥2 facts, ≥3 seeds, ≥12 probes/hop, fix degenerate h3 probes)
 - [[q-propagation-trajectory-size]] — open (medium) — cycle-2 inconclusive/confounded; needs matched-steps + multi-seed re-run
 - [[q-propagation-model-scale]] — open (medium) — controlled one-family size sweep (matched LoRA params, normalized retention)
 
@@ -22,6 +23,7 @@ prior vs prompted vs baked, all on ONE checkpoint). Assets: `data/prompts/tsunam
 - [[q-propagation-cot-confound]] — resolved (cycle 5) → [[cot-chains-baked-rules-but-not-the-converse]] (corrected free-gen readout)
 - [[q-propagation-trajectory-type]] — resolved (cycle 6) → [[trajectory-type-is-a-binary-coverage-gate]]
 - [[q-fix-converse-via-contrastive-trajectories]] — resolved (S2c3) → [[contrastive-trajectories-do-not-fix-the-converse]]
+- [[q-fix-converse-stronger]] — resolved (S2c4) → [[tokenization-artifact-corrected-prompting-is-directional]] (u' doesn't fix baked converse = real LoRA limit; + metric artifact found & fixed)
 
 ## ⭐ Capstone
 - [[SYNTHESIS-baking-vs-prompting-propagation]] — the full answer (cycles 1–6): baking transfers an ASSOCIATIVE SHADOW of the prompted model over the trajectory distribution.
@@ -32,6 +34,7 @@ prior vs prompted vs baked, all on ONE checkpoint). Assets: `data/prompts/tsunam
 - [[baking-is-associative-prompting-is-directional]] — **baking installs an UNDIRECTED/associative chain (affirms the false converse, −4.75); prompting preserves logical direction (−0.01); 1B propagation weak even prompted** (zero-prior Veld syllogism, no-CoT). Runs: prop-veld-{8b,1b}-mixed. Fig: results/bake_fact/_fig_veld_depth.png.
 - [[cot-cue-scoring-is-artifactual]] — **the cycle-4 CoT readout was artifactual** (a cue-only ablation reproduced the "deflation"; rule-verbatim probe +14.3→+2.5 with zero reasoning) → CoT comparison inconclusive; no-CoT results unaffected. Methodological lesson: parse Yes/No from free generation, always run a cue-only ablation.
 - [[cot-chains-baked-rules-but-not-the-converse]] — **single-pass baking = all-"Yes" saturation (no discrimination); CoT forward-chains the installed rules (0.50→~0.75) but hallucinates REVERSED rules on the converse** (corrected free-gen readout). Runs: prop-veld-{8b,1b}-mixed. NB: the verification panel itself made a converse sign error — caught by per-probe inspection.
+- [[tokenization-artifact-corrected-prompting-is-directional]] — ⚠️**metric fix:** scoring " Yes"/" No" (space) under-credited the no-space "No" token → hid that **PROMPTING rejects the converse (4/5 generated) while baking affirms (0/5)**. Corrected thesis is cleaner (prompting directional, baking direction-blind; yes-saturation is baking-specific). `_answer_logprob` fix applied. Runs: prop-veld-8b-mixed, prop-veldD-{8b,1b}.
 - [[contrastive-trajectories-do-not-fix-the-converse]] — **contrastive trajectories do NOT fix baking's converse (rejection 0.00, fracYes 1.0, both arms)** — because the base+u TEACHER itself generates converse-affirmation; baking inherits the teacher's GENERATIVE bias. Prescription: fix the teacher, not just the eliciting prompts. Runs: prop-veld{C,M}-{8b,1b}.
 - [[yes-saturation-is-fact-general-converse-amplification-is-not]] — **single-pass yes-saturation is FACT-GENERAL (2 chains): fracYes≈1.0 → forward-correct, converse-wrong; the −4.75 Veld converse number was chain-specific.** Recasts the headline mechanism. Runs: prop-tellus-{8b,1b}-mixed{,-s1} + Veld.
 - [[veld-findings-replicate-across-seeds]] — **the Veld findings replicate tightly across 3 seeds** (8B converse −7.00±0.27; fracYes≈1.0; forward<prompting) → upgrades confidence of the associative/converse + yes-saturation results. ≥2 facts still TODO. Runs: prop-veld-{1b,8b}-mixed{,-s1,-s2}.

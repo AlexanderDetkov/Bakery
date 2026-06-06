@@ -25,6 +25,7 @@ enters the KL or the gate.
 from __future__ import annotations
 
 import json
+import math
 from collections import defaultdict
 from pathlib import Path
 
@@ -32,6 +33,25 @@ import torch
 
 from bakery.eval.registry import EvalContext, MetricResult, register_metric
 from bakery.prompts import build_prefix_ids
+
+
+def _answer_logprob(model, tokenizer, prefix_ids, answer_text, device) -> float:
+    """Tokenization-robust answer log-prob: logsumexp over leading-space/no-space variants.
+
+    Chat models emit the FIRST assistant token without a leading space (e.g. "No" = a different
+    token id than " No"), so scoring only " Yes"/" No" systematically under-credits the model's
+    real answer (especially "No") and inflates apparent yes-affirmation. Aggregating the space and
+    no-space variants makes belief = logP(pos)-logP(neg) match the model's actual generated answer.
+    """
+    variants, seen = [], set()
+    for v in (answer_text, answer_text.strip(), " " + answer_text.strip()):
+        ids = tuple(tokenizer(v, add_special_tokens=False).input_ids)
+        if ids and ids not in seen:
+            seen.add(ids)
+            variants.append(v)
+    lps = [_seq_logprob(model, tokenizer, prefix_ids, v, device) for v in variants]
+    m = max(lps)
+    return m + math.log(sum(math.exp(x - m) for x in lps))
 
 
 def _seq_logprob(model, tokenizer, prefix_ids, answer_text, device) -> float:
@@ -58,8 +78,8 @@ def _belief_per_probe(bundle, probes, system_text, ctx_mgr, device) -> list:
         with ctx_mgr() as model:
             for pr in probes:
                 prefix = build_prefix_ids(tok, system_text, pr["question"])
-                lp_pos = _seq_logprob(model, tok, prefix, pr["pos"], device)
-                lp_neg = _seq_logprob(model, tok, prefix, pr["neg"], device)
+                lp_pos = _answer_logprob(model, tok, prefix, pr["pos"], device)
+                lp_neg = _answer_logprob(model, tok, prefix, pr["neg"], device)
                 out.append(lp_pos - lp_neg)
     return out
 

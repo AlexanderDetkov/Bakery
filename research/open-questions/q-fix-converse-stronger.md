@@ -1,7 +1,8 @@
 ---
 title: Can a STRONGER intervention (explicit-directional u, or trajectory filtering) install converse-rejection via baking?
-status: open
+status: resolved        # arm (a) decisive: explicit-directional u' does NOT fix the baked converse (real LoRA/distillation limit); + a metric artifact corrected
 priority: high
+links_finding: [[tokenization-artifact-corrected-prompting-is-directional]]
 created: 2026-06-06
 hypothesis: Contrastive elicitation failed because the teacher (base+u) itself generates converse-affirmation, so trajectories carry little clean rejection signal ([[contrastive-trajectories-do-not-fix-the-converse]]). A stronger teacher signal — u that EXPLICITLY states one-directionality ("the converse is false"), or FILTERING sampled trajectories to only converse-rejecting ones before baking — should give the adapter a clean rejection signal. If the baked converse STILL doesn't flip, direction-blindness is a LoRA/objective limit, not a teacher-signal limit.
 acceptance_criteria: "Two arms: (a) u' = veld chain + explicit 'these rules are one-directional; the converse does NOT hold'; (b) filter sampled trajectories to those containing converse-rejection, then bake. Measure baked converse correct-rejection rate + fracYes vs the cycle-3 baselines. DECISIVE if either arm raises baked converse rejection materially above 0 — isolating 'teacher signal' from 'LoRA limit'."

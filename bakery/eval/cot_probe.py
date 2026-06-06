@@ -33,7 +33,7 @@ from pathlib import Path
 
 import torch
 
-from bakery.eval.metrics.propagation import _seq_logprob
+from bakery.eval.metrics.propagation import _answer_logprob, _seq_logprob
 from bakery.prompts import build_prefix_ids, load_prompt
 
 CUE = "\nFinal answer (Yes or No):"
@@ -53,8 +53,8 @@ def _parse_yesno(text: str):
 
 def _noCoT_belief(model, tok, system_text, pr, device) -> float:
     prefix = build_prefix_ids(tok, system_text, pr["question"])
-    return (_seq_logprob(model, tok, prefix, pr["pos"], device)
-            - _seq_logprob(model, tok, prefix, pr["neg"], device))
+    return (_answer_logprob(model, tok, prefix, pr["pos"], device)
+            - _answer_logprob(model, tok, prefix, pr["neg"], device))
 
 
 # ----- mode=belief (CoT belief after a cue; --max_cot_tokens 0 = cue-only ablation) ----------------

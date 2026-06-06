@@ -222,3 +222,21 @@ the baked converse? Launching 4 bakes.
 - Refines coverage principle: baking is bounded by what the TEACHER GENERATES, not what contexts invite.
 - Resolved [[q-fix-converse-via-contrastive-trajectories]]; enqueued [[q-fix-converse-stronger]] (explicit-
   directional u / trajectory filtering — isolates teacher-signal vs LoRA limit).
+
+## S2 Cycle 4 — 2026-06-06 — explicit-directional u' (q-fix-converse-stronger, arm a): teacher-signal vs LoRA limit
+u' = Veld chain + explicit "rules are ONE-DIRECTIONAL; the converse never holds". Bake over mixed (12 ctx,
+8 traj/ctx, 30 ep), 8B+1B; compare baked converse to the cycle-3 veldM baseline (plain u: 8B converse −6.54,
+rejection 0.00). If base+u' teacher now rejects converse but baked STILL affirms → LoRA/objective limit;
+if baked converse flips → it was a teacher-signal problem. Launching prop-veldD-{8b,1b}.
+
+**Result (S2 c4):** explicit-directional u' bakes (8B,1B) completed. Two findings:
+(1) [[tokenization-artifact-corrected-prompting-is-directional]] (positive, HIGH) — DISCOVERED a tokenization
+artifact: the no-CoT belief scored " Yes"/" No" (ids 7566/2360) but chat models emit "Yes"/"No" (9642/2822) as
+the first assistant token → under-credited "No". Validated against GENERATED answers: prompted REJECTS the
+converse (4/5 generated; old metric hid this), baked AFFIRMS (0/5). Corrects the "prompting also yes-saturates/
+fails converse" sub-claims (artifact); baked + forward results stand. Sharpens thesis: prompting directional,
+baking direction-blind; yes-saturation is BAKING-specific. Fixed propagation.py (`_answer_logprob`, logsumexp
+over space/no-space variants); gate green.
+(2) explicit-directional u' did NOT fix the baked converse (still 0/5 generated, fracYes 1.0) though base+u'
+rejects it → baking direction-blindness is a real LoRA/distillation limit, not a signal/coverage/metric issue.
+Resolved [[q-fix-converse-stronger]]. Follow-up: re-read prior belief magnitudes under the fixed metric.

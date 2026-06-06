@@ -54,6 +54,23 @@ and in a single forward pass it collapses toward undiscriminated affirmation.**
 5. **Capacity-gated internally.** A 1B model shows little single-pass propagation even when prompted; CoT
    rescues it (chance → ~0.75) — internal multi-hop propagation needs scale, CoT-chained propagation needs less.
 
+## SESSION-2 UPDATE — sharpened thesis + a corrected instrument
+Multi-seed + multi-fact hardening and a metric-artifact fix
+([[veld-findings-replicate-across-seeds]], [[yes-saturation-is-fact-general-converse-amplification-is-not]],
+[[contrastive-trajectories-do-not-fix-the-converse]], [[tokenization-artifact-corrected-prompting-is-directional]]):
+- The central mechanism is **single-pass yes-saturation**, seed-robust and fact-general (2 chains): baking drives
+  the unprompted model to affirm ~everything chain-related → forward-correct, converse-wrong.
+- A TOKENIZATION ARTIFACT (scoring " Yes"/" No" with a leading space, but chat models emit "Yes"/"No" without
+  one) had hidden that **PROMPTING actually REJECTS the converse** (4/5 generated) while baking affirms it
+  (0/5). Corrected (tokenization-robust scoring, matched to generated answers), the prompting-vs-baking
+  contrast is CLEANER: prompting is directional, baking is direction-blind; "yes-saturation" is BAKING-specific,
+  not a property of the prompted model.
+- Baking's direction-blindness is NOT fixed by contrastive trajectories NOR by an explicit-directional u'
+  (the teacher rejects the converse but the baked adapter still affirms it) → a genuine LoRA/distillation
+  limit of copying single-pass behavior, not merely a coverage/metric issue.
+- Headline metric fixed in `propagation.py` (`_answer_logprob`, tokenization-robust); prior belief-based
+  magnitudes for converse / prompted-yes-saturation should be re-read (qualitative corrections already established).
+
 ## Cross-cutting methodological lessons
 - eval_kl is necessary but INSUFFICIENT as a baking success criterion — pair it with held-out propagation probes.
 - Forced-choice belief metrics carry a large yes-bias → use polarity-balanced probes, split by logical form

@@ -1,7 +1,8 @@
 ---
 title: Does the TYPE of trajectory (what contexts elicit) control how far a baked fact propagates?
-status: open
+status: resolved        # cycle 6: gate confirmed with CIs at matched count+convergence; restate≈consequence (finer ordering refuted)
 priority: high
+links_finding: [[trajectory-type-is-a-binary-coverage-gate]]
 created: 2026-06-06
 hypothesis: Propagation is bounded by what the trajectory distribution exercises. Baking over "restate" contexts (which only elicit the bare fact) injects the 0-hop fact but little else; baking over "consequence/reasoning" contexts (which elicit the model to discuss downstream implications) propagates further to higher hops; baking over "neutral" contexts (generic QA where the fact never comes up) injects almost nothing. I.e. propagation depth tracks the deepest hop the trajectories touch.
 acceptance_criteria: "Hold trajectory COUNT *and* convergence (matched eval_kl plateau or matched supervised-token budget) fixed; vary category in {restate, consequence, neutral, mixed}. DECISIVE if the on-topic vs off-topic gap survives count+convergence matching with bootstrap CIs over probes that exclude 0, AND we can (or cannot) separate restate vs consequence at high hops once convergence is matched."

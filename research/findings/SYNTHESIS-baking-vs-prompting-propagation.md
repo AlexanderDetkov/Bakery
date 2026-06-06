@@ -1,0 +1,78 @@
+---
+title: SYNTHESIS — how prompt baking differs from prompting in knowledge propagation (cycles 1–6)
+outcome: positive
+confidence: medium          # coherent arc; most claims medium-confidence pending the enqueued hardening
+created: 2026-06-06
+question: [[q-propagation-prompt-vs-bake]]
+metric: propagation
+run_ids: [prop-tsunami-1b-r16-mixed, prop-tsunami-8b-r16-mixed, prop-veld-8b-mixed, prop-veld-1b-mixed, prop-size-tpc8-1b]
+---
+
+## The question
+Inject a new fact (or "theorem") either by PROMPTING (fact in context) or by BAKING it into LoRA weights,
+then ask questions "n reasoning hops" away. How far does the update propagate — and how does that differ
+between prompting and baking, and depend on the trajectories? Confound to avoid: chain-of-thought can fake
+propagation by chaining one-hop steps, testing reasoning rather than internalization.
+
+## The instrument we built
+A no-CoT forced-choice **belief readout**: for a probe q with the logically-correct answer `pos` and contrast
+`neg`, belief = logP(pos|q) − logP(neg|q) in ONE forward pass (so it CANNOT be reached by CoT). Computed for
+THREE states on the SAME checkpoint (paired, full-vocab): prior = base+empty, prompted = base+u, baked =
+adapter+empty; propagation = belief shift vs prior. Plus: a categorized trajectory builder (TYPE knob), a
+zero-prior synthetic entailment chain (clean "deductive depth = hops", no saturation), per-probe logging
+(bootstrap CIs + logical-form splits), and a corrected free-generation CoT readout (parse Yes/No + self-
+consistency). Everything is gate-validated; analysis reads JSON only. (`bake_fact` experiment,
+`fact_propagation` builder, `propagation` metric, `bakery/eval/cot_probe.py`.)
+
+## The answer (synthesis of 5 findings)
+**Baking transfers an ASSOCIATIVE SHADOW of the prompted model's behavior over the trajectory distribution —
+it propagates a fact's consequences only insofar as (a) the trajectories exercise them and (b) they are
+reachable by forward association; it does NOT transfer the prompted model's directional/logical structure,
+and in a single forward pass it collapses toward undiscriminated affirmation.**
+
+1. **Bounded by trajectory coverage; eval_kl ⟂ propagation** ([[propagation-bounded-by-trajectory-coverage]],
+   [[trajectory-type-is-a-binary-coverage-gate]]). Off-topic trajectories inject ~nothing despite the LOWEST
+   eval_kl; on-topic inject the fact. A low distillation loss does NOT certify the fact was learned. At matched
+   count+convergence with CIs, type is a BINARY coverage gate: on-topic (restate/consequence/mixed) all inject
+   ~equally (+1.35, CIs exclude 0), off-topic neutral does not (+0.21, CI includes 0). Coverage is the lever —
+   making trajectories "reasoning-rich" did NOT beat bare on-topic coverage (restate ≈ consequence).
+2. **Associative, not directional** ([[baking-is-associative-prompting-is-directional]]). On a zero-prior
+   syllogism chain, baking raises forward-entailment belief but makes the model AFFIRM the false converse
+   (−4.75, all probes agree), while prompting preserves correct direction (−0.01). Prompting carries logic;
+   baking carries an undirected link.
+3. **Single-pass = yes-saturation; CoT chains forward but not the converse**
+   ([[cot-chains-baked-rules-but-not-the-converse]]). In one pass the baked model answers "Yes" to *everything*
+   chain-related (no discrimination). With CoT it genuinely recites & forward-chains its installed rules
+   (accuracy 0.50→~0.75) — so the consequences ARE reasoning-accessible (the "theorem's consequences emerge"
+   under reasoning) — but it reasons over HALLUCINATED reversed rules on the converse. This both answers the
+   CoT confound (CoT does reach n-hop answers by chaining) and validates the no-CoT readout as the
+   single-pass internal measure.
+4. **Size is a weak lever; propagation converges AFTER eval_kl**
+   ([[size-helps-fidelity-not-the-propagation-gap]]). More trajectories lower eval_kl but don't close the
+   prompting–baking gap; and eval_kl plateaus while belief is still moving (train to propagation convergence).
+5. **Capacity-gated internally.** A 1B model shows little single-pass propagation even when prompted; CoT
+   rescues it (chance → ~0.75) — internal multi-hop propagation needs scale, CoT-chained propagation needs less.
+
+## Cross-cutting methodological lessons
+- eval_kl is necessary but INSUFFICIENT as a baking success criterion — pair it with held-out propagation probes.
+- Forced-choice belief metrics carry a large yes-bias → use polarity-balanced probes, split by logical form
+  (forward / converse / negated), and report accuracy WITH the yes-bias.
+- Train to PROPAGATION convergence, not eval_kl convergence.
+- CoT readouts must parse the answer from free generation (a "final answer" cue is artifactual —
+  [[cot-cue-scoring-is-artifactual]]) and use self-consistency.
+- Print PER-PROBE before trusting any aggregate — or any verifier (an adversarial panel itself made a converse
+  sign error this session, caught only by per-probe inspection).
+
+## Limitations (honest, program-wide)
+Small probe banks (4–6/hop), mostly single-seed / single-fact per condition, 1B/8B not a controlled scale
+sweep, the 8B bakes under-converged on propagation, behavioral (not mechanistic) readouts. The QUALITATIVE
+claims (coverage-bound, associative-vs-directional, yes-saturation, CoT-forward-not-converse) are robust and
+mutually consistent; the QUANTITATIVE magnitudes and per-hop curves are suggestive pending hardening.
+
+## Settled vs open
+Settled (this session): the instrument; the eval_kl⟂propagation decoupling; the on/off-topic gate; the
+associative-vs-directional distinction; the single-pass-yes-saturation + CoT-forward-chaining picture.
+Open (enqueued): [[q-propagation-trajectory-type]] (clean matched type sweep — cycle 6), [[q-propagation-hardening]]
+(≥3 seeds, ≥2 facts, ≥12 probes/hop, CIs), [[q-propagation-model-scale]] (controlled one-family size sweep),
+[[q-propagation-trajectory-size]] (matched-steps re-run). Knowledge-baking sequential composition (agenda #2)
+remains untouched.

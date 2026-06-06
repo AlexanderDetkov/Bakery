@@ -142,3 +142,28 @@ is what's load-bearing for the CoT-chaining claims. Finding [[cot-chains-baked-r
 **Code (gate green, 37):** cot_probe.py gained `--mode freegen` (self-consistency + Yes/No parsing).
 **Methodological lessons:** report accuracy WITH the yes-bias; split forward/converse/negated; print
 per-probe before trusting any aggregate — *or any verifier*. **Both GPUs** used (1B GPU0, 8B GPU1).
+
+---
+
+## Cycle 6 (FINAL — 6/6 budget) — 2026-06-06 — matched trajectory-TYPE sweep + session synthesis
+**Question:** [[q-propagation-trajectory-type]] (resolved). The clean version of cycle-1's type sweep, fixing
+both confounds: MATCHED count (56 traj all categories) + MATCHED convergence (40 ep, all eval_kl-plateaued),
+per-probe bootstrap CIs. Tsunami chain, 1B, both GPUs.
+**Finding [[trajectory-type-is-a-binary-coverage-gate]] (positive, medium-high):**
+- mean baked_shift h0–h2: restate +1.38[0.60,2.24], consequence +1.33[0.64,2.12], mixed +1.35[0.80,1.94],
+  neutral +0.21[−0.18,0.65]. On-topic CIs EXCLUDE 0; neutral CI INCLUDES 0.
+- ⇒ type is a BINARY coverage gate (on/off-topic), NOT graded by reasoning-richness (restate ≈ consequence —
+  the "consequence-rich propagates further" sub-hypothesis is REFUTED at this scale). Re-confirms eval_kl⟂prop
+  (neutral lowest eval_kl 0.009 yet ~0 injection). Baking (~+1.35) still << prompting (~+3.4).
+**Wrote the capstone [[SYNTHESIS-baking-vs-prompting-propagation]]** tying cycles 1–6 into one answer:
+*baking transfers an ASSOCIATIVE SHADOW of the prompted model over the trajectory distribution — propagating
+a fact's consequences only insofar as the trajectories cover them and they're reachable by forward
+association; it does not transfer directional/logical structure, and single-pass it collapses to affirmation.*
+
+## SESSION WRAP-UP (6/6 cycles reached → loop halts, no reschedule)
+6 cycles, 6 findings + 1 synthesis, instrument built from scratch (bake_fact / fact_propagation / propagation
+metric / cot_probe), all gated green (make test-fast 37 passing throughout), every result adversarially
+verified before recording (the panels caught a sign error, an overstated quantifier, a cue artifact, an
+undertraining confound, and a self-inflicted verifier sign error — none reached a recorded claim unflagged).
+Open for next session: hardening (CIs/seeds/facts), controlled size & model-scale sweeps, knowledge-baking
+(agenda #2). To resume: re-run /loop or /research-loop; the queue + findings are the durable brain.

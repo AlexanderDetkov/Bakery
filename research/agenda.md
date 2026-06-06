@@ -21,10 +21,8 @@ behavioral equivalence of (baked model, no prompt) vs (base model, prompt `u`) o
 5. Recorded: sampling params (temperature/top_p/top_k/max_new_tokens), seeds, all hyperparameters.
 
 ## Current focus (priority order)
-1. Single-prompt baking fidelity — does `eval_kl → low` hold on held-out contexts, and at what LoRA rank / lr?
-2. Pursuit (iterative re-generation) — does it reach lower achievable `eval_kl` than one-shot baking?
-3. Knowledge baking (sequential composition) — does baking `u1` then `u2` retain `u1`?
-4. Half-baking / re-prompting — partial-strength baking and its dynamics.
+1. How prompt baking differs from prompting and its dependence on trajectories and prompt?
+2. Knowledge baking (sequential composition) — does baking `u1` then `u2` retain `u1`?
 
 ## Guardrails for the loop
 Gate-only trajectories (via a registered builder's `build()`); never hand-construct the frozen

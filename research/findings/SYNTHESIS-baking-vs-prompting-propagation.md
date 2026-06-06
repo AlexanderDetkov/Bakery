@@ -24,7 +24,16 @@ zero-prior synthetic entailment chain (clean "deductive depth = hops", no satura
 consistency). Everything is gate-validated; analysis reads JSON only. (`bake_fact` experiment,
 `fact_propagation` builder, `propagation` metric, `bakery/eval/cot_probe.py`.)
 
-## The answer (synthesis of 5 findings)
+## ⚠️ CORRECTION (S2 c5) — read [[CORRECTED-picture-robust-metric]] first
+After fixing a tokenization artifact in the belief metric and re-scoring against GENERATED answers, the
+"direction-blind / yes-saturation" framing below is SUPERSEDED for the converse. Corrected, generation-validated:
+**baking reliably propagates FORWARD entailments (prior ~0.05 → baked ~0.90, fact-general); its CONVERSE
+reliability is CHAIN-SPECIFIC (fails on Veld 0.00, fine on Tellus 0.80); prompting is fully directional on 8B
+(fwd 0.93 + conv 0.80); the 1B can't propagate single-pass even prompted (0.07, capacity-gated).** The
+forward-propagation, coverage-gate, and eval_kl⟂propagation results stand; the uniform "yes-saturation /
+associative" claim was a metric artifact (1B was actually No-biased; 8B-Tellus baked discriminates).
+
+## The answer (synthesis of 5 findings) — NOTE: converse claims here are corrected above
 **Baking transfers an ASSOCIATIVE SHADOW of the prompted model's behavior over the trajectory distribution —
 it propagates a fact's consequences only insofar as (a) the trajectories exercise them and (b) they are
 reachable by forward association; it does NOT transfer the prompted model's directional/logical structure,

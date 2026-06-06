@@ -240,3 +240,15 @@ over space/no-space variants); gate green.
 (2) explicit-directional u' did NOT fix the baked converse (still 0/5 generated, fracYes 1.0) though base+u'
 rejects it → baking direction-blindness is a real LoRA/distillation limit, not a signal/coverage/metric issue.
 Resolved [[q-fix-converse-stronger]]. Follow-up: re-read prior belief magnitudes under the fixed metric.
+
+**Result (S2 c5):** Re-scored existing adapters (Veld 8B/1B, Tellus 8B) under the tokenization-robust metric
+(no baking; forward passes). Robust accuracy matches GENERATED answers (8B Veld prompted conv 0.80=4/5, baked
+0.00=0/5). Finding [[CORRECTED-picture-robust-metric]] (positive, HIGH) — corrects the artifactual-metric era:
+- baking propagates FORWARD entailments strongly & fact-general (prior 0.0-0.07 → baked 0.87-0.93, both chains).
+- baking CONVERSE is CHAIN-SPECIFIC: Veld baked 0.00 (fails) vs Tellus baked 0.80 (fine, = prompting). NOT
+  uniform direction-blindness.
+- prompting fully directional on 8B (fwd 0.93 + conv 0.80, both chains).
+- 1B can't propagate forward even prompted (0.07) — capacity-gated single-pass (defaults to "No"; its
+  converse-reject 1.00 is just a global No-bias).
+SUPERSEDES the uniform "yes-saturation / associative / direction-blind" claim (metric artifact: 1B was
+No-biased, 8B-Tellus baked discriminates). Forward/coverage/eval_kl⟂prop stand. Synthesis banner + index updated.

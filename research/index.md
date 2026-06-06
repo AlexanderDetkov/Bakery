@@ -25,8 +25,9 @@ prior vs prompted vs baked, all on ONE checkpoint). Assets: `data/prompts/tsunam
 - [[q-fix-converse-via-contrastive-trajectories]] — resolved (S2c3) → [[contrastive-trajectories-do-not-fix-the-converse]]
 - [[q-fix-converse-stronger]] — resolved (S2c4) → [[tokenization-artifact-corrected-prompting-is-directional]] (u' doesn't fix baked converse = real LoRA limit; + metric artifact found & fixed)
 
-## ⭐ Capstone
-- [[SYNTHESIS-baking-vs-prompting-propagation]] — the full answer (cycles 1–6): baking transfers an ASSOCIATIVE SHADOW of the prompted model over the trajectory distribution.
+## ⭐ Capstone (read these two together)
+- [[CORRECTED-picture-robust-metric]] — **the definitive corrected result** (tokenization-robust, generation-validated): baking propagates FORWARD entailments well (fact-general); converse reliability is chain-specific; prompting is directional; 1B capacity-gated single-pass.
+- [[SYNTHESIS-baking-vs-prompting-propagation]] — full narrative arc (cycles 1–6 + S2); has a CORRECTION banner pointing to the above.
 
 ## Findings
 - [[propagation-bounded-by-trajectory-coverage]] — **baking only injects what the trajectories exercise; eval_kl ⟂ propagation** (C3 confirmed high; on/off-topic gate robust; C1/C4 suggestive single-run). Runs: prop-tsunami-{1b,8b}-mixed, prop-tsunami-1b-{restate,consequence,neutral}-m12.

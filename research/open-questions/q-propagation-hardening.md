@@ -1,6 +1,6 @@
 ---
 title: Is the "prompted−baked gap grows with hop distance" pattern real, with CIs, across facts and seeds?
-status: active
+status: open
 priority: high
 created: 2026-06-06
 hypothesis: The cycle-1 C1 pattern (on 8B, baked reproduces prompting at near hops but the fidelity gap grows with hop distance and baked collapses at the far hop) is a genuine propagation-distance effect, not an artifact of far-hop prior saturation, a collapsing teacher signal, single-seed noise, or the one tsunami fact.

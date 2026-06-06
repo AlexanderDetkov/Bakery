@@ -252,3 +252,26 @@ Resolved [[q-fix-converse-stronger]]. Follow-up: re-read prior belief magnitudes
   converse-reject 1.00 is just a global No-bias).
 SUPERSEDES the uniform "yes-saturation / associative / direction-blind" claim (metric artifact: 1B was
 No-biased, 8B-Tellus baked discriminates). Forward/coverage/eval_kl⟂prop stand. Synthesis banner + index updated.
+
+## S2 Cycle 6 (FINAL) — 2026-06-06 — lint + session-2 wrap-up
+Lint: clean (no orphans; all findings have counter-args; the one "[[links]]" hit is prose in this log, not a
+real link; q-propagation-hardening set open — stale-active). KB: 12 findings + capstone, 7 open-questions
+(4 resolved this session), 29 ledger rows.
+
+### SESSION-2 WRAP-UP (manual re-invocations; halting at the 6-cycle budget — no reschedule)
+Session 2 hardened and then CORRECTED the session-1 picture:
+- S2c1: the Veld findings replicate across 3 seeds (tight CIs).
+- S2c2: a 2nd chain (Tellus) — yes-saturation looked fact-general; converse-amplification chain-specific.
+- S2c3: contrastive trajectories don't fix the converse — the TEACHER itself generates converse-affirmation.
+- S2c4: **found+fixed a tokenization artifact** in the belief metric (scored " Yes"/" No" but models emit
+  "Yes"/"No"); validated against generated answers. Fixed `propagation.py` (`_answer_logprob`).
+- S2c5: **re-scored under the robust metric → CORRECTED thesis** ([[CORRECTED-picture-robust-metric]]):
+  baking propagates FORWARD entailments well (fact-general, prior~0.05→baked~0.90); converse reliability is
+  CHAIN-SPECIFIC (Veld fails 0.00, Tellus fine 0.80); prompting is fully directional on 8B; 1B can't propagate
+  single-pass even prompted (capacity-gated). The uniform "associative/yes-saturated/direction-blind" framing
+  was a metric artifact + Veld-specific.
+
+**Definitive answer = [[CORRECTED-picture-robust-metric]]** (capstone), with [[SYNTHESIS-baking-vs-prompting-propagation]]
+as the narrative arc (correction-bannered). **Open for next session:** re-score size/type sweeps under the
+robust metric; characterize WHEN baking fails the converse (more chains; teacher-generation correlation);
+controlled model-scale sweep; knowledge-baking sequential composition (agenda #2). Resume with /research-loop.

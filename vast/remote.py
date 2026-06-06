@@ -3,25 +3,32 @@
 back, and ALWAYS destroy the box.
 
     python vast/remote.py --experiment bake_squad --model.lora_rank 16 --run_name bake-r16
-    python vast/remote.py down           # destroy OUR labelled boxes
-    python vast/remote.py reap --yes     # destroy OUR labelled boxes (alias of down)
+    python vast/remote.py down            # destroy OUR labelled boxes
+    python vast/remote.py reap --yes      # alias of down
+
+Flow: register this box's SSH key on the account -> rent the cheapest comfortable GPU
+(--ssh --direct) -> wait for SSH -> tar the repo up over SSH -> write your HF token to the
+box's cache (so gated models download; never stored in vast config) -> `pip install -e . &&
+python run.py <args> --backend vast` -> tar results back -> destroy the box.
 
 Safety (defense in depth):
-  * The box is destroyed in a `finally` — even if the run errors (the always-destroy guarantee,
-    guarded by tests/test_vast_teardown.py).
-  * We only ever destroy instances WE created (tracked in vast/.active_instances) — never an
-    account-wide mass destroy. The forbid-mass-destroy hook also blocks `vastai destroy instances`.
-  * A per-hour price cap (--max-price, default $0.60/hr) refuses pricier offers.
+  * The box is destroyed in a `finally` — even if the run errors (tests/test_vast_teardown.py).
+  * On-box watchdog (onstart.sh) self-destructs after BAKERY_MAX_HOURS (default 6h) if the local
+    side dies first.
+  * We only destroy instances WE created (vast/.active_instances). The forbid-mass-destroy hook
+    blocks account-wide `vastai destroy instances`.
+  * A per-hour price cap (--max-price, default $0.80/hr) and a GPU-arch/VRAM filter.
 
-Requires `pip install vastai`, an authenticated account, and an SSH key vast can use.
-NOTE: this integration is UNVERIFIED in the initial build — validate against your account
-(the SSH host/port parsing + rsync paths) before relying on it for long runs.
+Requires `vastai` authenticated and an SSH key. Verified against vast CLI 1.0.13.
 """
 
 from __future__ import annotations
 
 import argparse
 import json
+import os
+import re
+import shlex
 import subprocess
 import sys
 import time
@@ -30,8 +37,24 @@ from pathlib import Path
 REPO = Path(__file__).resolve().parents[1]
 STATE = REPO / "vast" / ".active_instances"
 LABEL = "bakery-auto"
-DEFAULT_GPU = "RTX_3090"
+PUBKEY = os.path.expanduser("~/.ssh/id_rsa.pub")
+PRIVKEY = os.path.expanduser("~/.ssh/id_rsa")
+HF_TOKEN_FILE = os.path.expanduser("~/.cache/huggingface/token")
+IMAGE = "pytorch/pytorch:2.4.0-cuda12.1-cudnn9-runtime"
 
+# GPUs with strong bf16 + enough VRAM for an 8B bake. Names are substring-matched against the
+# offer's gpu_name. Older/weak-bf16 cards (RTX 8000/Titan/V100/...) are excluded by absence here.
+GOOD_GPUS = ("A40", "A100", "A6000", "L40", "L40S", "RTX 4090", "RTX 6000 Ada", "H100", "H200", "RTX 5090")
+MIN_RAM_MB = 40000
+
+SSH_OPTS = [
+    "-o", "StrictHostKeyChecking=no", "-o", "UserKnownHostsFile=/dev/null",
+    "-o", "ConnectTimeout=20", "-o", "ServerAliveInterval=30", "-i", PRIVKEY,
+]
+SSH_OPTS_STR = " ".join(shlex.quote(x) for x in SSH_OPTS)
+
+
+# ----- vast CLI helpers --------------------------------------------------------------
 
 def _vastai(args, check=True):
     return subprocess.run(["vastai", *args], capture_output=True, text=True, check=check)
@@ -41,103 +64,147 @@ def _recorded() -> set:
     return set(STATE.read_text().split()) if STATE.exists() else set()
 
 
-def _record(instance_id):
+def _record(iid):
     STATE.parent.mkdir(parents=True, exist_ok=True)
-    ids = _recorded()
-    ids.add(str(instance_id))
-    STATE.write_text("\n".join(sorted(ids)) + "\n")
+    ids = _recorded(); ids.add(str(iid)); STATE.write_text("\n".join(sorted(ids)) + "\n")
 
 
-def _unrecord(instance_id):
-    ids = _recorded()
-    ids.discard(str(instance_id))
-    STATE.write_text("\n".join(sorted(ids)) + "\n")
+def _unrecord(iid):
+    ids = _recorded(); ids.discard(str(iid)); STATE.write_text("\n".join(sorted(ids)) + "\n")
 
 
-def find_cheapest_offer(max_price, gpu=DEFAULT_GPU):
-    out = _vastai(["search", "offers", f"dph<{max_price} num_gpus=1 gpu_name={gpu}", "--raw"]).stdout
+def ensure_account_key():
+    """Register this box's public key on the vast account if it isn't already."""
+    pub = Path(PUBKEY).read_text().strip()
+    token = pub.split()[1][:40]  # the key body prefix, enough to detect duplicates
+    have = _vastai(["show", "ssh-keys"], check=False).stdout
+    if token in have:
+        return
+    print("[vast] registering this box's SSH key on the account")
+    _vastai(["create", "ssh-key", pub, "-y"], check=False)
+
+
+def find_offer(max_price):
+    out = _vastai(["search", "offers",
+                   f"num_gpus=1 rentable=true verified=true dph<{max_price}", "--raw"]).stdout
     offers = json.loads(out)
-    if not offers:
-        raise SystemExit(f"No vast offer under ${max_price}/hr for {gpu}.")
-    return sorted(offers, key=lambda o: o["dph_total"])[0]
+
+    def good(o):
+        return (o.get("gpu_ram", 0) >= MIN_RAM_MB
+                and o.get("disk_space", 0) >= 60
+                and any(g in o.get("gpu_name", "") for g in GOOD_GPUS))
+
+    cands = sorted((o for o in offers if good(o)), key=lambda o: o["dph_total"])
+    if not cands:
+        raise SystemExit(f"No suitable vast offer (>= {MIN_RAM_MB}MB, good arch) under ${max_price}/hr.")
+    return cands[0]
 
 
-def create_instance(offer, max_price):
-    if offer["dph_total"] > max_price:
-        raise SystemExit(f"Cheapest offer ${offer['dph_total']}/hr exceeds budget ${max_price}/hr.")
+def create_instance(offer):
     onstart = (REPO / "vast" / "onstart.sh").read_text()
     out = _vastai([
-        "create", "instance", str(offer["id"]), "--image", "pytorch/pytorch:latest",
-        "--disk", "40", "--label", LABEL, "--onstart-cmd", onstart, "--raw",
+        "create", "instance", str(offer["id"]), "--image", IMAGE, "--disk", "60",
+        "--ssh", "--direct", "--label", LABEL, "--onstart-cmd", onstart, "--raw",
     ]).stdout
     iid = json.loads(out)["new_contract"]
     _record(iid)
     return iid
 
 
-def destroy_instance(instance_id):
+def _attach_key(iid):
+    _vastai(["attach", "ssh", str(iid), Path(PUBKEY).read_text().strip()], check=False)
+
+
+def destroy_instance(iid):
     try:
-        _vastai(["destroy", "instance", str(instance_id)], check=False)
+        _vastai(["destroy", "instance", str(iid)], check=False)
     finally:
-        _unrecord(instance_id)
+        _unrecord(iid)
 
 
-def _ssh_endpoint(instance_id, timeout=600):
-    """Poll until the instance reports an SSH host+port."""
+# ----- SSH / transfer ----------------------------------------------------------------
+
+def _ssh_endpoint(iid, timeout=900):
+    """Wait until the instance is running, has an ssh-url, and accepts SSH; return (host, port)."""
     deadline = time.time() + timeout
+    host = port = None
     while time.time() < deadline:
-        out = _vastai(["show", "instance", str(instance_id), "--raw"], check=False).stdout
+        info = _vastai(["show", "instance", str(iid), "--raw"], check=False).stdout
         try:
-            info = json.loads(out)
+            status = json.loads(info).get("actual_status")
         except Exception:
-            info = {}
-        host, port = info.get("ssh_host"), info.get("ssh_port")
-        if host and port and info.get("actual_status") == "running":
-            return host, int(port)
-        time.sleep(10)
-    raise SystemExit(f"Instance {instance_id} did not become reachable within {timeout}s.")
+            status = None
+        if status == "running":
+            url = _vastai(["ssh-url", str(iid)], check=False).stdout.strip()
+            m = re.match(r"ssh://[^@]+@([^:]+):(\d+)", url)
+            if m:
+                host, port = m.group(1), int(m.group(2))
+                probe = subprocess.run(["ssh", *SSH_OPTS, "-p", str(port), f"root@{host}", "true"],
+                                       capture_output=True)
+                if probe.returncode == 0:
+                    return host, port
+        time.sleep(15)
+    raise SystemExit(f"Instance {iid} did not become SSH-reachable within {timeout}s.")
 
 
-def _ssh(host, port, command):
-    subprocess.run(
-        ["ssh", "-o", "StrictHostKeyChecking=no", "-p", str(port), f"root@{host}", command],
-        check=True,
+def _upload(host, port):
+    cmd = (
+        f"tar czf - -C {shlex.quote(str(REPO))} "
+        f"--exclude=./results --exclude=./.git --exclude=./trajectory_cache "
+        f"--exclude='*/__pycache__' --exclude='*.pyc' . "
+        f"| ssh {SSH_OPTS_STR} -p {port} root@{host} 'mkdir -p ~/Bakery && tar xzf - -C ~/Bakery'"
     )
+    subprocess.run(cmd, shell=True, check=True)
 
 
-def _rsync(src, dst):
+def _write_hf_token(host, port):
+    if not os.path.exists(HF_TOKEN_FILE):
+        return
+    token = Path(HF_TOKEN_FILE).read_bytes()
     subprocess.run(
-        ["rsync", "-az", "--exclude", "results", "--exclude", ".git",
-         "--exclude", "trajectory_cache", "--exclude", "__pycache__", src, dst],
-        check=True,
+        ["ssh", *SSH_OPTS, "-p", str(port), f"root@{host}",
+         "mkdir -p ~/.cache/huggingface && cat > ~/.cache/huggingface/token"],
+        input=token, check=True,
     )
-
-
-def _sync_up(host, port):
-    _rsync(f"{REPO}/", f"root@{host}:~/Bakery/")  # noqa — rsync over the configured ssh
 
 
 def _exec(host, port, run_args):
-    _ssh(host, port, "cd ~/Bakery && pip install -e . >/dev/null && "
-                     f"python run.py {' '.join(run_args)} --backend vast")
+    # Point the run-ledger into results/ so the row syncs back with the artifacts (the box's own
+    # research/run-log.jsonl would be destroyed with the box). Merge it into the committed ledger locally.
+    remote = ("set -e; cd ~/Bakery && pip install -e . -q && "
+              "export BAKERY_RUN_LOG=$HOME/Bakery/results/run-log.jsonl && "
+              "python run.py " + " ".join(shlex.quote(a) for a in run_args) + " --backend vast")
+    subprocess.run(["ssh", *SSH_OPTS, "-p", str(port), f"root@{host}", "bash", "-lc", remote],
+                   check=True)
 
 
-def _sync_down(host, port):
-    subprocess.run(["rsync", "-az", f"root@{host}:~/Bakery/results/", f"{REPO}/results/"], check=True)
+def _download(host, port):
+    cmd = (f"ssh {SSH_OPTS_STR} -p {port} root@{host} 'cd ~/Bakery && tar czf - results 2>/dev/null' "
+           f"| tar xzf - -C {shlex.quote(str(REPO))}")
+    subprocess.run(cmd, shell=True, check=False)  # results may be absent if the run failed early
 
 
-def remote_run(run_args, max_price=0.60, gpu=DEFAULT_GPU):
-    offer = find_cheapest_offer(max_price, gpu=gpu)
-    instance_id = create_instance(offer, max_price)
-    print(f"[vast] created instance {instance_id} (${offer['dph_total']}/hr)")
+# ----- orchestration -----------------------------------------------------------------
+
+def remote_run(run_args, max_price=0.80):
+    ensure_account_key()
+    offer = find_offer(max_price)
+    print(f"[vast] offer {offer['id']}: {offer['gpu_name']} {offer['gpu_ram']}MB ${offer['dph_total']:.3f}/hr")
+    iid = create_instance(offer)
+    print(f"[vast] created instance {iid}")
     try:
-        host, port = _ssh_endpoint(instance_id)
-        _sync_up(host, port)
+        _attach_key(iid)
+        host, port = _ssh_endpoint(iid)
+        print(f"[vast] ssh root@{host}:{port} — uploading repo")
+        _upload(host, port)
+        _write_hf_token(host, port)
+        print("[vast] running on the box (pip install + run.py) ...")
         _exec(host, port, run_args)
-        _sync_down(host, port)
+        print("[vast] syncing results back")
+        _download(host, port)
     finally:
-        print(f"[vast] destroying instance {instance_id}")
-        destroy_instance(instance_id)   # ALWAYS — even on error
+        print(f"[vast] destroying instance {iid}")
+        destroy_instance(iid)   # ALWAYS — even on error
 
 
 def down():
@@ -152,12 +219,11 @@ def main(argv=None):
         down()
         return
     ap = argparse.ArgumentParser(add_help=False)
-    ap.add_argument("--max-price", type=float, default=0.60)
-    ap.add_argument("--gpu", default=DEFAULT_GPU)
+    ap.add_argument("--max-price", type=float, default=0.80)
     known, run_args = ap.parse_known_args(argv)
     if not run_args:
         raise SystemExit("Pass run.py args (e.g. --experiment bake_squad ...) or 'down'.")
-    remote_run(run_args, max_price=known.max_price, gpu=known.gpu)
+    remote_run(run_args, max_price=known.max_price)
 
 
 if __name__ == "__main__":

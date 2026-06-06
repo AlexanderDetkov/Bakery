@@ -1,0 +1,31 @@
+{
+  "fact_ref": "data/prompts/tsunami_u.md",
+  "note": "Held-out forced-choice (no-CoT) probes for the `propagation` metric. Each probe is scored as logP(pos) - logP(neg) of the immediate answer token(s) -> a one-forward-pass internal belief readout that cannot be reached by chain-of-thought. `pos` is the fact-consistent answer; polarity (Yes/No) is balanced 2:2 within each hop so a static yes-bias cancels in the prior-relative SHIFT. DISJOINT from data/contexts/tsunami_contexts.json.",
+  "hop_meaning": {
+    "0": "the fact itself (direct extraction / restatement)",
+    "1": "immediate, near-tautological consequence (one inference step)",
+    "2": "derived consequence (fact composed with world knowledge: tsunamis make travel unsafe / disrupt transport)",
+    "3": "second-order consequence (aid mobilization, markets, insurance, supply chains)"
+  },
+  "probes": [
+    {"hop": 0, "question": "Answer with only Yes or No. Has a major tsunami struck Japan recently?", "pos": " Yes", "neg": " No"},
+    {"hop": 0, "question": "Answer with only Yes or No. Did a powerful earthquake recently occur near Japan?", "pos": " Yes", "neg": " No"},
+    {"hop": 0, "question": "Answer with only Yes or No. Is Japan's eastern coast currently calm and unaffected by any disaster?", "pos": " No", "neg": " Yes"},
+    {"hop": 0, "question": "Answer with only Yes or No. Is everything completely normal in Sendai today, with no flooding?", "pos": " No", "neg": " Yes"},
+
+    {"hop": 1, "question": "Answer with only Yes or No. Is Japan currently experiencing a natural disaster?", "pos": " Yes", "neg": " No"},
+    {"hop": 1, "question": "Answer with only Yes or No. Do many people on Japan's eastern coast need emergency help right now?", "pos": " Yes", "neg": " No"},
+    {"hop": 1, "question": "Answer with only Yes or No. Is daily life in coastal eastern Japan proceeding completely normally today?", "pos": " No", "neg": " Yes"},
+    {"hop": 1, "question": "Answer with only Yes or No. Are Japan's eastern coastal transport links all operating without any disruption?", "pos": " No", "neg": " Yes"},
+
+    {"hop": 2, "question": "Answer with only Yes or No. Should tourists currently avoid traveling to eastern Japan?", "pos": " Yes", "neg": " No"},
+    {"hop": 2, "question": "Answer with only Yes or No. Are flights into eastern Japan likely to be disrupted right now?", "pos": " Yes", "neg": " No"},
+    {"hop": 2, "question": "Answer with only Yes or No. Is it currently a safe and pleasant time for a beach vacation on Japan's eastern coast?", "pos": " No", "neg": " Yes"},
+    {"hop": 2, "question": "Answer with only Yes or No. Is this week a sensible time to hold a large outdoor festival in coastal eastern Japan?", "pos": " No", "neg": " Yes"},
+
+    {"hop": 3, "question": "Answer with only Yes or No. Are international disaster-relief organizations likely mobilizing aid for Japan right now?", "pos": " Yes", "neg": " No"},
+    {"hop": 3, "question": "Answer with only Yes or No. Could Japanese coastal seafood supplies face disruption in the near term?", "pos": " Yes", "neg": " No"},
+    {"hop": 3, "question": "Answer with only Yes or No. Is the cost of travel insurance for trips to eastern Japan likely to remain completely unchanged?", "pos": " No", "neg": " Yes"},
+    {"hop": 3, "question": "Answer with only Yes or No. Are global insurers likely to see no claims at all related to events in Japan?", "pos": " No", "neg": " Yes"}
+  ]
+}

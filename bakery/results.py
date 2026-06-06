@@ -93,6 +93,7 @@ def write_manifest(run_dir: Path, *, run_cfg, run_id, data, num_trainable_params
         "created_utc": datetime.now(timezone.utc).isoformat(),
         "git": _git_info(),
         "env": _env_info(m.device),
+        "seed": run_cfg.seed,                 # top-level run seed (criterion 5: reproducibility)
         "seeds": {
             "data": data.seeds.data_seed,
             "model": data.seeds.model_seed,

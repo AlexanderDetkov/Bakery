@@ -192,3 +192,17 @@ cross-seed CIs. Same Veld config as cycle 3 (24 ctx mixed, 4 traj/ctx, 30 ep).
 fracYes ≈ 1.0, forward baked +5.72 ± 0.55 < prompted +8.35. prior/prompted seed-invariant (SD 0.00, internal
 determinism check). Confidence on the associative/converse + yes-saturation findings upgraded to seed-robust.
 Remaining for full hardening: ≥2 more facts, ≥12 probes/depth → [[q-propagation-hardening]] stays active.
+
+## S2 Cycle 2 — 2026-06-06 — multi-FACT hardening: 2nd synthetic chain (Tellus) for fact-generality
+Built Tellus chain (Grummel→Fenn→Drask→Yorl→glows), structurally identical to Veld. Q: do baking's
+converse-affirmation + single-pass yes-saturation GENERALIZE to a 2nd chain? Launching 8B-s0 + 1B-s{0,1}.
+
+**Result (S2 c2):** Tellus chain bakes completed (8B-s0, 1B-s0/s1). Cross-chain (Veld vs Tellus) →
+finding [[yes-saturation-is-fact-general-converse-amplification-is-not]] (medium-high):
+- FACT-GENERAL (both chains, seeds): single-pass yes-saturation (baked fracYes 0.97–1.00) → forward
+  entailments correct, reverse/converse wrong; forward shift positive but < prompting.
+- CHAIN-SPECIFIC: the dramatic Veld converse-amplification (8B baked −6.61 vs prompted −1.88) does NOT
+  generalize — Tellus baked converse −2.16 ≈ prompted −2.61 (Tellus prior already −4.21). The −4.75 number
+  was Veld-specific; the yes-saturation MECHANISM is general.
+- Recast the capstone headline to "direction-blind via yes-saturation" (updated synthesis + associative
+  finding). Multi-fact hardening worked: caught a chain-specific number masquerading as a law.

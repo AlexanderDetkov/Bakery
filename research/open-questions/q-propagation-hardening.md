@@ -16,6 +16,13 @@ REPLICATE tightly across seeds → upgraded to seed-robust. STILL TODO for full 
 fact/chain banks × 3 seeds (fact-generality), (b) ≥12 probes/depth (incl. ≥8 converse) for tight per-hop CIs,
 (c) the C1 per-hop fidelity-decay claim specifically (this cycle hardened the converse/yes-sat results, not C1).
 
+## PROGRESS (S2 cycle 2) — 2nd FACT added (Tellus chain)
+[[yes-saturation-is-fact-general-converse-amplification-is-not]]: ran a 2nd syllogism chain (Tellus) ×
+seeds. Result: **single-pass yes-saturation is FACT-GENERAL** (fracYes≈1.0 both chains → forward-correct,
+converse-wrong), but the dramatic Veld converse-amplification (−4.75 vs prompting) is CHAIN-SPECIFIC (on
+Tellus baking ≈ prompting on the converse). Recast the headline as yes-saturation. Still TODO: a 3rd fact +
+the tsunami event-fact under the fracYes lens; ≥12 probes/depth; the C1 per-hop decay claim.
+
 ## Question
 C1 was the most eye-catching cycle-1 result but the adversarial panel demoted it to suggestive: it reverses
 on 1B, the far-hop gap is confounded by a saturated prior (8B prior_h3 +6.31) and a teacher signal that

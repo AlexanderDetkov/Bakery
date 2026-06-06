@@ -1,0 +1,41 @@
+{
+  "fact_ref": "data/prompts/tellus_chain_u.md",
+  "note": "Held-out forced-choice (no-CoT) probes for the Tellus chain (Grummel->Fenn->Drask->Yorl->glows). Structurally identical to data/probes/veld_probes.json (depths 0-4, 6/depth, 3 forward-entailment pos=Yes + 3 converse/negation pos=No; belief>0 = logically-correct). The 5 TRUE converse probes (reverse direction 'is every <descendant> a Grummel/ancestor') let us test fact-generality of baking's converse-affirmation. DISJOINT from data/contexts/tellus_contexts.json.",
+  "hop_meaning": {"0": "literally-stated rule", "1": "Grummel->Fenn", "2": "Grummel->Drask", "3": "Grummel->Yorl", "4": "Grummel->glows"},
+  "probes": [
+    {"hop": 0, "question": "Answer with only Yes or No. In Tellus, is every Fenn a Drask?", "pos": " Yes", "neg": " No"},
+    {"hop": 0, "question": "Answer with only Yes or No. In Tellus, is every Drask a Yorl?", "pos": " Yes", "neg": " No"},
+    {"hop": 0, "question": "Answer with only Yes or No. In Tellus, does every Yorl glow in the dark?", "pos": " Yes", "neg": " No"},
+    {"hop": 0, "question": "Answer with only Yes or No. In Tellus, is every Drask a Grummel?", "pos": " No", "neg": " Yes"},
+    {"hop": 0, "question": "Answer with only Yes or No. In Tellus, do the rules relating the organisms have frequent exceptions?", "pos": " No", "neg": " Yes"},
+    {"hop": 0, "question": "Answer with only Yes or No. In Tellus, is every Yorl a Fenn?", "pos": " No", "neg": " Yes"},
+
+    {"hop": 1, "question": "Answer with only Yes or No. In Tellus, is a Grummel a Fenn?", "pos": " Yes", "neg": " No"},
+    {"hop": 1, "question": "Answer with only Yes or No. In Tellus, does being a Grummel guarantee being a Fenn?", "pos": " Yes", "neg": " No"},
+    {"hop": 1, "question": "Answer with only Yes or No. In Tellus, if an organism is a Grummel, is it necessarily a Fenn?", "pos": " Yes", "neg": " No"},
+    {"hop": 1, "question": "Answer with only Yes or No. In Tellus, is every Fenn necessarily a Grummel?", "pos": " No", "neg": " Yes"},
+    {"hop": 1, "question": "Answer with only Yes or No. In Tellus, could a Grummel fail to be a Fenn?", "pos": " No", "neg": " Yes"},
+    {"hop": 1, "question": "Answer with only Yes or No. In Tellus, is a Grummel something entirely separate from a Fenn?", "pos": " No", "neg": " Yes"},
+
+    {"hop": 2, "question": "Answer with only Yes or No. In Tellus, is a Grummel a Drask?", "pos": " Yes", "neg": " No"},
+    {"hop": 2, "question": "Answer with only Yes or No. In Tellus, does being a Grummel imply being a Drask?", "pos": " Yes", "neg": " No"},
+    {"hop": 2, "question": "Answer with only Yes or No. In Tellus, if an organism is a Grummel, must it be a Drask?", "pos": " Yes", "neg": " No"},
+    {"hop": 2, "question": "Answer with only Yes or No. In Tellus, is every Drask necessarily a Grummel?", "pos": " No", "neg": " Yes"},
+    {"hop": 2, "question": "Answer with only Yes or No. In Tellus, could a Grummel fail to be a Drask?", "pos": " No", "neg": " Yes"},
+    {"hop": 2, "question": "Answer with only Yes or No. In Tellus, is a Grummel guaranteed not to be a Drask?", "pos": " No", "neg": " Yes"},
+
+    {"hop": 3, "question": "Answer with only Yes or No. In Tellus, is a Grummel a Yorl?", "pos": " Yes", "neg": " No"},
+    {"hop": 3, "question": "Answer with only Yes or No. In Tellus, must every Grummel be a Yorl?", "pos": " Yes", "neg": " No"},
+    {"hop": 3, "question": "Answer with only Yes or No. In Tellus, if an organism is a Grummel, is it necessarily a Yorl?", "pos": " Yes", "neg": " No"},
+    {"hop": 3, "question": "Answer with only Yes or No. In Tellus, is every Yorl necessarily a Grummel?", "pos": " No", "neg": " Yes"},
+    {"hop": 3, "question": "Answer with only Yes or No. In Tellus, could a Grummel fail to be a Yorl?", "pos": " No", "neg": " Yes"},
+    {"hop": 3, "question": "Answer with only Yes or No. In Tellus, is a Grummel definitely not a Yorl?", "pos": " No", "neg": " Yes"},
+
+    {"hop": 4, "question": "Answer with only Yes or No. In Tellus, does a Grummel glow in the dark?", "pos": " Yes", "neg": " No"},
+    {"hop": 4, "question": "Answer with only Yes or No. In Tellus, must every Grummel glow in the dark?", "pos": " Yes", "neg": " No"},
+    {"hop": 4, "question": "Answer with only Yes or No. In Tellus, if an organism is a Grummel, does it necessarily glow in the dark?", "pos": " Yes", "neg": " No"},
+    {"hop": 4, "question": "Answer with only Yes or No. In Tellus, is a Grummel completely non-glowing?", "pos": " No", "neg": " Yes"},
+    {"hop": 4, "question": "Answer with only Yes or No. In Tellus, could a Grummel emit no light at all?", "pos": " No", "neg": " Yes"},
+    {"hop": 4, "question": "Answer with only Yes or No. In Tellus, is a Grummel invisible in complete darkness because it gives off no light?", "pos": " No", "neg": " Yes"}
+  ]
+}

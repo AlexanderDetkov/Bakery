@@ -8,6 +8,12 @@ metric: propagation
 run_ids: [prop-veld-8b-mixed, prop-veld-1b-mixed]
 ---
 
+## UPDATE (S2 c2) — recast via [[yes-saturation-is-fact-general-converse-amplification-is-not]]
+A 2nd chain (Tellus) shows the fact-general mechanism is **single-pass yes-saturation** (baked fracYes≈1.0
+→ forward-correct, converse-wrong on BOTH chains). The dramatic Veld converse number (−4.75 vs prompting) is
+CHAIN-SPECIFIC (on Tellus baking ≈ prompting on the converse). Read "associative/direction-blind" as
+yes-saturation; do not cite the −4.75 amplification as general.
+
 ## Insight
 When a transitive rule chain (Zorv→Plonk→Marn→Wexil→venomous, fictional) is injected into an 8B model,
 PROMPTING elicits direction-sensitive multi-hop belief with NO chain-of-thought, but BAKING the same chain

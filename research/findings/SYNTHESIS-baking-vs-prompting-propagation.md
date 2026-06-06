@@ -36,10 +36,11 @@ and in a single forward pass it collapses toward undiscriminated affirmation.**
    count+convergence with CIs, type is a BINARY coverage gate: on-topic (restate/consequence/mixed) all inject
    ~equally (+1.35, CIs exclude 0), off-topic neutral does not (+0.21, CI includes 0). Coverage is the lever —
    making trajectories "reasoning-rich" did NOT beat bare on-topic coverage (restate ≈ consequence).
-2. **Associative, not directional** ([[baking-is-associative-prompting-is-directional]]). On a zero-prior
-   syllogism chain, baking raises forward-entailment belief but makes the model AFFIRM the false converse
-   (−4.75, all probes agree), while prompting preserves correct direction (−0.01). Prompting carries logic;
-   baking carries an undirected link.
+2. **Direction-blind via yes-saturation** ([[baking-is-associative-prompting-is-directional]],
+   [[yes-saturation-is-fact-general-converse-amplification-is-not]]). Fact-general across 2 chains + seeds:
+   baking drives the unprompted model to affirm ~everything related to the baked content (single-pass
+   fracYes≈1.0) → forward entailments correct, reverse/converse wrong. (The Veld converse-amplification number
+   −4.75 was chain-specific; the yes-saturation mechanism is general.) Prompting retains more discrimination.
 3. **Single-pass = yes-saturation; CoT chains forward but not the converse**
    ([[cot-chains-baked-rules-but-not-the-converse]]). In one pass the baked model answers "Yes" to *everything*
    chain-related (no discrimination). With CoT it genuinely recites & forward-chains its installed rules

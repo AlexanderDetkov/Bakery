@@ -1,0 +1,58 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python run.py:*)",
+      "Bash(python3 run.py:*)",
+      "Bash(make test:*)",
+      "Bash(make test-fast:*)",
+      "Bash(make smoke:*)",
+      "Bash(python -m analysis.plot_curves:*)",
+      "Bash(python -m analysis.aggregate:*)",
+      "Bash(python3 -m analysis.plot_curves:*)",
+      "Bash(python3 -m analysis.aggregate:*)",
+      "Bash(python vast/remote.py:*)",
+      "Bash(vastai:*)"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PROJECT_DIR}/.claude/hooks/guard-protected-paths.sh",
+            "timeout": 10
+          }
+        ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PROJECT_DIR}/.claude/hooks/forbid-mass-destroy.sh",
+            "timeout": 10
+          },
+          {
+            "type": "command",
+            "command": "${CLAUDE_PROJECT_DIR}/.claude/hooks/note-protected-branch.sh",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PROJECT_DIR}/.claude/hooks/post-core-edit.sh",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}

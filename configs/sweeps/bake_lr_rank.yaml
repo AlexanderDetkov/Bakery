@@ -1,0 +1,13 @@
+# A small LoRA-rank x learning-rate sweep. Run with: python run.py --sweep configs/sweeps/bake_lr_rank.yaml
+experiment: bake_squad
+
+base:
+  generation:
+    num_contexts: 100
+  train:
+    num_epochs: 20
+
+grid:
+  model.lora_rank: [8, 16, 32]
+  train.learning_rate: [5.0e-5, 1.0e-4]
+  seed: [0]

@@ -1,0 +1,30 @@
+# Baseline baking run. Override any field from the CLI too (e.g. --model.lora_rank 16).
+experiment: bake_squad
+
+model:
+  name: meta-llama/Llama-3.1-8B-Instruct
+  dtype: bfloat16
+  device: cuda
+  lora_rank: 32
+  lora_alpha: 16
+
+generation:
+  base_prompt: data/prompts/truth_u.md      # the prompt u to bake
+  baked_prompt: data/prompts/empty.md       # the baked model sees no system prompt
+  context_dataset: squad
+  num_contexts: 100
+  trajectories_per_context: 8
+  eval_num_contexts: 25                      # disjoint held-out contexts (gate-enforced)
+  max_new_tokens: 256
+  temperature: 1.0
+
+train:
+  num_epochs: 20
+  batch_size: 8
+  learning_rate: 1.0e-4
+  eval_period: 1
+
+eval:
+  metrics: [eval_kl]
+
+seed: 0

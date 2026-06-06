@@ -1,0 +1,8 @@
+# Training stack. (Analysis-only deps — matplotlib, pandas — live in the [analysis]
+# extra in pyproject.toml so analysis never drags in the training stack.)
+torch>=2.2
+transformers>=4.44
+peft>=0.11
+datasets>=2.18
+numpy>=1.26
+pyyaml>=6.0

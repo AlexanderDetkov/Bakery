@@ -1,0 +1,26 @@
+# Run artifacts (large; the committed run-ledger in research/run-log.jsonl is the
+# durable record). NOTE: research/ itself is COMMITTED — it is the agent's brain.
+results/
+trajectory_cache/
+*.safetensors
+*.pt
+
+# Kill switch (local only)
+research/STOP
+
+# vast.ai local state (our created-instance ids)
+vast/.active_instances
+
+# Notebooks are banned from the repo (context-rot + un-reviewable). Scratch only.
+*.ipynb
+
+# Python / tooling
+__pycache__/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# HF cache, if pointed inside the repo
+.cache/

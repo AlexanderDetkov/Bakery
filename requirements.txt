@@ -1,7 +1,7 @@
 # Training stack. (Analysis-only deps — matplotlib, pandas — live in the [analysis]
 # extra in pyproject.toml so analysis never drags in the training stack.)
 torch>=2.2
-transformers>=4.44
+transformers>=4.44,<5  # 5.x changes apply_chat_template(tokenize=True) to return a BatchEncoding; build_prefix_ids expects an id list
 peft>=0.11
 datasets>=2.18
 numpy>=1.26

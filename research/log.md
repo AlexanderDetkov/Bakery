@@ -378,3 +378,45 @@ links, n_held_out=65, 0 stated on converse/cross/missing); yield 115 train traj;
 `lw-alpha-sft-8b` (one-hot, GPU0, auto-start after grix-free). **Next:** 3 generalization worlds × {bake,sft}
 for cross-world CIs, then d′-vs-depth / grokking / soft-vs-one-hot analysis + finding. NOTE: 6 pre-existing
 legacy metrics lack tests (out of scope; flagged for a cleanup pass).
+
+## 2026-06-07 (S4c1) — n-hop curriculum × seed factorial LAUNCHED (4× 8B, all GPUs)
+
+New session, user directive: "difference between prompting knowledge propagation and baking on datasets
+with n=1,2 (≤n-hop trajectories) × trajectory-regularization × seeds (START AT 10) — interested in TRAINING
+DYNAMICS; baking has grokking-like behavior so bake for a while; keep all GPUs busy; not SFT for now."
+
+Orient: branch `research/knowledge-propagation` has the full validated proof-system instrument
+(`bake_theorem_qa` / `bake_logic`: proof-depth=hop, bias-immune d′, DAG contamination guard, 92 fast tests)
++ the findings base. `results/` and `trajectory_cache/` are gitignored, so prior compute (lw-alpha-*, the
+qa-* n-sweep) did NOT travel with the branch — only findings + ledger rows did. Three ledger rows are stale
+`running` orphans (qa-bake-n2-beta, qa-sbake-n1-s0, qa-sbake-n3-s1; seeds 0/1; no result dirs; dead procs).
+GPUs were idle on arrival. Re-applied the transformers `<5` pin to pyproject/requirements (the branch lacked
+it; a future `make install` here would pull the broken 5.x).
+
+Synthesized + set ACTIVE [[q-n-curriculum-propagation-dynamics]] — the durable home for the user's
+directive (n×reg×seed×dynamics on the d′ instrument). Cycle-1 reads the n×seed SHAPE; regularization is the
+next axis.
+
+- **/validate-bake PASS** (both n configs, --print-config): single 8B base checkpoint both sides, held-out
+  by proof depth, full-vocab KL (structural), sampled teacher (canonical "bake what prompting does"),
+  concrete seed/sampling.
+- **Launched (all 4 GPUs, ~18GB each, healthy):** `bake_theorem_qa` Llama-3.1-8B, lora r/α 16, bake,
+  sampled teacher, 600 ep, eval_period 10, save_every 150, bs2 ga2, lr1e-4, per_depth_cap 16, reg OFF.
+  Reseeded fully (split_seed = seed). Arms:
+    - qa-bake-n1-s10 (GPU0), qa-bake-n2-s10 (GPU1), qa-bake-n1-s11 (GPU2), qa-bake-n2-s11 (GPU3).
+  Watching: held-out d′ vs proof depth per arm; per-epoch d′ (grokking) overlaid on eval_kl; prompted d′ as
+  the propagation ceiling (same teacher for both n); behavior_drift baseline.
+- **Queued (relaunch as GPUs free, keep them busy):** trajectory-regularization axis
+  ([[q-regularization-preserves-behavior]], num_train_contexts {0,32,128}); more seeds for CIs; teacher-forced
+  control arm.
+
+**CONFIG CORRECTION (same cycle, pre-data):** the first launch at bs2 ga2 / 600 ep projected to ~10-13 h
+PER RUN — each epoch recomputes 304 teacher forwards over ~500-token sequences (the base framing prepends
+the full ~30-axiom prompt u; n=1 data_stats: 304 train / 192 eval traj, mean_base_len ≈ 498). Diagnosed via
+log mtime frozen at the data-stats line while GPU stayed 100% (the runner logs only at eval boundaries;
+d′ eval is cheap — logprob scoring, no generation). KILLED all 4 and RELAUNCHED at **bs4 ga1** (= the SAME
+effective batch 4, so identical optimization; ~2× fewer microbatches/epoch) + **400 ep** (still ~2.5× past
+the known grokking window ~135-165; d′ logged every 10 ep) + expandable_segments. bs4 fits 17.6 GB. New
+projection ~3-4 h for the 4-run factorial in parallel. Will monitor live metrics.json and stop early if d′
+plateaus, extend the promising arm if still climbing at 400 (small-run-promises-longer-run).
+Run ids unchanged: qa-bake-n{1,2}-s{10,11}.

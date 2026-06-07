@@ -52,6 +52,13 @@ baseline. Read held-out d′ vs depth per arm + the per-epoch d′ trajectory (g
 LATER: layer in trajectory-regularization (anchor SQuAD trajectories) as a second axis; add seeds for CIs;
 add the teacher-forced contrast. Keep all GPUs busy — relaunch the next factorial slice as runs free.
 
+## Cycle-1 result (S4c1, 2026-06-07) → [[baked-propagation-tracks-trained-depth-no-compositional-bonus]]
+n∈{1,2} × seed∈{10,11}, 8B, bake, stopped epoch 110–170 (dynamics saturate ~ep50). DECISIVE: prompting
+ceiling `[1.12,0.53,0,0]` (d1..d4); baked d3 ≤ 0 every arm, no grokking through ep170 → baking bounded by
+max(trained-depth, teacher-reach), **no +1 compositional hop**, deeper hop does NOT grok. SUGGESTIVE but
+seed-confounded: n=2 d2 (1.05) > n=1 d2 (0.74) on average, but per-seed Δ ∈ {−0.01, +0.63} (n1-s10 anomaly).
+→ **seed-CI RUNNING** (seeds 12,13) to settle the d2 gap. Question stays **active**.
+
 ## Notes
 - Reseeding everything (split_seed = seed) is intentional: a propagation phenomenon that only holds for one
   held-out split is not robust. 2 seeds is a weak CI — cycle-1 reads the SHAPE; CIs come with more seeds.

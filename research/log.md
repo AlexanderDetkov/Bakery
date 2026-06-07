@@ -420,3 +420,28 @@ the known grokking window ~135-165; d′ logged every 10 ep) + expandable_segmen
 projection ~3-4 h for the 4-run factorial in parallel. Will monitor live metrics.json and stop early if d′
 plateaus, extend the promising arm if still climbing at 400 (small-run-promises-longer-run).
 Run ids unchanged: qa-bake-n{1,2}-s{10,11}.
+
+## 2026-06-07 (S4c1 — ANALYSIS + RECORD) — n×seed cycle-1 done; seed-CI launched
+
+**Analyzed** qa-bake-n{1,2}-s{10,11} (8B, bake, sampled teacher, lw_alpha, stopped ep110–170; dynamics
+saturate ~ep50, d′ JSON-only). **GATE: 129 passed.**
+
+Headline → [[baked-propagation-tracks-trained-depth-no-compositional-bonus]] (positive, medium conf):
+- Prompting ceiling reproducible across all arms: prompted d′ d1..d4 = [1.12, 0.53, 0, 0] (~1.5 hops).
+- Baked d′ post-plateau: reaches trained/distilled depth; n2 lifts held-out d2 above teacher (seed-11:
+  n1 d2=0.55≈teacher vs n2 d2=1.18). **d3 ≤ 0 EVERY arm, max-ever 0.00/0.00/−0.15/−0.61, NO grokking
+  through ep170** → bounded by max(trained-depth, teacher-reach), no +1 compositional hop.
+- eval_kl plateaus ~ep30 (n1~0.25, n2~0.15) while depth-d′ set early & flat → eval_kl⟂propagation + no
+  late deep-hop grokking.
+- d2 curriculum effect direction-consistent but **seed-confounded** (mean n2 1.05 > n1 0.74 = +0.31; per
+  seed {−0.01, +0.63}; n1-s10 anomalous d2=0.93). Limiting factor = seeds/probe-noise, NOT epochs.
+
+**Decision**: killed cycle-1 at ep110–170 (data sufficient; marginal info to ep400 ≈ 0 for the headline),
+reallocated all 4 GPUs to the **seed-CI** (the actual bottleneck for the d2 claim).
+
+**Launched (4× 8B, all GPUs, bs4, 200 ep)**: qa-bake-n{1,2}-s{12,13} — adds seeds 12,13 → 4-seed contrast
+for the d2 curriculum gap + the n1-s10 anomaly (compositional bonus vs noise).
+
+**Enqueued**: [[q-teacher-ceiling-vs-objective-limit]] (teacher-forced ground-truth + matched-count control:
+is the d3 ceiling the teacher or the objective?). Also flagged: longer grokking sentinel; regularization
+axis [[q-regularization-preserves-behavior]] next.

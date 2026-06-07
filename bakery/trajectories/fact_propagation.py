@@ -20,13 +20,13 @@ from __future__ import annotations
 import json
 import random
 from collections import defaultdict
-from dataclasses import dataclass
+from dataclasses import asdict, dataclass
 from pathlib import Path
 
 from bakery.config import build_data_config
 from bakery.prompts import build_prefix_ids, load_prompt, sha256
 from bakery.seeding import seed_everything
-from bakery.trajectories.base import DatasetBuilder, GenerationSpec, register_builder
+from bakery.trajectories.base import CheckpointId, DatasetBuilder, GenerationSpec, register_builder
 from bakery.logic.world import World
 from bakery.trajectories.contamination import (
     assert_probe_schema_and_balance,
@@ -38,6 +38,7 @@ from bakery.trajectories.contamination_dag import label_probes_dag, states_beyon
 from bakery.trajectories.encoding import FramedTrajectory, iter_supervised_ids
 from bakery.trajectories.generator import (
     CacheIdentity,
+    checkpoint_key,
     contexts_sha,
     load_trajectories_jsonl,
     make_generator,
@@ -72,7 +73,10 @@ def _load_contexts(data_cfg, n_needed, rng) -> list[str]:
     for entry in raw["contexts"]:
         if cat not in _MIXED and entry.get("category") != cat:
             continue
-        text = entry["text"]
+        # Truncate BEFORE dedup: two distinct raw contexts that collapse to the same prefix under
+        # context_max_chars must dedup to one, else they could land in both train and eval (the gate
+        # disjoints by x0_id, so identical truncated text under different indices would leak).
+        text = entry["text"][: data_cfg.context_max_chars]
         if text not in seen:
             seen.add(text)
             pool.append(text)
@@ -87,7 +91,7 @@ def _load_contexts(data_cfg, n_needed, rng) -> list[str]:
             f"Need {n_needed} contexts (num_contexts + eval_num_contexts) for category {cat!r} "
             f"but only {len(pool)} available in {bank_path!r}."
         )
-    return [c[: data_cfg.context_max_chars] for c in pool[:n_needed]]
+    return pool[:n_needed]            # already truncated above (then deduped)
 
 
 def _load_chain(data_cfg) -> list:
@@ -239,13 +243,16 @@ class FactPropagationBuilder(DatasetBuilder):
             contexts_sha=contexts_sha(train_ctx, eval_ctx),
             sampling_sha=sampling_sha(g, self.gen_seed),
             backend=g.backend,
+            checkpoint=checkpoint_key(bundle.base_checkpoint_id, getattr(cfg.model, "adapter_to_load", None)),
         )
         # Namespace the cache by source_control: "atomic" filters generations, so it is a DIFFERENT
         # trajectory set than "free" for the same sampling params (avoids a stale-cache mismatch).
         cache_path = Path(g.cache_dir) / f"{self.name}-{data_cfg.source_control}-{identity.key()}.jsonl"
 
         if g.cache_enabled and not g.on_the_fly and cache_path.exists():
-            train, eval_ = load_trajectories_jsonl(cache_path)
+            train, eval_, meta = load_trajectories_jsonl(cache_path)
+            gc = meta.get("generation_checkpoint")
+            self._generation_checkpoint = CheckpointId(**gc) if gc else None  # gate re-checks vs current
             return train, eval_, prompts
 
         seed_everything(self.gen_seed)
@@ -255,8 +262,10 @@ class FactPropagationBuilder(DatasetBuilder):
         eval_ = _frame(eval_ctx, g.num_contexts, base_text, baked_text, bundle, generator, g,
                        chain=chain, world=world, drop_composed=atomic, oversample=data_cfg.oversample)
 
+        self._generation_checkpoint = bundle.base_checkpoint_id           # the checkpoint that generated these
         if g.cache_enabled and not g.on_the_fly:
-            save_trajectories_jsonl(cache_path, train, eval_)
+            save_trajectories_jsonl(cache_path, train, eval_,
+                                    meta={"generation_checkpoint": asdict(bundle.base_checkpoint_id)})
         return train, eval_, prompts
 
     def contamination_validator(self):

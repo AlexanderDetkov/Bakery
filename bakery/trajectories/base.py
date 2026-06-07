@@ -22,6 +22,7 @@ from the reference repos, lifted out of the hot loop into un-constructable terri
 from __future__ import annotations
 
 import abc
+from collections import Counter
 from dataclasses import asdict, dataclass, field, is_dataclass
 from typing import Callable, Optional
 
@@ -287,12 +288,31 @@ def run_validation_gate(*, spec, train_trajectories, eval_trajectories,
     if contamination_validator is not None:
         contamination_stats = contamination_validator(train_trajectories, eval_trajectories) or {}
 
+    # Visibility (not a guarantee): a filtering source (e.g. the atomic-link control) keeps "up to"
+    # N per context, silently shrinking + biasing the surviving set. Surface requested-vs-kept and the
+    # per-context yield so a shrunk/biased dataset is never silent. We do NOT enforce a count here —
+    # dropping is intended; this just makes the shortfall legible in the manifest.
+    train_per_ctx = Counter(t.x0_id for t in train_trajectories)
+    yields = sorted(train_per_ctx.values())
+    requested = (spec.num_contexts * spec.trajectories_per_context
+                 if getattr(spec, "num_contexts", None) is not None else None)
+    coverage = {
+        "requested_train_traj": requested,
+        "kept_train_traj": len(train_trajectories),
+        "train_contexts_requested": getattr(spec, "num_contexts", None),
+        "train_contexts_realized": len(train_per_ctx),
+        "traj_per_ctx_min": (yields[0] if yields else 0),
+        "traj_per_ctx_max": (yields[-1] if yields else 0),
+        "traj_per_ctx_mean": (round(sum(yields) / len(yields), 2) if yields else 0.0),
+    }
+
     stats = {
         **shape_stats,
         "n_train_traj": len(train_trajectories),
         "n_eval_traj": len(eval_trajectories),
         "n_train_ctx": len({t.x0_id for t in train_trajectories}),
         "n_eval_ctx": len({t.x0_id for t in eval_trajectories}),
+        "coverage": coverage,
         "pairing": pairing_stats,
         "pairing_opted_out": opted_out,
         "probe_contamination": contamination_stats,
@@ -383,6 +403,11 @@ class DatasetBuilder(abc.ABC):
             model_seed=data_seed if model_seed is None else model_seed,
             gen_seed=self.gen_seed,
         )
+        # For trajectories LOADED from cache, the builder records the checkpoint that actually
+        # GENERATED them (self._generation_checkpoint) so criterion E compares stored-vs-current
+        # rather than trivially comparing current-vs-current. Fresh generation leaves it None ->
+        # falls back to the current checkpoint (which did generate them).
+        gen_ckpt = getattr(self, "_generation_checkpoint", None) or ckpt_id
         return run_validation_gate(
             spec=spec, train_trajectories=train_t, eval_trajectories=eval_t,
             tokenizer_fingerprint=tok_fp, base_checkpoint_id=ckpt_id,
@@ -391,7 +416,7 @@ class DatasetBuilder(abc.ABC):
             requires_pairing=self.requires_pairing,
             contamination_validator=self.contamination_validator(),
             expected_count=self.expected_count(cfg),
-            generation_checkpoint_id=ckpt_id, generation_tokenizer_fp=tok_fp,
+            generation_checkpoint_id=gen_ckpt, generation_tokenizer_fp=tok_fp,
         )
 
 

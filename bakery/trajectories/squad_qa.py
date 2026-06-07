@@ -15,17 +15,18 @@ freshly generated, they pass through the validation gate in DatasetBuilder.build
 from __future__ import annotations
 
 import random
-from dataclasses import dataclass
+from dataclasses import asdict, dataclass
 from pathlib import Path
 
 from bakery.config import build_data_config
 from bakery.prompts import build_prefix_ids, load_prompt, sha256
 from bakery.seeding import seed_everything
-from bakery.trajectories.base import GenerationSpec, register_builder
+from bakery.trajectories.base import CheckpointId, GenerationSpec, register_builder
 from bakery.trajectories.base import DatasetBuilder
 from bakery.trajectories.encoding import FramedTrajectory
 from bakery.trajectories.generator import (
     CacheIdentity,
+    checkpoint_key,
     contexts_sha,
     load_trajectories_jsonl,
     make_generator,
@@ -190,11 +191,14 @@ class SquadQABuilder(DatasetBuilder):
             contexts_sha=contexts_sha(train_ctx, eval_ctx),
             sampling_sha=sampling_sha(g, self.gen_seed),
             backend=g.backend,
+            checkpoint=checkpoint_key(bundle.base_checkpoint_id, getattr(cfg.model, "adapter_to_load", None)),
         )
         cache_path = Path(g.cache_dir) / f"{self.name}-{identity.key()}.jsonl"
 
         if g.cache_enabled and not g.on_the_fly and cache_path.exists():
-            train, eval_ = load_trajectories_jsonl(cache_path)
+            train, eval_, meta = load_trajectories_jsonl(cache_path)
+            gc = meta.get("generation_checkpoint")
+            self._generation_checkpoint = CheckpointId(**gc) if gc else None
             return train, eval_, prompts
 
         seed_everything(self.gen_seed)
@@ -202,6 +206,8 @@ class SquadQABuilder(DatasetBuilder):
         train = _frame(train_ctx, 0, base_text, baked_text, bundle, generator, g)
         eval_ = _frame(eval_ctx, g.num_contexts, base_text, baked_text, bundle, generator, g)
 
+        self._generation_checkpoint = bundle.base_checkpoint_id
         if g.cache_enabled and not g.on_the_fly:
-            save_trajectories_jsonl(cache_path, train, eval_)
+            save_trajectories_jsonl(cache_path, train, eval_,
+                                    meta={"generation_checkpoint": asdict(bundle.base_checkpoint_id)})
         return train, eval_, prompts

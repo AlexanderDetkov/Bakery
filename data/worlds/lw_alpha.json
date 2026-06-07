@@ -30,7 +30,19 @@
     "Toperu",
     "Mezezo",
     "Rimi",
-    "Gebo"
+    "Gebo",
+    "Biviba",
+    "Gobagi",
+    "Zazu",
+    "Lobeda",
+    "Zufeta",
+    "Tipo",
+    "Moto",
+    "Geru",
+    "Dosemu",
+    "Sifa",
+    "Bovo",
+    "Tizada"
   ],
   "rules": [
     {
@@ -71,27 +83,27 @@
     },
     {
       "body": [
-        "Doka"
+        "Leke"
       ],
       "head": "Vufe"
     },
     {
       "body": [
-        "Vufe"
+        "Doka"
       ],
       "head": "Zase"
     },
     {
       "body": [
-        "Nove"
+        "Timuva"
       ],
       "head": "Vofupa"
     },
     {
       "body": [
-        "Tuvu"
+        "Timuva"
       ],
-      "head": "Tulusi"
+      "head": "Tuvu"
     },
     {
       "body": [
@@ -125,33 +137,33 @@
     },
     {
       "body": [
-        "Tuvu"
+        "Vugi"
       ],
       "head": "Suli"
     },
     {
       "body": [
-        "Rifasu"
+        "Favita"
       ],
       "head": "Banezu"
     },
     {
       "body": [
-        "Tuvu"
+        "Sokezo"
       ],
       "head": "Tuga"
+    },
+    {
+      "body": [
+        "Tuga"
+      ],
+      "head": "Tamero"
     },
     {
       "body": [
         "Tamero"
       ],
       "head": "Tofa"
-    },
-    {
-      "body": [
-        "Tofa"
-      ],
-      "head": "Zagefa"
     },
     {
       "body": [
@@ -179,7 +191,7 @@
     },
     {
       "body": [
-        "Pono"
+        "Toperu"
       ],
       "head": "Mezezo"
     },
@@ -191,9 +203,75 @@
     },
     {
       "body": [
-        "Tamero"
+        "Fesa"
       ],
       "head": "Gebo"
+    },
+    {
+      "body": [
+        "Gebo"
+      ],
+      "head": "Biviba"
+    },
+    {
+      "body": [
+        "Rimi"
+      ],
+      "head": "Gobagi"
+    },
+    {
+      "body": [
+        "Zazu"
+      ],
+      "head": "Lobeda"
+    },
+    {
+      "body": [
+        "Lobeda"
+      ],
+      "head": "Zufeta"
+    },
+    {
+      "body": [
+        "Zufeta"
+      ],
+      "head": "Tipo"
+    },
+    {
+      "body": [
+        "Tipo"
+      ],
+      "head": "Moto"
+    },
+    {
+      "body": [
+        "Moto"
+      ],
+      "head": "Geru"
+    },
+    {
+      "body": [
+        "Geru"
+      ],
+      "head": "Dosemu"
+    },
+    {
+      "body": [
+        "Geru"
+      ],
+      "head": "Sifa"
+    },
+    {
+      "body": [
+        "Lobeda"
+      ],
+      "head": "Bovo"
+    },
+    {
+      "body": [
+        "Sifa"
+      ],
+      "head": "Tizada"
     }
   ],
   "components": [
@@ -204,10 +282,35 @@
       "Rifasu",
       "Sokezo",
       "Suli",
+      "Tamero",
+      "Tofa",
       "Tuga",
       "Tulusi",
-      "Tuvu",
       "Vugi"
+    ],
+    [
+      "Biviba",
+      "Fesa",
+      "Gebo",
+      "Gobagi",
+      "Kato",
+      "Mezezo",
+      "Pono",
+      "Rimi",
+      "Toperu",
+      "Zagefa"
+    ],
+    [
+      "Bovo",
+      "Dosemu",
+      "Geru",
+      "Lobeda",
+      "Moto",
+      "Sifa",
+      "Tipo",
+      "Tizada",
+      "Zazu",
+      "Zufeta"
     ],
     [
       "Doka",
@@ -216,22 +319,11 @@
       "Leke",
       "Nove",
       "Timuva",
+      "Tuvu",
       "Vofupa",
       "Vufe",
       "Zase",
       "Zemopi"
-    ],
-    [
-      "Fesa",
-      "Gebo",
-      "Kato",
-      "Mezezo",
-      "Pono",
-      "Rimi",
-      "Tamero",
-      "Tofa",
-      "Toperu",
-      "Zagefa"
     ]
   ],
   "facts": [],

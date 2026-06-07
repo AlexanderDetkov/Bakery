@@ -4,61 +4,73 @@
   "note": "Forced-choice (no-CoT) probes. hop = proof_depth = shortest-path length. Balanced TRUE (provable forward) vs FALSE (converse|cross|missing_edge) at every depth so a Yes/No bias scores at chance (d'\u22480). expect_heldout: composed-forward (d>=2) + every negative are never stated by the atomic source.",
   "realized_counts": {
     "d1": {
-      "true": 6,
-      "false": 6,
+      "true": 8,
+      "false": 8,
       "by_type": {
-        "converse": 2,
-        "cross": 2,
+        "converse": 3,
+        "cross": 3,
         "missing_edge": 2
-      }
+      },
+      "gen_true": 3.62,
+      "gen_neg_matched": 2.2
     },
     "d2": {
-      "true": 6,
-      "false": 6,
+      "true": 8,
+      "false": 8,
       "by_type": {
-        "converse": 2,
-        "cross": 2,
+        "converse": 3,
+        "cross": 3,
         "missing_edge": 2
-      }
+      },
+      "gen_true": 4.62,
+      "gen_neg_matched": 2.8
     },
     "d3": {
-      "true": 6,
-      "false": 6,
+      "true": 8,
+      "false": 8,
       "by_type": {
-        "converse": 2,
-        "cross": 2,
+        "converse": 3,
+        "cross": 3,
         "missing_edge": 2
-      }
+      },
+      "gen_true": 5.75,
+      "gen_neg_matched": 4
     },
     "d4": {
-      "true": 6,
-      "false": 6,
+      "true": 8,
+      "false": 8,
       "by_type": {
-        "converse": 2,
-        "cross": 2,
+        "converse": 3,
+        "cross": 3,
         "missing_edge": 2
-      }
+      },
+      "gen_true": 5.75,
+      "gen_neg_matched": 3.8
     },
     "d5": {
-      "true": 6,
-      "false": 6,
+      "true": 8,
+      "false": 8,
       "by_type": {
-        "converse": 2,
-        "cross": 2,
+        "converse": 3,
+        "cross": 3,
         "missing_edge": 2
-      }
+      },
+      "gen_true": 5.75,
+      "gen_neg_matched": 4
     },
     "d6": {
-      "true": 6,
-      "false": 6,
+      "true": 8,
+      "false": 8,
       "by_type": {
-        "converse": 2,
-        "cross": 2,
+        "converse": 3,
+        "cross": 3,
         "missing_edge": 2
-      }
+      },
+      "gen_true": 6.5,
+      "gen_neg_matched": 4.2
     }
   },
-  "n_probes": 72,
+  "n_probes": 96,
   "probes": [
     {
       "hop": 1,
@@ -66,65 +78,14 @@
       "form": "forward",
       "neg_type": null,
       "provable": true,
-      "subj": "Tetara",
-      "obj": "Nizana",
+      "subj": "Nizana",
+      "obj": "Guza",
       "entities": [
-        "Tetara",
-        "Nizana"
+        "Nizana",
+        "Guza"
       ],
       "expect_heldout": false,
-      "question": "Answer with only Yes or No. In lw_delta, is every Tetara a Nizana?",
-      "pos": " Yes",
-      "neg": " No"
-    },
-    {
-      "hop": 1,
-      "proof_depth": 1,
-      "form": "forward",
-      "neg_type": null,
-      "provable": true,
-      "subj": "Digu",
-      "obj": "Tupo",
-      "entities": [
-        "Digu",
-        "Tupo"
-      ],
-      "expect_heldout": false,
-      "question": "Answer with only Yes or No. In lw_delta, is every Digu a Tupo?",
-      "pos": " Yes",
-      "neg": " No"
-    },
-    {
-      "hop": 1,
-      "proof_depth": 1,
-      "form": "forward",
-      "neg_type": null,
-      "provable": true,
-      "subj": "Fisaza",
-      "obj": "Semozi",
-      "entities": [
-        "Fisaza",
-        "Semozi"
-      ],
-      "expect_heldout": false,
-      "question": "Answer with only Yes or No. In lw_delta, is every Fisaza a Semozi?",
-      "pos": " Yes",
-      "neg": " No"
-    },
-    {
-      "hop": 1,
-      "proof_depth": 1,
-      "form": "forward",
-      "neg_type": null,
-      "provable": true,
-      "subj": "Tupo",
-      "obj": "Tiguvo",
-      "entities": [
-        "Tupo",
-        "Tiguvo"
-      ],
-      "expect_heldout": false,
-      "question": "Answer with only Yes or No. In lw_delta, is every Tupo a Tiguvo?",
+      "question": "Answer with only Yes or No. In lw_delta, is every Nizana a Guza?",
       "pos": " Yes",
       "neg": " No"
     },
@@ -151,14 +112,99 @@
       "form": "forward",
       "neg_type": null,
       "provable": true,
-      "subj": "Nida",
-      "obj": "Narato",
+      "subj": "Liza",
+      "obj": "Rere",
       "entities": [
-        "Nida",
-        "Narato"
+        "Liza",
+        "Rere"
       ],
       "expect_heldout": false,
-      "question": "Answer with only Yes or No. In lw_delta, is every Nida a Narato?",
+      "question": "Answer with only Yes or No. In lw_delta, is every Liza a Rere?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "proof_depth": 1,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Muni",
+      "obj": "Fenosu",
+      "entities": [
+        "Muni",
+        "Fenosu"
+      ],
+      "expect_heldout": false,
+      "question": "Answer with only Yes or No. In lw_delta, is every Muni a Fenosu?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "proof_depth": 1,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Fisaza",
+      "obj": "Semozi",
+      "entities": [
+        "Fisaza",
+        "Semozi"
+      ],
+      "expect_heldout": false,
+      "question": "Answer with only Yes or No. In lw_delta, is every Fisaza a Semozi?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "proof_depth": 1,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Tetara",
+      "obj": "Nizana",
+      "entities": [
+        "Tetara",
+        "Nizana"
+      ],
+      "expect_heldout": false,
+      "question": "Answer with only Yes or No. In lw_delta, is every Tetara a Nizana?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "proof_depth": 1,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Tiguvo",
+      "obj": "Tuka",
+      "entities": [
+        "Tiguvo",
+        "Tuka"
+      ],
+      "expect_heldout": false,
+      "question": "Answer with only Yes or No. In lw_delta, is every Tiguvo a Tuka?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "proof_depth": 1,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Nafepa",
+      "obj": "Lilo",
+      "entities": [
+        "Nafepa",
+        "Lilo"
+      ],
+      "expect_heldout": false,
+      "question": "Answer with only Yes or No. In lw_delta, is every Nafepa a Lilo?",
       "pos": " Yes",
       "neg": " No"
     },
@@ -168,14 +214,14 @@
       "form": "converse",
       "neg_type": "converse",
       "provable": false,
-      "subj": "Nizana",
-      "obj": "Tetara",
+      "subj": "Guza",
+      "obj": "Nizana",
       "entities": [
-        "Tetara",
-        "Nizana"
+        "Nizana",
+        "Guza"
       ],
       "expect_heldout": true,
-      "question": "Answer with only Yes or No. In lw_delta, is every Nizana a Tetara?",
+      "question": "Answer with only Yes or No. In lw_delta, is every Guza a Nizana?",
       "pos": " No",
       "neg": " Yes"
     },
@@ -185,14 +231,14 @@
       "form": "cross",
       "neg_type": "cross",
       "provable": false,
-      "subj": "Bunuro",
-      "obj": "Nizana",
+      "subj": "Vuvu",
+      "obj": "Narato",
       "entities": [
-        "Bunuro",
-        "Nizana"
+        "Vuvu",
+        "Narato"
       ],
       "expect_heldout": true,
-      "question": "Answer with only Yes or No. In lw_delta, is every Bunuro a Nizana?",
+      "question": "Answer with only Yes or No. In lw_delta, is every Vuvu a Narato?",
       "pos": " No",
       "neg": " Yes"
     },
@@ -202,14 +248,14 @@
       "form": "missing_edge",
       "neg_type": "missing_edge",
       "provable": false,
-      "subj": "Dobi",
-      "obj": "Fekipu",
+      "subj": "Tuka",
+      "obj": "Fozuto",
       "entities": [
-        "Dobi",
-        "Fekipu"
+        "Tuka",
+        "Fozuto"
       ],
       "expect_heldout": true,
-      "question": "Answer with only Yes or No. In lw_delta, is every Dobi a Fekipu?",
+      "question": "Answer with only Yes or No. In lw_delta, is every Tuka a Fozuto?",
       "pos": " No",
       "neg": " Yes"
     },
@@ -219,14 +265,14 @@
       "form": "converse",
       "neg_type": "converse",
       "provable": false,
-      "subj": "Fisaza",
-      "obj": "Tuso",
+      "subj": "Narato",
+      "obj": "Nida",
       "entities": [
-        "Tuso",
-        "Fisaza"
+        "Nida",
+        "Narato"
       ],
       "expect_heldout": true,
-      "question": "Answer with only Yes or No. In lw_delta, is every Fisaza a Tuso?",
+      "question": "Answer with only Yes or No. In lw_delta, is every Narato a Nida?",
       "pos": " No",
       "neg": " Yes"
     },
@@ -236,14 +282,14 @@
       "form": "cross",
       "neg_type": "cross",
       "provable": false,
-      "subj": "Tuka",
-      "obj": "Nida",
+      "subj": "Dumaki",
+      "obj": "Fisaza",
       "entities": [
-        "Tuka",
-        "Nida"
+        "Dumaki",
+        "Fisaza"
       ],
       "expect_heldout": true,
-      "question": "Answer with only Yes or No. In lw_delta, is every Tuka a Nida?",
+      "question": "Answer with only Yes or No. In lw_delta, is every Dumaki a Fisaza?",
       "pos": " No",
       "neg": " Yes"
     },
@@ -253,14 +299,48 @@
       "form": "missing_edge",
       "neg_type": "missing_edge",
       "provable": false,
-      "subj": "Bonidu",
-      "obj": "Zokafo",
+      "subj": "Fenosu",
+      "obj": "Muni",
       "entities": [
-        "Bonidu",
-        "Zokafo"
+        "Fenosu",
+        "Muni"
       ],
       "expect_heldout": true,
-      "question": "Answer with only Yes or No. In lw_delta, is every Bonidu a Zokafo?",
+      "question": "Answer with only Yes or No. In lw_delta, is every Fenosu a Muni?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "proof_depth": 1,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Tiguvo",
+      "obj": "Fozuto",
+      "entities": [
+        "Fozuto",
+        "Tiguvo"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_delta, is every Tiguvo a Fozuto?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "proof_depth": 1,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Digu",
+      "obj": "Dumaki",
+      "entities": [
+        "Digu",
+        "Dumaki"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_delta, is every Digu a Dumaki?",
       "pos": " No",
       "neg": " Yes"
     },
@@ -270,14 +350,116 @@
       "form": "forward",
       "neg_type": null,
       "provable": true,
-      "subj": "Zokafo",
-      "obj": "Bonidu",
+      "subj": "Liza",
+      "obj": "Mera",
       "entities": [
-        "Zokafo",
-        "Bonidu"
+        "Liza",
+        "Mera"
       ],
       "expect_heldout": true,
-      "question": "Answer with only Yes or No. In lw_delta, is every Zokafo a Bonidu?",
+      "question": "Answer with only Yes or No. In lw_delta, is every Liza a Mera?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "proof_depth": 2,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Nizana",
+      "obj": "Tupo",
+      "entities": [
+        "Nizana",
+        "Tupo"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_delta, is every Nizana a Tupo?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "proof_depth": 2,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Gate",
+      "obj": "Tiguvo",
+      "entities": [
+        "Gate",
+        "Tiguvo"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_delta, is every Gate a Tiguvo?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "proof_depth": 2,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Zokafo",
+      "obj": "Rere",
+      "entities": [
+        "Zokafo",
+        "Rere"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_delta, is every Zokafo a Rere?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "proof_depth": 2,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Tuso",
+      "obj": "Semozi",
+      "entities": [
+        "Tuso",
+        "Semozi"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_delta, is every Tuso a Semozi?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "proof_depth": 2,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Semozi",
+      "obj": "Muni",
+      "entities": [
+        "Semozi",
+        "Muni"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_delta, is every Semozi a Muni?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "proof_depth": 2,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Bonidu",
+      "obj": "Pani",
+      "entities": [
+        "Bonidu",
+        "Pani"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_delta, is every Bonidu a Pani?",
       "pos": " Yes",
       "neg": " No"
     },
@@ -301,85 +483,17 @@
     {
       "hop": 2,
       "proof_depth": 2,
-      "form": "forward",
-      "neg_type": null,
-      "provable": true,
-      "subj": "Gate",
-      "obj": "Vuvu",
-      "entities": [
-        "Gate",
-        "Vuvu"
-      ],
-      "expect_heldout": true,
-      "question": "Answer with only Yes or No. In lw_delta, is every Gate a Vuvu?",
-      "pos": " Yes",
-      "neg": " No"
-    },
-    {
-      "hop": 2,
-      "proof_depth": 2,
-      "form": "forward",
-      "neg_type": null,
-      "provable": true,
-      "subj": "Tupo",
-      "obj": "Tuka",
-      "entities": [
-        "Tupo",
-        "Tuka"
-      ],
-      "expect_heldout": true,
-      "question": "Answer with only Yes or No. In lw_delta, is every Tupo a Tuka?",
-      "pos": " Yes",
-      "neg": " No"
-    },
-    {
-      "hop": 2,
-      "proof_depth": 2,
-      "form": "forward",
-      "neg_type": null,
-      "provable": true,
-      "subj": "Pani",
-      "obj": "Fenosu",
-      "entities": [
-        "Pani",
-        "Fenosu"
-      ],
-      "expect_heldout": true,
-      "question": "Answer with only Yes or No. In lw_delta, is every Pani a Fenosu?",
-      "pos": " Yes",
-      "neg": " No"
-    },
-    {
-      "hop": 2,
-      "proof_depth": 2,
-      "form": "forward",
-      "neg_type": null,
-      "provable": true,
-      "subj": "Mera",
-      "obj": "Sali",
-      "entities": [
-        "Mera",
-        "Sali"
-      ],
-      "expect_heldout": true,
-      "question": "Answer with only Yes or No. In lw_delta, is every Mera a Sali?",
-      "pos": " Yes",
-      "neg": " No"
-    },
-    {
-      "hop": 2,
-      "proof_depth": 2,
       "form": "converse",
       "neg_type": "converse",
       "provable": false,
-      "subj": "Vuvu",
-      "obj": "Gate",
+      "subj": "Fekipu",
+      "obj": "Liza",
       "entities": [
-        "Gate",
-        "Vuvu"
+        "Liza",
+        "Fekipu"
       ],
       "expect_heldout": true,
-      "question": "Answer with only Yes or No. In lw_delta, is every Vuvu a Gate?",
+      "question": "Answer with only Yes or No. In lw_delta, is every Fekipu a Liza?",
       "pos": " No",
       "neg": " Yes"
     },
@@ -389,14 +503,14 @@
       "form": "cross",
       "neg_type": "cross",
       "provable": false,
-      "subj": "Fozuto",
-      "obj": "Fenosu",
+      "subj": "Zokafo",
+      "obj": "Lali",
       "entities": [
-        "Fozuto",
-        "Fenosu"
+        "Zokafo",
+        "Lali"
       ],
       "expect_heldout": true,
-      "question": "Answer with only Yes or No. In lw_delta, is every Fozuto a Fenosu?",
+      "question": "Answer with only Yes or No. In lw_delta, is every Zokafo a Lali?",
       "pos": " No",
       "neg": " Yes"
     },
@@ -406,31 +520,31 @@
       "form": "missing_edge",
       "neg_type": "missing_edge",
       "provable": false,
-      "subj": "Tupo",
-      "obj": "Vuvu",
+      "subj": "Bonidu",
+      "obj": "Liza",
       "entities": [
-        "Tupo",
-        "Vuvu"
-      ],
-      "expect_heldout": true,
-      "question": "Answer with only Yes or No. In lw_delta, is every Tupo a Vuvu?",
-      "pos": " No",
-      "neg": " Yes"
-    },
-    {
-      "hop": 2,
-      "proof_depth": 2,
-      "form": "converse",
-      "neg_type": "converse",
-      "provable": false,
-      "subj": "Liza",
-      "obj": "Bunuro",
-      "entities": [
-        "Bunuro",
+        "Bonidu",
         "Liza"
       ],
       "expect_heldout": true,
-      "question": "Answer with only Yes or No. In lw_delta, is every Liza a Bunuro?",
+      "question": "Answer with only Yes or No. In lw_delta, is every Bonidu a Liza?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "proof_depth": 2,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Tuka",
+      "obj": "Fozuto",
+      "entities": [
+        "Fozuto",
+        "Tuka"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_delta, is every Tuka a Fozuto?",
       "pos": " No",
       "neg": " Yes"
     },
@@ -440,14 +554,14 @@
       "form": "cross",
       "neg_type": "cross",
       "provable": false,
-      "subj": "Tuso",
-      "obj": "Guza",
+      "subj": "Tiguvo",
+      "obj": "Semozi",
       "entities": [
-        "Tuso",
-        "Guza"
+        "Tiguvo",
+        "Semozi"
       ],
       "expect_heldout": true,
-      "question": "Answer with only Yes or No. In lw_delta, is every Tuso a Guza?",
+      "question": "Answer with only Yes or No. In lw_delta, is every Tiguvo a Semozi?",
       "pos": " No",
       "neg": " Yes"
     },
@@ -457,16 +571,67 @@
       "form": "missing_edge",
       "neg_type": "missing_edge",
       "provable": false,
-      "subj": "Mera",
-      "obj": "Nida",
+      "subj": "Lilo",
+      "obj": "Nafepa",
       "entities": [
-        "Mera",
-        "Nida"
+        "Lilo",
+        "Nafepa"
       ],
       "expect_heldout": true,
-      "question": "Answer with only Yes or No. In lw_delta, is every Mera a Nida?",
+      "question": "Answer with only Yes or No. In lw_delta, is every Lilo a Nafepa?",
       "pos": " No",
       "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "proof_depth": 2,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Zokafo",
+      "obj": "Narato",
+      "entities": [
+        "Narato",
+        "Zokafo"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_delta, is every Zokafo a Narato?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "proof_depth": 2,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Digu",
+      "obj": "Bunuro",
+      "entities": [
+        "Digu",
+        "Bunuro"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_delta, is every Digu a Bunuro?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "proof_depth": 3,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Nafepa",
+      "obj": "Tolu",
+      "entities": [
+        "Nafepa",
+        "Tolu"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_delta, is every Nafepa a Tolu?",
+      "pos": " Yes",
+      "neg": " No"
     },
     {
       "hop": 3,
@@ -492,13 +657,13 @@
       "neg_type": null,
       "provable": true,
       "subj": "Bunuro",
-      "obj": "Bonidu",
+      "obj": "Rere",
       "entities": [
         "Bunuro",
-        "Bonidu"
+        "Rere"
       ],
       "expect_heldout": true,
-      "question": "Answer with only Yes or No. In lw_delta, is every Bunuro a Bonidu?",
+      "question": "Answer with only Yes or No. In lw_delta, is every Bunuro a Rere?",
       "pos": " Yes",
       "neg": " No"
     },
@@ -508,14 +673,14 @@
       "form": "forward",
       "neg_type": null,
       "provable": true,
-      "subj": "Nizana",
-      "obj": "Fozuto",
+      "subj": "Guza",
+      "obj": "Tiguvo",
       "entities": [
-        "Nizana",
-        "Fozuto"
+        "Guza",
+        "Tiguvo"
       ],
       "expect_heldout": true,
-      "question": "Answer with only Yes or No. In lw_delta, is every Nizana a Fozuto?",
+      "question": "Answer with only Yes or No. In lw_delta, is every Guza a Tiguvo?",
       "pos": " Yes",
       "neg": " No"
     },
@@ -525,14 +690,14 @@
       "form": "forward",
       "neg_type": null,
       "provable": true,
-      "subj": "Fekipu",
-      "obj": "Semozi",
+      "subj": "Rere",
+      "obj": "Sali",
       "entities": [
-        "Fekipu",
-        "Semozi"
+        "Rere",
+        "Sali"
       ],
       "expect_heldout": true,
-      "question": "Answer with only Yes or No. In lw_delta, is every Fekipu a Semozi?",
+      "question": "Answer with only Yes or No. In lw_delta, is every Rere a Sali?",
       "pos": " Yes",
       "neg": " No"
     },
@@ -542,14 +707,14 @@
       "form": "forward",
       "neg_type": null,
       "provable": true,
-      "subj": "Fozuto",
-      "obj": "Tupo",
+      "subj": "Semozi",
+      "obj": "Kasu",
       "entities": [
-        "Fozuto",
-        "Tupo"
+        "Semozi",
+        "Kasu"
       ],
       "expect_heldout": true,
-      "question": "Answer with only Yes or No. In lw_delta, is every Fozuto a Tupo?",
+      "question": "Answer with only Yes or No. In lw_delta, is every Semozi a Kasu?",
       "pos": " Yes",
       "neg": " No"
     },
@@ -559,14 +724,31 @@
       "form": "forward",
       "neg_type": null,
       "provable": true,
-      "subj": "Fisaza",
-      "obj": "Muni",
+      "subj": "Gate",
+      "obj": "Digu",
       "entities": [
-        "Fisaza",
-        "Muni"
+        "Gate",
+        "Digu"
       ],
       "expect_heldout": true,
-      "question": "Answer with only Yes or No. In lw_delta, is every Fisaza a Muni?",
+      "question": "Answer with only Yes or No. In lw_delta, is every Gate a Digu?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "proof_depth": 3,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Semozi",
+      "obj": "Rafe",
+      "entities": [
+        "Semozi",
+        "Rafe"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_delta, is every Semozi a Rafe?",
       "pos": " Yes",
       "neg": " No"
     },
@@ -576,14 +758,14 @@
       "form": "converse",
       "neg_type": "converse",
       "provable": false,
-      "subj": "Vuvu",
-      "obj": "Guza",
+      "subj": "Fekipu",
+      "obj": "Zokafo",
       "entities": [
-        "Guza",
-        "Vuvu"
+        "Zokafo",
+        "Fekipu"
       ],
       "expect_heldout": true,
-      "question": "Answer with only Yes or No. In lw_delta, is every Vuvu a Guza?",
+      "question": "Answer with only Yes or No. In lw_delta, is every Fekipu a Zokafo?",
       "pos": " No",
       "neg": " Yes"
     },
@@ -610,14 +792,14 @@
       "form": "missing_edge",
       "neg_type": "missing_edge",
       "provable": false,
-      "subj": "Fisaza",
-      "obj": "Dobi",
+      "subj": "Mera",
+      "obj": "Rere",
       "entities": [
-        "Fisaza",
-        "Dobi"
+        "Mera",
+        "Rere"
       ],
       "expect_heldout": true,
-      "question": "Answer with only Yes or No. In lw_delta, is every Fisaza a Dobi?",
+      "question": "Answer with only Yes or No. In lw_delta, is every Mera a Rere?",
       "pos": " No",
       "neg": " Yes"
     },
@@ -627,14 +809,14 @@
       "form": "converse",
       "neg_type": "converse",
       "provable": false,
-      "subj": "Tuka",
-      "obj": "Digu",
+      "subj": "Pani",
+      "obj": "Mera",
       "entities": [
-        "Digu",
-        "Tuka"
+        "Mera",
+        "Pani"
       ],
       "expect_heldout": true,
-      "question": "Answer with only Yes or No. In lw_delta, is every Tuka a Digu?",
+      "question": "Answer with only Yes or No. In lw_delta, is every Pani a Mera?",
       "pos": " No",
       "neg": " Yes"
     },
@@ -645,13 +827,13 @@
       "neg_type": "cross",
       "provable": false,
       "subj": "Sali",
-      "obj": "Gate",
+      "obj": "Ruloki",
       "entities": [
         "Sali",
-        "Gate"
+        "Ruloki"
       ],
       "expect_heldout": true,
-      "question": "Answer with only Yes or No. In lw_delta, is every Sali a Gate?",
+      "question": "Answer with only Yes or No. In lw_delta, is every Sali a Ruloki?",
       "pos": " No",
       "neg": " Yes"
     },
@@ -661,14 +843,48 @@
       "form": "missing_edge",
       "neg_type": "missing_edge",
       "provable": false,
-      "subj": "Digu",
-      "obj": "Nizana",
+      "subj": "Mera",
+      "obj": "Fekipu",
       "entities": [
-        "Digu",
-        "Nizana"
+        "Mera",
+        "Fekipu"
       ],
       "expect_heldout": true,
-      "question": "Answer with only Yes or No. In lw_delta, is every Digu a Nizana?",
+      "question": "Answer with only Yes or No. In lw_delta, is every Mera a Fekipu?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "proof_depth": 3,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Mera",
+      "obj": "Zokafo",
+      "entities": [
+        "Zokafo",
+        "Mera"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_delta, is every Mera a Zokafo?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "proof_depth": 3,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Nizana",
+      "obj": "Ruloki",
+      "entities": [
+        "Nizana",
+        "Ruloki"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_delta, is every Nizana a Ruloki?",
       "pos": " No",
       "neg": " Yes"
     },
@@ -678,14 +894,14 @@
       "form": "forward",
       "neg_type": null,
       "provable": true,
-      "subj": "Nizana",
-      "obj": "Vuvu",
+      "subj": "Guza",
+      "obj": "Tuka",
       "entities": [
-        "Nizana",
-        "Vuvu"
+        "Guza",
+        "Tuka"
       ],
       "expect_heldout": true,
-      "question": "Answer with only Yes or No. In lw_delta, is every Nizana a Vuvu?",
+      "question": "Answer with only Yes or No. In lw_delta, is every Guza a Tuka?",
       "pos": " Yes",
       "neg": " No"
     },
@@ -695,20 +911,564 @@
       "form": "forward",
       "neg_type": null,
       "provable": true,
-      "subj": "Tetara",
-      "obj": "Fozuto",
+      "subj": "Kemupo",
+      "obj": "Lilo",
       "entities": [
-        "Tetara",
-        "Fozuto"
+        "Kemupo",
+        "Lilo"
       ],
       "expect_heldout": true,
-      "question": "Answer with only Yes or No. In lw_delta, is every Tetara a Fozuto?",
+      "question": "Answer with only Yes or No. In lw_delta, is every Kemupo a Lilo?",
       "pos": " Yes",
       "neg": " No"
     },
     {
       "hop": 4,
       "proof_depth": 4,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Semozi",
+      "obj": "Dobi",
+      "entities": [
+        "Semozi",
+        "Dobi"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_delta, is every Semozi a Dobi?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "proof_depth": 4,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Fisaza",
+      "obj": "Fenosu",
+      "entities": [
+        "Fisaza",
+        "Fenosu"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_delta, is every Fisaza a Fenosu?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "proof_depth": 4,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Lali",
+      "obj": "Gadasi",
+      "entities": [
+        "Lali",
+        "Gadasi"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_delta, is every Lali a Gadasi?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "proof_depth": 4,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Fisaza",
+      "obj": "Kasu",
+      "entities": [
+        "Fisaza",
+        "Kasu"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_delta, is every Fisaza a Kasu?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "proof_depth": 4,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Bunuro",
+      "obj": "Fekipu",
+      "entities": [
+        "Bunuro",
+        "Fekipu"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_delta, is every Bunuro a Fekipu?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "proof_depth": 4,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Donova",
+      "obj": "Tolu",
+      "entities": [
+        "Donova",
+        "Tolu"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_delta, is every Donova a Tolu?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "proof_depth": 4,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Nafepa",
+      "obj": "Zavuke",
+      "entities": [
+        "Zavuke",
+        "Nafepa"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_delta, is every Nafepa a Zavuke?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "proof_depth": 4,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Nafepa",
+      "obj": "Muni",
+      "entities": [
+        "Nafepa",
+        "Muni"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_delta, is every Nafepa a Muni?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "proof_depth": 4,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Rere",
+      "obj": "Liza",
+      "entities": [
+        "Rere",
+        "Liza"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_delta, is every Rere a Liza?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "proof_depth": 4,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Tiguvo",
+      "obj": "Nizana",
+      "entities": [
+        "Nizana",
+        "Tiguvo"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_delta, is every Tiguvo a Nizana?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "proof_depth": 4,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Muni",
+      "obj": "Liza",
+      "entities": [
+        "Muni",
+        "Liza"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_delta, is every Muni a Liza?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "proof_depth": 4,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Gate",
+      "obj": "Tupo",
+      "entities": [
+        "Gate",
+        "Tupo"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_delta, is every Gate a Tupo?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "proof_depth": 4,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Tolu",
+      "obj": "Donova",
+      "entities": [
+        "Donova",
+        "Tolu"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_delta, is every Tolu a Donova?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "proof_depth": 4,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Digu",
+      "obj": "Nafepa",
+      "entities": [
+        "Digu",
+        "Nafepa"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_delta, is every Digu a Nafepa?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "proof_depth": 5,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Tuso",
+      "obj": "Fenosu",
+      "entities": [
+        "Tuso",
+        "Fenosu"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_delta, is every Tuso a Fenosu?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "proof_depth": 5,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Guza",
+      "obj": "Zefopi",
+      "entities": [
+        "Guza",
+        "Zefopi"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_delta, is every Guza a Zefopi?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "proof_depth": 5,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Narato",
+      "obj": "Fekipu",
+      "entities": [
+        "Narato",
+        "Fekipu"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_delta, is every Narato a Fekipu?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "proof_depth": 5,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Tetara",
+      "obj": "Tiguvo",
+      "entities": [
+        "Tetara",
+        "Tiguvo"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_delta, is every Tetara a Tiguvo?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "proof_depth": 5,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Nida",
+      "obj": "Rere",
+      "entities": [
+        "Nida",
+        "Rere"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_delta, is every Nida a Rere?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "proof_depth": 5,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Tuso",
+      "obj": "Kasu",
+      "entities": [
+        "Tuso",
+        "Kasu"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_delta, is every Tuso a Kasu?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "proof_depth": 5,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Bunuro",
+      "obj": "Bonidu",
+      "entities": [
+        "Bunuro",
+        "Bonidu"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_delta, is every Bunuro a Bonidu?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "proof_depth": 5,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Narato",
+      "obj": "Mera",
+      "entities": [
+        "Narato",
+        "Mera"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_delta, is every Narato a Mera?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "proof_depth": 5,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Tolu",
+      "obj": "Lali",
+      "entities": [
+        "Lali",
+        "Tolu"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_delta, is every Tolu a Lali?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "proof_depth": 5,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Zefopi",
+      "obj": "Fenosu",
+      "entities": [
+        "Zefopi",
+        "Fenosu"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_delta, is every Zefopi a Fenosu?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "proof_depth": 5,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Liza",
+      "obj": "Zokafo",
+      "entities": [
+        "Liza",
+        "Zokafo"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_delta, is every Liza a Zokafo?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "proof_depth": 5,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Fenosu",
+      "obj": "Tuso",
+      "entities": [
+        "Tuso",
+        "Fenosu"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_delta, is every Fenosu a Tuso?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "proof_depth": 5,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Tolu",
+      "obj": "Rere",
+      "entities": [
+        "Tolu",
+        "Rere"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_delta, is every Tolu a Rere?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "proof_depth": 5,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Liza",
+      "obj": "Bunuro",
+      "entities": [
+        "Liza",
+        "Bunuro"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_delta, is every Liza a Bunuro?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "proof_depth": 5,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Vuvu",
+      "obj": "Tetara",
+      "entities": [
+        "Tetara",
+        "Vuvu"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_delta, is every Vuvu a Tetara?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "proof_depth": 5,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Lali",
+      "obj": "Tiguvo",
+      "entities": [
+        "Lali",
+        "Tiguvo"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_delta, is every Lali a Tiguvo?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 6,
+      "proof_depth": 6,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Zokafo",
+      "obj": "Pani",
+      "entities": [
+        "Zokafo",
+        "Pani"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_delta, is every Zokafo a Pani?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 6,
+      "proof_depth": 6,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Tetara",
+      "obj": "Tuka",
+      "entities": [
+        "Tetara",
+        "Tuka"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_delta, is every Tetara a Tuka?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 6,
+      "proof_depth": 6,
       "form": "forward",
       "neg_type": null,
       "provable": true,
@@ -724,376 +1484,36 @@
       "neg": " No"
     },
     {
-      "hop": 4,
-      "proof_depth": 4,
+      "hop": 6,
+      "proof_depth": 6,
       "form": "forward",
       "neg_type": null,
       "provable": true,
-      "subj": "Pani",
-      "obj": "Semozi",
-      "entities": [
-        "Pani",
-        "Semozi"
-      ],
-      "expect_heldout": true,
-      "question": "Answer with only Yes or No. In lw_delta, is every Pani a Semozi?",
-      "pos": " Yes",
-      "neg": " No"
-    },
-    {
-      "hop": 4,
-      "proof_depth": 4,
-      "form": "forward",
-      "neg_type": null,
-      "provable": true,
-      "subj": "Guza",
-      "obj": "Digu",
-      "entities": [
-        "Guza",
-        "Digu"
-      ],
-      "expect_heldout": true,
-      "question": "Answer with only Yes or No. In lw_delta, is every Guza a Digu?",
-      "pos": " Yes",
-      "neg": " No"
-    },
-    {
-      "hop": 4,
-      "proof_depth": 4,
-      "form": "forward",
-      "neg_type": null,
-      "provable": true,
-      "subj": "Zefopi",
-      "obj": "Zokafo",
-      "entities": [
-        "Zefopi",
-        "Zokafo"
-      ],
-      "expect_heldout": true,
-      "question": "Answer with only Yes or No. In lw_delta, is every Zefopi a Zokafo?",
-      "pos": " Yes",
-      "neg": " No"
-    },
-    {
-      "hop": 4,
-      "proof_depth": 4,
-      "form": "converse",
-      "neg_type": "converse",
-      "provable": false,
-      "subj": "Tuka",
-      "obj": "Vuvu",
-      "entities": [
-        "Vuvu",
-        "Tuka"
-      ],
-      "expect_heldout": true,
-      "question": "Answer with only Yes or No. In lw_delta, is every Tuka a Vuvu?",
-      "pos": " No",
-      "neg": " Yes"
-    },
-    {
-      "hop": 4,
-      "proof_depth": 4,
-      "form": "cross",
-      "neg_type": "cross",
-      "provable": false,
-      "subj": "Sali",
-      "obj": "Fozuto",
-      "entities": [
-        "Sali",
-        "Fozuto"
-      ],
-      "expect_heldout": true,
-      "question": "Answer with only Yes or No. In lw_delta, is every Sali a Fozuto?",
-      "pos": " No",
-      "neg": " Yes"
-    },
-    {
-      "hop": 4,
-      "proof_depth": 4,
-      "form": "missing_edge",
-      "neg_type": "missing_edge",
-      "provable": false,
-      "subj": "Vuvu",
-      "obj": "Guza",
-      "entities": [
-        "Vuvu",
-        "Guza"
-      ],
-      "expect_heldout": true,
-      "question": "Answer with only Yes or No. In lw_delta, is every Vuvu a Guza?",
-      "pos": " No",
-      "neg": " Yes"
-    },
-    {
-      "hop": 4,
-      "proof_depth": 4,
-      "form": "converse",
-      "neg_type": "converse",
-      "provable": false,
-      "subj": "Vuvu",
-      "obj": "Nizana",
-      "entities": [
-        "Nizana",
-        "Vuvu"
-      ],
-      "expect_heldout": true,
-      "question": "Answer with only Yes or No. In lw_delta, is every Vuvu a Nizana?",
-      "pos": " No",
-      "neg": " Yes"
-    },
-    {
-      "hop": 4,
-      "proof_depth": 4,
-      "form": "cross",
-      "neg_type": "cross",
-      "provable": false,
-      "subj": "Guza",
-      "obj": "Semozi",
-      "entities": [
-        "Guza",
-        "Semozi"
-      ],
-      "expect_heldout": true,
-      "question": "Answer with only Yes or No. In lw_delta, is every Guza a Semozi?",
-      "pos": " No",
-      "neg": " Yes"
-    },
-    {
-      "hop": 4,
-      "proof_depth": 4,
-      "form": "missing_edge",
-      "neg_type": "missing_edge",
-      "provable": false,
       "subj": "Tuso",
-      "obj": "Fenosu",
+      "obj": "Dobi",
       "entities": [
         "Tuso",
-        "Fenosu"
+        "Dobi"
       ],
       "expect_heldout": true,
-      "question": "Answer with only Yes or No. In lw_delta, is every Tuso a Fenosu?",
-      "pos": " No",
-      "neg": " Yes"
-    },
-    {
-      "hop": 5,
-      "proof_depth": 5,
-      "form": "forward",
-      "neg_type": null,
-      "provable": true,
-      "subj": "Narato",
-      "obj": "Sali",
-      "entities": [
-        "Narato",
-        "Sali"
-      ],
-      "expect_heldout": true,
-      "question": "Answer with only Yes or No. In lw_delta, is every Narato a Sali?",
+      "question": "Answer with only Yes or No. In lw_delta, is every Tuso a Dobi?",
       "pos": " Yes",
       "neg": " No"
     },
     {
-      "hop": 5,
-      "proof_depth": 5,
-      "form": "forward",
-      "neg_type": null,
-      "provable": true,
-      "subj": "Zefopi",
-      "obj": "Mera",
-      "entities": [
-        "Zefopi",
-        "Mera"
-      ],
-      "expect_heldout": true,
-      "question": "Answer with only Yes or No. In lw_delta, is every Zefopi a Mera?",
-      "pos": " Yes",
-      "neg": " No"
-    },
-    {
-      "hop": 5,
-      "proof_depth": 5,
-      "form": "forward",
-      "neg_type": null,
-      "provable": true,
-      "subj": "Fozuto",
-      "obj": "Tuka",
-      "entities": [
-        "Fozuto",
-        "Tuka"
-      ],
-      "expect_heldout": true,
-      "question": "Answer with only Yes or No. In lw_delta, is every Fozuto a Tuka?",
-      "pos": " Yes",
-      "neg": " No"
-    },
-    {
-      "hop": 5,
-      "proof_depth": 5,
+      "hop": 6,
+      "proof_depth": 6,
       "form": "forward",
       "neg_type": null,
       "provable": true,
       "subj": "Nizana",
-      "obj": "Digu",
+      "obj": "Zefopi",
       "entities": [
         "Nizana",
-        "Digu"
+        "Zefopi"
       ],
       "expect_heldout": true,
-      "question": "Answer with only Yes or No. In lw_delta, is every Nizana a Digu?",
-      "pos": " Yes",
-      "neg": " No"
-    },
-    {
-      "hop": 5,
-      "proof_depth": 5,
-      "form": "forward",
-      "neg_type": null,
-      "provable": true,
-      "subj": "Tetara",
-      "obj": "Vuvu",
-      "entities": [
-        "Tetara",
-        "Vuvu"
-      ],
-      "expect_heldout": true,
-      "question": "Answer with only Yes or No. In lw_delta, is every Tetara a Vuvu?",
-      "pos": " Yes",
-      "neg": " No"
-    },
-    {
-      "hop": 5,
-      "proof_depth": 5,
-      "form": "forward",
-      "neg_type": null,
-      "provable": true,
-      "subj": "Fekipu",
-      "obj": "Muni",
-      "entities": [
-        "Fekipu",
-        "Muni"
-      ],
-      "expect_heldout": true,
-      "question": "Answer with only Yes or No. In lw_delta, is every Fekipu a Muni?",
-      "pos": " Yes",
-      "neg": " No"
-    },
-    {
-      "hop": 5,
-      "proof_depth": 5,
-      "form": "converse",
-      "neg_type": "converse",
-      "provable": false,
-      "subj": "Rere",
-      "obj": "Nida",
-      "entities": [
-        "Nida",
-        "Rere"
-      ],
-      "expect_heldout": true,
-      "question": "Answer with only Yes or No. In lw_delta, is every Rere a Nida?",
-      "pos": " No",
-      "neg": " Yes"
-    },
-    {
-      "hop": 5,
-      "proof_depth": 5,
-      "form": "cross",
-      "neg_type": "cross",
-      "provable": false,
-      "subj": "Vuvu",
-      "obj": "Liza",
-      "entities": [
-        "Vuvu",
-        "Liza"
-      ],
-      "expect_heldout": true,
-      "question": "Answer with only Yes or No. In lw_delta, is every Vuvu a Liza?",
-      "pos": " No",
-      "neg": " Yes"
-    },
-    {
-      "hop": 5,
-      "proof_depth": 5,
-      "form": "missing_edge",
-      "neg_type": "missing_edge",
-      "provable": false,
-      "subj": "Fekipu",
-      "obj": "Dobi",
-      "entities": [
-        "Fekipu",
-        "Dobi"
-      ],
-      "expect_heldout": true,
-      "question": "Answer with only Yes or No. In lw_delta, is every Fekipu a Dobi?",
-      "pos": " No",
-      "neg": " Yes"
-    },
-    {
-      "hop": 5,
-      "proof_depth": 5,
-      "form": "converse",
-      "neg_type": "converse",
-      "provable": false,
-      "subj": "Ruloki",
-      "obj": "Pani",
-      "entities": [
-        "Pani",
-        "Ruloki"
-      ],
-      "expect_heldout": true,
-      "question": "Answer with only Yes or No. In lw_delta, is every Ruloki a Pani?",
-      "pos": " No",
-      "neg": " Yes"
-    },
-    {
-      "hop": 5,
-      "proof_depth": 5,
-      "form": "cross",
-      "neg_type": "cross",
-      "provable": false,
-      "subj": "Rere",
-      "obj": "Ruloki",
-      "entities": [
-        "Rere",
-        "Ruloki"
-      ],
-      "expect_heldout": true,
-      "question": "Answer with only Yes or No. In lw_delta, is every Rere a Ruloki?",
-      "pos": " No",
-      "neg": " Yes"
-    },
-    {
-      "hop": 5,
-      "proof_depth": 5,
-      "form": "missing_edge",
-      "neg_type": "missing_edge",
-      "provable": false,
-      "subj": "Fozuto",
-      "obj": "Guza",
-      "entities": [
-        "Fozuto",
-        "Guza"
-      ],
-      "expect_heldout": true,
-      "question": "Answer with only Yes or No. In lw_delta, is every Fozuto a Guza?",
-      "pos": " No",
-      "neg": " Yes"
-    },
-    {
-      "hop": 6,
-      "proof_depth": 6,
-      "form": "forward",
-      "neg_type": null,
-      "provable": true,
-      "subj": "Pani",
-      "obj": "Muni",
-      "entities": [
-        "Pani",
-        "Muni"
-      ],
-      "expect_heldout": true,
-      "question": "Answer with only Yes or No. In lw_delta, is every Pani a Muni?",
+      "question": "Answer with only Yes or No. In lw_delta, is every Nizana a Zefopi?",
       "pos": " Yes",
       "neg": " No"
     },
@@ -1103,14 +1523,14 @@
       "form": "forward",
       "neg_type": null,
       "provable": true,
-      "subj": "Zefopi",
-      "obj": "Rere",
+      "subj": "Zavuke",
+      "obj": "Zifoli",
       "entities": [
-        "Zefopi",
-        "Rere"
+        "Zavuke",
+        "Zifoli"
       ],
       "expect_heldout": true,
-      "question": "Answer with only Yes or No. In lw_delta, is every Zefopi a Rere?",
+      "question": "Answer with only Yes or No. In lw_delta, is every Zavuke a Zifoli?",
       "pos": " Yes",
       "neg": " No"
     },
@@ -1137,48 +1557,14 @@
       "form": "forward",
       "neg_type": null,
       "provable": true,
-      "subj": "Zefopi",
-      "obj": "Bonidu",
-      "entities": [
-        "Zefopi",
-        "Bonidu"
-      ],
-      "expect_heldout": true,
-      "question": "Answer with only Yes or No. In lw_delta, is every Zefopi a Bonidu?",
-      "pos": " Yes",
-      "neg": " No"
-    },
-    {
-      "hop": 6,
-      "proof_depth": 6,
-      "form": "forward",
-      "neg_type": null,
-      "provable": true,
-      "subj": "Guza",
-      "obj": "Tiguvo",
-      "entities": [
-        "Guza",
-        "Tiguvo"
-      ],
-      "expect_heldout": true,
-      "question": "Answer with only Yes or No. In lw_delta, is every Guza a Tiguvo?",
-      "pos": " Yes",
-      "neg": " No"
-    },
-    {
-      "hop": 6,
-      "proof_depth": 6,
-      "form": "forward",
-      "neg_type": null,
-      "provable": true,
       "subj": "Nida",
-      "obj": "Sali",
+      "obj": "Fekipu",
       "entities": [
         "Nida",
-        "Sali"
+        "Fekipu"
       ],
       "expect_heldout": true,
-      "question": "Answer with only Yes or No. In lw_delta, is every Nida a Sali?",
+      "question": "Answer with only Yes or No. In lw_delta, is every Nida a Fekipu?",
       "pos": " Yes",
       "neg": " No"
     },
@@ -1188,14 +1574,14 @@
       "form": "converse",
       "neg_type": "converse",
       "provable": false,
-      "subj": "Tupo",
-      "obj": "Nizana",
+      "subj": "Pani",
+      "obj": "Zokafo",
       "entities": [
-        "Nizana",
-        "Tupo"
+        "Zokafo",
+        "Pani"
       ],
       "expect_heldout": true,
-      "question": "Answer with only Yes or No. In lw_delta, is every Tupo a Nizana?",
+      "question": "Answer with only Yes or No. In lw_delta, is every Pani a Zokafo?",
       "pos": " No",
       "neg": " Yes"
     },
@@ -1205,14 +1591,65 @@
       "form": "cross",
       "neg_type": "cross",
       "provable": false,
-      "subj": "Zefopi",
+      "subj": "Rafe",
+      "obj": "Fekipu",
+      "entities": [
+        "Rafe",
+        "Fekipu"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_delta, is every Rafe a Fekipu?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 6,
+      "proof_depth": 6,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Zokafo",
+      "obj": "Bunuro",
+      "entities": [
+        "Zokafo",
+        "Bunuro"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_delta, is every Zokafo a Bunuro?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 6,
+      "proof_depth": 6,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Gadasi",
+      "obj": "Zavuke",
+      "entities": [
+        "Zavuke",
+        "Gadasi"
+      ],
+      "expect_heldout": true,
+      "question": "Answer with only Yes or No. In lw_delta, is every Gadasi a Zavuke?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 6,
+      "proof_depth": 6,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Lali",
       "obj": "Tuka",
       "entities": [
-        "Zefopi",
+        "Lali",
         "Tuka"
       ],
       "expect_heldout": true,
-      "question": "Answer with only Yes or No. In lw_delta, is every Zefopi a Tuka?",
+      "question": "Answer with only Yes or No. In lw_delta, is every Lali a Tuka?",
       "pos": " No",
       "neg": " Yes"
     },
@@ -1222,14 +1659,14 @@
       "form": "missing_edge",
       "neg_type": "missing_edge",
       "provable": false,
-      "subj": "Gate",
-      "obj": "Nizana",
+      "subj": "Bunuro",
+      "obj": "Narato",
       "entities": [
-        "Gate",
-        "Nizana"
+        "Bunuro",
+        "Narato"
       ],
       "expect_heldout": true,
-      "question": "Answer with only Yes or No. In lw_delta, is every Gate a Nizana?",
+      "question": "Answer with only Yes or No. In lw_delta, is every Bunuro a Narato?",
       "pos": " No",
       "neg": " Yes"
     },
@@ -1239,14 +1676,14 @@
       "form": "converse",
       "neg_type": "converse",
       "provable": false,
-      "subj": "Digu",
-      "obj": "Tetara",
+      "subj": "Zefopi",
+      "obj": "Nizana",
       "entities": [
-        "Tetara",
-        "Digu"
+        "Nizana",
+        "Zefopi"
       ],
       "expect_heldout": true,
-      "question": "Answer with only Yes or No. In lw_delta, is every Digu a Tetara?",
+      "question": "Answer with only Yes or No. In lw_delta, is every Zefopi a Nizana?",
       "pos": " No",
       "neg": " Yes"
     },
@@ -1256,31 +1693,14 @@
       "form": "cross",
       "neg_type": "cross",
       "provable": false,
-      "subj": "Narato",
-      "obj": "Muni",
+      "subj": "Sali",
+      "obj": "Dobi",
       "entities": [
-        "Narato",
-        "Muni"
+        "Sali",
+        "Dobi"
       ],
       "expect_heldout": true,
-      "question": "Answer with only Yes or No. In lw_delta, is every Narato a Muni?",
-      "pos": " No",
-      "neg": " Yes"
-    },
-    {
-      "hop": 6,
-      "proof_depth": 6,
-      "form": "missing_edge",
-      "neg_type": "missing_edge",
-      "provable": false,
-      "subj": "Guza",
-      "obj": "Nizana",
-      "entities": [
-        "Guza",
-        "Nizana"
-      ],
-      "expect_heldout": true,
-      "question": "Answer with only Yes or No. In lw_delta, is every Guza a Nizana?",
+      "question": "Answer with only Yes or No. In lw_delta, is every Sali a Dobi?",
       "pos": " No",
       "neg": " Yes"
     }

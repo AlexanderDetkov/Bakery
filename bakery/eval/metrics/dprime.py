@@ -106,8 +106,14 @@ def _yesness_per_probe(bundle, probes, system_text, ctx_mgr, device) -> list:
 
 
 def _depth(pr) -> int:
-    d = pr.get("proof_depth")
-    return int(d) if d is not None else int(pr.get("hop", 1))
+    """The depth a probe is binned/paired at. `match_depth` is the explicit pairing depth for both
+    true and false probes; fall back to `proof_depth` (theorems) then `hop` for older banks. A
+    non-theorem has `proof_depth=None` (no proof) but still a `match_depth` (its control depth)."""
+    for key in ("match_depth", "proof_depth", "hop"):
+        v = pr.get(key)
+        if v is not None:
+            return int(v)
+    return 1
 
 
 def _provable(pr) -> bool:

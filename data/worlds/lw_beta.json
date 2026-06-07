@@ -30,7 +30,19 @@
     "Lane",
     "Pugenu",
     "Kitigo",
-    "Niva"
+    "Niva",
+    "Bulo",
+    "Sakute",
+    "Vora",
+    "Mosi",
+    "Nabi",
+    "Taro",
+    "Pafoto",
+    "Kagi",
+    "Sude",
+    "Sefu",
+    "Nebe",
+    "Dupa"
   ],
   "rules": [
     {
@@ -71,13 +83,13 @@
     },
     {
       "body": [
-        "Reko"
+        "Lodi"
       ],
       "head": "Mogodo"
     },
     {
       "body": [
-        "Mogodo"
+        "Lodi"
       ],
       "head": "Bogudi"
     },
@@ -89,9 +101,9 @@
     },
     {
       "body": [
-        "Bofi"
+        "Reko"
       ],
-      "head": "Vemi"
+      "head": "Bofi"
     },
     {
       "body": [
@@ -125,33 +137,33 @@
     },
     {
       "body": [
-        "Dabu"
+        "Fafilo"
       ],
       "head": "Bupi"
     },
     {
       "body": [
-        "Pozasu"
+        "Vemi"
       ],
       "head": "Bekidi"
     },
     {
       "body": [
-        "Dabu"
+        "Bekidi"
       ],
       "head": "Kogo"
     },
     {
       "body": [
-        "Piga"
+        "Fozuke"
       ],
-      "head": "Sebaso"
+      "head": "Piga"
     },
     {
       "body": [
-        "Sebaso"
+        "Bupi"
       ],
-      "head": "Subigi"
+      "head": "Sebaso"
     },
     {
       "body": [
@@ -179,7 +191,7 @@
     },
     {
       "body": [
-        "Piga"
+        "Lane"
       ],
       "head": "Pugenu"
     },
@@ -191,37 +203,105 @@
     },
     {
       "body": [
-        "Piga"
+        "Kitigo"
       ],
       "head": "Niva"
+    },
+    {
+      "body": [
+        "Niva"
+      ],
+      "head": "Bulo"
+    },
+    {
+      "body": [
+        "Bulo"
+      ],
+      "head": "Sakute"
+    },
+    {
+      "body": [
+        "Vora"
+      ],
+      "head": "Mosi"
+    },
+    {
+      "body": [
+        "Mosi"
+      ],
+      "head": "Nabi"
+    },
+    {
+      "body": [
+        "Nabi"
+      ],
+      "head": "Taro"
+    },
+    {
+      "body": [
+        "Taro"
+      ],
+      "head": "Pafoto"
+    },
+    {
+      "body": [
+        "Pafoto"
+      ],
+      "head": "Kagi"
+    },
+    {
+      "body": [
+        "Kagi"
+      ],
+      "head": "Sude"
+    },
+    {
+      "body": [
+        "Nabi"
+      ],
+      "head": "Sefu"
+    },
+    {
+      "body": [
+        "Vora"
+      ],
+      "head": "Nebe"
+    },
+    {
+      "body": [
+        "Pafoto"
+      ],
+      "head": "Dupa"
     }
   ],
   "components": [
     [
       "Bekidi",
-      "Bofi",
       "Bupi",
       "Dabu",
       "Fafilo",
       "Fozuke",
       "Kogo",
+      "Piga",
       "Pozasu",
+      "Sebaso",
       "Vemi",
       "Veseve"
     ],
     [
       "Bekisi",
+      "Bulo",
       "Kitigo",
       "Lane",
       "Matepa",
       "Niva",
-      "Piga",
       "Pugenu",
-      "Sebaso",
+      "Sakute",
       "Sepupi",
       "Subigi"
     ],
     [
+      "Bofi",
       "Bogudi",
       "Fanu",
       "Gamoke",
@@ -232,6 +312,18 @@
       "Pina",
       "Reko",
       "Susi"
+    ],
+    [
+      "Dupa",
+      "Kagi",
+      "Mosi",
+      "Nabi",
+      "Nebe",
+      "Pafoto",
+      "Sefu",
+      "Sude",
+      "Taro",
+      "Vora"
     ]
   ],
   "facts": [],

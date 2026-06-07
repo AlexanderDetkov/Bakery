@@ -26,6 +26,7 @@ from __future__ import annotations
 import argparse
 import json
 import random
+import statistics
 from collections import defaultdict
 from dataclasses import dataclass, field
 from pathlib import Path
@@ -68,11 +69,11 @@ def _gen_names(rng: random.Random, n: int, used: set) -> list:
 class WorldGenConfig:
     name: str
     seed: int
-    n_atoms: int = 30
+    n_atoms: int = 42
     max_depth: int = 6
-    n_components: int = 3
+    n_components: int = 4
     extra_edge_prob: float = 0.18      # chance of an additional forward edge (branching/shortcuts)
-    true_per_depth: int = 6            # TRUE forward probes per depth; negatives matched 1:1
+    true_per_depth: int = 8            # TRUE forward probes per depth; negatives matched 1:1
     name_used: set = field(default_factory=set)   # global vocabulary (disjointness across worlds)
 
 
@@ -159,6 +160,15 @@ def make_probes(world: World, engine: ProofEngine, cfg: WorldGenConfig, rng: ran
     comp_of = _comp_of(world)
     cdepth = _concept_depth(engine, world)
     reach = {x: engine.reachable_from(x) for x in world.atoms}
+    # generality(atom) = how many atoms are a kind of it (a broad/general category if high). In an
+    # is-a taxonomy this RISES with proof depth (deeper targets are more general), so a deep "is X a
+    # Z?" is easier to affirm by a generality heuristic. We match each depth's negatives to the true
+    # objects' generality so d′ measures discrimination, not "Z is a general category -> say Yes".
+    gen: dict = defaultdict(int)
+    for x in world.atoms:
+        for z in reach[x]:
+            if z != x:
+                gen[z] += 1
 
     # --- candidate pools, bucketed by depth ---
     true_fwd, conv, cross, missing = (defaultdict(list) for _ in range(4))
@@ -193,9 +203,15 @@ def make_probes(world: World, engine: ProofEngine, cfg: WorldGenConfig, rng: ran
         for x, z in true_sel:
             probes.append(_probe(world.name, x, z, d, "forward", None, True, expect_heldout=(d >= 2)))
 
+        # GENERALITY-MATCHED negatives: pick cross/missing whose false OBJECT has generality close to
+        # the true objects at this depth, so the model can't separate true from false just by "the
+        # object is a broad category". (converse keeps its specific object — it is the direction axis.)
+        tgt_gen = statistics.median([gen[z] for _, z in true_sel]) if true_sel else 0
         pools = {"converse": list(conv[d]), "cross": list(cross[d]), "missing_edge": list(missing[d])}
-        for v in pools.values():
-            rng.shuffle(v)
+        rng.shuffle(pools["converse"])
+        for t in ("cross", "missing_edge"):
+            rng.shuffle(pools[t])                                  # random tie-break
+            pools[t].sort(key=lambda pr: abs(gen[pr[1]] - tgt_gen), reverse=True)  # closest last -> popped first
         neg_sel: list = []
         types = [t for t in ("converse", "cross", "missing_edge") if pools[t]]
         ti = 0
@@ -217,15 +233,21 @@ def make_probes(world: World, engine: ProofEngine, cfg: WorldGenConfig, rng: ran
             else:
                 assert not engine.query(a, b).provable
                 probes.append(_probe(world.name, a, b, d, t, t, False, expect_heldout=True))
+        neg_obj_gen = [gen[b] for t, (a, b) in neg_sel if t != "converse"]   # cross/missing objects
         realized[f"d{d}"] = {"true": n_true, "false": len(neg_sel),
                              "by_type": {t: sum(1 for tt, _ in neg_sel if tt == t)
-                                         for t in ("converse", "cross", "missing_edge")}}
+                                         for t in ("converse", "cross", "missing_edge")},
+                             "gen_true": round(statistics.mean([gen[z] for _, z in true_sel]), 2),
+                             "gen_neg_matched": round(statistics.mean(neg_obj_gen), 2) if neg_obj_gen else None}
     return probes, realized
 
 
 def _probe(world_name, subj, obj, d, form, neg_type, provable, *, expect_heldout, entities=None):
     return {
-        "hop": d, "proof_depth": d, "form": form, "neg_type": neg_type, "provable": provable,
+        "hop": d,                                # binning depth (propagation metric + the guard read this)
+        "match_depth": d,                        # the depth this probe is PAIRED at for d′ (true AND false)
+        "proof_depth": d if provable else None,  # a real proof depth ONLY for theorems; null for non-theorems
+        "form": form, "neg_type": neg_type, "provable": provable,
         "subj": subj, "obj": obj, "entities": entities if entities is not None else [subj, obj],
         "expect_heldout": expect_heldout,
         "question": _q(world_name, subj, obj),
@@ -307,10 +329,10 @@ def main():
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("--out-root", type=Path, default=ROOT)
     ap.add_argument("--seed-base", type=int, default=100)
-    ap.add_argument("--n-atoms", type=int, default=30)
+    ap.add_argument("--n-atoms", type=int, default=42)
     ap.add_argument("--max-depth", type=int, default=6)
-    ap.add_argument("--n-components", type=int, default=3)
-    ap.add_argument("--true-per-depth", type=int, default=6)
+    ap.add_argument("--n-components", type=int, default=4)
+    ap.add_argument("--true-per-depth", type=int, default=8)
     args = ap.parse_args()
 
     used: set = set()                                  # global vocabulary -> disjoint across worlds

@@ -55,10 +55,21 @@ class CacheIdentity:
     contexts_sha: str          # hash of the ordered, normalized (train+eval) context list + split
     sampling_sha: str          # hash of the sampling params
     backend: str
-    schema_version: int = 1
+    checkpoint: str = ""       # the GENERATING base checkpoint (name@revision:dtype:weights|adapter).
+    schema_version: int = 2    # bumped: the old key omitted the checkpoint, so a different
+                               # revision/dtype could reuse a stale cache (the "same checkpoint" hole).
 
     def key(self) -> str:
         return hashlib.sha1(json.dumps(asdict(self), sort_keys=True).encode()).hexdigest()[:16]
+
+
+def checkpoint_key(ckpt_id, adapter_to_load=None) -> str:
+    """Canonical string for the checkpoint that GENERATED the trajectories — folded into the cache
+    key so a cache made under a different revision/dtype/merged-adapter is NOT reused (closing the
+    'trajectories generated under a different checkpoint' hole). Pairs with the stored provenance
+    that `run_validation_gate` re-checks for cached data."""
+    return (f"{ckpt_id.model_name}@{ckpt_id.revision}:{ckpt_id.dtype}"
+            f":{ckpt_id.weights_sha256}|adapter={adapter_to_load or ''}")
 
 
 def sampling_sha(gen_cfg, seed) -> str:
@@ -100,10 +111,13 @@ def _row_to_traj(row: dict) -> FramedTrajectory:
     )
 
 
-def save_trajectories_jsonl(path: Path, train, eval_) -> None:
+def save_trajectories_jsonl(path: Path, train, eval_, meta=None) -> None:
+    """Write trajectories with a leading metadata row (carries the generation-checkpoint provenance
+    so a loader can re-verify the 'same checkpoint' invariant for cached data)."""
     path.parent.mkdir(parents=True, exist_ok=True)
     tmp = path.with_suffix(path.suffix + ".tmp")
     with open(tmp, "w") as f:
+        f.write(json.dumps({"split": "meta", **(meta or {})}) + "\n")
         for t in train:
             f.write(json.dumps({"split": "train", **_traj_to_row(t)}) + "\n")
         for t in eval_:
@@ -112,10 +126,17 @@ def save_trajectories_jsonl(path: Path, train, eval_) -> None:
 
 
 def load_trajectories_jsonl(path: Path):
-    train, eval_ = [], []
+    """Return (train, eval_, meta). `meta` is the stored provenance ({} for legacy files)."""
+    train, eval_, meta = [], [], {}
     for line in path.read_text().splitlines():
         if not line.strip():
             continue
         row = json.loads(line)
-        (train if row.get("split") == "train" else eval_).append(_row_to_traj(row))
-    return train, eval_
+        split = row.get("split")
+        if split == "meta":
+            meta = {k: v for k, v in row.items() if k != "split"}
+        elif split == "eval":
+            eval_.append(_row_to_traj(row))
+        else:
+            train.append(_row_to_traj(row))
+    return train, eval_, meta

@@ -60,14 +60,6 @@
     },
     {
       "category": "atomic",
-      "text": "In lw_beta, complete the rule with the single immediate kind: Every Bofi is a ___."
-    },
-    {
-      "category": "atomic",
-      "text": "In lw_beta, state the one direct rule of the form 'Every Bofi is a ...' in a single short sentence."
-    },
-    {
-      "category": "atomic",
       "text": "In lw_beta, complete the rule with the single immediate kind: Every Vemi is a ___."
     },
     {
@@ -108,19 +100,27 @@
     },
     {
       "category": "atomic",
-      "text": "In lw_beta, complete the rule with the single immediate kind: Every Piga is a ___."
+      "text": "In lw_beta, complete the rule with the single immediate kind: Every Fafilo is a ___."
     },
     {
       "category": "atomic",
-      "text": "In lw_beta, state the one direct rule of the form 'Every Piga is a ...' in a single short sentence."
+      "text": "In lw_beta, state the one direct rule of the form 'Every Fafilo is a ...' in a single short sentence."
     },
     {
       "category": "atomic",
-      "text": "In lw_beta, complete the rule with the single immediate kind: Every Sebaso is a ___."
+      "text": "In lw_beta, complete the rule with the single immediate kind: Every Bupi is a ___."
     },
     {
       "category": "atomic",
-      "text": "In lw_beta, state the one direct rule of the form 'Every Sebaso is a ...' in a single short sentence."
+      "text": "In lw_beta, state the one direct rule of the form 'Every Bupi is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_beta, complete the rule with the single immediate kind: Every Bekidi is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_beta, state the one direct rule of the form 'Every Bekidi is a ...' in a single short sentence."
     },
     {
       "category": "atomic",
@@ -156,11 +156,91 @@
     },
     {
       "category": "atomic",
+      "text": "In lw_beta, complete the rule with the single immediate kind: Every Lane is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_beta, state the one direct rule of the form 'Every Lane is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
       "text": "In lw_beta, complete the rule with the single immediate kind: Every Pugenu is a ___."
     },
     {
       "category": "atomic",
       "text": "In lw_beta, state the one direct rule of the form 'Every Pugenu is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_beta, complete the rule with the single immediate kind: Every Kitigo is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_beta, state the one direct rule of the form 'Every Kitigo is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_beta, complete the rule with the single immediate kind: Every Niva is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_beta, state the one direct rule of the form 'Every Niva is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_beta, complete the rule with the single immediate kind: Every Bulo is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_beta, state the one direct rule of the form 'Every Bulo is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_beta, complete the rule with the single immediate kind: Every Vora is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_beta, state the one direct rule of the form 'Every Vora is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_beta, complete the rule with the single immediate kind: Every Mosi is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_beta, state the one direct rule of the form 'Every Mosi is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_beta, complete the rule with the single immediate kind: Every Nabi is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_beta, state the one direct rule of the form 'Every Nabi is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_beta, complete the rule with the single immediate kind: Every Taro is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_beta, state the one direct rule of the form 'Every Taro is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_beta, complete the rule with the single immediate kind: Every Pafoto is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_beta, state the one direct rule of the form 'Every Pafoto is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_beta, complete the rule with the single immediate kind: Every Kagi is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_beta, state the one direct rule of the form 'Every Kagi is a ...' in a single short sentence."
     }
   ]
 }

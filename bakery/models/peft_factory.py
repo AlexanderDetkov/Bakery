@@ -25,18 +25,30 @@ from bakery.prompts import sha256
 from bakery.trajectories.base import CheckpointId, TokenizerFingerprint
 
 
-@lru_cache(maxsize=2)
-def _load_base(name: str, revision, dtype: str, device: str):
-    """Load base weights + tokenizer ONCE and share across calls (factory caching)."""
+@lru_cache(maxsize=8)
+def _load_tokenizer(name: str, revision):
+    """Cache the tokenizer ONLY — it is read-only, so sharing it across runs is safe."""
     tokenizer = AutoTokenizer.from_pretrained(name, revision=revision, padding_side="left")
     if tokenizer.pad_token_id is None:
         tokenizer.pad_token = tokenizer.eos_token
+    return tokenizer
+
+
+def _load_base_model(name: str, revision, dtype: str, device: str):
+    """Load a FRESH base model each call — deliberately NOT cached.
+
+    `get_peft_model` (and `merge_and_unload` for sequential baking) MUTATE the model object in
+    place; training then mutates the adapter weights. A cached/shared base instance would therefore
+    leak a previous run's injected adapter / trained weights into later runs that reuse it — e.g. an
+    in-process `--sweep`, where every point calls `build_bundle`. Reloading weights per run makes
+    each run independent (sweeps pay a reload; correctness over speed). The tokenizer is cached above.
+    """
     model = AutoModelForCausalLM.from_pretrained(
         name, revision=revision, torch_dtype=getattr(torch, dtype)
     )
     model.to(device)
     model.eval()
-    return model, tokenizer
+    return model
 
 
 def _lora_config(model_cfg) -> LoraConfig:
@@ -93,7 +105,8 @@ class ModelBundle:
 
 def build_bundle(model_cfg) -> ModelBundle:
     """Load base + tokenizer, (optionally) merge a prior adapter, then wrap a fresh LoRA."""
-    base, tokenizer = _load_base(model_cfg.name, model_cfg.revision, model_cfg.dtype, model_cfg.device)
+    tokenizer = _load_tokenizer(model_cfg.name, model_cfg.revision)
+    base = _load_base_model(model_cfg.name, model_cfg.revision, model_cfg.dtype, model_cfg.device)
 
     # Sequential / knowledge baking: merge the prior adapter into the frozen base first.
     if model_cfg.adapter_to_load:

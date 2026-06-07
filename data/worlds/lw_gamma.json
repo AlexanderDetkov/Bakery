@@ -30,7 +30,19 @@
     "Biko",
     "Fote",
     "Dana",
-    "Kete"
+    "Kete",
+    "Tese",
+    "Numo",
+    "Vipe",
+    "Voseve",
+    "Kuku",
+    "Neda",
+    "Naku",
+    "Pureni",
+    "Dekuda",
+    "Vefa",
+    "Zogo",
+    "Vivo"
   ],
   "rules": [
     {
@@ -71,27 +83,27 @@
     },
     {
       "body": [
-        "Rososa"
+        "Tupu"
       ],
       "head": "Razi"
     },
     {
       "body": [
-        "Tone"
+        "Razi"
       ],
       "head": "Tepotu"
     },
     {
       "body": [
-        "Tupu"
+        "Razi"
       ],
       "head": "Zofele"
     },
     {
       "body": [
-        "Resi"
+        "Rososa"
       ],
-      "head": "Furosi"
+      "head": "Resi"
     },
     {
       "body": [
@@ -125,33 +137,33 @@
     },
     {
       "body": [
-        "Furosi"
+        "Timegi"
       ],
       "head": "Gegume"
     },
     {
       "body": [
-        "Timegi"
+        "Furosi"
       ],
       "head": "Rope"
     },
     {
       "body": [
-        "Furosi"
+        "Rope"
       ],
       "head": "Demi"
     },
     {
       "body": [
-        "Dave"
+        "Timegi"
       ],
-      "head": "Mili"
+      "head": "Dave"
     },
     {
       "body": [
-        "Mili"
+        "Sosunu"
       ],
-      "head": "Memesi"
+      "head": "Mili"
     },
     {
       "body": [
@@ -185,15 +197,81 @@
     },
     {
       "body": [
-        "Memesi"
+        "Fote"
       ],
       "head": "Dana"
     },
     {
       "body": [
-        "Fote"
+        "Biko"
       ],
       "head": "Kete"
+    },
+    {
+      "body": [
+        "Kete"
+      ],
+      "head": "Tese"
+    },
+    {
+      "body": [
+        "Voso"
+      ],
+      "head": "Numo"
+    },
+    {
+      "body": [
+        "Vipe"
+      ],
+      "head": "Voseve"
+    },
+    {
+      "body": [
+        "Voseve"
+      ],
+      "head": "Kuku"
+    },
+    {
+      "body": [
+        "Kuku"
+      ],
+      "head": "Neda"
+    },
+    {
+      "body": [
+        "Neda"
+      ],
+      "head": "Naku"
+    },
+    {
+      "body": [
+        "Naku"
+      ],
+      "head": "Pureni"
+    },
+    {
+      "body": [
+        "Pureni"
+      ],
+      "head": "Dekuda"
+    },
+    {
+      "body": [
+        "Vipe"
+      ],
+      "head": "Vefa"
+    },
+    {
+      "body": [
+        "Vipe"
+      ],
+      "head": "Zogo"
+    },
+    {
+      "body": [
+        "Naku"
+      ],
+      "head": "Vivo"
     }
   ],
   "components": [
@@ -201,12 +279,12 @@
       "Biko",
       "Bogo",
       "Dana",
-      "Dave",
       "Fote",
       "Kete",
       "Memesi",
-      "Mili",
+      "Numo",
       "Seka",
+      "Tese",
       "Voso"
     ],
     [
@@ -214,6 +292,7 @@
       "Miro",
       "Petupe",
       "Razi",
+      "Resi",
       "Rososa",
       "Sule",
       "Tepotu",
@@ -222,16 +301,29 @@
       "Zofele"
     ],
     [
+      "Dave",
       "Demi",
       "Dozeka",
       "Furosi",
       "Gegume",
       "Mete",
+      "Mili",
       "Pipa",
-      "Resi",
       "Rope",
       "Sosunu",
       "Timegi"
+    ],
+    [
+      "Dekuda",
+      "Kuku",
+      "Naku",
+      "Neda",
+      "Pureni",
+      "Vefa",
+      "Vipe",
+      "Vivo",
+      "Voseve",
+      "Zogo"
     ]
   ],
   "facts": [],

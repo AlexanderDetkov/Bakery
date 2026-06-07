@@ -30,7 +30,19 @@
     "Muni",
     "Fenosu",
     "Dobi",
-    "Guno"
+    "Guno",
+    "Kasu",
+    "Rafe",
+    "Zavuke",
+    "Kemupo",
+    "Lali",
+    "Donova",
+    "Nafepa",
+    "Lilo",
+    "Gadasi",
+    "Zifoli",
+    "Dumaki",
+    "Tolu"
   ],
   "rules": [
     {
@@ -71,13 +83,13 @@
     },
     {
       "body": [
-        "Digu"
+        "Guza"
       ],
       "head": "Tupo"
     },
     {
       "body": [
-        "Tupo"
+        "Fozuto"
       ],
       "head": "Tiguvo"
     },
@@ -89,9 +101,9 @@
     },
     {
       "body": [
-        "Zefopi"
+        "Tuka"
       ],
-      "head": "Nida"
+      "head": "Zefopi"
     },
     {
       "body": [
@@ -125,7 +137,7 @@
     },
     {
       "body": [
-        "Zokafo"
+        "Rere"
       ],
       "head": "Mera"
     },
@@ -143,15 +155,15 @@
     },
     {
       "body": [
-        "Pani"
+        "Sali"
       ],
-      "head": "Fekipu"
+      "head": "Pani"
     },
     {
       "body": [
-        "Fekipu"
+        "Rere"
       ],
-      "head": "Tuso"
+      "head": "Fekipu"
     },
     {
       "body": [
@@ -179,34 +191,101 @@
     },
     {
       "body": [
-        "Fekipu"
+        "Muni"
       ],
       "head": "Fenosu"
     },
     {
       "body": [
-        "Pani"
+        "Fenosu"
       ],
       "head": "Dobi"
     },
     {
       "body": [
-        "Dobi"
+        "Ruloki"
       ],
       "head": "Guno"
+    },
+    {
+      "body": [
+        "Guno"
+      ],
+      "head": "Kasu"
+    },
+    {
+      "body": [
+        "Muni"
+      ],
+      "head": "Rafe"
+    },
+    {
+      "body": [
+        "Zavuke"
+      ],
+      "head": "Kemupo"
+    },
+    {
+      "body": [
+        "Kemupo"
+      ],
+      "head": "Lali"
+    },
+    {
+      "body": [
+        "Lali"
+      ],
+      "head": "Donova"
+    },
+    {
+      "body": [
+        "Donova"
+      ],
+      "head": "Nafepa"
+    },
+    {
+      "body": [
+        "Nafepa"
+      ],
+      "head": "Lilo"
+    },
+    {
+      "body": [
+        "Lilo"
+      ],
+      "head": "Gadasi"
+    },
+    {
+      "body": [
+        "Lilo"
+      ],
+      "head": "Zifoli"
+    },
+    {
+      "body": [
+        "Zavuke"
+      ],
+      "head": "Dumaki"
+    },
+    {
+      "body": [
+        "Zifoli"
+      ],
+      "head": "Tolu"
     }
   ],
   "components": [
     [
       "Bonidu",
       "Bunuro",
+      "Fekipu",
       "Liza",
       "Mera",
       "Narato",
       "Nida",
+      "Pani",
       "Rere",
       "Sali",
-      "Zefopi",
       "Zokafo"
     ],
     [
@@ -219,19 +298,32 @@
       "Tiguvo",
       "Tuka",
       "Tupo",
-      "Vuvu"
+      "Vuvu",
+      "Zefopi"
     ],
     [
       "Dobi",
-      "Fekipu",
       "Fenosu",
       "Fisaza",
       "Guno",
+      "Kasu",
       "Muni",
-      "Pani",
+      "Rafe",
       "Ruloki",
       "Semozi",
       "Tuso"
+    ],
+    [
+      "Donova",
+      "Dumaki",
+      "Gadasi",
+      "Kemupo",
+      "Lali",
+      "Lilo",
+      "Nafepa",
+      "Tolu",
+      "Zavuke",
+      "Zifoli"
     ]
   ],
   "facts": [],

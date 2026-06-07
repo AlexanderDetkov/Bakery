@@ -54,10 +54,13 @@ def test_probes_are_balanced_and_engine_verified():
         if p["provable"]:
             assert p["form"] == "forward" and p["neg_type"] is None
             assert r.depth == p["proof_depth"]
+            assert p["match_depth"] == p["proof_depth"]          # theorem: proof depth == pairing depth
             assert p["pos"] == " Yes"
             assert p["expect_heldout"] == (p["proof_depth"] >= 2)
         else:
             assert p["pos"] == " No" and p["expect_heldout"] is True
+            assert p["proof_depth"] is None                      # non-theorem: no proof depth ...
+            assert p["match_depth"] == p["hop"]                  # ... only a matched control depth
             a, b = p["entities"]
             if p["neg_type"] == "converse":
                 assert eng.query(a, b).provable                   # underlying forward IS a theorem

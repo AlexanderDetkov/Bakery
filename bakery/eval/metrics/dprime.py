@@ -132,6 +132,16 @@ def dprime(ctx: EvalContext) -> MetricResult:
     if not probes:
         return MetricResult(name="dprime", value=float("nan"))
 
+    # Held-out filter: a curriculum builder records the relations it TRAINED on in
+    # stats["pairing"]["trained_relations"]. Exclude those from the depth>=2 cells so the reported d′
+    # is genuine HELD-OUT propagation; depth-1 is kept whole as the (trained) recall baseline. Absent
+    # for other experiments -> empty set -> no exclusion (behaviour byte-identical).
+    try:
+        trained_rel = (ctx.data.stats or {}).get("pairing", {}).get("trained_relations") or []
+    except Exception:
+        trained_rel = []
+    trained = {(r[0], r[1]) for r in trained_rel}
+
     bundle = ctx.bundle
     bundle.peft_model.eval()
     device = ctx.device
@@ -149,6 +159,8 @@ def dprime(ctx: EvalContext) -> MetricResult:
     idx_false = defaultdict(lambda: defaultdict(list))   # depth -> neg_type|'all' -> indices
     for k, pr in enumerate(probes):
         d = _depth(pr)
+        if d >= 2 and (pr.get("subj"), pr.get("obj")) in trained:
+            continue                            # trained at depth>=2 -> not held out -> exclude
         if _provable(pr):
             idx_true[d].append(k)
         else:
@@ -196,9 +208,17 @@ def dprime(ctx: EvalContext) -> MetricResult:
         extra[f"prop_distance_bacc_{state}"] = _prop_distance(
             extra, state, depths, "bacc", THRESH_BACC)
 
-    baked_dps = [extra[f"dprime_baked_d{d}"] for d in depths if d >= 1]
+    # Headline = mean baked d′ over HELD-OUT depths (>=2) when a curriculum split is present — that is
+    # the propagation we care about; depth-1 is the trained recall baseline, reported separately and
+    # NOT folded in. With no split (other experiments) fall back to mean over all d>=1 (unchanged).
+    held_depths = [d for d in depths if d >= 2]
+    hl_depths = held_depths if (trained and held_depths) else [d for d in depths if d >= 1]
+    baked_dps = [extra[f"dprime_baked_d{d}"] for d in hl_depths]
     finite = [x for x in baked_dps if isinstance(x, float) and math.isfinite(x)]
     headline = sum(finite) / len(finite) if finite else float("nan")
+    extra["dprime_baked_d1_baseline"] = extra.get("dprime_baked_d1", float("nan"))
+    extra["headline_depths"] = hl_depths
+    extra["n_trained_relations"] = len(trained)
 
     return MetricResult(
         name="dprime",

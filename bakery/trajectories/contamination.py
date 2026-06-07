@@ -153,7 +153,8 @@ def assert_probe_schema_and_balance(probes, *, require_balanced_for_dprime=True)
 
     by_depth: dict = defaultdict(lambda: {"true": 0, "false": 0})
     for pr in probes:
-        d = int(pr.get("proof_depth", pr.get("hop", 1)))
+        # pairing depth: match_depth (set for true AND false), then proof_depth (None on negatives), hop
+        d = int(pr.get("match_depth") or pr.get("proof_depth") or pr.get("hop") or 1)
         provable = bool(pr.get("provable", str(pr.get("form", "forward")) == "forward"))
         by_depth[d]["true" if provable else "false"] += 1
     unbalanced = {f"d{d}": dict(c) for d, c in by_depth.items() if c["true"] == 0 or c["false"] == 0}

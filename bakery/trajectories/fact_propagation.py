@@ -62,6 +62,17 @@ class FactPropagationDataConfig:
 _MIXED = {"mixed", "all"}
 
 
+def _source_filter_sha(data_cfg, *, chain, world) -> str:
+    """Hash controls that change which generated continuations survive source filtering."""
+    payload = {
+        "source_control": data_cfg.source_control,
+        "oversample": int(data_cfg.oversample),
+        "chain": list(chain or []),
+        "world": world.to_spec() if world is not None else None,
+    }
+    return sha256(json.dumps(payload, sort_keys=True))
+
+
 def _load_contexts(data_cfg, n_needed, rng) -> list[str]:
     """Load + filter + dedup + shuffle contexts from the JSON bank."""
     bank_path = Path(data_cfg.context_bank)
@@ -247,7 +258,10 @@ class FactPropagationBuilder(DatasetBuilder):
         )
         # Namespace the cache by source_control: "atomic" filters generations, so it is a DIFFERENT
         # trajectory set than "free" for the same sampling params (avoids a stale-cache mismatch).
-        cache_path = Path(g.cache_dir) / f"{self.name}-{data_cfg.source_control}-{identity.key()}.jsonl"
+        filter_sha = _source_filter_sha(data_cfg, chain=chain, world=world)
+        cache_path = Path(g.cache_dir) / (
+            f"{self.name}-{data_cfg.source_control}-{filter_sha[:8]}-{identity.key()}.jsonl"
+        )
 
         if g.cache_enabled and not g.on_the_fly and cache_path.exists():
             train, eval_, meta = load_trajectories_jsonl(cache_path)

@@ -1,0 +1,40 @@
+# Regularization-strength sweep (knowledge propagation, n=1). Question: does anchoring general
+# behavior to the ORIGINAL base on irrelevant SQuAD questions PRESERVE behavior (behavior_drift down
+# vs the 0 arm) WITHOUT hurting held-out propagation (dprime at proof-depth >= 2)?
+#   num_train_contexts = 0   -> no regularization (control)
+#   num_train_contexts = 32  -> ~30% of the ~76 main n=1 trajectories are anchors
+#   num_train_contexts = 128 -> anchors dominate the batch (heavy regularization)
+# Headline triplet per arm: eval_kl (bake fidelity), dprime (held-out propagation), behavior_drift
+# (general-behavior preservation; LOWER = closer to the base). Run when a GPU frees (do NOT preempt
+# the n-sweep):  python run.py --sweep configs/sweeps/regularization_strength.yaml
+experiment: bake_theorem_qa
+
+base:
+  model:
+    name: meta-llama/Llama-3.1-8B-Instruct
+    lora_rank: 16
+    lora_alpha: 16
+  train:
+    num_epochs: 300
+    eval_period: 5
+    save_every: 50
+    save_adapters: true
+    batch_size: 2          # 8B LoRA at bs2 fits a 24GB card; anchors add short no-prompt rows
+    grad_accum: 2
+  data:
+    world_spec: data/worlds/lw_alpha.json
+    probe_bank: data/probes/lw_alpha_qa_probes.json
+    train_max_depth: 1     # axioms only (the cleanest arm to read behavior preservation against)
+    per_depth_train_cap: 16
+    split_seed: 0
+  regularization:
+    source: squad          # irrelevant questions, disjoint from the logic world
+    context_split: validation
+    eval_num_contexts: 16  # held-out anchors for behavior_drift
+    max_new_tokens: 40
+    do_sample: false       # greedy base reference => behavior_drift comparable across epochs
+    seed: 0
+
+grid:
+  regularization.num_train_contexts: [0, 32, 128]
+  seed: [0]

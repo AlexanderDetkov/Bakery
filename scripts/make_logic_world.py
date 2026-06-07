@@ -31,11 +31,12 @@ from collections import defaultdict
 from dataclasses import dataclass, field
 from pathlib import Path
 
+from bakery.logic import phrasing, relations
 from bakery.logic.proof_engine import ProofEngine
 from bakery.logic.world import Rule, World, make_world
 
 ROOT = Path(__file__).resolve().parent.parent
-PREFIX = "Answer with only Yes or No. In {world}, "
+QA_TRUE_PER_DEPTH = 16          # more eval probes per depth in the QA bank -> stabler held-out d′ cells
 
 _SYL_C = "bdfgklmnprstvz"
 _SYL_V = "aeiou"
@@ -127,38 +128,15 @@ def _dedup_rules(rules) -> list:
 # --------------------------------------------------------------------------- probes
 
 def _q(world_name, subj, obj) -> str:
-    return PREFIX.format(world=world_name) + f"is every {subj} a {obj}?"
-
-
-def _comp_of(world: World) -> dict:
-    out = {}
-    for comp in world.components:
-        for a in comp:
-            out[a] = comp
-    return out
-
-
-def _concept_depth(engine: ProofEngine, world: World) -> dict:
-    """Min depth of each atom from any source (in-degree-0 atom) — 'how deep the concept sits'."""
-    indeg = defaultdict(int)
-    for _, v in world.edges():
-        indeg[v] += 1
-    roots = [a for a in world.atoms if indeg[a] == 0]
-    depth = {}
-    for r in roots:
-        for a, d in engine.reachable_from(r).items():
-            if a not in depth or d < depth[a]:
-                depth[a] = d
-    return depth
+    return phrasing.question(world_name, subj, obj)
 
 
 def make_probes(world: World, engine: ProofEngine, cfg: WorldGenConfig, rng: random.Random):
-    """Depth-balanced TRUE + (converse|cross|missing_edge) FALSE probes; all engine-verified."""
-    indeg = defaultdict(int)
-    for _, v in world.edges():
-        indeg[v] += 1
-    comp_of = _comp_of(world)
-    cdepth = _concept_depth(engine, world)
+    """Depth-balanced TRUE + (converse|cross|missing_edge) FALSE probes; all engine-verified.
+
+    Candidate pools come from `bakery.logic.relations.candidate_pools` (the single source of truth
+    shared with the theorem_qa training builder, so train and eval use the same depth notion and the
+    same negative TYPES)."""
     reach = {x: engine.reachable_from(x) for x in world.atoms}
     # generality(atom) = how many atoms are a kind of it (a broad/general category if high). In an
     # is-a taxonomy this RISES with proof depth (deeper targets are more general), so a deep "is X a
@@ -169,37 +147,18 @@ def make_probes(world: World, engine: ProofEngine, cfg: WorldGenConfig, rng: ran
         for z in reach[x]:
             if z != x:
                 gen[z] += 1
-
-    # --- candidate pools, bucketed by depth ---
-    true_fwd, conv, cross, missing = (defaultdict(list) for _ in range(4))
-    for x in world.atoms:
-        for z, d in reach[x].items():
-            if d >= 1:
-                true_fwd[d].append((x, z))                 # provable forward at depth d
-                conv[d].append((x, z))                     # its converse (z,x) is a non-theorem (DAG)
-    for x in world.atoms:
-        for w in world.atoms:
-            if w == x or w in reach[x]:
-                continue                                   # only non-provable (x,w)
-            if comp_of[x] != comp_of[w]:
-                d = min(max(cdepth.get(w, 1), 1), cfg.max_depth)
-                cross[d].append((x, w))                    # disjoint components -> guaranteed false
-            elif indeg[w] >= 1:                            # same component, w is a real (has-parent) atom
-                # surface depth = (longest real prefix from x that still has somewhere to go) + 1
-                conts = [c for c, dc in reach[x].items() if world.out_edges(c)]
-                if conts:
-                    d = min(max(reach[x][max(conts, key=lambda c: reach[x][c])] + 1, 1), cfg.max_depth)
-                    missing[d].append((x, w))
+    pools = relations.candidate_pools(world, engine, cfg.max_depth)
 
     # --- sample, balanced true/false per depth, negatives round-robin across available types ---
     probes: list = []
     realized: dict = {}
     for d in range(1, cfg.max_depth + 1):
-        if not true_fwd[d]:
+        true_pool = pools[d]["true"]
+        if not true_pool:
             raise ValueError(f"world {world.name!r}: no provable forward pair at depth {d} "
                              f"(cannot supply a depth-matched cell).")
-        n_true = min(cfg.true_per_depth, len(true_fwd[d]))
-        true_sel = rng.sample(true_fwd[d], n_true)
+        n_true = min(cfg.true_per_depth, len(true_pool))
+        true_sel = rng.sample(true_pool, n_true)
         for x, z in true_sel:
             probes.append(_probe(world.name, x, z, d, "forward", None, True, expect_heldout=(d >= 2)))
 
@@ -207,18 +166,19 @@ def make_probes(world: World, engine: ProofEngine, cfg: WorldGenConfig, rng: ran
         # the true objects at this depth, so the model can't separate true from false just by "the
         # object is a broad category". (converse keeps its specific object — it is the direction axis.)
         tgt_gen = statistics.median([gen[z] for _, z in true_sel]) if true_sel else 0
-        pools = {"converse": list(conv[d]), "cross": list(cross[d]), "missing_edge": list(missing[d])}
-        rng.shuffle(pools["converse"])
+        cand = {"converse": list(pools[d]["converse"]), "cross": list(pools[d]["cross"]),
+                "missing_edge": list(pools[d]["missing"])}
+        rng.shuffle(cand["converse"])
         for t in ("cross", "missing_edge"):
-            rng.shuffle(pools[t])                                  # random tie-break
-            pools[t].sort(key=lambda pr: abs(gen[pr[1]] - tgt_gen), reverse=True)  # closest last -> popped first
+            rng.shuffle(cand[t])                                   # random tie-break
+            cand[t].sort(key=lambda pr: abs(gen[pr[1]] - tgt_gen), reverse=True)  # closest last -> popped first
         neg_sel: list = []
-        types = [t for t in ("converse", "cross", "missing_edge") if pools[t]]
+        types = [t for t in ("converse", "cross", "missing_edge") if cand[t]]
         ti = 0
         while len(neg_sel) < n_true and types:
             t = types[ti % len(types)]
-            if pools[t]:
-                pair = pools[t].pop()
+            if cand[t]:
+                pair = cand[t].pop()
                 neg_sel.append((t, pair))
             else:
                 types.remove(t)
@@ -313,6 +273,41 @@ def emit(world: World, probes: list, realized: dict, out_root: Path) -> None:
     }, indent=2) + "\n")
 
 
+def emit_qa_probes(world: World, probes: list, realized: dict, out_root: Path) -> None:
+    """Write ONLY the QA probe bank (unified question via `bakery.logic.phrasing`) to a NEW path,
+    leaving the world / prompt / contexts / legacy probe bank untouched — so any run still reading the
+    old assets is unaffected (no torn read)."""
+    (out_root / "data" / "probes").mkdir(parents=True, exist_ok=True)
+    (out_root / f"data/probes/{world.name}_qa_probes.json").write_text(json.dumps({
+        "fact_ref": f"data/prompts/{world.name}_u.md",
+        "world": f"data/worlds/{world.name}.json",
+        "note": "QA-format eval probes; the question is SHARED with theorem_qa training via "
+                "bakery.logic.phrasing (so the baked yes/no decision transfers). hop = proof_depth = "
+                "shortest-path length. Balanced TRUE vs FALSE per depth so a Yes/No bias scores at "
+                "chance. expect_heldout = composed-forward (d>=2) + every negative.",
+        "realized_counts": realized,
+        "n_probes": len(probes),
+        "probes": probes,
+    }, indent=2) + "\n")
+
+
+def make_qa_banks(out_root: Path, seed_base: int, max_depth: int, true_per_depth: int) -> None:
+    """(Re)build the QA probe banks from the EXISTING world specs (loaded, not regenerated). Touches
+    only data/probes/<name>_qa_probes.json — never the worlds/prompts/contexts/legacy banks."""
+    for i, name in enumerate(WORLDS):
+        wpath = out_root / f"data/worlds/{name}.json"
+        if not wpath.exists():
+            raise SystemExit(f"world {wpath} not found — generate the base assets first "
+                             f"(python scripts/make_logic_world.py).")
+        world = World.from_spec(json.loads(wpath.read_text()))
+        engine = ProofEngine(world)
+        cfg = WorldGenConfig(name=name, seed=seed_base + i, max_depth=max_depth,
+                             true_per_depth=true_per_depth)
+        probes, realized = make_probes(world, engine, cfg, random.Random(seed_base + i + 1))
+        emit_qa_probes(world, probes, realized, out_root)
+        print(f"wrote {name}_qa_probes.json: {len(probes)} probes (true_per_depth={true_per_depth})")
+
+
 def build_one(cfg: WorldGenConfig, out_root: Path) -> tuple:
     world = generate_world(cfg)
     engine = ProofEngine(world)
@@ -333,7 +328,15 @@ def main():
     ap.add_argument("--max-depth", type=int, default=6)
     ap.add_argument("--n-components", type=int, default=4)
     ap.add_argument("--true-per-depth", type=int, default=8)
+    ap.add_argument("--qa", action="store_true",
+                    help="(re)build ONLY the QA probe banks (*_qa_probes.json) from existing worlds — "
+                         "unified question phrasing for the theorem_qa experiment; touches no other asset")
     args = ap.parse_args()
+
+    if args.qa:
+        tpd = args.true_per_depth if args.true_per_depth != 8 else QA_TRUE_PER_DEPTH
+        make_qa_banks(args.out_root, args.seed_base, args.max_depth, tpd)
+        return
 
     used: set = set()                                  # global vocabulary -> disjoint across worlds
     for i, name in enumerate(WORLDS):

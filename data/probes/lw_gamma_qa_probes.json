@@ -1,0 +1,3100 @@
+{
+  "fact_ref": "data/prompts/lw_gamma_u.md",
+  "world": "data/worlds/lw_gamma.json",
+  "note": "QA-format eval probes; the question is SHARED with theorem_qa training via bakery.logic.phrasing (so the baked yes/no decision transfers). hop = proof_depth = shortest-path length. Balanced TRUE vs FALSE per depth so a Yes/No bias scores at chance. expect_heldout = composed-forward (d>=2) + every negative.",
+  "realized_counts": {
+    "d1": {
+      "true": 16,
+      "false": 16,
+      "by_type": {
+        "converse": 6,
+        "cross": 5,
+        "missing_edge": 5
+      },
+      "gen_true": 3.69,
+      "gen_neg_matched": 2.5
+    },
+    "d2": {
+      "true": 16,
+      "false": 16,
+      "by_type": {
+        "converse": 6,
+        "cross": 5,
+        "missing_edge": 5
+      },
+      "gen_true": 3.94,
+      "gen_neg_matched": 2.9
+    },
+    "d3": {
+      "true": 16,
+      "false": 16,
+      "by_type": {
+        "converse": 6,
+        "cross": 5,
+        "missing_edge": 5
+      },
+      "gen_true": 4.94,
+      "gen_neg_matched": 3.1
+    },
+    "d4": {
+      "true": 16,
+      "false": 16,
+      "by_type": {
+        "converse": 6,
+        "cross": 5,
+        "missing_edge": 5
+      },
+      "gen_true": 4.94,
+      "gen_neg_matched": 3.5
+    },
+    "d5": {
+      "true": 13,
+      "false": 13,
+      "by_type": {
+        "converse": 5,
+        "cross": 4,
+        "missing_edge": 4
+      },
+      "gen_true": 5.62,
+      "gen_neg_matched": 3.12
+    },
+    "d6": {
+      "true": 7,
+      "false": 7,
+      "by_type": {
+        "converse": 4,
+        "cross": 3,
+        "missing_edge": 0
+      },
+      "gen_true": 6.14,
+      "gen_neg_matched": 6
+    }
+  },
+  "n_probes": 168,
+  "probes": [
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": 1,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Vipe",
+      "obj": "Voseve",
+      "entities": [
+        "Vipe",
+        "Voseve"
+      ],
+      "expect_heldout": false,
+      "question": "In lw_gamma, is every Vipe a Voseve?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": 1,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Sosunu",
+      "obj": "Mili",
+      "entities": [
+        "Sosunu",
+        "Mili"
+      ],
+      "expect_heldout": false,
+      "question": "In lw_gamma, is every Sosunu a Mili?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": 1,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Tone",
+      "obj": "Date",
+      "entities": [
+        "Tone",
+        "Date"
+      ],
+      "expect_heldout": false,
+      "question": "In lw_gamma, is every Tone a Date?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": 1,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Rososa",
+      "obj": "Resi",
+      "entities": [
+        "Rososa",
+        "Resi"
+      ],
+      "expect_heldout": false,
+      "question": "In lw_gamma, is every Rososa a Resi?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": 1,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Voso",
+      "obj": "Numo",
+      "entities": [
+        "Voso",
+        "Numo"
+      ],
+      "expect_heldout": false,
+      "question": "In lw_gamma, is every Voso a Numo?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": 1,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Pureni",
+      "obj": "Dekuda",
+      "entities": [
+        "Pureni",
+        "Dekuda"
+      ],
+      "expect_heldout": false,
+      "question": "In lw_gamma, is every Pureni a Dekuda?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": 1,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Bogo",
+      "obj": "Seka",
+      "entities": [
+        "Bogo",
+        "Seka"
+      ],
+      "expect_heldout": false,
+      "question": "In lw_gamma, is every Bogo a Seka?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": 1,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Fote",
+      "obj": "Dana",
+      "entities": [
+        "Fote",
+        "Dana"
+      ],
+      "expect_heldout": false,
+      "question": "In lw_gamma, is every Fote a Dana?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": 1,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Vipe",
+      "obj": "Zogo",
+      "entities": [
+        "Vipe",
+        "Zogo"
+      ],
+      "expect_heldout": false,
+      "question": "In lw_gamma, is every Vipe a Zogo?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": 1,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Tupu",
+      "obj": "Razi",
+      "entities": [
+        "Tupu",
+        "Razi"
+      ],
+      "expect_heldout": false,
+      "question": "In lw_gamma, is every Tupu a Razi?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": 1,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Pipa",
+      "obj": "Dozeka",
+      "entities": [
+        "Pipa",
+        "Dozeka"
+      ],
+      "expect_heldout": false,
+      "question": "In lw_gamma, is every Pipa a Dozeka?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": 1,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Tupu",
+      "obj": "Tone",
+      "entities": [
+        "Tupu",
+        "Tone"
+      ],
+      "expect_heldout": false,
+      "question": "In lw_gamma, is every Tupu a Tone?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": 1,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Naku",
+      "obj": "Pureni",
+      "entities": [
+        "Naku",
+        "Pureni"
+      ],
+      "expect_heldout": false,
+      "question": "In lw_gamma, is every Naku a Pureni?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": 1,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Neda",
+      "obj": "Naku",
+      "entities": [
+        "Neda",
+        "Naku"
+      ],
+      "expect_heldout": false,
+      "question": "In lw_gamma, is every Neda a Naku?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": 1,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Timegi",
+      "obj": "Dave",
+      "entities": [
+        "Timegi",
+        "Dave"
+      ],
+      "expect_heldout": false,
+      "question": "In lw_gamma, is every Timegi a Dave?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": 1,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Sule",
+      "obj": "Miro",
+      "entities": [
+        "Sule",
+        "Miro"
+      ],
+      "expect_heldout": false,
+      "question": "In lw_gamma, is every Sule a Miro?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Tone",
+      "obj": "Tupu",
+      "entities": [
+        "Tupu",
+        "Tone"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Tone a Tupu?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Tepotu",
+      "obj": "Rope",
+      "entities": [
+        "Tepotu",
+        "Rope"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Tepotu a Rope?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Kete",
+      "obj": "Biko",
+      "entities": [
+        "Kete",
+        "Biko"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Kete a Biko?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Pipa",
+      "obj": "Mete",
+      "entities": [
+        "Mete",
+        "Pipa"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Pipa a Mete?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Razi",
+      "obj": "Bogo",
+      "entities": [
+        "Razi",
+        "Bogo"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Razi a Bogo?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Rope",
+      "obj": "Dozeka",
+      "entities": [
+        "Rope",
+        "Dozeka"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Rope a Dozeka?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Rososa",
+      "obj": "Petupe",
+      "entities": [
+        "Petupe",
+        "Rososa"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Rososa a Petupe?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Voso",
+      "obj": "Miro",
+      "entities": [
+        "Voso",
+        "Miro"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Voso a Miro?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Razi",
+      "obj": "Date",
+      "entities": [
+        "Razi",
+        "Date"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Razi a Date?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Tepotu",
+      "obj": "Razi",
+      "entities": [
+        "Razi",
+        "Tepotu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Tepotu a Razi?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Tese",
+      "obj": "Sosunu",
+      "entities": [
+        "Tese",
+        "Sosunu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Tese a Sosunu?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Rososa",
+      "obj": "Zofele",
+      "entities": [
+        "Rososa",
+        "Zofele"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Rososa a Zofele?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Neda",
+      "obj": "Kuku",
+      "entities": [
+        "Kuku",
+        "Neda"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Neda a Kuku?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Pipa",
+      "obj": "Vefa",
+      "entities": [
+        "Pipa",
+        "Vefa"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Pipa a Vefa?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Fote",
+      "obj": "Numo",
+      "entities": [
+        "Fote",
+        "Numo"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Fote a Numo?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Dave",
+      "obj": "Timegi",
+      "entities": [
+        "Timegi",
+        "Dave"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Dave a Timegi?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": 2,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Neda",
+      "obj": "Pureni",
+      "entities": [
+        "Neda",
+        "Pureni"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Neda a Pureni?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": 2,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Pipa",
+      "obj": "Timegi",
+      "entities": [
+        "Pipa",
+        "Timegi"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Pipa a Timegi?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": 2,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Miro",
+      "obj": "Tone",
+      "entities": [
+        "Miro",
+        "Tone"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Miro a Tone?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": 2,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Neda",
+      "obj": "Vivo",
+      "entities": [
+        "Neda",
+        "Vivo"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Neda a Vivo?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": 2,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Voso",
+      "obj": "Kete",
+      "entities": [
+        "Voso",
+        "Kete"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Voso a Kete?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": 2,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Naku",
+      "obj": "Dekuda",
+      "entities": [
+        "Naku",
+        "Dekuda"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Naku a Dekuda?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": 2,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Seka",
+      "obj": "Numo",
+      "entities": [
+        "Seka",
+        "Numo"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Seka a Numo?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": 2,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Furosi",
+      "obj": "Mete",
+      "entities": [
+        "Furosi",
+        "Mete"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Furosi a Mete?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": 2,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Furosi",
+      "obj": "Mili",
+      "entities": [
+        "Furosi",
+        "Mili"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Furosi a Mili?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": 2,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Tupu",
+      "obj": "Date",
+      "entities": [
+        "Tupu",
+        "Date"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Tupu a Date?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": 2,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Tupu",
+      "obj": "Tepotu",
+      "entities": [
+        "Tupu",
+        "Tepotu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Tupu a Tepotu?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": 2,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Kuku",
+      "obj": "Naku",
+      "entities": [
+        "Kuku",
+        "Naku"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Kuku a Naku?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": 2,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Mete",
+      "obj": "Dozeka",
+      "entities": [
+        "Mete",
+        "Dozeka"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Mete a Dozeka?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": 2,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Sosunu",
+      "obj": "Pipa",
+      "entities": [
+        "Sosunu",
+        "Pipa"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Sosunu a Pipa?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": 2,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Bogo",
+      "obj": "Voso",
+      "entities": [
+        "Bogo",
+        "Voso"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Bogo a Voso?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": 2,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Tupu",
+      "obj": "Zofele",
+      "entities": [
+        "Tupu",
+        "Zofele"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Tupu a Zofele?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Tone",
+      "obj": "Miro",
+      "entities": [
+        "Miro",
+        "Tone"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Tone a Miro?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Pureni",
+      "obj": "Tupu",
+      "entities": [
+        "Pureni",
+        "Tupu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Pureni a Tupu?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Biko",
+      "obj": "Numo",
+      "entities": [
+        "Biko",
+        "Numo"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Biko a Numo?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Voso",
+      "obj": "Bogo",
+      "entities": [
+        "Bogo",
+        "Voso"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Voso a Bogo?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Mili",
+      "obj": "Kuku",
+      "entities": [
+        "Mili",
+        "Kuku"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Mili a Kuku?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Petupe",
+      "obj": "Tepotu",
+      "entities": [
+        "Petupe",
+        "Tepotu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Petupe a Tepotu?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Naku",
+      "obj": "Kuku",
+      "entities": [
+        "Kuku",
+        "Naku"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Naku a Kuku?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Naku",
+      "obj": "Demi",
+      "entities": [
+        "Naku",
+        "Demi"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Naku a Demi?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Petupe",
+      "obj": "Date",
+      "entities": [
+        "Petupe",
+        "Date"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Petupe a Date?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Gegume",
+      "obj": "Dozeka",
+      "entities": [
+        "Dozeka",
+        "Gegume"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Gegume a Dozeka?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Tese",
+      "obj": "Mete",
+      "entities": [
+        "Tese",
+        "Mete"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Tese a Mete?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Petupe",
+      "obj": "Zofele",
+      "entities": [
+        "Petupe",
+        "Zofele"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Petupe a Zofele?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Fote",
+      "obj": "Voso",
+      "entities": [
+        "Voso",
+        "Fote"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Fote a Voso?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Zogo",
+      "obj": "Demi",
+      "entities": [
+        "Zogo",
+        "Demi"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Zogo a Demi?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Biko",
+      "obj": "Voso",
+      "entities": [
+        "Biko",
+        "Voso"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Biko a Voso?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Biko",
+      "obj": "Seka",
+      "entities": [
+        "Seka",
+        "Biko"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Biko a Seka?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": 3,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Voso",
+      "obj": "Tese",
+      "entities": [
+        "Voso",
+        "Tese"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Voso a Tese?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": 3,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Kuku",
+      "obj": "Vivo",
+      "entities": [
+        "Kuku",
+        "Vivo"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Kuku a Vivo?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": 3,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Tone",
+      "obj": "Rososa",
+      "entities": [
+        "Tone",
+        "Rososa"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Tone a Rososa?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": 3,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Mete",
+      "obj": "Timegi",
+      "entities": [
+        "Mete",
+        "Timegi"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Mete a Timegi?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": 3,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Sule",
+      "obj": "Razi",
+      "entities": [
+        "Sule",
+        "Razi"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Sule a Razi?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": 3,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Miro",
+      "obj": "Zofele",
+      "entities": [
+        "Miro",
+        "Zofele"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Miro a Zofele?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": 3,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Kuku",
+      "obj": "Pureni",
+      "entities": [
+        "Kuku",
+        "Pureni"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Kuku a Pureni?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": 3,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Pipa",
+      "obj": "Dave",
+      "entities": [
+        "Pipa",
+        "Dave"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Pipa a Dave?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": 3,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Furosi",
+      "obj": "Pipa",
+      "entities": [
+        "Furosi",
+        "Pipa"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Furosi a Pipa?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": 3,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Pipa",
+      "obj": "Gegume",
+      "entities": [
+        "Pipa",
+        "Gegume"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Pipa a Gegume?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": 3,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Sosunu",
+      "obj": "Dozeka",
+      "entities": [
+        "Sosunu",
+        "Dozeka"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Sosunu a Dozeka?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": 3,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Date",
+      "obj": "Resi",
+      "entities": [
+        "Date",
+        "Resi"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Date a Resi?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": 3,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Memesi",
+      "obj": "Voso",
+      "entities": [
+        "Memesi",
+        "Voso"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Memesi a Voso?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": 3,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Miro",
+      "obj": "Date",
+      "entities": [
+        "Miro",
+        "Date"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Miro a Date?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": 3,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Neda",
+      "obj": "Dekuda",
+      "entities": [
+        "Neda",
+        "Dekuda"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Neda a Dekuda?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": 3,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Voso",
+      "obj": "Dana",
+      "entities": [
+        "Voso",
+        "Dana"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Voso a Dana?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Tese",
+      "obj": "Voso",
+      "entities": [
+        "Voso",
+        "Tese"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Tese a Voso?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Furosi",
+      "obj": "Tone",
+      "entities": [
+        "Furosi",
+        "Tone"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Furosi a Tone?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Date",
+      "obj": "Zofele",
+      "entities": [
+        "Date",
+        "Zofele"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Date a Zofele?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Resi",
+      "obj": "Date",
+      "entities": [
+        "Date",
+        "Resi"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Resi a Date?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Petupe",
+      "obj": "Pipa",
+      "entities": [
+        "Petupe",
+        "Pipa"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Petupe a Pipa?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Date",
+      "obj": "Tepotu",
+      "entities": [
+        "Date",
+        "Tepotu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Date a Tepotu?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Dave",
+      "obj": "Pipa",
+      "entities": [
+        "Pipa",
+        "Dave"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Dave a Pipa?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Tupu",
+      "obj": "Pipa",
+      "entities": [
+        "Tupu",
+        "Pipa"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Tupu a Pipa?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Date",
+      "obj": "Tone",
+      "entities": [
+        "Date",
+        "Tone"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Date a Tone?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Gegume",
+      "obj": "Pipa",
+      "entities": [
+        "Pipa",
+        "Gegume"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Gegume a Pipa?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Dekuda",
+      "obj": "Pipa",
+      "entities": [
+        "Dekuda",
+        "Pipa"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Dekuda a Pipa?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Date",
+      "obj": "Razi",
+      "entities": [
+        "Date",
+        "Razi"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Date a Razi?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Pipa",
+      "obj": "Furosi",
+      "entities": [
+        "Furosi",
+        "Pipa"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Pipa a Furosi?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Memesi",
+      "obj": "Neda",
+      "entities": [
+        "Memesi",
+        "Neda"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Memesi a Neda?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Pipa",
+      "obj": "Mete",
+      "entities": [
+        "Pipa",
+        "Mete"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Pipa a Mete?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Date",
+      "obj": "Miro",
+      "entities": [
+        "Miro",
+        "Date"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Date a Miro?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": 4,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Miro",
+      "obj": "Petupe",
+      "entities": [
+        "Miro",
+        "Petupe"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Miro a Petupe?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": 4,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Seka",
+      "obj": "Dana",
+      "entities": [
+        "Seka",
+        "Dana"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Seka a Dana?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": 4,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Memesi",
+      "obj": "Biko",
+      "entities": [
+        "Memesi",
+        "Biko"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Memesi a Biko?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": 4,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Voseve",
+      "obj": "Vivo",
+      "entities": [
+        "Voseve",
+        "Vivo"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Voseve a Vivo?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": 4,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Sule",
+      "obj": "Zofele",
+      "entities": [
+        "Sule",
+        "Zofele"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Sule a Zofele?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": 4,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Kuku",
+      "obj": "Dekuda",
+      "entities": [
+        "Kuku",
+        "Dekuda"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Kuku a Dekuda?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": 4,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Furosi",
+      "obj": "Dozeka",
+      "entities": [
+        "Furosi",
+        "Dozeka"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Furosi a Dozeka?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": 4,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Seka",
+      "obj": "Tese",
+      "entities": [
+        "Seka",
+        "Tese"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Seka a Tese?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": 4,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Tone",
+      "obj": "Resi",
+      "entities": [
+        "Tone",
+        "Resi"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Tone a Resi?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": 4,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Memesi",
+      "obj": "Numo",
+      "entities": [
+        "Memesi",
+        "Numo"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Memesi a Numo?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": 4,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Vipe",
+      "obj": "Naku",
+      "entities": [
+        "Vipe",
+        "Naku"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Vipe a Naku?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": 4,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Bogo",
+      "obj": "Fote",
+      "entities": [
+        "Bogo",
+        "Fote"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Bogo a Fote?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": 4,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Voseve",
+      "obj": "Pureni",
+      "entities": [
+        "Voseve",
+        "Pureni"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Voseve a Pureni?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": 4,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Sosunu",
+      "obj": "Timegi",
+      "entities": [
+        "Sosunu",
+        "Timegi"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Sosunu a Timegi?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": 4,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Bogo",
+      "obj": "Kete",
+      "entities": [
+        "Bogo",
+        "Kete"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Bogo a Kete?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": 4,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Sule",
+      "obj": "Date",
+      "entities": [
+        "Sule",
+        "Date"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Sule a Date?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Rososa",
+      "obj": "Tupu",
+      "entities": [
+        "Tupu",
+        "Rososa"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Rososa a Tupu?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Mili",
+      "obj": "Date",
+      "entities": [
+        "Mili",
+        "Date"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Mili a Date?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Tone",
+      "obj": "Zofele",
+      "entities": [
+        "Tone",
+        "Zofele"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Tone a Zofele?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Biko",
+      "obj": "Memesi",
+      "entities": [
+        "Memesi",
+        "Biko"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Biko a Memesi?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Rope",
+      "obj": "Naku",
+      "entities": [
+        "Rope",
+        "Naku"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Rope a Naku?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Tone",
+      "obj": "Tepotu",
+      "entities": [
+        "Tone",
+        "Tepotu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Tone a Tepotu?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Dekuda",
+      "obj": "Kuku",
+      "entities": [
+        "Kuku",
+        "Dekuda"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Dekuda a Kuku?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Bogo",
+      "obj": "Zofele",
+      "entities": [
+        "Bogo",
+        "Zofele"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Bogo a Zofele?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Tone",
+      "obj": "Razi",
+      "entities": [
+        "Tone",
+        "Razi"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Tone a Razi?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Date",
+      "obj": "Sule",
+      "entities": [
+        "Sule",
+        "Date"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Date a Sule?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Naku",
+      "obj": "Tepotu",
+      "entities": [
+        "Naku",
+        "Tepotu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Naku a Tepotu?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Mete",
+      "obj": "Mili",
+      "entities": [
+        "Mete",
+        "Mili"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Mete a Mili?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Dave",
+      "obj": "Mete",
+      "entities": [
+        "Mete",
+        "Dave"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Dave a Mete?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Zogo",
+      "obj": "Tepotu",
+      "entities": [
+        "Zogo",
+        "Tepotu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Zogo a Tepotu?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Tone",
+      "obj": "Tupu",
+      "entities": [
+        "Tone",
+        "Tupu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Tone a Tupu?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Gegume",
+      "obj": "Mete",
+      "entities": [
+        "Mete",
+        "Gegume"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Gegume a Mete?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": 5,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Vipe",
+      "obj": "Vivo",
+      "entities": [
+        "Vipe",
+        "Vivo"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Vipe a Vivo?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": 5,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Tupu",
+      "obj": "Resi",
+      "entities": [
+        "Tupu",
+        "Resi"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Tupu a Resi?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": 5,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Furosi",
+      "obj": "Timegi",
+      "entities": [
+        "Furosi",
+        "Timegi"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Furosi a Timegi?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": 5,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Memesi",
+      "obj": "Kete",
+      "entities": [
+        "Memesi",
+        "Kete"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Memesi a Kete?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": 5,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Sosunu",
+      "obj": "Gegume",
+      "entities": [
+        "Sosunu",
+        "Gegume"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Sosunu a Gegume?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": 5,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Sule",
+      "obj": "Petupe",
+      "entities": [
+        "Sule",
+        "Petupe"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Sule a Petupe?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": 5,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Sosunu",
+      "obj": "Dave",
+      "entities": [
+        "Sosunu",
+        "Dave"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Sosunu a Dave?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": 5,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Miro",
+      "obj": "Rososa",
+      "entities": [
+        "Miro",
+        "Rososa"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Miro a Rososa?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": 5,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Vipe",
+      "obj": "Pureni",
+      "entities": [
+        "Vipe",
+        "Pureni"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Vipe a Pureni?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": 5,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Bogo",
+      "obj": "Dana",
+      "entities": [
+        "Bogo",
+        "Dana"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Bogo a Dana?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": 5,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Voseve",
+      "obj": "Dekuda",
+      "entities": [
+        "Voseve",
+        "Dekuda"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Voseve a Dekuda?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": 5,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Memesi",
+      "obj": "Fote",
+      "entities": [
+        "Memesi",
+        "Fote"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Memesi a Fote?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": 5,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Bogo",
+      "obj": "Tese",
+      "entities": [
+        "Bogo",
+        "Tese"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Bogo a Tese?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Timegi",
+      "obj": "Furosi",
+      "entities": [
+        "Furosi",
+        "Timegi"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Timegi a Furosi?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Timegi",
+      "obj": "Vivo",
+      "entities": [
+        "Timegi",
+        "Vivo"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Timegi a Vivo?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Sosunu",
+      "obj": "Demi",
+      "entities": [
+        "Sosunu",
+        "Demi"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Sosunu a Demi?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Tese",
+      "obj": "Bogo",
+      "entities": [
+        "Bogo",
+        "Tese"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Tese a Bogo?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Zogo",
+      "obj": "Petupe",
+      "entities": [
+        "Zogo",
+        "Petupe"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Zogo a Petupe?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Voseve",
+      "obj": "Zogo",
+      "entities": [
+        "Voseve",
+        "Zogo"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Voseve a Zogo?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Dana",
+      "obj": "Bogo",
+      "entities": [
+        "Bogo",
+        "Dana"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Dana a Bogo?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Miro",
+      "obj": "Fote",
+      "entities": [
+        "Miro",
+        "Fote"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Miro a Fote?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Sosunu",
+      "obj": "Rope",
+      "entities": [
+        "Sosunu",
+        "Rope"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Sosunu a Rope?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Vivo",
+      "obj": "Vipe",
+      "entities": [
+        "Vipe",
+        "Vivo"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Vivo a Vipe?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Rope",
+      "obj": "Petupe",
+      "entities": [
+        "Rope",
+        "Petupe"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Rope a Petupe?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Tupu",
+      "obj": "Miro",
+      "entities": [
+        "Tupu",
+        "Miro"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Tupu a Miro?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Gegume",
+      "obj": "Sosunu",
+      "entities": [
+        "Sosunu",
+        "Gegume"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Gegume a Sosunu?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": 6,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Furosi",
+      "obj": "Gegume",
+      "entities": [
+        "Furosi",
+        "Gegume"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Furosi a Gegume?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": 6,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Vipe",
+      "obj": "Dekuda",
+      "entities": [
+        "Vipe",
+        "Dekuda"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Vipe a Dekuda?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": 6,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Miro",
+      "obj": "Resi",
+      "entities": [
+        "Miro",
+        "Resi"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Miro a Resi?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": 6,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Furosi",
+      "obj": "Dave",
+      "entities": [
+        "Furosi",
+        "Dave"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Furosi a Dave?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": 6,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Sule",
+      "obj": "Rososa",
+      "entities": [
+        "Sule",
+        "Rososa"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Sule a Rososa?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": 6,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Memesi",
+      "obj": "Tese",
+      "entities": [
+        "Memesi",
+        "Tese"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Memesi a Tese?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": 6,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Memesi",
+      "obj": "Dana",
+      "entities": [
+        "Memesi",
+        "Dana"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Memesi a Dana?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Rososa",
+      "obj": "Sule",
+      "entities": [
+        "Sule",
+        "Rososa"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Rososa a Sule?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Numo",
+      "obj": "Rososa",
+      "entities": [
+        "Numo",
+        "Rososa"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Numo a Rososa?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Gegume",
+      "obj": "Furosi",
+      "entities": [
+        "Furosi",
+        "Gegume"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Gegume a Furosi?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Rososa",
+      "obj": "Dave",
+      "entities": [
+        "Rososa",
+        "Dave"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Rososa a Dave?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Dana",
+      "obj": "Memesi",
+      "entities": [
+        "Memesi",
+        "Dana"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Dana a Memesi?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Furosi",
+      "obj": "Rososa",
+      "entities": [
+        "Furosi",
+        "Rososa"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Furosi a Rososa?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Tese",
+      "obj": "Memesi",
+      "entities": [
+        "Memesi",
+        "Tese"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_gamma, is every Tese a Memesi?",
+      "pos": " No",
+      "neg": " Yes"
+    }
+  ]
+}

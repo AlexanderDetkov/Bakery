@@ -1,0 +1,30 @@
+# Knowledge propagation by PROOF DEPTH: sweep curriculum depth n x {soft-bake, one-hot-SFT} on the
+# primary world. Run with:  python run.py --sweep configs/sweeps/theorem_qa_n_arm.yaml
+#   n=1 -> pure emergence (train ONLY the axioms; ALL composition held out)
+#   n=2,3 -> additionally teach a balanced subset of depth-2..n consequences; the rest stay held out.
+# Headline = held-out d′ vs proof depth (depth-1 is the trained recall baseline). Expected:
+# bake is capped by the prompted teacher's own ~1-hop reach; SFT (ground-truth) can teach deeper.
+experiment: bake_theorem_qa
+
+base:
+  model:
+    name: meta-llama/Llama-3.1-8B-Instruct
+    lora_rank: 16
+    lora_alpha: 16
+  train:
+    num_epochs: 300
+    eval_period: 5
+    save_every: 50
+    save_adapters: true
+    batch_size: 2          # 8B LoRA fits ~18GB on a 24GB card at bs2 (the long base=u framing)
+    grad_accum: 2
+  data:
+    world_spec: data/worlds/lw_alpha.json
+    probe_bank: data/probes/lw_alpha_qa_probes.json
+    per_depth_train_cap: 16
+    split_seed: 0
+
+grid:
+  data.train_max_depth: [1, 2, 3]
+  train.objective: [bake, sft]
+  seed: [0]

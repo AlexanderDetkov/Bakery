@@ -13,7 +13,7 @@ register_experiment(
     builder_name="squad_qa",
     data_config_cls=squad_qa.SquadQADataConfig,
     objective="bake",
-    extra_metrics=("eval_kl",),
+    extra_metrics=("eval_kl", "behavior_drift"),    # behavior_drift is inert unless regularization is ON
     description="Bake a system prompt into a LoRA adapter by KL-distilling from the prompted "
                 "Llama-3.1-8B base over held-out SQuAD question contexts.",
 )

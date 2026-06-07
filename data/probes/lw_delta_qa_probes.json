@@ -1,0 +1,3388 @@
+{
+  "fact_ref": "data/prompts/lw_delta_u.md",
+  "world": "data/worlds/lw_delta.json",
+  "note": "QA-format eval probes; the question is SHARED with theorem_qa training via bakery.logic.phrasing (so the baked yes/no decision transfers). hop = proof_depth = shortest-path length. Balanced TRUE vs FALSE per depth so a Yes/No bias scores at chance. expect_heldout = composed-forward (d>=2) + every negative.",
+  "realized_counts": {
+    "d1": {
+      "true": 16,
+      "false": 16,
+      "by_type": {
+        "converse": 6,
+        "cross": 5,
+        "missing_edge": 5
+      },
+      "gen_true": 3.38,
+      "gen_neg_matched": 2
+    },
+    "d2": {
+      "true": 16,
+      "false": 16,
+      "by_type": {
+        "converse": 6,
+        "cross": 5,
+        "missing_edge": 5
+      },
+      "gen_true": 4.62,
+      "gen_neg_matched": 3.7
+    },
+    "d3": {
+      "true": 16,
+      "false": 16,
+      "by_type": {
+        "converse": 6,
+        "cross": 5,
+        "missing_edge": 5
+      },
+      "gen_true": 5.88,
+      "gen_neg_matched": 3.6
+    },
+    "d4": {
+      "true": 16,
+      "false": 16,
+      "by_type": {
+        "converse": 6,
+        "cross": 5,
+        "missing_edge": 5
+      },
+      "gen_true": 5.69,
+      "gen_neg_matched": 3.4
+    },
+    "d5": {
+      "true": 16,
+      "false": 16,
+      "by_type": {
+        "converse": 6,
+        "cross": 5,
+        "missing_edge": 5
+      },
+      "gen_true": 6.12,
+      "gen_neg_matched": 3.3
+    },
+    "d6": {
+      "true": 12,
+      "false": 12,
+      "by_type": {
+        "converse": 4,
+        "cross": 4,
+        "missing_edge": 4
+      },
+      "gen_true": 6.67,
+      "gen_neg_matched": 3.62
+    }
+  },
+  "n_probes": 184,
+  "probes": [
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": 1,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Nizana",
+      "obj": "Guza",
+      "entities": [
+        "Nizana",
+        "Guza"
+      ],
+      "expect_heldout": false,
+      "question": "In lw_delta, is every Nizana a Guza?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": 1,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Bunuro",
+      "obj": "Zokafo",
+      "entities": [
+        "Bunuro",
+        "Zokafo"
+      ],
+      "expect_heldout": false,
+      "question": "In lw_delta, is every Bunuro a Zokafo?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": 1,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Liza",
+      "obj": "Rere",
+      "entities": [
+        "Liza",
+        "Rere"
+      ],
+      "expect_heldout": false,
+      "question": "In lw_delta, is every Liza a Rere?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": 1,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Muni",
+      "obj": "Fenosu",
+      "entities": [
+        "Muni",
+        "Fenosu"
+      ],
+      "expect_heldout": false,
+      "question": "In lw_delta, is every Muni a Fenosu?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": 1,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Fisaza",
+      "obj": "Semozi",
+      "entities": [
+        "Fisaza",
+        "Semozi"
+      ],
+      "expect_heldout": false,
+      "question": "In lw_delta, is every Fisaza a Semozi?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": 1,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Tetara",
+      "obj": "Nizana",
+      "entities": [
+        "Tetara",
+        "Nizana"
+      ],
+      "expect_heldout": false,
+      "question": "In lw_delta, is every Tetara a Nizana?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": 1,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Tiguvo",
+      "obj": "Tuka",
+      "entities": [
+        "Tiguvo",
+        "Tuka"
+      ],
+      "expect_heldout": false,
+      "question": "In lw_delta, is every Tiguvo a Tuka?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": 1,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Nafepa",
+      "obj": "Lilo",
+      "entities": [
+        "Nafepa",
+        "Lilo"
+      ],
+      "expect_heldout": false,
+      "question": "In lw_delta, is every Nafepa a Lilo?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": 1,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Muni",
+      "obj": "Rafe",
+      "entities": [
+        "Muni",
+        "Rafe"
+      ],
+      "expect_heldout": false,
+      "question": "In lw_delta, is every Muni a Rafe?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": 1,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Lali",
+      "obj": "Donova",
+      "entities": [
+        "Lali",
+        "Donova"
+      ],
+      "expect_heldout": false,
+      "question": "In lw_delta, is every Lali a Donova?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": 1,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Fozuto",
+      "obj": "Vuvu",
+      "entities": [
+        "Fozuto",
+        "Vuvu"
+      ],
+      "expect_heldout": false,
+      "question": "In lw_delta, is every Fozuto a Vuvu?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": 1,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Guza",
+      "obj": "Tupo",
+      "entities": [
+        "Guza",
+        "Tupo"
+      ],
+      "expect_heldout": false,
+      "question": "In lw_delta, is every Guza a Tupo?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": 1,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Gate",
+      "obj": "Fozuto",
+      "entities": [
+        "Gate",
+        "Fozuto"
+      ],
+      "expect_heldout": false,
+      "question": "In lw_delta, is every Gate a Fozuto?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": 1,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Zavuke",
+      "obj": "Kemupo",
+      "entities": [
+        "Zavuke",
+        "Kemupo"
+      ],
+      "expect_heldout": false,
+      "question": "In lw_delta, is every Zavuke a Kemupo?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": 1,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Guza",
+      "obj": "Gate",
+      "entities": [
+        "Guza",
+        "Gate"
+      ],
+      "expect_heldout": false,
+      "question": "In lw_delta, is every Guza a Gate?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": 1,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Tuso",
+      "obj": "Fisaza",
+      "entities": [
+        "Tuso",
+        "Fisaza"
+      ],
+      "expect_heldout": false,
+      "question": "In lw_delta, is every Tuso a Fisaza?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Semozi",
+      "obj": "Fisaza",
+      "entities": [
+        "Fisaza",
+        "Semozi"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Semozi a Fisaza?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Zefopi",
+      "obj": "Dumaki",
+      "entities": [
+        "Zefopi",
+        "Dumaki"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Zefopi a Dumaki?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Vuvu",
+      "obj": "Gate",
+      "entities": [
+        "Vuvu",
+        "Gate"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Vuvu a Gate?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Muni",
+      "obj": "Ruloki",
+      "entities": [
+        "Ruloki",
+        "Muni"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Muni a Ruloki?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Zifoli",
+      "obj": "Nizana",
+      "entities": [
+        "Zifoli",
+        "Nizana"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Zifoli a Nizana?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Fenosu",
+      "obj": "Ruloki",
+      "entities": [
+        "Fenosu",
+        "Ruloki"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Fenosu a Ruloki?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Tupo",
+      "obj": "Guza",
+      "entities": [
+        "Guza",
+        "Tupo"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Tupo a Guza?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Guza",
+      "obj": "Dumaki",
+      "entities": [
+        "Guza",
+        "Dumaki"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Guza a Dumaki?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Sali",
+      "obj": "Zokafo",
+      "entities": [
+        "Sali",
+        "Zokafo"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Sali a Zokafo?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Zokafo",
+      "obj": "Bunuro",
+      "entities": [
+        "Bunuro",
+        "Zokafo"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Zokafo a Bunuro?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Tolu",
+      "obj": "Fisaza",
+      "entities": [
+        "Tolu",
+        "Fisaza"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Tolu a Fisaza?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Tuka",
+      "obj": "Tupo",
+      "entities": [
+        "Tuka",
+        "Tupo"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Tuka a Tupo?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Fekipu",
+      "obj": "Rere",
+      "entities": [
+        "Rere",
+        "Fekipu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Fekipu a Rere?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Nida",
+      "obj": "Kemupo",
+      "entities": [
+        "Nida",
+        "Kemupo"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Nida a Kemupo?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Vuvu",
+      "obj": "Tupo",
+      "entities": [
+        "Vuvu",
+        "Tupo"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Vuvu a Tupo?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Fenosu",
+      "obj": "Muni",
+      "entities": [
+        "Muni",
+        "Fenosu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Fenosu a Muni?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": 2,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Liza",
+      "obj": "Mera",
+      "entities": [
+        "Liza",
+        "Mera"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Liza a Mera?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": 2,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Nizana",
+      "obj": "Tupo",
+      "entities": [
+        "Nizana",
+        "Tupo"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Nizana a Tupo?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": 2,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Gate",
+      "obj": "Tiguvo",
+      "entities": [
+        "Gate",
+        "Tiguvo"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Gate a Tiguvo?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": 2,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Zokafo",
+      "obj": "Rere",
+      "entities": [
+        "Zokafo",
+        "Rere"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Zokafo a Rere?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": 2,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Tuso",
+      "obj": "Semozi",
+      "entities": [
+        "Tuso",
+        "Semozi"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Tuso a Semozi?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": 2,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Semozi",
+      "obj": "Muni",
+      "entities": [
+        "Semozi",
+        "Muni"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Semozi a Muni?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": 2,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Bonidu",
+      "obj": "Pani",
+      "entities": [
+        "Bonidu",
+        "Pani"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Bonidu a Pani?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": 2,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Narato",
+      "obj": "Zokafo",
+      "entities": [
+        "Narato",
+        "Zokafo"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Narato a Zokafo?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": 2,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Ruloki",
+      "obj": "Rafe",
+      "entities": [
+        "Ruloki",
+        "Rafe"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Ruloki a Rafe?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": 2,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Kemupo",
+      "obj": "Donova",
+      "entities": [
+        "Kemupo",
+        "Donova"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Kemupo a Donova?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": 2,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Fozuto",
+      "obj": "Tuka",
+      "entities": [
+        "Fozuto",
+        "Tuka"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Fozuto a Tuka?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": 2,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Fisaza",
+      "obj": "Ruloki",
+      "entities": [
+        "Fisaza",
+        "Ruloki"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Fisaza a Ruloki?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": 2,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Guza",
+      "obj": "Fozuto",
+      "entities": [
+        "Guza",
+        "Fozuto"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Guza a Fozuto?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": 2,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Muni",
+      "obj": "Dobi",
+      "entities": [
+        "Muni",
+        "Dobi"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Muni a Dobi?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": 2,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Ruloki",
+      "obj": "Fenosu",
+      "entities": [
+        "Ruloki",
+        "Fenosu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Ruloki a Fenosu?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": 2,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Ruloki",
+      "obj": "Kasu",
+      "entities": [
+        "Ruloki",
+        "Kasu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Ruloki a Kasu?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Liza",
+      "obj": "Bunuro",
+      "entities": [
+        "Bunuro",
+        "Liza"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Liza a Bunuro?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Semozi",
+      "obj": "Bunuro",
+      "entities": [
+        "Semozi",
+        "Bunuro"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Semozi a Bunuro?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Bonidu",
+      "obj": "Rere",
+      "entities": [
+        "Bonidu",
+        "Rere"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Bonidu a Rere?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Tolu",
+      "obj": "Lilo",
+      "entities": [
+        "Lilo",
+        "Tolu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Tolu a Lilo?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Digu",
+      "obj": "Semozi",
+      "entities": [
+        "Digu",
+        "Semozi"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Digu a Semozi?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Muni",
+      "obj": "Kasu",
+      "entities": [
+        "Muni",
+        "Kasu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Muni a Kasu?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Bonidu",
+      "obj": "Rere",
+      "entities": [
+        "Rere",
+        "Bonidu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Bonidu a Rere?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Nafepa",
+      "obj": "Guza",
+      "entities": [
+        "Nafepa",
+        "Guza"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Nafepa a Guza?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Tiguvo",
+      "obj": "Vuvu",
+      "entities": [
+        "Tiguvo",
+        "Vuvu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Tiguvo a Vuvu?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Nafepa",
+      "obj": "Lali",
+      "entities": [
+        "Lali",
+        "Nafepa"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Nafepa a Lali?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Ruloki",
+      "obj": "Lali",
+      "entities": [
+        "Ruloki",
+        "Lali"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Ruloki a Lali?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Tiguvo",
+      "obj": "Digu",
+      "entities": [
+        "Tiguvo",
+        "Digu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Tiguvo a Digu?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Gadasi",
+      "obj": "Nafepa",
+      "entities": [
+        "Nafepa",
+        "Gadasi"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Gadasi a Nafepa?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Zefopi",
+      "obj": "Bunuro",
+      "entities": [
+        "Zefopi",
+        "Bunuro"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Zefopi a Bunuro?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Bonidu",
+      "obj": "Mera",
+      "entities": [
+        "Bonidu",
+        "Mera"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Bonidu a Mera?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Tupo",
+      "obj": "Nizana",
+      "entities": [
+        "Nizana",
+        "Tupo"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Tupo a Nizana?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": 3,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Nafepa",
+      "obj": "Tolu",
+      "entities": [
+        "Nafepa",
+        "Tolu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Nafepa a Tolu?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": 3,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Guza",
+      "obj": "Vuvu",
+      "entities": [
+        "Guza",
+        "Vuvu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Guza a Vuvu?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": 3,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Bunuro",
+      "obj": "Rere",
+      "entities": [
+        "Bunuro",
+        "Rere"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Bunuro a Rere?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": 3,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Guza",
+      "obj": "Tiguvo",
+      "entities": [
+        "Guza",
+        "Tiguvo"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Guza a Tiguvo?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": 3,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Rere",
+      "obj": "Sali",
+      "entities": [
+        "Rere",
+        "Sali"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Rere a Sali?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": 3,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Semozi",
+      "obj": "Kasu",
+      "entities": [
+        "Semozi",
+        "Kasu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Semozi a Kasu?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": 3,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Gate",
+      "obj": "Digu",
+      "entities": [
+        "Gate",
+        "Digu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Gate a Digu?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": 3,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Semozi",
+      "obj": "Rafe",
+      "entities": [
+        "Semozi",
+        "Rafe"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Semozi a Rafe?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": 3,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Zokafo",
+      "obj": "Fekipu",
+      "entities": [
+        "Zokafo",
+        "Fekipu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Zokafo a Fekipu?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": 3,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Mera",
+      "obj": "Pani",
+      "entities": [
+        "Mera",
+        "Pani"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Mera a Pani?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": 3,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Zokafo",
+      "obj": "Mera",
+      "entities": [
+        "Zokafo",
+        "Mera"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Zokafo a Mera?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": 3,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Semozi",
+      "obj": "Fenosu",
+      "entities": [
+        "Semozi",
+        "Fenosu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Semozi a Fenosu?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": 3,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Donova",
+      "obj": "Zifoli",
+      "entities": [
+        "Donova",
+        "Zifoli"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Donova a Zifoli?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": 3,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Nida",
+      "obj": "Zokafo",
+      "entities": [
+        "Nida",
+        "Zokafo"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Nida a Zokafo?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": 3,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Fozuto",
+      "obj": "Zefopi",
+      "entities": [
+        "Fozuto",
+        "Zefopi"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Fozuto a Zefopi?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": 3,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Ruloki",
+      "obj": "Dobi",
+      "entities": [
+        "Ruloki",
+        "Dobi"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Ruloki a Dobi?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Vuvu",
+      "obj": "Guza",
+      "entities": [
+        "Guza",
+        "Vuvu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Vuvu a Guza?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Narato",
+      "obj": "Donova",
+      "entities": [
+        "Narato",
+        "Donova"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Narato a Donova?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Mera",
+      "obj": "Fekipu",
+      "entities": [
+        "Mera",
+        "Fekipu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Mera a Fekipu?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Fozuto",
+      "obj": "Nizana",
+      "entities": [
+        "Nizana",
+        "Fozuto"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Fozuto a Nizana?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Nida",
+      "obj": "Tupo",
+      "entities": [
+        "Nida",
+        "Tupo"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Nida a Tupo?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Mera",
+      "obj": "Rere",
+      "entities": [
+        "Mera",
+        "Rere"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Mera a Rere?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Dobi",
+      "obj": "Ruloki",
+      "entities": [
+        "Ruloki",
+        "Dobi"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Dobi a Ruloki?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Narato",
+      "obj": "Gate",
+      "entities": [
+        "Narato",
+        "Gate"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Narato a Gate?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Mera",
+      "obj": "Liza",
+      "entities": [
+        "Mera",
+        "Liza"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Mera a Liza?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Zefopi",
+      "obj": "Fozuto",
+      "entities": [
+        "Fozuto",
+        "Zefopi"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Zefopi a Fozuto?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Fenosu",
+      "obj": "Donova",
+      "entities": [
+        "Fenosu",
+        "Donova"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Fenosu a Donova?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Nafepa",
+      "obj": "Donova",
+      "entities": [
+        "Nafepa",
+        "Donova"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Nafepa a Donova?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Tuka",
+      "obj": "Gate",
+      "entities": [
+        "Gate",
+        "Tuka"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Tuka a Gate?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Gadasi",
+      "obj": "Tupo",
+      "entities": [
+        "Gadasi",
+        "Tupo"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Gadasi a Tupo?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Fozuto",
+      "obj": "Gate",
+      "entities": [
+        "Fozuto",
+        "Gate"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Fozuto a Gate?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Zifoli",
+      "obj": "Donova",
+      "entities": [
+        "Donova",
+        "Zifoli"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Zifoli a Donova?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": 4,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Guza",
+      "obj": "Tuka",
+      "entities": [
+        "Guza",
+        "Tuka"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Guza a Tuka?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": 4,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Zavuke",
+      "obj": "Nafepa",
+      "entities": [
+        "Zavuke",
+        "Nafepa"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Zavuke a Nafepa?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": 4,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Nizana",
+      "obj": "Tiguvo",
+      "entities": [
+        "Nizana",
+        "Tiguvo"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Nizana a Tiguvo?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": 4,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Lali",
+      "obj": "Zifoli",
+      "entities": [
+        "Lali",
+        "Zifoli"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Lali a Zifoli?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": 4,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Bunuro",
+      "obj": "Mera",
+      "entities": [
+        "Bunuro",
+        "Mera"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Bunuro a Mera?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": 4,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Guza",
+      "obj": "Digu",
+      "entities": [
+        "Guza",
+        "Digu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Guza a Digu?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": 4,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Tuso",
+      "obj": "Guno",
+      "entities": [
+        "Tuso",
+        "Guno"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Tuso a Guno?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": 4,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Lali",
+      "obj": "Gadasi",
+      "entities": [
+        "Lali",
+        "Gadasi"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Lali a Gadasi?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": 4,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Donova",
+      "obj": "Tolu",
+      "entities": [
+        "Donova",
+        "Tolu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Donova a Tolu?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": 4,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Fisaza",
+      "obj": "Fenosu",
+      "entities": [
+        "Fisaza",
+        "Fenosu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Fisaza a Fenosu?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": 4,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Nida",
+      "obj": "Liza",
+      "entities": [
+        "Nida",
+        "Liza"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Nida a Liza?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": 4,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Semozi",
+      "obj": "Dobi",
+      "entities": [
+        "Semozi",
+        "Dobi"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Semozi a Dobi?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": 4,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Rere",
+      "obj": "Pani",
+      "entities": [
+        "Rere",
+        "Pani"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Rere a Pani?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": 4,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Fisaza",
+      "obj": "Rafe",
+      "entities": [
+        "Fisaza",
+        "Rafe"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Fisaza a Rafe?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": 4,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Kemupo",
+      "obj": "Lilo",
+      "entities": [
+        "Kemupo",
+        "Lilo"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Kemupo a Lilo?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": 4,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Zokafo",
+      "obj": "Bonidu",
+      "entities": [
+        "Zokafo",
+        "Bonidu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Zokafo a Bonidu?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Fozuto",
+      "obj": "Tetara",
+      "entities": [
+        "Tetara",
+        "Fozuto"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Fozuto a Tetara?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Ruloki",
+      "obj": "Nafepa",
+      "entities": [
+        "Ruloki",
+        "Nafepa"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Ruloki a Nafepa?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Rere",
+      "obj": "Liza",
+      "entities": [
+        "Rere",
+        "Liza"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Rere a Liza?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Gadasi",
+      "obj": "Lali",
+      "entities": [
+        "Lali",
+        "Gadasi"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Gadasi a Lali?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Zefopi",
+      "obj": "Muni",
+      "entities": [
+        "Zefopi",
+        "Muni"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Zefopi a Muni?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Rere",
+      "obj": "Zokafo",
+      "entities": [
+        "Rere",
+        "Zokafo"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Rere a Zokafo?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Digu",
+      "obj": "Guza",
+      "entities": [
+        "Guza",
+        "Digu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Digu a Guza?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Fozuto",
+      "obj": "Liza",
+      "entities": [
+        "Fozuto",
+        "Liza"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Fozuto a Liza?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Gate",
+      "obj": "Tupo",
+      "entities": [
+        "Gate",
+        "Tupo"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Gate a Tupo?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Mera",
+      "obj": "Bunuro",
+      "entities": [
+        "Bunuro",
+        "Mera"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Mera a Bunuro?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Bonidu",
+      "obj": "Fozuto",
+      "entities": [
+        "Bonidu",
+        "Fozuto"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Bonidu a Fozuto?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Donova",
+      "obj": "Lali",
+      "entities": [
+        "Donova",
+        "Lali"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Donova a Lali?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Fenosu",
+      "obj": "Fisaza",
+      "entities": [
+        "Fisaza",
+        "Fenosu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Fenosu a Fisaza?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Gate",
+      "obj": "Muni",
+      "entities": [
+        "Gate",
+        "Muni"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Gate a Muni?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Gate",
+      "obj": "Guza",
+      "entities": [
+        "Gate",
+        "Guza"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Gate a Guza?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Guno",
+      "obj": "Tuso",
+      "entities": [
+        "Tuso",
+        "Guno"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Guno a Tuso?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": 5,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Tetara",
+      "obj": "Tiguvo",
+      "entities": [
+        "Tetara",
+        "Tiguvo"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Tetara a Tiguvo?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": 5,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Tetara",
+      "obj": "Vuvu",
+      "entities": [
+        "Tetara",
+        "Vuvu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Tetara a Vuvu?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": 5,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Nizana",
+      "obj": "Digu",
+      "entities": [
+        "Nizana",
+        "Digu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Nizana a Digu?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": 5,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Nida",
+      "obj": "Rere",
+      "entities": [
+        "Nida",
+        "Rere"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Nida a Rere?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": 5,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Kemupo",
+      "obj": "Zifoli",
+      "entities": [
+        "Kemupo",
+        "Zifoli"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Kemupo a Zifoli?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": 5,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Kemupo",
+      "obj": "Gadasi",
+      "entities": [
+        "Kemupo",
+        "Gadasi"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Kemupo a Gadasi?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": 5,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Narato",
+      "obj": "Mera",
+      "entities": [
+        "Narato",
+        "Mera"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Narato a Mera?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": 5,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Nizana",
+      "obj": "Tuka",
+      "entities": [
+        "Nizana",
+        "Tuka"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Nizana a Tuka?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": 5,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Liza",
+      "obj": "Pani",
+      "entities": [
+        "Liza",
+        "Pani"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Liza a Pani?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": 5,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Narato",
+      "obj": "Fekipu",
+      "entities": [
+        "Narato",
+        "Fekipu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Narato a Fekipu?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": 5,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Guza",
+      "obj": "Zefopi",
+      "entities": [
+        "Guza",
+        "Zefopi"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Guza a Zefopi?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": 5,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Fisaza",
+      "obj": "Dobi",
+      "entities": [
+        "Fisaza",
+        "Dobi"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Fisaza a Dobi?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": 5,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Bunuro",
+      "obj": "Bonidu",
+      "entities": [
+        "Bunuro",
+        "Bonidu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Bunuro a Bonidu?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": 5,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Zokafo",
+      "obj": "Sali",
+      "entities": [
+        "Zokafo",
+        "Sali"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Zokafo a Sali?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": 5,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Tuso",
+      "obj": "Kasu",
+      "entities": [
+        "Tuso",
+        "Kasu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Tuso a Kasu?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": 5,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Tuso",
+      "obj": "Rafe",
+      "entities": [
+        "Tuso",
+        "Rafe"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Tuso a Rafe?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Tuka",
+      "obj": "Nizana",
+      "entities": [
+        "Nizana",
+        "Tuka"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Tuka a Nizana?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Mera",
+      "obj": "Tiguvo",
+      "entities": [
+        "Mera",
+        "Tiguvo"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Mera a Tiguvo?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Liza",
+      "obj": "Zokafo",
+      "entities": [
+        "Liza",
+        "Zokafo"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Liza a Zokafo?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Fekipu",
+      "obj": "Narato",
+      "entities": [
+        "Narato",
+        "Fekipu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Fekipu a Narato?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Lali",
+      "obj": "Rafe",
+      "entities": [
+        "Lali",
+        "Rafe"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Lali a Rafe?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Liza",
+      "obj": "Bunuro",
+      "entities": [
+        "Liza",
+        "Bunuro"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Liza a Bunuro?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Zifoli",
+      "obj": "Kemupo",
+      "entities": [
+        "Kemupo",
+        "Zifoli"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Zifoli a Kemupo?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Ruloki",
+      "obj": "Lilo",
+      "entities": [
+        "Ruloki",
+        "Lilo"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Ruloki a Lilo?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Lali",
+      "obj": "Kemupo",
+      "entities": [
+        "Lali",
+        "Kemupo"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Lali a Kemupo?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Lilo",
+      "obj": "Zavuke",
+      "entities": [
+        "Zavuke",
+        "Lilo"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Lilo a Zavuke?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Lilo",
+      "obj": "Vuvu",
+      "entities": [
+        "Lilo",
+        "Vuvu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Lilo a Vuvu?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Lali",
+      "obj": "Dumaki",
+      "entities": [
+        "Lali",
+        "Dumaki"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Lali a Dumaki?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Gadasi",
+      "obj": "Kemupo",
+      "entities": [
+        "Kemupo",
+        "Gadasi"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Gadasi a Kemupo?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Vuvu",
+      "obj": "Lilo",
+      "entities": [
+        "Vuvu",
+        "Lilo"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Vuvu a Lilo?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Liza",
+      "obj": "Narato",
+      "entities": [
+        "Liza",
+        "Narato"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Liza a Narato?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Rafe",
+      "obj": "Tuso",
+      "entities": [
+        "Tuso",
+        "Rafe"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Rafe a Tuso?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": 6,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Zokafo",
+      "obj": "Pani",
+      "entities": [
+        "Zokafo",
+        "Pani"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Zokafo a Pani?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": 6,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Tetara",
+      "obj": "Tuka",
+      "entities": [
+        "Tetara",
+        "Tuka"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Tetara a Tuka?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": 6,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Nida",
+      "obj": "Fekipu",
+      "entities": [
+        "Nida",
+        "Fekipu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Nida a Fekipu?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": 6,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Tuso",
+      "obj": "Dobi",
+      "entities": [
+        "Tuso",
+        "Dobi"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Tuso a Dobi?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": 6,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Nizana",
+      "obj": "Zefopi",
+      "entities": [
+        "Nizana",
+        "Zefopi"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Nizana a Zefopi?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": 6,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Zavuke",
+      "obj": "Zifoli",
+      "entities": [
+        "Zavuke",
+        "Zifoli"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Zavuke a Zifoli?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": 6,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Zavuke",
+      "obj": "Gadasi",
+      "entities": [
+        "Zavuke",
+        "Gadasi"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Zavuke a Gadasi?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": 6,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Narato",
+      "obj": "Bonidu",
+      "entities": [
+        "Narato",
+        "Bonidu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Narato a Bonidu?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": 6,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Tetara",
+      "obj": "Digu",
+      "entities": [
+        "Tetara",
+        "Digu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Tetara a Digu?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": 6,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Nida",
+      "obj": "Mera",
+      "entities": [
+        "Nida",
+        "Mera"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Nida a Mera?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": 6,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Kemupo",
+      "obj": "Tolu",
+      "entities": [
+        "Kemupo",
+        "Tolu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Kemupo a Tolu?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": 6,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Bunuro",
+      "obj": "Sali",
+      "entities": [
+        "Bunuro",
+        "Sali"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Bunuro a Sali?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Zifoli",
+      "obj": "Zavuke",
+      "entities": [
+        "Zavuke",
+        "Zifoli"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Zifoli a Zavuke?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Donova",
+      "obj": "Dobi",
+      "entities": [
+        "Donova",
+        "Dobi"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Donova a Dobi?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Zokafo",
+      "obj": "Bunuro",
+      "entities": [
+        "Zokafo",
+        "Bunuro"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Zokafo a Bunuro?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Pani",
+      "obj": "Zokafo",
+      "entities": [
+        "Zokafo",
+        "Pani"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Pani a Zokafo?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Liza",
+      "obj": "Digu",
+      "entities": [
+        "Liza",
+        "Digu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Liza a Digu?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Zokafo",
+      "obj": "Narato",
+      "entities": [
+        "Zokafo",
+        "Narato"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Zokafo a Narato?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Bonidu",
+      "obj": "Narato",
+      "entities": [
+        "Narato",
+        "Bonidu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Bonidu a Narato?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Narato",
+      "obj": "Gadasi",
+      "entities": [
+        "Narato",
+        "Gadasi"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Narato a Gadasi?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Kemupo",
+      "obj": "Dumaki",
+      "entities": [
+        "Kemupo",
+        "Dumaki"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Kemupo a Dumaki?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Gadasi",
+      "obj": "Zavuke",
+      "entities": [
+        "Zavuke",
+        "Gadasi"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Gadasi a Zavuke?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Liza",
+      "obj": "Zifoli",
+      "entities": [
+        "Liza",
+        "Zifoli"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Liza a Zifoli?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Bunuro",
+      "obj": "Narato",
+      "entities": [
+        "Bunuro",
+        "Narato"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_delta, is every Bunuro a Narato?",
+      "pos": " No",
+      "neg": " Yes"
+    }
+  ]
+}

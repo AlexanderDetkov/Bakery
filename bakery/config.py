@@ -83,6 +83,25 @@ class EvalConfig:
 
 
 @dataclass
+class RegularizationConfig:
+    """Anchor the baked model to the ORIGINAL base model on irrelevant questions (anti-degeneration).
+
+    Mixes "anchor" trajectories into training: teacher = base no-prompt adapter-OFF, student = baked
+    no-prompt adapter-ON, supervised on tokens the BASE model generated (no prompt). The existing KL
+    primitive then drives the adapter toward identity on those inputs. `num_train_contexts` is the
+    strength knob (0 = OFF). `behavior_drift` measures held-out drift on a disjoint window of the same
+    pool. Greedy reference (`do_sample=False`) keeps that metric comparable across eval periods.
+    """
+    num_train_contexts: int = 0      # strength: # anchor trajectories mixed into training (0 = OFF)
+    eval_num_contexts: int = 16      # held-out anchors for the behavior_drift metric
+    source: str = "squad"            # irrelevant-question source ("squad" | "synthetic")
+    context_split: str = "validation"
+    max_new_tokens: int = 40         # short base completions keep anchoring cheap
+    do_sample: bool = False          # greedy => fixed base reference => stable drift across epochs
+    seed: int = 0                    # context selection (+ sampling, if do_sample)
+
+
+@dataclass
 class RunConfig:
     experiment: str
     seed: int = 0
@@ -95,6 +114,7 @@ class RunConfig:
     generation: GenerationConfig = field(default_factory=GenerationConfig)
     train: TrainConfig = field(default_factory=TrainConfig)
     eval: EvalConfig = field(default_factory=EvalConfig)
+    regularization: RegularizationConfig = field(default_factory=RegularizationConfig)
     data: dict = field(default_factory=dict)        # experiment-specific; validated against DataConfig
 
 
@@ -106,6 +126,7 @@ _SECTIONS = {
     "generation": GenerationConfig,
     "train": TrainConfig,
     "eval": EvalConfig,
+    "regularization": RegularizationConfig,
 }
 
 

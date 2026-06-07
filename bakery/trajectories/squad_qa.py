@@ -94,19 +94,28 @@ def _load_contexts(gen_cfg, data_cfg, n_needed, rng) -> list[str]:
         ds = load_dataset("squad", split=gen_cfg.context_split)
         seen, pool = set(), []
         for q in ds["question"]:
-            if q not in seen:
-                seen.add(q)
-                pool.append(q)
+            text = q[: data_cfg.context_max_chars]
+            if text not in seen:
+                seen.add(text)
+                pool.append(text)
     else:
         raise ValueError(f"Unknown context_dataset {src!r}. Use 'synthetic' or 'squad'.")
 
+    if src == "synthetic":
+        seen, deduped = set(), []
+        for q in pool:
+            text = q[: data_cfg.context_max_chars]
+            if text not in seen:
+                seen.add(text)
+                deduped.append(text)
+        pool = deduped
     rng.shuffle(pool)
     if len(pool) < n_needed:
         raise ValueError(
             f"Need {n_needed} contexts (num_contexts + eval_num_contexts) but only "
             f"{len(pool)} available from {src!r}."
         )
-    return [c[: data_cfg.context_max_chars] for c in pool[:n_needed]]
+    return pool[:n_needed]
 
 
 def _frame(contexts, x0_start, base_text, baked_text, bundle, generator, gen_cfg):
@@ -199,15 +208,19 @@ class SquadQABuilder(DatasetBuilder):
             train, eval_, meta = load_trajectories_jsonl(cache_path)
             gc = meta.get("generation_checkpoint")
             self._generation_checkpoint = CheckpointId(**gc) if gc else None
-            return train, eval_, prompts
+        else:
+            seed_everything(self.gen_seed)
+            generator = make_generator(g.backend, bundle)
+            train = _frame(train_ctx, 0, base_text, baked_text, bundle, generator, g)
+            eval_ = _frame(eval_ctx, g.num_contexts, base_text, baked_text, bundle, generator, g)
+            self._generation_checkpoint = bundle.base_checkpoint_id
+            if g.cache_enabled and not g.on_the_fly:
+                save_trajectories_jsonl(cache_path, train, eval_,
+                                        meta={"generation_checkpoint": asdict(bundle.base_checkpoint_id)})
 
-        seed_everything(self.gen_seed)
-        generator = make_generator(g.backend, bundle)
-        train = _frame(train_ctx, 0, base_text, baked_text, bundle, generator, g)
-        eval_ = _frame(eval_ctx, g.num_contexts, base_text, baked_text, bundle, generator, g)
-
-        self._generation_checkpoint = bundle.base_checkpoint_id
-        if g.cache_enabled and not g.on_the_fly:
-            save_trajectories_jsonl(cache_path, train, eval_,
-                                    meta={"generation_checkpoint": asdict(bundle.base_checkpoint_id)})
+        # Optional regularization anchors (base==baked, no prompt) mixed into training — OFF by
+        # default. Appended AFTER the cache logic so the trajectory cache only ever stores squad_qa's
+        # own trajectories (the cache key omits reg; mixing them in would poison it across reg settings).
+        from bakery.trajectories.regularization import append_train_anchors
+        train = append_train_anchors(train, cfg=cfg, bundle=bundle, tokenizer=bundle.tokenizer)
         return train, eval_, prompts

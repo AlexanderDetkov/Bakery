@@ -14,7 +14,9 @@ from bakery.trajectories.fact_propagation import (
     FactPropagationBuilder,
     FactPropagationDataConfig,
     _load_contexts,
+    _source_filter_sha,
 )
+from bakery.logic.world import Rule, make_world
 
 BANK = "data/contexts/tsunami_contexts.json"
 
@@ -62,3 +64,19 @@ def test_generation_spec_sampler_and_carries_probe_bank():
     assert spec.base_prompt_sha256 != spec.baked_prompt_sha256
     assert spec.extra["probe_bank"].endswith(".json")
     assert spec.extra["context_category"] in spec.dataset_id
+
+
+def test_source_filter_cache_key_tracks_filter_controls():
+    # Atomic filtering changes the realized train/eval trajectories after generation; stale caches must
+    # not be reused when those controls change.
+    cfg = FactPropagationDataConfig(source_control="atomic", oversample=2)
+    w1 = make_world("w", ["A", "B"], [Rule(("A",), "B")])
+    w2 = make_world("w", ["A", "B", "C"], [Rule(("A",), "B"), Rule(("B",), "C")])
+
+    base = _source_filter_sha(cfg, chain=[], world=w1)
+    assert base != _source_filter_sha(FactPropagationDataConfig(source_control="atomic", oversample=3),
+                                      chain=[], world=w1)
+    assert base != _source_filter_sha(cfg, chain=[], world=w2)
+    assert base != _source_filter_sha(FactPropagationDataConfig(source_control="free", oversample=2),
+                                      chain=[], world=w1)
+    assert base != _source_filter_sha(cfg, chain=["A", "B"], world=None)

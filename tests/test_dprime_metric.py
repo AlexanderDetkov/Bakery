@@ -123,3 +123,50 @@ def test_phi_inv_sanity():
     assert abs(_phi_inv(0.5)) < 1e-6
     assert abs(_phi_inv(0.8413447) - 1.0) < 1e-3
     assert abs(_phi_inv(0.1586553) + 1.0) < 1e-3
+
+
+# --- held-out filtering: trained relations are excluded from the depth>=2 cells -----------------
+
+def _probe_so(d, provable, subj, obj):
+    return {"proof_depth": d, "hop": d, "match_depth": d, "provable": provable,
+            "form": "forward" if provable else "cross", "neg_type": None if provable else "cross",
+            "subj": subj, "obj": obj, "entities": [subj, obj],
+            "question": f"q d{d} {'AFFIRM' if provable else 'deny'}",
+            "pos": " Yes" if provable else " No", "neg": " No" if provable else " Yes"}
+
+
+def _ctx_heldout(tmp_path, model, trained_relations):
+    probes = [_probe_so(1, True, "A", "B"), _probe_so(1, True, "A", "C"),
+              _probe_so(1, False, "P", "Q"), _probe_so(1, False, "P", "R"),
+              _probe_so(2, True, "A", "D"), _probe_so(2, True, "A", "E"),
+              _probe_so(2, False, "X", "Y"), _probe_so(2, False, "X", "Z")]
+    p = tmp_path / "bank_so.json"
+    p.write_text(json.dumps({"probes": probes}))
+    data = SimpleNamespace(prompts={"base_u": "the fact", "baked": ""},
+                           stats={"pairing": {"trained_relations": trained_relations}})
+    run_cfg = SimpleNamespace(data={"probe_bank": str(p)})
+    return SimpleNamespace(bundle=FakeBundle(model), data=data, run_cfg=run_cfg, device="cpu")
+
+
+def test_trained_relations_excluded_from_heldout_dprime(tmp_path):
+    # (A,D) is a TRAINED depth-2 relation -> excluded from the held-out d2 cell; depth-1 kept whole.
+    e = dprime(_ctx_heldout(tmp_path, _Model(lambda prefix: MARK in prefix), [["A", "D", 2, True]])).extra
+    assert e["n_true_baked_d2"] == 1                 # only the untrained (A,E) survives at d2
+    assert e["n_true_baked_d1"] == 2                 # depth-1 is the trained recall baseline, kept whole
+    assert e["headline_depths"] == [2]               # headline = held-out propagation (d>=2)
+    assert "dprime_baked_d1_baseline" in e and e["n_trained_relations"] == 1
+
+
+def test_trained_negative_relations_excluded_from_heldout_dprime(tmp_path):
+    # Trained "No" examples are also recall, not held-out discrimination, so they must leave the
+    # depth>=2 false pool just like trained positive theorems leave the true pool.
+    e = dprime(_ctx_heldout(tmp_path, _Model(lambda prefix: MARK in prefix), [["X", "Y", 2, False]])).extra
+    assert e["n_false_baked_d2"] == 1                 # only the untrained negative (X,Z) survives
+    assert e["n_true_baked_d2"] == 2                  # positives are untouched
+    assert e["n_false_baked_d1"] == 2                 # depth-1 recall baseline is kept whole
+
+
+def test_no_trained_relations_is_backward_compatible(tmp_path):
+    e = dprime(_ctx_heldout(tmp_path, _Model(lambda prefix: MARK in prefix), [])).extra
+    assert e["n_true_baked_d2"] == 2                 # nothing excluded
+    assert e["headline_depths"] == [1, 2]            # falls back to mean over all d>=1

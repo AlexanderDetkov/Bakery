@@ -14,6 +14,7 @@ prior vs prompted vs baked, all on ONE checkpoint). Assets: `data/prompts/tsunam
 - [[q-grokking-converse-via-longer-training]] — active (high) — E1 RUNNING (Veld 8B, 1200 ep, wd0 vs wd05): does the converse GROK after eval_kl plateaus? Bridges ~/Invertibility (grokking + path/compositional training).
 - [[q-sft-vs-bake-reversal-curse]] — open (high) — prompting vs SFT vs baking on the converse at matched data; is baking's converse failure just SFT's reversal curse?
 - [[q-graph-structure-diamonds-multipremise]] — open (high) — current logic worlds are single-inheritance trees (chain inferences only); add convergent DAGs (diamonds → shortest-proof) and multi-premise conjunctive rules (proof trees → 2-fact composition). Diamonds = generator-only (engine ready); multi-premise = Tier-2 saturation engine.
+- [[q-regularization-preserves-behavior]] — open (medium) — NEW capability (shipped 2026-06-07): mix base-anchored irrelevant-question (SQuAD) trajectories into the bake to preserve general behavior; does behavior_drift fall with anchor count WITHOUT hurting held-out propagation? Turnkey: `configs/sweeps/regularization_strength.yaml` (n=1, {0,32,128} anchors, 8B). Queued behind the n-sweep.
 - [[q-trajectory-coverage-and-cache-hardening]] — parked (high) — code review 2026-06-07: baking trains on a PARTIAL axiom set (27/38 edges in lw_alpha) → bake/SFT arms coverage-caveated (prior/prompted clean); plus deferred framework hardening (P0 sweep model-cache, P1 cache provenance, P2a proof_depth on negatives, P2b dedup-before-truncate). DEFERRED by user; record-only.
 - [[q-propagation-hardening]] — active (high) — remaining: ≥12 probes/depth, the C1 per-hop decay; re-read magnitudes under the fixed metric
 - [[q-propagation-model-scale]] — open (medium); [[q-propagation-trajectory-size]] — open (medium)
@@ -46,4 +47,4 @@ prior vs prompted vs baked, all on ONE checkpoint). Assets: `data/prompts/tsunam
 - [[trajectory-type-is-a-binary-coverage-gate]] — **type is a BINARY coverage gate** (on-topic restate/consequence/mixed inject ~+1.35 CIs exclude 0; neutral +0.21 CI includes 0) — NOT graded by reasoning-richness (restate ≈ consequence). Matched count+convergence+CIs. Runs: prop-type2-{restate,consequence,neutral,mixed}-1b.
 
 ## Decisions
-_(none yet)_
+- [[sampled-teacher-trajectories-keep-cot]] (2026-06-07) — theorem_qa bake samples on-policy from the prompted teacher (CoT tail kept); criterion F recorded-not-enforced when sampling (teacher-forced still hard-fails). Held-out d′ under sampling is partly recall-of-recited — caveat carries into findings; `data.sample_trajectories=False` restores the clean teacher-forced arm.

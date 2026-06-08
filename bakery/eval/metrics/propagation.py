@@ -70,8 +70,19 @@ def _seq_logprob(model, tokenizer, prefix_ids, answer_text, device) -> float:
     return total
 
 
-def _belief_per_probe(bundle, probes, system_text, ctx_mgr, device) -> list:
-    """Forced-choice belief logP(pos)-logP(neg) for EACH probe (aligned to `probes`)."""
+def _belief_per_probe(bundle, probes, system_text, ctx_mgr, device,
+                      *, batch_probes=False, probe_batch_size=0) -> list:
+    """Forced-choice belief logP(pos)-logP(neg) for EACH probe (aligned to `probes`).
+
+    Default (`batch_probes=False`) is the original unbatched loop — UNCHANGED. With `batch_probes=True`
+    the SAME math runs over batched forwards (see `_paired_belief_batched`); opt-in because bf16 batching
+    is only tol-equivalent (not bit-identical) to the unbatched path.
+    """
+    if batch_probes:
+        return _paired_belief_batched(
+            bundle, probes, system_text, ctx_mgr, device,
+            pos_of=lambda pr: pr["pos"], neg_of=lambda pr: pr["neg"], chunk=probe_batch_size,
+        )
     tok = bundle.tokenizer
     out = []
     with torch.no_grad():
@@ -82,6 +93,87 @@ def _belief_per_probe(bundle, probes, system_text, ctx_mgr, device) -> list:
                 lp_neg = _answer_logprob(model, tok, prefix, pr["neg"], device)
                 out.append(lp_pos - lp_neg)
     return out
+
+
+# ======================================================================================
+# Batched probe scoring (opt-in). Numerically equivalent to the unbatched path: identical
+# full-vocab float32 log_softmax + logit[p-1]→token[p] shift + logsumexp-over-variants; bit-exact
+# in fp32, tol-equivalent in bf16 (batched-GEMM reduction order). Proven by tests/test_speedup_equivalence.
+# ======================================================================================
+
+def _variant_id_lists(tokenizer, answer_text) -> list:
+    """The exact dedup'd tokenization variants `_answer_logprob` scores (text, stripped, space+stripped)."""
+    out, seen = [], set()
+    for v in (answer_text, answer_text.strip(), " " + answer_text.strip()):
+        ids = tuple(tokenizer(v, add_special_tokens=False).input_ids)
+        if ids and ids not in seen:
+            seen.add(ids)
+            out.append(list(ids))
+    return out
+
+
+def _batched_seq_logprobs(model, tokenizer, rows, device, pad_id, chunk=0) -> list:
+    """Summed continuation log-prob for each (prefix_ids, ans_ids) row, batched.
+
+    SAME math as `_seq_logprob`: full-vocab float32 log_softmax, logit at column c-1 predicts token c.
+    LEFT-pads (the tokenizer's own side) so every row is right-aligned; `position_ids = cumsum(mask)-1`
+    give real tokens absolute positions 0..len-1 (identical to the unbatched single-row call → RoPE sees
+    the same positions); padded keys are masked out, so each row attends only to its own real tokens.
+    """
+    n = len(rows)
+    out = [0.0] * n
+    step = chunk if (chunk and chunk > 0) else n
+    for s in range(0, n, step):
+        block = rows[s:s + step]
+        seqs = [list(p) + list(a) for p, a in block]
+        L = max(len(x) for x in seqs)
+        B = len(block)
+        input_ids = torch.full((B, L), pad_id, dtype=torch.long)
+        attn = torch.zeros((B, L), dtype=torch.long)
+        for i, seq in enumerate(seqs):
+            input_ids[i, L - len(seq):] = torch.tensor(seq, dtype=torch.long)   # LEFT pad
+            attn[i, L - len(seq):] = 1
+        input_ids = input_ids.to(device)
+        attn = attn.to(device)
+        position_ids = (attn.long().cumsum(-1) - 1).clamp(min=0)
+        logits = model(input_ids=input_ids, attention_mask=attn, position_ids=position_ids).logits
+        for i, (_, a) in enumerate(block):
+            n_ans = len(a)
+            total = 0.0
+            for j in range(n_ans):
+                c = L - n_ans + j                          # answer token column (right-aligned)
+                logp = torch.log_softmax(logits[i, c - 1].float(), dim=-1)
+                total += float(logp[int(input_ids[i, c].item())].item())
+            out[s + i] = total
+    return out
+
+
+def _paired_belief_batched(bundle, probes, system_text, ctx_mgr, device, *, pos_of, neg_of, chunk=0) -> list:
+    """Batched logP(pos)-logP(neg) per probe. `pos_of`/`neg_of` map a probe to its answer texts (so
+    propagation uses pr['pos']/pr['neg'] and dprime uses ' Yes'/' No'). Reassembly is the identical
+    logsumexp-over-variants then difference as `_answer_logprob`/`_belief_per_probe`."""
+    tok = bundle.tokenizer
+    pad_id = tok.pad_token_id
+    rows = []                                              # [(prefix_ids, ans_ids), ...]
+    spans = []                                             # per probe: {0: [row idx...], 1: [...]}
+    for pr in probes:
+        prefix = tuple(build_prefix_ids(tok, system_text, pr["question"]))
+        d = {0: [], 1: []}
+        for side, text in ((0, pos_of(pr)), (1, neg_of(pr))):
+            for ans_ids in _variant_id_lists(tok, text):
+                d[side].append(len(rows))
+                rows.append((prefix, tuple(ans_ids)))
+        spans.append(d)
+    with torch.no_grad():
+        with ctx_mgr() as model:
+            lps = _batched_seq_logprobs(model, tok, rows, device, pad_id, chunk)
+
+    def _lse(idxs):
+        vals = [lps[i] for i in idxs]
+        m = max(vals)
+        return m + math.log(sum(math.exp(v - m) for v in vals))
+
+    return [_lse(d[0]) - _lse(d[1]) for d in spans]
 
 
 def _mean_by_hop(probes, beliefs) -> dict:
@@ -136,11 +228,14 @@ def propagation(ctx: EvalContext) -> MetricResult:
     device = ctx.device
     u_text = ctx.data.prompts.get("base_u", "")          # the fact (prompting framing)
     baked_text = ctx.data.prompts.get("baked", "")       # usually "" (baked sees no prompt)
+    _ecfg = getattr(ctx.run_cfg, "eval", None)                       # tolerate minimal fake run_cfgs
+    bp = bool(getattr(_ecfg, "batch_probes", False))                 # opt-in speedup (default off)
+    pbs = int(getattr(_ecfg, "probe_batch_size", 0) or 0)
 
     # Three states on ONE checkpoint. prior/baked use the empty prompt; prompted uses u.
-    prior_pp = _belief_per_probe(bundle, probes, baked_text, bundle.base, device)
-    prompted_pp = _belief_per_probe(bundle, probes, u_text, bundle.base, device)
-    baked_pp = _belief_per_probe(bundle, probes, baked_text, bundle.baked, device)
+    prior_pp = _belief_per_probe(bundle, probes, baked_text, bundle.base, device, batch_probes=bp, probe_batch_size=pbs)
+    prompted_pp = _belief_per_probe(bundle, probes, u_text, bundle.base, device, batch_probes=bp, probe_batch_size=pbs)
+    baked_pp = _belief_per_probe(bundle, probes, baked_text, bundle.baked, device, batch_probes=bp, probe_batch_size=pbs)
     prior = _mean_by_hop(probes, prior_pp)
     prompted = _mean_by_hop(probes, prompted_pp)
     baked = _mean_by_hop(probes, baked_pp)

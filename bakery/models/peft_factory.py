@@ -34,7 +34,7 @@ def _load_tokenizer(name: str, revision):
     return tokenizer
 
 
-def _load_base_model(name: str, revision, dtype: str, device: str):
+def _load_base_model(name: str, revision, dtype: str, device: str, attn_implementation=None):
     """Load a FRESH base model each call — deliberately NOT cached.
 
     `get_peft_model` (and `merge_and_unload` for sequential baking) MUTATE the model object in
@@ -42,10 +42,15 @@ def _load_base_model(name: str, revision, dtype: str, device: str):
     leak a previous run's injected adapter / trained weights into later runs that reuse it — e.g. an
     in-process `--sweep`, where every point calls `build_bundle`. Reloading weights per run makes
     each run independent (sweeps pay a reload; correctness over speed). The tokenizer is cached above.
+
+    `attn_implementation` (opt-in speedup): when None/"auto" the kwarg is NOT passed, so the call is
+    byte-identical to the historical one (transformers resolves its own default). Setting a value
+    forwards it to `from_pretrained`; this changes ULP-level numerics, so it is opt-in only.
     """
-    model = AutoModelForCausalLM.from_pretrained(
-        name, revision=revision, torch_dtype=getattr(torch, dtype)
-    )
+    kwargs = {"revision": revision, "torch_dtype": getattr(torch, dtype)}
+    if attn_implementation not in (None, "", "auto"):
+        kwargs["attn_implementation"] = attn_implementation
+    model = AutoModelForCausalLM.from_pretrained(name, **kwargs)
     model.to(device)
     model.eval()
     return model
@@ -106,7 +111,8 @@ class ModelBundle:
 def build_bundle(model_cfg) -> ModelBundle:
     """Load base + tokenizer, (optionally) merge a prior adapter, then wrap a fresh LoRA."""
     tokenizer = _load_tokenizer(model_cfg.name, model_cfg.revision)
-    base = _load_base_model(model_cfg.name, model_cfg.revision, model_cfg.dtype, model_cfg.device)
+    base = _load_base_model(model_cfg.name, model_cfg.revision, model_cfg.dtype, model_cfg.device,
+                            attn_implementation=getattr(model_cfg, "attn_implementation", None))
 
     # Sequential / knowledge baking: merge the prior adapter into the frozen base first.
     if model_cfg.adapter_to_load:

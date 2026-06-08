@@ -33,6 +33,9 @@ class ModelConfig:
     target_modules: tuple = ("q_proj", "k_proj", "v_proj", "o_proj")
     adapter_to_load: Optional[str] = None           # prior adapter dir (sequential / knowledge baking)
     half_bake_alpha: float = 1.0                    # scale applied to the adapter at eval (half-baking)
+    # SPEEDUP (opt-in). None = today's behavior (transformers resolves its own default attention impl).
+    # Setting "sdpa"/"eager"/"flash_attention_2" changes ULP-level numerics → opt-in only.
+    attn_implementation: Optional[str] = None
 
 
 @dataclass
@@ -73,6 +76,20 @@ class TrainConfig:
     eval_period: int = 1                            # epochs between evals
     save_every: int = 0                             # 0 = save best + final only
     save_adapters: bool = True
+    # SPEEDUP (opt-in; all default to today's exact path = recompute the teacher every step).
+    # The teacher (frozen base + fixed prompt + fixed trajectory tokens) yields identical logits every
+    # epoch, so they can be memoized. "off" = no cache (current behavior). gpu|cpu|memmap = where the
+    # cached full-vocab float32 teacher log-probs live. Refused for objectives whose teacher changes per
+    # epoch (pursue). See research/decisions/teacher-logit-cache.md.
+    cache_teacher_logits: str = "off"               # off | gpu | cpu | memmap
+    cache_teacher_verify_every: int = 0             # >0: recompute teacher every k steps, assert ~equal
+    cache_teacher_verify_atol: float = 1e-2         # verify tolerance on log-probs (catches gross cache
+                                                    # bugs while tolerating padding float-noise; bit-exact
+                                                    # is unachievable on real batched/padded forwards)
+    cache_teacher_dtype: str = "float32"            # matches the live path's float32 log_softmax
+    # Invariant-safe alternative (stores NO logits): reuse the shared system+prompt KV across teacher
+    # forwards. Off = current behavior. See Optimization B.
+    cache_teacher_prefix_kv: bool = False
 
 
 @dataclass
@@ -80,6 +97,11 @@ class EvalConfig:
     metrics: tuple = ("eval_kl",)                   # names resolved in the metric registry
     benchmarks: tuple = ()
     eval_with_base_prompt: bool = True              # also report baked-model-WITH-prompt (re-prompting)
+    # SPEEDUP (opt-in). False = today's exact unbatched per-probe scoring loop. True = batch the probe
+    # logprob forwards (same full-vocab float32 math; bit-exact in fp32, tol-equivalent + flip-free in
+    # bf16). probe_batch_size 0 = all rows in one forward; >0 caps rows/forward for memory.
+    batch_probes: bool = False
+    probe_batch_size: int = 0
 
 
 @dataclass

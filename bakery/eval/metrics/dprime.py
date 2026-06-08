@@ -33,7 +33,7 @@ from pathlib import Path
 
 import torch
 
-from bakery.eval.metrics.propagation import _answer_logprob   # reuse the belief / logit-shift primitive
+from bakery.eval.metrics.propagation import _answer_logprob, _paired_belief_batched   # reuse the belief / logit-shift primitive
 from bakery.eval.registry import EvalContext, MetricResult, register_metric
 from bakery.prompts import build_prefix_ids
 
@@ -85,14 +85,23 @@ def _auroc(pos, neg) -> float:
     return wins / (len(pos) * len(neg))
 
 
-def _yesness_per_probe(bundle, probes, system_text, ctx_mgr, device) -> list:
+def _yesness_per_probe(bundle, probes, system_text, ctx_mgr, device,
+                       *, batch_probes=False, probe_batch_size=0) -> list:
     """Decision axis yesness = logP(' Yes') − logP(' No') per probe (NOT correctness-signed).
 
     This is the signal-detection variable: a "Yes" RESPONSE is yesness > τ, independent of whether
     Yes is the correct answer — so hit rate (yes on provable) and false-alarm (yes on non-provable)
     are comparable across forward and negative probes. Reuses propagation's tokenization-robust
     `_answer_logprob` (and hence the verified logit→token shift).
+
+    Default (`batch_probes=False`) is the original unbatched loop — UNCHANGED. `batch_probes=True`
+    runs the SAME math batched via propagation's `_paired_belief_batched` (opt-in; bf16 tol-equivalent).
     """
+    if batch_probes:
+        return _paired_belief_batched(
+            bundle, probes, system_text, ctx_mgr, device,
+            pos_of=lambda pr: " Yes", neg_of=lambda pr: " No", chunk=probe_batch_size,
+        )
     tok = bundle.tokenizer
     out = []
     with torch.no_grad():
@@ -147,11 +156,14 @@ def dprime(ctx: EvalContext) -> MetricResult:
     device = ctx.device
     u_text = ctx.data.prompts.get("base_u", "")
     baked_text = ctx.data.prompts.get("baked", "")
+    _ecfg = getattr(ctx.run_cfg, "eval", None)                       # tolerate minimal fake run_cfgs
+    bp = bool(getattr(_ecfg, "batch_probes", False))                 # opt-in speedup (default off)
+    pbs = int(getattr(_ecfg, "probe_batch_size", 0) or 0)
 
     pp = {
-        "prior": _yesness_per_probe(bundle, probes, baked_text, bundle.base, device),
-        "prompted": _yesness_per_probe(bundle, probes, u_text, bundle.base, device),
-        "baked": _yesness_per_probe(bundle, probes, baked_text, bundle.baked, device),
+        "prior": _yesness_per_probe(bundle, probes, baked_text, bundle.base, device, batch_probes=bp, probe_batch_size=pbs),
+        "prompted": _yesness_per_probe(bundle, probes, u_text, bundle.base, device, batch_probes=bp, probe_batch_size=pbs),
+        "baked": _yesness_per_probe(bundle, probes, baked_text, bundle.baked, device, batch_probes=bp, probe_batch_size=pbs),
     }
 
     depths = sorted({_depth(pr) for pr in probes})

@@ -505,3 +505,22 @@ transition result. Analysis loader surfaced the **CoT-leak** (29/42 held-out pro
 **Next**: let reg256 firm to ep≥80, then stop reg + RESUME the teacher-forced control
 ([[q-teacher-ceiling-vs-objective-limit]]) — it's the clean-propagation reference that de-confounds the
 CoT-leak across all sampled runs (grokking + regularization + curriculum).
+
+## 2026-06-08 (S4c4 — noise-reduction: AUROC readout + paired protocol) [plan-approved]
+
+User: "results seem noisy — anything besides more seeds?" Planned + approved two free, high-leverage levers
+(no GPU re-run, no training/gate/KL change). **GATE: 129 passed** (analysis-isolation intact).
+
+- **AUROC/bacc readout** (analysis-only): added `--stat {dprime,auroc,bacc}` (default auroc) to
+  `analysis/plot_dprime.py` + `analysis/plot_traingrok.py`; `aggregate.py` now takes a comma-list `--metric`
+  + `--status any` (to include early-stopped runs). AUROC/bacc are already logged; both avoid the Φ⁻¹
+  variance blow-up.
+- **Empirical payoff** (re-read the SAME 8 curriculum runs): n=1 depth-2 noise sd 0.18 (CV ~26%, d′) →
+  **sd 0.02 (CV ~3%, AUROC)** = ~8× reduction; curriculum contrast separation 1.18 → **1.60**; d3 at AUROC
+  ≈ 0.50 chance (ceiling, now crisp). bacc over-saturates (sep 0.38) → AUROC is the primary. Updated
+  [[baked-propagation-tracks-trained-depth-no-compositional-bonus]] with the AUROC re-read; sent
+  `_fig_traingrok_n1n2_auroc.png`.
+- **Paired matched-seed protocol** (methodology): adopted [[paired-matched-seed-protocol]] — fix
+  split_seed+model_seed across contrast arms (the split is a pure fn of (split_seed,depth)), replicate
+  k∈{10,11,12}, prefer teacher-forced. Going forward; earlier reseeded contrasts stay valid-but-unpaired.
+- Out of scope (offered, declined): densify probe bank (GPU re-run), per-probe bootstrap CIs (code).

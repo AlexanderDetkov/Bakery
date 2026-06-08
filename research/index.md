@@ -51,4 +51,5 @@ prior vs prompted vs baked, all on ONE checkpoint). Assets: `data/prompts/tsunam
 - [[trajectory-type-is-a-binary-coverage-gate]] — **type is a BINARY coverage gate** (on-topic restate/consequence/mixed inject ~+1.35 CIs exclude 0; neutral +0.21 CI includes 0) — NOT graded by reasoning-richness (restate ≈ consequence). Matched count+convergence+CIs. Runs: prop-type2-{restate,consequence,neutral,mixed}-1b.
 
 ## Decisions
+- [[paired-matched-seed-protocol]] (2026-06-08) — report propagation as AUROC (not Φ⁻¹-amplified d′; ~8× less noisy on the same runs, contrast sharper) + run condition-contrasts as PAIRED matched-seed sets (fix split_seed+model_seed across arms, replicate k∈{10,11,12}). Tools: `plot_dprime/plot_traingrok --stat auroc`, `aggregate --status any`.
 - [[sampled-teacher-trajectories-keep-cot]] (2026-06-07) — theorem_qa bake samples on-policy from the prompted teacher (CoT tail kept); criterion F recorded-not-enforced when sampling (teacher-forced still hard-fails). Held-out d′ under sampling is partly recall-of-recited — caveat carries into findings; `data.sample_trajectories=False` restores the clean teacher-forced arm.

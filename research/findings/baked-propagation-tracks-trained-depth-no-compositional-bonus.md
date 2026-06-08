@@ -23,6 +23,17 @@ Seed-CI added seeds 12,13 (→ 4 seeds, 8 runs). Baked d′ post-saturation (ep�
   noise for n=1). Net: the n-curriculum's depth-2 benefit is real-direction but small relative to seed noise.
 - **No grokking** reconfirmed: d′ set by ~ep50, flat through ep120–170; eval_kl plateaus ~ep30.
 
+## AUROC re-read (S4c4, 2026-06-08) — most of the "noise" was the d′ estimator
+Per [[paired-matched-seed-protocol]], re-read the SAME 8 runs with AUROC (rank-based; no Φ⁻¹ blow-up):
+- Noise collapses: n=1 depth-2 per-seed scatter sd 0.18 (CV ~26%) under d′ → **sd 0.02 (CV ~3%)** under AUROC.
+- The curriculum contrast SHARPENS: n=1 AUROC d2 = 0.68±0.02, n=2 = 0.75±0.05, Δ=+0.06 with separation
+  Δ/pooled-sd **1.60** (vs 1.18 under d′); ranges only just touch (n1 max 0.71, n2 min 0.70). So the n=2≥n=1
+  depth-2 effect is real and cleaner than d′ suggested, though still modest.
+- d3 sits at **AUROC ≈ 0.50 (chance)** for both n — the teacher ceiling, now unambiguous (the noisy negative
+  d′ was estimator artifact). Figure: `results/bake_theorem_qa/_fig_traingrok_n1n2_auroc.png`.
+- Caveat unchanged: still single-arm-per-condition (unpaired across seeds) + CoT leak; a paired matched-seed
+  re-run would tighten the d2 Δ CI further. bacc over-saturates (separation 0.38) — AUROC is the right primary.
+
 ## Insight
 On the lw_alpha proof-system instrument (proof-depth = hop, bias-immune d′, 8B), **the prompted teacher
 propagates ~1.5 hops zero-shot (d1 d′=1.12, d2 d′=0.53, d3 d′=0)**, and **baking faithfully reproduces

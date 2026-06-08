@@ -1,8 +1,9 @@
 ---
 title: Does regularizing the bake with base-anchored irrelevant-question trajectories preserve general behavior without hurting propagation?
-status: active
+status: resolved
 priority: high         # user-requested 2026-06-08: "look at the effect of regularization"
 created: 2026-06-07
+resolved: 2026-06-08    # → regularization-buys-behavior-preservation-cheaply (medium conf; single-seed, reg256 prelim)
 hypothesis: Mixing "anchor" trajectories — teacher = base(no prompt, adapter OFF), student = baked(no prompt, adapter ON), supervised on tokens the BASE generated — into the bake pulls the adapter toward IDENTITY on irrelevant (SQuAD) inputs. As the anchor count rises, behavior_drift on held-out irrelevant questions should FALL (less degeneration) while held-out propagation (dprime at proof-depth ≥ 2) should be roughly preserved until anchors start crowding out the logic signal. The interesting regime is whether there is a strength where drift drops materially with little propagation cost.
 acceptance_criteria: "Run configs/sweeps/regularization_strength.yaml (bake_theorem_qa, n=1, num_train_contexts ∈ {0,32,128}, 8B, 300 ep). DECISIVE if behavior_drift falls monotonically with anchor count AND the held-out baked dprime (d≥2) of the best-drift arm is within noise of the 0 arm — i.e. you can buy behavior preservation cheaply. Also a result if drift is already ~0 at 0 anchors (baking n=1 axioms doesn't degrade general behavior) or if anchors visibly suppress propagation (a cost). Report eval_kl, dprime (+ dprime_baked_d1_baseline, held-out d≥2), behavior_drift per arm/epoch."
 experiment: "configs/sweeps/regularization_strength.yaml — run when a GPU frees; do NOT preempt the n-sweep"

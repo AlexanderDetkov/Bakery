@@ -482,3 +482,26 @@ num_train_contexts=0 (so reg=0 has no drift number — by metric design).
   ~304 logic trajectories). Reading per arm: behavior_drift (↓ with anchors?), held-out baked d′ at d1/d2
   (propagation preserved or suppressed?), eval_kl (fidelity tradeoff). reg=256 is slowest (most anchors) —
   will stop early once drift+d′ converge (~ep100).
+
+## 2026-06-08 (S4c3 — regularization dose-response RECORDED; + train-vs-eval grokking plot)
+
+User asked to "look at the effect of regularization" and (separately) to plot training curves to check
+for grokking. **GATE: 129 passed** (incl. new `analysis/plot_traingrok.py`, isolation-clean).
+
+**Regularization** → [[regularization-buys-behavior-preservation-cheaply]] (positive, medium conf), resolves
+[[q-regularization-preserves-behavior]]. qa-reg{0,32,128,256}-n1-s10 (8B, bake, n=1, seed 10, read ep70-100;
+reg256 ep50 prelim):
+- behavior_drift ↓ monotonic 0.012→0.007→0.005 (32→128→256); most of the drop by 128.
+- baked d2 flat {0.91,0.96,1.03,0.92}, eval_kl flat {0.262,0.255,0.256,0.264} → **preservation is CHEAP**
+  (no propagation/fidelity cost), criteria met. Caveats: single seed; absolute drift tiny even at reg0
+  (n=1 axiom baking already gentle); CoT-leak constant across arms (relative claim valid).
+
+**Grokking plot** (user-requested) → `_fig_traingrok_n1n2.png` (sent). On the longest sampled runs
+(n1-s10 ep170, n2-s10 ep120): train_kl keeps DROPPING while held-out d2/d3 are set by ~ep50 and FLAT, d3
+stuck ~0 → **NOT grokking** (memorization continues without delayed generalization). Reinforces the no-late-
+transition result. Analysis loader surfaced the **CoT-leak** (29/42 held-out probes recited by the teacher)
+→ even the d2 shown is partly recall; clean ref = teacher-forced arm.
+
+**Next**: let reg256 firm to ep≥80, then stop reg + RESUME the teacher-forced control
+([[q-teacher-ceiling-vs-objective-limit]]) — it's the clean-propagation reference that de-confounds the
+CoT-leak across all sampled runs (grokking + regularization + curriculum).

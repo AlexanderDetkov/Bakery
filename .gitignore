@@ -21,3 +21,4 @@ venv/
 
 # HF cache, if pointed inside the repo
 .cache/
+launch_logs/

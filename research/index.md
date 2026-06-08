@@ -11,8 +11,7 @@ prior vs prompted vs baked, all on ONE checkpoint). Assets: `data/prompts/tsunam
 `data/contexts/tsunami_contexts.json`, `data/probes/tsunami_probes.json`.
 
 ## Open questions
-- [[q-regularization-preserves-behavior]] — **active (high)** — RUNNING (4× 8B, all GPUs, user-requested 2026-06-08): qa-reg{0,32,128,256}-n1-s10 dose-response. Does behavior_drift fall with anchor count WITHOUT hurting held-out propagation d′? (eval_kl/d′/behavior_drift per arm.)
-- [[q-teacher-ceiling-vs-objective-limit]] — active (high), **PREEMPTED @ep10** (2026-06-08) for the regularization request; teacher-forced n∈{1,2}×seed∈{10,11}, resume after the reg sweep. Is the d3 ceiling the TEACHER's reach or the OBJECTIVE's limit?
+- [[q-teacher-ceiling-vs-objective-limit]] — **active (high)**, PREEMPTED @ep10 (2026-06-08) for the regularization request; teacher-forced n∈{1,2}×seed∈{10,11}. **Resume next** (also the clean-propagation reference that de-confounds the CoT-leak in all sampled runs). Is the d3 ceiling the TEACHER's reach or the OBJECTIVE's limit?
 - [[q-grokking-converse-via-longer-training]] — active (high) — E1 was preempted @360/1200 for the clean proof-system redesign; the converse "grokking" turned out to be RECOVERY toward the (confounding) prior. Superseded as headline by the d′ instrument; revisit converse as shift-from-prior only if the n-curriculum runs show late dynamics.
 - [[q-sft-vs-bake-reversal-curse]] — open (high) — prompting vs SFT vs baking on the converse at matched data; is baking's converse failure just SFT's reversal curse?
 - [[q-graph-structure-diamonds-multipremise]] — open (high) — current logic worlds are single-inheritance trees (chain inferences only); add convergent DAGs (diamonds → shortest-proof) and multi-premise conjunctive rules (proof trees → 2-fact composition). Diamonds = generator-only (engine ready); multi-premise = Tier-2 saturation engine.
@@ -24,6 +23,7 @@ prior vs prompted vs baked, all on ONE checkpoint). Assets: `data/prompts/tsunam
 - [[q-propagation-model-scale]] — open (medium) — controlled one-family size sweep (matched LoRA params, normalized retention)
 
 ## Resolved questions
+- [[q-regularization-preserves-behavior]] — resolved (S4c3, user-requested) → [[regularization-buys-behavior-preservation-cheaply]] (drift ↓ monotonic, ~no propagation/fidelity cost; single-seed)
 - [[q-n-curriculum-propagation-dynamics]] — resolved (S4c2, 4 seeds) → [[baked-propagation-tracks-trained-depth-no-compositional-bonus]] (d3 ceiling robust; d2 curriculum weak/NS; no grokking)
 - [[q-propagation-prompt-vs-bake]] — resolved (cycle 1) → [[propagation-bounded-by-trajectory-coverage]]
 - [[q-propagation-deductive-chain]] — resolved (cycle 3) → [[baking-is-associative-prompting-is-directional]]
@@ -37,6 +37,7 @@ prior vs prompted vs baked, all on ONE checkpoint). Assets: `data/prompts/tsunam
 - [[SYNTHESIS-baking-vs-prompting-propagation]] — full narrative arc (cycles 1–6 + S2); has a CORRECTION banner pointing to the above.
 
 ## Findings
+- [[regularization-buys-behavior-preservation-cheaply]] — **anchor-trajectory regularization drives behavior_drift down monotonically with anchor count (0.012→0.005) at ~no propagation (d2 flat ~0.9–1.0) or fidelity (eval_kl flat) cost** — behavior preservation is cheap; but absolute drift is tiny even unregularized (n=1 axiom baking is already gentle). Single-seed, reg256 prelim, CoT-leak constant-across-arms. Runs: qa-reg{0,32,128,256}-n1-s10.
 - [[baked-propagation-tracks-trained-depth-no-compositional-bonus]] — **prompting propagates ~1.5 hops (d′ d1=1.12,d2=0.53,d3=0); baking reproduces this ceiling, reaches exactly the trained/distilled depth (n=2 lifts held-out d2 above teacher), but adds NO +1 compositional hop and baked d3≤0 in all arms with NO grokking through ep170** (d2 curriculum effect direction-consistent but seed-confounded, +0.31 mean, per-seed {−0.01,+0.63} → seed-CI running). Runs: qa-bake-n{1,2}-s{10,11}. Sharpens the coverage-bound; reconfirms eval_kl⟂propagation.
 - [[propagation-bounded-by-trajectory-coverage]] — **baking only injects what the trajectories exercise; eval_kl ⟂ propagation** (C3 confirmed high; on/off-topic gate robust; C1/C4 suggestive single-run). Runs: prop-tsunami-{1b,8b}-mixed, prop-tsunami-1b-{restate,consequence,neutral}-m12.
 - [[size-helps-fidelity-not-the-propagation-gap]] — **more trajectories lower eval_kl but don't close the prompting–baking gap; eval_kl converges BEFORE belief does** (size→propagation scaling inconclusive: steps-confound + n=4 noise + propagation under-converged at 20 ep). Runs: prop-size-tpc{1,4,8,16}-1b. Figs: results/bake_fact/_fig_by_size.png.

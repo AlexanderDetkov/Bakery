@@ -33,6 +33,16 @@ already-small perturbation.
 - Meets the question's acceptance criteria: drift falls monotonically AND the best-drift arm's (reg256)
   held-out d2 (0.92) is within noise of the 0 arm (0.91).
 
+## AUROC re-read (S4c4 protocol, 2026-06-08) — confirms & tightens the no-cost claim
+Re-read under AUROC (per [[paired-matched-seed-protocol]]), runs at ep 80–160:
+- behavior_drift ↓ monotonic: reg32 0.014 → reg128 0.010 → reg256 0.005.
+- **AUROC d2 flat across doses**: reg0 0.712, reg32 0.695, reg128 0.745, reg256 0.719 — within noise of the
+  reg0 baseline, and far tighter than the d′ readout ⇒ the "no propagation cost" claim is firmer under the
+  low-variance estimator. AUROC d1 ≈ 0.72–0.75 (recall preserved). AUROC d3 ≈ 0.49–0.52 = chance at EVERY
+  dose (the teacher ceiling; regularization neither helps nor hurts it). eval_kl ≈ 0.23–0.26 flat.
+- Net: behavior preservation is cheap holds, now on the less-noisy readout. (Still single-arm-per-dose,
+  unpaired; a paired matched-seed dose-response would tighten further.)
+
 ## Counter-arguments / threats to validity
 - **Single seed (10).** The drift dose-response is clean and monotonic (low-variance metric), but the
   per-dose d′ values carry the same ±0.2–0.3 probe noise as elsewhere; the "no propagation cost" claim

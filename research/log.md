@@ -524,3 +524,35 @@ User: "results seem noisy — anything besides more seeds?" Planned + approved t
   split_seed+model_seed across contrast arms (the split is a pure fn of (split_seed,depth)), replicate
   k∈{10,11,12}, prefer teacher-forced. Going forward; earlier reseeded contrasts stay valid-but-unpaired.
 - Out of scope (offered, declined): densify probe bank (GPU re-run), per-probe bootstrap CIs (code).
+
+## 2026-06-08 (S4 SESSION WRAP-UP) — compute budget reached (max_cycles_per_session=6)
+
+`research/STOP` absent, but the session hit the agenda's `max_cycles_per_session: 6` guard → halting the
+AUTONOMOUS loop (no reschedule), per the budget rule. The session was heavily user-directed (n×reg×seed
+directive, then a regularization request, then a noise-reduction plan), all on `research/knowledge-propagation`.
+
+**Findings recorded this session (all gated 129-green, committed):**
+1. [[baked-propagation-tracks-trained-depth-no-compositional-bonus]] (HIGH) — prompting propagates ~1.5 hops
+   (prompted d′ [1.12,0.53,0,0]); baking reproduces the ceiling, reaches the trained/distilled depth, adds
+   NO +1 compositional hop; baked d3 ≈ 0 across 4 seeds, NO grokking through ep170. d2 curriculum effect
+   (n2>n1) real but modest; AUROC re-read: +0.06, separation 1.60σ, d3 at chance 0.50.
+2. [[regularization-buys-behavior-preservation-cheaply]] (MED) — anchor regularization drives behavior_drift
+   down monotonically (0.014→0.005) at ~no propagation/fidelity cost (AUROC d2 flat, d3 at chance); but
+   absolute drift is tiny even unregularized.
+3. Train-vs-eval dynamics = NOT grokking (train_kl keeps dropping; held-out flat) — `_fig_traingrok_*`.
+
+**Decisions:** [[paired-matched-seed-protocol]] — report AUROC (≈8× less noisy than Φ⁻¹-amplified d′; contrast
+sharper) + run contrasts as paired matched-seed sets. Tooling shipped: `plot_dprime/plot_traingrok --stat`,
+`aggregate --status any`, `analysis/plot_traingrok.py`.
+
+**Open / next session (highest priority first):**
+- [[q-teacher-ceiling-vs-objective-limit]] — ACTIVE, was preempted @ep10. Teacher-forced n∈{1,2}×{10,11}:
+  is the d3 ceiling the teacher's reach or the objective's limit? Also the clean-propagation ref (no CoT leak).
+- Paired matched-seed RE-RUN of the n=1-vs-n=2 contrast (and the reg dose-response) for a tight d2 CI.
+- [[q-graph-structure-diamonds-multipremise]], [[q-sft-vs-bake-reversal-curse]] (deprioritized by user).
+
+**Compute state at wrap-up:** the 4 regularization runs (qa-reg{0,32,128,256}-n1-s10) are still training
+(ep 80–160 of 200) and left RUNNING to finish the dose-response — not killed (honors "keep GPUs busy"; the
+finding is already recorded + AUROC-confirmed). To CONTINUE the autonomous loop, a human bumps
+`max_cycles_per_session` in agenda.md (or re-invokes /research-loop); the loop will then resume the
+teacher-forced control under the paired protocol.

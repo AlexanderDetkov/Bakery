@@ -143,17 +143,26 @@ The framework does not privilege any method. These are hypotheses it can phrase 
 current evidence sits, but it is one entry, not the spine.
 
 - **(a) Inductive-bias / closure-approximation.** *For a method M, which fixed closure does M's induced
-  truth function approximate, independent of `P`?* Our evidence — the associative/undirected shadow
-  ([[baking-is-associative-prompting-is-directional]]), fact-general yes-saturation
-  ([[yes-saturation-is-fact-general-converse-amplification-is-not]]), and the trained-depth ceiling
-  ([[baked-propagation-tracks-trained-depth-no-compositional-bonus]]) — instantiates this as the conjecture
-  **baking ≈ `rst(E)`** (the equivalence closure), applied regardless of whether `P` contains the symmetry
-  rule. This yields per-world predictions read directly off §3:
-    - equivalence-relation world → `rst(E)` *is* the truth, so agreement is exact and the converse is a
-      true-positive rather than a trap (a **positive** prediction, complementing the converse failure);
-    - strict-order world → over-generates on converse + within-component incomparables (observed);
-    - cyclic preorder → correct *inside* strongly-connected blobs (genuinely symmetric there), wrong
-      *across* blobs (a **within-world dissociation** on a single world).
+  truth function approximate, independent of `P`?* An attractive early conjecture was **baking ≈ `rst(E)`**
+  (the equivalence closure — "learns comparability, not order"), motivated by the pre-Hilbert belief-metric
+  results ([[baking-is-associative-prompting-is-directional]],
+  [[yes-saturation-is-fact-general-converse-amplification-is-not]]) showing baking over-affirming the
+  converse. **A bias-immune per-negative-family re-read on the strict-order world REFUTES that specific
+  form** ([[converse-collapse-does-not-survive-bias-immune-instrument]]): baking does *not* over-affirm the
+  converse (baked converse-AUROC ≥ prompting; FA far from saturation — at d1 prompting affirms it *more*).
+  What survives is **over-connection across the partition** — baking spuriously affirms genuinely-unrelated
+  `cross`-component pairs (AUROC 0.66–0.77 vs prompting 0.93–0.95). So the measured deviation is *spurious
+  extra connectivity*, not *symmetrization of direction* — there is no clean named closure for "true
+  relation + spurious cross edges," so the strong fixed-closure conjecture is downgraded to a falsifiable,
+  per-family question. Predictions read off §3, updated:
+    - strict-order world → divergence from prompting concentrates on the **`cross`** family (over-connection),
+      NOT the converse (observed, bias-immune); the earlier converse-collapse was chain-specific / a
+      belief-metric artifact;
+    - equivalence-relation world → becomes the **sharp test**: `cross` is the only false family, so if baking
+      over-connects within reachability the cross-leak should dominate and `rst(E)` agreement should be high
+      on positives — cleanly separating "over-connection" from "symmetrization" (cheap; components already exist);
+    - cyclic preorder → predicted **within-world dissociation**: correct *inside* strongly-connected blobs,
+      over-connecting *across* them (still untested).
 - **(b) Reach-vs-stage.** Characterize prompting's (or any method's) accuracy as a function of stage `d` on
   a fixed world — the propagation-decay curve — now well-defined for trees and widths, not just chains.
 - **(c) Method contrasts under one world.** prompting vs baking vs SFT on the same `W` and readout, to

@@ -556,3 +556,36 @@ sharper) + run contrasts as paired matched-seed sets. Tooling shipped: `plot_dpr
 finding is already recorded + AUROC-confirmed). To CONTINUE the autonomous loop, a human bumps
 `max_cycles_per_session` in agenda.md (or re-invokes /research-loop); the loop will then resume the
 teacher-forced control under the paired protocol.
+
+
+
+---
+
+## Analysis pass — 2026-06-08 — per-negative-family AUROC re-read (no re-score) + framing note
+
+**Trigger (user):** "look at what all the data says about prompting vs baking" → "what do the RECENT
+(Hilbert proof-system) results say" → "get the per-negative-family AUROC re-read; did n=1 beat prompting at d2?"
+
+**No new bakes.** The `dprime` metric already logs `auroc_<state>_d<d>_<negtype>` + `fa_<state>_d<d>_<negtype>`;
+re-stratified the 8 seed-10–13 adapters straight from `metrics.json` via a new torch-free tool
+`analysis/neg_family_auroc.py` (analysis-isolation preserved). Post-plateau mean ± popsd over 4 seeds/arm.
+
+**Finding** → [[converse-collapse-does-not-survive-bias-immune-instrument]] (positive/medium):
+- **Converse-collapse does NOT reproduce** under the bias-immune metric: baked converse-AUROC 0.68 (d1) /
+  0.80–0.84 (d2) ≥ prompting; baked converse-FA 0.07–0.39 (no saturation); at d1 prompting affirms the
+  converse MORE (FA 0.50) than baking (0.39). Corrects [[baking-is-associative-prompting-is-directional]]
+  / [[yes-saturation-is-fact-general-converse-amplification-is-not]] for this instrument.
+- **The real prompting−baking gap is the CROSS family** (unrelated/different-component pairs): prompted
+  AUROC 0.93–0.95 / FA 0.08 vs baked 0.66–0.77 / FA 0.23–0.34 → over-connection across the partition, not
+  direction. n=2 curriculum cuts it.
+- **n=1 d2 ≈ prompting under AUROC** (0.69 vs 0.71); only n=2 (0.76) exceeds. The "n=1 beats prompting at
+  d2" reading was a d′-vs-AUROC mismatch (d′ 0.70 vs 0.53; Φ⁻¹ amplifies near-ceiling).
+- **Refutes the simple baking≈`rst(E)` conjecture** → revised relational-generalization note §5a:
+  deviation is *spurious cross-component connectivity*, not *symmetrization*; the equivalence-relation world
+  becomes the sharp test.
+- Caveats: CoT-leak inflates d2 (recall-of-recited); runs preempted (`status=failed`), n2-s12/s13 ep80–90
+  under-converged; one world; single-arm-per-seed; d1-converse a weak directionality test (both ≈chance).
+
+**Also this session (separate threads):** wrote `research/notes/relational-generalization.md` (least-fixpoint
+framing of the instrument family) + consolidated the opt-in speedup branch into knowledge-propagation and
+pushed to origin (SSH). `make test-fast` = 138 passed / 1 xfailed.

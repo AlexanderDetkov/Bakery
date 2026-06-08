@@ -589,3 +589,30 @@ re-stratified the 8 seed-10–13 adapters straight from `metrics.json` via a new
 **Also this session (separate threads):** wrote `research/notes/relational-generalization.md` (least-fixpoint
 framing of the instrument family) + consolidated the opt-in speedup branch into knowledge-propagation and
 pushed to origin (SSH). `make test-fast` = 138 passed / 1 xfailed.
+
+
+
+---
+
+## Analysis pass — 2026-06-08 — faster-training: quant benchmark + teacher-cache empirical equivalence
+
+**Trigger (user):** "explore faster training with quantization and hyperparameters" → on free GPUs.
+
+**Quant benchmark (qbench-{bf16,4bit,8bit,4bit-bs16}, 8B n=1 s10, partial — stopped once decisive):**
+- **Quantization is SLOWER, not faster** (it's a MEMORY tool). Per 10-epoch+eval block: bf16 883s; 4bit
+  1385s (1.57×); 4bit-bs16 1431s; 8bit 1824s (2.07×). Memory: bf16 18.0 / 8bit 15.5 / 4bit 12.1 GB.
+- Bigger batch (4bit-bs16) did NOT speed wall-clock and under-trained per epoch. Two-models-per-GPU
+  infeasible (4bit×2 = 24GB no headroom) and pointless (compute-bound → time-slice).
+- Quality (AUROC/depth) comparable across precisions → quant doesn't degrade propagation (use it only when
+  a model wouldn't otherwise fit). Validated the 4-bit wiring end-to-end (smoke: eval_kl 0.39→0.31, adapter
+  saved). Did NOT record a finding (decisive enough; quant abandoned for the speed goal per user).
+
+**Teacher-logit-cache empirical equivalence (qa-cmp-n1-s{12,13}-{off,on}, paired, 100 ep)** → filled the
+RESULT in [[teacher-logit-cache]] + indexed:
+- **~1.8× faster** end-to-end (s12 1.80×, s13 1.75×; training-only higher since the unchanged eval dilutes).
+- **Empirically equivalent though NOT bit-exact:** cache on-vs-off Δ (eval_kl ≤0.004, AUROC ≤0.010) is
+  SMALLER than the seed-to-seed Δ (eval_kl ≤0.009, AUROC ≤0.031) on every metric. Eval-batching is read-only
+  (adapter bit-identical). ⇒ both safe to turn on for the upcoming HP sweep (Phase B).
+
+**Next:** Phase B — lr × schedule × weight_decay convergence sweep (epochs-to-eval_kl≤0.26), cache +
+eval-batching ON, AUROC quality guard.

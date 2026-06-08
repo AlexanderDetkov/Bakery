@@ -58,4 +58,27 @@ Experiment `qa-cmp-n1-s{12,13}-{off,on}` (bake_theorem_qa, Llama-3.1-8B, lw_alph
 split_seed=model_seed=seed so off vs on differ ONLY by the cache). Compare the cache-on baked model to the
 cache-off baked model (same seed) on the headline readouts (eval_kl trajectory, AUROC/d′ per depth) and put
 that divergence next to the seed-to-seed (s12 vs s13) divergence between two baked models. Also measures the
-realized speedup. **RESULT: <pending — to be filled from the qa-cmp-* runs>.**
+realized speedup.
+
+**RESULT (2026-06-08, qa-cmp-n1-s{12,13}-{off,on}, 100 ep, backend=cpu, paired so off↔on differ ONLY by the cache):**
+
+*Similarity* — post-plateau (ep≥60) mean. Raw: s12 off/on eval_kl 0.2229/0.2265, AUROC d1 0.711/0.721,
+d2 0.680/0.688; s13 0.2319/0.2309, d1 0.739/0.731, d2 0.711/0.713. The **cache effect is SMALLER than
+seed-noise on every metric** — i.e. turning the cache on changes the baked model LESS than changing the seed:
+
+| contrast | Δeval_kl | Δ AUROC d1 | Δ AUROC d2 |
+|---|---|---|---|
+| cache OFF vs ON, seed 12 | 0.0036 | 0.010 | 0.009 |
+| cache OFF vs ON, seed 13 | 0.0010 | 0.008 | 0.002 |
+| seed 12 vs 13 (noise floor, off) | 0.0090 | 0.028 | 0.031 |
+| seed 12 vs 13 (noise floor, on) | 0.0044 | 0.010 | 0.024 |
+
+*Speedup* — end-to-end wall-clock incl. the every-10 eval (which the cache does NOT touch, so training-only
+is faster still): s12 87.7→48.6 s/epoch = **1.80×**; s13 93.2→53.4 s/epoch = **1.75×**.
+
+**CONCLUSION: the cache is not bit-exact but is empirically equivalent — it perturbs the learned baked model
+by less than the irreducible seed-to-seed variation, at ~1.8× end-to-end throughput.** Safe to use for
+throughput when this check is cited; keep default-off and prefer cache-off for a bit-reproducible headline.
+Caveats: n=1, 2 seeds, cpu backend, sampled-teacher (the CoT-leak is constant across off/on so it cancels in
+the paired contrast). Combining with eval-batching (read-only, bit-exact on the test fake) should raise the
+realized whole-run speedup further by shrinking the eval term that currently dilutes the ratio.

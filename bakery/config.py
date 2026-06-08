@@ -36,6 +36,11 @@ class ModelConfig:
     # SPEEDUP (opt-in). None = today's behavior (transformers resolves its own default attention impl).
     # Setting "sdpa"/"eager"/"flash_attention_2" changes ULP-level numerics → opt-in only.
     attn_implementation: Optional[str] = None
+    # Base-model quantization (opt-in; needs bitsandbytes). "none" = full-precision (default, unchanged).
+    # "4bit" (NF4 QLoRA) / "8bit" load the FROZEN base quantized; the LoRA adapter stays in `dtype`. This
+    # CHANGES the base checkpoint → different (but still paired, same-base) results; the quant level is
+    # recorded in the manifest's CheckpointId so quant and full-precision runs are never silently compared.
+    quantization: str = "none"                      # none | 4bit | 8bit
 
 
 @dataclass
@@ -72,6 +77,10 @@ class TrainConfig:
     weight_decay: float = 0.0
     grad_clip: float = 1.0
     grad_accum: int = 1
+    # LR schedule (convergence-speed lever). "constant" = today's fixed LR (default → unchanged).
+    # cosine|linear decay LR to 0 over training, with an optional linear warmup over warmup_frac of steps.
+    lr_schedule: str = "constant"                   # constant | cosine | linear
+    warmup_frac: float = 0.0                        # fraction of total optimizer steps spent warming up
     kl_reg: float = 0.0                             # weight on optional KL-to-base-prompt regularizer
     eval_period: int = 1                            # epochs between evals
     save_every: int = 0                             # 0 = save best + final only

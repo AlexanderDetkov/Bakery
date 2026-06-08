@@ -34,7 +34,8 @@ def _load_tokenizer(name: str, revision):
     return tokenizer
 
 
-def _load_base_model(name: str, revision, dtype: str, device: str, attn_implementation=None):
+def _load_base_model(name: str, revision, dtype: str, device: str, attn_implementation=None,
+                     quantization="none"):
     """Load a FRESH base model each call — deliberately NOT cached.
 
     `get_peft_model` (and `merge_and_unload` for sequential baking) MUTATE the model object in
@@ -50,8 +51,19 @@ def _load_base_model(name: str, revision, dtype: str, device: str, attn_implemen
     kwargs = {"revision": revision, "torch_dtype": getattr(torch, dtype)}
     if attn_implementation not in (None, "", "auto"):
         kwargs["attn_implementation"] = attn_implementation
-    model = AutoModelForCausalLM.from_pretrained(name, **kwargs)
-    model.to(device)
+    if quantization in ("4bit", "8bit"):
+        from transformers import BitsAndBytesConfig
+        if quantization == "4bit":      # NF4 + double-quant; compute (and the LoRA path) stay in `dtype`
+            kwargs["quantization_config"] = BitsAndBytesConfig(
+                load_in_4bit=True, bnb_4bit_quant_type="nf4",
+                bnb_4bit_compute_dtype=getattr(torch, dtype), bnb_4bit_use_double_quant=True)
+        else:
+            kwargs["quantization_config"] = BitsAndBytesConfig(load_in_8bit=True)
+        kwargs["device_map"] = {"": 0}  # bnb places the quantized weights on the single visible GPU
+        model = AutoModelForCausalLM.from_pretrained(name, **kwargs)   # do NOT .to() a quantized model
+    else:
+        model = AutoModelForCausalLM.from_pretrained(name, **kwargs)
+        model.to(device)
     model.eval()
     return model
 
@@ -111,8 +123,15 @@ class ModelBundle:
 def build_bundle(model_cfg) -> ModelBundle:
     """Load base + tokenizer, (optionally) merge a prior adapter, then wrap a fresh LoRA."""
     tokenizer = _load_tokenizer(model_cfg.name, model_cfg.revision)
+    quantization = getattr(model_cfg, "quantization", "none")
     base = _load_base_model(model_cfg.name, model_cfg.revision, model_cfg.dtype, model_cfg.device,
-                            attn_implementation=getattr(model_cfg, "attn_implementation", None))
+                            attn_implementation=getattr(model_cfg, "attn_implementation", None),
+                            quantization=quantization)
+    if quantization in ("4bit", "8bit"):
+        from peft import prepare_model_for_kbit_training
+        # use_gradient_checkpointing=False: LoRA grads are tiny, we have memory headroom, and checkpointing
+        # would slow the forward — we want speed, not memory savings, here.
+        base = prepare_model_for_kbit_training(base, use_gradient_checkpointing=False)
 
     # Sequential / knowledge baking: merge the prior adapter into the frozen base first.
     if model_cfg.adapter_to_load:
@@ -129,6 +148,7 @@ def build_bundle(model_cfg) -> ModelBundle:
     )
     ckpt_id = CheckpointId(
         model_name=model_cfg.name, revision=model_cfg.revision, dtype=model_cfg.dtype,
+        quantization=quantization,
     )
     return ModelBundle(
         peft_model=peft_model, tokenizer=tokenizer, device=model_cfg.device,

@@ -54,7 +54,8 @@ def _trainable(bundle):
     return [p for p in bundle.peft_model.parameters() if p.requires_grad]
 
 
-def _run_epoch(objective, bundle, trajs, optimizer, run_cfg, pad_id, rng, teacher_cache=None):
+def _run_epoch(objective, bundle, trajs, optimizer, run_cfg, pad_id, rng, teacher_cache=None,
+               scheduler=None):
     bundle.peft_model.train()
     order = list(range(len(trajs)))
     rng.shuffle(order)
@@ -79,6 +80,8 @@ def _run_epoch(objective, bundle, trajs, optimizer, run_cfg, pad_id, rng, teache
                 torch.nn.utils.clip_grad_norm_(_trainable(bundle), run_cfg.train.grad_clip)
             optimizer.step()
             optimizer.zero_grad()
+            if scheduler is not None:
+                scheduler.step()
     return sum(losses) / max(len(losses), 1)
 
 
@@ -156,6 +159,23 @@ def run(run_cfg, sweep_id=None) -> Path:
         _trainable(bundle), lr=run_cfg.train.learning_rate, weight_decay=run_cfg.train.weight_decay
     )
 
+    # Optional LR schedule (convergence-speed lever). "constant" → scheduler=None → fixed LR (unchanged).
+    scheduler = None
+    sched = getattr(run_cfg.train, "lr_schedule", "constant")
+    if sched and sched != "constant":
+        bs_ = max(int(run_cfg.train.batch_size), 1)
+        accum_ = max(int(run_cfg.train.grad_accum), 1)
+        n_batches = -(-len(data.train_trajectories) // bs_)        # ceil
+        steps_per_epoch = -(-n_batches // accum_)                  # ceil (one opt-step per accum boundary)
+        total_steps = max(steps_per_epoch * int(run_cfg.train.num_epochs), 1)
+        warmup_steps = int(max(0.0, float(getattr(run_cfg.train, "warmup_frac", 0.0))) * total_steps)
+        from transformers import get_cosine_schedule_with_warmup, get_linear_schedule_with_warmup
+        builder = {"cosine": get_cosine_schedule_with_warmup,
+                   "linear": get_linear_schedule_with_warmup}.get(sched)
+        if builder is None:
+            raise ValueError(f"Unknown train.lr_schedule {sched!r}; use constant|cosine|linear.")
+        scheduler = builder(optimizer, num_warmup_steps=warmup_steps, num_training_steps=total_steps)
+
     pad_id = data.tokenizer_fingerprint.pad_id
     rng = random.Random(model_seed)
     history: dict = {}
@@ -186,7 +206,8 @@ def run(run_cfg, sweep_id=None) -> Path:
                     data_seed=data_seed, gen_seed=gen_seed + epoch, model_seed=model_seed,
                 )
             train_kl = _run_epoch(objective, bundle, list(data.train_trajectories),
-                                  optimizer, run_cfg, pad_id, rng, teacher_cache=teacher_cache)
+                                  optimizer, run_cfg, pad_id, rng, teacher_cache=teacher_cache,
+                                  scheduler=scheduler)
             if epoch % run_cfg.train.eval_period == 0:
                 _eval_and_log(epoch, train_kl, bundle, data, run_cfg, spec, history,
                               run_dir, device, log_path)

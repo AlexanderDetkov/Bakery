@@ -10,6 +10,14 @@ propagate as far as prompting (fact in context)? Instrument: the `bake_fact` exp
 prior vs prompted vs baked, all on ONE checkpoint). Assets: `data/prompts/tsunami_u.md`,
 `data/contexts/tsunami_contexts.json`, `data/probes/tsunami_probes.json`.
 
+## Framing notes (theory)
+- [[relational-generalization]] — the proper, method-agnostic abstraction of the instrument: a **knowledge
+  world** `(A, Σ, E, P)` whose truth set is the **least fixpoint** of its Horn rules. "Depth" → fixpoint
+  **stage** (chains → trees + a width axis); `neg_type` → one hard-negative family **per absent property**;
+  the relation zoo = the closure-operator lattice (`t`=strict order *(current)*, `rst`=equivalence relation
+  = `World.components`, preorder, multi-relation/Horn). The current instrument is the `t`-slice; the baking
+  "≈ symmetric closure" conjecture is one *application* (§5a). Subsumes [[q-graph-structure-diamonds-multipremise]].
+
 ## Open questions
 - [[q-teacher-ceiling-vs-objective-limit]] — **active (high)**, PREEMPTED @ep10 (2026-06-08) for the regularization request; teacher-forced n∈{1,2}×seed∈{10,11}. **Resume next** (also the clean-propagation reference that de-confounds the CoT-leak in all sampled runs). Is the d3 ceiling the TEACHER's reach or the OBJECTIVE's limit?
 - [[q-grokking-converse-via-longer-training]] — active (high) — E1 was preempted @360/1200 for the clean proof-system redesign; the converse "grokking" turned out to be RECOVERY toward the (confounding) prior. Superseded as headline by the d′ instrument; revisit converse as shift-from-prior only if the n-curriculum runs show late dynamics.

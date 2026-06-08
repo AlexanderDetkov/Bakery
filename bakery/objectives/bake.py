@@ -15,8 +15,9 @@ class BakeObjective(Objective):
     sampler = "base_disable_adapter"
     needs_per_epoch_trajectories = False
 
-    def compute_loss(self, *, bundle, batch, cfg):
-        loss = aligned_kl(bundle, batch, base_with_adapter=False, device=cfg.model.device)
+    def compute_loss(self, *, bundle, batch, cfg, teacher_cache=None):
+        loss = aligned_kl(bundle, batch, base_with_adapter=False, device=cfg.model.device,
+                          teacher_cache=teacher_cache)
         if cfg.train.kl_reg > 0:
             # SCAFFOLD: the "stay close to base when prompted" regularizer (paper's
             # reg_kl_with_base_prompt). Not silently ignored — implement it here before use.

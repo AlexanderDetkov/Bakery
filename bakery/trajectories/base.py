@@ -40,6 +40,8 @@ class CheckpointId:
     revision: Optional[str] = None
     dtype: str = "bfloat16"
     weights_sha256: Optional[str] = None
+    quantization: str = "none"          # none|4bit|8bit — a quantized base is a DIFFERENT checkpoint;
+    #                                     recording it makes the gate refuse quant-vs-full comparisons.
 
 
 @dataclass(frozen=True)

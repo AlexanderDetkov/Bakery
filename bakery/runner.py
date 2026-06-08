@@ -24,7 +24,7 @@ from bakery import results as results_mod
 from bakery.config import cli_list_to_overrides, config_to_dict, expand_sweep, load_config
 from bakery.eval.registry import EvalContext, run_metrics
 from bakery.models.peft_factory import build_bundle
-from bakery.objectives.base import collate_framings, get_objective
+from bakery.objectives.base import TeacherLogitCache, collate_framings, get_objective
 from bakery.registry import get_experiment, list_experiments
 from bakery.seeding import seed_everything
 from bakery.trajectories.base import build_dataset
@@ -54,7 +54,8 @@ def _trainable(bundle):
     return [p for p in bundle.peft_model.parameters() if p.requires_grad]
 
 
-def _run_epoch(objective, bundle, trajs, optimizer, run_cfg, pad_id, rng):
+def _run_epoch(objective, bundle, trajs, optimizer, run_cfg, pad_id, rng, teacher_cache=None,
+               scheduler=None):
     bundle.peft_model.train()
     order = list(range(len(trajs)))
     rng.shuffle(order)
@@ -67,8 +68,10 @@ def _run_epoch(objective, bundle, trajs, optimizer, run_cfg, pad_id, rng):
     micro = 0
     for si, start in enumerate(starts):
         idx = order[start: start + bs]
-        batch = collate_framings([trajs[i] for i in idx], pad_id)
-        loss = objective.compute_loss(bundle=bundle, batch=batch, cfg=run_cfg)
+        # traj_keys = the trajectory's stable index in `trajs` (fixed list); used ONLY by the opt-in
+        # teacher cache. Ignored downstream when teacher_cache is None → default path byte-identical.
+        batch = collate_framings([trajs[i] for i in idx], pad_id, traj_keys=tuple(idx))
+        loss = objective.compute_loss(bundle=bundle, batch=batch, cfg=run_cfg, teacher_cache=teacher_cache)
         (loss / accum).backward()
         losses.append(float(loss.item()))
         micro += 1
@@ -77,6 +80,8 @@ def _run_epoch(objective, bundle, trajs, optimizer, run_cfg, pad_id, rng):
                 torch.nn.utils.clip_grad_norm_(_trainable(bundle), run_cfg.train.grad_clip)
             optimizer.step()
             optimizer.zero_grad()
+            if scheduler is not None:
+                scheduler.step()
     return sum(losses) / max(len(losses), 1)
 
 
@@ -154,10 +159,44 @@ def run(run_cfg, sweep_id=None) -> Path:
         _trainable(bundle), lr=run_cfg.train.learning_rate, weight_decay=run_cfg.train.weight_decay
     )
 
+    # Optional LR schedule (convergence-speed lever). "constant" → scheduler=None → fixed LR (unchanged).
+    scheduler = None
+    sched = getattr(run_cfg.train, "lr_schedule", "constant")
+    if sched and sched != "constant":
+        bs_ = max(int(run_cfg.train.batch_size), 1)
+        accum_ = max(int(run_cfg.train.grad_accum), 1)
+        n_batches = -(-len(data.train_trajectories) // bs_)        # ceil
+        steps_per_epoch = -(-n_batches // accum_)                  # ceil (one opt-step per accum boundary)
+        total_steps = max(steps_per_epoch * int(run_cfg.train.num_epochs), 1)
+        warmup_steps = int(max(0.0, float(getattr(run_cfg.train, "warmup_frac", 0.0))) * total_steps)
+        from transformers import get_cosine_schedule_with_warmup, get_linear_schedule_with_warmup
+        builder = {"cosine": get_cosine_schedule_with_warmup,
+                   "linear": get_linear_schedule_with_warmup}.get(sched)
+        if builder is None:
+            raise ValueError(f"Unknown train.lr_schedule {sched!r}; use constant|cosine|linear.")
+        scheduler = builder(optimizer, num_warmup_steps=warmup_steps, num_training_steps=total_steps)
+
     pad_id = data.tokenizer_fingerprint.pad_id
     rng = random.Random(model_seed)
     history: dict = {}
     ckpt_dir = run_dir / "checkpoints"
+
+    # Opt-in teacher-logit cache (default "off" → teacher_cache stays None → byte-identical path).
+    # Refused for objectives whose teacher changes each epoch (pursue): caching a moving target is wrong.
+    teacher_cache = None
+    ctl = getattr(run_cfg.train, "cache_teacher_logits", "off")
+    if ctl and ctl != "off":
+        if objective.needs_per_epoch_trajectories:
+            raise ValueError(
+                f"train.cache_teacher_logits={ctl!r} is incompatible with objective {objective.name!r}: "
+                f"its teacher changes each epoch (per-epoch trajectories), so it is not memoizable."
+            )
+        teacher_cache = TeacherLogitCache(
+            backend=ctl,
+            verify_every=getattr(run_cfg.train, "cache_teacher_verify_every", 0),
+            dtype=getattr(run_cfg.train, "cache_teacher_dtype", "float32"),
+            verify_atol=getattr(run_cfg.train, "cache_teacher_verify_atol", 1e-2),
+        )
 
     try:
         for epoch in range(1, run_cfg.train.num_epochs + 1):
@@ -167,7 +206,8 @@ def run(run_cfg, sweep_id=None) -> Path:
                     data_seed=data_seed, gen_seed=gen_seed + epoch, model_seed=model_seed,
                 )
             train_kl = _run_epoch(objective, bundle, list(data.train_trajectories),
-                                  optimizer, run_cfg, pad_id, rng)
+                                  optimizer, run_cfg, pad_id, rng, teacher_cache=teacher_cache,
+                                  scheduler=scheduler)
             if epoch % run_cfg.train.eval_period == 0:
                 _eval_and_log(epoch, train_kl, bundle, data, run_cfg, spec, history,
                               run_dir, device, log_path)

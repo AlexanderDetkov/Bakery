@@ -33,6 +33,14 @@ class ModelConfig:
     target_modules: tuple = ("q_proj", "k_proj", "v_proj", "o_proj")
     adapter_to_load: Optional[str] = None           # prior adapter dir (sequential / knowledge baking)
     half_bake_alpha: float = 1.0                    # scale applied to the adapter at eval (half-baking)
+    # SPEEDUP (opt-in). None = today's behavior (transformers resolves its own default attention impl).
+    # Setting "sdpa"/"eager"/"flash_attention_2" changes ULP-level numerics → opt-in only.
+    attn_implementation: Optional[str] = None
+    # Base-model quantization (opt-in; needs bitsandbytes). "none" = full-precision (default, unchanged).
+    # "4bit" (NF4 QLoRA) / "8bit" load the FROZEN base quantized; the LoRA adapter stays in `dtype`. This
+    # CHANGES the base checkpoint → different (but still paired, same-base) results; the quant level is
+    # recorded in the manifest's CheckpointId so quant and full-precision runs are never silently compared.
+    quantization: str = "none"                      # none | 4bit | 8bit
 
 
 @dataclass
@@ -69,10 +77,28 @@ class TrainConfig:
     weight_decay: float = 0.0
     grad_clip: float = 1.0
     grad_accum: int = 1
+    # LR schedule (convergence-speed lever). "constant" = today's fixed LR (default → unchanged).
+    # cosine|linear decay LR to 0 over training, with an optional linear warmup over warmup_frac of steps.
+    lr_schedule: str = "constant"                   # constant | cosine | linear
+    warmup_frac: float = 0.0                        # fraction of total optimizer steps spent warming up
     kl_reg: float = 0.0                             # weight on optional KL-to-base-prompt regularizer
     eval_period: int = 1                            # epochs between evals
     save_every: int = 0                             # 0 = save best + final only
     save_adapters: bool = True
+    # SPEEDUP (opt-in; all default to today's exact path = recompute the teacher every step).
+    # The teacher (frozen base + fixed prompt + fixed trajectory tokens) yields identical logits every
+    # epoch, so they can be memoized. "off" = no cache (current behavior). gpu|cpu|memmap = where the
+    # cached full-vocab float32 teacher log-probs live. Refused for objectives whose teacher changes per
+    # epoch (pursue). See research/decisions/teacher-logit-cache.md.
+    cache_teacher_logits: str = "off"               # off | gpu | cpu | memmap
+    cache_teacher_verify_every: int = 0             # >0: recompute teacher every k steps, assert ~equal
+    cache_teacher_verify_atol: float = 1e-2         # verify tolerance on log-probs (catches gross cache
+                                                    # bugs while tolerating padding float-noise; bit-exact
+                                                    # is unachievable on real batched/padded forwards)
+    cache_teacher_dtype: str = "float32"            # matches the live path's float32 log_softmax
+    # Invariant-safe alternative (stores NO logits): reuse the shared system+prompt KV across teacher
+    # forwards. Off = current behavior. See Optimization B.
+    cache_teacher_prefix_kv: bool = False
 
 
 @dataclass
@@ -80,6 +106,11 @@ class EvalConfig:
     metrics: tuple = ("eval_kl",)                   # names resolved in the metric registry
     benchmarks: tuple = ()
     eval_with_base_prompt: bool = True              # also report baked-model-WITH-prompt (re-prompting)
+    # SPEEDUP (opt-in). False = today's exact unbatched per-probe scoring loop. True = batch the probe
+    # logprob forwards (same full-vocab float32 math; bit-exact in fp32, tol-equivalent + flip-free in
+    # bf16). probe_batch_size 0 = all rows in one forward; >0 caps rows/forward for memory.
+    batch_probes: bool = False
+    probe_batch_size: int = 0
 
 
 @dataclass

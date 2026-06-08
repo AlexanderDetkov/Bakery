@@ -31,7 +31,8 @@ class SFTObjective(Objective):
     sampler = "base_disable_adapter"          # SAME trajectories as `bake` — a matched comparison
     needs_per_epoch_trajectories = False
 
-    def compute_loss(self, *, bundle, batch, cfg):
+    def compute_loss(self, *, bundle, batch, cfg, teacher_cache=None):
+        # SFT has no teacher KL, so teacher_cache is accepted (uniform signature) and ignored.
         device = cfg.model.device
         baked_ids = batch["baked_ids"].to(device)
         baked_attn = batch["baked_attn"].to(device)

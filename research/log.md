@@ -468,3 +468,17 @@ the prompted teacher itself can't generate) push baked d′ at trained depths to
 STILL stay 0 (no compositional bonus independent of teacher)? Isolates teacher-reach vs objective-capacity.
 
 **Queued next**: the trajectory-regularization axis [[q-regularization-preserves-behavior]] (user's 3rd axis).
+
+## 2026-06-08 (S4c3) — PIVOT to regularization (user-requested) — dose-response launched
+
+User: "Can you look at the effect of regularization." → prioritized the 3rd named axis.
+Preempted the teacher-forced control (only ep10, no usable d′ yet; [[q-teacher-ceiling-vs-objective-limit]]
+stays active, resume after). Confirmed via code read: `behavior_drift` = KL(base(no-prompt) ‖ baked(no-prompt))
+on a held-out SQuAD anchor slice (greedy fixed reference); auto-logged via extra_metrics, returns None at
+num_train_contexts=0 (so reg=0 has no drift number — by metric design).
+
+**Launched (4× 8B, all GPUs, bake, sampled teacher, n=1, seed 10, 200 ep, bs4):**
+  qa-reg{0,32,128,256}-n1-s10  — num_train_contexts dose-response (none → anchor-dominated; 256 ≈ 84% of the
+  ~304 logic trajectories). Reading per arm: behavior_drift (↓ with anchors?), held-out baked d′ at d1/d2
+  (propagation preserved or suppressed?), eval_kl (fidelity tradeoff). reg=256 is slowest (most anchors) —
+  will stop early once drift+d′ converge (~ep100).

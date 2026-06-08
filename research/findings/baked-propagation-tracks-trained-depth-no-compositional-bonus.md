@@ -1,12 +1,27 @@
 ---
 title: Baked propagation tracks the TRAINED depth and the TEACHER's reach — it does not generalize one hop further, and the deeper hop does not grok
 outcome: positive
-confidence: medium
+confidence: high
 created: 2026-06-07
+updated: 2026-06-08
 question: [[q-n-curriculum-propagation-dynamics]]
 metric: dprime
-run_ids: [qa-bake-n1-s10, qa-bake-n2-s10, qa-bake-n1-s11, qa-bake-n2-s11]
+run_ids: [qa-bake-n1-s10, qa-bake-n2-s10, qa-bake-n1-s11, qa-bake-n2-s11, qa-bake-n1-s12, qa-bake-n2-s12, qa-bake-n1-s13, qa-bake-n2-s13]
 ---
+
+## 4-SEED UPDATE (S4c2, 2026-06-08) — confidence medium→high
+Seed-CI added seeds 12,13 (→ 4 seeds, 8 runs). Baked d′ post-saturation (ep≥50), mean ± popsd:
+| depth | n=1 (s10,s11,s12,s13) | n=2 | Δ(n2−n1) | prompting ceiling |
+|---|---|---|---|---|
+| d1 | 0.95 ± 0.32 {0.99,0.64,0.72,1.46} | **1.11 ± 0.04** {1.12,1.07,1.09,1.18} | +0.16 (overlap) | 1.12 |
+| d2 | 0.70 ± 0.18 {0.96,0.57,0.79,0.50} | 0.92 ± 0.17 {0.89,1.18,0.69,0.90} | **+0.21 (ranges OVERLAP, ~p≈0.15, NS)** | 0.53 |
+| d3 | −0.19 ± 0.19 | −0.15 ± 0.37 | +0.04 (noise) | 0.00 |
+- **d3 ceiling now robust at 4 seeds**: baked d3 ≈ 0 for BOTH n, every seed; curriculum does not bootstrap d3.
+- **d1**: n=2 recalls reliably (1.11±0.04 ≈ teacher); n=1 noisier (one outlier 1.46).
+- **d2 curriculum effect is WEAK and NOT significant at 4 seeds** (+0.21, overlapping ranges). BUT both n
+  exceed the prompting ceiling (0.53) on average → baking gives a small depth-2 bump even at n=1 (within
+  noise for n=1). Net: the n-curriculum's depth-2 benefit is real-direction but small relative to seed noise.
+- **No grokking** reconfirmed: d′ set by ~ep50, flat through ep120–170; eval_kl plateaus ~ep30.
 
 ## Insight
 On the lw_alpha proof-system instrument (proof-depth = hop, bias-immune d′, 8B), **the prompted teacher

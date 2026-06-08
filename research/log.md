@@ -445,3 +445,26 @@ for the d2 curriculum gap + the n1-s10 anomaly (compositional bonus vs noise).
 **Enqueued**: [[q-teacher-ceiling-vs-objective-limit]] (teacher-forced ground-truth + matched-count control:
 is the d3 ceiling the teacher or the objective?). Also flagged: longer grokking sentinel; regularization
 axis [[q-regularization-preserves-behavior]] next.
+
+## 2026-06-08 (S4c2 — seed-CI analyzed + RECORDED; teacher-forced control launched)
+
+**Analyzed** the 4-seed CI (cycle-1 s10,s11 + cycle-2 s12,s13; 8 runs total; stopped n1 ep120 / n2 ep80-90;
+JSON-only). **GATE: 129 passed.** Updated [[baked-propagation-tracks-trained-depth-no-compositional-bonus]]
+to confidence HIGH.
+
+4-seed baked d′ (postmean ep≥50), prompting ceiling [1.12, 0.53, 0, 0]:
+- d1: n1 0.95±0.32, n2 **1.11±0.04** (n2 recalls reliably; n1 noisy, one 1.46 outlier).
+- d2: n1 0.70±0.18, n2 0.92±0.17 → Δ +0.21 but **ranges OVERLAP, NS (~p0.15)** at 4 seeds; both > teacher 0.53.
+- d3: n1 −0.19, n2 −0.15 → **≈0 both n, all seeds — ceiling ROBUST; curriculum doesn't bootstrap d3.**
+- No grokking: d′ set ~ep50, flat through ep120-170; eval_kl plateaus ~ep30.
+
+**RESOLVED** [[q-n-curriculum-propagation-dynamics]]: H2 (teacher-bounded) confirmed robustly; H1 (n=2 extends
+d2) weak/NS; H3 (grokking) refuted. The user's n×seed×dynamics directive is answered on the d′ instrument.
+
+**Decision**: stopped the (converged) seed-CI; reallocated all 4 GPUs to the mechanism question.
+**Launched (4× 8B, teacher-forced, sample_trajectories=False, 200 ep, bs4)**: qa-tf-n{1,2}-s{10,11} →
+[[q-teacher-ceiling-vs-objective-limit]] (active). Tests: does injecting engine-verified ground truth (facts
+the prompted teacher itself can't generate) push baked d′ at trained depths toward 1, and does held-out d3
+STILL stay 0 (no compositional bonus independent of teacher)? Isolates teacher-reach vs objective-capacity.
+
+**Queued next**: the trajectory-regularization axis [[q-regularization-preserves-behavior]] (user's 3rd axis).

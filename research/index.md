@@ -11,12 +11,11 @@ prior vs prompted vs baked, all on ONE checkpoint). Assets: `data/prompts/tsunam
 `data/contexts/tsunami_contexts.json`, `data/probes/tsunami_probes.json`.
 
 ## Open questions
-- [[q-n-curriculum-propagation-dynamics]] — **active (high)** — cycle-1 DONE → [[baked-propagation-tracks-trained-depth-no-compositional-bonus]] (d3 ceiling decisive; d2 curriculum seed-confounded). **seed-CI RUNNING** (4× 8B: n∈{1,2} × seed∈{12,13}, 200 ep) to settle the d2 gap. Owns the user's "n=1,2 × regularization × seeds × dynamics" directive (seeds start at 10).
-- [[q-teacher-ceiling-vs-objective-limit]] — open (high) — is the d3 ceiling the TEACHER's reach or the OBJECTIVE's limit? teacher-forced ground truth (sample_trajectories=False) + matched-trajectory-count control. Queued behind the seed-CI.
+- [[q-teacher-ceiling-vs-objective-limit]] — **active (high)** — RUNNING (4× 8B teacher-forced: n∈{1,2} × seed∈{10,11}, 200 ep): is the d3 ceiling the TEACHER's reach or the OBJECTIVE's limit? Does injecting engine-verified ground truth push the frontier; does held-out d3 still stay 0?
 - [[q-grokking-converse-via-longer-training]] — active (high) — E1 was preempted @360/1200 for the clean proof-system redesign; the converse "grokking" turned out to be RECOVERY toward the (confounding) prior. Superseded as headline by the d′ instrument; revisit converse as shift-from-prior only if the n-curriculum runs show late dynamics.
 - [[q-sft-vs-bake-reversal-curse]] — open (high) — prompting vs SFT vs baking on the converse at matched data; is baking's converse failure just SFT's reversal curse?
 - [[q-graph-structure-diamonds-multipremise]] — open (high) — current logic worlds are single-inheritance trees (chain inferences only); add convergent DAGs (diamonds → shortest-proof) and multi-premise conjunctive rules (proof trees → 2-fact composition). Diamonds = generator-only (engine ready); multi-premise = Tier-2 saturation engine.
-- [[q-regularization-preserves-behavior]] — open (medium) — NEW capability (shipped 2026-06-07): mix base-anchored irrelevant-question (SQuAD) trajectories into the bake to preserve general behavior; does behavior_drift fall with anchor count WITHOUT hurting held-out propagation? Turnkey: `configs/sweeps/regularization_strength.yaml` (n=1, {0,32,128} anchors, 8B). Queued behind the n-sweep.
+- [[q-regularization-preserves-behavior]] — open (medium) — the user's 3rd named axis: mix base-anchored irrelevant-question (SQuAD) trajectories into the bake to preserve general behavior; does behavior_drift fall with anchor count WITHOUT hurting held-out propagation? Turnkey: `configs/sweeps/regularization_strength.yaml` (n=1, {0,32,128} anchors, 8B). **NEXT after the teacher-forced control.**
 - [[q-trajectory-coverage-and-cache-hardening]] — parked (high) — code review 2026-06-07: baking trains on a PARTIAL axiom set (27/38 edges in lw_alpha) → bake/SFT arms coverage-caveated (prior/prompted clean); plus deferred framework hardening (P0 sweep model-cache, P1 cache provenance, P2a proof_depth on negatives, P2b dedup-before-truncate). DEFERRED by user; record-only.
 - [[q-propagation-hardening]] — active (high) — remaining: ≥12 probes/depth, the C1 per-hop decay; re-read magnitudes under the fixed metric
 - [[q-propagation-model-scale]] — open (medium); [[q-propagation-trajectory-size]] — open (medium)
@@ -25,6 +24,7 @@ prior vs prompted vs baked, all on ONE checkpoint). Assets: `data/prompts/tsunam
 - [[q-propagation-model-scale]] — open (medium) — controlled one-family size sweep (matched LoRA params, normalized retention)
 
 ## Resolved questions
+- [[q-n-curriculum-propagation-dynamics]] — resolved (S4c2, 4 seeds) → [[baked-propagation-tracks-trained-depth-no-compositional-bonus]] (d3 ceiling robust; d2 curriculum weak/NS; no grokking)
 - [[q-propagation-prompt-vs-bake]] — resolved (cycle 1) → [[propagation-bounded-by-trajectory-coverage]]
 - [[q-propagation-deductive-chain]] — resolved (cycle 3) → [[baking-is-associative-prompting-is-directional]]
 - [[q-propagation-cot-confound]] — resolved (cycle 5) → [[cot-chains-baked-rules-but-not-the-converse]] (corrected free-gen readout)

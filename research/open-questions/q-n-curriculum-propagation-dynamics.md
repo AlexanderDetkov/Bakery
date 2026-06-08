@@ -1,8 +1,9 @@
 ---
 title: Does the n-hop training curriculum (≤n-hop trajectories) extend BAKING's propagation depth toward PROMPTING's, and how does the per-depth d′ evolve over grokking-length training across seeds?
-status: active
+status: resolved
 priority: high
 created: 2026-06-07
+resolved: 2026-06-08
 hypothesis: >
   Baking propagation is bounded by what the trajectories exercise ([[propagation-bounded-by-trajectory-coverage]],
   [[trajectory-type-is-a-binary-coverage-gate]]) and by the prompted teacher's own reach (8B prompted d′
@@ -57,7 +58,15 @@ n∈{1,2} × seed∈{10,11}, 8B, bake, stopped epoch 110–170 (dynamics saturat
 ceiling `[1.12,0.53,0,0]` (d1..d4); baked d3 ≤ 0 every arm, no grokking through ep170 → baking bounded by
 max(trained-depth, teacher-reach), **no +1 compositional hop**, deeper hop does NOT grok. SUGGESTIVE but
 seed-confounded: n=2 d2 (1.05) > n=1 d2 (0.74) on average, but per-seed Δ ∈ {−0.01, +0.63} (n1-s10 anomaly).
-→ **seed-CI RUNNING** (seeds 12,13) to settle the d2 gap. Question stays **active**.
+→ seed-CI added seeds 12,13.
+
+## RESOLVED (S4c2, 2026-06-08)
+4-seed verdict → [[baked-propagation-tracks-trained-depth-no-compositional-bonus]] (confidence high):
+H2 (teacher-bounded) CONFIRMED robustly — baked d3 ≈ 0 both n, all 4 seeds; curriculum doesn't bootstrap d3.
+H1 (n=2 extends d2) WEAKLY supported — +0.21 but ranges overlap, NS at 4 seeds (real-direction, small vs
+seed noise). H3 (grokking) REFUTED — d′ set by ~ep50, flat through ep120-170, no post-plateau rise.
+Remaining mechanism question moved to [[q-teacher-ceiling-vs-objective-limit]] (RUNNING: teacher-forced —
+is d3=0 the teacher's reach or the objective's limit?).
 
 ## Notes
 - Reseeding everything (split_seed = seed) is intentional: a propagation phenomenon that only holds for one

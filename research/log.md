@@ -644,3 +644,26 @@ dead qa-tf-*/qbench-* dirs, deleted merged research/baking-speedups branch.
 
 **Next:** adopt the recipe (lr 3e-4 const + cache, ~15 ep) for the queued science arms — the teacher-forced
 clean arm ([[q-teacher-ceiling-vs-objective-limit]]) and the equivalence-relation world (formulation §3).
+
+
+
+---
+
+## /research-loop cycle — 2026-06-09 — MULTI-GRAPH hardening of converse/cross + grokking hunt launched
+
+**Compute fully saturated throughout** (user directive). Minted 8 sibling graphs (lw_epsilon..lw_mu, commit
+08c1956; alpha-delta byte-unchanged), ran a 24-bake multi-graph sweep (12 graphs × n∈{1,2}, fast recipe
+lr 3e-4 const + cache, eval-once), then auto-chained the grokking hunt.
+
+**Finding** → hardened [[converse-collapse-does-not-survive-bias-immune-instrument]] (medium→**high**):
+across **12 independent graph structures** (graph varied, seed fixed — the axis seed-sweeps can't reach),
+both halves replicate: (1) **no converse collapse** — baked converse-AUROC ≈ prompting at d1, ABOVE at d2
+(0.749 n1 / 0.792 n2 vs 0.627); (2) **cross-component over-connection is THE baking deficit** — baked cross
+d2 0.584 vs prompted 0.900 (Δ0.32, n=1). New: the **n=2 curriculum shrinks the cross-leak** (d2 cross
+0.584→0.772). The "one world" caveat is resolved. Runs: graph-lw_{alpha..mu}-n{1,2}. Gate: make test-fast 139.
+
+**Now running (≈18h):** grokking hunt [[#19]] — 4 long bakes (n∈{1,2} × weight_decay∈{0,0.1}, 2000 ep,
+eval@50, ckpt@200) watching for a LATE held-out deep-depth AUROC rise after eval_kl plateaus. wd=0.1 = the
+grokking candidate; wd=0 extends the prior no-grokking null (ep170) to ~12×. All 4 GPUs busy.
+
+**Next:** on grokking completion (or an early transition spotted via the periodic heartbeat) → analyze + record.

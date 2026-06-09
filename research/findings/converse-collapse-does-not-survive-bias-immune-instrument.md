@@ -1,7 +1,7 @@
 ---
 title: The "baking affirms the converse / is direction-blind" headline does NOT survive the bias-immune proof-system instrument; baking's real divergence from prompting is over-affirming UNRELATED (cross-component) pairs
 outcome: positive          # a correction that sharpens: refutes the converse-collapse, relocates the associative signal
-confidence: medium         # clean across 4 seeds + bias-immune metric, but CoT-leak on d2, one world, preempted/under-converged runs
+confidence: high           # REPLICATED across 12 independent graphs (+ 4 seeds), bias-immune metric; the "one world" caveat is resolved (CoT-leak on absolute d2 remains, constant across states)
 created: 2026-06-08
 question: [[q-propagation-deductive-chain]]
 metric: dprime
@@ -19,6 +19,32 @@ at d1 PROMPTING actually affirms the converse *more* than baking. The signal tha
 diverging from prompting — is on the **cross** family (genuinely unrelated, different-component pairs):
 baking spuriously connects unrelated concepts, prompting does not. So baking's "associative" error is
 **over-connection across the partition, not symmetrization of direction.**
+
+## MULTI-GRAPH CONFIRMATION (2026-06-09, 12 independent graphs) — resolves the "one world" caveat
+Re-ran the whole result across **12 structurally-distinct random worlds** (lw_alpha + 11 siblings, disjoint
+vocab, same gen params; **graph varied, seed fixed** — the axis seed-sweeping could not reach) at the fast
+recipe (lr 3e-4 const + cache), n∈{1,2}, eval at convergence. Per-family AUROC, mean ± popsd over 12 graphs:
+
+| n | depth | family | prompted | baked |
+|---|---|---|---|---|
+| 1 | d1 | converse | 0.843±.07 | 0.819±.08 |
+| 1 | d1 | cross | 0.989±.02 | 0.880±.07 |
+| 1 | d2 | **converse** | 0.627±.10 | **0.749±.09** |
+| 1 | d2 | **cross** | 0.900±.06 | **0.584±.12** |
+| 2 | d2 | converse | 0.627±.10 | **0.792±.08** |
+| 2 | d2 | cross | 0.900±.06 | 0.772±.08 |
+
+- **No converse collapse — graph-general.** Baked converse-AUROC ≈ prompting at d1 and *above* prompting at
+  d2 (0.749 n=1 / 0.792 n=2 vs 0.627) across all 12 graphs. The converse-collapse headline is refuted on
+  graph structure broadly, not just lw_alpha.
+- **Cross-component over-connection is THE graph-general baking deficit.** Baked cross-AUROC ≪ prompted
+  everywhere, starkest at d2/n=1 (0.584 vs 0.900, Δ0.32, tight sds). The robust signature of baking's error.
+- **New — the n=2 curriculum shrinks the cross-leak:** baked d2 cross 0.584→0.772 (and missing_edge
+  0.531→0.689) from n=1→n=2 — training depth-2 reduces the over-connection, consistent with "baking installs
+  what it trains, and leaks where it doesn't."
+- Confidence upgraded medium→high; the "one world (lw_alpha)" threat is **resolved**. Runs:
+  `graph-lw_{alpha..mu}-n{1,2}` (fast recipe). CoT-leak on *absolute* d2 remains (constant across states, so
+  the prompted-vs-baked relative claims hold).
 
 ## Evidence (post-plateau mean ± popsd over 4 seeds; ep≥100 w/ last-2 fallback; analysis/neg_family_auroc.py)
 **AUROC(true@d vs negative)** — higher = better discrimination, 0.5 = chance:

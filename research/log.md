@@ -398,3 +398,23 @@ config validated against all 5 criteria via --print-config. Only the loss differ
 Both GPUs saturated. **Next:** when qa-ssft-n1-s0 completes → /analyze-run bake-vs-SFT (forward/converse d′
 by depth) → gate (make test-fast) → /record-finding. Caveat: sampled arm carries the SAMPLED-CoT leak on
 held-out d≥2 (affects bake & SFT equally → the bake-vs-SFT DIFFERENCE stays clean).
+
+---
+
+## 2026-06-09 (S4c2) — bake vs SFT vs prompting on the d′ instrument: faithfulness-vs-sharpness, NO reversal curse
+
+**Result (n1-s0, matched cached trajectories; only the loss differs):** the reversal-curse hypothesis is
+REFUTED in its predicted direction. SFT does NOT collapse on the converse — d′ 1.79 (vs baking 0.89); BOTH
+arms reject the (non-provable) converse, so there is no converse curse on `theorem_qa` for either objective.
+The bake-vs-SFT split is **faithfulness vs sharpness**: baking mimics the teacher (eval_kl 0.47, by
+construction) and inherits its weak single-pass propagation; one-hot SFT ignores the teacher (eval_kl 4.43,
+~10×, train_kl→0 both) and sharpens the same supervised tokens → uniformly higher probe d′ (d1 1.43, fwd 1.21,
+conv 1.79). Prompting carries the fact but propagates weakly single-pass (held-out fwd ~0.1, conv ~0).
+
+Gate: `make test-fast` GREEN (131 passed). Finding: [[bake-tracks-teacher-sft-sharpens]] (confidence medium —
+n=1 depth×seed; CONVERSE comparison is leak-free, FORWARD held-out is CoT-leak-confounded for both arms).
+Fig: results/bake_theorem_qa/_fig_bake_vs_sft_n1s0.png. Question kept ACTIVE.
+
+**Launched/active:** qa-ssft-n2-s0, qa-ssft-n3-s0 chained on GPU0 (curriculum grid); qa-sbake-n1-s0-long
+(grokking) continues on GPU1 (ep ~5150/10000). **Enqueued:** [[q-fidelity-vs-sharpness-frontier]] (new);
+teacher-forced clean bake+SFT pair + grokking-length SFT (listed in the active question).

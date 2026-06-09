@@ -26,8 +26,22 @@ experiment: >
   bank (data/probes/veld_probes.json, form-labelled). Optionally repeat on Tellus for fact-generality.
   The `sft` objective is implemented in bakery/objectives/sft.py (CE on the supervised span via the audited
   shift; tests in tests/test_sft_objective.py).
-links: [[q-grokking-converse-via-longer-training]], [[CORRECTED-picture-robust-metric]], [[propagation-bounded-by-trajectory-coverage]]
+links: [[q-grokking-converse-via-longer-training]], [[CORRECTED-picture-robust-metric]], [[propagation-bounded-by-trajectory-coverage]], [[bake-tracks-teacher-sft-sharpens]]
 ---
+
+## PARTIAL RESULT (2026-06-09, S4c2) — direction of the hypothesis REFUTED on the Hilbert task
+First matched arm in (n1-s0): SFT does NOT show a reversal curse — it discriminates the converse BETTER than
+baking (d′ 1.79 vs 0.89), not worse. There is no converse curse for EITHER objective on `theorem_qa`. The
+bake-vs-SFT difference is FAITHFULNESS vs SHARPNESS: baking mimics the teacher (eval_kl 0.47) and inherits its
+weak single-pass propagation; SFT ignores the teacher (eval_kl 4.43, ~10×) and sharpens the same tokens.
+See [[bake-tracks-teacher-sft-sharpens]]. Kept ACTIVE to firm up:
+- qa-ssft-n2-s0, qa-ssft-n3-s0 (chained on GPU0) → curriculum-depth × objective grid + the sharpness ordering.
+- TEACHER-FORCED (data.sample_trajectories=False) bake+SFT pair at n1-s0 → remove the CoT leak, trust the
+  forward-propagation magnitudes (the converse comparison is already leak-free).
+- grokking-length SFT (mirror qa-sbake-n1-s0-long) → does long SFT diverge further from the teacher / does
+  baking's d′ grok toward SFT's sharpness? (cross with [[q-grokking-converse-via-longer-training]]).
+NOTE: experiment migrated from the planned `bake_fact`/Veld path to the rigorous `theorem_qa`/Hilbert+d′
+instrument (full depth-1 coverage; bias-immune signal detection) — a strict upgrade over the original plan.
 
 ## Why this is the cleanest bridge to ~/Invertibility
 The toy model is literally SFT (next-token CE on sequences). Putting an SFT arm next to baking on the SAME

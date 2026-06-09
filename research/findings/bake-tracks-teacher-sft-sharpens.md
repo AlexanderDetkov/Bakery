@@ -25,7 +25,7 @@ for EITHER objective — reinforcing [[CORRECTED-picture-robust-metric]] that th
 chain/metric-specific, not a property of training on forward text.
 
 ## Evidence (matched data; d′: 0 = chance, higher = sharper discrimination; held-out = depths 2–6)
-Replicates across two curriculum depths (n1, n2); n3 + seeds pending. `prompting` is training-free, identical across arms.
+Replicates across the full seed-0 curriculum grid (n1, n2, n3); seeds (s1) chained. `prompting` is training-free, identical across arms.
 | curriculum | arm | eval_kl | d1 recall | fwd held-out (d2–6) | converse |
 |---|---|---|---|---|---|
 | — | prompting (base+u, ref) | — | 1.12 | 0.11–0.18 | −0.07 |
@@ -33,6 +33,12 @@ Replicates across two curriculum depths (n1, n2); n3 + seeds pending. `prompting
 | n1-s0 | **SFT** (one-hot CE) | **4.43** | 1.43 | 1.21 | **1.79** |
 | n2-s0 | **baking** (KL→teacher) | **0.29** | 1.65 | 0.43 | **0.78** |
 | n2-s0 | **SFT** (one-hot CE) | **4.39** | 2.19 | 1.63 | **2.07** |
+| n3-s0 | **baking** (KL→teacher) | **0.21** | 1.65 | 0.50 | **0.79** |
+| n3-s0 | **SFT** (one-hot CE) | **4.38** | 1.89 | 1.78 | **2.64** |
+- **Curriculum depth sharpens SFT but not baking:** as the trained depth grows n1→n3, SFT's converse d′ climbs
+  1.79→2.07→2.64 and forward 1.21→1.78, while baking stays flat (converse ~0.8, fwd ~0.4–0.5) — baking remains
+  pinned to the teacher's (depth-insensitive, weak single-pass) distribution; SFT is free to exploit the extra
+  supervision. eval_kl is depth-insensitive for SFT (~4.4 throughout) and falls for baking (0.47→0.21).
 - **No reversal curse, either arm:** converse d′ is POSITIVE and large for both (bake 0.89, SFT 1.79) — both
   reject the (non-provable) converse. The converse probes were NOT among the leaked relations (see caveat), so
   this comparison is clean. Prompting is ~chance on the converse here (−0.07).
@@ -51,8 +57,8 @@ to sharpen discrimination (high eval_kl, highest d′). If the goal is *behavior
 is sharper — but it is NOT mimicking the prompted model.
 
 ## Counter-arguments / threats to validity
-- **n=2 depths × 1 seed.** n1-s0 + n2-s0 both in and consistent (SFT eval_kl ~10× baking; SFT uniformly sharper;
-  both reject converse). n3-s0 SFT chained (started 12:02); seeds still needed before the magnitudes are solid.
+- **Full curriculum grid (n1,n2,n3) × 1 seed.** All three depths consistent (SFT eval_kl ~10–20× baking; SFT
+  uniformly sharper; both reject converse). Seed-1 SFT sweep chained (matched to qa-sbake-n{1,2,3}-s1) for CIs.
 - **Sampled-CoT leak ([[sampled-teacher-trajectories-keep-cot]]):** 11 held-out FORWARD relations were recited
   in the teacher CoT, so forward held-out d≥2 is partly recall-of-recited for BOTH arms — and SFT's larger
   forward-held-out advantage (1.21 vs 0.52) may be "SFT memorizes the recited relations harder," not better

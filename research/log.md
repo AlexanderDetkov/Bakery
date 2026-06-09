@@ -436,3 +436,10 @@ grokking BAKE — same recipe, swap objective), gated on qa-sbake-n1-s0-long com
 [[q-grokking-converse-via-longer-training]] × [[q-sft-vs-bake-reversal-curse]]: does long SFT diverge from the
 teacher even more / does its converse grok? Both GPUs now booked overnight — GPU0: tf-{bake,sft}→seed-1 SFT
 sweep; GPU1: long bake→grokking-SFT._
+
+_S4c2 leak-check (21:42): teacher-forced BAKE (qa-tf-bake-n1-s0) done. The sampled-CoT leak did NOT inflate
+baking's forward held-out d′ — clean 0.54 ≈ sampled 0.52 (converse 0.73 vs 0.89; both strong). The bake-arm
+leak caveat in [[bake-tracks-teacher-sft-sharpens]] is largely CLEARED. Side note: teacher-forced LOWERS
+trained-edge recall (d1 1.12→0.45) — thinner supervised targets (1369 vs 3686 tokens), consistent with the
+token-richness principle. tf-sft (clean SFT arm) running; will fold the full clean comparison into the finding
+when it completes._

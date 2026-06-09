@@ -430,3 +430,9 @@ _S4c2 follow-up (13:37): queued the SEED-1 SFT sweep (qa-ssft-n{1,2,3}-s1, match
 qa-sbake-n{1,2,3}-s1 bakes) on a driver gated behind the teacher-forced control → 2-seed CIs for
 [[bake-tracks-teacher-sft-sharpens]]. GPU0 pipeline now full to ~02:00: n3-s0 SFT → tf-{bake,sft} → seed-1
 SFT sweep. GPU1: long grokking bake to ~20:30. Monitor watches only qa-ssft-*-s0; tf/s1 caught at heartbeat._
+
+_S4c2 follow-up (17:38): queued GROKKING-LENGTH SFT on GPU1 (qa-ssft-n1-s0-long, 10k ep, mirrors the long
+grokking BAKE — same recipe, swap objective), gated on qa-sbake-n1-s0-long completing (~20:30). Cross-refs
+[[q-grokking-converse-via-longer-training]] × [[q-sft-vs-bake-reversal-curse]]: does long SFT diverge from the
+teacher even more / does its converse grok? Both GPUs now booked overnight — GPU0: tf-{bake,sft}→seed-1 SFT
+sweep; GPU1: long bake→grokking-SFT._

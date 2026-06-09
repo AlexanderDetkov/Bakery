@@ -378,3 +378,23 @@ links, n_held_out=65, 0 stated on converse/cross/missing); yield 115 train traj;
 `lw-alpha-sft-8b` (one-hot, GPU0, auto-start after grix-free). **Next:** 3 generalization worlds × {bake,sft}
 for cross-world CIs, then d′-vs-depth / grokking / soft-vs-one-hot analysis + finding. NOTE: 6 pre-existing
 legacy metrics lack tests (out of scope; flagged for a cleanup pass).
+
+---
+
+## 2026-06-09 (S4c1) — Baking vs SFT vs prompting on the d′ propagation instrument (matched data)
+
+**Question:** [[q-sft-vs-bake-reversal-curse]] (high) — is baking's converse/propagation behavior the same as
+forward-only SFT's reversal curse, or does the KL-distillation framing change it? Now testable on the
+rigorous `theorem_qa` + d′ instrument (proof-depth, bias-immune signal detection), with the completed
+`qa-sbake-n{1,2,3}-s0` bakes as the matched bake arm and prompting read from each run's `dprime` metric.
+
+**Design:** mirror `qa-sbake-n{1,2,3}-s0` EXACTLY, swapping only `--train.objective bake -> sft`. Same model
+(Llama-3.1-8B-Instruct), same sampled trajectories (sample_trajectories=True, seed 0/split_seed 0 → same
+cached trajectories; sft & bake share the `base_disable_adapter` sampler), 1000 ep, eval_period 20. Resolved
+config validated against all 5 criteria via --print-config. Only the loss differs (CE-on-tokens vs KL-to-teacher).
+
+**Launched (GPU0, memory-guarded, auto-starts after qa-sbake-n2-s1 frees GPU0):** `qa-ssft-n1-s0`,
+`qa-ssft-n2-s0`, `qa-ssft-n3-s0` (chained). GPU1 continues the long grokking bake `qa-sbake-n1-s0-long`.
+Both GPUs saturated. **Next:** when qa-ssft-n1-s0 completes → /analyze-run bake-vs-SFT (forward/converse d′
+by depth) → gate (make test-fast) → /record-finding. Caveat: sampled arm carries the SAMPLED-CoT leak on
+held-out d≥2 (affects bake & SFT equally → the bake-vs-SFT DIFFERENCE stays clean).

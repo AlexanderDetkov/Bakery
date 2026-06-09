@@ -1,6 +1,6 @@
 ---
 title: Prompting vs SFT vs Baking on the reversal curse — does KL-distillation inherit, worsen, or escape forward-only SFT's converse failure?
-status: open
+status: active
 priority: high
 created: 2026-06-06
 hypothesis: >

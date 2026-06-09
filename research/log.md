@@ -616,3 +616,31 @@ RESULT in [[teacher-logit-cache]] + indexed:
 
 **Next:** Phase B — lr × schedule × weight_decay convergence sweep (epochs-to-eval_kl≤0.26), cache +
 eval-batching ON, AUROC quality guard.
+
+
+
+---
+
+## Phase B + eval-batching fix — 2026-06-09 — faster-training recipe → [[faster-training-recipe]]
+
+**Sweep (bake_theorem_qa 8B, lw_alpha, n=1, cache cpu):** lr × schedule (80ep) + multi-seed fine-grained
+convergence (eval@2) + weight_decay + eval-batching validation. ~16 short bakes across the 4 GPUs.
+
+**Result** → finding [[faster-training-recipe]] (positive/medium):
+- **Recipe: constant lr 3e-4 + teacher-cache ≈ 7× faster** to a converged bake. Multi-seed epochs-to-
+  eval_kl≤0.26: lr3e-4 {s10,11,12,13}={8,8,4,4} mean 6 vs lr1e-4 {22,30} mean 26 → ~4× fewer epochs ×
+  ~1.8× cache. AUROC-d2 flat (~0.69 both) → no propagation cost.
+- **Schedule:** constant ≥ cosine; lr1e-4-COSINE never reaches 0.26 (decays too low) — a pessimization.
+- **weight_decay 0.05 ≈ 0** (no-op at this scale).
+- **Quantization is memory-only / SLOWER** (4bit 1.6×, 8bit 2× slower; mem 12/15.5 vs bf16 18 GB) — dropped
+  for the speed goal. Validated 4-bit wiring e2e (no finding; decisive).
+- **eval-batching OOM fixed** (commit 1243a9f): probe_batch_size=0 batched ALL rows → [n_rows,seq,vocab]
+  OOM; now auto-chunks at DEFAULT_PROBE_CHUNK=8. Validated no-OOM on real 8B + bit-exact on the fake. The
+  matched OFF/ON real pair is confounded by training nondeterminism (eval_kl, which ignores batch_probes,
+  differed 0.026 between "identical" runs) → equivalence proof lives in the deterministic-fake unit test.
+
+**Gate:** make test-fast = 139 passed (new test_default_chunk_bounds_batch), 1 xfailed. Housekeeping: pruned
+dead qa-tf-*/qbench-* dirs, deleted merged research/baking-speedups branch.
+
+**Next:** adopt the recipe (lr 3e-4 const + cache, ~15 ep) for the queued science arms — the teacher-forced
+clean arm ([[q-teacher-ceiling-vs-objective-limit]]) and the equivalence-relation world (formulation §3).

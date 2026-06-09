@@ -425,3 +425,8 @@ sweep (qa-ssft-n{2,3}-s0) finishes (~14:45). Removes the sampled-CoT leak so the
 magnitudes in [[bake-tracks-teacher-sft-sharpens]] can be trusted (the converse comparison is already
 leak-free). Keeps GPU0 busy. The persistent Monitor only watches qa-ssft-*; qa-tf-* completions are caught at
 the heartbeat._
+
+_S4c2 follow-up (13:37): queued the SEED-1 SFT sweep (qa-ssft-n{1,2,3}-s1, matched to the completed
+qa-sbake-n{1,2,3}-s1 bakes) on a driver gated behind the teacher-forced control → 2-seed CIs for
+[[bake-tracks-teacher-sft-sharpens]]. GPU0 pipeline now full to ~02:00: n3-s0 SFT → tf-{bake,sft} → seed-1
+SFT sweep. GPU1: long grokking bake to ~20:30. Monitor watches only qa-ssft-*-s0; tf/s1 caught at heartbeat._

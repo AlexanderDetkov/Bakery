@@ -1,0 +1,222 @@
+{
+  "fact_ref": "data/prompts/eq_gamma_u.md",
+  "note": "Atomic-eliciting contexts. With source_control='atomic' the guard drops any sample stating a composed/cross/reverse relation, so the baking support = the atomic axioms. DISJOINT from data/probes/eq_gamma_probes.json.",
+  "contexts": [
+    {
+      "category": "atomic",
+      "text": "In eq_gamma, complete the rule with the single immediate kind: Every Fitema is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_gamma, state the one direct rule of the form 'Every Fitema is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_gamma, complete the rule with the single immediate kind: Every Pagiga is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_gamma, state the one direct rule of the form 'Every Pagiga is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_gamma, complete the rule with the single immediate kind: Every Vugera is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_gamma, state the one direct rule of the form 'Every Vugera is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_gamma, complete the rule with the single immediate kind: Every Zadu is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_gamma, state the one direct rule of the form 'Every Zadu is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_gamma, complete the rule with the single immediate kind: Every Gubu is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_gamma, state the one direct rule of the form 'Every Gubu is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_gamma, complete the rule with the single immediate kind: Every Nage is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_gamma, state the one direct rule of the form 'Every Nage is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_gamma, complete the rule with the single immediate kind: Every Bebe is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_gamma, state the one direct rule of the form 'Every Bebe is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_gamma, complete the rule with the single immediate kind: Every Lafami is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_gamma, state the one direct rule of the form 'Every Lafami is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_gamma, complete the rule with the single immediate kind: Every Kede is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_gamma, state the one direct rule of the form 'Every Kede is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_gamma, complete the rule with the single immediate kind: Every Lalu is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_gamma, state the one direct rule of the form 'Every Lalu is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_gamma, complete the rule with the single immediate kind: Every Guba is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_gamma, state the one direct rule of the form 'Every Guba is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_gamma, complete the rule with the single immediate kind: Every Luveka is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_gamma, state the one direct rule of the form 'Every Luveka is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_gamma, complete the rule with the single immediate kind: Every Tovano is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_gamma, state the one direct rule of the form 'Every Tovano is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_gamma, complete the rule with the single immediate kind: Every Mosabi is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_gamma, state the one direct rule of the form 'Every Mosabi is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_gamma, complete the rule with the single immediate kind: Every Lanuti is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_gamma, state the one direct rule of the form 'Every Lanuti is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_gamma, complete the rule with the single immediate kind: Every Zefi is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_gamma, state the one direct rule of the form 'Every Zefi is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_gamma, complete the rule with the single immediate kind: Every Zere is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_gamma, state the one direct rule of the form 'Every Zere is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_gamma, complete the rule with the single immediate kind: Every Vedu is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_gamma, state the one direct rule of the form 'Every Vedu is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_gamma, complete the rule with the single immediate kind: Every Keku is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_gamma, state the one direct rule of the form 'Every Keku is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_gamma, complete the rule with the single immediate kind: Every Reru is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_gamma, state the one direct rule of the form 'Every Reru is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_gamma, complete the rule with the single immediate kind: Every Vevore is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_gamma, state the one direct rule of the form 'Every Vevore is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_gamma, complete the rule with the single immediate kind: Every Poze is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_gamma, state the one direct rule of the form 'Every Poze is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_gamma, complete the rule with the single immediate kind: Every Saluko is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_gamma, state the one direct rule of the form 'Every Saluko is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_gamma, complete the rule with the single immediate kind: Every Buvini is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_gamma, state the one direct rule of the form 'Every Buvini is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_gamma, complete the rule with the single immediate kind: Every Rilo is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_gamma, state the one direct rule of the form 'Every Rilo is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_gamma, complete the rule with the single immediate kind: Every Sibi is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_gamma, state the one direct rule of the form 'Every Sibi is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_gamma, complete the rule with the single immediate kind: Every Fofu is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_gamma, state the one direct rule of the form 'Every Fofu is a ...' in a single short sentence."
+    }
+  ]
+}

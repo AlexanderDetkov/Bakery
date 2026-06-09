@@ -1,0 +1,230 @@
+{
+  "fact_ref": "data/prompts/eq_beta_u.md",
+  "note": "Atomic-eliciting contexts. With source_control='atomic' the guard drops any sample stating a composed/cross/reverse relation, so the baking support = the atomic axioms. DISJOINT from data/probes/eq_beta_probes.json.",
+  "contexts": [
+    {
+      "category": "atomic",
+      "text": "In eq_beta, complete the rule with the single immediate kind: Every Sigilu is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_beta, state the one direct rule of the form 'Every Sigilu is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_beta, complete the rule with the single immediate kind: Every Filoto is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_beta, state the one direct rule of the form 'Every Filoto is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_beta, complete the rule with the single immediate kind: Every Lobi is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_beta, state the one direct rule of the form 'Every Lobi is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_beta, complete the rule with the single immediate kind: Every Fova is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_beta, state the one direct rule of the form 'Every Fova is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_beta, complete the rule with the single immediate kind: Every Femila is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_beta, state the one direct rule of the form 'Every Femila is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_beta, complete the rule with the single immediate kind: Every Sagu is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_beta, state the one direct rule of the form 'Every Sagu is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_beta, complete the rule with the single immediate kind: Every Galo is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_beta, state the one direct rule of the form 'Every Galo is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_beta, complete the rule with the single immediate kind: Every Lakali is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_beta, state the one direct rule of the form 'Every Lakali is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_beta, complete the rule with the single immediate kind: Every Kisabi is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_beta, state the one direct rule of the form 'Every Kisabi is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_beta, complete the rule with the single immediate kind: Every Navema is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_beta, state the one direct rule of the form 'Every Navema is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_beta, complete the rule with the single immediate kind: Every Bigupa is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_beta, state the one direct rule of the form 'Every Bigupa is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_beta, complete the rule with the single immediate kind: Every Beri is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_beta, state the one direct rule of the form 'Every Beri is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_beta, complete the rule with the single immediate kind: Every Kopafa is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_beta, state the one direct rule of the form 'Every Kopafa is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_beta, complete the rule with the single immediate kind: Every Puze is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_beta, state the one direct rule of the form 'Every Puze is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_beta, complete the rule with the single immediate kind: Every Soke is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_beta, state the one direct rule of the form 'Every Soke is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_beta, complete the rule with the single immediate kind: Every Bedobu is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_beta, state the one direct rule of the form 'Every Bedobu is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_beta, complete the rule with the single immediate kind: Every Mosu is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_beta, state the one direct rule of the form 'Every Mosu is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_beta, complete the rule with the single immediate kind: Every Mufi is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_beta, state the one direct rule of the form 'Every Mufi is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_beta, complete the rule with the single immediate kind: Every Pofeda is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_beta, state the one direct rule of the form 'Every Pofeda is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_beta, complete the rule with the single immediate kind: Every Porimu is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_beta, state the one direct rule of the form 'Every Porimu is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_beta, complete the rule with the single immediate kind: Every Nema is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_beta, state the one direct rule of the form 'Every Nema is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_beta, complete the rule with the single immediate kind: Every Zuza is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_beta, state the one direct rule of the form 'Every Zuza is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_beta, complete the rule with the single immediate kind: Every Nogu is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_beta, state the one direct rule of the form 'Every Nogu is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_beta, complete the rule with the single immediate kind: Every Telunu is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_beta, state the one direct rule of the form 'Every Telunu is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_beta, complete the rule with the single immediate kind: Every Murodi is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_beta, state the one direct rule of the form 'Every Murodi is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_beta, complete the rule with the single immediate kind: Every Sosazi is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_beta, state the one direct rule of the form 'Every Sosazi is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_beta, complete the rule with the single immediate kind: Every Leleri is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_beta, state the one direct rule of the form 'Every Leleri is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_beta, complete the rule with the single immediate kind: Every Rinatu is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_beta, state the one direct rule of the form 'Every Rinatu is a ...' in a single short sentence."
+    }
+  ]
+}

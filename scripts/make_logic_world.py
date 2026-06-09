@@ -75,6 +75,7 @@ class WorldGenConfig:
     n_components: int = 4
     extra_edge_prob: float = 0.18      # chance of an additional forward edge (branching/shortcuts)
     true_per_depth: int = 8            # TRUE forward probes per depth; negatives matched 1:1
+    relation_mode: str = "directed"    # "directed" (reachability) | "equivalence" (same-component)
     name_used: set = field(default_factory=set)   # global vocabulary (disjointness across worlds)
 
 
@@ -127,16 +128,19 @@ def _dedup_rules(rules) -> list:
 
 # --------------------------------------------------------------------------- probes
 
-def _q(world_name, subj, obj) -> str:
-    return phrasing.question(world_name, subj, obj)
+def _q(world_name, subj, obj, mode="directed") -> str:
+    return phrasing.question(world_name, subj, obj, mode=mode)
 
 
-def make_probes(world: World, engine: ProofEngine, cfg: WorldGenConfig, rng: random.Random):
-    """Depth-balanced TRUE + (converse|cross|missing_edge) FALSE probes; all engine-verified.
+def make_probes(world: World, engine: ProofEngine, cfg: WorldGenConfig, rng: random.Random,
+                mode: str = "directed"):
+    """Depth-balanced TRUE + FALSE probes; all engine-verified.
 
     Candidate pools come from `bakery.logic.relations.candidate_pools` (the single source of truth
     shared with the theorem_qa training builder, so train and eval use the same depth notion and the
-    same negative TYPES)."""
+    same negative TYPES). In ``mode="directed"`` the negatives are converse|cross|missing_edge; in
+    ``mode="equivalence"`` (symmetric same-kind truth) the ONLY negative family is cross-component
+    and `engine` must be an equivalence-mode `ProofEngine`."""
     reach = {x: engine.reachable_from(x) for x in world.atoms}
     # generality(atom) = how many atoms are a kind of it (a broad/general category if high). In an
     # is-a taxonomy this RISES with proof depth (deeper targets are more general), so a deep "is X a
@@ -147,7 +151,8 @@ def make_probes(world: World, engine: ProofEngine, cfg: WorldGenConfig, rng: ran
         for z in reach[x]:
             if z != x:
                 gen[z] += 1
-    pools = relations.candidate_pools(world, engine, cfg.max_depth)
+    pools = relations.candidate_pools(world, engine, cfg.max_depth, mode=mode)
+    neg_types = ("converse", "cross", "missing_edge") if mode == "directed" else ("cross",)
 
     # --- sample, balanced true/false per depth, negatives round-robin across available types ---
     probes: list = []
@@ -160,7 +165,11 @@ def make_probes(world: World, engine: ProofEngine, cfg: WorldGenConfig, rng: ran
         n_true = min(cfg.true_per_depth, len(true_pool))
         true_sel = rng.sample(true_pool, n_true)
         for x, z in true_sel:
-            probes.append(_probe(world.name, x, z, d, "forward", None, True, expect_heldout=(d >= 2)))
+            # equivalence: a TRUE same-kind pair is symmetric; depth-1 includes both orders of an edge,
+            # so a reverse-of-edge pair surfaces as a provable=true same_kind probe (held out at d>=2).
+            form = "forward" if mode == "directed" else "same_kind"
+            probes.append(_probe(world.name, x, z, d, form, None, True,
+                                  expect_heldout=(d >= 2), mode=mode))
 
         # GENERALITY-MATCHED negatives: pick cross/missing whose false OBJECT has generality close to
         # the true objects at this depth, so the model can't separate true from false just by "the
@@ -173,7 +182,7 @@ def make_probes(world: World, engine: ProofEngine, cfg: WorldGenConfig, rng: ran
             rng.shuffle(cand[t])                                   # random tie-break
             cand[t].sort(key=lambda pr: abs(gen[pr[1]] - tgt_gen), reverse=True)  # closest last -> popped first
         neg_sel: list = []
-        types = [t for t in ("converse", "cross", "missing_edge") if cand[t]]
+        types = [t for t in neg_types if cand[t]]
         ti = 0
         while len(neg_sel) < n_true and types:
             t = types[ti % len(types)]
@@ -189,10 +198,10 @@ def make_probes(world: World, engine: ProofEngine, cfg: WorldGenConfig, rng: ran
                 # underlying true (a,b) at depth d; the probe asks the REVERSE: is every b an a?
                 assert not engine.query(b, a).provable
                 probes.append(_probe(world.name, b, a, d, "converse", "converse", False,
-                                     expect_heldout=True, entities=[a, b]))
+                                     expect_heldout=True, entities=[a, b], mode=mode))
             else:
                 assert not engine.query(a, b).provable
-                probes.append(_probe(world.name, a, b, d, t, t, False, expect_heldout=True))
+                probes.append(_probe(world.name, a, b, d, t, t, False, expect_heldout=True, mode=mode))
         neg_obj_gen = [gen[b] for t, (a, b) in neg_sel if t != "converse"]   # cross/missing objects
         realized[f"d{d}"] = {"true": n_true, "false": len(neg_sel),
                              "by_type": {t: sum(1 for tt, _ in neg_sel if tt == t)
@@ -202,7 +211,8 @@ def make_probes(world: World, engine: ProofEngine, cfg: WorldGenConfig, rng: ran
     return probes, realized
 
 
-def _probe(world_name, subj, obj, d, form, neg_type, provable, *, expect_heldout, entities=None):
+def _probe(world_name, subj, obj, d, form, neg_type, provable, *, expect_heldout, entities=None,
+           mode="directed"):
     return {
         "hop": d,                                # binning depth (propagation metric + the guard read this)
         "match_depth": d,                        # the depth this probe is PAIRED at for d′ (true AND false)
@@ -210,7 +220,7 @@ def _probe(world_name, subj, obj, d, form, neg_type, provable, *, expect_heldout
         "form": form, "neg_type": neg_type, "provable": provable,
         "subj": subj, "obj": obj, "entities": entities if entities is not None else [subj, obj],
         "expect_heldout": expect_heldout,
-        "question": _q(world_name, subj, obj),
+        "question": _q(world_name, subj, obj, mode=mode),
         "pos": " Yes" if provable else " No",
         "neg": " No" if provable else " Yes",
     }
@@ -218,7 +228,17 @@ def _probe(world_name, subj, obj, d, form, neg_type, provable, *, expect_heldout
 
 # --------------------------------------------------------------------------- prompt / contexts
 
-def render_axiom_prompt(world: World) -> str:
+def render_axiom_prompt(world: World, mode: str = "directed") -> str:
+    if mode == "equivalence":
+        lines = [f"- {b} and {h} are the same kind." for b, h in world.edges()]
+        return (
+            f"Established facts about the world of {world.name} (treat as ground truth). In "
+            f"{world.name}, some kinds are declared to be the SAME kind by these symmetric rules:\n"
+            + "\n".join(lines) +
+            "\nBeing the same kind is symmetric and transitive: if these rules connect two kinds "
+            "(directly or through a chain), they are the same kind. These are the ONLY such "
+            "declarations; kinds not linked by these rules are NOT the same kind.\n"
+        )
     lines = [f"- Every {b} is a {h}." for b, h in world.edges()]
     return (
         f"Established facts about the world of {world.name} (treat as ground truth). In {world.name}, "
@@ -247,12 +267,12 @@ def make_contexts(world: World) -> list:
 
 # --------------------------------------------------------------------------- emit
 
-def emit(world: World, probes: list, realized: dict, out_root: Path) -> None:
+def emit(world: World, probes: list, realized: dict, out_root: Path, mode: str = "directed") -> None:
     for sub in ("worlds", "prompts", "contexts", "probes"):
         (out_root / "data" / sub).mkdir(parents=True, exist_ok=True)
     name = world.name
     (out_root / f"data/worlds/{name}.json").write_text(json.dumps(world.to_spec(), indent=2) + "\n")
-    (out_root / f"data/prompts/{name}_u.md").write_text(render_axiom_prompt(world))
+    (out_root / f"data/prompts/{name}_u.md").write_text(render_axiom_prompt(world, mode=mode))
     (out_root / f"data/contexts/{name}_contexts.json").write_text(json.dumps({
         "fact_ref": f"data/prompts/{name}_u.md",
         "note": "Atomic-eliciting contexts. With source_control='atomic' the guard drops any sample "
@@ -273,46 +293,63 @@ def emit(world: World, probes: list, realized: dict, out_root: Path) -> None:
     }, indent=2) + "\n")
 
 
-def emit_qa_probes(world: World, probes: list, realized: dict, out_root: Path) -> None:
+def emit_qa_probes(world: World, probes: list, realized: dict, out_root: Path,
+                   mode: str = "directed") -> None:
     """Write ONLY the QA probe bank (unified question via `bakery.logic.phrasing`) to a NEW path,
     leaving the world / prompt / contexts / legacy probe bank untouched — so any run still reading the
     old assets is unaffected (no torn read)."""
     (out_root / "data" / "probes").mkdir(parents=True, exist_ok=True)
-    (out_root / f"data/probes/{world.name}_qa_probes.json").write_text(json.dumps({
-        "fact_ref": f"data/prompts/{world.name}_u.md",
-        "world": f"data/worlds/{world.name}.json",
-        "note": "QA-format eval probes; the question is SHARED with theorem_qa training via "
+    if mode == "equivalence":
+        note = ("QA-format eval probes (SYMMETRIC same-kind truth); the question is SHARED with "
+                "theorem_qa training via bakery.logic.phrasing. hop = undirected shortest-path "
+                "length. TRUE = same weakly-connected component (symmetric, both orders); the ONLY "
+                "FALSE family is cross-component. expect_heldout = same-kind at d>=2 + every cross.")
+    else:
+        note = ("QA-format eval probes; the question is SHARED with theorem_qa training via "
                 "bakery.logic.phrasing (so the baked yes/no decision transfers). hop = proof_depth = "
                 "shortest-path length. Balanced TRUE vs FALSE per depth so a Yes/No bias scores at "
-                "chance. expect_heldout = composed-forward (d>=2) + every negative.",
+                "chance. expect_heldout = composed-forward (d>=2) + every negative.")
+    payload = {
+        "fact_ref": f"data/prompts/{world.name}_u.md",
+        "world": f"data/worlds/{world.name}.json",
+    }
+    # Only the equivalence bank carries the relation_mode field, so DIRECTED output stays
+    # byte-identical to the committed lw_* QA banks (the field is additive, never retrofitted).
+    if mode != "directed":
+        payload["relation_mode"] = mode
+    payload.update({
+        "note": note,
         "realized_counts": realized,
         "n_probes": len(probes),
         "probes": probes,
-    }, indent=2) + "\n")
+    })
+    (out_root / f"data/probes/{world.name}_qa_probes.json").write_text(json.dumps(payload, indent=2) + "\n")
 
 
-def make_qa_banks(out_root: Path, seed_base: int, max_depth: int, true_per_depth: int) -> None:
+def make_qa_banks(out_root: Path, seed_base: int, max_depth: int, true_per_depth: int,
+                  worlds=None, mode: str = "directed") -> None:
     """(Re)build the QA probe banks from the EXISTING world specs (loaded, not regenerated). Touches
     only data/probes/<name>_qa_probes.json — never the worlds/prompts/contexts/legacy banks."""
-    for i, name in enumerate(WORLDS):
+    for i, name in enumerate(worlds if worlds is not None else WORLDS):
         wpath = out_root / f"data/worlds/{name}.json"
         if not wpath.exists():
             raise SystemExit(f"world {wpath} not found — generate the base assets first "
                              f"(python scripts/make_logic_world.py).")
         world = World.from_spec(json.loads(wpath.read_text()))
-        engine = ProofEngine(world)
+        engine = ProofEngine(world, relation_mode=mode)
         cfg = WorldGenConfig(name=name, seed=seed_base + i, max_depth=max_depth,
-                             true_per_depth=true_per_depth)
-        probes, realized = make_probes(world, engine, cfg, random.Random(seed_base + i + 1))
-        emit_qa_probes(world, probes, realized, out_root)
+                             true_per_depth=true_per_depth, relation_mode=mode)
+        probes, realized = make_probes(world, engine, cfg, random.Random(seed_base + i + 1), mode=mode)
+        emit_qa_probes(world, probes, realized, out_root, mode=mode)
         print(f"wrote {name}_qa_probes.json: {len(probes)} probes (true_per_depth={true_per_depth})")
 
 
 def build_one(cfg: WorldGenConfig, out_root: Path) -> tuple:
+    mode = cfg.relation_mode
     world = generate_world(cfg)
-    engine = ProofEngine(world)
-    probes, realized = make_probes(world, engine, cfg, random.Random(cfg.seed + 1))
-    emit(world, probes, realized, out_root)
+    engine = ProofEngine(world, relation_mode=mode)
+    probes, realized = make_probes(world, engine, cfg, random.Random(cfg.seed + 1), mode=mode)
+    emit(world, probes, realized, out_root, mode=mode)
     return world, probes
 
 
@@ -323,6 +360,11 @@ WORLDS = ["lw_alpha", "lw_beta", "lw_gamma", "lw_delta",
           "lw_epsilon", "lw_zeta", "lw_eta", "lw_theta",
           "lw_iota", "lw_kappa", "lw_lambda", "lw_mu"]
 
+# Equivalence-relation worlds (SYMMETRIC same-kind truth). Separate `eq_` namespace + a separate
+# seed base (so vocab is disjoint from the lw_* worlds), 4 worlds with the SAME gen params as lw_*.
+EQ_WORLDS = ["eq_alpha", "eq_beta", "eq_gamma", "eq_delta"]
+EQ_SEED_BASE = 500
+
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
@@ -332,21 +374,29 @@ def main():
     ap.add_argument("--max-depth", type=int, default=6)
     ap.add_argument("--n-components", type=int, default=4)
     ap.add_argument("--true-per-depth", type=int, default=8)
+    ap.add_argument("--relation-mode", choices=("directed", "equivalence"), default="directed",
+                    help="directed (default, the lw_* worlds) | equivalence (the eq_* same-kind worlds)")
     ap.add_argument("--qa", action="store_true",
                     help="(re)build ONLY the QA probe banks (*_qa_probes.json) from existing worlds — "
                          "unified question phrasing for the theorem_qa experiment; touches no other asset")
     args = ap.parse_args()
 
+    eq = args.relation_mode == "equivalence"
+    worlds = EQ_WORLDS if eq else WORLDS
+    # equivalence uses its OWN seed base (disjoint vocab from lw_*); directed keeps --seed-base default.
+    seed_base = EQ_SEED_BASE if (eq and args.seed_base == 100) else args.seed_base
+
     if args.qa:
         tpd = args.true_per_depth if args.true_per_depth != 8 else QA_TRUE_PER_DEPTH
-        make_qa_banks(args.out_root, args.seed_base, args.max_depth, tpd)
+        make_qa_banks(args.out_root, seed_base, args.max_depth, tpd, worlds=worlds, mode=args.relation_mode)
         return
 
     used: set = set()                                  # global vocabulary -> disjoint across worlds
-    for i, name in enumerate(WORLDS):
-        cfg = WorldGenConfig(name=name, seed=args.seed_base + i, n_atoms=args.n_atoms,
+    for i, name in enumerate(worlds):
+        cfg = WorldGenConfig(name=name, seed=seed_base + i, n_atoms=args.n_atoms,
                              max_depth=args.max_depth, n_components=args.n_components,
-                             true_per_depth=args.true_per_depth, name_used=used)
+                             true_per_depth=args.true_per_depth, relation_mode=args.relation_mode,
+                             name_used=used)
         world, probes = build_one(cfg, args.out_root)
         print(f"wrote {name}: {len(world.atoms)} atoms, {len(world.edges())} edges, "
               f"{len(world.components)} components, {len(probes)} probes")

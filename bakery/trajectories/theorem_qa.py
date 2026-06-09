@@ -64,6 +64,7 @@ class TheoremQADataConfig:
     split_seed: int = 0                 # train/held-out split is a pure function of (split_seed, depth)
     eval_relations_cap: int = 48        # bounded held-out QA used for eval-KL (bake fidelity)
     sample_trajectories: bool = True    # bake: sample y from base+u (canonical); False -> teacher-force ground truth
+    relation_mode: str = "directed"     # "directed" (reachability) | "equivalence" (same-component, symmetric)
 
 
 # --------------------------------------------------------------------------- relation selection
@@ -101,13 +102,16 @@ def _round_robin(items, count) -> list:
     return out
 
 
-def _build_relations(world, engine, bank, n, per_depth_cap, split_seed) -> list:
+def _build_relations(world, engine, bank, n, per_depth_cap, split_seed, mode="directed") -> list:
     """Deterministic, (split_seed, depth)-keyed selection of trained relations.
 
     depth-1: ALL edges (Yes) + matched non-edges (No) -> full coverage of the prompt's axioms.
     depths 2..n: up to `per_depth_cap` Yes (sampled) + matched No. Everything excludes any pair that
     is an `expect_heldout` eval probe (no leakage). Stable across n (per-depth seed), so n=2's depth-2
     training is identical to n=3's.
+
+    `mode` selects directed vs equivalence candidate pools (passed straight to `candidate_pools`); in
+    equivalence mode converse/missing pools are empty so the trained negatives are all cross-component.
     """
     heldout = {(p["subj"], p["obj"]) for p in bank if p.get("expect_heldout")}
     # A forward affirm ("Yes, every A is a B") states ONLY (A,B); a deny ("No, not every A is a B")
@@ -121,7 +125,7 @@ def _build_relations(world, engine, bank, n, per_depth_cap, split_seed) -> list:
         *(int(p.get("match_depth") or p.get("proof_depth") or p.get("hop") or 1) for p in bank),
         1,
     )
-    pools = relations.candidate_pools(world, engine, max_pool_depth)
+    pools = relations.candidate_pools(world, engine, max_pool_depth, mode=mode)
     used: set = set()
     trained: list = []
     for d in range(1, int(n) + 1):
@@ -177,15 +181,17 @@ class TheoremQABuilder(DatasetBuilder):
         if not wpath.exists():
             raise ValueError(f"world_spec {wpath!r} not found.")
         world = World.from_spec(json.loads(wpath.read_text()))
-        engine = ProofEngine(world)
+        mode = str(getattr(data_cfg, "relation_mode", "directed"))
+        engine = ProofEngine(world, relation_mode=mode)
         bpath = Path(data_cfg.probe_bank)
         bank = json.loads(bpath.read_text()).get("probes", []) if bpath.exists() else []
         n = int(data_cfg.train_max_depth)
         trained = _build_relations(world, engine, bank, n,
-                                   int(data_cfg.per_depth_train_cap), int(data_cfg.split_seed))
+                                   int(data_cfg.per_depth_train_cap), int(data_cfg.split_seed),
+                                   mode=mode)
         eval_rel = _eval_relations(bank, int(data_cfg.eval_relations_cap), int(data_cfg.split_seed) + 7)
         self._plan_cache = {
-            "world": world, "engine": engine, "bank": bank, "n": n,
+            "world": world, "engine": engine, "bank": bank, "n": n, "mode": mode,
             "trained": trained, "eval_rel": eval_rel, "data_cfg": data_cfg,
             "u_text": load_prompt(cfg.generation.base_prompt),
             "baked_text": load_prompt(cfg.generation.baked_prompt),
@@ -211,6 +217,7 @@ class TheoremQABuilder(DatasetBuilder):
         extra = {"sampler_kind": "sampled_qa" if sampling else "teacher_forced_qa",
                  "probe_bank": plan["data_cfg"].probe_bank,
                  "train_max_depth": plan["n"],
+                 "relation_mode": plan["mode"],     # criterion 5 provenance: directed vs equivalence
                  "split_seed": plan["data_cfg"].split_seed,
                  "n_trained_relations": len(plan["trained"])}
         reg = getattr(cfg, "regularization", None)
@@ -245,8 +252,9 @@ class TheoremQABuilder(DatasetBuilder):
 
     def _frame(self, r, x0_id, u_text, baked_text, tok) -> FramedTrajectory:
         world_name = self._plan_cache["world"].name
-        q = phrasing.question(world_name, r["subj"], r["obj"])
-        ans = phrasing.answer(r["subj"], r["obj"], r["provable"])
+        mode = self._plan_cache["mode"]
+        q = phrasing.question(world_name, r["subj"], r["obj"], mode=mode)
+        ans = phrasing.answer(r["subj"], r["obj"], r["provable"], mode=mode)
         ans_ids = tuple(tok(ans, add_special_tokens=False).input_ids)
         if not ans_ids:
             raise ValueError(f"empty answer tokenization for relation {r}")
@@ -268,7 +276,8 @@ class TheoremQABuilder(DatasetBuilder):
         gate disjoints on). Empty (all-stop) continuations are dropped."""
         tok = bundle.tokenizer
         world_name = self._plan_cache["world"].name
-        questions = [phrasing.question(world_name, r["subj"], r["obj"]) for r in relations]
+        mode = self._plan_cache["mode"]
+        questions = [phrasing.question(world_name, r["subj"], r["obj"], mode=mode) for r in relations]
         base_prefixes = [tuple(build_prefix_ids(tok, u_text, q)) for q in questions]
         baked_prefixes = [tuple(build_prefix_ids(tok, baked_text, q)) for q in questions]
         n_per = max(int(g.trajectories_per_context), 1)
@@ -376,6 +385,7 @@ class TheoremQABuilder(DatasetBuilder):
         if plan is None:
             return None
         world, probes = plan["world"], plan["bank"]
+        mode = plan.get("mode", "directed")
         tokenizer = getattr(self, "_tokenizer", None)
         if not probes or tokenizer is None:
             return None
@@ -386,7 +396,7 @@ class TheoremQABuilder(DatasetBuilder):
                 tokenizer.decode(iter_supervised_ids(t)[1], skip_special_tokens=True)
                 for t in train_trajectories
             ]
-            labels, summary = label_probes_dag(probes, continuations, world)
+            labels, summary = label_probes_dag(probes, continuations, world, mode=mode)
             balance = assert_probe_schema_and_balance(probes, require_balanced_for_dprime=True)
             if not sampling:
                 assert_probes_heldout(probes, labels)     # un-constructable if a held-out probe is leaked

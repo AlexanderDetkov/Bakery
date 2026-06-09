@@ -1,0 +1,3533 @@
+{
+  "fact_ref": "data/prompts/eq_alpha_u.md",
+  "world": "data/worlds/eq_alpha.json",
+  "relation_mode": "equivalence",
+  "note": "QA-format eval probes (SYMMETRIC same-kind truth); the question is SHARED with theorem_qa training via bakery.logic.phrasing. hop = undirected shortest-path length. TRUE = same weakly-connected component (symmetric, both orders); the ONLY FALSE family is cross-component. expect_heldout = same-kind at d>=2 + every cross.",
+  "realized_counts": {
+    "d1": {
+      "true": 16,
+      "false": 16,
+      "by_type": {
+        "converse": 0,
+        "cross": 16,
+        "missing_edge": 0
+      },
+      "gen_true": 9.38,
+      "gen_neg_matched": 9
+    },
+    "d2": {
+      "true": 16,
+      "false": 16,
+      "by_type": {
+        "converse": 0,
+        "cross": 16,
+        "missing_edge": 0
+      },
+      "gen_true": 9.56,
+      "gen_neg_matched": 10
+    },
+    "d3": {
+      "true": 16,
+      "false": 16,
+      "by_type": {
+        "converse": 0,
+        "cross": 16,
+        "missing_edge": 0
+      },
+      "gen_true": 9.62,
+      "gen_neg_matched": 10
+    },
+    "d4": {
+      "true": 16,
+      "false": 16,
+      "by_type": {
+        "converse": 0,
+        "cross": 16,
+        "missing_edge": 0
+      },
+      "gen_true": 9.62,
+      "gen_neg_matched": 10
+    },
+    "d5": {
+      "true": 16,
+      "false": 16,
+      "by_type": {
+        "converse": 0,
+        "cross": 16,
+        "missing_edge": 0
+      },
+      "gen_true": 9.38,
+      "gen_neg_matched": 9
+    },
+    "d6": {
+      "true": 16,
+      "false": 16,
+      "by_type": {
+        "converse": 0,
+        "cross": 16,
+        "missing_edge": 0
+      },
+      "gen_true": 9.38,
+      "gen_neg_matched": 9
+    }
+  },
+  "n_probes": 192,
+  "probes": [
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": 1,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Dilote",
+      "obj": "Rika",
+      "entities": [
+        "Dilote",
+        "Rika"
+      ],
+      "expect_heldout": false,
+      "question": "In eq_alpha, are Dilote and Rika the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": 1,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Sela",
+      "obj": "Povu",
+      "entities": [
+        "Sela",
+        "Povu"
+      ],
+      "expect_heldout": false,
+      "question": "In eq_alpha, are Sela and Povu the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": 1,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Ratoge",
+      "obj": "Rokone",
+      "entities": [
+        "Ratoge",
+        "Rokone"
+      ],
+      "expect_heldout": false,
+      "question": "In eq_alpha, are Ratoge and Rokone the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": 1,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Munuru",
+      "obj": "Kobatu",
+      "entities": [
+        "Munuru",
+        "Kobatu"
+      ],
+      "expect_heldout": false,
+      "question": "In eq_alpha, are Munuru and Kobatu the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": 1,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Sela",
+      "obj": "Munuru",
+      "entities": [
+        "Sela",
+        "Munuru"
+      ],
+      "expect_heldout": false,
+      "question": "In eq_alpha, are Sela and Munuru the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": 1,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Vofe",
+      "obj": "Guva",
+      "entities": [
+        "Vofe",
+        "Guva"
+      ],
+      "expect_heldout": false,
+      "question": "In eq_alpha, are Vofe and Guva the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": 1,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Datalo",
+      "obj": "Sela",
+      "entities": [
+        "Datalo",
+        "Sela"
+      ],
+      "expect_heldout": false,
+      "question": "In eq_alpha, are Datalo and Sela the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": 1,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Viladi",
+      "obj": "Papu",
+      "entities": [
+        "Viladi",
+        "Papu"
+      ],
+      "expect_heldout": false,
+      "question": "In eq_alpha, are Viladi and Papu the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": 1,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Sagi",
+      "obj": "Guva",
+      "entities": [
+        "Sagi",
+        "Guva"
+      ],
+      "expect_heldout": false,
+      "question": "In eq_alpha, are Sagi and Guva the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": 1,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Kale",
+      "obj": "Rotezu",
+      "entities": [
+        "Kale",
+        "Rotezu"
+      ],
+      "expect_heldout": false,
+      "question": "In eq_alpha, are Kale and Rotezu the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": 1,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Finami",
+      "obj": "Zota",
+      "entities": [
+        "Finami",
+        "Zota"
+      ],
+      "expect_heldout": false,
+      "question": "In eq_alpha, are Finami and Zota the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": 1,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Paro",
+      "obj": "Nilile",
+      "entities": [
+        "Paro",
+        "Nilile"
+      ],
+      "expect_heldout": false,
+      "question": "In eq_alpha, are Paro and Nilile the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": 1,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Puniso",
+      "obj": "Vipisu",
+      "entities": [
+        "Puniso",
+        "Vipisu"
+      ],
+      "expect_heldout": false,
+      "question": "In eq_alpha, are Puniso and Vipisu the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": 1,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Rofulo",
+      "obj": "Rika",
+      "entities": [
+        "Rofulo",
+        "Rika"
+      ],
+      "expect_heldout": false,
+      "question": "In eq_alpha, are Rofulo and Rika the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": 1,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Ratoge",
+      "obj": "Babe",
+      "entities": [
+        "Ratoge",
+        "Babe"
+      ],
+      "expect_heldout": false,
+      "question": "In eq_alpha, are Ratoge and Babe the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": 1,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Duzofu",
+      "obj": "Podo",
+      "entities": [
+        "Duzofu",
+        "Podo"
+      ],
+      "expect_heldout": false,
+      "question": "In eq_alpha, are Duzofu and Podo the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Rika",
+      "obj": "Paro",
+      "entities": [
+        "Rika",
+        "Paro"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Rika and Paro the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Sopofu",
+      "obj": "Paro",
+      "entities": [
+        "Sopofu",
+        "Paro"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Sopofu and Paro the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Libeke",
+      "obj": "Dafasi",
+      "entities": [
+        "Libeke",
+        "Dafasi"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Libeke and Dafasi the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Sopofu",
+      "obj": "Munuru",
+      "entities": [
+        "Sopofu",
+        "Munuru"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Sopofu and Munuru the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Sela",
+      "obj": "Nilile",
+      "entities": [
+        "Sela",
+        "Nilile"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Sela and Nilile the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Dafasi",
+      "obj": "Munuru",
+      "entities": [
+        "Dafasi",
+        "Munuru"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Dafasi and Munuru the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Kobatu",
+      "obj": "Nilile",
+      "entities": [
+        "Kobatu",
+        "Nilile"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Kobatu and Nilile the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Para",
+      "obj": "Munuru",
+      "entities": [
+        "Para",
+        "Munuru"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Para and Munuru the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Valu",
+      "obj": "Nilile",
+      "entities": [
+        "Valu",
+        "Nilile"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Valu and Nilile the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Vone",
+      "obj": "Munuru",
+      "entities": [
+        "Vone",
+        "Munuru"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Vone and Munuru the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Rika",
+      "obj": "Dafasi",
+      "entities": [
+        "Rika",
+        "Dafasi"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Rika and Dafasi the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Vone",
+      "obj": "Kobatu",
+      "entities": [
+        "Vone",
+        "Kobatu"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Vone and Kobatu the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Vipisu",
+      "obj": "Nilile",
+      "entities": [
+        "Vipisu",
+        "Nilile"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Vipisu and Nilile the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Sumora",
+      "obj": "Nilile",
+      "entities": [
+        "Sumora",
+        "Nilile"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Sumora and Nilile the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Pabesa",
+      "obj": "Nilile",
+      "entities": [
+        "Pabesa",
+        "Nilile"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Pabesa and Nilile the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Vipisu",
+      "obj": "Munuru",
+      "entities": [
+        "Vipisu",
+        "Munuru"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Vipisu and Munuru the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": 2,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Libeke",
+      "obj": "Finami",
+      "entities": [
+        "Libeke",
+        "Finami"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Libeke and Finami the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": 2,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Datalo",
+      "obj": "Munuru",
+      "entities": [
+        "Datalo",
+        "Munuru"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Datalo and Munuru the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": 2,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Ratoge",
+      "obj": "Pabesa",
+      "entities": [
+        "Ratoge",
+        "Pabesa"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Ratoge and Pabesa the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": 2,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Valu",
+      "obj": "Sopofu",
+      "entities": [
+        "Valu",
+        "Sopofu"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Valu and Sopofu the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": 2,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Guva",
+      "obj": "Rotezu",
+      "entities": [
+        "Guva",
+        "Rotezu"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Guva and Rotezu the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": 2,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Vone",
+      "obj": "Zozi",
+      "entities": [
+        "Vone",
+        "Zozi"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Vone and Zozi the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": 2,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Rokone",
+      "obj": "Larone",
+      "entities": [
+        "Rokone",
+        "Larone"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Rokone and Larone the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": 2,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Zozi",
+      "obj": "Puniso",
+      "entities": [
+        "Zozi",
+        "Puniso"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Zozi and Puniso the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": 2,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Dilote",
+      "obj": "Babe",
+      "entities": [
+        "Dilote",
+        "Babe"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Dilote and Babe the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": 2,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Sela",
+      "obj": "Kobatu",
+      "entities": [
+        "Sela",
+        "Kobatu"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Sela and Kobatu the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": 2,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Valu",
+      "obj": "Vibalo",
+      "entities": [
+        "Valu",
+        "Vibalo"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Valu and Vibalo the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": 2,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Bele",
+      "obj": "Zozi",
+      "entities": [
+        "Bele",
+        "Zozi"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Bele and Zozi the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": 2,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Guva",
+      "obj": "Podo",
+      "entities": [
+        "Guva",
+        "Podo"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Guva and Podo the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": 2,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Para",
+      "obj": "Lenaze",
+      "entities": [
+        "Para",
+        "Lenaze"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Para and Lenaze the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": 2,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Legu",
+      "obj": "Sumora",
+      "entities": [
+        "Legu",
+        "Sumora"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Legu and Sumora the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": 2,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Vofe",
+      "obj": "Duzofu",
+      "entities": [
+        "Vofe",
+        "Duzofu"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Vofe and Duzofu the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Paro",
+      "obj": "Vone",
+      "entities": [
+        "Paro",
+        "Vone"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Paro and Vone the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Dafasi",
+      "obj": "Bele",
+      "entities": [
+        "Dafasi",
+        "Bele"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Dafasi and Bele the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Finami",
+      "obj": "Vone",
+      "entities": [
+        "Finami",
+        "Vone"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Finami and Vone the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Libeke",
+      "obj": "Bele",
+      "entities": [
+        "Libeke",
+        "Bele"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Libeke and Bele the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Munuru",
+      "obj": "Zozi",
+      "entities": [
+        "Munuru",
+        "Zozi"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Munuru and Zozi the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Vofe",
+      "obj": "Vone",
+      "entities": [
+        "Vofe",
+        "Vone"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Vofe and Vone the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Finami",
+      "obj": "Bele",
+      "entities": [
+        "Finami",
+        "Bele"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Finami and Bele the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Kobatu",
+      "obj": "Vone",
+      "entities": [
+        "Kobatu",
+        "Vone"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Kobatu and Vone the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Dilote",
+      "obj": "Vone",
+      "entities": [
+        "Dilote",
+        "Vone"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Dilote and Vone the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Viti",
+      "obj": "Vone",
+      "entities": [
+        "Viti",
+        "Vone"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Viti and Vone the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Sagi",
+      "obj": "Zozi",
+      "entities": [
+        "Sagi",
+        "Zozi"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Sagi and Zozi the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Povu",
+      "obj": "Rika",
+      "entities": [
+        "Povu",
+        "Rika"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Povu and Rika the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Pabesa",
+      "obj": "Vone",
+      "entities": [
+        "Pabesa",
+        "Vone"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Pabesa and Vone the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Sagi",
+      "obj": "Vone",
+      "entities": [
+        "Sagi",
+        "Vone"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Sagi and Vone the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Guva",
+      "obj": "Bele",
+      "entities": [
+        "Guva",
+        "Bele"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Guva and Bele the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Dilote",
+      "obj": "Bele",
+      "entities": [
+        "Dilote",
+        "Bele"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Dilote and Bele the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": 3,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Vipisu",
+      "obj": "Bele",
+      "entities": [
+        "Vipisu",
+        "Bele"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Vipisu and Bele the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": 3,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Viti",
+      "obj": "Babe",
+      "entities": [
+        "Viti",
+        "Babe"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Viti and Babe the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": 3,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Rofulo",
+      "obj": "Ratoge",
+      "entities": [
+        "Rofulo",
+        "Ratoge"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Rofulo and Ratoge the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": 3,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Duzofu",
+      "obj": "Guva",
+      "entities": [
+        "Duzofu",
+        "Guva"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Duzofu and Guva the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": 3,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Ratoge",
+      "obj": "Rofulo",
+      "entities": [
+        "Ratoge",
+        "Rofulo"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Ratoge and Rofulo the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": 3,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Libeke",
+      "obj": "Datalo",
+      "entities": [
+        "Libeke",
+        "Datalo"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Libeke and Datalo the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": 3,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Kobatu",
+      "obj": "Povu",
+      "entities": [
+        "Kobatu",
+        "Povu"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Kobatu and Povu the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": 3,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Viti",
+      "obj": "Larone",
+      "entities": [
+        "Viti",
+        "Larone"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Viti and Larone the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": 3,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Podo",
+      "obj": "Sagi",
+      "entities": [
+        "Podo",
+        "Sagi"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Podo and Sagi the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": 3,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Vone",
+      "obj": "Vipisu",
+      "entities": [
+        "Vone",
+        "Vipisu"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Vone and Vipisu the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": 3,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Pabesa",
+      "obj": "Babe",
+      "entities": [
+        "Pabesa",
+        "Babe"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Pabesa and Babe the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": 3,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Povu",
+      "obj": "Legu",
+      "entities": [
+        "Povu",
+        "Legu"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Povu and Legu the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": 3,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Sopofu",
+      "obj": "Bele",
+      "entities": [
+        "Sopofu",
+        "Bele"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Sopofu and Bele the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": 3,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Sopofu",
+      "obj": "Puniso",
+      "entities": [
+        "Sopofu",
+        "Puniso"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Sopofu and Puniso the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": 3,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Datalo",
+      "obj": "Libeke",
+      "entities": [
+        "Datalo",
+        "Libeke"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Datalo and Libeke the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": 3,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Vone",
+      "obj": "Vibalo",
+      "entities": [
+        "Vone",
+        "Vibalo"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Vone and Vibalo the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Kobatu",
+      "obj": "Sopofu",
+      "entities": [
+        "Kobatu",
+        "Sopofu"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Kobatu and Sopofu the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Munuru",
+      "obj": "Vibalo",
+      "entities": [
+        "Munuru",
+        "Vibalo"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Munuru and Vibalo the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Sumora",
+      "obj": "Babe",
+      "entities": [
+        "Sumora",
+        "Babe"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Sumora and Babe the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Sela",
+      "obj": "Vibalo",
+      "entities": [
+        "Sela",
+        "Vibalo"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Sela and Vibalo the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Dafasi",
+      "obj": "Sopofu",
+      "entities": [
+        "Dafasi",
+        "Sopofu"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Dafasi and Sopofu the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Viti",
+      "obj": "Sopofu",
+      "entities": [
+        "Viti",
+        "Sopofu"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Viti and Sopofu the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Pelilo",
+      "obj": "Dilote",
+      "entities": [
+        "Pelilo",
+        "Dilote"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Pelilo and Dilote the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Legu",
+      "obj": "Vibalo",
+      "entities": [
+        "Legu",
+        "Vibalo"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Legu and Vibalo the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Rofulo",
+      "obj": "Sopofu",
+      "entities": [
+        "Rofulo",
+        "Sopofu"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Rofulo and Sopofu the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Libeke",
+      "obj": "Sopofu",
+      "entities": [
+        "Libeke",
+        "Sopofu"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Libeke and Sopofu the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Vone",
+      "obj": "Babe",
+      "entities": [
+        "Vone",
+        "Babe"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Vone and Babe the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Duzofu",
+      "obj": "Sopofu",
+      "entities": [
+        "Duzofu",
+        "Sopofu"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Duzofu and Sopofu the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Rofulo",
+      "obj": "Vibalo",
+      "entities": [
+        "Rofulo",
+        "Vibalo"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Rofulo and Vibalo the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Viti",
+      "obj": "Vibalo",
+      "entities": [
+        "Viti",
+        "Vibalo"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Viti and Vibalo the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Paro",
+      "obj": "Sopofu",
+      "entities": [
+        "Paro",
+        "Sopofu"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Paro and Sopofu the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Ratoge",
+      "obj": "Sopofu",
+      "entities": [
+        "Ratoge",
+        "Sopofu"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Ratoge and Sopofu the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": 4,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Bele",
+      "obj": "Para",
+      "entities": [
+        "Bele",
+        "Para"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Bele and Para the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": 4,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Larone",
+      "obj": "Rofulo",
+      "entities": [
+        "Larone",
+        "Rofulo"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Larone and Rofulo the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": 4,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Duzofu",
+      "obj": "Kale",
+      "entities": [
+        "Duzofu",
+        "Kale"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Duzofu and Kale the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": 4,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Vibalo",
+      "obj": "Sopofu",
+      "entities": [
+        "Vibalo",
+        "Sopofu"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Vibalo and Sopofu the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": 4,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Valu",
+      "obj": "Pelilo",
+      "entities": [
+        "Valu",
+        "Pelilo"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Valu and Pelilo the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": 4,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Dafasi",
+      "obj": "Podo",
+      "entities": [
+        "Dafasi",
+        "Podo"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Dafasi and Podo the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": 4,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Babe",
+      "obj": "Papu",
+      "entities": [
+        "Babe",
+        "Papu"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Babe and Papu the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": 4,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Sopofu",
+      "obj": "Vibalo",
+      "entities": [
+        "Sopofu",
+        "Vibalo"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Sopofu and Vibalo the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": 4,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Viti",
+      "obj": "Rika",
+      "entities": [
+        "Viti",
+        "Rika"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Viti and Rika the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": 4,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Podo",
+      "obj": "Dafasi",
+      "entities": [
+        "Podo",
+        "Dafasi"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Podo and Dafasi the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": 4,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Duzofu",
+      "obj": "Sagi",
+      "entities": [
+        "Duzofu",
+        "Sagi"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Duzofu and Sagi the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": 4,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Larone",
+      "obj": "Dilote",
+      "entities": [
+        "Larone",
+        "Dilote"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Larone and Dilote the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": 4,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Pelilo",
+      "obj": "Valu",
+      "entities": [
+        "Pelilo",
+        "Valu"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Pelilo and Valu the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": 4,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Sela",
+      "obj": "Libeke",
+      "entities": [
+        "Sela",
+        "Libeke"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Sela and Libeke the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": 4,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Para",
+      "obj": "Bele",
+      "entities": [
+        "Para",
+        "Bele"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Para and Bele the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": 4,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Sumora",
+      "obj": "Sela",
+      "entities": [
+        "Sumora",
+        "Sela"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Sumora and Sela the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Rofulo",
+      "obj": "Lenaze",
+      "entities": [
+        "Rofulo",
+        "Lenaze"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Rofulo and Lenaze the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Ratoge",
+      "obj": "Lenaze",
+      "entities": [
+        "Ratoge",
+        "Lenaze"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Ratoge and Lenaze the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Libeke",
+      "obj": "Lenaze",
+      "entities": [
+        "Libeke",
+        "Lenaze"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Libeke and Lenaze the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Dilote",
+      "obj": "Lenaze",
+      "entities": [
+        "Dilote",
+        "Lenaze"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Dilote and Lenaze the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Legu",
+      "obj": "Ratoge",
+      "entities": [
+        "Legu",
+        "Ratoge"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Legu and Ratoge the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Valu",
+      "obj": "Ratoge",
+      "entities": [
+        "Valu",
+        "Ratoge"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Valu and Ratoge the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Sopofu",
+      "obj": "Ratoge",
+      "entities": [
+        "Sopofu",
+        "Ratoge"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Sopofu and Ratoge the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Sumora",
+      "obj": "Ratoge",
+      "entities": [
+        "Sumora",
+        "Ratoge"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Sumora and Ratoge the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Munuru",
+      "obj": "Ratoge",
+      "entities": [
+        "Munuru",
+        "Ratoge"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Munuru and Ratoge the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Sumora",
+      "obj": "Lenaze",
+      "entities": [
+        "Sumora",
+        "Lenaze"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Sumora and Lenaze the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Datalo",
+      "obj": "Lenaze",
+      "entities": [
+        "Datalo",
+        "Lenaze"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Datalo and Lenaze the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Finami",
+      "obj": "Ratoge",
+      "entities": [
+        "Finami",
+        "Ratoge"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Finami and Ratoge the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Kobatu",
+      "obj": "Lenaze",
+      "entities": [
+        "Kobatu",
+        "Lenaze"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Kobatu and Lenaze the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Rotezu",
+      "obj": "Lenaze",
+      "entities": [
+        "Rotezu",
+        "Lenaze"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Rotezu and Lenaze the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Kobatu",
+      "obj": "Ratoge",
+      "entities": [
+        "Kobatu",
+        "Ratoge"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Kobatu and Ratoge the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Legu",
+      "obj": "Lenaze",
+      "entities": [
+        "Legu",
+        "Lenaze"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Legu and Lenaze the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": 5,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Lenaze",
+      "obj": "Vipisu",
+      "entities": [
+        "Lenaze",
+        "Vipisu"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Lenaze and Vipisu the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": 5,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Libeke",
+      "obj": "Povu",
+      "entities": [
+        "Libeke",
+        "Povu"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Libeke and Povu the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": 5,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Para",
+      "obj": "Valu",
+      "entities": [
+        "Para",
+        "Valu"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Para and Valu the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": 5,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Rofulo",
+      "obj": "Pabesa",
+      "entities": [
+        "Rofulo",
+        "Pabesa"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Rofulo and Pabesa the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": 5,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Rotezu",
+      "obj": "Paro",
+      "entities": [
+        "Rotezu",
+        "Paro"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Rotezu and Paro the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": 5,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Paro",
+      "obj": "Rotezu",
+      "entities": [
+        "Paro",
+        "Rotezu"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Paro and Rotezu the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": 5,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Larone",
+      "obj": "Viladi",
+      "entities": [
+        "Larone",
+        "Viladi"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Larone and Viladi the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": 5,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Nilile",
+      "obj": "Sagi",
+      "entities": [
+        "Nilile",
+        "Sagi"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Nilile and Sagi the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": 5,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Povu",
+      "obj": "Finami",
+      "entities": [
+        "Povu",
+        "Finami"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Povu and Finami the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": 5,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Povu",
+      "obj": "Libeke",
+      "entities": [
+        "Povu",
+        "Libeke"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Povu and Libeke the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": 5,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Ratoge",
+      "obj": "Papu",
+      "entities": [
+        "Ratoge",
+        "Papu"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Ratoge and Papu the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": 5,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Sagi",
+      "obj": "Nilile",
+      "entities": [
+        "Sagi",
+        "Nilile"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Sagi and Nilile the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": 5,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Dilote",
+      "obj": "Pabesa",
+      "entities": [
+        "Dilote",
+        "Pabesa"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Dilote and Pabesa the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": 5,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Povu",
+      "obj": "Sumora",
+      "entities": [
+        "Povu",
+        "Sumora"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Povu and Sumora the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": 5,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Munuru",
+      "obj": "Sumora",
+      "entities": [
+        "Munuru",
+        "Sumora"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Munuru and Sumora the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": 5,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Finami",
+      "obj": "Povu",
+      "entities": [
+        "Finami",
+        "Povu"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Finami and Povu the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Zozi",
+      "obj": "Guva",
+      "entities": [
+        "Zozi",
+        "Guva"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Zozi and Guva the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Munuru",
+      "obj": "Rotezu",
+      "entities": [
+        "Munuru",
+        "Rotezu"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Munuru and Rotezu the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Guva",
+      "obj": "Zota",
+      "entities": [
+        "Guva",
+        "Zota"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Guva and Zota the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Papu",
+      "obj": "Zota",
+      "entities": [
+        "Papu",
+        "Zota"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Papu and Zota the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Babe",
+      "obj": "Zota",
+      "entities": [
+        "Babe",
+        "Zota"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Babe and Zota the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Viladi",
+      "obj": "Rotezu",
+      "entities": [
+        "Viladi",
+        "Rotezu"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Viladi and Rotezu the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Pabesa",
+      "obj": "Zota",
+      "entities": [
+        "Pabesa",
+        "Zota"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Pabesa and Zota the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Libeke",
+      "obj": "Rotezu",
+      "entities": [
+        "Libeke",
+        "Rotezu"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Libeke and Rotezu the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Vone",
+      "obj": "Guva",
+      "entities": [
+        "Vone",
+        "Guva"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Vone and Guva the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Rofulo",
+      "obj": "Rotezu",
+      "entities": [
+        "Rofulo",
+        "Rotezu"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Rofulo and Rotezu the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Rofulo",
+      "obj": "Guva",
+      "entities": [
+        "Rofulo",
+        "Guva"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Rofulo and Guva the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Sagi",
+      "obj": "Zota",
+      "entities": [
+        "Sagi",
+        "Zota"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Sagi and Zota the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Paro",
+      "obj": "Zota",
+      "entities": [
+        "Paro",
+        "Zota"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Paro and Zota the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Bele",
+      "obj": "Rotezu",
+      "entities": [
+        "Bele",
+        "Rotezu"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Bele and Rotezu the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Sumora",
+      "obj": "Rotezu",
+      "entities": [
+        "Sumora",
+        "Rotezu"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Sumora and Rotezu the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Dilote",
+      "obj": "Zota",
+      "entities": [
+        "Dilote",
+        "Zota"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Dilote and Zota the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": 6,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Kobatu",
+      "obj": "Sumora",
+      "entities": [
+        "Kobatu",
+        "Sumora"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Kobatu and Sumora the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": 6,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Puniso",
+      "obj": "Para",
+      "entities": [
+        "Puniso",
+        "Para"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Puniso and Para the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": 6,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Kobatu",
+      "obj": "Finami",
+      "entities": [
+        "Kobatu",
+        "Finami"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Kobatu and Finami the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": 6,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Finami",
+      "obj": "Kobatu",
+      "entities": [
+        "Finami",
+        "Kobatu"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Finami and Kobatu the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": 6,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Zozi",
+      "obj": "Para",
+      "entities": [
+        "Zozi",
+        "Para"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Zozi and Para the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": 6,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Guva",
+      "obj": "Dafasi",
+      "entities": [
+        "Guva",
+        "Dafasi"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Guva and Dafasi the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": 6,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Dafasi",
+      "obj": "Rotezu",
+      "entities": [
+        "Dafasi",
+        "Rotezu"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Dafasi and Rotezu the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": 6,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Kale",
+      "obj": "Paro",
+      "entities": [
+        "Kale",
+        "Paro"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Kale and Paro the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": 6,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Rotezu",
+      "obj": "Dafasi",
+      "entities": [
+        "Rotezu",
+        "Dafasi"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Rotezu and Dafasi the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": 6,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Sumora",
+      "obj": "Kobatu",
+      "entities": [
+        "Sumora",
+        "Kobatu"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Sumora and Kobatu the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": 6,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Kobatu",
+      "obj": "Libeke",
+      "entities": [
+        "Kobatu",
+        "Libeke"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Kobatu and Libeke the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": 6,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Papu",
+      "obj": "Rokone",
+      "entities": [
+        "Papu",
+        "Rokone"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Papu and Rokone the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": 6,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Para",
+      "obj": "Vone",
+      "entities": [
+        "Para",
+        "Vone"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Para and Vone the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": 6,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Viladi",
+      "obj": "Viti",
+      "entities": [
+        "Viladi",
+        "Viti"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Viladi and Viti the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": 6,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Vone",
+      "obj": "Para",
+      "entities": [
+        "Vone",
+        "Para"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Vone and Para the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": 6,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Paro",
+      "obj": "Kale",
+      "entities": [
+        "Paro",
+        "Kale"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Paro and Kale the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Sopofu",
+      "obj": "Sagi",
+      "entities": [
+        "Sopofu",
+        "Sagi"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Sopofu and Sagi the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Pabesa",
+      "obj": "Finami",
+      "entities": [
+        "Pabesa",
+        "Finami"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Pabesa and Finami the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Nilile",
+      "obj": "Sumora",
+      "entities": [
+        "Nilile",
+        "Sumora"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Nilile and Sumora the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Rotezu",
+      "obj": "Libeke",
+      "entities": [
+        "Rotezu",
+        "Libeke"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Rotezu and Libeke the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Podo",
+      "obj": "Finami",
+      "entities": [
+        "Podo",
+        "Finami"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Podo and Finami the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Povu",
+      "obj": "Sagi",
+      "entities": [
+        "Povu",
+        "Sagi"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Povu and Sagi the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Vone",
+      "obj": "Sumora",
+      "entities": [
+        "Vone",
+        "Sumora"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Vone and Sumora the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Rika",
+      "obj": "Sagi",
+      "entities": [
+        "Rika",
+        "Sagi"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Rika and Sagi the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Datalo",
+      "obj": "Sagi",
+      "entities": [
+        "Datalo",
+        "Sagi"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Datalo and Sagi the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Vibalo",
+      "obj": "Sumora",
+      "entities": [
+        "Vibalo",
+        "Sumora"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Vibalo and Sumora the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Legu",
+      "obj": "Sagi",
+      "entities": [
+        "Legu",
+        "Sagi"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Legu and Sagi the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Para",
+      "obj": "Sumora",
+      "entities": [
+        "Para",
+        "Sumora"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Para and Sumora the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Rokone",
+      "obj": "Kale",
+      "entities": [
+        "Rokone",
+        "Kale"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Rokone and Kale the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Rofulo",
+      "obj": "Sumora",
+      "entities": [
+        "Rofulo",
+        "Sumora"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Rofulo and Sumora the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Viladi",
+      "obj": "Sagi",
+      "entities": [
+        "Viladi",
+        "Sagi"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Viladi and Sagi the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Vofe",
+      "obj": "Finami",
+      "entities": [
+        "Vofe",
+        "Finami"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_alpha, are Vofe and Finami the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    }
+  ]
+}

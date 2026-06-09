@@ -1,0 +1,1804 @@
+{
+  "fact_ref": "data/prompts/eq_delta_u.md",
+  "world": "data/worlds/eq_delta.json",
+  "note": "Forced-choice (no-CoT) probes. hop = proof_depth = shortest-path length. Balanced TRUE (provable forward) vs FALSE (converse|cross|missing_edge) at every depth so a Yes/No bias scores at chance (d'\u22480). expect_heldout: composed-forward (d>=2) + every negative are never stated by the atomic source.",
+  "realized_counts": {
+    "d1": {
+      "true": 8,
+      "false": 8,
+      "by_type": {
+        "converse": 0,
+        "cross": 8,
+        "missing_edge": 0
+      },
+      "gen_true": 9.62,
+      "gen_neg_matched": 10
+    },
+    "d2": {
+      "true": 8,
+      "false": 8,
+      "by_type": {
+        "converse": 0,
+        "cross": 8,
+        "missing_edge": 0
+      },
+      "gen_true": 9.5,
+      "gen_neg_matched": 9.25
+    },
+    "d3": {
+      "true": 8,
+      "false": 8,
+      "by_type": {
+        "converse": 0,
+        "cross": 8,
+        "missing_edge": 0
+      },
+      "gen_true": 9.38,
+      "gen_neg_matched": 9
+    },
+    "d4": {
+      "true": 8,
+      "false": 8,
+      "by_type": {
+        "converse": 0,
+        "cross": 8,
+        "missing_edge": 0
+      },
+      "gen_true": 9.5,
+      "gen_neg_matched": 9.25
+    },
+    "d5": {
+      "true": 8,
+      "false": 8,
+      "by_type": {
+        "converse": 0,
+        "cross": 8,
+        "missing_edge": 0
+      },
+      "gen_true": 9.25,
+      "gen_neg_matched": 9
+    },
+    "d6": {
+      "true": 8,
+      "false": 8,
+      "by_type": {
+        "converse": 0,
+        "cross": 8,
+        "missing_edge": 0
+      },
+      "gen_true": 9.75,
+      "gen_neg_matched": 10
+    }
+  },
+  "n_probes": 96,
+  "probes": [
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": 1,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Seti",
+      "obj": "Buzaba",
+      "entities": [
+        "Seti",
+        "Buzaba"
+      ],
+      "expect_heldout": false,
+      "question": "In eq_delta, are Seti and Buzaba the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": 1,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Lugena",
+      "obj": "Fonabi",
+      "entities": [
+        "Lugena",
+        "Fonabi"
+      ],
+      "expect_heldout": false,
+      "question": "In eq_delta, are Lugena and Fonabi the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": 1,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Pafaso",
+      "obj": "Bunena",
+      "entities": [
+        "Pafaso",
+        "Bunena"
+      ],
+      "expect_heldout": false,
+      "question": "In eq_delta, are Pafaso and Bunena the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": 1,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Mazavu",
+      "obj": "Kesabo",
+      "entities": [
+        "Mazavu",
+        "Kesabo"
+      ],
+      "expect_heldout": false,
+      "question": "In eq_delta, are Mazavu and Kesabo the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": 1,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Zaka",
+      "obj": "Dovusa",
+      "entities": [
+        "Zaka",
+        "Dovusa"
+      ],
+      "expect_heldout": false,
+      "question": "In eq_delta, are Zaka and Dovusa the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": 1,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Zitofi",
+      "obj": "Doguzo",
+      "entities": [
+        "Zitofi",
+        "Doguzo"
+      ],
+      "expect_heldout": false,
+      "question": "In eq_delta, are Zitofi and Doguzo the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": 1,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Semu",
+      "obj": "Nifula",
+      "entities": [
+        "Semu",
+        "Nifula"
+      ],
+      "expect_heldout": false,
+      "question": "In eq_delta, are Semu and Nifula the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": 1,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Dovusa",
+      "obj": "Zaka",
+      "entities": [
+        "Dovusa",
+        "Zaka"
+      ],
+      "expect_heldout": false,
+      "question": "In eq_delta, are Dovusa and Zaka the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Lugena",
+      "obj": "Vefabi",
+      "entities": [
+        "Lugena",
+        "Vefabi"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_delta, are Lugena and Vefabi the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Keka",
+      "obj": "Vefabi",
+      "entities": [
+        "Keka",
+        "Vefabi"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_delta, are Keka and Vefabi the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Dinefo",
+      "obj": "Vefabi",
+      "entities": [
+        "Dinefo",
+        "Vefabi"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_delta, are Dinefo and Vefabi the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Zoroni",
+      "obj": "Geteta",
+      "entities": [
+        "Zoroni",
+        "Geteta"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_delta, are Zoroni and Geteta the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Gipotu",
+      "obj": "Kesabo",
+      "entities": [
+        "Gipotu",
+        "Kesabo"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_delta, are Gipotu and Kesabo the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Datipe",
+      "obj": "Mazavu",
+      "entities": [
+        "Datipe",
+        "Mazavu"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_delta, are Datipe and Mazavu the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Fikage",
+      "obj": "Vefabi",
+      "entities": [
+        "Fikage",
+        "Vefabi"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_delta, are Fikage and Vefabi the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Veku",
+      "obj": "Vefabi",
+      "entities": [
+        "Veku",
+        "Vefabi"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_delta, are Veku and Vefabi the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": 2,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Kovato",
+      "obj": "Sege",
+      "entities": [
+        "Kovato",
+        "Sege"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_delta, are Kovato and Sege the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": 2,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Bezo",
+      "obj": "Dinefo",
+      "entities": [
+        "Bezo",
+        "Dinefo"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_delta, are Bezo and Dinefo the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": 2,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Lugena",
+      "obj": "Keka",
+      "entities": [
+        "Lugena",
+        "Keka"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_delta, are Lugena and Keka the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": 2,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Letiba",
+      "obj": "Mobe",
+      "entities": [
+        "Letiba",
+        "Mobe"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_delta, are Letiba and Mobe the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": 2,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Zaka",
+      "obj": "Geteta",
+      "entities": [
+        "Zaka",
+        "Geteta"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_delta, are Zaka and Geteta the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": 2,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Zufane",
+      "obj": "Dage",
+      "entities": [
+        "Zufane",
+        "Dage"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_delta, are Zufane and Dage the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": 2,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Doguzo",
+      "obj": "Veku",
+      "entities": [
+        "Doguzo",
+        "Veku"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_delta, are Doguzo and Veku the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": 2,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Timi",
+      "obj": "Gipotu",
+      "entities": [
+        "Timi",
+        "Gipotu"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_delta, are Timi and Gipotu the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Mobe",
+      "obj": "Lepabo",
+      "entities": [
+        "Mobe",
+        "Lepabo"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_delta, are Mobe and Lepabo the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Letiba",
+      "obj": "Pafaso",
+      "entities": [
+        "Letiba",
+        "Pafaso"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_delta, are Letiba and Pafaso the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Lata",
+      "obj": "Bezo",
+      "entities": [
+        "Lata",
+        "Bezo"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_delta, are Lata and Bezo the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Zitofi",
+      "obj": "Lepabo",
+      "entities": [
+        "Zitofi",
+        "Lepabo"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_delta, are Zitofi and Lepabo the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Mazavu",
+      "obj": "Bezo",
+      "entities": [
+        "Mazavu",
+        "Bezo"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_delta, are Mazavu and Bezo the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Timi",
+      "obj": "Bezo",
+      "entities": [
+        "Timi",
+        "Bezo"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_delta, are Timi and Bezo the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Vefabi",
+      "obj": "Letiba",
+      "entities": [
+        "Vefabi",
+        "Letiba"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_delta, are Vefabi and Letiba the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Veku",
+      "obj": "Letiba",
+      "entities": [
+        "Veku",
+        "Letiba"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_delta, are Veku and Letiba the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": 3,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Buzaba",
+      "obj": "Fikage",
+      "entities": [
+        "Buzaba",
+        "Fikage"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_delta, are Buzaba and Fikage the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": 3,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Seti",
+      "obj": "Sege",
+      "entities": [
+        "Seti",
+        "Sege"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_delta, are Seti and Sege the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": 3,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Veku",
+      "obj": "Semu",
+      "entities": [
+        "Veku",
+        "Semu"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_delta, are Veku and Semu the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": 3,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Kesabo",
+      "obj": "Zitofi",
+      "entities": [
+        "Kesabo",
+        "Zitofi"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_delta, are Kesabo and Zitofi the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": 3,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Siku",
+      "obj": "Bezo",
+      "entities": [
+        "Siku",
+        "Bezo"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_delta, are Siku and Bezo the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": 3,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Sabopa",
+      "obj": "Nilifi",
+      "entities": [
+        "Sabopa",
+        "Nilifi"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_delta, are Sabopa and Nilifi the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": 3,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Nilifi",
+      "obj": "Gisi",
+      "entities": [
+        "Nilifi",
+        "Gisi"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_delta, are Nilifi and Gisi the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": 3,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Mebupo",
+      "obj": "Dovusa",
+      "entities": [
+        "Mebupo",
+        "Dovusa"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_delta, are Mebupo and Dovusa the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Sege",
+      "obj": "Sabopa",
+      "entities": [
+        "Sege",
+        "Sabopa"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_delta, are Sege and Sabopa the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Bunena",
+      "obj": "Fikage",
+      "entities": [
+        "Bunena",
+        "Fikage"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_delta, are Bunena and Fikage the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Lata",
+      "obj": "Sabopa",
+      "entities": [
+        "Lata",
+        "Sabopa"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_delta, are Lata and Sabopa the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Dovusa",
+      "obj": "Bunena",
+      "entities": [
+        "Dovusa",
+        "Bunena"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_delta, are Dovusa and Bunena the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Geteta",
+      "obj": "Sabopa",
+      "entities": [
+        "Geteta",
+        "Sabopa"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_delta, are Geteta and Sabopa the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Sege",
+      "obj": "Bunena",
+      "entities": [
+        "Sege",
+        "Bunena"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_delta, are Sege and Bunena the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Semu",
+      "obj": "Fikage",
+      "entities": [
+        "Semu",
+        "Fikage"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_delta, are Semu and Fikage the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Lugena",
+      "obj": "Bunena",
+      "entities": [
+        "Lugena",
+        "Bunena"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_delta, are Lugena and Bunena the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": 4,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Seti",
+      "obj": "Keka",
+      "entities": [
+        "Seti",
+        "Keka"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_delta, are Seti and Keka the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": 4,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Veku",
+      "obj": "Bedigo",
+      "entities": [
+        "Veku",
+        "Bedigo"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_delta, are Veku and Bedigo the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": 4,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Sege",
+      "obj": "Buzaba",
+      "entities": [
+        "Sege",
+        "Buzaba"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_delta, are Sege and Buzaba the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": 4,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Dinefo",
+      "obj": "Nilifi",
+      "entities": [
+        "Dinefo",
+        "Nilifi"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_delta, are Dinefo and Nilifi the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": 4,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Dage",
+      "obj": "Mazavu",
+      "entities": [
+        "Dage",
+        "Mazavu"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_delta, are Dage and Mazavu the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": 4,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Zoroni",
+      "obj": "Veku",
+      "entities": [
+        "Zoroni",
+        "Veku"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_delta, are Zoroni and Veku the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": 4,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Lepabo",
+      "obj": "Zaka",
+      "entities": [
+        "Lepabo",
+        "Zaka"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_delta, are Lepabo and Zaka the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": 4,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Buzaba",
+      "obj": "Kovato",
+      "entities": [
+        "Buzaba",
+        "Kovato"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_delta, are Buzaba and Kovato the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Pafaso",
+      "obj": "Bedigo",
+      "entities": [
+        "Pafaso",
+        "Bedigo"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_delta, are Pafaso and Bedigo the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Vefabi",
+      "obj": "Nilifi",
+      "entities": [
+        "Vefabi",
+        "Nilifi"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_delta, are Vefabi and Nilifi the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Datipe",
+      "obj": "Mobe",
+      "entities": [
+        "Datipe",
+        "Mobe"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_delta, are Datipe and Mobe the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Zufane",
+      "obj": "Mobe",
+      "entities": [
+        "Zufane",
+        "Mobe"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_delta, are Zufane and Mobe the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Bunena",
+      "obj": "Kovato",
+      "entities": [
+        "Bunena",
+        "Kovato"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_delta, are Bunena and Kovato the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Timi",
+      "obj": "Nilifi",
+      "entities": [
+        "Timi",
+        "Nilifi"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_delta, are Timi and Nilifi the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Keka",
+      "obj": "Nilifi",
+      "entities": [
+        "Keka",
+        "Nilifi"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_delta, are Keka and Nilifi the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Buzaba",
+      "obj": "Mebupo",
+      "entities": [
+        "Buzaba",
+        "Mebupo"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_delta, are Buzaba and Mebupo the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": 5,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Zagu",
+      "obj": "Dovusa",
+      "entities": [
+        "Zagu",
+        "Dovusa"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_delta, are Zagu and Dovusa the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": 5,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Vefabi",
+      "obj": "Mebupo",
+      "entities": [
+        "Vefabi",
+        "Mebupo"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_delta, are Vefabi and Mebupo the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": 5,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Letiba",
+      "obj": "Lugena",
+      "entities": [
+        "Letiba",
+        "Lugena"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_delta, are Letiba and Lugena the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": 5,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Siku",
+      "obj": "Nilifi",
+      "entities": [
+        "Siku",
+        "Nilifi"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_delta, are Siku and Nilifi the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": 5,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Lugena",
+      "obj": "Sege",
+      "entities": [
+        "Lugena",
+        "Sege"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_delta, are Lugena and Sege the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": 5,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Datipe",
+      "obj": "Sabopa",
+      "entities": [
+        "Datipe",
+        "Sabopa"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_delta, are Datipe and Sabopa the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": 5,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Penu",
+      "obj": "Dinefo",
+      "entities": [
+        "Penu",
+        "Dinefo"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_delta, are Penu and Dinefo the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": 5,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Buzaba",
+      "obj": "Keka",
+      "entities": [
+        "Buzaba",
+        "Keka"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_delta, are Buzaba and Keka the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Fonabi",
+      "obj": "Penu",
+      "entities": [
+        "Fonabi",
+        "Penu"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_delta, are Fonabi and Penu the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Vefabi",
+      "obj": "Penu",
+      "entities": [
+        "Vefabi",
+        "Penu"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_delta, are Vefabi and Penu the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Nilifi",
+      "obj": "Keka",
+      "entities": [
+        "Nilifi",
+        "Keka"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_delta, are Nilifi and Keka the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Fikage",
+      "obj": "Penu",
+      "entities": [
+        "Fikage",
+        "Penu"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_delta, are Fikage and Penu the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Lugena",
+      "obj": "Penu",
+      "entities": [
+        "Lugena",
+        "Penu"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_delta, are Lugena and Penu the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Dinefo",
+      "obj": "Keka",
+      "entities": [
+        "Dinefo",
+        "Keka"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_delta, are Dinefo and Keka the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Semu",
+      "obj": "Keka",
+      "entities": [
+        "Semu",
+        "Keka"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_delta, are Semu and Keka the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Zoroni",
+      "obj": "Penu",
+      "entities": [
+        "Zoroni",
+        "Penu"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_delta, are Zoroni and Penu the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": 6,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Vefabi",
+      "obj": "Gipotu",
+      "entities": [
+        "Vefabi",
+        "Gipotu"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_delta, are Vefabi and Gipotu the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": 6,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Siku",
+      "obj": "Penu",
+      "entities": [
+        "Siku",
+        "Penu"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_delta, are Siku and Penu the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": 6,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Kesabo",
+      "obj": "Nifula",
+      "entities": [
+        "Kesabo",
+        "Nifula"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_delta, are Kesabo and Nifula the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": 6,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Gipotu",
+      "obj": "Vefabi",
+      "entities": [
+        "Gipotu",
+        "Vefabi"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_delta, are Gipotu and Vefabi the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": 6,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Semu",
+      "obj": "Mazavu",
+      "entities": [
+        "Semu",
+        "Mazavu"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_delta, are Semu and Mazavu the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": 6,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Geteta",
+      "obj": "Zagu",
+      "entities": [
+        "Geteta",
+        "Zagu"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_delta, are Geteta and Zagu the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": 6,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Nifula",
+      "obj": "Kesabo",
+      "entities": [
+        "Nifula",
+        "Kesabo"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_delta, are Nifula and Kesabo the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": 6,
+      "form": "same_kind",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Dinefo",
+      "obj": "Datipe",
+      "entities": [
+        "Dinefo",
+        "Datipe"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_delta, are Dinefo and Datipe the same kind?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Datipe",
+      "obj": "Veku",
+      "entities": [
+        "Datipe",
+        "Veku"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_delta, are Datipe and Veku the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Fikage",
+      "obj": "Semu",
+      "entities": [
+        "Fikage",
+        "Semu"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_delta, are Fikage and Semu the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Timi",
+      "obj": "Veku",
+      "entities": [
+        "Timi",
+        "Veku"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_delta, are Timi and Veku the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Letiba",
+      "obj": "Nifula",
+      "entities": [
+        "Letiba",
+        "Nifula"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_delta, are Letiba and Nifula the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Fikage",
+      "obj": "Nifula",
+      "entities": [
+        "Fikage",
+        "Nifula"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_delta, are Fikage and Nifula the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Mobe",
+      "obj": "Nifula",
+      "entities": [
+        "Mobe",
+        "Nifula"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_delta, are Mobe and Nifula the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Penu",
+      "obj": "Zagu",
+      "entities": [
+        "Penu",
+        "Zagu"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_delta, are Penu and Zagu the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Bunena",
+      "obj": "Veku",
+      "entities": [
+        "Bunena",
+        "Veku"
+      ],
+      "expect_heldout": true,
+      "question": "In eq_delta, are Bunena and Veku the same kind?",
+      "pos": " No",
+      "neg": " Yes"
+    }
+  ]
+}

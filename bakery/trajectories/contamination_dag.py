@@ -65,29 +65,43 @@ def _subj_obj(pr) -> tuple:
     return (b, a) if pr.get("form") == "converse" else (a, b)
 
 
-def _states_relation(low_text: str, subj: str, obj: str) -> bool:
-    """Does `low_text` assert SUBJ→OBJ? subject mentioned before object, OR both + a reversal cue."""
+def _states_relation(low_text: str, subj: str, obj: str, mode: str = "directed") -> bool:
+    """Does `low_text` assert the SUBJ/OBJ relation?
+
+    ``mode="directed"`` (default, UNCHANGED): asserts SUBJ→OBJ if the subject is mentioned before the
+    object, OR both appear with a reversal cue.
+
+    ``mode="equivalence"``: the trained continuation "X and Y are the same kind" is SYMMETRIC, so the
+    relation is stated whenever BOTH entities co-occur in the text, regardless of order (and the
+    same-kind statement covers both probe orders). A "not the same kind" continuation is the negative
+    statement and still co-occurs both entities — it likewise STATES (settles) the same-kind question,
+    so it counts as stated; the contamination guard only needs to know the held-out pair was discussed.
+    """
     i, j = low_text.find(subj.lower()), low_text.find(obj.lower())
-    if i != -1 and j != -1:
-        if i < j:                                  # "every SUBJ ... is a ... OBJ" — forward assertion
-            return True
-        if _has_reversal_cue(low_text):            # both present + reverse/negation claim
-            return True
+    if i == -1 or j == -1:
+        return False
+    if mode == "equivalence":                      # symmetric: co-occurrence settles the same-kind Q
+        return True
+    if i < j:                                       # "every SUBJ ... is a ... OBJ" — forward assertion
+        return True
+    if _has_reversal_cue(low_text):                 # both present + reverse/negation claim
+        return True
     return False
 
 
-def label_probes_dag(probes, continuations, world) -> tuple:
+def label_probes_dag(probes, continuations, world, mode: str = "directed") -> tuple:
     """Label every probe `stated` | `held_out` against decoded TRAIN continuations (direction-aware).
 
     Returns ``(labels, summary)``; each label is ``{label, form, distance, neg_type, provable}``
     aligned to `probes`. Same contract as `contamination.label_probes`, enriched with `neg_type` /
-    `provable` so the d′ metric can stratify negatives.
+    `provable` so the d′ metric can stratify negatives. `mode` selects directed vs equivalence
+    "stated" semantics (symmetric same-kind statements settle both orders) — directed is byte-identical.
     """
     lows = [c.lower() for c in continuations]
     labels = []
     for pr in probes:
         subj, obj = _subj_obj(pr)
-        stated = any(_states_relation(low, subj, obj) for low in lows)
+        stated = any(_states_relation(low, subj, obj, mode) for low in lows)
         labels.append({
             "label": "stated" if stated else "held_out",
             "form": pr.get("form", "forward"),

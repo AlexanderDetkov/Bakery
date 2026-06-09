@@ -1,0 +1,331 @@
+{
+  "name": "eq_alpha",
+  "atoms": [
+    "Puniso",
+    "Valu",
+    "Bele",
+    "Vibalo",
+    "Lenaze",
+    "Pelilo",
+    "Para",
+    "Vone",
+    "Sopofu",
+    "Vipisu",
+    "Zozi",
+    "Viladi",
+    "Rofulo",
+    "Rika",
+    "Babe",
+    "Ratoge",
+    "Rokone",
+    "Pabesa",
+    "Dilote",
+    "Larone",
+    "Papu",
+    "Viti",
+    "Kobatu",
+    "Munuru",
+    "Sela",
+    "Datalo",
+    "Legu",
+    "Zota",
+    "Libeke",
+    "Povu",
+    "Sumora",
+    "Finami",
+    "Paro",
+    "Nilile",
+    "Duzofu",
+    "Podo",
+    "Vofe",
+    "Guva",
+    "Sagi",
+    "Rotezu",
+    "Kale",
+    "Dafasi"
+  ],
+  "rules": [
+    {
+      "body": [
+        "Puniso"
+      ],
+      "head": "Valu"
+    },
+    {
+      "body": [
+        "Valu"
+      ],
+      "head": "Bele"
+    },
+    {
+      "body": [
+        "Bele"
+      ],
+      "head": "Vibalo"
+    },
+    {
+      "body": [
+        "Vibalo"
+      ],
+      "head": "Lenaze"
+    },
+    {
+      "body": [
+        "Lenaze"
+      ],
+      "head": "Pelilo"
+    },
+    {
+      "body": [
+        "Pelilo"
+      ],
+      "head": "Para"
+    },
+    {
+      "body": [
+        "Valu"
+      ],
+      "head": "Vone"
+    },
+    {
+      "body": [
+        "Vone"
+      ],
+      "head": "Sopofu"
+    },
+    {
+      "body": [
+        "Puniso"
+      ],
+      "head": "Vipisu"
+    },
+    {
+      "body": [
+        "Valu"
+      ],
+      "head": "Zozi"
+    },
+    {
+      "body": [
+        "Viladi"
+      ],
+      "head": "Rofulo"
+    },
+    {
+      "body": [
+        "Rofulo"
+      ],
+      "head": "Rika"
+    },
+    {
+      "body": [
+        "Rika"
+      ],
+      "head": "Babe"
+    },
+    {
+      "body": [
+        "Babe"
+      ],
+      "head": "Ratoge"
+    },
+    {
+      "body": [
+        "Ratoge"
+      ],
+      "head": "Rokone"
+    },
+    {
+      "body": [
+        "Rokone"
+      ],
+      "head": "Pabesa"
+    },
+    {
+      "body": [
+        "Rika"
+      ],
+      "head": "Dilote"
+    },
+    {
+      "body": [
+        "Ratoge"
+      ],
+      "head": "Larone"
+    },
+    {
+      "body": [
+        "Viladi"
+      ],
+      "head": "Papu"
+    },
+    {
+      "body": [
+        "Rokone"
+      ],
+      "head": "Viti"
+    },
+    {
+      "body": [
+        "Kobatu"
+      ],
+      "head": "Munuru"
+    },
+    {
+      "body": [
+        "Munuru"
+      ],
+      "head": "Sela"
+    },
+    {
+      "body": [
+        "Sela"
+      ],
+      "head": "Datalo"
+    },
+    {
+      "body": [
+        "Datalo"
+      ],
+      "head": "Legu"
+    },
+    {
+      "body": [
+        "Legu"
+      ],
+      "head": "Zota"
+    },
+    {
+      "body": [
+        "Zota"
+      ],
+      "head": "Libeke"
+    },
+    {
+      "body": [
+        "Sela"
+      ],
+      "head": "Povu"
+    },
+    {
+      "body": [
+        "Zota"
+      ],
+      "head": "Sumora"
+    },
+    {
+      "body": [
+        "Zota"
+      ],
+      "head": "Finami"
+    },
+    {
+      "body": [
+        "Paro"
+      ],
+      "head": "Nilile"
+    },
+    {
+      "body": [
+        "Nilile"
+      ],
+      "head": "Duzofu"
+    },
+    {
+      "body": [
+        "Duzofu"
+      ],
+      "head": "Podo"
+    },
+    {
+      "body": [
+        "Podo"
+      ],
+      "head": "Vofe"
+    },
+    {
+      "body": [
+        "Vofe"
+      ],
+      "head": "Guva"
+    },
+    {
+      "body": [
+        "Guva"
+      ],
+      "head": "Sagi"
+    },
+    {
+      "body": [
+        "Vofe"
+      ],
+      "head": "Rotezu"
+    },
+    {
+      "body": [
+        "Rotezu"
+      ],
+      "head": "Kale"
+    },
+    {
+      "body": [
+        "Paro"
+      ],
+      "head": "Dafasi"
+    }
+  ],
+  "components": [
+    [
+      "Babe",
+      "Dilote",
+      "Larone",
+      "Pabesa",
+      "Papu",
+      "Ratoge",
+      "Rika",
+      "Rofulo",
+      "Rokone",
+      "Viladi",
+      "Viti"
+    ],
+    [
+      "Bele",
+      "Lenaze",
+      "Para",
+      "Pelilo",
+      "Puniso",
+      "Sopofu",
+      "Valu",
+      "Vibalo",
+      "Vipisu",
+      "Vone",
+      "Zozi"
+    ],
+    [
+      "Dafasi",
+      "Duzofu",
+      "Guva",
+      "Kale",
+      "Nilile",
+      "Paro",
+      "Podo",
+      "Rotezu",
+      "Sagi",
+      "Vofe"
+    ],
+    [
+      "Datalo",
+      "Finami",
+      "Kobatu",
+      "Legu",
+      "Libeke",
+      "Munuru",
+      "Povu",
+      "Sela",
+      "Sumora",
+      "Zota"
+    ]
+  ],
+  "facts": [],
+  "note": "Definite-implication DAG; edges = taught axioms. Acyclic by construction. proof_depth(X,Z) = shortest directed path length = #modus-ponens steps."
+}

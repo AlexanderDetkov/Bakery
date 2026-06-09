@@ -1,0 +1,230 @@
+{
+  "fact_ref": "data/prompts/eq_delta_u.md",
+  "note": "Atomic-eliciting contexts. With source_control='atomic' the guard drops any sample stating a composed/cross/reverse relation, so the baking support = the atomic axioms. DISJOINT from data/probes/eq_delta_probes.json.",
+  "contexts": [
+    {
+      "category": "atomic",
+      "text": "In eq_delta, complete the rule with the single immediate kind: Every Kesabo is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_delta, state the one direct rule of the form 'Every Kesabo is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_delta, complete the rule with the single immediate kind: Every Mazavu is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_delta, state the one direct rule of the form 'Every Mazavu is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_delta, complete the rule with the single immediate kind: Every Zoroni is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_delta, state the one direct rule of the form 'Every Zoroni is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_delta, complete the rule with the single immediate kind: Every Zitofi is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_delta, state the one direct rule of the form 'Every Zitofi is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_delta, complete the rule with the single immediate kind: Every Doguzo is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_delta, state the one direct rule of the form 'Every Doguzo is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_delta, complete the rule with the single immediate kind: Every Dage is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_delta, state the one direct rule of the form 'Every Dage is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_delta, complete the rule with the single immediate kind: Every Nifula is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_delta, state the one direct rule of the form 'Every Nifula is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_delta, complete the rule with the single immediate kind: Every Geteta is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_delta, state the one direct rule of the form 'Every Geteta is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_delta, complete the rule with the single immediate kind: Every Dovusa is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_delta, state the one direct rule of the form 'Every Dovusa is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_delta, complete the rule with the single immediate kind: Every Zaka is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_delta, state the one direct rule of the form 'Every Zaka is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_delta, complete the rule with the single immediate kind: Every Kuri is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_delta, state the one direct rule of the form 'Every Kuri is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_delta, complete the rule with the single immediate kind: Every Mebupo is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_delta, state the one direct rule of the form 'Every Mebupo is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_delta, complete the rule with the single immediate kind: Every Gipotu is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_delta, state the one direct rule of the form 'Every Gipotu is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_delta, complete the rule with the single immediate kind: Every Vefabi is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_delta, state the one direct rule of the form 'Every Vefabi is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_delta, complete the rule with the single immediate kind: Every Lepabo is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_delta, state the one direct rule of the form 'Every Lepabo is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_delta, complete the rule with the single immediate kind: Every Dinefo is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_delta, state the one direct rule of the form 'Every Dinefo is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_delta, complete the rule with the single immediate kind: Every Gisi is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_delta, state the one direct rule of the form 'Every Gisi is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_delta, complete the rule with the single immediate kind: Every Pafaso is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_delta, state the one direct rule of the form 'Every Pafaso is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_delta, complete the rule with the single immediate kind: Every Bunena is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_delta, state the one direct rule of the form 'Every Bunena is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_delta, complete the rule with the single immediate kind: Every Nilifi is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_delta, state the one direct rule of the form 'Every Nilifi is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_delta, complete the rule with the single immediate kind: Every Penu is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_delta, state the one direct rule of the form 'Every Penu is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_delta, complete the rule with the single immediate kind: Every Buzaba is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_delta, state the one direct rule of the form 'Every Buzaba is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_delta, complete the rule with the single immediate kind: Every Seti is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_delta, state the one direct rule of the form 'Every Seti is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_delta, complete the rule with the single immediate kind: Every Letiba is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_delta, state the one direct rule of the form 'Every Letiba is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_delta, complete the rule with the single immediate kind: Every Fikage is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_delta, state the one direct rule of the form 'Every Fikage is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_delta, complete the rule with the single immediate kind: Every Kovato is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_delta, state the one direct rule of the form 'Every Kovato is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_delta, complete the rule with the single immediate kind: Every Keka is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_delta, state the one direct rule of the form 'Every Keka is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_delta, complete the rule with the single immediate kind: Every Fonabi is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In eq_delta, state the one direct rule of the form 'Every Fonabi is a ...' in a single short sentence."
+    }
+  ]
+}

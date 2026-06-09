@@ -13,21 +13,32 @@ logP(" Yes")−logP(" No") d′ metric (which is tokenization-robust to the lead
 from __future__ import annotations
 
 
-def question(world_name: str, subj: str, obj: str) -> str:
-    """The forced-choice question, identical for training and eval."""
+def question(world_name: str, subj: str, obj: str, mode: str = "directed") -> str:
+    """The forced-choice question, identical for training and eval.
+
+    ``mode="directed"`` (default) asks the DIRECTED is-a question; ``mode="equivalence"`` asks the
+    SYMMETRIC same-kind question ("are SUBJ and OBJ the same kind?").
+    """
+    if mode == "equivalence":
+        return f"In {world_name}, are {subj} and {obj} the same kind?"
     return f"In {world_name}, is every {subj} a {obj}?"
 
 
-def affirm_answer(subj: str, obj: str) -> str:
+def affirm_answer(subj: str, obj: str, mode: str = "directed") -> str:
     """Declarative YES answer — restates the relation (many supervised content tokens)."""
+    if mode == "equivalence":
+        return f"Yes, {subj} and {obj} are the same kind."
     return f"Yes, every {subj} is a {obj}."
 
 
-def deny_answer(subj: str, obj: str) -> str:
+def deny_answer(subj: str, obj: str, mode: str = "directed") -> str:
     """Declarative NO answer — states the relation FAILS (carries the closed-world 'only these rules')."""
+    if mode == "equivalence":
+        return f"No, {subj} and {obj} are not the same kind."
     return f"No, not every {subj} is a {obj}."
 
 
-def answer(subj: str, obj: str, provable: bool) -> str:
+def answer(subj: str, obj: str, provable: bool, mode: str = "directed") -> str:
     """The ground-truth declarative answer for the (subj ⊑ obj) question."""
-    return affirm_answer(subj, obj) if provable else deny_answer(subj, obj)
+    return (affirm_answer(subj, obj, mode) if provable
+            else deny_answer(subj, obj, mode))

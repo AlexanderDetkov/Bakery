@@ -11,7 +11,12 @@ Two independent computations of reachability + minimal depth (BFS forward-chaini
 does what we expect on every pair of every random world (see tests/test_proof_engine.py).
 """
 
-from bakery.logic.proof_engine import ProofEngine, ProofResult, brute_force_reachability
+from bakery.logic.proof_engine import (
+    ProofEngine,
+    ProofResult,
+    brute_force_reachability,
+    brute_force_reachability_undirected,
+)
 from bakery.logic.world import Rule, World, is_acyclic, weak_components
 
 __all__ = [
@@ -22,4 +27,5 @@ __all__ = [
     "ProofEngine",
     "ProofResult",
     "brute_force_reachability",
+    "brute_force_reachability_undirected",
 ]

@@ -80,5 +80,6 @@ is faster still): s12 87.7→48.6 s/epoch = **1.80×**; s13 93.2→53.4 s/epoch 
 by less than the irreducible seed-to-seed variation, at ~1.8× end-to-end throughput.** Safe to use for
 throughput when this check is cited; keep default-off and prefer cache-off for a bit-reproducible headline.
 Caveats: n=1, 2 seeds, cpu backend, sampled-teacher (the CoT-leak is constant across off/on so it cancels in
-the paired contrast). Combining with eval-batching (read-only, bit-exact on the test fake) should raise the
+the paired contrast). Combining with eval-batching (read-only, bit-exact on the fake; auto-chunks at
+`propagation.DEFAULT_PROBE_CHUNK` rows/forward → memory-safe on 8B, after the OOM fix) should raise the
 realized whole-run speedup further by shrinking the eval term that currently dilutes the ratio.

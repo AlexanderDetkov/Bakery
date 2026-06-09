@@ -108,7 +108,8 @@ class EvalConfig:
     eval_with_base_prompt: bool = True              # also report baked-model-WITH-prompt (re-prompting)
     # SPEEDUP (opt-in). False = today's exact unbatched per-probe scoring loop. True = batch the probe
     # logprob forwards (same full-vocab float32 math; bit-exact in fp32, tol-equivalent + flip-free in
-    # bf16). probe_batch_size 0 = all rows in one forward; >0 caps rows/forward for memory.
+    # bf16). probe_batch_size 0 = memory-safe auto chunk (propagation.DEFAULT_PROBE_CHUNK rows/forward);
+    # >0 = explicit rows/forward (caller's memory risk). 0 does NOT mean "all rows" — that OOMs at 8B.
     batch_probes: bool = False
     probe_batch_size: int = 0
 

@@ -19,7 +19,7 @@ from types import SimpleNamespace
 import torch
 
 from bakery.eval.metrics.propagation import (
-    _belief_per_probe, _paired_belief_batched, propagation,
+    DEFAULT_PROBE_CHUNK, _belief_per_probe, _paired_belief_batched, propagation,
 )
 from bakery.eval.metrics.dprime import _yesness_per_probe, dprime
 
@@ -61,9 +61,11 @@ class EqFakeModel:
 
     def __init__(self, flag):
         self.flag = flag
+        self.calls = []                 # batch size B of each forward — lets a test assert chunking bounds memory
 
     def __call__(self, input_ids, attention_mask=None, position_ids=None):
         B, L = input_ids.shape
+        self.calls.append(B)
         base = torch.arange(VOCAB, dtype=torch.float32) + 1.0
         bump = 100.0 if self.flag["adapter_on"] else 0.0
         logits = torch.zeros(B, L, VOCAB)
@@ -152,6 +154,25 @@ def test_probe_batch_size_chunking_is_invariant():
     chunked = _paired_belief_batched(bundle, _PROBES, "MARK", bundle.base, "cpu",
                                      pos_of=lambda pr: pr["pos"], neg_of=lambda pr: pr["neg"], chunk=2)
     _equal(full, chunked, tol=0.0)
+
+
+def test_default_chunk_bounds_batch():
+    """chunk<=0 must AUTO-CHUNK (memory-safe), not batch every row into ONE forward — the OOM bug.
+
+    Asserts (a) the auto-default path is value-identical to the unbatched loop, and (b) the model saw
+    MULTIPLE forwards each with batch <= DEFAULT_PROBE_CHUNK, so the [n_rows, seq, vocab] logits tensor
+    that OOM'd a real 8B can never be materialized."""
+    probes = _PROBES * 4                                 # >> DEFAULT_PROBE_CHUNK rows (regardless of variant counts)
+    bundle = EqFakeBundle()
+    unb = _belief_per_probe(bundle, probes, "MARK", bundle.base, "cpu")
+    bundle._model.calls.clear()                          # count ONLY the batched path's forwards
+    bat = _paired_belief_batched(bundle, probes, "MARK", bundle.base, "cpu",
+                                 pos_of=lambda pr: pr["pos"], neg_of=lambda pr: pr["neg"], chunk=0)
+    _equal(unb, bat, tol=0.0)                            # auto-chunk is value-identical to the unbatched loop
+    calls = bundle._model.calls
+    assert len(calls) >= 2, f"chunk<=0 must auto-chunk into multiple forwards, got {calls}"
+    assert max(calls) <= DEFAULT_PROBE_CHUNK, \
+        f"a forward exceeded DEFAULT_PROBE_CHUNK={DEFAULT_PROBE_CHUNK}: {calls}"
 
 
 def _ctx(tmp_path, bundle, batch_probes):

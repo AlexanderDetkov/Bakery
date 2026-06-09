@@ -101,6 +101,15 @@ def _belief_per_probe(bundle, probes, system_text, ctx_mgr, device,
 # in fp32, tol-equivalent in bf16 (batched-GEMM reduction order). Proven by tests/test_speedup_equivalence.
 # ======================================================================================
 
+# Rows per forward when probe_batch_size<=0. The batched forward materializes a [chunk, seq, vocab] logits
+# tensor (full vocab, no top-k); at vocab~128k and seq~500 that is ~1GB bf16 at chunk=8, which fits the
+# headroom over an ~18GB 8B base. A non-positive chunk auto-uses THIS (memory-safe), never "all rows at
+# once" — batching ALL probe rows into one forward OOMs a 24GB card (the bug this guards against). Chunking
+# is numerically transparent: each row is isolated by its left-pad + attention_mask + position_ids, so
+# per-row results don't depend on batchmates (bit-exact on the fake; tol-equivalent on real bf16).
+DEFAULT_PROBE_CHUNK = 8
+
+
 def _variant_id_lists(tokenizer, answer_text) -> list:
     """The exact dedup'd tokenization variants `_answer_logprob` scores (text, stripped, space+stripped)."""
     out, seen = [], set()
@@ -119,10 +128,13 @@ def _batched_seq_logprobs(model, tokenizer, rows, device, pad_id, chunk=0) -> li
     LEFT-pads (the tokenizer's own side) so every row is right-aligned; `position_ids = cumsum(mask)-1`
     give real tokens absolute positions 0..len-1 (identical to the unbatched single-row call → RoPE sees
     the same positions); padded keys are masked out, so each row attends only to its own real tokens.
+
+    `chunk<=0` uses DEFAULT_PROBE_CHUNK (memory-safe), NOT all rows — one forward over every probe row
+    would materialize a [n_rows, seq, vocab] logits tensor and OOM. Chunking changes nothing numerically.
     """
     n = len(rows)
     out = [0.0] * n
-    step = chunk if (chunk and chunk > 0) else n
+    step = chunk if (chunk and chunk > 0) else DEFAULT_PROBE_CHUNK
     for s in range(0, n, step):
         block = rows[s:s + step]
         seqs = [list(p) + list(a) for p, a in block]

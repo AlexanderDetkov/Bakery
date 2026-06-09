@@ -418,3 +418,10 @@ Fig: results/bake_theorem_qa/_fig_bake_vs_sft_n1s0.png. Question kept ACTIVE.
 **Launched/active:** qa-ssft-n2-s0, qa-ssft-n3-s0 chained on GPU0 (curriculum grid); qa-sbake-n1-s0-long
 (grokking) continues on GPU1 (ep ~5150/10000). **Enqueued:** [[q-fidelity-vs-sharpness-frontier]] (new);
 teacher-forced clean bake+SFT pair + grokking-length SFT (listed in the active question).
+
+_S4c2 follow-up (09:23): queued the TEACHER-FORCED clean control (qa-tf-{bake,sft}-n1-s0,
+data.sample_trajectories=False, 1000 ep) on a process-gated GPU0 driver — auto-launches after the sampled-SFT
+sweep (qa-ssft-n{2,3}-s0) finishes (~14:45). Removes the sampled-CoT leak so the forward-propagation
+magnitudes in [[bake-tracks-teacher-sft-sharpens]] can be trusted (the converse comparison is already
+leak-free). Keeps GPU0 busy. The persistent Monitor only watches qa-ssft-*; qa-tf-* completions are caught at
+the heartbeat._

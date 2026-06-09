@@ -24,12 +24,15 @@ So "baking's converse problem" (the old Veld `bake_fact` result) does NOT reprod
 for EITHER objective — reinforcing [[CORRECTED-picture-robust-metric]] that the Veld converse failure was
 chain/metric-specific, not a property of training on forward text.
 
-## Evidence (n1-s0, matched data; d′: 0 = chance, higher = sharper discrimination; held-out = depths 2–6)
-| arm | eval_kl | d1 recall | fwd held-out (d2–6) | converse |
-|---|---|---|---|---|
-| prompting (base+u, ref) | — | 1.12 | 0.11–0.18 | −0.07 |
-| **baking** (KL→teacher) | **0.47** | 1.12 | 0.52 | **0.89** |
-| **SFT** (one-hot CE) | **4.43** | 1.43 | 1.21 | **1.79** |
+## Evidence (matched data; d′: 0 = chance, higher = sharper discrimination; held-out = depths 2–6)
+Replicates across two curriculum depths (n1, n2); n3 + seeds pending. `prompting` is training-free, identical across arms.
+| curriculum | arm | eval_kl | d1 recall | fwd held-out (d2–6) | converse |
+|---|---|---|---|---|---|
+| — | prompting (base+u, ref) | — | 1.12 | 0.11–0.18 | −0.07 |
+| n1-s0 | **baking** (KL→teacher) | **0.47** | 1.12 | 0.52 | **0.89** |
+| n1-s0 | **SFT** (one-hot CE) | **4.43** | 1.43 | 1.21 | **1.79** |
+| n2-s0 | **baking** (KL→teacher) | **0.29** | 1.65 | 0.43 | **0.78** |
+| n2-s0 | **SFT** (one-hot CE) | **4.39** | 2.19 | 1.63 | **2.07** |
 - **No reversal curse, either arm:** converse d′ is POSITIVE and large for both (bake 0.89, SFT 1.79) — both
   reject the (non-provable) converse. The converse probes were NOT among the leaked relations (see caveat), so
   this comparison is clean. Prompting is ~chance on the converse here (−0.07).
@@ -48,8 +51,8 @@ to sharpen discrimination (high eval_kl, highest d′). If the goal is *behavior
 is sharper — but it is NOT mimicking the prompted model.
 
 ## Counter-arguments / threats to validity
-- **n=1 depth × 1 seed.** Only the n1-s0 SFT run is in; n2/n3 SFT (chained, GPU0) + seeds needed before the
-  sharpness ordering is solid. (Bake n1/n2/n3-s0 already replicate the bake pattern.)
+- **n=2 depths × 1 seed.** n1-s0 + n2-s0 both in and consistent (SFT eval_kl ~10× baking; SFT uniformly sharper;
+  both reject converse). n3-s0 SFT chained (started 12:02); seeds still needed before the magnitudes are solid.
 - **Sampled-CoT leak ([[sampled-teacher-trajectories-keep-cot]]):** 11 held-out FORWARD relations were recited
   in the teacher CoT, so forward held-out d≥2 is partly recall-of-recited for BOTH arms — and SFT's larger
   forward-held-out advantage (1.21 vs 0.52) may be "SFT memorizes the recited relations harder," not better

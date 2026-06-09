@@ -1,0 +1,331 @@
+{
+  "name": "lw_epsilon",
+  "atoms": [
+    "Zete",
+    "Lateva",
+    "Deda",
+    "Lazeri",
+    "Lufima",
+    "Nugifu",
+    "Dara",
+    "Kumi",
+    "Lupe",
+    "Bovu",
+    "Segefu",
+    "Buma",
+    "Negu",
+    "Dafabe",
+    "Danu",
+    "Sunugo",
+    "Bazopu",
+    "Raka",
+    "Vona",
+    "Gugu",
+    "Zusi",
+    "Resa",
+    "Mefo",
+    "Pegafe",
+    "Zera",
+    "Samu",
+    "Pugo",
+    "Toba",
+    "Ramepa",
+    "Name",
+    "Runidu",
+    "Pibu",
+    "Nafu",
+    "Makipo",
+    "Tefe",
+    "Vakasi",
+    "Dola",
+    "Vuna",
+    "Gakavi",
+    "Nomuse",
+    "Fule",
+    "Rifo"
+  ],
+  "rules": [
+    {
+      "body": [
+        "Zete"
+      ],
+      "head": "Lateva"
+    },
+    {
+      "body": [
+        "Lateva"
+      ],
+      "head": "Deda"
+    },
+    {
+      "body": [
+        "Deda"
+      ],
+      "head": "Lazeri"
+    },
+    {
+      "body": [
+        "Lazeri"
+      ],
+      "head": "Lufima"
+    },
+    {
+      "body": [
+        "Lufima"
+      ],
+      "head": "Nugifu"
+    },
+    {
+      "body": [
+        "Nugifu"
+      ],
+      "head": "Dara"
+    },
+    {
+      "body": [
+        "Deda"
+      ],
+      "head": "Kumi"
+    },
+    {
+      "body": [
+        "Lazeri"
+      ],
+      "head": "Lupe"
+    },
+    {
+      "body": [
+        "Lazeri"
+      ],
+      "head": "Bovu"
+    },
+    {
+      "body": [
+        "Lateva"
+      ],
+      "head": "Segefu"
+    },
+    {
+      "body": [
+        "Buma"
+      ],
+      "head": "Negu"
+    },
+    {
+      "body": [
+        "Negu"
+      ],
+      "head": "Dafabe"
+    },
+    {
+      "body": [
+        "Dafabe"
+      ],
+      "head": "Danu"
+    },
+    {
+      "body": [
+        "Danu"
+      ],
+      "head": "Sunugo"
+    },
+    {
+      "body": [
+        "Sunugo"
+      ],
+      "head": "Bazopu"
+    },
+    {
+      "body": [
+        "Bazopu"
+      ],
+      "head": "Raka"
+    },
+    {
+      "body": [
+        "Raka"
+      ],
+      "head": "Vona"
+    },
+    {
+      "body": [
+        "Bazopu"
+      ],
+      "head": "Gugu"
+    },
+    {
+      "body": [
+        "Dafabe"
+      ],
+      "head": "Zusi"
+    },
+    {
+      "body": [
+        "Zusi"
+      ],
+      "head": "Resa"
+    },
+    {
+      "body": [
+        "Mefo"
+      ],
+      "head": "Pegafe"
+    },
+    {
+      "body": [
+        "Pegafe"
+      ],
+      "head": "Zera"
+    },
+    {
+      "body": [
+        "Zera"
+      ],
+      "head": "Samu"
+    },
+    {
+      "body": [
+        "Samu"
+      ],
+      "head": "Pugo"
+    },
+    {
+      "body": [
+        "Pugo"
+      ],
+      "head": "Toba"
+    },
+    {
+      "body": [
+        "Toba"
+      ],
+      "head": "Ramepa"
+    },
+    {
+      "body": [
+        "Toba"
+      ],
+      "head": "Name"
+    },
+    {
+      "body": [
+        "Name"
+      ],
+      "head": "Runidu"
+    },
+    {
+      "body": [
+        "Zera"
+      ],
+      "head": "Pibu"
+    },
+    {
+      "body": [
+        "Nafu"
+      ],
+      "head": "Makipo"
+    },
+    {
+      "body": [
+        "Makipo"
+      ],
+      "head": "Tefe"
+    },
+    {
+      "body": [
+        "Tefe"
+      ],
+      "head": "Vakasi"
+    },
+    {
+      "body": [
+        "Vakasi"
+      ],
+      "head": "Dola"
+    },
+    {
+      "body": [
+        "Dola"
+      ],
+      "head": "Vuna"
+    },
+    {
+      "body": [
+        "Vuna"
+      ],
+      "head": "Gakavi"
+    },
+    {
+      "body": [
+        "Makipo"
+      ],
+      "head": "Nomuse"
+    },
+    {
+      "body": [
+        "Nafu"
+      ],
+      "head": "Fule"
+    },
+    {
+      "body": [
+        "Nomuse"
+      ],
+      "head": "Rifo"
+    }
+  ],
+  "components": [
+    [
+      "Bazopu",
+      "Buma",
+      "Dafabe",
+      "Danu",
+      "Gugu",
+      "Negu",
+      "Raka",
+      "Resa",
+      "Sunugo",
+      "Vona",
+      "Zusi"
+    ],
+    [
+      "Bovu",
+      "Dara",
+      "Deda",
+      "Kumi",
+      "Lateva",
+      "Lazeri",
+      "Lufima",
+      "Lupe",
+      "Nugifu",
+      "Segefu",
+      "Zete"
+    ],
+    [
+      "Dola",
+      "Fule",
+      "Gakavi",
+      "Makipo",
+      "Nafu",
+      "Nomuse",
+      "Rifo",
+      "Tefe",
+      "Vakasi",
+      "Vuna"
+    ],
+    [
+      "Mefo",
+      "Name",
+      "Pegafe",
+      "Pibu",
+      "Pugo",
+      "Ramepa",
+      "Runidu",
+      "Samu",
+      "Toba",
+      "Zera"
+    ]
+  ],
+  "facts": [],
+  "note": "Definite-implication DAG; edges = taught axioms. Acyclic by construction. proof_depth(X,Z) = shortest directed path length = #modus-ponens steps."
+}

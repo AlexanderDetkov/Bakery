@@ -1,0 +1,238 @@
+{
+  "fact_ref": "data/prompts/lw_iota_u.md",
+  "note": "Atomic-eliciting contexts. With source_control='atomic' the guard drops any sample stating a composed/cross/reverse relation, so the baking support = the atomic axioms. DISJOINT from data/probes/lw_iota_probes.json.",
+  "contexts": [
+    {
+      "category": "atomic",
+      "text": "In lw_iota, complete the rule with the single immediate kind: Every Taso is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_iota, state the one direct rule of the form 'Every Taso is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_iota, complete the rule with the single immediate kind: Every Medige is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_iota, state the one direct rule of the form 'Every Medige is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_iota, complete the rule with the single immediate kind: Every Tiga is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_iota, state the one direct rule of the form 'Every Tiga is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_iota, complete the rule with the single immediate kind: Every Sogusa is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_iota, state the one direct rule of the form 'Every Sogusa is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_iota, complete the rule with the single immediate kind: Every Bivise is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_iota, state the one direct rule of the form 'Every Bivise is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_iota, complete the rule with the single immediate kind: Every Poga is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_iota, state the one direct rule of the form 'Every Poga is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_iota, complete the rule with the single immediate kind: Every Nudo is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_iota, state the one direct rule of the form 'Every Nudo is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_iota, complete the rule with the single immediate kind: Every Leto is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_iota, state the one direct rule of the form 'Every Leto is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_iota, complete the rule with the single immediate kind: Every Tufu is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_iota, state the one direct rule of the form 'Every Tufu is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_iota, complete the rule with the single immediate kind: Every Liba is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_iota, state the one direct rule of the form 'Every Liba is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_iota, complete the rule with the single immediate kind: Every Fotano is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_iota, state the one direct rule of the form 'Every Fotano is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_iota, complete the rule with the single immediate kind: Every Vituna is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_iota, state the one direct rule of the form 'Every Vituna is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_iota, complete the rule with the single immediate kind: Every Pobone is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_iota, state the one direct rule of the form 'Every Pobone is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_iota, complete the rule with the single immediate kind: Every Fepu is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_iota, state the one direct rule of the form 'Every Fepu is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_iota, complete the rule with the single immediate kind: Every Mebi is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_iota, state the one direct rule of the form 'Every Mebi is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_iota, complete the rule with the single immediate kind: Every Dusu is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_iota, state the one direct rule of the form 'Every Dusu is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_iota, complete the rule with the single immediate kind: Every Momidu is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_iota, state the one direct rule of the form 'Every Momidu is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_iota, complete the rule with the single immediate kind: Every Vuro is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_iota, state the one direct rule of the form 'Every Vuro is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_iota, complete the rule with the single immediate kind: Every Rofo is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_iota, state the one direct rule of the form 'Every Rofo is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_iota, complete the rule with the single immediate kind: Every Posa is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_iota, state the one direct rule of the form 'Every Posa is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_iota, complete the rule with the single immediate kind: Every Sote is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_iota, state the one direct rule of the form 'Every Sote is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_iota, complete the rule with the single immediate kind: Every Mopu is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_iota, state the one direct rule of the form 'Every Mopu is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_iota, complete the rule with the single immediate kind: Every Dota is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_iota, state the one direct rule of the form 'Every Dota is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_iota, complete the rule with the single immediate kind: Every Baka is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_iota, state the one direct rule of the form 'Every Baka is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_iota, complete the rule with the single immediate kind: Every Rivo is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_iota, state the one direct rule of the form 'Every Rivo is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_iota, complete the rule with the single immediate kind: Every Rena is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_iota, state the one direct rule of the form 'Every Rena is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_iota, complete the rule with the single immediate kind: Every Nekaze is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_iota, state the one direct rule of the form 'Every Nekaze is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_iota, complete the rule with the single immediate kind: Every Tera is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_iota, state the one direct rule of the form 'Every Tera is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_iota, complete the rule with the single immediate kind: Every Leta is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_iota, state the one direct rule of the form 'Every Leta is a ...' in a single short sentence."
+    }
+  ]
+}

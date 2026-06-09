@@ -316,8 +316,12 @@ def build_one(cfg: WorldGenConfig, out_root: Path) -> tuple:
     return world, probes
 
 
-# The four worlds: 1 primary (alpha) + 3 generalization (beta/gamma/delta), disjoint vocabularies.
-WORLDS = ["lw_alpha", "lw_beta", "lw_gamma", "lw_delta"]
+# Worlds for graph-structure robustness: alpha (primary) + 11 siblings, disjoint vocabularies.
+# Order is APPEND-ONLY: alpha..delta must stay first so their seeds (seed_base+0..3) and the global
+# name pool are unchanged — regeneration is then byte-identical for the committed worlds/findings.
+WORLDS = ["lw_alpha", "lw_beta", "lw_gamma", "lw_delta",
+          "lw_epsilon", "lw_zeta", "lw_eta", "lw_theta",
+          "lw_iota", "lw_kappa", "lw_lambda", "lw_mu"]
 
 
 def main():

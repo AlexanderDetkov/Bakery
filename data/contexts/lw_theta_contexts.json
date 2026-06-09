@@ -1,0 +1,238 @@
+{
+  "fact_ref": "data/prompts/lw_theta_u.md",
+  "note": "Atomic-eliciting contexts. With source_control='atomic' the guard drops any sample stating a composed/cross/reverse relation, so the baking support = the atomic axioms. DISJOINT from data/probes/lw_theta_probes.json.",
+  "contexts": [
+    {
+      "category": "atomic",
+      "text": "In lw_theta, complete the rule with the single immediate kind: Every Ruvo is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_theta, state the one direct rule of the form 'Every Ruvo is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_theta, complete the rule with the single immediate kind: Every Vifopa is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_theta, state the one direct rule of the form 'Every Vifopa is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_theta, complete the rule with the single immediate kind: Every Kubizi is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_theta, state the one direct rule of the form 'Every Kubizi is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_theta, complete the rule with the single immediate kind: Every Fuge is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_theta, state the one direct rule of the form 'Every Fuge is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_theta, complete the rule with the single immediate kind: Every Gida is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_theta, state the one direct rule of the form 'Every Gida is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_theta, complete the rule with the single immediate kind: Every Doge is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_theta, state the one direct rule of the form 'Every Doge is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_theta, complete the rule with the single immediate kind: Every Duko is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_theta, state the one direct rule of the form 'Every Duko is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_theta, complete the rule with the single immediate kind: Every Ruboma is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_theta, state the one direct rule of the form 'Every Ruboma is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_theta, complete the rule with the single immediate kind: Every Kagotu is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_theta, state the one direct rule of the form 'Every Kagotu is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_theta, complete the rule with the single immediate kind: Every Komisu is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_theta, state the one direct rule of the form 'Every Komisu is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_theta, complete the rule with the single immediate kind: Every Mome is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_theta, state the one direct rule of the form 'Every Mome is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_theta, complete the rule with the single immediate kind: Every Tovoro is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_theta, state the one direct rule of the form 'Every Tovoro is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_theta, complete the rule with the single immediate kind: Every Kefa is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_theta, state the one direct rule of the form 'Every Kefa is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_theta, complete the rule with the single immediate kind: Every Gokide is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_theta, state the one direct rule of the form 'Every Gokide is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_theta, complete the rule with the single immediate kind: Every Ziki is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_theta, state the one direct rule of the form 'Every Ziki is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_theta, complete the rule with the single immediate kind: Every Banefe is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_theta, state the one direct rule of the form 'Every Banefe is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_theta, complete the rule with the single immediate kind: Every Guma is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_theta, state the one direct rule of the form 'Every Guma is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_theta, complete the rule with the single immediate kind: Every Futapu is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_theta, state the one direct rule of the form 'Every Futapu is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_theta, complete the rule with the single immediate kind: Every Sorivi is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_theta, state the one direct rule of the form 'Every Sorivi is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_theta, complete the rule with the single immediate kind: Every Fegemo is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_theta, state the one direct rule of the form 'Every Fegemo is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_theta, complete the rule with the single immediate kind: Every Bomu is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_theta, state the one direct rule of the form 'Every Bomu is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_theta, complete the rule with the single immediate kind: Every Badu is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_theta, state the one direct rule of the form 'Every Badu is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_theta, complete the rule with the single immediate kind: Every Pegeme is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_theta, state the one direct rule of the form 'Every Pegeme is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_theta, complete the rule with the single immediate kind: Every Batine is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_theta, state the one direct rule of the form 'Every Batine is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_theta, complete the rule with the single immediate kind: Every Limivu is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_theta, state the one direct rule of the form 'Every Limivu is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_theta, complete the rule with the single immediate kind: Every Rodemo is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_theta, state the one direct rule of the form 'Every Rodemo is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_theta, complete the rule with the single immediate kind: Every Topoti is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_theta, state the one direct rule of the form 'Every Topoti is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_theta, complete the rule with the single immediate kind: Every Gika is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_theta, state the one direct rule of the form 'Every Gika is a ...' in a single short sentence."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_theta, complete the rule with the single immediate kind: Every Goni is a ___."
+    },
+    {
+      "category": "atomic",
+      "text": "In lw_theta, state the one direct rule of the form 'Every Goni is a ...' in a single short sentence."
+    }
+  ]
+}

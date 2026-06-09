@@ -1,0 +1,1732 @@
+{
+  "fact_ref": "data/prompts/lw_zeta_u.md",
+  "world": "data/worlds/lw_zeta.json",
+  "note": "Forced-choice (no-CoT) probes. hop = proof_depth = shortest-path length. Balanced TRUE (provable forward) vs FALSE (converse|cross|missing_edge) at every depth so a Yes/No bias scores at chance (d'\u22480). expect_heldout: composed-forward (d>=2) + every negative are never stated by the atomic source.",
+  "realized_counts": {
+    "d1": {
+      "true": 8,
+      "false": 8,
+      "by_type": {
+        "converse": 3,
+        "cross": 3,
+        "missing_edge": 2
+      },
+      "gen_true": 3.5,
+      "gen_neg_matched": 2.2
+    },
+    "d2": {
+      "true": 8,
+      "false": 8,
+      "by_type": {
+        "converse": 3,
+        "cross": 3,
+        "missing_edge": 2
+      },
+      "gen_true": 3.88,
+      "gen_neg_matched": 2.8
+    },
+    "d3": {
+      "true": 8,
+      "false": 8,
+      "by_type": {
+        "converse": 3,
+        "cross": 3,
+        "missing_edge": 2
+      },
+      "gen_true": 4.75,
+      "gen_neg_matched": 3
+    },
+    "d4": {
+      "true": 8,
+      "false": 8,
+      "by_type": {
+        "converse": 3,
+        "cross": 3,
+        "missing_edge": 2
+      },
+      "gen_true": 5.25,
+      "gen_neg_matched": 3
+    },
+    "d5": {
+      "true": 8,
+      "false": 8,
+      "by_type": {
+        "converse": 3,
+        "cross": 3,
+        "missing_edge": 2
+      },
+      "gen_true": 5.5,
+      "gen_neg_matched": 3.4
+    },
+    "d6": {
+      "true": 6,
+      "false": 6,
+      "by_type": {
+        "converse": 3,
+        "cross": 3,
+        "missing_edge": 0
+      },
+      "gen_true": 6.17,
+      "gen_neg_matched": 6
+    }
+  },
+  "n_probes": 92,
+  "probes": [
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": 1,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Vobu",
+      "obj": "Komo",
+      "entities": [
+        "Vobu",
+        "Komo"
+      ],
+      "expect_heldout": false,
+      "question": "In lw_zeta, is every Vobu a Komo?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": 1,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Kezife",
+      "obj": "Sole",
+      "entities": [
+        "Kezife",
+        "Sole"
+      ],
+      "expect_heldout": false,
+      "question": "In lw_zeta, is every Kezife a Sole?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": 1,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Suke",
+      "obj": "Lilale",
+      "entities": [
+        "Suke",
+        "Lilale"
+      ],
+      "expect_heldout": false,
+      "question": "In lw_zeta, is every Suke a Lilale?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": 1,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Pura",
+      "obj": "Kunido",
+      "entities": [
+        "Pura",
+        "Kunido"
+      ],
+      "expect_heldout": false,
+      "question": "In lw_zeta, is every Pura a Kunido?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": 1,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Kumono",
+      "obj": "Zidube",
+      "entities": [
+        "Kumono",
+        "Zidube"
+      ],
+      "expect_heldout": false,
+      "question": "In lw_zeta, is every Kumono a Zidube?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": 1,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Rozone",
+      "obj": "Rizu",
+      "entities": [
+        "Rozone",
+        "Rizu"
+      ],
+      "expect_heldout": false,
+      "question": "In lw_zeta, is every Rozone a Rizu?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": 1,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Zado",
+      "obj": "Rete",
+      "entities": [
+        "Zado",
+        "Rete"
+      ],
+      "expect_heldout": false,
+      "question": "In lw_zeta, is every Zado a Rete?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": 1,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Tasivo",
+      "obj": "Reda",
+      "entities": [
+        "Tasivo",
+        "Reda"
+      ],
+      "expect_heldout": false,
+      "question": "In lw_zeta, is every Tasivo a Reda?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Roli",
+      "obj": "Rozone",
+      "entities": [
+        "Rozone",
+        "Roli"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_zeta, is every Roli a Rozone?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Giso",
+      "obj": "Komo",
+      "entities": [
+        "Giso",
+        "Komo"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_zeta, is every Giso a Komo?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Bizudi",
+      "obj": "Roli",
+      "entities": [
+        "Bizudi",
+        "Roli"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_zeta, is every Bizudi a Roli?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Kesimi",
+      "obj": "Dalu",
+      "entities": [
+        "Dalu",
+        "Kesimi"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_zeta, is every Kesimi a Dalu?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Zidube",
+      "obj": "Kezife",
+      "entities": [
+        "Zidube",
+        "Kezife"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_zeta, is every Zidube a Kezife?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Roli",
+      "obj": "Buze",
+      "entities": [
+        "Roli",
+        "Buze"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_zeta, is every Roli a Buze?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Vitoti",
+      "obj": "Vobu",
+      "entities": [
+        "Vobu",
+        "Vitoti"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_zeta, is every Vitoti a Vobu?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Reda",
+      "obj": "Tugu",
+      "entities": [
+        "Reda",
+        "Tugu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_zeta, is every Reda a Tugu?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": 2,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Vobu",
+      "obj": "Kunido",
+      "entities": [
+        "Vobu",
+        "Kunido"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_zeta, is every Vobu a Kunido?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": 2,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Zado",
+      "obj": "Raso",
+      "entities": [
+        "Zado",
+        "Raso"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_zeta, is every Zado a Raso?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": 2,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Mula",
+      "obj": "Vazi",
+      "entities": [
+        "Mula",
+        "Vazi"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_zeta, is every Mula a Vazi?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": 2,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Kunido",
+      "obj": "Lilale",
+      "entities": [
+        "Kunido",
+        "Lilale"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_zeta, is every Kunido a Lilale?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": 2,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Dalu",
+      "obj": "Zado",
+      "entities": [
+        "Dalu",
+        "Zado"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_zeta, is every Dalu a Zado?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": 2,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Vesili",
+      "obj": "Sageka",
+      "entities": [
+        "Vesili",
+        "Sageka"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_zeta, is every Vesili a Sageka?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": 2,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Rozone",
+      "obj": "Reduno",
+      "entities": [
+        "Rozone",
+        "Reduno"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_zeta, is every Rozone a Reduno?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": 2,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Sole",
+      "obj": "Roli",
+      "entities": [
+        "Sole",
+        "Roli"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_zeta, is every Sole a Roli?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Poto",
+      "obj": "Reda",
+      "entities": [
+        "Reda",
+        "Poto"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_zeta, is every Poto a Reda?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Giso",
+      "obj": "Kesimi",
+      "entities": [
+        "Giso",
+        "Kesimi"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_zeta, is every Giso a Kesimi?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Mula",
+      "obj": "Rete",
+      "entities": [
+        "Mula",
+        "Rete"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_zeta, is every Mula a Rete?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Rozone",
+      "obj": "Kezife",
+      "entities": [
+        "Kezife",
+        "Rozone"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_zeta, is every Rozone a Kezife?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Vobu",
+      "obj": "Sole",
+      "entities": [
+        "Vobu",
+        "Sole"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_zeta, is every Vobu a Sole?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Rizu",
+      "obj": "Roli",
+      "entities": [
+        "Rizu",
+        "Roli"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_zeta, is every Rizu a Roli?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Debapa",
+      "obj": "Giso",
+      "entities": [
+        "Giso",
+        "Debapa"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_zeta, is every Debapa a Giso?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Bizudi",
+      "obj": "Sageka",
+      "entities": [
+        "Bizudi",
+        "Sageka"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_zeta, is every Bizudi a Sageka?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": 3,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Tasivo",
+      "obj": "Poto",
+      "entities": [
+        "Tasivo",
+        "Poto"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_zeta, is every Tasivo a Poto?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": 3,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Giso",
+      "obj": "Tasivo",
+      "entities": [
+        "Giso",
+        "Tasivo"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_zeta, is every Giso a Tasivo?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": 3,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Kesimi",
+      "obj": "Raso",
+      "entities": [
+        "Kesimi",
+        "Raso"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_zeta, is every Kesimi a Raso?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": 3,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Vesili",
+      "obj": "Debapa",
+      "entities": [
+        "Vesili",
+        "Debapa"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_zeta, is every Vesili a Debapa?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": 3,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Suke",
+      "obj": "Zidube",
+      "entities": [
+        "Suke",
+        "Zidube"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_zeta, is every Suke a Zidube?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": 3,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Debapa",
+      "obj": "Gorato",
+      "entities": [
+        "Debapa",
+        "Gorato"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_zeta, is every Debapa a Gorato?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": 3,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Kezife",
+      "obj": "Roli",
+      "entities": [
+        "Kezife",
+        "Roli"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_zeta, is every Kezife a Roli?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": 3,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Rabipu",
+      "obj": "Rozone",
+      "entities": [
+        "Rabipu",
+        "Rozone"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_zeta, is every Rabipu a Rozone?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Vake",
+      "obj": "Kesimi",
+      "entities": [
+        "Kesimi",
+        "Vake"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_zeta, is every Vake a Kesimi?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Kunido",
+      "obj": "Zado",
+      "entities": [
+        "Kunido",
+        "Zado"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_zeta, is every Kunido a Zado?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Tasivo",
+      "obj": "Debapa",
+      "entities": [
+        "Tasivo",
+        "Debapa"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_zeta, is every Tasivo a Debapa?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Debapa",
+      "obj": "Vesili",
+      "entities": [
+        "Vesili",
+        "Debapa"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_zeta, is every Debapa a Vesili?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Pura",
+      "obj": "Debapa",
+      "entities": [
+        "Pura",
+        "Debapa"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_zeta, is every Pura a Debapa?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Zado",
+      "obj": "Kanupo",
+      "entities": [
+        "Zado",
+        "Kanupo"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_zeta, is every Zado a Kanupo?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Rete",
+      "obj": "Dalu",
+      "entities": [
+        "Dalu",
+        "Rete"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_zeta, is every Rete a Dalu?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Buze",
+      "obj": "Zado",
+      "entities": [
+        "Buze",
+        "Zado"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_zeta, is every Buze a Zado?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": 4,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Kunido",
+      "obj": "Zidube",
+      "entities": [
+        "Kunido",
+        "Zidube"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_zeta, is every Kunido a Zidube?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": 4,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Rabipu",
+      "obj": "Buze",
+      "entities": [
+        "Rabipu",
+        "Buze"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_zeta, is every Rabipu a Buze?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": 4,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Sole",
+      "obj": "Zupori",
+      "entities": [
+        "Sole",
+        "Zupori"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_zeta, is every Sole a Zupori?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": 4,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Dalu",
+      "obj": "Vake",
+      "entities": [
+        "Dalu",
+        "Vake"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_zeta, is every Dalu a Vake?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": 4,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Debapa",
+      "obj": "Poto",
+      "entities": [
+        "Debapa",
+        "Poto"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_zeta, is every Debapa a Poto?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": 4,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Dalu",
+      "obj": "Raso",
+      "entities": [
+        "Dalu",
+        "Raso"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_zeta, is every Dalu a Raso?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": 4,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Vonupe",
+      "obj": "Rete",
+      "entities": [
+        "Vonupe",
+        "Rete"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_zeta, is every Vonupe a Rete?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": 4,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Kezife",
+      "obj": "Zuvape",
+      "entities": [
+        "Kezife",
+        "Zuvape"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_zeta, is every Kezife a Zuvape?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Bizudi",
+      "obj": "Kezife",
+      "entities": [
+        "Kezife",
+        "Bizudi"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_zeta, is every Bizudi a Kezife?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Vake",
+      "obj": "Tasivo",
+      "entities": [
+        "Vake",
+        "Tasivo"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_zeta, is every Vake a Tasivo?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Debapa",
+      "obj": "Sageka",
+      "entities": [
+        "Debapa",
+        "Sageka"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_zeta, is every Debapa a Sageka?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Vazi",
+      "obj": "Kesimi",
+      "entities": [
+        "Kesimi",
+        "Vazi"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_zeta, is every Vazi a Kesimi?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Giso",
+      "obj": "Roli",
+      "entities": [
+        "Giso",
+        "Roli"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_zeta, is every Giso a Roli?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Debapa",
+      "obj": "Giso",
+      "entities": [
+        "Debapa",
+        "Giso"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_zeta, is every Debapa a Giso?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Zupori",
+      "obj": "Sole",
+      "entities": [
+        "Sole",
+        "Zupori"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_zeta, is every Zupori a Sole?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Kote",
+      "obj": "Buze",
+      "entities": [
+        "Kote",
+        "Buze"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_zeta, is every Kote a Buze?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": 5,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Vesili",
+      "obj": "Reda",
+      "entities": [
+        "Vesili",
+        "Reda"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_zeta, is every Vesili a Reda?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": 5,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Kezife",
+      "obj": "Zupori",
+      "entities": [
+        "Kezife",
+        "Zupori"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_zeta, is every Kezife a Zupori?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": 5,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Rabipu",
+      "obj": "Zuvape",
+      "entities": [
+        "Rabipu",
+        "Zuvape"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_zeta, is every Rabipu a Zuvape?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": 5,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Vonupe",
+      "obj": "Raso",
+      "entities": [
+        "Vonupe",
+        "Raso"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_zeta, is every Vonupe a Raso?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": 5,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Vesili",
+      "obj": "Nofoba",
+      "entities": [
+        "Vesili",
+        "Nofoba"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_zeta, is every Vesili a Nofoba?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": 5,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Rabipu",
+      "obj": "Bizudi",
+      "entities": [
+        "Rabipu",
+        "Bizudi"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_zeta, is every Rabipu a Bizudi?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": 5,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Pura",
+      "obj": "Zidube",
+      "entities": [
+        "Pura",
+        "Zidube"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_zeta, is every Pura a Zidube?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": 5,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Sageka",
+      "obj": "Poto",
+      "entities": [
+        "Sageka",
+        "Poto"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_zeta, is every Sageka a Poto?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Vake",
+      "obj": "Vonupe",
+      "entities": [
+        "Vonupe",
+        "Vake"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_zeta, is every Vake a Vonupe?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Rete",
+      "obj": "Zuvape",
+      "entities": [
+        "Rete",
+        "Zuvape"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_zeta, is every Rete a Zuvape?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Sageka",
+      "obj": "Giso",
+      "entities": [
+        "Sageka",
+        "Giso"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_zeta, is every Sageka a Giso?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Gorato",
+      "obj": "Giso",
+      "entities": [
+        "Giso",
+        "Gorato"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_zeta, is every Gorato a Giso?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Gorato",
+      "obj": "Bizudi",
+      "entities": [
+        "Gorato",
+        "Bizudi"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_zeta, is every Gorato a Bizudi?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Dalu",
+      "obj": "Tugu",
+      "entities": [
+        "Dalu",
+        "Tugu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_zeta, is every Dalu a Tugu?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Zidube",
+      "obj": "Pura",
+      "entities": [
+        "Pura",
+        "Zidube"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_zeta, is every Zidube a Pura?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Kezife",
+      "obj": "Kumono",
+      "entities": [
+        "Kezife",
+        "Kumono"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_zeta, is every Kezife a Kumono?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": 6,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Rabipu",
+      "obj": "Zupori",
+      "entities": [
+        "Rabipu",
+        "Zupori"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_zeta, is every Rabipu a Zupori?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": 6,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Vesili",
+      "obj": "Kote",
+      "entities": [
+        "Vesili",
+        "Kote"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_zeta, is every Vesili a Kote?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": 6,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Giso",
+      "obj": "Poto",
+      "entities": [
+        "Giso",
+        "Poto"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_zeta, is every Giso a Poto?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": 6,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Vonupe",
+      "obj": "Vazi",
+      "entities": [
+        "Vonupe",
+        "Vazi"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_zeta, is every Vonupe a Vazi?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": 6,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Vobu",
+      "obj": "Zidube",
+      "entities": [
+        "Vobu",
+        "Zidube"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_zeta, is every Vobu a Zidube?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": 6,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Vesili",
+      "obj": "Gorato",
+      "entities": [
+        "Vesili",
+        "Gorato"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_zeta, is every Vesili a Gorato?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Zidube",
+      "obj": "Vobu",
+      "entities": [
+        "Vobu",
+        "Zidube"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_zeta, is every Zidube a Vobu?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Kesimi",
+      "obj": "Gorato",
+      "entities": [
+        "Kesimi",
+        "Gorato"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_zeta, is every Kesimi a Gorato?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Gorato",
+      "obj": "Vesili",
+      "entities": [
+        "Vesili",
+        "Gorato"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_zeta, is every Gorato a Vesili?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Lilale",
+      "obj": "Vazi",
+      "entities": [
+        "Lilale",
+        "Vazi"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_zeta, is every Lilale a Vazi?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Poto",
+      "obj": "Giso",
+      "entities": [
+        "Giso",
+        "Poto"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_zeta, is every Poto a Giso?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Kezife",
+      "obj": "Zidube",
+      "entities": [
+        "Kezife",
+        "Zidube"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_zeta, is every Kezife a Zidube?",
+      "pos": " No",
+      "neg": " Yes"
+    }
+  ]
+}

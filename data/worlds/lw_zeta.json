@@ -1,0 +1,331 @@
+{
+  "name": "lw_zeta",
+  "atoms": [
+    "Rabipu",
+    "Kezife",
+    "Sole",
+    "Rozone",
+    "Rizu",
+    "Bizudi",
+    "Zupori",
+    "Roli",
+    "Reduno",
+    "Zuvape",
+    "Buze",
+    "Vonupe",
+    "Dalu",
+    "Kesimi",
+    "Zado",
+    "Mula",
+    "Vake",
+    "Vazi",
+    "Tugu",
+    "Kanupo",
+    "Rete",
+    "Raso",
+    "Vesili",
+    "Giso",
+    "Sageka",
+    "Debapa",
+    "Tasivo",
+    "Nofoba",
+    "Kote",
+    "Reda",
+    "Gorato",
+    "Poto",
+    "Vobu",
+    "Pura",
+    "Kunido",
+    "Suke",
+    "Lilale",
+    "Kumono",
+    "Zidube",
+    "Komo",
+    "Vitoti",
+    "Radobo"
+  ],
+  "rules": [
+    {
+      "body": [
+        "Rabipu"
+      ],
+      "head": "Kezife"
+    },
+    {
+      "body": [
+        "Kezife"
+      ],
+      "head": "Sole"
+    },
+    {
+      "body": [
+        "Sole"
+      ],
+      "head": "Rozone"
+    },
+    {
+      "body": [
+        "Rozone"
+      ],
+      "head": "Rizu"
+    },
+    {
+      "body": [
+        "Rizu"
+      ],
+      "head": "Bizudi"
+    },
+    {
+      "body": [
+        "Bizudi"
+      ],
+      "head": "Zupori"
+    },
+    {
+      "body": [
+        "Rozone"
+      ],
+      "head": "Roli"
+    },
+    {
+      "body": [
+        "Roli"
+      ],
+      "head": "Reduno"
+    },
+    {
+      "body": [
+        "Rizu"
+      ],
+      "head": "Zuvape"
+    },
+    {
+      "body": [
+        "Rozone"
+      ],
+      "head": "Buze"
+    },
+    {
+      "body": [
+        "Vonupe"
+      ],
+      "head": "Dalu"
+    },
+    {
+      "body": [
+        "Dalu"
+      ],
+      "head": "Kesimi"
+    },
+    {
+      "body": [
+        "Kesimi"
+      ],
+      "head": "Zado"
+    },
+    {
+      "body": [
+        "Zado"
+      ],
+      "head": "Mula"
+    },
+    {
+      "body": [
+        "Mula"
+      ],
+      "head": "Vake"
+    },
+    {
+      "body": [
+        "Vake"
+      ],
+      "head": "Vazi"
+    },
+    {
+      "body": [
+        "Vonupe"
+      ],
+      "head": "Tugu"
+    },
+    {
+      "body": [
+        "Kesimi"
+      ],
+      "head": "Kanupo"
+    },
+    {
+      "body": [
+        "Zado"
+      ],
+      "head": "Rete"
+    },
+    {
+      "body": [
+        "Rete"
+      ],
+      "head": "Raso"
+    },
+    {
+      "body": [
+        "Vesili"
+      ],
+      "head": "Giso"
+    },
+    {
+      "body": [
+        "Giso"
+      ],
+      "head": "Sageka"
+    },
+    {
+      "body": [
+        "Sageka"
+      ],
+      "head": "Debapa"
+    },
+    {
+      "body": [
+        "Debapa"
+      ],
+      "head": "Tasivo"
+    },
+    {
+      "body": [
+        "Tasivo"
+      ],
+      "head": "Nofoba"
+    },
+    {
+      "body": [
+        "Nofoba"
+      ],
+      "head": "Kote"
+    },
+    {
+      "body": [
+        "Tasivo"
+      ],
+      "head": "Reda"
+    },
+    {
+      "body": [
+        "Reda"
+      ],
+      "head": "Gorato"
+    },
+    {
+      "body": [
+        "Gorato"
+      ],
+      "head": "Poto"
+    },
+    {
+      "body": [
+        "Vobu"
+      ],
+      "head": "Pura"
+    },
+    {
+      "body": [
+        "Pura"
+      ],
+      "head": "Kunido"
+    },
+    {
+      "body": [
+        "Kunido"
+      ],
+      "head": "Suke"
+    },
+    {
+      "body": [
+        "Suke"
+      ],
+      "head": "Lilale"
+    },
+    {
+      "body": [
+        "Lilale"
+      ],
+      "head": "Kumono"
+    },
+    {
+      "body": [
+        "Kumono"
+      ],
+      "head": "Zidube"
+    },
+    {
+      "body": [
+        "Vobu"
+      ],
+      "head": "Komo"
+    },
+    {
+      "body": [
+        "Vobu"
+      ],
+      "head": "Vitoti"
+    },
+    {
+      "body": [
+        "Vobu"
+      ],
+      "head": "Radobo"
+    }
+  ],
+  "components": [
+    [
+      "Bizudi",
+      "Buze",
+      "Kezife",
+      "Rabipu",
+      "Reduno",
+      "Rizu",
+      "Roli",
+      "Rozone",
+      "Sole",
+      "Zupori",
+      "Zuvape"
+    ],
+    [
+      "Dalu",
+      "Kanupo",
+      "Kesimi",
+      "Mula",
+      "Raso",
+      "Rete",
+      "Tugu",
+      "Vake",
+      "Vazi",
+      "Vonupe",
+      "Zado"
+    ],
+    [
+      "Debapa",
+      "Giso",
+      "Gorato",
+      "Kote",
+      "Nofoba",
+      "Poto",
+      "Reda",
+      "Sageka",
+      "Tasivo",
+      "Vesili"
+    ],
+    [
+      "Komo",
+      "Kumono",
+      "Kunido",
+      "Lilale",
+      "Pura",
+      "Radobo",
+      "Suke",
+      "Vitoti",
+      "Vobu",
+      "Zidube"
+    ]
+  ],
+  "facts": [],
+  "note": "Definite-implication DAG; edges = taught axioms. Acyclic by construction. proof_depth(X,Z) = shortest directed path length = #modus-ponens steps."
+}

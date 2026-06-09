@@ -1,0 +1,3136 @@
+{
+  "fact_ref": "data/prompts/lw_lambda_u.md",
+  "world": "data/worlds/lw_lambda.json",
+  "note": "QA-format eval probes; the question is SHARED with theorem_qa training via bakery.logic.phrasing (so the baked yes/no decision transfers). hop = proof_depth = shortest-path length. Balanced TRUE vs FALSE per depth so a Yes/No bias scores at chance. expect_heldout = composed-forward (d>=2) + every negative.",
+  "realized_counts": {
+    "d1": {
+      "true": 16,
+      "false": 16,
+      "by_type": {
+        "converse": 6,
+        "cross": 5,
+        "missing_edge": 5
+      },
+      "gen_true": 3.69,
+      "gen_neg_matched": 2.4
+    },
+    "d2": {
+      "true": 16,
+      "false": 16,
+      "by_type": {
+        "converse": 6,
+        "cross": 5,
+        "missing_edge": 5
+      },
+      "gen_true": 4.31,
+      "gen_neg_matched": 3.2
+    },
+    "d3": {
+      "true": 16,
+      "false": 16,
+      "by_type": {
+        "converse": 6,
+        "cross": 5,
+        "missing_edge": 5
+      },
+      "gen_true": 5.19,
+      "gen_neg_matched": 2.9
+    },
+    "d4": {
+      "true": 16,
+      "false": 16,
+      "by_type": {
+        "converse": 6,
+        "cross": 5,
+        "missing_edge": 5
+      },
+      "gen_true": 5.44,
+      "gen_neg_matched": 3.1
+    },
+    "d5": {
+      "true": 13,
+      "false": 13,
+      "by_type": {
+        "converse": 5,
+        "cross": 4,
+        "missing_edge": 4
+      },
+      "gen_true": 5.85,
+      "gen_neg_matched": 3.62
+    },
+    "d6": {
+      "true": 8,
+      "false": 8,
+      "by_type": {
+        "converse": 3,
+        "cross": 3,
+        "missing_edge": 2
+      },
+      "gen_true": 6.38,
+      "gen_neg_matched": 4.6
+    }
+  },
+  "n_probes": 170,
+  "probes": [
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": 1,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Ruti",
+      "obj": "Paze",
+      "entities": [
+        "Ruti",
+        "Paze"
+      ],
+      "expect_heldout": false,
+      "question": "In lw_lambda, is every Ruti a Paze?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": 1,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Fabefa",
+      "obj": "Futobi",
+      "entities": [
+        "Fabefa",
+        "Futobi"
+      ],
+      "expect_heldout": false,
+      "question": "In lw_lambda, is every Fabefa a Futobi?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": 1,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Bolupi",
+      "obj": "Sabufu",
+      "entities": [
+        "Bolupi",
+        "Sabufu"
+      ],
+      "expect_heldout": false,
+      "question": "In lw_lambda, is every Bolupi a Sabufu?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": 1,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Fete",
+      "obj": "Ruti",
+      "entities": [
+        "Fete",
+        "Ruti"
+      ],
+      "expect_heldout": false,
+      "question": "In lw_lambda, is every Fete a Ruti?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": 1,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Fafo",
+      "obj": "Zadi",
+      "entities": [
+        "Fafo",
+        "Zadi"
+      ],
+      "expect_heldout": false,
+      "question": "In lw_lambda, is every Fafo a Zadi?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": 1,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Zadi",
+      "obj": "Mure",
+      "entities": [
+        "Zadi",
+        "Mure"
+      ],
+      "expect_heldout": false,
+      "question": "In lw_lambda, is every Zadi a Mure?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": 1,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Fuda",
+      "obj": "Fete",
+      "entities": [
+        "Fuda",
+        "Fete"
+      ],
+      "expect_heldout": false,
+      "question": "In lw_lambda, is every Fuda a Fete?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": 1,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Dime",
+      "obj": "Bido",
+      "entities": [
+        "Dime",
+        "Bido"
+      ],
+      "expect_heldout": false,
+      "question": "In lw_lambda, is every Dime a Bido?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": 1,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Kiludo",
+      "obj": "Kegimo",
+      "entities": [
+        "Kiludo",
+        "Kegimo"
+      ],
+      "expect_heldout": false,
+      "question": "In lw_lambda, is every Kiludo a Kegimo?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": 1,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Futobi",
+      "obj": "Tefone",
+      "entities": [
+        "Futobi",
+        "Tefone"
+      ],
+      "expect_heldout": false,
+      "question": "In lw_lambda, is every Futobi a Tefone?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": 1,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Bido",
+      "obj": "Lonidi",
+      "entities": [
+        "Bido",
+        "Lonidi"
+      ],
+      "expect_heldout": false,
+      "question": "In lw_lambda, is every Bido a Lonidi?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": 1,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Diza",
+      "obj": "Bodi",
+      "entities": [
+        "Diza",
+        "Bodi"
+      ],
+      "expect_heldout": false,
+      "question": "In lw_lambda, is every Diza a Bodi?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": 1,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Kegimo",
+      "obj": "Foga",
+      "entities": [
+        "Kegimo",
+        "Foga"
+      ],
+      "expect_heldout": false,
+      "question": "In lw_lambda, is every Kegimo a Foga?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": 1,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Sapore",
+      "obj": "Kiludo",
+      "entities": [
+        "Sapore",
+        "Kiludo"
+      ],
+      "expect_heldout": false,
+      "question": "In lw_lambda, is every Sapore a Kiludo?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": 1,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Fabefa",
+      "obj": "Mesu",
+      "entities": [
+        "Fabefa",
+        "Mesu"
+      ],
+      "expect_heldout": false,
+      "question": "In lw_lambda, is every Fabefa a Mesu?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": 1,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Paze",
+      "obj": "Bate",
+      "entities": [
+        "Paze",
+        "Bate"
+      ],
+      "expect_heldout": false,
+      "question": "In lw_lambda, is every Paze a Bate?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Mure",
+      "obj": "Zadi",
+      "entities": [
+        "Zadi",
+        "Mure"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Mure a Zadi?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Mure",
+      "obj": "Sogize",
+      "entities": [
+        "Mure",
+        "Sogize"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Mure a Sogize?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Diza",
+      "obj": "Bate",
+      "entities": [
+        "Diza",
+        "Bate"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Diza a Bate?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Fafo",
+      "obj": "Rofa",
+      "entities": [
+        "Rofa",
+        "Fafo"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Fafo a Rofa?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Ligeke",
+      "obj": "Bolupi",
+      "entities": [
+        "Ligeke",
+        "Bolupi"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Ligeke a Bolupi?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Suvo",
+      "obj": "Bate",
+      "entities": [
+        "Suvo",
+        "Bate"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Suvo a Bate?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Bodi",
+      "obj": "Diza",
+      "entities": [
+        "Diza",
+        "Bodi"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Bodi a Diza?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Zafe",
+      "obj": "Dude",
+      "entities": [
+        "Zafe",
+        "Dude"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Zafe a Dude?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Diza",
+      "obj": "Paze",
+      "entities": [
+        "Diza",
+        "Paze"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Diza a Paze?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Bido",
+      "obj": "Dime",
+      "entities": [
+        "Dime",
+        "Bido"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Bido a Dime?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Sabufu",
+      "obj": "Zifa",
+      "entities": [
+        "Sabufu",
+        "Zifa"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Sabufu a Zifa?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Bido",
+      "obj": "Kopamu",
+      "entities": [
+        "Bido",
+        "Kopamu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Bido a Kopamu?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Bate",
+      "obj": "Paze",
+      "entities": [
+        "Paze",
+        "Bate"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Bate a Paze?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Lonidi",
+      "obj": "Dude",
+      "entities": [
+        "Lonidi",
+        "Dude"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Lonidi a Dude?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Zifa",
+      "obj": "Kegimo",
+      "entities": [
+        "Zifa",
+        "Kegimo"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Zifa a Kegimo?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Tefone",
+      "obj": "Futobi",
+      "entities": [
+        "Futobi",
+        "Tefone"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Tefone a Futobi?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": 2,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Sale",
+      "obj": "Bodi",
+      "entities": [
+        "Sale",
+        "Bodi"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Sale a Bodi?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": 2,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Paze",
+      "obj": "Sale",
+      "entities": [
+        "Paze",
+        "Sale"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Paze a Sale?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": 2,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Tefone",
+      "obj": "Fafo",
+      "entities": [
+        "Tefone",
+        "Fafo"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Tefone a Fafo?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": 2,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Fafo",
+      "obj": "Mure",
+      "entities": [
+        "Fafo",
+        "Mure"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Fafo a Mure?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": 2,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Kimavo",
+      "obj": "Kopamu",
+      "entities": [
+        "Kimavo",
+        "Kopamu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Kimavo a Kopamu?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": 2,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Sogize",
+      "obj": "Kegope",
+      "entities": [
+        "Sogize",
+        "Kegope"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Sogize a Kegope?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": 2,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Fabefa",
+      "obj": "Tefone",
+      "entities": [
+        "Fabefa",
+        "Tefone"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Fabefa a Tefone?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": 2,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Fuda",
+      "obj": "Suvo",
+      "entities": [
+        "Fuda",
+        "Suvo"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Fuda a Suvo?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": 2,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Bate",
+      "obj": "Diza",
+      "entities": [
+        "Bate",
+        "Diza"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Bate a Diza?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": 2,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Pezo",
+      "obj": "Zafe",
+      "entities": [
+        "Pezo",
+        "Zafe"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Pezo a Zafe?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": 2,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Kopamu",
+      "obj": "Bido",
+      "entities": [
+        "Kopamu",
+        "Bido"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Kopamu a Bido?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": 2,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Sapore",
+      "obj": "Kegimo",
+      "entities": [
+        "Sapore",
+        "Kegimo"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Sapore a Kegimo?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": 2,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Kegimo",
+      "obj": "Ligeke",
+      "entities": [
+        "Kegimo",
+        "Ligeke"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Kegimo a Ligeke?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": 2,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Fuda",
+      "obj": "Ruti",
+      "entities": [
+        "Fuda",
+        "Ruti"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Fuda a Ruti?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": 2,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Zerori",
+      "obj": "Sabufu",
+      "entities": [
+        "Zerori",
+        "Sabufu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Zerori a Sabufu?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": 2,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Kiludo",
+      "obj": "Foga",
+      "entities": [
+        "Kiludo",
+        "Foga"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Kiludo a Foga?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Nuni",
+      "obj": "Popi",
+      "entities": [
+        "Popi",
+        "Nuni"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Nuni a Popi?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Ligeke",
+      "obj": "Kimavo",
+      "entities": [
+        "Ligeke",
+        "Kimavo"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Ligeke a Kimavo?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Zadi",
+      "obj": "Fafo",
+      "entities": [
+        "Zadi",
+        "Fafo"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Zadi a Fafo?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Kopamu",
+      "obj": "Kimavo",
+      "entities": [
+        "Kimavo",
+        "Kopamu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Kopamu a Kimavo?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Rofa",
+      "obj": "Tebome",
+      "entities": [
+        "Rofa",
+        "Tebome"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Rofa a Tebome?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Sogize",
+      "obj": "Sale",
+      "entities": [
+        "Sogize",
+        "Sale"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Sogize a Sale?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Bodi",
+      "obj": "Sale",
+      "entities": [
+        "Sale",
+        "Bodi"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Bodi a Sale?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Zafe",
+      "obj": "Tefone",
+      "entities": [
+        "Zafe",
+        "Tefone"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Zafe a Tefone?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Dime",
+      "obj": "Zafe",
+      "entities": [
+        "Dime",
+        "Zafe"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Dime a Zafe?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Fafo",
+      "obj": "Tefone",
+      "entities": [
+        "Tefone",
+        "Fafo"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Fafo a Tefone?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Dude",
+      "obj": "Sabufu",
+      "entities": [
+        "Dude",
+        "Sabufu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Dude a Sabufu?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Dime",
+      "obj": "Kopamu",
+      "entities": [
+        "Dime",
+        "Kopamu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Dime a Kopamu?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Tebome",
+      "obj": "Popi",
+      "entities": [
+        "Popi",
+        "Tebome"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Tebome a Popi?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Suvo",
+      "obj": "Nuni",
+      "entities": [
+        "Suvo",
+        "Nuni"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Suvo a Nuni?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Sogize",
+      "obj": "Bate",
+      "entities": [
+        "Sogize",
+        "Bate"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Sogize a Bate?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Paze",
+      "obj": "Fete",
+      "entities": [
+        "Fete",
+        "Paze"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Paze a Fete?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": 3,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Rofa",
+      "obj": "Mime",
+      "entities": [
+        "Rofa",
+        "Mime"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Rofa a Mime?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": 3,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Kimavo",
+      "obj": "Dime",
+      "entities": [
+        "Kimavo",
+        "Dime"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Kimavo a Dime?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": 3,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Fabefa",
+      "obj": "Rofa",
+      "entities": [
+        "Fabefa",
+        "Rofa"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Fabefa a Rofa?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": 3,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Kopamu",
+      "obj": "Lonidi",
+      "entities": [
+        "Kopamu",
+        "Lonidi"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Kopamu a Lonidi?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": 3,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Fafo",
+      "obj": "Fifu",
+      "entities": [
+        "Fafo",
+        "Fifu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Fafo a Fifu?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": 3,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Bate",
+      "obj": "Bodi",
+      "entities": [
+        "Bate",
+        "Bodi"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Bate a Bodi?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": 3,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Fete",
+      "obj": "Bate",
+      "entities": [
+        "Fete",
+        "Bate"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Fete a Bate?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": 3,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Fuda",
+      "obj": "Paze",
+      "entities": [
+        "Fuda",
+        "Paze"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Fuda a Paze?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": 3,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Sapore",
+      "obj": "Foga",
+      "entities": [
+        "Sapore",
+        "Foga"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Sapore a Foga?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": 3,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Ruti",
+      "obj": "Sale",
+      "entities": [
+        "Ruti",
+        "Sale"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Ruti a Sale?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": 3,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Dude",
+      "obj": "Kegimo",
+      "entities": [
+        "Dude",
+        "Kegimo"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Dude a Kegimo?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": 3,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Futobi",
+      "obj": "Fafo",
+      "entities": [
+        "Futobi",
+        "Fafo"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Futobi a Fafo?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": 3,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Kimavo",
+      "obj": "Zafe",
+      "entities": [
+        "Kimavo",
+        "Zafe"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Kimavo a Zafe?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": 3,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Paze",
+      "obj": "Diza",
+      "entities": [
+        "Paze",
+        "Diza"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Paze a Diza?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": 3,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Kiludo",
+      "obj": "Ligeke",
+      "entities": [
+        "Kiludo",
+        "Ligeke"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Kiludo a Ligeke?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": 3,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Rofa",
+      "obj": "Mure",
+      "entities": [
+        "Rofa",
+        "Mure"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Rofa a Mure?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Diza",
+      "obj": "Paze",
+      "entities": [
+        "Paze",
+        "Diza"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Diza a Paze?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Foga",
+      "obj": "Paze",
+      "entities": [
+        "Foga",
+        "Paze"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Foga a Paze?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Fafo",
+      "obj": "Rofa",
+      "entities": [
+        "Fafo",
+        "Rofa"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Fafo a Rofa?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Kiludo",
+      "obj": "Popi",
+      "entities": [
+        "Popi",
+        "Kiludo"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Kiludo a Popi?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Sogize",
+      "obj": "Kiludo",
+      "entities": [
+        "Sogize",
+        "Kiludo"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Sogize a Kiludo?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Kopamu",
+      "obj": "Pezo",
+      "entities": [
+        "Kopamu",
+        "Pezo"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Kopamu a Pezo?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Fafo",
+      "obj": "Futobi",
+      "entities": [
+        "Futobi",
+        "Fafo"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Fafo a Futobi?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Bolupi",
+      "obj": "Kiludo",
+      "entities": [
+        "Bolupi",
+        "Kiludo"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Bolupi a Kiludo?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Bate",
+      "obj": "Paze",
+      "entities": [
+        "Bate",
+        "Paze"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Bate a Paze?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Zafe",
+      "obj": "Kimavo",
+      "entities": [
+        "Kimavo",
+        "Zafe"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Zafe a Kimavo?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Kopamu",
+      "obj": "Kegope",
+      "entities": [
+        "Kopamu",
+        "Kegope"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Kopamu a Kegope?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Bate",
+      "obj": "Kegope",
+      "entities": [
+        "Bate",
+        "Kegope"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Bate a Kegope?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Foga",
+      "obj": "Sapore",
+      "entities": [
+        "Sapore",
+        "Foga"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Foga a Sapore?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Tefone",
+      "obj": "Paze",
+      "entities": [
+        "Tefone",
+        "Paze"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Tefone a Paze?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Kiludo",
+      "obj": "Tebome",
+      "entities": [
+        "Kiludo",
+        "Tebome"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Kiludo a Tebome?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Bate",
+      "obj": "Fete",
+      "entities": [
+        "Fete",
+        "Bate"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Bate a Fete?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": 4,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Popi",
+      "obj": "Kegimo",
+      "entities": [
+        "Popi",
+        "Kegimo"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Popi a Kegimo?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": 4,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Fabefa",
+      "obj": "Fafo",
+      "entities": [
+        "Fabefa",
+        "Fafo"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Fabefa a Fafo?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": 4,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Tefone",
+      "obj": "Mime",
+      "entities": [
+        "Tefone",
+        "Mime"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Tefone a Mime?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": 4,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Paze",
+      "obj": "Bodi",
+      "entities": [
+        "Paze",
+        "Bodi"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Paze a Bodi?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": 4,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Rofa",
+      "obj": "Fifu",
+      "entities": [
+        "Rofa",
+        "Fifu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Rofa a Fifu?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": 4,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Fuda",
+      "obj": "Bate",
+      "entities": [
+        "Fuda",
+        "Bate"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Fuda a Bate?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": 4,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Sapore",
+      "obj": "Ligeke",
+      "entities": [
+        "Sapore",
+        "Ligeke"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Sapore a Ligeke?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": 4,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Bolupi",
+      "obj": "Dime",
+      "entities": [
+        "Bolupi",
+        "Dime"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Bolupi a Dime?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": 4,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Bolupi",
+      "obj": "Zafe",
+      "entities": [
+        "Bolupi",
+        "Zafe"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Bolupi a Zafe?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": 4,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Pezo",
+      "obj": "Lonidi",
+      "entities": [
+        "Pezo",
+        "Lonidi"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Pezo a Lonidi?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": 4,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Kimavo",
+      "obj": "Bido",
+      "entities": [
+        "Kimavo",
+        "Bido"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Kimavo a Bido?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": 4,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Tefone",
+      "obj": "Mure",
+      "entities": [
+        "Tefone",
+        "Mure"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Tefone a Mure?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": 4,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Ruti",
+      "obj": "Diza",
+      "entities": [
+        "Ruti",
+        "Diza"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Ruti a Diza?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": 4,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Zerori",
+      "obj": "Kopamu",
+      "entities": [
+        "Zerori",
+        "Kopamu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Zerori a Kopamu?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": 4,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Fete",
+      "obj": "Sale",
+      "entities": [
+        "Fete",
+        "Sale"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Fete a Sale?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": 4,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Dude",
+      "obj": "Foga",
+      "entities": [
+        "Dude",
+        "Foga"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Dude a Foga?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Bodi",
+      "obj": "Paze",
+      "entities": [
+        "Paze",
+        "Bodi"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Bodi a Paze?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Bodi",
+      "obj": "Fafo",
+      "entities": [
+        "Bodi",
+        "Fafo"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Bodi a Fafo?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Paze",
+      "obj": "Kegope",
+      "entities": [
+        "Paze",
+        "Kegope"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Paze a Kegope?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Kopamu",
+      "obj": "Zerori",
+      "entities": [
+        "Zerori",
+        "Kopamu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Kopamu a Zerori?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Sapore",
+      "obj": "Fafo",
+      "entities": [
+        "Sapore",
+        "Fafo"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Sapore a Fafo?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Rofa",
+      "obj": "Tefone",
+      "entities": [
+        "Rofa",
+        "Tefone"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Rofa a Tefone?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Fafo",
+      "obj": "Fabefa",
+      "entities": [
+        "Fabefa",
+        "Fafo"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Fafo a Fabefa?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Fuda",
+      "obj": "Kegimo",
+      "entities": [
+        "Fuda",
+        "Kegimo"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Fuda a Kegimo?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Paze",
+      "obj": "Ruti",
+      "entities": [
+        "Paze",
+        "Ruti"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Paze a Ruti?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Zafe",
+      "obj": "Bolupi",
+      "entities": [
+        "Bolupi",
+        "Zafe"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Zafe a Bolupi?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Diza",
+      "obj": "Kopamu",
+      "entities": [
+        "Diza",
+        "Kopamu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Diza a Kopamu?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Paze",
+      "obj": "Suvo",
+      "entities": [
+        "Paze",
+        "Suvo"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Paze a Suvo?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Ligeke",
+      "obj": "Sapore",
+      "entities": [
+        "Sapore",
+        "Ligeke"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Ligeke a Sapore?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Kegope",
+      "obj": "Fafo",
+      "entities": [
+        "Kegope",
+        "Fafo"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Kegope a Fafo?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Sapore",
+      "obj": "Tebome",
+      "entities": [
+        "Sapore",
+        "Tebome"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Sapore a Tebome?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Bate",
+      "obj": "Fuda",
+      "entities": [
+        "Fuda",
+        "Bate"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Bate a Fuda?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": 5,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Fuda",
+      "obj": "Sale",
+      "entities": [
+        "Fuda",
+        "Sale"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Fuda a Sale?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": 5,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Kimavo",
+      "obj": "Lonidi",
+      "entities": [
+        "Kimavo",
+        "Lonidi"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Kimavo a Lonidi?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": 5,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Zerori",
+      "obj": "Dime",
+      "entities": [
+        "Zerori",
+        "Dime"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Zerori a Dime?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": 5,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Ruti",
+      "obj": "Bodi",
+      "entities": [
+        "Ruti",
+        "Bodi"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Ruti a Bodi?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": 5,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Futobi",
+      "obj": "Mure",
+      "entities": [
+        "Futobi",
+        "Mure"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Futobi a Mure?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": 5,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Bolupi",
+      "obj": "Bido",
+      "entities": [
+        "Bolupi",
+        "Bido"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Bolupi a Bido?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": 5,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Popi",
+      "obj": "Foga",
+      "entities": [
+        "Popi",
+        "Foga"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Popi a Foga?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": 5,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Fete",
+      "obj": "Diza",
+      "entities": [
+        "Fete",
+        "Diza"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Fete a Diza?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": 5,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Fabefa",
+      "obj": "Zadi",
+      "entities": [
+        "Fabefa",
+        "Zadi"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Fabefa a Zadi?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": 5,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Tefone",
+      "obj": "Fifu",
+      "entities": [
+        "Tefone",
+        "Fifu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Tefone a Fifu?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": 5,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Zerori",
+      "obj": "Zafe",
+      "entities": [
+        "Zerori",
+        "Zafe"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Zerori a Zafe?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": 5,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Futobi",
+      "obj": "Mime",
+      "entities": [
+        "Futobi",
+        "Mime"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Futobi a Mime?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": 5,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Dude",
+      "obj": "Ligeke",
+      "entities": [
+        "Dude",
+        "Ligeke"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Dude a Ligeke?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Bodi",
+      "obj": "Ruti",
+      "entities": [
+        "Ruti",
+        "Bodi"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Bodi a Ruti?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Ruti",
+      "obj": "Zafe",
+      "entities": [
+        "Ruti",
+        "Zafe"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Ruti a Zafe?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Ruti",
+      "obj": "Kegope",
+      "entities": [
+        "Ruti",
+        "Kegope"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Ruti a Kegope?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Zadi",
+      "obj": "Fabefa",
+      "entities": [
+        "Fabefa",
+        "Zadi"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Zadi a Fabefa?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Dime",
+      "obj": "Sale",
+      "entities": [
+        "Dime",
+        "Sale"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Dime a Sale?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Kimavo",
+      "obj": "Sabufu",
+      "entities": [
+        "Kimavo",
+        "Sabufu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Kimavo a Sabufu?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Mime",
+      "obj": "Futobi",
+      "entities": [
+        "Futobi",
+        "Mime"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Mime a Futobi?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Tebome",
+      "obj": "Sale",
+      "entities": [
+        "Tebome",
+        "Sale"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Tebome a Sale?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Dude",
+      "obj": "Tebome",
+      "entities": [
+        "Dude",
+        "Tebome"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Dude a Tebome?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Diza",
+      "obj": "Fete",
+      "entities": [
+        "Fete",
+        "Diza"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Diza a Fete?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Zifa",
+      "obj": "Dime",
+      "entities": [
+        "Zifa",
+        "Dime"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Zifa a Dime?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Ruti",
+      "obj": "Suvo",
+      "entities": [
+        "Ruti",
+        "Suvo"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Ruti a Suvo?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Fifu",
+      "obj": "Tefone",
+      "entities": [
+        "Tefone",
+        "Fifu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Fifu a Tefone?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": 6,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Fabefa",
+      "obj": "Mure",
+      "entities": [
+        "Fabefa",
+        "Mure"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Fabefa a Mure?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": 6,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Fete",
+      "obj": "Bodi",
+      "entities": [
+        "Fete",
+        "Bodi"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Fete a Bodi?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": 6,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Zerori",
+      "obj": "Bido",
+      "entities": [
+        "Zerori",
+        "Bido"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Zerori a Bido?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": 6,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Futobi",
+      "obj": "Fifu",
+      "entities": [
+        "Futobi",
+        "Fifu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Futobi a Fifu?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": 6,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Fabefa",
+      "obj": "Mime",
+      "entities": [
+        "Fabefa",
+        "Mime"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Fabefa a Mime?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": 6,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Bolupi",
+      "obj": "Lonidi",
+      "entities": [
+        "Bolupi",
+        "Lonidi"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Bolupi a Lonidi?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": 6,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Popi",
+      "obj": "Ligeke",
+      "entities": [
+        "Popi",
+        "Ligeke"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Popi a Ligeke?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": 6,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Fuda",
+      "obj": "Diza",
+      "entities": [
+        "Fuda",
+        "Diza"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Fuda a Diza?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Bido",
+      "obj": "Zerori",
+      "entities": [
+        "Zerori",
+        "Bido"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Bido a Zerori?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Pezo",
+      "obj": "Mure",
+      "entities": [
+        "Pezo",
+        "Mure"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Pezo a Mure?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Fete",
+      "obj": "Kegope",
+      "entities": [
+        "Fete",
+        "Kegope"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Fete a Kegope?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Ligeke",
+      "obj": "Popi",
+      "entities": [
+        "Popi",
+        "Ligeke"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Ligeke a Popi?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Zerori",
+      "obj": "Mime",
+      "entities": [
+        "Zerori",
+        "Mime"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Zerori a Mime?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Fete",
+      "obj": "Suvo",
+      "entities": [
+        "Fete",
+        "Suvo"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Fete a Suvo?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Diza",
+      "obj": "Fuda",
+      "entities": [
+        "Fuda",
+        "Diza"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Diza a Fuda?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Tefone",
+      "obj": "Ligeke",
+      "entities": [
+        "Tefone",
+        "Ligeke"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_lambda, is every Tefone a Ligeke?",
+      "pos": " No",
+      "neg": " Yes"
+    }
+  ]
+}

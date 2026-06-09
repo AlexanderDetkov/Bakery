@@ -1,0 +1,331 @@
+{
+  "name": "lw_iota",
+  "atoms": [
+    "Taso",
+    "Medige",
+    "Tiga",
+    "Sogusa",
+    "Bivise",
+    "Poga",
+    "Nudo",
+    "Leto",
+    "Legu",
+    "Pebevu",
+    "Zogape",
+    "Tufu",
+    "Liba",
+    "Fotano",
+    "Vituna",
+    "Pobone",
+    "Fepu",
+    "Mebi",
+    "Kodo",
+    "Pefu",
+    "Dusu",
+    "Zazi",
+    "Momidu",
+    "Vuro",
+    "Rofo",
+    "Posa",
+    "Sote",
+    "Mopu",
+    "Mumu",
+    "Zuna",
+    "Dota",
+    "Peso",
+    "Baka",
+    "Rivo",
+    "Rena",
+    "Nekaze",
+    "Tera",
+    "Leta",
+    "Monu",
+    "Pofiki",
+    "Figa",
+    "Piniri"
+  ],
+  "rules": [
+    {
+      "body": [
+        "Taso"
+      ],
+      "head": "Medige"
+    },
+    {
+      "body": [
+        "Medige"
+      ],
+      "head": "Tiga"
+    },
+    {
+      "body": [
+        "Tiga"
+      ],
+      "head": "Sogusa"
+    },
+    {
+      "body": [
+        "Sogusa"
+      ],
+      "head": "Bivise"
+    },
+    {
+      "body": [
+        "Bivise"
+      ],
+      "head": "Poga"
+    },
+    {
+      "body": [
+        "Poga"
+      ],
+      "head": "Nudo"
+    },
+    {
+      "body": [
+        "Nudo"
+      ],
+      "head": "Leto"
+    },
+    {
+      "body": [
+        "Leto"
+      ],
+      "head": "Legu"
+    },
+    {
+      "body": [
+        "Sogusa"
+      ],
+      "head": "Pebevu"
+    },
+    {
+      "body": [
+        "Poga"
+      ],
+      "head": "Zogape"
+    },
+    {
+      "body": [
+        "Tufu"
+      ],
+      "head": "Liba"
+    },
+    {
+      "body": [
+        "Liba"
+      ],
+      "head": "Fotano"
+    },
+    {
+      "body": [
+        "Fotano"
+      ],
+      "head": "Vituna"
+    },
+    {
+      "body": [
+        "Vituna"
+      ],
+      "head": "Pobone"
+    },
+    {
+      "body": [
+        "Pobone"
+      ],
+      "head": "Fepu"
+    },
+    {
+      "body": [
+        "Fepu"
+      ],
+      "head": "Mebi"
+    },
+    {
+      "body": [
+        "Fepu"
+      ],
+      "head": "Kodo"
+    },
+    {
+      "body": [
+        "Mebi"
+      ],
+      "head": "Pefu"
+    },
+    {
+      "body": [
+        "Fepu"
+      ],
+      "head": "Dusu"
+    },
+    {
+      "body": [
+        "Dusu"
+      ],
+      "head": "Zazi"
+    },
+    {
+      "body": [
+        "Momidu"
+      ],
+      "head": "Vuro"
+    },
+    {
+      "body": [
+        "Vuro"
+      ],
+      "head": "Rofo"
+    },
+    {
+      "body": [
+        "Rofo"
+      ],
+      "head": "Posa"
+    },
+    {
+      "body": [
+        "Posa"
+      ],
+      "head": "Sote"
+    },
+    {
+      "body": [
+        "Sote"
+      ],
+      "head": "Mopu"
+    },
+    {
+      "body": [
+        "Mopu"
+      ],
+      "head": "Mumu"
+    },
+    {
+      "body": [
+        "Vuro"
+      ],
+      "head": "Zuna"
+    },
+    {
+      "body": [
+        "Rofo"
+      ],
+      "head": "Dota"
+    },
+    {
+      "body": [
+        "Dota"
+      ],
+      "head": "Peso"
+    },
+    {
+      "body": [
+        "Baka"
+      ],
+      "head": "Rivo"
+    },
+    {
+      "body": [
+        "Rivo"
+      ],
+      "head": "Rena"
+    },
+    {
+      "body": [
+        "Rena"
+      ],
+      "head": "Nekaze"
+    },
+    {
+      "body": [
+        "Nekaze"
+      ],
+      "head": "Tera"
+    },
+    {
+      "body": [
+        "Tera"
+      ],
+      "head": "Leta"
+    },
+    {
+      "body": [
+        "Leta"
+      ],
+      "head": "Monu"
+    },
+    {
+      "body": [
+        "Leta"
+      ],
+      "head": "Pofiki"
+    },
+    {
+      "body": [
+        "Rivo"
+      ],
+      "head": "Figa"
+    },
+    {
+      "body": [
+        "Tera"
+      ],
+      "head": "Piniri"
+    }
+  ],
+  "components": [
+    [
+      "Baka",
+      "Figa",
+      "Leta",
+      "Monu",
+      "Nekaze",
+      "Piniri",
+      "Pofiki",
+      "Rena",
+      "Rivo",
+      "Tera"
+    ],
+    [
+      "Bivise",
+      "Legu",
+      "Leto",
+      "Medige",
+      "Nudo",
+      "Pebevu",
+      "Poga",
+      "Sogusa",
+      "Taso",
+      "Tiga",
+      "Zogape"
+    ],
+    [
+      "Dota",
+      "Momidu",
+      "Mopu",
+      "Mumu",
+      "Peso",
+      "Posa",
+      "Rofo",
+      "Sote",
+      "Vuro",
+      "Zuna"
+    ],
+    [
+      "Dusu",
+      "Fepu",
+      "Fotano",
+      "Kodo",
+      "Liba",
+      "Mebi",
+      "Pefu",
+      "Pobone",
+      "Tufu",
+      "Vituna",
+      "Zazi"
+    ]
+  ],
+  "facts": [],
+  "note": "Definite-implication DAG; edges = taught axioms. Acyclic by construction. proof_depth(X,Z) = shortest directed path length = #modus-ponens steps."
+}

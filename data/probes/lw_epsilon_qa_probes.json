@@ -1,0 +1,3100 @@
+{
+  "fact_ref": "data/prompts/lw_epsilon_u.md",
+  "world": "data/worlds/lw_epsilon.json",
+  "note": "QA-format eval probes; the question is SHARED with theorem_qa training via bakery.logic.phrasing (so the baked yes/no decision transfers). hop = proof_depth = shortest-path length. Balanced TRUE vs FALSE per depth so a Yes/No bias scores at chance. expect_heldout = composed-forward (d>=2) + every negative.",
+  "realized_counts": {
+    "d1": {
+      "true": 16,
+      "false": 16,
+      "by_type": {
+        "converse": 6,
+        "cross": 5,
+        "missing_edge": 5
+      },
+      "gen_true": 3.25,
+      "gen_neg_matched": 2
+    },
+    "d2": {
+      "true": 16,
+      "false": 16,
+      "by_type": {
+        "converse": 6,
+        "cross": 5,
+        "missing_edge": 5
+      },
+      "gen_true": 4.06,
+      "gen_neg_matched": 3
+    },
+    "d3": {
+      "true": 16,
+      "false": 16,
+      "by_type": {
+        "converse": 6,
+        "cross": 5,
+        "missing_edge": 5
+      },
+      "gen_true": 4.88,
+      "gen_neg_matched": 3.1
+    },
+    "d4": {
+      "true": 16,
+      "false": 16,
+      "by_type": {
+        "converse": 6,
+        "cross": 5,
+        "missing_edge": 5
+      },
+      "gen_true": 5.31,
+      "gen_neg_matched": 3.5
+    },
+    "d5": {
+      "true": 12,
+      "false": 12,
+      "by_type": {
+        "converse": 4,
+        "cross": 5,
+        "missing_edge": 3
+      },
+      "gen_true": 5.83,
+      "gen_neg_matched": 3.5
+    },
+    "d6": {
+      "true": 8,
+      "false": 8,
+      "by_type": {
+        "converse": 4,
+        "cross": 4,
+        "missing_edge": 0
+      },
+      "gen_true": 6.25,
+      "gen_neg_matched": 6
+    }
+  },
+  "n_probes": 168,
+  "probes": [
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": 1,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Nomuse",
+      "obj": "Rifo",
+      "entities": [
+        "Nomuse",
+        "Rifo"
+      ],
+      "expect_heldout": false,
+      "question": "In lw_epsilon, is every Nomuse a Rifo?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": 1,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Zera",
+      "obj": "Samu",
+      "entities": [
+        "Zera",
+        "Samu"
+      ],
+      "expect_heldout": false,
+      "question": "In lw_epsilon, is every Zera a Samu?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": 1,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Lazeri",
+      "obj": "Lupe",
+      "entities": [
+        "Lazeri",
+        "Lupe"
+      ],
+      "expect_heldout": false,
+      "question": "In lw_epsilon, is every Lazeri a Lupe?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": 1,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Zete",
+      "obj": "Lateva",
+      "entities": [
+        "Zete",
+        "Lateva"
+      ],
+      "expect_heldout": false,
+      "question": "In lw_epsilon, is every Zete a Lateva?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": 1,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Zusi",
+      "obj": "Resa",
+      "entities": [
+        "Zusi",
+        "Resa"
+      ],
+      "expect_heldout": false,
+      "question": "In lw_epsilon, is every Zusi a Resa?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": 1,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Pegafe",
+      "obj": "Zera",
+      "entities": [
+        "Pegafe",
+        "Zera"
+      ],
+      "expect_heldout": false,
+      "question": "In lw_epsilon, is every Pegafe a Zera?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": 1,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Raka",
+      "obj": "Vona",
+      "entities": [
+        "Raka",
+        "Vona"
+      ],
+      "expect_heldout": false,
+      "question": "In lw_epsilon, is every Raka a Vona?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": 1,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Lazeri",
+      "obj": "Lufima",
+      "entities": [
+        "Lazeri",
+        "Lufima"
+      ],
+      "expect_heldout": false,
+      "question": "In lw_epsilon, is every Lazeri a Lufima?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": 1,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Toba",
+      "obj": "Name",
+      "entities": [
+        "Toba",
+        "Name"
+      ],
+      "expect_heldout": false,
+      "question": "In lw_epsilon, is every Toba a Name?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": 1,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Negu",
+      "obj": "Dafabe",
+      "entities": [
+        "Negu",
+        "Dafabe"
+      ],
+      "expect_heldout": false,
+      "question": "In lw_epsilon, is every Negu a Dafabe?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": 1,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Nafu",
+      "obj": "Fule",
+      "entities": [
+        "Nafu",
+        "Fule"
+      ],
+      "expect_heldout": false,
+      "question": "In lw_epsilon, is every Nafu a Fule?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": 1,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Samu",
+      "obj": "Pugo",
+      "entities": [
+        "Samu",
+        "Pugo"
+      ],
+      "expect_heldout": false,
+      "question": "In lw_epsilon, is every Samu a Pugo?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": 1,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Deda",
+      "obj": "Kumi",
+      "entities": [
+        "Deda",
+        "Kumi"
+      ],
+      "expect_heldout": false,
+      "question": "In lw_epsilon, is every Deda a Kumi?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": 1,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Deda",
+      "obj": "Lazeri",
+      "entities": [
+        "Deda",
+        "Lazeri"
+      ],
+      "expect_heldout": false,
+      "question": "In lw_epsilon, is every Deda a Lazeri?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": 1,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Makipo",
+      "obj": "Nomuse",
+      "entities": [
+        "Makipo",
+        "Nomuse"
+      ],
+      "expect_heldout": false,
+      "question": "In lw_epsilon, is every Makipo a Nomuse?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": 1,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Dafabe",
+      "obj": "Danu",
+      "entities": [
+        "Dafabe",
+        "Danu"
+      ],
+      "expect_heldout": false,
+      "question": "In lw_epsilon, is every Dafabe a Danu?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Samu",
+      "obj": "Zera",
+      "entities": [
+        "Zera",
+        "Samu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Samu a Zera?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Dafabe",
+      "obj": "Fule",
+      "entities": [
+        "Dafabe",
+        "Fule"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Dafabe a Fule?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Zusi",
+      "obj": "Danu",
+      "entities": [
+        "Zusi",
+        "Danu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Zusi a Danu?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Negu",
+      "obj": "Buma",
+      "entities": [
+        "Buma",
+        "Negu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Negu a Buma?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Danu",
+      "obj": "Fule",
+      "entities": [
+        "Danu",
+        "Fule"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Danu a Fule?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Name",
+      "obj": "Samu",
+      "entities": [
+        "Name",
+        "Samu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Name a Samu?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Name",
+      "obj": "Toba",
+      "entities": [
+        "Toba",
+        "Name"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Name a Toba?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Lufima",
+      "obj": "Negu",
+      "entities": [
+        "Lufima",
+        "Negu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Lufima a Negu?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Nugifu",
+      "obj": "Kumi",
+      "entities": [
+        "Nugifu",
+        "Kumi"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Nugifu a Kumi?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Pugo",
+      "obj": "Samu",
+      "entities": [
+        "Samu",
+        "Pugo"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Pugo a Samu?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Makipo",
+      "obj": "Lateva",
+      "entities": [
+        "Makipo",
+        "Lateva"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Makipo a Lateva?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Raka",
+      "obj": "Danu",
+      "entities": [
+        "Raka",
+        "Danu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Raka a Danu?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Makipo",
+      "obj": "Nafu",
+      "entities": [
+        "Nafu",
+        "Makipo"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Makipo a Nafu?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Negu",
+      "obj": "Lateva",
+      "entities": [
+        "Negu",
+        "Lateva"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Negu a Lateva?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Vuna",
+      "obj": "Vakasi",
+      "entities": [
+        "Vuna",
+        "Vakasi"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Vuna a Vakasi?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 1,
+      "match_depth": 1,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Tefe",
+      "obj": "Makipo",
+      "entities": [
+        "Makipo",
+        "Tefe"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Tefe a Makipo?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": 2,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Dola",
+      "obj": "Gakavi",
+      "entities": [
+        "Dola",
+        "Gakavi"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Dola a Gakavi?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": 2,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Makipo",
+      "obj": "Rifo",
+      "entities": [
+        "Makipo",
+        "Rifo"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Makipo a Rifo?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": 2,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Pegafe",
+      "obj": "Pibu",
+      "entities": [
+        "Pegafe",
+        "Pibu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Pegafe a Pibu?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": 2,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Nafu",
+      "obj": "Nomuse",
+      "entities": [
+        "Nafu",
+        "Nomuse"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Nafu a Nomuse?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": 2,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Zete",
+      "obj": "Deda",
+      "entities": [
+        "Zete",
+        "Deda"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Zete a Deda?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": 2,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Nafu",
+      "obj": "Tefe",
+      "entities": [
+        "Nafu",
+        "Tefe"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Nafu a Tefe?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": 2,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Zera",
+      "obj": "Pugo",
+      "entities": [
+        "Zera",
+        "Pugo"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Zera a Pugo?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": 2,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Mefo",
+      "obj": "Zera",
+      "entities": [
+        "Mefo",
+        "Zera"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Mefo a Zera?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": 2,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Dafabe",
+      "obj": "Sunugo",
+      "entities": [
+        "Dafabe",
+        "Sunugo"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Dafabe a Sunugo?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": 2,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Bazopu",
+      "obj": "Vona",
+      "entities": [
+        "Bazopu",
+        "Vona"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Bazopu a Vona?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": 2,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Deda",
+      "obj": "Lupe",
+      "entities": [
+        "Deda",
+        "Lupe"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Deda a Lupe?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": 2,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Samu",
+      "obj": "Toba",
+      "entities": [
+        "Samu",
+        "Toba"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Samu a Toba?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": 2,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Sunugo",
+      "obj": "Gugu",
+      "entities": [
+        "Sunugo",
+        "Gugu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Sunugo a Gugu?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": 2,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Pugo",
+      "obj": "Ramepa",
+      "entities": [
+        "Pugo",
+        "Ramepa"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Pugo a Ramepa?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": 2,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Lufima",
+      "obj": "Dara",
+      "entities": [
+        "Lufima",
+        "Dara"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Lufima a Dara?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": 2,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Lateva",
+      "obj": "Lazeri",
+      "entities": [
+        "Lateva",
+        "Lazeri"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Lateva a Lazeri?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Bazopu",
+      "obj": "Danu",
+      "entities": [
+        "Danu",
+        "Bazopu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Bazopu a Danu?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Zete",
+      "obj": "Tefe",
+      "entities": [
+        "Zete",
+        "Tefe"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Zete a Tefe?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Lufima",
+      "obj": "Lupe",
+      "entities": [
+        "Lufima",
+        "Lupe"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Lufima a Lupe?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Sunugo",
+      "obj": "Dafabe",
+      "entities": [
+        "Dafabe",
+        "Sunugo"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Sunugo a Dafabe?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Kumi",
+      "obj": "Zera",
+      "entities": [
+        "Kumi",
+        "Zera"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Kumi a Zera?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Lufima",
+      "obj": "Bovu",
+      "entities": [
+        "Lufima",
+        "Bovu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Lufima a Bovu?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Lufima",
+      "obj": "Deda",
+      "entities": [
+        "Deda",
+        "Lufima"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Lufima a Deda?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Mefo",
+      "obj": "Dafabe",
+      "entities": [
+        "Mefo",
+        "Dafabe"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Mefo a Dafabe?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Bazopu",
+      "obj": "Resa",
+      "entities": [
+        "Bazopu",
+        "Resa"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Bazopu a Resa?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Bovu",
+      "obj": "Deda",
+      "entities": [
+        "Deda",
+        "Bovu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Bovu a Deda?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Vuna",
+      "obj": "Zera",
+      "entities": [
+        "Vuna",
+        "Zera"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Vuna a Zera?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Toba",
+      "obj": "Pugo",
+      "entities": [
+        "Toba",
+        "Pugo"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Toba a Pugo?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Dafabe",
+      "obj": "Buma",
+      "entities": [
+        "Buma",
+        "Dafabe"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Dafabe a Buma?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Gugu",
+      "obj": "Tefe",
+      "entities": [
+        "Gugu",
+        "Tefe"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Gugu a Tefe?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Bazopu",
+      "obj": "Sunugo",
+      "entities": [
+        "Bazopu",
+        "Sunugo"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Bazopu a Sunugo?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 2,
+      "match_depth": 2,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Tefe",
+      "obj": "Nafu",
+      "entities": [
+        "Nafu",
+        "Tefe"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Tefe a Nafu?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": 3,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Danu",
+      "obj": "Raka",
+      "entities": [
+        "Danu",
+        "Raka"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Danu a Raka?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": 3,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Lazeri",
+      "obj": "Dara",
+      "entities": [
+        "Lazeri",
+        "Dara"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Lazeri a Dara?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": 3,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Vakasi",
+      "obj": "Gakavi",
+      "entities": [
+        "Vakasi",
+        "Gakavi"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Vakasi a Gakavi?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": 3,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Zete",
+      "obj": "Lazeri",
+      "entities": [
+        "Zete",
+        "Lazeri"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Zete a Lazeri?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": 3,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Dafabe",
+      "obj": "Bazopu",
+      "entities": [
+        "Dafabe",
+        "Bazopu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Dafabe a Bazopu?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": 3,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Lateva",
+      "obj": "Lufima",
+      "entities": [
+        "Lateva",
+        "Lufima"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Lateva a Lufima?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": 3,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Pegafe",
+      "obj": "Pugo",
+      "entities": [
+        "Pegafe",
+        "Pugo"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Pegafe a Pugo?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": 3,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Lateva",
+      "obj": "Bovu",
+      "entities": [
+        "Lateva",
+        "Bovu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Lateva a Bovu?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": 3,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Lateva",
+      "obj": "Lupe",
+      "entities": [
+        "Lateva",
+        "Lupe"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Lateva a Lupe?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": 3,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Danu",
+      "obj": "Gugu",
+      "entities": [
+        "Danu",
+        "Gugu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Danu a Gugu?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": 3,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Mefo",
+      "obj": "Pibu",
+      "entities": [
+        "Mefo",
+        "Pibu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Mefo a Pibu?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": 3,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Tefe",
+      "obj": "Vuna",
+      "entities": [
+        "Tefe",
+        "Vuna"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Tefe a Vuna?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": 3,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Zera",
+      "obj": "Toba",
+      "entities": [
+        "Zera",
+        "Toba"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Zera a Toba?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": 3,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Samu",
+      "obj": "Ramepa",
+      "entities": [
+        "Samu",
+        "Ramepa"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Samu a Ramepa?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": 3,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Pugo",
+      "obj": "Runidu",
+      "entities": [
+        "Pugo",
+        "Runidu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Pugo a Runidu?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": 3,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Negu",
+      "obj": "Resa",
+      "entities": [
+        "Negu",
+        "Resa"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Negu a Resa?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Kumi",
+      "obj": "Zete",
+      "entities": [
+        "Zete",
+        "Kumi"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Kumi a Zete?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Zusi",
+      "obj": "Rifo",
+      "entities": [
+        "Zusi",
+        "Rifo"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Zusi a Rifo?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Sunugo",
+      "obj": "Resa",
+      "entities": [
+        "Sunugo",
+        "Resa"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Sunugo a Resa?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Zusi",
+      "obj": "Buma",
+      "entities": [
+        "Buma",
+        "Zusi"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Zusi a Buma?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Pibu",
+      "obj": "Rifo",
+      "entities": [
+        "Pibu",
+        "Rifo"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Pibu a Rifo?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Sunugo",
+      "obj": "Danu",
+      "entities": [
+        "Sunugo",
+        "Danu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Sunugo a Danu?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Sunugo",
+      "obj": "Negu",
+      "entities": [
+        "Negu",
+        "Sunugo"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Sunugo a Negu?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Nugifu",
+      "obj": "Zusi",
+      "entities": [
+        "Nugifu",
+        "Zusi"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Nugifu a Zusi?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Vakasi",
+      "obj": "Rifo",
+      "entities": [
+        "Vakasi",
+        "Rifo"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Vakasi a Rifo?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Ramepa",
+      "obj": "Samu",
+      "entities": [
+        "Samu",
+        "Ramepa"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Ramepa a Samu?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Makipo",
+      "obj": "Lazeri",
+      "entities": [
+        "Makipo",
+        "Lazeri"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Makipo a Lazeri?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Sunugo",
+      "obj": "Zusi",
+      "entities": [
+        "Sunugo",
+        "Zusi"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Sunugo a Zusi?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Vona",
+      "obj": "Sunugo",
+      "entities": [
+        "Sunugo",
+        "Vona"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Vona a Sunugo?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Danu",
+      "obj": "Vakasi",
+      "entities": [
+        "Danu",
+        "Vakasi"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Danu a Vakasi?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Pugo",
+      "obj": "Pibu",
+      "entities": [
+        "Pugo",
+        "Pibu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Pugo a Pibu?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 3,
+      "match_depth": 3,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Rifo",
+      "obj": "Nafu",
+      "entities": [
+        "Nafu",
+        "Rifo"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Rifo a Nafu?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": 4,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Samu",
+      "obj": "Runidu",
+      "entities": [
+        "Samu",
+        "Runidu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Samu a Runidu?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": 4,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Zera",
+      "obj": "Ramepa",
+      "entities": [
+        "Zera",
+        "Ramepa"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Zera a Ramepa?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": 4,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Tefe",
+      "obj": "Gakavi",
+      "entities": [
+        "Tefe",
+        "Gakavi"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Tefe a Gakavi?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": 4,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Pegafe",
+      "obj": "Toba",
+      "entities": [
+        "Pegafe",
+        "Toba"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Pegafe a Toba?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": 4,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Zete",
+      "obj": "Lufima",
+      "entities": [
+        "Zete",
+        "Lufima"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Zete a Lufima?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": 4,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Buma",
+      "obj": "Sunugo",
+      "entities": [
+        "Buma",
+        "Sunugo"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Buma a Sunugo?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": 4,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Dafabe",
+      "obj": "Gugu",
+      "entities": [
+        "Dafabe",
+        "Gugu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Dafabe a Gugu?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": 4,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Nafu",
+      "obj": "Dola",
+      "entities": [
+        "Nafu",
+        "Dola"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Nafu a Dola?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": 4,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Zera",
+      "obj": "Name",
+      "entities": [
+        "Zera",
+        "Name"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Zera a Name?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": 4,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Zete",
+      "obj": "Lupe",
+      "entities": [
+        "Zete",
+        "Lupe"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Zete a Lupe?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": 4,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Danu",
+      "obj": "Vona",
+      "entities": [
+        "Danu",
+        "Vona"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Danu a Vona?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": 4,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Negu",
+      "obj": "Bazopu",
+      "entities": [
+        "Negu",
+        "Bazopu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Negu a Bazopu?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": 4,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Makipo",
+      "obj": "Vuna",
+      "entities": [
+        "Makipo",
+        "Vuna"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Makipo a Vuna?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": 4,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Deda",
+      "obj": "Dara",
+      "entities": [
+        "Deda",
+        "Dara"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Deda a Dara?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": 4,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Zete",
+      "obj": "Bovu",
+      "entities": [
+        "Zete",
+        "Bovu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Zete a Bovu?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": 4,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Dafabe",
+      "obj": "Raka",
+      "entities": [
+        "Dafabe",
+        "Raka"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Dafabe a Raka?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Pugo",
+      "obj": "Mefo",
+      "entities": [
+        "Mefo",
+        "Pugo"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Pugo a Mefo?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Nomuse",
+      "obj": "Lufima",
+      "entities": [
+        "Nomuse",
+        "Lufima"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Nomuse a Lufima?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Danu",
+      "obj": "Resa",
+      "entities": [
+        "Danu",
+        "Resa"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Danu a Resa?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Runidu",
+      "obj": "Samu",
+      "entities": [
+        "Samu",
+        "Runidu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Runidu a Samu?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Runidu",
+      "obj": "Lupe",
+      "entities": [
+        "Runidu",
+        "Lupe"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Runidu a Lupe?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Danu",
+      "obj": "Zusi",
+      "entities": [
+        "Danu",
+        "Zusi"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Danu a Zusi?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Ramepa",
+      "obj": "Zera",
+      "entities": [
+        "Zera",
+        "Ramepa"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Ramepa a Zera?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Pegafe",
+      "obj": "Dola",
+      "entities": [
+        "Pegafe",
+        "Dola"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Pegafe a Dola?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Samu",
+      "obj": "Pibu",
+      "entities": [
+        "Samu",
+        "Pibu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Samu a Pibu?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Nugifu",
+      "obj": "Lateva",
+      "entities": [
+        "Lateva",
+        "Nugifu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Nugifu a Lateva?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Deda",
+      "obj": "Dola",
+      "entities": [
+        "Deda",
+        "Dola"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Deda a Dola?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Tefe",
+      "obj": "Rifo",
+      "entities": [
+        "Tefe",
+        "Rifo"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Tefe a Rifo?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Bazopu",
+      "obj": "Negu",
+      "entities": [
+        "Negu",
+        "Bazopu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Bazopu a Negu?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Nafu",
+      "obj": "Resa",
+      "entities": [
+        "Nafu",
+        "Resa"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Nafu a Resa?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Danu",
+      "obj": "Dafabe",
+      "entities": [
+        "Danu",
+        "Dafabe"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Danu a Dafabe?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 4,
+      "match_depth": 4,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Lufima",
+      "obj": "Zete",
+      "entities": [
+        "Zete",
+        "Lufima"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Lufima a Zete?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": 5,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Zera",
+      "obj": "Runidu",
+      "entities": [
+        "Zera",
+        "Runidu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Zera a Runidu?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": 5,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Zete",
+      "obj": "Nugifu",
+      "entities": [
+        "Zete",
+        "Nugifu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Zete a Nugifu?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": 5,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Lateva",
+      "obj": "Dara",
+      "entities": [
+        "Lateva",
+        "Dara"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Lateva a Dara?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": 5,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Buma",
+      "obj": "Bazopu",
+      "entities": [
+        "Buma",
+        "Bazopu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Buma a Bazopu?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": 5,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Pegafe",
+      "obj": "Name",
+      "entities": [
+        "Pegafe",
+        "Name"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Pegafe a Name?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": 5,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Nafu",
+      "obj": "Vuna",
+      "entities": [
+        "Nafu",
+        "Vuna"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Nafu a Vuna?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": 5,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Pegafe",
+      "obj": "Ramepa",
+      "entities": [
+        "Pegafe",
+        "Ramepa"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Pegafe a Ramepa?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": 5,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Negu",
+      "obj": "Gugu",
+      "entities": [
+        "Negu",
+        "Gugu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Negu a Gugu?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": 5,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Dafabe",
+      "obj": "Vona",
+      "entities": [
+        "Dafabe",
+        "Vona"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Dafabe a Vona?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": 5,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Negu",
+      "obj": "Raka",
+      "entities": [
+        "Negu",
+        "Raka"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Negu a Raka?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": 5,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Mefo",
+      "obj": "Toba",
+      "entities": [
+        "Mefo",
+        "Toba"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Mefo a Toba?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": 5,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Makipo",
+      "obj": "Gakavi",
+      "entities": [
+        "Makipo",
+        "Gakavi"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Makipo a Gakavi?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Runidu",
+      "obj": "Zera",
+      "entities": [
+        "Zera",
+        "Runidu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Runidu a Zera?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Dola",
+      "obj": "Toba",
+      "entities": [
+        "Dola",
+        "Toba"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Dola a Toba?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Makipo",
+      "obj": "Fule",
+      "entities": [
+        "Makipo",
+        "Fule"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Makipo a Fule?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Gakavi",
+      "obj": "Makipo",
+      "entities": [
+        "Makipo",
+        "Gakavi"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Gakavi a Makipo?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Fule",
+      "obj": "Bazopu",
+      "entities": [
+        "Fule",
+        "Bazopu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Fule a Bazopu?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Zera",
+      "obj": "Pegafe",
+      "entities": [
+        "Zera",
+        "Pegafe"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Zera a Pegafe?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Name",
+      "obj": "Pegafe",
+      "entities": [
+        "Pegafe",
+        "Name"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Name a Pegafe?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Lufima",
+      "obj": "Bazopu",
+      "entities": [
+        "Lufima",
+        "Bazopu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Lufima a Bazopu?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": null,
+      "form": "missing_edge",
+      "neg_type": "missing_edge",
+      "provable": false,
+      "subj": "Dafabe",
+      "obj": "Negu",
+      "entities": [
+        "Dafabe",
+        "Negu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Dafabe a Negu?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Dara",
+      "obj": "Lateva",
+      "entities": [
+        "Lateva",
+        "Dara"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Dara a Lateva?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Lupe",
+      "obj": "Bazopu",
+      "entities": [
+        "Lupe",
+        "Bazopu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Lupe a Bazopu?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 5,
+      "match_depth": 5,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Lupe",
+      "obj": "Toba",
+      "entities": [
+        "Lupe",
+        "Toba"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Lupe a Toba?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": 6,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Buma",
+      "obj": "Raka",
+      "entities": [
+        "Buma",
+        "Raka"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Buma a Raka?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": 6,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Pegafe",
+      "obj": "Runidu",
+      "entities": [
+        "Pegafe",
+        "Runidu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Pegafe a Runidu?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": 6,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Zete",
+      "obj": "Dara",
+      "entities": [
+        "Zete",
+        "Dara"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Zete a Dara?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": 6,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Nafu",
+      "obj": "Gakavi",
+      "entities": [
+        "Nafu",
+        "Gakavi"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Nafu a Gakavi?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": 6,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Mefo",
+      "obj": "Ramepa",
+      "entities": [
+        "Mefo",
+        "Ramepa"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Mefo a Ramepa?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": 6,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Buma",
+      "obj": "Gugu",
+      "entities": [
+        "Buma",
+        "Gugu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Buma a Gugu?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": 6,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Mefo",
+      "obj": "Name",
+      "entities": [
+        "Mefo",
+        "Name"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Mefo a Name?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": 6,
+      "form": "forward",
+      "neg_type": null,
+      "provable": true,
+      "subj": "Negu",
+      "obj": "Vona",
+      "entities": [
+        "Negu",
+        "Vona"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Negu a Vona?",
+      "pos": " Yes",
+      "neg": " No"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Runidu",
+      "obj": "Pegafe",
+      "entities": [
+        "Pegafe",
+        "Runidu"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Runidu a Pegafe?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Deda",
+      "obj": "Raka",
+      "entities": [
+        "Deda",
+        "Raka"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Deda a Raka?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Vona",
+      "obj": "Negu",
+      "entities": [
+        "Negu",
+        "Vona"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Vona a Negu?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Nugifu",
+      "obj": "Raka",
+      "entities": [
+        "Nugifu",
+        "Raka"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Nugifu a Raka?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Name",
+      "obj": "Mefo",
+      "entities": [
+        "Mefo",
+        "Name"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Name a Mefo?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Nugifu",
+      "obj": "Name",
+      "entities": [
+        "Nugifu",
+        "Name"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Nugifu a Name?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": null,
+      "form": "converse",
+      "neg_type": "converse",
+      "provable": false,
+      "subj": "Ramepa",
+      "obj": "Mefo",
+      "entities": [
+        "Mefo",
+        "Ramepa"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Ramepa a Mefo?",
+      "pos": " No",
+      "neg": " Yes"
+    },
+    {
+      "hop": 6,
+      "match_depth": 6,
+      "proof_depth": null,
+      "form": "cross",
+      "neg_type": "cross",
+      "provable": false,
+      "subj": "Makipo",
+      "obj": "Raka",
+      "entities": [
+        "Makipo",
+        "Raka"
+      ],
+      "expect_heldout": true,
+      "question": "In lw_epsilon, is every Makipo a Raka?",
+      "pos": " No",
+      "neg": " Yes"
+    }
+  ]
+}

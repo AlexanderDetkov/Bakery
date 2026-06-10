@@ -33,6 +33,11 @@ experiment: >
 links: [[CORRECTED-picture-robust-metric]], [[tokenization-artifact-corrected-prompting-is-directional]], [[size-helps-fidelity-not-the-propagation-gap]], [[contrastive-trajectories-do-not-fix-the-converse]], [[trajectory-type-is-a-binary-coverage-gate]]
 ---
 
+> **Framing:** [[reversal-curse-connection]] places this precisely. Note the DEPTH-grokking null
+> ([[grokking-null-no-late-propagation-transition]], ep2000) does **NOT** settle the INVERSE-grokking
+> question — those are different targets. Invertibility's inverse grokking is wd-driven and onsets ep~1–2k;
+> the clean test is an inverse-grokking arm on a TRUE-inverse world, not the depth runs we already did.
+
 ## Why now / what's new vs prior attempts
 - [[contrastive-trajectories-do-not-fix-the-converse]] tried converse-eliciting trajectories and they did
   NOT fix the converse — BUT that was (a) under the broken space-only metric and (b) at 15-40 epochs

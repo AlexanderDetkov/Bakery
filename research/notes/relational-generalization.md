@@ -113,6 +113,10 @@ instrument is a **truth-function relabel** of the existing machinery ("same clas
 - **Higher-arity Horn** — relational atoms `R(a,b)` with general Horn rules (kinship:
   `grandparent(A,C) :- parent(A,B), parent(B,C)`). The fully general "knowledge graph reasoning" setting;
   the current instrument is its simplest fragment.
+- **Designated inverse** — a relation `R` with a true inverse symbol via `R⁻¹(Y,X) :- R(X,Y)`. This is the
+  home of the **reversal curse**: train forward `R` atoms only, ask the true-but-unstated `R⁻¹`. See
+  [[reversal-curse-connection]] — failing to install that rule is the curse; it is the *dual* of the
+  directed `converse` family (whose reverse is FALSE), and a corollary of the coverage-bound.
 
 This zoo is the framework's menu of worlds — defined entirely independently of which method is studied on
 them. **Two of these instances are already enqueued** as [[q-graph-structure-diamonds-multipremise]]:

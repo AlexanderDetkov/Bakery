@@ -29,6 +29,12 @@ experiment: >
 links: [[q-grokking-converse-via-longer-training]], [[CORRECTED-picture-robust-metric]], [[propagation-bounded-by-trajectory-coverage]]
 ---
 
+> **Framing:** see [[reversal-curse-connection]] for the rigorous placement. Two refinements it adds: (1) the
+> clean test needs a TRUE-inverse world (`relation_mode="inverse"`), not the directed FALSE converse — those
+> are duals; (2) the SFT-vs-bake divergence is *predicted* to be set by the **teacher's generative coverage**
+> of the inverse (baking distills a reasoner; toy SFT does not), and our small-`N` worlds sit in the
+> curse-prone regime per Invertibility's N-scaling law.
+
 ## Why this is the cleanest bridge to ~/Invertibility
 The toy model is literally SFT (next-token CE on sequences). Putting an SFT arm next to baking on the SAME
 facts/probes makes the comparison apples-to-apples and tells us whether "baking's converse problem" is just

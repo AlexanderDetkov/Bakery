@@ -771,3 +771,27 @@ GPUs idle now. Gate: `make test-fast` (re-run). Next dev candidates: the split f
   - UPDATE: leak-free confirmation extended to **4 eq graphs** (tf-eq_{alpha,beta,gamma,delta}-n1, all built
     clean — depth-1 splits naturally disjoint): clean d2 cross-FA 0.97±.00, AUROC 0.56±.12 vs sampled 0.93/0.66.
     The CoT leak understated over-connection graph-generally. Commit pending.
+
+
+
+---
+
+## interactive — 2026-06-10 — framing note: rigorous connection to the reversal curse
+
+User added the sister project `~/Invertibility` (research/scaling) and asked for a rigorous connection to the
+reversal curse (chose: framing note only, no build/run). Wrote [[reversal-curse-connection]] (kind: note):
+
+- **Formal placement:** the reversal curse = failing to install the inverse rule `ρ_inv: R⁻¹(Y,X):-R(X,Y)` from
+  forward-only data — a missing closure rule in the [[relational-generalization]] fixpoint lattice.
+- **Duality (key rigor):** our directed `converse` family is the DUAL (reverse is FALSE → reject; we measured
+  OVER-generalization), so "baking is directional" and "baking has the reversal curse" are the SAME
+  conditional-copying behaviour. **The curse is UNTESTED on our instrument** (lw_* have no inverse rule); the
+  equivalence-world d1 AUROC 1.00 is NOT escape (symmetric phrasing = symmetry given, not generalized).
+- **Bridge:** the curse is a COROLLARY of the coverage-bound (`ρ_inv` installed iff trajectories exercise it);
+  Invertibility's "T≥2 paths break it" = paths put `ρ_inv` in coverage.
+- **Novel prediction:** baking distills a *reasoning teacher*, so its curse is set by the teacher's GENERATIVE
+  coverage of the inverse → baking may escape where toy SFT cannot. Falsifiable; small-N worlds are in the
+  cursed regime per Invertibility's N-scaling law.
+- Specifies (NOT run) the 3-arm prompting/SFT/bake test on a `relation_mode="inverse"` world (reuses the
+  existing `sft` objective + gate). Cross-linked [[q-sft-vs-bake-reversal-curse]] (the test) and
+  [[q-grokking-converse-via-longer-training]] (depth-grok null ≠ inverse-grok). Links verified; no code/runs.

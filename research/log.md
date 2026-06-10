@@ -745,3 +745,25 @@ contention. Stopped my own now-moot completion waiter (bbydbsp72).
 **Next:** the over-connection mechanism is confirmed graph- AND relation-general. Open follow-up: does reducing
 "yes-pressure" in the bake distribution (balanced vs forward-only trajectory framing) reduce cross-FA? + an
 equivalence multi-seed set to match the paired protocol.
+
+
+
+---
+
+## interactive — 2026-06-10 — equivalence finding HARDENED (seed-replicated + leak-free)
+
+Used the idle GPUs (after the eq sweep) for two cheap, high-value hardenings of
+[[equivalence-world-confirms-cross-over-connection-mechanism]]:
+
+1. **Seed replication** (eqms-eq_alpha-n{1,2}-s{11,12}, sampled): baked d2 cross-FA 0.91±0.05 over 3 seeds
+   (s10/11/12), n=2 heals to 0.32±0.10 — tight, seed-stable.
+2. **Leak-free confirmation** (tf-eq_alpha-n1, teacher-forced — gate ENFORCES disjointness, no CoT leak): the
+   over-affirmation is STRONGER without the leak — baked d2 cross-FA **0.97** (vs sampled 0.91), cross-AUROC
+   **0.38 BELOW chance** (vs 0.60). So the CoT leak was HELPING the baked model (recall-of-recited inflated d2);
+   removing it shows over-connection is worse than the sampled numbers. **The central finding's biggest caveat
+   (CoT leak) is addressed and the effect was understated, not manufactured.**
+
+Teacher-forced clean arm for the OTHER cells (directed n1/n2, eq n2) is gate-blocked (train_depth ∩ probe_depth
+≠ ∅) → needs a disjoint-split builder fix ([[q-teacher-ceiling-vs-objective-limit]] → status blocked).
+GPUs idle now. Gate: `make test-fast` (re-run). Next dev candidates: the split fix, or
+[[q-over-connection-scales-with-yes-pressure]].

@@ -1,8 +1,19 @@
 ---
 title: Is baking's depth-3 ceiling the TEACHER's reach or the BAKING OBJECTIVE's limit? (teacher-forced ground truth beyond the teacher + matched-trajectory-count control)
-status: open
+status: blocked        # 2026-06-10: teacher-forced clean arm BLOCKED by the gate — needs a builder split fix (see note below)
 priority: high
 created: 2026-06-07
+
+## 2026-06-10 — teacher-forced clean arm is BLOCKED by the gate (needs a disjoint relation-level split)
+Tried `--data.sample_trajectories false` on lw_alpha + eq_alpha, n∈{1,2}. In teacher-forced mode the gate
+ENFORCES train/eval disjointness (sampled mode only RECORDS it), and it correctly **refused 3 of 4 builds**:
+`assert_probes_heldout` fired because the teacher-forced training pairs at `train_max_depth` overlap held-out
+probes (tf-eq_alpha-n2: "probes tagged expect_heldout are STATED by the trajectories: ['In eq_alpha, are Guva
+and Rotezu the same kind?', …]"). Only **tf-eq_alpha-n1** had a naturally-disjoint split and ran clean.
+**Actionable next dev step:** the teacher-forced builder must EXCLUDE the held-out probe pairs from the
+enumerated training pairs (a relation-level disjoint split), not just rely on `split_seed`; needs a builder
+change + a test. The gate is behaving correctly — this is a validity win, not a bug. Until fixed, a clean
+leak-free reference exists only for cells where the split happens to be disjoint (e.g. eq_alpha-n1).
 hypothesis: >
   [[baked-propagation-tracks-trained-depth-no-compositional-bonus]] showed baked d3 ≤ 0 with no grokking,
   AND prompted d3 = 0 — so sampled baking can't reach d3. But that conflates two limits: (i) the TEACHER

@@ -42,6 +42,20 @@ shadow is, literally, **over-connection: affirming that unrelated things are rel
 - **Not undertraining** — eval_kl converged to 0.07–0.15 (lower than the directed worlds); the over-connection
   coexists with an excellent distillation fit, reaffirming eval_kl ⟂ propagation.
 
+## HARDENING (2026-06-10) — seed-replicated AND leak-immune (the CoT-leak caveat is now ADDRESSED, and it understated the effect)
+- **Seed replication (3 seeds, eq_alpha s10/s11/s12):** baked d2 cross-FA **0.91±0.05** (prompted 0.03),
+  cross-AUROC 0.60±0.07 (prompted 0.85); n=2 heals to FA 0.32±0.10. d1 baked AUROC 0.97–1.00. Tight sds —
+  the over-affirmation is seed-stable, not a one-split fluke. Runs: eqms-eq_alpha-n{1,2}-s{11,12}.
+- **Leak-free confirmation (teacher-forced clean cell, tf-eq_alpha-n1):** with `sample_trajectories=False` the
+  gate ENFORCES train/eval disjointness (no recall-of-recited), so this cell is CoT-leak-free. The over-affirmation
+  is **stronger, not weaker**: baked d2 cross-FA **0.97** (vs sampled 0.91) and cross-AUROC **0.38 — BELOW chance**
+  (vs sampled 0.60), i.e. the clean baked model ranks unrelated pairs *above* true same-class pairs at d2.
+  **Implication: the CoT leak was HELPING the baked model** (recited held-out pairs inflated its d2 discrimination);
+  removing it reveals over-connection is worse than the sampled numbers show. The central finding is **leak-immune
+  and was understated** — and by extension the directed-world cross deficit is likely understated too.
+  (Only the eq_alpha-n1 cell ran clean; the other teacher-forced cells are gate-blocked pending a disjoint-split
+  builder fix — [[q-teacher-ceiling-vs-objective-limit]].)
+
 ## Directed vs equivalence — the mechanism is graph-AND-relation-general, and STARKER without competing negatives
 | world | d2 cross AUROC (prompted→baked n1) | d2 cross FA (prompted→baked n1) | n=2 heals FA to |
 |---|---|---|---|
@@ -53,9 +67,10 @@ that affirmation to unrelated pairs far more aggressively than in the directed w
 give it less "yes" pressure). Over-connection scales with how much the trajectory distribution says "yes, related".
 
 ## Counter-arguments / threats to validity
-- **CoT leak** ([[sampled-teacher-trajectories-keep-cot]]) inflates absolute held-out d≥2 for all states equally, so
-  it cannot manufacture the prompted-vs-baked GAP (the prompted teacher sees the same leaked CoT and still rejects
-  cross at FA 0.06). The cross-FA gap is the claim and it is leak-immune.
+- **CoT leak** ([[sampled-teacher-trajectories-keep-cot]]) — **now DIRECTLY ADDRESSED** by the clean teacher-forced
+  cell (HARDENING above): without any leak the gap is LARGER (cross-FA 0.97, AUROC 0.38 below chance), so the leak
+  was understating, not manufacturing, the effect. (It inflates absolute d≥2 for all states equally anyway, and the
+  prompted teacher sees the same leaked CoT yet still rejects cross at FA 0.03–0.06.) The claim is leak-immune.
 - **4 eq graphs vs 12 directed** — fewer worlds, but the sds are tight (d2 FA 0.93±.05) and every graph shows it; the
   directed result it confirms is already 12-graph + 4-seed high-confidence.
 - **d3 baked AUROC < chance + FA→0.97** is the depth boundary (one hop past trained depth), where baking affirms ~all

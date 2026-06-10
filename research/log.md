@@ -767,3 +767,7 @@ Teacher-forced clean arm for the OTHER cells (directed n1/n2, eq n2) is gate-blo
 ≠ ∅) → needs a disjoint-split builder fix ([[q-teacher-ceiling-vs-objective-limit]] → status blocked).
 GPUs idle now. Gate: `make test-fast` (re-run). Next dev candidates: the split fix, or
 [[q-over-connection-scales-with-yes-pressure]].
+
+  - UPDATE: leak-free confirmation extended to **4 eq graphs** (tf-eq_{alpha,beta,gamma,delta}-n1, all built
+    clean — depth-1 splits naturally disjoint): clean d2 cross-FA 0.97±.00, AUROC 0.56±.12 vs sampled 0.93/0.66.
+    The CoT leak understated over-connection graph-generally. Commit pending.

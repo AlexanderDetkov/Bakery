@@ -46,15 +46,15 @@ shadow is, literally, **over-connection: affirming that unrelated things are rel
 - **Seed replication (3 seeds, eq_alpha s10/s11/s12):** baked d2 cross-FA **0.91±0.05** (prompted 0.03),
   cross-AUROC 0.60±0.07 (prompted 0.85); n=2 heals to FA 0.32±0.10. d1 baked AUROC 0.97–1.00. Tight sds —
   the over-affirmation is seed-stable, not a one-split fluke. Runs: eqms-eq_alpha-n{1,2}-s{11,12}.
-- **Leak-free confirmation (teacher-forced clean cell, tf-eq_alpha-n1):** with `sample_trajectories=False` the
-  gate ENFORCES train/eval disjointness (no recall-of-recited), so this cell is CoT-leak-free. The over-affirmation
-  is **stronger, not weaker**: baked d2 cross-FA **0.97** (vs sampled 0.91) and cross-AUROC **0.38 — BELOW chance**
-  (vs sampled 0.60), i.e. the clean baked model ranks unrelated pairs *above* true same-class pairs at d2.
-  **Implication: the CoT leak was HELPING the baked model** (recited held-out pairs inflated its d2 discrimination);
-  removing it reveals over-connection is worse than the sampled numbers show. The central finding is **leak-immune
-  and was understated** — and by extension the directed-world cross deficit is likely understated too.
-  (Only the eq_alpha-n1 cell ran clean; the other teacher-forced cells are gate-blocked pending a disjoint-split
-  builder fix — [[q-teacher-ceiling-vs-objective-limit]].)
+- **Leak-free confirmation (teacher-forced, 4 eq graphs, n=1):** with `sample_trajectories=False` the gate ENFORCES
+  train/eval disjointness (no recall-of-recited), so these cells are CoT-leak-free. Across tf-eq_{alpha,beta,gamma,
+  delta}-n1 the over-affirmation is **stronger, not weaker**: baked d2 cross-FA **0.97±.00** (vs sampled 0.93) and
+  cross-AUROC **0.56±.12** (vs sampled 0.66); per-graph it dips to 0.38 (eq_alpha). d1 baked AUROC 0.98±.01 (still
+  aces within-class). **Implication: the CoT leak was HELPING the baked model** (recited held-out pairs inflated its
+  d2 discrimination); removing it shows over-connection is worse than the sampled numbers — graph-generally.
+  The central finding is **leak-immune and was understated** — and by extension the directed-world cross deficit is
+  likely understated too. (Only n=1 cells ran clean; the n=2 / directed teacher-forced cells are gate-blocked
+  pending a disjoint-split builder fix — [[q-teacher-ceiling-vs-objective-limit]].)
 
 ## Directed vs equivalence — the mechanism is graph-AND-relation-general, and STARKER without competing negatives
 | world | d2 cross AUROC (prompted→baked n1) | d2 cross FA (prompted→baked n1) | n=2 heals FA to |

@@ -11,7 +11,6 @@ prior vs prompted vs baked, all on ONE checkpoint). Assets: `data/prompts/tsunam
 `data/contexts/tsunami_contexts.json`, `data/probes/tsunami_probes.json`.
 
 ## Open questions
-- [[q-sft-vs-bake-reversal-curse]] — active (high) — PARTIAL (n1-s0): NO reversal curse for either arm on the Hilbert task → [[bake-tracks-teacher-sft-sharpens]]; bake-vs-SFT is faithfulness-vs-sharpness (eval_kl 0.47 vs 4.43). n2/n3 SFT chained; teacher-forced leak control + grokking-length SFT pending.
 - [[q-fidelity-vs-sharpness-frontier]] — open (medium) — NEW (from [[bake-tracks-teacher-sft-sharpens]]): can half-baking/KL-temperature interpolate the eval_kl↔d′ frontier between faithful-bake and sharp-SFT, and which point best matches the teacher's GENERATED answers?
 - [[q-graph-structure-diamonds-multipremise]] — open (high) — current logic worlds are single-inheritance trees (chain inferences only); add convergent DAGs (diamonds → shortest-proof) and multi-premise conjunctive rules (proof trees → 2-fact composition). Diamonds = generator-only (engine ready); multi-premise = Tier-2 saturation engine.
 - [[q-regularization-preserves-behavior]] — open (medium) — NEW capability (shipped 2026-06-07): mix base-anchored irrelevant-question (SQuAD) trajectories into the bake to preserve general behavior; does behavior_drift fall with anchor count WITHOUT hurting held-out propagation? Turnkey: `configs/sweeps/regularization_strength.yaml` (n=1, {0,32,128} anchors, 8B). Queued behind the n-sweep.
@@ -30,6 +29,7 @@ prior vs prompted vs baked, all on ONE checkpoint). Assets: `data/prompts/tsunam
 - [[q-fix-converse-via-contrastive-trajectories]] — resolved (S2c3) → [[contrastive-trajectories-do-not-fix-the-converse]]
 - [[q-fix-converse-stronger]] — resolved (S2c4) → [[tokenization-artifact-corrected-prompting-is-directional]] (u' doesn't fix baked converse = real LoRA limit; + metric artifact found & fixed)
 - [[q-grokking-converse-via-longer-training]] — resolved (S4c3) → [[no-grokking-converse-installed-early]] (no late transition to 10k ep; converse installed early; reversal-curse→grokking framing doesn't transfer)
+- [[q-sft-vs-bake-reversal-curse]] — resolved (S4c3) → [[bake-tracks-teacher-sft-sharpens]] (no curse for either arm; bake-vs-SFT = teacher-fidelity vs sharpness; 12-run CIs disjoint + leak-free + full curriculum grid)
 
 ## ⭐ Capstone (read these two together)
 - [[CORRECTED-picture-robust-metric]] — **the definitive corrected result** (tokenization-robust, generation-validated): baking propagates FORWARD entailments well (fact-general); converse reliability is chain-specific; prompting is directional; 1B capacity-gated single-pass.

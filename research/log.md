@@ -465,3 +465,9 @@ framing from ~/Invertibility does not transfer to fact-baking a pretrained 8B he
 
 GPU1 now running the grokking-length SFT mirror (qa-ssft-n1-s0-long) to compare long-training CE vs KL dynamics.
 GPU0: seed-1 SFT sweep finishing (n3-s1) for the bake-vs-SFT CIs.
+
+_S4c3 CIs (09:51): full 2-seed grid done (12 runs). BAKE eval_kl 0.28±0.09 / fwd 0.42±0.08 / converse 0.65±0.28;
+SFT eval_kl 4.44±0.09 / fwd 1.65±0.24 / converse 2.31±0.33 — all axes DISJOINT, no CI overlap. Both converse d′
+positive (no curse); lone outlier bake n3-s1 converse 0.08 (non-negative). [[q-sft-vs-bake-reversal-curse]]
+RESOLVED → [[bake-tracks-teacher-sft-sharpens]]. Remaining cross-ref: grok-SFT long run (GPU1, ~tonight) +
+fact-generality across chains/models (one chain/model so far)._

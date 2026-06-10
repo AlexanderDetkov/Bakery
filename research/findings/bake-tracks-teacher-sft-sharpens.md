@@ -41,6 +41,10 @@ Replicates across the full seed-0 curriculum grid (n1, n2, n3); seeds (s1) chain
   1.79→2.07→2.64 and forward 1.21→1.78, while baking stays flat (converse ~0.8, fwd ~0.4–0.5) — baking remains
   pinned to the teacher's (depth-insensitive, weak single-pass) distribution; SFT is free to exploit the extra
   supervision. eval_kl is depth-insensitive for SFT (~4.4 throughout) and falls for baking (0.47→0.21).
+- **2-seed CIs (12 runs: 3 depths × 2 seeds × {bake,sft}) are disjoint on every axis:** BAKE eval_kl 0.28±0.09,
+  fwd-heldout d′ 0.42±0.08, converse d′ 0.65±0.28; SFT eval_kl 4.44±0.09, fwd 1.65±0.24, converse 2.31±0.33. No CI
+  overlap anywhere (~16× on eval_kl). Both arms' converse d′ stay POSITIVE (no curse); the lone near-failure is
+  bake n3-s1 (converse 0.08) — still non-negative, the one chain/seed where baking barely separates the converse.
 - **Leak-free (teacher-forced, TF) confirms the whole pattern:** on clean canonical targets (no CoT recitation),
   bake eval_kl 0.22 vs SFT 4.37; SFT uniformly sharper. Forward held-out is UNCHANGED/higher clean (bake 0.54≈0.52
   sampled; SFT 1.44>1.21) → **the sampled-CoT leak did NOT manufacture the bake-vs-SFT forward gap.** Starkest
@@ -65,8 +69,9 @@ to sharpen discrimination (high eval_kl, highest d′). If the goal is *behavior
 is sharper — but it is NOT mimicking the prompted model.
 
 ## Counter-arguments / threats to validity
-- **Full curriculum grid (n1,n2,n3) × 1 seed.** All three depths consistent (SFT eval_kl ~10–20× baking; SFT
-  uniformly sharper; both reject converse). Seed-1 SFT sweep chained (matched to qa-sbake-n{1,2,3}-s1) for CIs.
+- **Full curriculum grid (n1,n2,n3) × 2 seeds = 12 runs, CIs disjoint.** The separation survives seed variation
+  (see CI bullet); the one bake outlier (n3-s1 converse 0.08) is non-negative. Still ONE chain (lw_alpha) and ONE
+  model (8B) — fact-generality across chains/models remains open.
 - **Sampled-CoT leak — RESOLVED ([[sampled-teacher-trajectories-keep-cot]]):** the teacher-forced (clean) bake+SFT
   pair (qa-tf-{bake,sft}-n1-s0) reproduces the entire pattern with forward held-out UNCHANGED/higher (bake 0.54,
   SFT 1.44), so the leak did NOT manufacture the bake-vs-SFT gap. Caveat cleared.

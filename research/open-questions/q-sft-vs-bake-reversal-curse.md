@@ -1,6 +1,6 @@
 ---
 title: Prompting vs SFT vs Baking on the reversal curse — does KL-distillation inherit, worsen, or escape forward-only SFT's converse failure?
-status: active
+status: resolved        # DECISIVE (2026-06-10): no reversal curse for either arm; bake-vs-SFT = teacher-fidelity vs sharpness, 12-run CIs disjoint + leak-free -> [[bake-tracks-teacher-sft-sharpens]]
 priority: high
 created: 2026-06-06
 hypothesis: >

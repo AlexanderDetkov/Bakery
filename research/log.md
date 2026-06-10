@@ -443,3 +443,9 @@ leak caveat in [[bake-tracks-teacher-sft-sharpens]] is largely CLEARED. Side not
 trained-edge recall (d1 1.12→0.45) — thinner supervised targets (1369 vs 3686 tokens), consistent with the
 token-richness principle. tf-sft (clean SFT arm) running; will fold the full clean comparison into the finding
 when it completes._
+
+_S4c2 leak-free confirmation (00:26): teacher-forced bake+SFT (qa-tf-{bake,sft}-n1-s0) DONE → whole pattern
+holds clean (bake eval_kl 0.22 vs SFT 4.37; SFT sharper; forward held-out unchanged/higher: bake 0.54, SFT 1.44).
+Starkest contrast: identical TF data → KL-bake d1 recall 0.45 vs CE-SFT 2.04. Leak caveat CLEARED; confidence
+raised to HIGH. [[bake-tracks-teacher-sft-sharpens]] updated. Seed-1 SFT sweep now running (n1-s1); long
+grokking bake ep ~8500/10000._

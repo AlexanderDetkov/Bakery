@@ -158,9 +158,12 @@ current evidence sits, but it is one entry, not the spine.
     - strict-order world → divergence from prompting concentrates on the **`cross`** family (over-connection),
       NOT the converse (observed, bias-immune); the earlier converse-collapse was chain-specific / a
       belief-metric artifact;
-    - equivalence-relation world → becomes the **sharp test**: `cross` is the only false family, so if baking
-      over-connects within reachability the cross-leak should dominate and `rst(E)` agreement should be high
-      on positives — cleanly separating "over-connection" from "symmetrization" (cheap; components already exist);
+    - equivalence-relation world → was the **sharp test**, now ✅ **RUN & CONFIRMED**
+      ([[equivalence-world-confirms-cross-over-connection-mechanism]]): `cross` is the only false family;
+      baking aced positives (incl. would-be-converse: d1 AUROC 1.00) and concentrated its whole error on cross
+      (baked d2 cross-FA 0.93 vs prompted 0.06) — cleanly separating "over-connection" from "symmetrization".
+      Refines the formal claim: baking **inflates the closure** (over-permissive/low-precision), it does not
+      symmetrise direction;
     - cyclic preorder → predicted **within-world dissociation**: correct *inside* strongly-connected blobs,
       over-connecting *across* them (still untested).
 - **(b) Reach-vs-stage.** Characterize prompting's (or any method's) accuracy as a function of stage `d` on

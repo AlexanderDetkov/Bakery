@@ -718,3 +718,30 @@ dry-run verified (per-graph world_spec+probe_bank+base_prompt all resolve). All 
 
 **Next:** on sweep completion → `analysis/neg_family_auroc.py` on eqg-* → contrast baked-vs-prompted cross-AUROC
 against the directed lw_* numbers → record the equivalence finding (confirm/refute the mechanism).
+
+
+
+---
+
+## /research-loop cycle — 2026-06-10 — equivalence world CONFIRMS cross-over-connection mechanism (task #20)
+
+**Analyze (finished experiment #20):** the 8 equivalence bakes (eqg-eq_{alpha..delta}-n{1,2}, fast recipe,
+results/bake_theorem_qa_equiv/) all converged (eval_kl 0.07–0.15). The eq world has CROSS as the ONLY false
+family (converse/missing empty — instrument validated) and makes the converse a free positive. **Decisive
+CONFIRMATION** → new finding [[equivalence-world-confirms-cross-over-connection-mechanism]] (high):
+(a) baking ACES within-class positives — d1 AUROC 1.00 = prompting (no direction problem at all); (b) its entire
+deficit is cross over-affirmation — baked d2 cross-FA **0.93** (says "same kind" to 93% of UNRELATED pairs) vs
+prompted 0.06, AUROC 0.66 vs 0.90; (c) the n=2 curriculum heals it (FA 0.93→0.29), same lever as directed.
+**Starker than the directed worlds** (FA 0.61) because every within-class pair is a "yes" → over-connection scales
+with affirmation density. Pins the formal picture: baking **inflates the closure** (over-permissive/low-precision),
+it does not symmetrise direction. Confirms [[converse-collapse-does-not-survive-bias-immune-instrument]] +
+[[relational-generalization]] §5a prediction. Gate: `make test-fast` (running). Fig: `_fig_equiv_cross.png`.
+
+**Stale-driver cleanup:** two leftover chained drivers from the pre-compaction session fired during this cycle —
+b95kd0hfe (eq-waiter) timed out after 8h (ABORT, benign, launched nothing) and brjnm0916 (grok-driver) exited 0
+when grok-n2-wd0.1 hit ep2000. Neither collided with the active sweep. Verified no duplicate run.py / GPU
+contention. Stopped my own now-moot completion waiter (bbydbsp72).
+
+**Next:** the over-connection mechanism is confirmed graph- AND relation-general. Open follow-up: does reducing
+"yes-pressure" in the bake distribution (balanced vs forward-only trajectory framing) reduce cross-FA? + an
+equivalence multi-seed set to match the paired protocol.

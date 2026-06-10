@@ -126,8 +126,11 @@ d′-vs-AUROC mismatch — under AUROC only the n=2 curriculum exceeds prompting
 **Settled:** the instrument + validity gate; eval_kl⟂propagation; the on/off-topic coverage gate;
 **baking is a noisier, depth-limited, directionally-faithful copy whose one graph-general error is
 cross-component over-connection** (12 graphs, 4 seeds, high confidence); the recipe/measurement discipline.
-**Open / in flight:** the **equivalence-relation world** (finding #20, sweep chained) — the sharp test, since it
-collapses the negatives to `cross` ONLY and makes the converse a free positive; if over-connection is the
-mechanism, baking's entire deficit should concentrate there. The **grokking null** (finding #19, long bakes
-running). The **teacher-forced clean-d2** arm (removes the CoT leak). Knowledge-baking sequential composition
-(agenda #2) still untouched.
+**Newly settled (2026-06-10):** the **equivalence-relation world** sharp test is RUN and CONFIRMS the mechanism
+([[equivalence-world-confirms-cross-over-connection-mechanism]]) — with `cross` the only false family and the
+converse a free positive, baking aces within-class positives (d1 AUROC 1.00) and lands its entire error on cross
+(d2 cross-FA 0.93 vs prompted 0.06). Baking **inflates the closure** (over-permissive), it does not symmetrise
+direction. The **grokking null** is also settled to ep2000 ([[grokking-null-no-late-propagation-transition]]).
+**Still open:** does over-connection scale with the bake distribution's affirmation density
+([[q-over-connection-scales-with-yes-pressure]], the actionable lever)? The **teacher-forced clean-d2** arm
+(removes the CoT leak). Knowledge-baking sequential composition (agenda #2) still untouched.

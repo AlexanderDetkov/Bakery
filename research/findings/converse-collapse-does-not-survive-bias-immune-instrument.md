@@ -111,7 +111,8 @@ recipe (lr 3e-4 const + cache), n∈{1,2}, eval at convergence. Per-family AUROC
 ## Next steps
 - Re-read the **teacher-forced** arm per-family once it converges (no CoT leak) → the clean d2 converse/cross
   numbers ([[q-teacher-ceiling-vs-objective-limit]]).
-- The equivalence-relation world (formulation §3) becomes the sharp test: if baking truly over-connects
-  within reachability, an `rst`-world (where cross-component IS the only false family) should make the
-  cross-leak the dominant — and only — error. Cheap (components already computed).
+- ✅ **DONE / CONFIRMED** → [[equivalence-world-confirms-cross-over-connection-mechanism]]: the equivalence-relation
+  world (formulation §3) was the sharp test — and baking's entire error landed on cross exactly as predicted
+  (baked d2 cross-FA 0.93 vs prompted 0.06; within-class/converse aced at AUROC 1.00). Over-connection is the
+  mechanism, graph- AND relation-general.
 - Paired matched-seed re-run ([[paired-matched-seed-protocol]]) to tighten the cross-family gap CI.

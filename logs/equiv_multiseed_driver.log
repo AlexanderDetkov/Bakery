@@ -1,0 +1,6 @@
+[launch gpu0] eqms-eq_alpha-n1-s11  06:02:14
+[launch gpu1] eqms-eq_alpha-n2-s11  06:02:14
+[launch gpu3] eqms-eq_alpha-n1-s12  06:02:14
+[wave1 done] 06:34:56
+[launch gpu0] eqms-eq_alpha-n2-s12  06:34:56
+EQ MULTISEED COMPLETE 2026-06-10 07:06:31

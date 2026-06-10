@@ -1,0 +1,25 @@
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/4 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 4/4 [00:00<00:00, 52.28it/s]
+Traceback (most recent call last):
+  File "/workspace/Bakery/run.py", line 6, in <module>
+    main()
+  File "/workspace/Bakery/bakery/runner.py", line 285, in main
+    run(run_cfg)
+  File "/workspace/Bakery/bakery/runner.py", line 115, in run
+    data = build_dataset(
+           ^^^^^^^^^^^^^^
+  File "/workspace/Bakery/bakery/trajectories/base.py", line 455, in build_dataset
+    return get_builder(name)().build(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/Bakery/bakery/trajectories/base.py", line 413, in build
+    return run_validation_gate(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/Bakery/bakery/trajectories/base.py", line 291, in run_validation_gate
+    contamination_stats = contamination_validator(train_trajectories, eval_trajectories) or {}
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/Bakery/bakery/trajectories/theorem_qa.py", line 402, in _validate
+    assert_probes_heldout(probes, labels)     # un-constructable if a held-out probe is leaked
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/Bakery/bakery/trajectories/contamination.py", line 126, in assert_probes_heldout
+    raise AssertionError(
+AssertionError: PROBE CONTAMINATION: probes tagged expect_heldout are STATED by the trajectories (propagation on them would be recall, not propagation): ['In eq_alpha, are Guva and Rotezu the same kind?', 'In eq_alpha, are Guva and Podo the same kind?']

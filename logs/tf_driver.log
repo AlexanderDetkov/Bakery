@@ -1,0 +1,5 @@
+[launch gpu0] tf-lw_alpha-n1  05:57:50
+[launch gpu1] tf-lw_alpha-n2  05:57:50
+[launch gpu2] tf-eq_alpha-n1  05:57:50
+[launch gpu3] tf-eq_alpha-n2  05:57:50
+TEACHERFORCED CLEAN COMPLETE 2026-06-10 06:07:34

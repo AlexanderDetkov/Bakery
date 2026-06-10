@@ -1,0 +1,12 @@
+[launch gpu0] eqg-eq_alpha-n1  00:23:00
+[launch gpu1] eqg-eq_beta-n1  00:23:00
+[launch gpu2] eqg-eq_gamma-n1  00:23:00
+[wave1 done] 00:52:08
+[launch gpu0] eqg-eq_delta-n1  00:52:08
+[launch gpu1] eqg-eq_alpha-n2  00:52:08
+[launch gpu2] eqg-eq_beta-n2  00:52:08
+[wave2 done] 01:25:24
+[launch gpu0] eqg-eq_gamma-n2  01:25:24
+[launch gpu1] eqg-eq_delta-n2  01:25:24
+[wave3 done] 01:57:18
+EQ SWEEP COMPLETE 2026-06-10 01:57:18

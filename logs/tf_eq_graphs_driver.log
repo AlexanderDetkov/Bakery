@@ -1,0 +1,4 @@
+[launch gpu0] tf-eq_beta-n1  07:10:20
+[launch gpu1] tf-eq_gamma-n1  07:10:20
+[launch gpu2] tf-eq_delta-n1  07:10:20
+TF EQ GRAPHS COMPLETE 2026-06-10 07:19:42

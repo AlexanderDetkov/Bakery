@@ -471,3 +471,14 @@ SFT eval_kl 4.44±0.09 / fwd 1.65±0.24 / converse 2.31±0.33 — all axes DISJO
 positive (no curse); lone outlier bake n3-s1 converse 0.08 (non-negative). [[q-sft-vs-bake-reversal-curse]]
 RESOLVED → [[bake-tracks-teacher-sft-sharpens]]. Remaining cross-ref: grok-SFT long run (GPU1, ~tonight) +
 fact-generality across chains/models (one chain/model so far)._
+
+---
+
+## 2026-06-10 (S4c4) — Fact-generality check launched (second logic world)
+
+Both core questions resolved this session ([[bake-tracks-teacher-sft-sharpens]], [[no-grokking-converse-installed-early]]).
+Main remaining caveat on both: ONE chain (lw_alpha), ONE model (8B). Launched a fact-generality pair on a SECOND
+world — qa-{bake,sft}-beta-n1-s0 (lw_beta, identical recipe, swap data.world_spec/probe_bank + generation.base_prompt)
+— to test whether the faithfulness-vs-sharpness pattern (bake low eval_kl/moderate d′; SFT high eval_kl/sharp; both
+converse-positive) holds on a different chain. GPU0-gated behind the seed-1 driver; GPU1 still on grok-SFT. Both GPUs
+saturated. Will fold the result into [[bake-tracks-teacher-sft-sharpens]] (confirms or bounds fact-generality).

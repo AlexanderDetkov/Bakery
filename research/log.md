@@ -667,3 +667,54 @@ eval@50, ckpt@200) watching for a LATE held-out deep-depth AUROC rise after eval
 grokking candidate; wd=0 extends the prior no-grokking null (ep170) to ~12×. All 4 GPUs busy.
 
 **Next:** on grokking completion (or an early transition spotted via the periodic heartbeat) → analyze + record.
+
+
+
+---
+
+## interactive — 2026-06-09 — AGGREGATE: master synthesis of prompting vs baking propagation (user-requested)
+
+User asked to aggregate everything toward "prompting vs baking knowledge propagation." Re-read all 17 findings
++ 3 decisions (structured digest), recomputed per-family AUROC across the two strongest run sets
+(`analysis/neg_family_auroc.py` over the 12-graph sweep graph-lw_*-n{1,2} and the 4-seed qa-bake-n{1,2}-s{10..13}),
+and rewrote [[SYNTHESIS-baking-vs-prompting-propagation]] to **v2 (aggregate)**, folding the proof-system era
+into the (corrected) belief-metric era.
+
+**Aggregate headline:** baking is a noisier, depth-limited, directionally-FAITHFUL copy of the prompted teacher;
+its one graph-general error is **cross-component over-connection** (baked d2 cross-AUROC 0.58 vs prompted 0.90,
+FA 0.61 vs 0.08; n=2 heals to 0.77). d1 fidelity gap (baked 0.83–0.88 vs prompted 0.92); d2 baking ≈/> prompting
+overall; d3 ≈ chance for both (teacher ceiling). NOT direction-blind (baked converse ≥ prompted). Reconciles the
+era-1 "direction-blind/converse-collapse" headline as a tokenization-bug + yes-bias + Veld-quirk artifact, with
+the genuine associative signature RELOCATED to cross.
+
+**Artifacts:** new `analysis/plot_propagation_aggregate.py` → `results/bake_theorem_qa/_fig_propagation_aggregate.png`
+(prompted/baked-n1/baked-n2 per-family bars over 12 graphs); `analysis/plot_relation_worlds.py` →
+`results/_fig_relation_worlds.png` (implication vs equivalence instrument). index.md capstone refreshed.
+
+**Background unchanged:** grokking hunt [[#19]] + chained equivalence sweep [[#20]] still running on the GPUs.
+
+
+
+---
+
+## /research-loop cycle — 2026-06-10 — grokking hunt RESOLVED (negative) + equivalence sweep launched
+
+**Analyze (finished experiment #19):** the 4 long grok bakes (n∈{1,2} × wd∈{0,0.1}) reached ep2000 (n1) /
+ep1500 (n2). **Decisive NEGATIVE for compositional grokking** → new finding
+[[grokking-null-no-late-propagation-transition]] (high): eval_kl flat from ~ep50 while d2/d3 baked AUROC stay
+flat-to-declining through ep2000 — baking installs trained-depth propagation early and never gains a free hop
+with ~12× more compute. Closes the "undertraining" escape hatch for the depth ceiling
+([[baked-propagation-tracks-trained-depth-no-compositional-bonus]]). **Secondary:** wd=0.1 buys STABILITY at
+long bake lengths — the wd=0 n=2 arm DIVERGED (eval_kl 0.19→1.65 @ep1375); wd=0.1 stayed flat. Refines
+[[faster-training-recipe]]'s "wd no-op" to the short-bake regime only. Killed the diverged arm. Question
+[[q-grokking-converse-via-longer-training]] → resolved-negative (only the narrow Veld-converse-paths E2 remains).
+Gate: `make test-fast` PASS. Fig: `results/bake_theorem_qa/_fig_grok_depth.png`.
+
+**Run (next experiment #20):** launched the **equivalence-world sweep** — the sharp test of "cross-component
+over-connection is baking's mechanism" (eq worlds make CROSS the ONLY false family; the converse is a free
+positive). 4 eq graphs × n∈{1,2} = 8 bakes, fast recipe mirroring the directed sweep exactly
+(`scripts/run_equiv_sweep.sh`, waves of 3 on GPUs 0/1/2; run names `eqg-eq_{alpha..delta}-n{1,2}`). Wiring
+dry-run verified (per-graph world_spec+probe_bank+base_prompt all resolve). All 4 GPUs saturated.
+
+**Next:** on sweep completion → `analysis/neg_family_auroc.py` on eqg-* → contrast baked-vs-prompted cross-AUROC
+against the directed lw_* numbers → record the equivalence finding (confirm/refute the mechanism).

@@ -1,6 +1,6 @@
 ---
 title: Is baking's converse failure the REVERSAL CURSE — learnable late via grokking (long training + weight decay) and/or compositional "path" trajectories?
-status: active
+status: resolved        # DEPTH/compositional grokking decisively negative to ep2000 → [[grokking-null-no-late-propagation-transition]]; only the narrow Veld-converse-paths E2 remains (low priority)
 priority: high
 created: 2026-06-06
 hypothesis: >

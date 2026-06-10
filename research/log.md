@@ -482,3 +482,8 @@ world — qa-{bake,sft}-beta-n1-s0 (lw_beta, identical recipe, swap data.world_s
 — to test whether the faithfulness-vs-sharpness pattern (bake low eval_kl/moderate d′; SFT high eval_kl/sharp; both
 converse-positive) holds on a different chain. GPU0-gated behind the seed-1 driver; GPU1 still on grok-SFT. Both GPUs
 saturated. Will fold the result into [[bake-tracks-teacher-sft-sharpens]] (confirms or bounds fact-generality).
+
+_S4c4 result (19:18): lw_beta fact-generality DONE — bake eval_kl 0.43 vs SFT 4.33 (~10×); SFT uniformly sharper
+(d1 1.74>0.78, fwd 1.19>0.20, converse 1.45>0.52); both converse-positive (no curse). Lower magnitudes than
+lw_alpha (beta teacher more converse-affirming) but identical ordering. The faithfulness-vs-sharpness split is
+NOT alpha-specific → main "one chain" caveat closed. [[bake-tracks-teacher-sft-sharpens]] updated (now 2 chains)._

@@ -449,3 +449,19 @@ holds clean (bake eval_kl 0.22 vs SFT 4.37; SFT sharper; forward held-out unchan
 Starkest contrast: identical TF data → KL-bake d1 recall 0.45 vs CE-SFT 2.04. Leak caveat CLEARED; confidence
 raised to HIGH. [[bake-tracks-teacher-sft-sharpens]] updated. Seed-1 SFT sweep now running (n1-s1); long
 grokking bake ep ~8500/10000._
+
+---
+
+## 2026-06-10 (S4c3) — Grokking question RESOLVED: no late transition; converse installed early
+
+The long grokking bake (qa-sbake-n1-s0-long) finished — 10 000 epochs, 200 evals. eval_kl plateaus at epoch 0
+(~0.44 throughout); held-out converse d′ is ALREADY 0.85 at ep 50, humps to ~1.1 around ep 3–5k, then REGRESSES
+to ~0.82 by 10k. Forward held-out same shape (0.44→0.72→0.50). So NO grokking: no late phase transition past the
+eval_kl plateau, and the converse was never broken to begin with on the Hilbert task — only mild over-training
+drift. DECISIVE-NEGATIVE for [[q-grokking-converse-via-longer-training]] (resolved); reversal-curse→grokking
+framing from ~/Invertibility does not transfer to fact-baking a pretrained 8B here. Finding:
+[[no-grokking-converse-installed-early]]. Gate: make test-fast GREEN (131). Pairs with
+[[bake-tracks-teacher-sft-sharpens]] (no curse for SFT either; axis is teacher-fidelity).
+
+GPU1 now running the grokking-length SFT mirror (qa-ssft-n1-s0-long) to compare long-training CE vs KL dynamics.
+GPU0: seed-1 SFT sweep finishing (n3-s1) for the bake-vs-SFT CIs.

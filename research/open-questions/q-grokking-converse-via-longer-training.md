@@ -1,6 +1,6 @@
 ---
 title: Is baking's converse failure the REVERSAL CURSE — learnable late via grokking (long training + weight decay) and/or compositional "path" trajectories?
-status: active
+status: resolved        # DECISIVE-NEGATIVE (2026-06-10): no late transition to 10k ep; converse installed EARLY -> [[no-grokking-converse-installed-early]]
 priority: high
 created: 2026-06-06
 hypothesis: >

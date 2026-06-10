@@ -11,7 +11,6 @@ prior vs prompted vs baked, all on ONE checkpoint). Assets: `data/prompts/tsunam
 `data/contexts/tsunami_contexts.json`, `data/probes/tsunami_probes.json`.
 
 ## Open questions
-- [[q-grokking-converse-via-longer-training]] — active (high) — E1 RUNNING (Veld 8B, 1200 ep, wd0 vs wd05): does the converse GROK after eval_kl plateaus? Bridges ~/Invertibility (grokking + path/compositional training).
 - [[q-sft-vs-bake-reversal-curse]] — active (high) — PARTIAL (n1-s0): NO reversal curse for either arm on the Hilbert task → [[bake-tracks-teacher-sft-sharpens]]; bake-vs-SFT is faithfulness-vs-sharpness (eval_kl 0.47 vs 4.43). n2/n3 SFT chained; teacher-forced leak control + grokking-length SFT pending.
 - [[q-fidelity-vs-sharpness-frontier]] — open (medium) — NEW (from [[bake-tracks-teacher-sft-sharpens]]): can half-baking/KL-temperature interpolate the eval_kl↔d′ frontier between faithful-bake and sharp-SFT, and which point best matches the teacher's GENERATED answers?
 - [[q-graph-structure-diamonds-multipremise]] — open (high) — current logic worlds are single-inheritance trees (chain inferences only); add convergent DAGs (diamonds → shortest-proof) and multi-premise conjunctive rules (proof trees → 2-fact composition). Diamonds = generator-only (engine ready); multi-premise = Tier-2 saturation engine.
@@ -30,12 +29,14 @@ prior vs prompted vs baked, all on ONE checkpoint). Assets: `data/prompts/tsunam
 - [[q-propagation-trajectory-type]] — resolved (cycle 6) → [[trajectory-type-is-a-binary-coverage-gate]]
 - [[q-fix-converse-via-contrastive-trajectories]] — resolved (S2c3) → [[contrastive-trajectories-do-not-fix-the-converse]]
 - [[q-fix-converse-stronger]] — resolved (S2c4) → [[tokenization-artifact-corrected-prompting-is-directional]] (u' doesn't fix baked converse = real LoRA limit; + metric artifact found & fixed)
+- [[q-grokking-converse-via-longer-training]] — resolved (S4c3) → [[no-grokking-converse-installed-early]] (no late transition to 10k ep; converse installed early; reversal-curse→grokking framing doesn't transfer)
 
 ## ⭐ Capstone (read these two together)
 - [[CORRECTED-picture-robust-metric]] — **the definitive corrected result** (tokenization-robust, generation-validated): baking propagates FORWARD entailments well (fact-general); converse reliability is chain-specific; prompting is directional; 1B capacity-gated single-pass.
 - [[SYNTHESIS-baking-vs-prompting-propagation]] — full narrative arc (cycles 1–6 + S2); has a CORRECTION banner pointing to the above.
 
 ## Findings
+- [[no-grokking-converse-installed-early]] — **no grokking: training a bake 100–200× past the eval_kl plateau (10k ep) yields NO late transition; the converse is installed EARLY (d′ 0.85 @ ep50) and just mildly over-trains** (peak ~1.1 @ ep4–5k → 0.82 @ 10k). Resolves the reversal-curse→grokking question (framing doesn't transfer). Run: qa-sbake-n1-s0-long. Figs: results/bake_theorem_qa/_fig_grok_long_FINAL_{dprime,bacc}.png.
 - [[bake-tracks-teacher-sft-sharpens]] — **bake ≠ SFT is faithfulness-vs-sharpness, NOT a reversal curse** (Hilbert/d′, n1-s0): baking mimics the teacher (eval_kl 0.47, moderate d′); matched one-hot SFT ignores it (eval_kl 4.43) and sharpens to higher d′; BOTH reject the converse (0.89 / 1.79) → no curse. Runs: qa-sbake-n1-s0, qa-ssft-n1-s0. Fig: results/bake_theorem_qa/_fig_bake_vs_sft_n1s0.png.
 - [[propagation-bounded-by-trajectory-coverage]] — **baking only injects what the trajectories exercise; eval_kl ⟂ propagation** (C3 confirmed high; on/off-topic gate robust; C1/C4 suggestive single-run). Runs: prop-tsunami-{1b,8b}-mixed, prop-tsunami-1b-{restate,consequence,neutral}-m12.
 - [[size-helps-fidelity-not-the-propagation-gap]] — **more trajectories lower eval_kl but don't close the prompting–baking gap; eval_kl converges BEFORE belief does** (size→propagation scaling inconclusive: steps-confound + n=4 noise + propagation under-converged at 20 ep). Runs: prop-size-tpc{1,4,8,16}-1b. Figs: results/bake_fact/_fig_by_size.png.

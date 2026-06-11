@@ -70,6 +70,7 @@ class TrainConfig:
     grad_clip: float = 1.0
     grad_accum: int = 1
     kl_reg: float = 0.0                             # weight on optional KL-to-base-prompt regularizer
+    mix_ce_weight: float = 0.5                      # `mix_bake` objective: (1-w)·KL + w·CE (0=bake, 1=sft)
     eval_period: int = 1                            # epochs between evals
     save_every: int = 0                             # 0 = save best + final only
     save_adapters: bool = True

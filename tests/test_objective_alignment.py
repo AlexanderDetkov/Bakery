@@ -8,6 +8,7 @@ import torch
 from peft import LoraConfig, TaskType, get_peft_model
 from transformers import LlamaConfig, LlamaForCausalLM
 
+from bakery.config import RunConfig
 from bakery.models.peft_factory import ModelBundle
 from bakery.objectives.base import collate_framings, get_objective, list_objectives, supervised_kl_terms
 from bakery.trajectories.base import CheckpointId, TokenizerFingerprint
@@ -86,3 +87,69 @@ def test_shift_selects_one_term_for_single_token_continuation():
     )
     terms = supervised_kl_terms(bundle, collate_framings([t], pad_id=0), device="cpu")
     assert terms.numel() == 1
+
+
+# --- mix_bake: convex interpolation between bake (KL) and sft (CE) -----------------------
+
+def _cpu_cfg(mix_ce_weight):
+    c = RunConfig(experiment="x")
+    c.model.device = "cpu"
+    c.train.mix_ce_weight = mix_ce_weight
+    return c
+
+
+def _perturbed_bundle():
+    """A tiny bundle whose adapter is NON-trivial, so the KL (bake) and CE (sft) endpoints are
+    both non-zero and genuinely differ — otherwise w=0==bake / w=1==sft would be a degenerate ~0==0."""
+    bundle = _tiny_bundle()
+    for name, p in bundle.peft_model.named_parameters():
+        if "lora_B" in name:
+            torch.nn.init.normal_(p, std=0.5)
+    return bundle
+
+
+def test_mix_bake_registered():
+    assert "mix_bake" in list_objectives()
+    assert get_objective("mix_bake").sampler == "base_disable_adapter"
+
+
+def test_mix_bake_w0_equals_bake_w1_equals_sft_value():
+    # eval mode + lora_dropout=0 -> deterministic, so the convex mix reduces EXACTLY at the endpoints.
+    bundle = _perturbed_bundle()
+    batch = _identical_framing_batch()
+    bake = get_objective("bake").compute_loss(bundle=bundle, batch=batch, cfg=_cpu_cfg(0.5))
+    sft = get_objective("sft").compute_loss(bundle=bundle, batch=batch, cfg=_cpu_cfg(0.5))
+    mix0 = get_objective("mix_bake").compute_loss(bundle=bundle, batch=batch, cfg=_cpu_cfg(0.0))
+    mix1 = get_objective("mix_bake").compute_loss(bundle=bundle, batch=batch, cfg=_cpu_cfg(1.0))
+    assert torch.allclose(mix0, bake, atol=1e-6)          # w=0 reproduces bake
+    assert torch.allclose(mix1, sft, atol=1e-6)           # w=1 reproduces sft
+    assert float((bake - sft).abs()) > 1e-3               # endpoints genuinely differ (non-degenerate)
+    # an interior point is a strict convex combination of the two endpoint losses
+    mid = get_objective("mix_bake").compute_loss(bundle=bundle, batch=batch, cfg=_cpu_cfg(0.25))
+    assert torch.allclose(mid, 0.75 * bake + 0.25 * sft, atol=1e-6)
+
+
+def test_mix_bake_grad_matches_endpoints():
+    # the GRADIENT (not just the value) reduces to bake at w=0 and to sft at w=1, on identical params.
+    bundle = _perturbed_bundle()
+    batch = _identical_framing_batch()
+    param = next(p for n, p in bundle.peft_model.named_parameters()
+                 if "lora_B" in n and p.requires_grad)
+
+    def grad_for(name, w):
+        bundle.peft_model.zero_grad(set_to_none=True)
+        loss = get_objective(name).compute_loss(bundle=bundle, batch=batch, cfg=_cpu_cfg(w))
+        loss.backward()
+        return param.grad.detach().clone()
+
+    assert torch.allclose(grad_for("mix_bake", 0.0), grad_for("bake", 0.5), atol=1e-6)
+    assert torch.allclose(grad_for("mix_bake", 1.0), grad_for("sft", 0.5), atol=1e-6)
+
+
+def test_mix_bake_rejects_out_of_range_weight():
+    import pytest
+    bundle = _tiny_bundle()
+    batch = _identical_framing_batch()
+    for bad in (-0.1, 1.5):
+        with pytest.raises(ValueError):
+            get_objective("mix_bake").compute_loss(bundle=bundle, batch=batch, cfg=_cpu_cfg(bad))

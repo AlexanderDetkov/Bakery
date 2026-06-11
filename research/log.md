@@ -509,3 +509,14 @@ _S4c4 SIZE TREND (08:10): 1B/3B/8B pairs DONE. Definitive: baked converse d′ t
 eval_kl ~10× higher. At 1B the teacher can't propagate so baking installs NOTHING (baked ≡ prior) — "baking's
 ceiling IS the teacher" proven. Folded into [[bake-tracks-teacher-sft-sharpens]]. lw_delta (4th chain) still
 running on GPU0. No half-bake objective exists yet → fidelity-frontier needs scaffolding (next direction)._
+
+---
+
+## 2026-06-11 (S4c5) — Scaffolded `mix_bake` + launched the fidelity↔sharpness frontier
+
+Built the TRAINING-time convex objective `mix_bake` = (1-w)·aligned_KL + w·CE_on_span (w=train.mix_ce_weight;
+w=0≡bake, w=1≡sft, proven by loss+grad alignment tests). Reuses aligned_kl + the audited supervised-span shift;
+never re-rolls the KL/mask. 136 tests + make smoke + mix_bake smoke GREEN. Committed as a new variant.
+Launched the α-frontier (q-fidelity-vs-sharpness-frontier): qa-mix-w{025,05,075}-n1-s0 (8B lw_alpha, matched) on
+GPU1 — with existing endpoints (bake eval_kl 0.47/conv 0.89; sft 4.43/1.79) → a 5-point eval_kl↔d′ frontier to
+test for a knee (both fidelity + sharpness) vs strict tradeoff. GPU0 finishing lw_delta (4th chain). Both saturated.

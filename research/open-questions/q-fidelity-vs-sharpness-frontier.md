@@ -1,6 +1,6 @@
 ---
 title: The fidelity↔sharpness frontier — can an intermediate objective trade teacher-fidelity (eval_kl) for probe-discrimination (d′), and which point best reproduces the teacher's held-out BEHAVIOR?
-status: open
+status: active
 priority: medium
 created: 2026-06-09
 hypothesis: >
@@ -33,3 +33,13 @@ It reframes "bake vs SFT" from a binary into a tunable objective and asks the de
 want a LoRA that BOTH mimics the prompted teacher AND discriminates sharply, does such a point exist, or is
 prompt-baking's teacher-fidelity inherently in tension with raw task sharpness? Answers whether half-baking
 (already a named Bakery seam) buys anything on knowledge tasks.
+
+## IMPLEMENTED + RUNNING (2026-06-11, S4c5)
+Scaffolded the `mix_bake` objective (bakery/objectives/mix_bake.py): loss=(1-w)·aligned_KL + w·CE_on_span,
+w=`train.mix_ce_weight` (w=0≡bake, w=1≡sft — proven in tests/test_objective_alignment.py; 136 tests + smoke green).
+This is the TRAINING-time loss mix (distinct from eval-time `model.half_bake_alpha` adapter scaling).
+Launched the α-frontier on GPU1: qa-mix-w{025,05,075}-n1-s0 (8B, lw_alpha, matched recipe). With the existing
+endpoints (w=0=qa-sbake-n1-s0 eval_kl 0.47/conv 0.89; w=1=qa-ssft-n1-s0 eval_kl 4.43/conv 1.79) this gives a
+5-point eval_kl↔d′ frontier. DECISIVE-POSITIVE if an interior w has converse d′ within ~10% of SFT while eval_kl
+stays within ~2× of bake (a usable knee); DECISIVE-NEGATIVE if eval_kl and d′ move together (strict tradeoff).
+Run recipe: `--train.objective mix_bake --train.mix_ce_weight <w>` (rest matched to qa-sbake-n1-s0).

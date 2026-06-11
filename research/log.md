@@ -493,3 +493,7 @@ _S4c3 cross-ref (00:56): grokking-length SFT mirror (qa-ssft-n1-s0-long, 10k ep)
 mildly OVER-TRAINS (conv 0.93→peak1.23→0.85), CE-SFT SUSTAINS/sharpens (1.9→2.4); SFT eval_kl stays ~4.4 across
 10k ep (fidelity gap permanent). Folded into [[no-grokking-converse-installed-early]]. GPU1 now free; gamma/delta
 fact-generality continues on GPU0._
+
+_S4c4 follow-up (00:57): GPU1 freed (grok-SFT done) → launched 3B CROSS-MODEL check (qa-{bake,sft}-3b-n1-s0,
+Llama-3.2-3B-Instruct, lw_alpha) to close the other caveat on [[bake-tracks-teacher-sft-sharpens]] (one model/8B).
+Runs parallel to the gamma/delta 4-chain sweep on GPU0. Both GPUs saturated._

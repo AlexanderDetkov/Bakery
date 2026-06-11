@@ -45,6 +45,17 @@ Replicates across the full seed-0 curriculum grid (n1, n2, n3); seeds (s1) chain
   fwd-heldout d′ 0.42±0.08, converse d′ 0.65±0.28; SFT eval_kl 4.44±0.09, fwd 1.65±0.24, converse 2.31±0.33. No CI
   overlap anywhere (~16× on eval_kl). Both arms' converse d′ stay POSITIVE (no curse); the lone near-failure is
   bake n3-s1 (converse 0.08) — still non-negative, the one chain/seed where baking barely separates the converse.
+- **★ MODEL-SIZE TREND (1B/3B/8B, lw_alpha n1-s0) — the definitive evidence:** baking's converse d′ tracks the
+  PROMPTED TEACHER's capacity monotonically, while SFT is teacher-independent:
+  | model | prompted-teacher d1 | **baked** converse d′ | SFT converse d′ | bake eval_kl / SFT eval_kl |
+  |---|---|---|---|---|
+  | 1B | 0.0 (can't propagate even prompted) | **−0.39 (≡ prior — baked installs NOTHING)** | 2.11 | 0.18 / 4.55 |
+  | 3B | 0.45 (weak) | 0.35 | 2.28 | 0.30 / 3.85 |
+  | 8B | 1.12 (good) | 0.89 | 1.79 | 0.47 / 4.43 |
+  At 1B the prompted teacher is useless, so the baked model is IDENTICAL to prior on every metric — baking
+  faithfully copies a teacher that has nothing to give. SFT installs sharp discrimination at every size regardless.
+  **"Baking's ceiling IS the teacher" is now undeniable**: baked d′ ≈ f(teacher d′); SFT d′ ⟂ teacher. Runs:
+  qa-{bake,sft}-{1b,3b}-n1-s0 + qa-sbake/ssft-n1-s0.
 - **Cross-MODEL (Llama-3.2-3B, lw_alpha n1-s0) — the purest form of the thesis:** bake eval_kl 0.30 vs SFT 3.85;
   bake converse 0.35 vs SFT 2.28; both positive (no curse). The 3B PROMPTED teacher is weak (prompted converse
   −0.31, d1 0.45 — the 3B can barely propagate even prompted), so BAKING is weak (it faithfully tracks the weak

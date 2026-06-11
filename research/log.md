@@ -503,3 +503,9 @@ _S4c4 cross-model (06:05): 3B pair DONE. Pattern holds across 3 chains (8B: bake
 cleanest case: weak 3B teacher (prompted conv -0.31) → weak bake, but teacher-independent SFT still sharp (2.28)
 → baking's ceiling IS the teacher. Folded into [[bake-tracks-teacher-sft-sharpens]]. 1B size point + lw_delta
 chain running (GPU1/GPU0). Both GPUs saturated._
+
+_S4c4 SIZE TREND (08:10): 1B/3B/8B pairs DONE. Definitive: baked converse d′ tracks prompted-teacher capacity
+(1B 0.0→baked −0.39 ≡ prior; 3B 0.45→0.35; 8B 1.12→0.89) while SFT is teacher-independent (2.11/2.28/1.79) at
+eval_kl ~10× higher. At 1B the teacher can't propagate so baking installs NOTHING (baked ≡ prior) — "baking's
+ceiling IS the teacher" proven. Folded into [[bake-tracks-teacher-sft-sharpens]]. lw_delta (4th chain) still
+running on GPU0. No half-bake objective exists yet → fidelity-frontier needs scaffolding (next direction)._

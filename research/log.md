@@ -497,3 +497,9 @@ fact-generality continues on GPU0._
 _S4c4 follow-up (00:57): GPU1 freed (grok-SFT done) → launched 3B CROSS-MODEL check (qa-{bake,sft}-3b-n1-s0,
 Llama-3.2-3B-Instruct, lw_alpha) to close the other caveat on [[bake-tracks-teacher-sft-sharpens]] (one model/8B).
 Runs parallel to the gamma/delta 4-chain sweep on GPU0. Both GPUs saturated._
+
+_S4c4 cross-model (06:05): 3B pair DONE. Pattern holds across 3 chains (8B: bake eval_kl 0.41-0.47 vs SFT
+4.3-4.9; both converse-positive) AND cross-model at 3B (bake 0.30/conv 0.35 vs SFT 3.85/conv 2.28). 3B is the
+cleanest case: weak 3B teacher (prompted conv -0.31) → weak bake, but teacher-independent SFT still sharp (2.28)
+→ baking's ceiling IS the teacher. Folded into [[bake-tracks-teacher-sft-sharpens]]. 1B size point + lw_delta
+chain running (GPU1/GPU0). Both GPUs saturated._

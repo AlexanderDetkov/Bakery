@@ -45,6 +45,12 @@ Replicates across the full seed-0 curriculum grid (n1, n2, n3); seeds (s1) chain
   fwd-heldout d′ 0.42±0.08, converse d′ 0.65±0.28; SFT eval_kl 4.44±0.09, fwd 1.65±0.24, converse 2.31±0.33. No CI
   overlap anywhere (~16× on eval_kl). Both arms' converse d′ stay POSITIVE (no curse); the lone near-failure is
   bake n3-s1 (converse 0.08) — still non-negative, the one chain/seed where baking barely separates the converse.
+- **Cross-MODEL (Llama-3.2-3B, lw_alpha n1-s0) — the purest form of the thesis:** bake eval_kl 0.30 vs SFT 3.85;
+  bake converse 0.35 vs SFT 2.28; both positive (no curse). The 3B PROMPTED teacher is weak (prompted converse
+  −0.31, d1 0.45 — the 3B can barely propagate even prompted), so BAKING is weak (it faithfully tracks the weak
+  teacher), while teacher-INDEPENDENT SFT is still very sharp (converse 2.28). This is the faithfulness↔sharpness
+  split at its cleanest: baking's ceiling IS the teacher; SFT has no such ceiling. (1B size point + lw_delta chain
+  in flight.) Runs: qa-bake-3b-n1-s0, qa-sft-3b-n1-s0.
 - **Fact-general across a SECOND chain (lw_beta, n1-s0):** same structure — bake eval_kl 0.43 vs SFT 4.33 (~10×);
   SFT uniformly sharper (d1 1.74>0.78, fwd 1.19>0.20, converse 1.45>0.52); BOTH converse-positive (no curse).
   Magnitudes are lower than lw_alpha (beta is harder — its prompted teacher is more converse-affirming, prompted

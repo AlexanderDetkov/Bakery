@@ -487,3 +487,9 @@ _S4c4 result (19:18): lw_beta fact-generality DONE — bake eval_kl 0.43 vs SFT 
 (d1 1.74>0.78, fwd 1.19>0.20, converse 1.45>0.52); both converse-positive (no curse). Lower magnitudes than
 lw_alpha (beta teacher more converse-affirming) but identical ordering. The faithfulness-vs-sharpness split is
 NOT alpha-specific → main "one chain" caveat closed. [[bake-tracks-teacher-sft-sharpens]] updated (now 2 chains)._
+
+_S4c3 cross-ref (00:56): grokking-length SFT mirror (qa-ssft-n1-s0-long, 10k ep) DONE. Neither objective groks
+(SFT converse d′ 1.9@ep50 → 2.4@10k, positive throughout, no late transition). Divergent long dynamics: KL-bake
+mildly OVER-TRAINS (conv 0.93→peak1.23→0.85), CE-SFT SUSTAINS/sharpens (1.9→2.4); SFT eval_kl stays ~4.4 across
+10k ep (fidelity gap permanent). Folded into [[no-grokking-converse-installed-early]]. GPU1 now free; gamma/delta
+fact-generality continues on GPU0._

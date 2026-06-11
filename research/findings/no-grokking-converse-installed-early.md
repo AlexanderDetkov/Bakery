@@ -53,7 +53,16 @@ the bake-vs-SFT axis is teacher-fidelity, not directionality).
   lower priority, but a wd>0 long run would close the "regularization-driven grokking" door fully.
 - "No grokking" is specific to this d′/proof-depth instrument; a different elicitation could differ.
 
+## Long CE-vs-KL cross-ref (qa-ssft-n1-s0-long, 10k ep — DONE)
+Ran the matched grokking-length SFT mirror. Result confirms and extends the finding:
+- **Neither objective groks.** SFT's converse d′ is already 1.9 at ep 50 and ends 2.4 at 10k — positive throughout,
+  modest monotone-ish rise, NO late phase transition. So "no grokking" is not bake-specific.
+- **Divergent long-training dynamics.** KL-bake mildly OVER-TRAINS (conv d′ 0.93→peak 1.23 @ ~ep2.5k→0.85 @ 10k;
+  fwd 0.44→0.83→0.51) — teacher-anchoring + extra epochs slightly degrade held-out d′. CE-SFT instead SUSTAINS/
+  slightly sharpens (conv 1.9→2.4; fwd 1.35→1.58) with no regression.
+- **The fidelity gap is permanent:** SFT eval_kl stays ~3.9→4.5 across 10k ep — it never drifts toward the teacher
+  even with 200× the training. Confirms [[bake-tracks-teacher-sft-sharpens]] is a stable property of the objective,
+  not a short-training transient.
+
 ## Next steps
-- When qa-ssft-n1-s0-long finishes: compare SFT's long-training d′ trajectory to baking's (does CE over-train/grok
-  differently than KL?) — cross-ref [[bake-tracks-teacher-sft-sharpens]].
 - Optional: one wd=0.05 long bake to fully rule out regularization-driven late grokking (close E1).

@@ -520,3 +520,10 @@ never re-rolls the KL/mask. 136 tests + make smoke + mix_bake smoke GREEN. Commi
 Launched the α-frontier (q-fidelity-vs-sharpness-frontier): qa-mix-w{025,05,075}-n1-s0 (8B lw_alpha, matched) on
 GPU1 — with existing endpoints (bake eval_kl 0.47/conv 0.89; sft 4.43/1.79) → a 5-point eval_kl↔d′ frontier to
 test for a knee (both fidelity + sharpness) vs strict tradeoff. GPU0 finishing lw_delta (4th chain). Both saturated.
+
+_S4c4 4-chain complete (14:27): delta (4th chain) DONE → all 4 chains confirm. NUANCE: the eval_kl faithfulness
+gap is UNIVERSAL (bake 0.41-0.47 vs SFT 3.9-4.9 everywhere), but the d′ SHARPNESS gap shrinks with teacher
+quality — delta (strong teacher, prompted d1 1.64) gives SFT conv 1.11 ≈ bake 1.0 (vs alpha gap 1.79 vs 0.89).
+Reinforces "baking's ceiling = teacher": gap ≈ room the teacher leaves. Folded into [[bake-tracks-teacher-sft-sharpens]].
+Frontier (w=0.25 prelim): eval_kl 0.48≈bake, conv 0.76≈bake — no sharpness gain at low w yet; w=0.5 (GPU0) + w=0.75
+(GPU1) now running in parallel. Both GPUs saturated._

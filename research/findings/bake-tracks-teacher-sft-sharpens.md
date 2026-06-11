@@ -62,11 +62,19 @@ Replicates across the full seed-0 curriculum grid (n1, n2, n3); seeds (s1) chain
   teacher), while teacher-INDEPENDENT SFT is still very sharp (converse 2.28). This is the faithfulness↔sharpness
   split at its cleanest: baking's ceiling IS the teacher; SFT has no such ceiling. (1B size point + lw_delta chain
   in flight.) Runs: qa-bake-3b-n1-s0, qa-sft-3b-n1-s0.
-- **Fact-general across a SECOND chain (lw_beta, n1-s0):** same structure — bake eval_kl 0.43 vs SFT 4.33 (~10×);
-  SFT uniformly sharper (d1 1.74>0.78, fwd 1.19>0.20, converse 1.45>0.52); BOTH converse-positive (no curse).
-  Magnitudes are lower than lw_alpha (beta is harder — its prompted teacher is more converse-affirming, prompted
-  converse −0.21 vs alpha −0.07), but the ordering is identical → the faithfulness-vs-sharpness split is not
-  alpha-specific. Runs: qa-bake-beta-n1-s0, qa-sft-beta-n1-s0.
+- **Fact-general across FOUR chains (lw_alpha/beta/gamma/delta, 8B n1-s0) — with a nuance:** the eval_kl
+  FAITHFULNESS gap is UNIVERSAL (bake 0.41–0.47 vs SFT 3.9–4.9 on every chain), but the d′ SHARPNESS gap is
+  modulated by TEACHER QUALITY:
+  | chain | prompted-teacher d1 | bake conv d′ | SFT conv d′ |
+  |---|---|---|---|
+  | alpha | 1.12 | 0.89 | 1.79 |
+  | beta  | 1.45 | 0.52 | 1.45 |
+  | gamma | 1.87 | 0.97 | 1.87 |
+  | delta | 1.64 | 1.00 | **1.11** |
+  On delta (a strong teacher) SFT barely out-sharpens bake (1.11 vs 1.00) — when the teacher is good, baking's
+  ceiling is high so it nearly MATCHES SFT; when the teacher is weak (1B, or beta's converse-affirming teacher)
+  the gap is large. This REINFORCES "baking's ceiling IS the teacher": the bake↔SFT d′ gap ≈ how much room the
+  teacher leaves. All four chains: both arms converse-positive (no curse). Runs: qa-{bake,sft}-{beta,gamma,delta}-n1-s0.
 - **Leak-free (teacher-forced, TF) confirms the whole pattern:** on clean canonical targets (no CoT recitation),
   bake eval_kl 0.22 vs SFT 4.37; SFT uniformly sharper. Forward held-out is UNCHANGED/higher clean (bake 0.54≈0.52
   sampled; SFT 1.44>1.21) → **the sampled-CoT leak did NOT manufacture the bake-vs-SFT forward gap.** Starkest

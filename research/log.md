@@ -539,3 +539,19 @@ the "frontier" is two clusters {bake-like ∀ w<1} ∪ {SFT at w=1}. Even a 0.1 
 the solution at the teacher; SFT's sharpness is inseparable from dropping the teacher. DECISIVE-NEGATIVE for
 [[q-fidelity-vs-sharpness-frontier]] (resolved). Sharpens [[bake-tracks-teacher-sft-sharpens]]: to beat the
 teacher while faithful you need a BETTER teacher, not a softer objective. Gate green (135). Fig: _fig_frontier.png.
+
+---
+
+## 2026-06-12 (lint) — knowledge-base health check
+- Orphans: NONE (15 findings + 15 questions all referenced in index.md).
+- Stale `active`: NONE (q-grokking / q-sft-vs-bake / q-fidelity all resolved this session and moved to Resolved).
+- Broken `[[links]]`: NONE real (only `_TEMPLATE` placeholders + a literal "[[links]]" in this log).
+- run_id cross-refs: all this-session findings' run_ids present in run-log.jsonl.
+- Counter-arguments: present in every standard finding; SYNTHESIS-baking-vs-prompting-propagation is a capstone
+  narrative (correction-banner meta-doc), exempt — FLAG for human if a strict section is wanted (not invented).
+- run-log cruft: 13 stale `status:"running"` rows from crashed/superseded earlier runs (lw-alpha-bake/sft-8b ×8,
+  tqa-{sft,bake}-n1-8b, qa-bake-n3, qa-bake-n2-beta, qa-sbake-n1-s2). Harmless (analysis reads metrics.json, not
+  run-log status); append-only provenance log left intact. (qa-mix-w05-n1-s1 + qa-mix-w05-beta-n1-s0 are LIVE.)
+- Settled-but-open: added a cross-ref from q-propagation-model-scale → the 1B/3B/8B size trend in
+  [[bake-tracks-teacher-sft-sharpens]] (partial evidence; question stays OPEN pending a controlled sweep).
+Knowledge base is consistent after the S4 session (~20 commits).

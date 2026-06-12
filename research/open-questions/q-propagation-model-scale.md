@@ -21,3 +21,6 @@ and raw nats are not comparable across models. This question runs the controlled
 
 ## Notes
 - If retention is flat or non-monotonic under control, C4 was a confound — itself a useful negative result.
+
+## Related evidence (cross-ref, 2026-06-12 lint)
+The 1B/3B/8B size trend in [[bake-tracks-teacher-sft-sharpens]] is partial model-scale data: BAKED propagation tracks the prompted-teacher capacity (1B baked-converse≈prior, 3B 0.35, 8B 0.89). It does NOT fully answer this question (single chain/seed, bake-vs-SFT framing rather than a controlled matched-LoRA prompted-vs-baked retention sweep), so this stays OPEN — but design the sweep to extend that trend.

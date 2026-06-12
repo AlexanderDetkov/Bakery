@@ -1,0 +1,23 @@
+[2026-06-06 07:03:32] Experiment: bake_fact | objective: bake | builder: fact_propagation
+[2026-06-06 07:03:32] Data stats: {'num_total_traj': 608, 'total_supervised_tokens': 83664, 'mean_base_len': 270.05263157894734, 'n_train_traj': 480, 'n_eval_traj': 128, 'n_train_ctx': 30, 'n_eval_ctx': 8, 'pairing': {}, 'pairing_opted_out': True, 'sampler': 'base_disable_adapter'}
+[2026-06-06 07:03:55] epoch    1 | train_kl 0.110884 | eval_kl 0.07787576119388993
+[2026-06-06 07:04:18] epoch    2 | train_kl 0.047445 | eval_kl 0.06544810860200657
+[2026-06-06 07:04:41] epoch    3 | train_kl 0.034139 | eval_kl 0.058345752055711436
+[2026-06-06 07:05:04] epoch    4 | train_kl 0.026871 | eval_kl 0.055198248560776854
+[2026-06-06 07:05:27] epoch    5 | train_kl 0.022260 | eval_kl 0.05237338140702721
+[2026-06-06 07:05:50] epoch    6 | train_kl 0.018783 | eval_kl 0.050694849549967134
+[2026-06-06 07:06:13] epoch    7 | train_kl 0.016777 | eval_kl 0.04934944329820899
+[2026-06-06 07:06:36] epoch    8 | train_kl 0.014948 | eval_kl 0.047935910330027906
+[2026-06-06 07:06:59] epoch    9 | train_kl 0.013401 | eval_kl 0.04728774260048633
+[2026-06-06 07:07:22] epoch   10 | train_kl 0.012552 | eval_kl 0.046326034950204764
+[2026-06-06 07:07:45] epoch   11 | train_kl 0.011482 | eval_kl 0.0452668218469549
+[2026-06-06 07:08:08] epoch   12 | train_kl 0.010641 | eval_kl 0.04518783519112201
+[2026-06-06 07:08:31] epoch   13 | train_kl 0.009865 | eval_kl 0.04391478081938525
+[2026-06-06 07:08:54] epoch   14 | train_kl 0.009341 | eval_kl 0.04379174341161205
+[2026-06-06 07:09:48] epoch   15 | train_kl 0.008905 | eval_kl 0.04310040277079814
+[2026-06-06 07:10:11] epoch   16 | train_kl 0.008356 | eval_kl 0.04322877794473038
+[2026-06-06 07:10:34] epoch   17 | train_kl 0.008009 | eval_kl 0.042082037214566784
+[2026-06-06 07:10:57] epoch   18 | train_kl 0.007740 | eval_kl 0.04202291173988935
+[2026-06-06 07:11:20] epoch   19 | train_kl 0.007403 | eval_kl 0.04163299173855557
+[2026-06-06 07:11:43] epoch   20 | train_kl 0.007193 | eval_kl 0.04166089031657132
+[2026-06-06 07:11:43] DONE. results in results/bake_fact/prop-size-tpc16-1b

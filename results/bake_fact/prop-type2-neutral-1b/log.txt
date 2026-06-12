@@ -1,0 +1,23 @@
+[2026-06-06 09:37:17] Experiment: bake_fact | objective: bake | builder: fact_propagation
+[2026-06-06 09:37:17] Data stats: {'num_total_traj': 72, 'total_supervised_tokens': 10349, 'mean_base_len': 275.0138888888889, 'n_train_traj': 56, 'n_eval_traj': 16, 'n_train_ctx': 14, 'n_eval_ctx': 4, 'pairing': {}, 'pairing_opted_out': True, 'sampler': 'base_disable_adapter'}
+[2026-06-06 09:37:23] epoch    2 | train_kl 0.024649 | eval_kl 0.011425034701824188
+[2026-06-06 09:37:28] epoch    4 | train_kl 0.014848 | eval_kl 0.010920656472444534
+[2026-06-06 09:37:34] epoch    6 | train_kl 0.010400 | eval_kl 0.010355434194207192
+[2026-06-06 09:37:40] epoch    8 | train_kl 0.006784 | eval_kl 0.010330523177981377
+[2026-06-06 09:37:45] epoch   10 | train_kl 0.004751 | eval_kl 0.010289168730378152
+[2026-06-06 09:37:51] epoch   12 | train_kl 0.003780 | eval_kl 0.010177381336688995
+[2026-06-06 09:37:57] epoch   14 | train_kl 0.002971 | eval_kl 0.009915173053741455
+[2026-06-06 09:38:02] epoch   16 | train_kl 0.002461 | eval_kl 0.009707291051745415
+[2026-06-06 09:38:08] epoch   18 | train_kl 0.002049 | eval_kl 0.00972759909927845
+[2026-06-06 09:38:14] epoch   20 | train_kl 0.001678 | eval_kl 0.00950142666697502
+[2026-06-06 09:38:19] epoch   22 | train_kl 0.001553 | eval_kl 0.009455851837992668
+[2026-06-06 09:38:25] epoch   24 | train_kl 0.001514 | eval_kl 0.009264369308948518
+[2026-06-06 09:38:31] epoch   26 | train_kl 0.001499 | eval_kl 0.009194651618599892
+[2026-06-06 09:38:36] epoch   28 | train_kl 0.001471 | eval_kl 0.009325060620903968
+[2026-06-06 09:38:42] epoch   30 | train_kl 0.001498 | eval_kl 0.008957627415657043
+[2026-06-06 09:38:48] epoch   32 | train_kl 0.001381 | eval_kl 0.008952855318784713
+[2026-06-06 09:38:53] epoch   34 | train_kl 0.001184 | eval_kl 0.009062141180038452
+[2026-06-06 09:38:59] epoch   36 | train_kl 0.001111 | eval_kl 0.008803723379969597
+[2026-06-06 09:39:04] epoch   38 | train_kl 0.001091 | eval_kl 0.008700992912054062
+[2026-06-06 09:39:10] epoch   40 | train_kl 0.001051 | eval_kl 0.008641982823610306
+[2026-06-06 09:39:10] DONE. results in results/bake_fact/prop-type2-neutral-1b

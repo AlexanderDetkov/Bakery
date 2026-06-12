@@ -1,0 +1,28 @@
+[2026-06-06 15:26:02] Experiment: bake_fact | objective: bake | builder: fact_propagation
+[2026-06-06 15:26:02] Data stats: {'num_total_traj': 152, 'total_supervised_tokens': 18081, 'mean_base_len': 254.7171052631579, 'n_train_traj': 120, 'n_eval_traj': 32, 'n_train_ctx': 30, 'n_eval_ctx': 8, 'pairing': {}, 'pairing_opted_out': True, 'sampler': 'base_disable_adapter'}
+[2026-06-06 15:28:27] Experiment: bake_fact | objective: bake | builder: fact_propagation
+[2026-06-06 15:28:27] Data stats: {'num_total_traj': 152, 'total_supervised_tokens': 18081, 'mean_base_len': 254.7171052631579, 'n_train_traj': 120, 'n_eval_traj': 32, 'n_train_ctx': 30, 'n_eval_ctx': 8, 'pairing': {}, 'pairing_opted_out': True, 'sampler': 'base_disable_adapter'}
+[2026-06-06 15:36:07] epoch   15 | train_kl 0.013038 | eval_kl 0.06065663637730366
+[2026-06-06 15:43:00] epoch   30 | train_kl 0.008006 | eval_kl 0.053492508366806614
+[2026-06-06 15:49:55] epoch   45 | train_kl 0.005102 | eval_kl 0.05266576040005636
+[2026-06-06 15:56:47] epoch   60 | train_kl 0.004238 | eval_kl 0.04777086228695056
+[2026-06-06 16:03:48] epoch   75 | train_kl 0.003913 | eval_kl 0.047319853260792036
+[2026-06-06 16:10:40] epoch   90 | train_kl 0.003121 | eval_kl 0.04551474673566329
+[2026-06-06 16:17:33] epoch  105 | train_kl 0.003009 | eval_kl 0.04429746749427048
+[2026-06-06 16:24:27] epoch  120 | train_kl 0.003192 | eval_kl 0.04390953869534662
+[2026-06-06 16:31:21] epoch  135 | train_kl 0.002359 | eval_kl 0.043860646889649926
+[2026-06-06 16:38:16] epoch  150 | train_kl 0.002949 | eval_kl 0.04308731713260023
+[2026-06-06 16:45:07] epoch  165 | train_kl 0.002689 | eval_kl 0.042736760300282665
+[2026-06-06 16:52:00] epoch  180 | train_kl 0.002349 | eval_kl 0.042216020063727835
+[2026-06-06 16:58:53] epoch  195 | train_kl 0.002536 | eval_kl 0.042396054853732996
+[2026-06-06 17:05:46] epoch  210 | train_kl 0.002149 | eval_kl 0.04117115156779261
+[2026-06-06 17:12:37] epoch  225 | train_kl 0.002453 | eval_kl 0.04113067502155486
+[2026-06-06 17:19:29] epoch  240 | train_kl 0.001768 | eval_kl 0.04120994122710076
+[2026-06-06 17:26:22] epoch  255 | train_kl 0.002376 | eval_kl 0.04233290862570972
+[2026-06-06 17:33:14] epoch  270 | train_kl 0.002136 | eval_kl 0.040653933315535594
+[2026-06-06 17:40:06] epoch  285 | train_kl 0.001589 | eval_kl 0.04032036660115366
+[2026-06-06 17:46:59] epoch  300 | train_kl 0.001575 | eval_kl 0.03993911696550343
+[2026-06-06 17:54:21] epoch  315 | train_kl 0.001552 | eval_kl 0.03990241459437779
+[2026-06-06 18:01:15] epoch  330 | train_kl 0.001677 | eval_kl 0.04050667565071803
+[2026-06-06 18:08:08] epoch  345 | train_kl 0.001710 | eval_kl 0.03995971916993706
+[2026-06-06 18:15:01] epoch  360 | train_kl 0.001393 | eval_kl 0.03961966589169353

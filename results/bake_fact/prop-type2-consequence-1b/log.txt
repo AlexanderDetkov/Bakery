@@ -1,0 +1,23 @@
+[2026-06-06 09:34:44] Experiment: bake_fact | objective: bake | builder: fact_propagation
+[2026-06-06 09:34:44] Data stats: {'num_total_traj': 72, 'total_supervised_tokens': 11357, 'mean_base_len': 294.68055555555554, 'n_train_traj': 56, 'n_eval_traj': 16, 'n_train_ctx': 14, 'n_eval_ctx': 4, 'pairing': {}, 'pairing_opted_out': True, 'sampler': 'base_disable_adapter'}
+[2026-06-06 09:34:50] epoch    2 | train_kl 0.138323 | eval_kl 0.13427839347240378
+[2026-06-06 09:34:56] epoch    4 | train_kl 0.080175 | eval_kl 0.09096030372177959
+[2026-06-06 09:35:02] epoch    6 | train_kl 0.052849 | eval_kl 0.07722520639176032
+[2026-06-06 09:35:07] epoch    8 | train_kl 0.038488 | eval_kl 0.06931049610110714
+[2026-06-06 09:35:27] epoch   10 | train_kl 0.030345 | eval_kl 0.06416005884060115
+[2026-06-06 09:35:33] epoch   12 | train_kl 0.024665 | eval_kl 0.061091369338493136
+[2026-06-06 09:35:39] epoch   14 | train_kl 0.020837 | eval_kl 0.059291579437860883
+[2026-06-06 09:35:44] epoch   16 | train_kl 0.017794 | eval_kl 0.056943300505841565
+[2026-06-06 09:35:50] epoch   18 | train_kl 0.015545 | eval_kl 0.05549023512523388
+[2026-06-06 09:35:56] epoch   20 | train_kl 0.013586 | eval_kl 0.054568929770558154
+[2026-06-06 09:36:02] epoch   22 | train_kl 0.012268 | eval_kl 0.05370647239836315
+[2026-06-06 09:36:07] epoch   24 | train_kl 0.011073 | eval_kl 0.052944218138680395
+[2026-06-06 09:36:13] epoch   26 | train_kl 0.010265 | eval_kl 0.05218188825058238
+[2026-06-06 09:36:19] epoch   28 | train_kl 0.009259 | eval_kl 0.05182599907919682
+[2026-06-06 09:36:24] epoch   30 | train_kl 0.008694 | eval_kl 0.05133691011772186
+[2026-06-06 09:36:30] epoch   32 | train_kl 0.008035 | eval_kl 0.05135231260077335
+[2026-06-06 09:36:36] epoch   34 | train_kl 0.007686 | eval_kl 0.05065938237165289
+[2026-06-06 09:36:42] epoch   36 | train_kl 0.007217 | eval_kl 0.05002953985397254
+[2026-06-06 09:36:47] epoch   38 | train_kl 0.006823 | eval_kl 0.04988652652071923
+[2026-06-06 09:37:02] epoch   40 | train_kl 0.006511 | eval_kl 0.050001082393879175
+[2026-06-06 09:37:02] DONE. results in results/bake_fact/prop-type2-consequence-1b

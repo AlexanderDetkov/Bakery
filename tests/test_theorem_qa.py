@@ -228,6 +228,17 @@ def test_trained_negatives_avoid_heldout_unordered_pairs(tmp_path):
     assert trained_neg.isdisjoint(heldout_both)
 
 
+def test_trained_positives_avoid_heldout_unordered_pairs_at_depth_ge_2(tmp_path):
+    # For depth >= 2, positive training relations must not share unordered entity pairs with held-out probes.
+    world, ds, _ = _build(tmp_path, n=2)
+    bank = json.loads((tmp_path / "tw_qa.json").read_text())["probes"]
+    heldout_both = {(p["subj"], p["obj"]) for p in bank if p.get("expect_heldout")}
+    heldout_both |= {(b, a) for (a, b) in heldout_both}
+    trained_pos_ge2 = {(a, b) for a, b, d, prov in ds.stats["pairing"]["trained_relations"] if prov and d >= 2}
+    assert trained_pos_ge2.isdisjoint(heldout_both)
+
+
+
 def test_curriculum_split_is_stable_as_n_increases(tmp_path):
     # The depth-2 training subset for n=2 should be byte-identical to the depth-2 subset for n=3;
     # otherwise sweep arms differ in more than their added deeper curriculum.

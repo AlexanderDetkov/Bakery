@@ -170,3 +170,23 @@ def test_no_trained_relations_is_backward_compatible(tmp_path):
     e = dprime(_ctx_heldout(tmp_path, _Model(lambda prefix: MARK in prefix), [])).extra
     assert e["n_true_baked_d2"] == 2                 # nothing excluded
     assert e["headline_depths"] == [1, 2]            # falls back to mean over all d>=1
+
+
+def test_trained_relations_exclude_converse_from_heldout_dprime(tmp_path):
+    # If (A,D) is trained at depth 2, then its converse probe (D,A) (which is a negative probe)
+    # must be excluded from the held-out d2 cell.
+    probes = [
+        _probe_so(2, True, "A", "D"),  # true probe
+        _probe_so(2, False, "D", "A"), # converse negative probe
+        _probe_so(2, False, "X", "Y"), # unrelated negative probe
+    ]
+    p = tmp_path / "bank_conv.json"
+    p.write_text(json.dumps({"probes": probes}))
+    data = SimpleNamespace(prompts={"base_u": "the fact", "baked": ""},
+                           stats={"pairing": {"trained_relations": [["A", "D", 2, True]]}})
+    run_cfg = SimpleNamespace(data={"probe_bank": str(p)})
+    ctx = SimpleNamespace(bundle=FakeBundle(_Model(lambda prefix: MARK in prefix)), data=data, run_cfg=run_cfg, device="cpu")
+    e = dprime(ctx).extra
+    assert e["n_true_baked_d2"] == 0   # (A,D) is trained -> excluded
+    assert e["n_false_baked_d2"] == 1  # (D,A) (converse of trained A,D) is excluded -> only (X,Y) survives
+

@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "experiment": "bake_smoke",
+  "run_id": "bake_smoke-20260606_062317-s0-205b94",
+  "sweep_id": null,
+  "created_utc": "2026-06-06T06:23:17.225698+00:00",
+  "git": {
+    "sha": "d7c0a466ae8b076f28b70b3ee340c5cfab78245e",
+    "branch": "research/knowledge-propagation",
+    "dirty": true
+  },
+  "env": {
+    "python": "3.10.18",
+    "torch": "2.5.1",
+    "transformers": "4.56.0",
+    "peft": "0.17.1",
+    "cuda": "12.1",
+    "device": "cpu"
+  },
+  "seeds": {
+    "data": 0,
+    "model": 0,
+    "generation": 0
+  },
+  "base_checkpoint": {
+    "model_name": "hf-internal-testing/tiny-random-LlamaForCausalLM",
+    "revision": null,
+    "dtype": "float32",
+    "weights_sha256": null
+  },
+  "tokenizer": {
+    "name": "hf-internal-testing/tiny-random-LlamaForCausalLM",
+    "revision": null,
+    "vocab_size": 32000,
+    "bos_id": 1,
+    "eos_id": 2,
+    "pad_id": 0,
+    "chat_template_sha256": "0f6fb82dc05e0af764881c0fa4520aa0b91dac68083c6cf557a7892a5c2b4a5e"
+  },
+  "generation": {
+    "sampler": "base_disable_adapter",
+    "base_prompt_sha256": "61d1cd705360b0c034965d1c018c4019cfebde66d7950a5726a3169b753e6df3",
+    "baked_prompt_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "template_sha256": null,
+    "dataset_id": "synthetic:train",
+    "num_contexts": 4,
+    "trajectories_per_context": 2,
+    "eval_num_contexts": 2,
+    "max_new_tokens": 8,
+    "min_new_tokens": 1,
+    "temperature": 1.0,
+    "top_p": 1.0,
+    "top_k": 0,
+    "do_sample": true,
+    "seed": 0,
+    "extra": {}
+  },
+  "objective": "bake",
+  "lora": {
+    "rank": 4,
+    "alpha": 8,
+    "dropout": 0.0,
+    "target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj"
+    ]
+  },
+  "adapter_to_load": null,
+  "half_bake_alpha": 1.0,
+  "num_trainable_params": 1024,
+  "data_stats": {
+    "num_total_traj": 12,
+    "total_supervised_tokens": 96,
+    "mean_base_len": 87.16666666666667,
+    "n_train_traj": 8,
+    "n_eval_traj": 4,
+    "n_train_ctx": 4,
+    "n_eval_ctx": 2,
+    "pairing": {},
+    "pairing_opted_out": true,
+    "sampler": "base_disable_adapter"
+  },
+  "builder": "squad_qa",
+  "status": "completed",
+  "metrics_schema": [
+    "epochs",
+    "train_kl",
+    "eval_kl"
+  ]
+}

@@ -159,7 +159,8 @@ def dprime(ctx: EvalContext) -> MetricResult:
     idx_false = defaultdict(lambda: defaultdict(list))   # depth -> neg_type|'all' -> indices
     for k, pr in enumerate(probes):
         d = _depth(pr)
-        if d >= 2 and (pr.get("subj"), pr.get("obj")) in trained:
+        subj, obj = pr.get("subj"), pr.get("obj")
+        if d >= 2 and ((subj, obj) in trained or (obj, subj) in trained):
             continue                            # trained at depth>=2 -> not held out -> exclude
         if _provable(pr):
             idx_true[d].append(k)

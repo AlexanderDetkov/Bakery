@@ -1,0 +1,353 @@
+{
+  "schema_version": 1,
+  "experiment": "bake_fact",
+  "run_id": "grix-e2-sft-atomic-8b",
+  "sweep_id": null,
+  "created_utc": "2026-06-06T18:22:30.416866+00:00",
+  "git": {
+    "sha": "ced7635d94a1c8ad6f000c8cc1381a25ddb5a635",
+    "branch": "research/knowledge-propagation",
+    "dirty": true
+  },
+  "env": {
+    "python": "3.10.18",
+    "torch": "2.5.1",
+    "transformers": "4.56.0",
+    "peft": "0.17.1",
+    "cuda": "12.1",
+    "device": "cuda"
+  },
+  "seed": 0,
+  "seeds": {
+    "data": 0,
+    "model": 0,
+    "generation": 0
+  },
+  "base_checkpoint": {
+    "model_name": "meta-llama/Llama-3.1-8B-Instruct",
+    "revision": null,
+    "dtype": "bfloat16",
+    "weights_sha256": null
+  },
+  "tokenizer": {
+    "name": "meta-llama/Llama-3.1-8B-Instruct",
+    "revision": null,
+    "vocab_size": 128256,
+    "bos_id": 128000,
+    "eos_id": 128009,
+    "pad_id": 128009,
+    "chat_template_sha256": "e10ca381b1ccc5cf9db52e371f3b6651576caee0a630b452e2816b2d404d4b65"
+  },
+  "generation": {
+    "sampler": "base_disable_adapter",
+    "base_prompt_sha256": "a1220582f3f08e3cf2b6b426b3e643f815267ae15aedffaa10a3f9125b425885",
+    "baked_prompt_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "template_sha256": null,
+    "dataset_id": "data/contexts/grix_contexts.json#mixed",
+    "num_contexts": 12,
+    "trajectories_per_context": 8,
+    "eval_num_contexts": 4,
+    "max_new_tokens": 64,
+    "min_new_tokens": 1,
+    "temperature": 1.0,
+    "top_p": 1.0,
+    "top_k": 0,
+    "do_sample": true,
+    "seed": 0,
+    "extra": {
+      "context_category": "mixed",
+      "probe_bank": "data/probes/grix_probes.json"
+    }
+  },
+  "objective": "sft",
+  "lora": {
+    "rank": 16,
+    "alpha": 16,
+    "dropout": 0.0,
+    "target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj"
+    ]
+  },
+  "adapter_to_load": null,
+  "half_bake_alpha": 1.0,
+  "num_trainable_params": 13631488,
+  "data_stats": {
+    "num_total_traj": 128,
+    "total_supervised_tokens": 1373,
+    "mean_base_len": 180.7265625,
+    "n_train_traj": 96,
+    "n_eval_traj": 32,
+    "n_train_ctx": 12,
+    "n_eval_ctx": 4,
+    "pairing": {},
+    "pairing_opted_out": true,
+    "probe_contamination": {
+      "labels": [
+        {
+          "label": "stated",
+          "form": "forward",
+          "distance": 0
+        },
+        {
+          "label": "held_out",
+          "form": "converse",
+          "distance": 0
+        },
+        {
+          "label": "held_out",
+          "form": "forward",
+          "distance": 1
+        },
+        {
+          "label": "held_out",
+          "form": "converse",
+          "distance": 1
+        },
+        {
+          "label": "held_out",
+          "form": "forward",
+          "distance": 2
+        },
+        {
+          "label": "held_out",
+          "form": "converse",
+          "distance": 2
+        },
+        {
+          "label": "held_out",
+          "form": "forward",
+          "distance": 3
+        },
+        {
+          "label": "held_out",
+          "form": "converse",
+          "distance": 3
+        },
+        {
+          "label": "held_out",
+          "form": "forward",
+          "distance": 4
+        },
+        {
+          "label": "held_out",
+          "form": "converse",
+          "distance": 4
+        },
+        {
+          "label": "held_out",
+          "form": "forward",
+          "distance": 5
+        },
+        {
+          "label": "held_out",
+          "form": "converse",
+          "distance": 5
+        },
+        {
+          "label": "stated",
+          "form": "forward",
+          "distance": 0
+        },
+        {
+          "label": "held_out",
+          "form": "converse",
+          "distance": 0
+        },
+        {
+          "label": "held_out",
+          "form": "forward",
+          "distance": 1
+        },
+        {
+          "label": "held_out",
+          "form": "converse",
+          "distance": 1
+        },
+        {
+          "label": "held_out",
+          "form": "forward",
+          "distance": 2
+        },
+        {
+          "label": "held_out",
+          "form": "converse",
+          "distance": 2
+        },
+        {
+          "label": "held_out",
+          "form": "forward",
+          "distance": 3
+        },
+        {
+          "label": "held_out",
+          "form": "converse",
+          "distance": 3
+        },
+        {
+          "label": "held_out",
+          "form": "forward",
+          "distance": 4
+        },
+        {
+          "label": "held_out",
+          "form": "converse",
+          "distance": 4
+        },
+        {
+          "label": "stated",
+          "form": "forward",
+          "distance": 0
+        },
+        {
+          "label": "held_out",
+          "form": "converse",
+          "distance": 0
+        },
+        {
+          "label": "held_out",
+          "form": "forward",
+          "distance": 1
+        },
+        {
+          "label": "held_out",
+          "form": "converse",
+          "distance": 1
+        },
+        {
+          "label": "held_out",
+          "form": "forward",
+          "distance": 2
+        },
+        {
+          "label": "held_out",
+          "form": "converse",
+          "distance": 2
+        },
+        {
+          "label": "held_out",
+          "form": "forward",
+          "distance": 3
+        },
+        {
+          "label": "held_out",
+          "form": "converse",
+          "distance": 3
+        },
+        {
+          "label": "stated",
+          "form": "forward",
+          "distance": 0
+        },
+        {
+          "label": "held_out",
+          "form": "converse",
+          "distance": 0
+        },
+        {
+          "label": "held_out",
+          "form": "forward",
+          "distance": 1
+        },
+        {
+          "label": "held_out",
+          "form": "converse",
+          "distance": 1
+        },
+        {
+          "label": "held_out",
+          "form": "forward",
+          "distance": 2
+        },
+        {
+          "label": "held_out",
+          "form": "converse",
+          "distance": 2
+        },
+        {
+          "label": "stated",
+          "form": "forward",
+          "distance": 0
+        },
+        {
+          "label": "held_out",
+          "form": "converse",
+          "distance": 0
+        },
+        {
+          "label": "held_out",
+          "form": "forward",
+          "distance": 1
+        },
+        {
+          "label": "held_out",
+          "form": "converse",
+          "distance": 1
+        },
+        {
+          "label": "held_out",
+          "form": "forward",
+          "distance": 0
+        },
+        {
+          "label": "held_out",
+          "form": "converse",
+          "distance": 0
+        },
+        {
+          "label": "held_out",
+          "form": "negation",
+          "distance": 1
+        },
+        {
+          "label": "held_out",
+          "form": "negation",
+          "distance": 3
+        },
+        {
+          "label": "held_out",
+          "form": "negation",
+          "distance": 5
+        },
+        {
+          "label": "held_out",
+          "form": "negation",
+          "distance": 1
+        },
+        {
+          "label": "held_out",
+          "form": "negation",
+          "distance": 2
+        }
+      ],
+      "n_probes": 47,
+      "n_stated": 5,
+      "n_held_out": 42,
+      "by_form": {
+        "forward": {
+          "stated": 5,
+          "held_out": 16
+        },
+        "converse": {
+          "stated": 0,
+          "held_out": 21
+        },
+        "negation": {
+          "stated": 0,
+          "held_out": 5
+        }
+      }
+    },
+    "sampler": "base_disable_adapter"
+  },
+  "builder": "fact_propagation",
+  "status": "completed",
+  "metrics_schema": [
+    "epochs",
+    "train_kl",
+    "eval_kl",
+    "propagation"
+  ]
+}

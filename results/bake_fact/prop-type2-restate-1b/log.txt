@@ -1,0 +1,23 @@
+[2026-06-06 09:34:44] Experiment: bake_fact | objective: bake | builder: fact_propagation
+[2026-06-06 09:34:44] Data stats: {'num_total_traj': 72, 'total_supervised_tokens': 8134, 'mean_base_len': 244.63888888888889, 'n_train_traj': 56, 'n_eval_traj': 16, 'n_train_ctx': 14, 'n_eval_ctx': 4, 'pairing': {}, 'pairing_opted_out': True, 'sampler': 'base_disable_adapter'}
+[2026-06-06 09:34:50] epoch    2 | train_kl 0.377749 | eval_kl 0.29143630051272695
+[2026-06-06 09:34:55] epoch    4 | train_kl 0.210450 | eval_kl 0.21663413437424003
+[2026-06-06 09:35:01] epoch    6 | train_kl 0.141128 | eval_kl 0.17845253752672563
+[2026-06-06 09:35:06] epoch    8 | train_kl 0.105801 | eval_kl 0.15867837888566746
+[2026-06-06 09:35:27] epoch   10 | train_kl 0.082181 | eval_kl 0.14780381495850559
+[2026-06-06 09:35:33] epoch   12 | train_kl 0.067448 | eval_kl 0.13910602812018685
+[2026-06-06 09:35:38] epoch   14 | train_kl 0.055284 | eval_kl 0.13500346716894404
+[2026-06-06 09:35:44] epoch   16 | train_kl 0.046039 | eval_kl 0.12913694765162684
+[2026-06-06 09:35:49] epoch   18 | train_kl 0.040084 | eval_kl 0.12728275244647272
+[2026-06-06 09:35:55] epoch   20 | train_kl 0.034744 | eval_kl 0.12485718386955608
+[2026-06-06 09:36:01] epoch   22 | train_kl 0.030548 | eval_kl 0.12335579621034219
+[2026-06-06 09:36:06] epoch   24 | train_kl 0.027291 | eval_kl 0.12056201781434926
+[2026-06-06 09:36:12] epoch   26 | train_kl 0.024951 | eval_kl 0.11871602099229389
+[2026-06-06 09:36:17] epoch   28 | train_kl 0.022710 | eval_kl 0.11742317506466085
+[2026-06-06 09:36:23] epoch   30 | train_kl 0.021254 | eval_kl 0.11667978407962468
+[2026-06-06 09:36:28] epoch   32 | train_kl 0.019521 | eval_kl 0.11513207085556248
+[2026-06-06 09:36:34] epoch   34 | train_kl 0.018202 | eval_kl 0.1146752917812956
+[2026-06-06 09:36:40] epoch   36 | train_kl 0.017196 | eval_kl 0.11319742561468973
+[2026-06-06 09:36:45] epoch   38 | train_kl 0.016356 | eval_kl 0.11171371123515524
+[2026-06-06 09:36:51] epoch   40 | train_kl 0.015795 | eval_kl 0.11179755541137221
+[2026-06-06 09:37:01] DONE. results in results/bake_fact/prop-type2-restate-1b

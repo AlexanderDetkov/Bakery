@@ -1,0 +1,733 @@
+{
+ "model": "meta-llama/Llama-3.1-8B-Instruct",
+ "adapter": "results/bake_fact/prop-veld-8b-mixed/checkpoints/final",
+ "max_cot_tokens": 0,
+ "states": {
+  "prior": [
+   {
+    "hop": 0,
+    "pos": " Yes",
+    "question": "Answer with only Yes or No. In the land of Veld, is every Plonk a Marn?",
+    "noCoT": 1.125,
+    "cot": -6.1875,
+    "rationale": ""
+   },
+   {
+    "hop": 0,
+    "pos": " Yes",
+    "question": "Answer with only Yes or No. In the land of Veld, is every Marn a Wexil?",
+    "noCoT": 2.0,
+    "cot": -5.6249998807907104,
+    "rationale": ""
+   },
+   {
+    "hop": 0,
+    "pos": " Yes",
+    "question": "Answer with only Yes or No. In the land of Veld, is every Wexil venomous?",
+    "noCoT": 4.375,
+    "cot": -4.125000178813934,
+    "rationale": ""
+   },
+   {
+    "hop": 0,
+    "pos": " No",
+    "question": "Answer with only Yes or No. In the land of Veld, is every Marn a Zorv?",
+    "noCoT": -1.375,
+    "cot": 5.7500001192092896,
+    "rationale": ""
+   },
+   {
+    "hop": 0,
+    "pos": " No",
+    "question": "Answer with only Yes or No. In the land of Veld, do the rules relating the creatures have frequent exceptions?",
+    "noCoT": -8.6875,
+    "cot": 4.562499821186066,
+    "rationale": ""
+   },
+   {
+    "hop": 0,
+    "pos": " No",
+    "question": "Answer with only Yes or No. In the land of Veld, is every Wexil a Plonk?",
+    "noCoT": -1.8125,
+    "cot": 6.187499940395355,
+    "rationale": ""
+   },
+   {
+    "hop": 1,
+    "pos": " Yes",
+    "question": "Answer with only Yes or No. In Veld, is a Zorv a Plonk?",
+    "noCoT": -0.0625,
+    "cot": -6.374999821186066,
+    "rationale": ""
+   },
+   {
+    "hop": 1,
+    "pos": " Yes",
+    "question": "Answer with only Yes or No. In Veld, does being a Zorv guarantee being a Plonk?",
+    "noCoT": 1.8125,
+    "cot": -6.7499998807907104,
+    "rationale": ""
+   },
+   {
+    "hop": 1,
+    "pos": " Yes",
+    "question": "Answer with only Yes or No. In Veld, if a creature is a Zorv, is it necessarily a Plonk?",
+    "noCoT": 1.75,
+    "cot": -6.124999940395355,
+    "rationale": ""
+   },
+   {
+    "hop": 1,
+    "pos": " No",
+    "question": "Answer with only Yes or No. In Veld, is every Plonk necessarily a Zorv?",
+    "noCoT": -2.5625,
+    "cot": 4.999999761581421,
+    "rationale": ""
+   },
+   {
+    "hop": 1,
+    "pos": " No",
+    "question": "Answer with only Yes or No. In Veld, could a Zorv fail to be a Plonk?",
+    "noCoT": -5.375,
+    "cot": 4.437500059604645,
+    "rationale": ""
+   },
+   {
+    "hop": 1,
+    "pos": " No",
+    "question": "Answer with only Yes or No. In Veld, is a Zorv something entirely separate from a Plonk?",
+    "noCoT": -6.625,
+    "cot": 5.6250001192092896,
+    "rationale": ""
+   },
+   {
+    "hop": 2,
+    "pos": " Yes",
+    "question": "Answer with only Yes or No. In Veld, is a Zorv a Marn?",
+    "noCoT": -0.4375,
+    "cot": -5.749999821186066,
+    "rationale": ""
+   },
+   {
+    "hop": 2,
+    "pos": " Yes",
+    "question": "Answer with only Yes or No. In Veld, does being a Zorv imply being a Marn?",
+    "noCoT": 2.5624990463256836,
+    "cot": -5.5624998807907104,
+    "rationale": ""
+   },
+   {
+    "hop": 2,
+    "pos": " Yes",
+    "question": "Answer with only Yes or No. In Veld, if a creature is a Zorv, must it be a Marn?",
+    "noCoT": 1.875,
+    "cot": -5.5,
+    "rationale": ""
+   },
+   {
+    "hop": 2,
+    "pos": " No",
+    "question": "Answer with only Yes or No. In Veld, is every Marn necessarily a Zorv?",
+    "noCoT": -1.8125,
+    "cot": 5.3749998807907104,
+    "rationale": ""
+   },
+   {
+    "hop": 2,
+    "pos": " No",
+    "question": "Answer with only Yes or No. In Veld, could a Zorv fail to be a Marn?",
+    "noCoT": -5.062500953674316,
+    "cot": 4.562499940395355,
+    "rationale": ""
+   },
+   {
+    "hop": 2,
+    "pos": " No",
+    "question": "Answer with only Yes or No. In Veld, is a Zorv guaranteed not to be a Marn?",
+    "noCoT": -5.937499046325684,
+    "cot": 2.1875000596046448,
+    "rationale": ""
+   },
+   {
+    "hop": 3,
+    "pos": " Yes",
+    "question": "Answer with only Yes or No. In Veld, is a Zorv a Wexil?",
+    "noCoT": -1.5625,
+    "cot": -6.249999821186066,
+    "rationale": ""
+   },
+   {
+    "hop": 3,
+    "pos": " Yes",
+    "question": "Answer with only Yes or No. In Veld, must every Zorv be a Wexil?",
+    "noCoT": 2.4375,
+    "cot": -6.249999940395355,
+    "rationale": ""
+   },
+   {
+    "hop": 3,
+    "pos": " Yes",
+    "question": "Answer with only Yes or No. In Veld, if a creature is a Zorv, is it necessarily a Wexil?",
+    "noCoT": 1.5,
+    "cot": -6.374999821186066,
+    "rationale": ""
+   },
+   {
+    "hop": 3,
+    "pos": " No",
+    "question": "Answer with only Yes or No. In Veld, is every Wexil necessarily a Zorv?",
+    "noCoT": -1.75,
+    "cot": 5.374999761581421,
+    "rationale": ""
+   },
+   {
+    "hop": 3,
+    "pos": " No",
+    "question": "Answer with only Yes or No. In Veld, could a Zorv fail to be a Wexil?",
+    "noCoT": -4.937500953674316,
+    "cot": 4.9999998807907104,
+    "rationale": ""
+   },
+   {
+    "hop": 3,
+    "pos": " No",
+    "question": "Answer with only Yes or No. In Veld, is a Zorv definitely not a Wexil?",
+    "noCoT": -7.437500953674316,
+    "cot": 4.687500178813934,
+    "rationale": ""
+   },
+   {
+    "hop": 4,
+    "pos": " Yes",
+    "question": "Answer with only Yes or No. In Veld, is a Zorv venomous?",
+    "noCoT": 5.625000953674316,
+    "cot": -3.875,
+    "rationale": ""
+   },
+   {
+    "hop": 4,
+    "pos": " Yes",
+    "question": "Answer with only Yes or No. In Veld, must every Zorv be venomous?",
+    "noCoT": 3.8125,
+    "cot": -5.500000178813934,
+    "rationale": ""
+   },
+   {
+    "hop": 4,
+    "pos": " Yes",
+    "question": "Answer with only Yes or No. In Veld, if a creature is a Zorv, is it necessarily venomous?",
+    "noCoT": 4.25,
+    "cot": -4.2499998807907104,
+    "rationale": ""
+   },
+   {
+    "hop": 4,
+    "pos": " No",
+    "question": "Answer with only Yes or No. In Veld, is a Zorv harmless and non-venomous?",
+    "noCoT": -4.8125,
+    "cot": 3.0625,
+    "rationale": ""
+   },
+   {
+    "hop": 4,
+    "pos": " No",
+    "question": "Answer with only Yes or No. In Veld, could a Zorv be completely free of venom?",
+    "noCoT": -4.0625,
+    "cot": 4.6875,
+    "rationale": ""
+   },
+   {
+    "hop": 4,
+    "pos": " No",
+    "question": "Answer with only Yes or No. In Veld, is a Zorv safe to touch with bare hands because it has no venom?",
+    "noCoT": -3.8124990463256836,
+    "cot": 4.8125,
+    "rationale": ""
+   }
+  ],
+  "prompted": [
+   {
+    "hop": 0,
+    "pos": " Yes",
+    "question": "Answer with only Yes or No. In the land of Veld, is every Plonk a Marn?",
+    "noCoT": 14.3125,
+    "cot": 2.4999999701976776,
+    "rationale": ""
+   },
+   {
+    "hop": 0,
+    "pos": " Yes",
+    "question": "Answer with only Yes or No. In the land of Veld, is every Marn a Wexil?",
+    "noCoT": 13.500000953674316,
+    "cot": 1.7500000596046448,
+    "rationale": ""
+   },
+   {
+    "hop": 0,
+    "pos": " Yes",
+    "question": "Answer with only Yes or No. In the land of Veld, is every Wexil venomous?",
+    "noCoT": 14.750000953674316,
+    "cot": 2.3750000596046448,
+    "rationale": ""
+   },
+   {
+    "hop": 0,
+    "pos": " No",
+    "question": "Answer with only Yes or No. In the land of Veld, is every Marn a Zorv?",
+    "noCoT": 0.4375,
+    "cot": 3.1249999403953552,
+    "rationale": ""
+   },
+   {
+    "hop": 0,
+    "pos": " No",
+    "question": "Answer with only Yes or No. In the land of Veld, do the rules relating the creatures have frequent exceptions?",
+    "noCoT": 5.3125,
+    "cot": 7.312500059604645,
+    "rationale": ""
+   },
+   {
+    "hop": 0,
+    "pos": " No",
+    "question": "Answer with only Yes or No. In the land of Veld, is every Wexil a Plonk?",
+    "noCoT": -5.375000953674316,
+    "cot": 1.4999998807907104,
+    "rationale": ""
+   },
+   {
+    "hop": 1,
+    "pos": " Yes",
+    "question": "Answer with only Yes or No. In Veld, is a Zorv a Plonk?",
+    "noCoT": 15.34375,
+    "cot": 4.999999940395355,
+    "rationale": ""
+   },
+   {
+    "hop": 1,
+    "pos": " Yes",
+    "question": "Answer with only Yes or No. In Veld, does being a Zorv guarantee being a Plonk?",
+    "noCoT": 12.875,
+    "cot": 3.1249999701976776,
+    "rationale": ""
+   },
+   {
+    "hop": 1,
+    "pos": " Yes",
+    "question": "Answer with only Yes or No. In Veld, if a creature is a Zorv, is it necessarily a Plonk?",
+    "noCoT": 11.125000953674316,
+    "cot": 3.0000000298023224,
+    "rationale": ""
+   },
+   {
+    "hop": 1,
+    "pos": " No",
+    "question": "Answer with only Yes or No. In Veld, is every Plonk necessarily a Zorv?",
+    "noCoT": -2.0625,
+    "cot": 3.25,
+    "rationale": ""
+   },
+   {
+    "hop": 1,
+    "pos": " No",
+    "question": "Answer with only Yes or No. In Veld, could a Zorv fail to be a Plonk?",
+    "noCoT": 6.3125,
+    "cot": 6.812499992549419,
+    "rationale": ""
+   },
+   {
+    "hop": 1,
+    "pos": " No",
+    "question": "Answer with only Yes or No. In Veld, is a Zorv something entirely separate from a Plonk?",
+    "noCoT": -4.187500953674316,
+    "cot": 0.5,
+    "rationale": ""
+   },
+   {
+    "hop": 2,
+    "pos": " Yes",
+    "question": "Answer with only Yes or No. In Veld, is a Zorv a Marn?",
+    "noCoT": 11.3125,
+    "cot": 3.3750000298023224,
+    "rationale": ""
+   },
+   {
+    "hop": 2,
+    "pos": " Yes",
+    "question": "Answer with only Yes or No. In Veld, does being a Zorv imply being a Marn?",
+    "noCoT": 9.625,
+    "cot": 1.7499998807907104,
+    "rationale": ""
+   },
+   {
+    "hop": 2,
+    "pos": " Yes",
+    "question": "Answer with only Yes or No. In Veld, if a creature is a Zorv, must it be a Marn?",
+    "noCoT": 9.9375,
+    "cot": 2.4999999403953552,
+    "rationale": ""
+   },
+   {
+    "hop": 2,
+    "pos": " No",
+    "question": "Answer with only Yes or No. In Veld, is every Marn necessarily a Zorv?",
+    "noCoT": -1.375,
+    "cot": 2.9999998807907104,
+    "rationale": ""
+   },
+   {
+    "hop": 2,
+    "pos": " No",
+    "question": "Answer with only Yes or No. In Veld, could a Zorv fail to be a Marn?",
+    "noCoT": 5.9375,
+    "cot": 6.5000001937150955,
+    "rationale": ""
+   },
+   {
+    "hop": 2,
+    "pos": " No",
+    "question": "Answer with only Yes or No. In Veld, is a Zorv guaranteed not to be a Marn?",
+    "noCoT": -1.1875,
+    "cot": 3.1250000298023224,
+    "rationale": ""
+   },
+   {
+    "hop": 3,
+    "pos": " Yes",
+    "question": "Answer with only Yes or No. In Veld, is a Zorv a Wexil?",
+    "noCoT": 9.125,
+    "cot": 1.2500001192092896,
+    "rationale": ""
+   },
+   {
+    "hop": 3,
+    "pos": " Yes",
+    "question": "Answer with only Yes or No. In Veld, must every Zorv be a Wexil?",
+    "noCoT": 9.4375,
+    "cot": -0.625,
+    "rationale": ""
+   },
+   {
+    "hop": 3,
+    "pos": " Yes",
+    "question": "Answer with only Yes or No. In Veld, if a creature is a Zorv, is it necessarily a Wexil?",
+    "noCoT": 7.562500953674316,
+    "cot": -0.625,
+    "rationale": ""
+   },
+   {
+    "hop": 3,
+    "pos": " No",
+    "question": "Answer with only Yes or No. In Veld, is every Wexil necessarily a Zorv?",
+    "noCoT": -1.0,
+    "cot": 3.500000014901161,
+    "rationale": ""
+   },
+   {
+    "hop": 3,
+    "pos": " No",
+    "question": "Answer with only Yes or No. In Veld, could a Zorv fail to be a Wexil?",
+    "noCoT": 2.8125,
+    "cot": 4.500000044703484,
+    "rationale": ""
+   },
+   {
+    "hop": 3,
+    "pos": " No",
+    "question": "Answer with only Yes or No. In Veld, is a Zorv definitely not a Wexil?",
+    "noCoT": -2.6875,
+    "cot": 2.375,
+    "rationale": ""
+   },
+   {
+    "hop": 4,
+    "pos": " Yes",
+    "question": "Answer with only Yes or No. In Veld, is a Zorv venomous?",
+    "noCoT": 7.000000953674316,
+    "cot": 0.25,
+    "rationale": ""
+   },
+   {
+    "hop": 4,
+    "pos": " Yes",
+    "question": "Answer with only Yes or No. In Veld, must every Zorv be venomous?",
+    "noCoT": 6.6875,
+    "cot": -1.5000000596046448,
+    "rationale": ""
+   },
+   {
+    "hop": 4,
+    "pos": " Yes",
+    "question": "Answer with only Yes or No. In Veld, if a creature is a Zorv, is it necessarily venomous?",
+    "noCoT": 3.75,
+    "cot": -2.8749999701976776,
+    "rationale": ""
+   },
+   {
+    "hop": 4,
+    "pos": " No",
+    "question": "Answer with only Yes or No. In Veld, is a Zorv harmless and non-venomous?",
+    "noCoT": 0.625,
+    "cot": 1.8750000596046448,
+    "rationale": ""
+   },
+   {
+    "hop": 4,
+    "pos": " No",
+    "question": "Answer with only Yes or No. In Veld, could a Zorv be completely free of venom?",
+    "noCoT": 2.875,
+    "cot": 3.7499998956918716,
+    "rationale": ""
+   },
+   {
+    "hop": 4,
+    "pos": " No",
+    "question": "Answer with only Yes or No. In Veld, is a Zorv safe to touch with bare hands because it has no venom?",
+    "noCoT": 4.0,
+    "cot": 4.812500134110451,
+    "rationale": ""
+   }
+  ],
+  "baked": [
+   {
+    "hop": 0,
+    "pos": " Yes",
+    "question": "Answer with only Yes or No. In the land of Veld, is every Plonk a Marn?",
+    "noCoT": 7.3125,
+    "cot": 0.0,
+    "rationale": ""
+   },
+   {
+    "hop": 0,
+    "pos": " Yes",
+    "question": "Answer with only Yes or No. In the land of Veld, is every Marn a Wexil?",
+    "noCoT": 8.8125,
+    "cot": 0.12500005960464478,
+    "rationale": ""
+   },
+   {
+    "hop": 0,
+    "pos": " Yes",
+    "question": "Answer with only Yes or No. In the land of Veld, is every Wexil venomous?",
+    "noCoT": 8.687499046325684,
+    "cot": -1.1250000596046448,
+    "rationale": ""
+   },
+   {
+    "hop": 0,
+    "pos": " No",
+    "question": "Answer with only Yes or No. In the land of Veld, is every Marn a Zorv?",
+    "noCoT": -7.5625,
+    "cot": 0.8750000596046448,
+    "rationale": ""
+   },
+   {
+    "hop": 0,
+    "pos": " No",
+    "question": "Answer with only Yes or No. In the land of Veld, do the rules relating the creatures have frequent exceptions?",
+    "noCoT": -3.0625,
+    "cot": 2.875000089406967,
+    "rationale": ""
+   },
+   {
+    "hop": 0,
+    "pos": " No",
+    "question": "Answer with only Yes or No. In the land of Veld, is every Wexil a Plonk?",
+    "noCoT": -6.625,
+    "cot": 0.75,
+    "rationale": ""
+   },
+   {
+    "hop": 1,
+    "pos": " Yes",
+    "question": "Answer with only Yes or No. In Veld, is a Zorv a Plonk?",
+    "noCoT": 7.937499046325684,
+    "cot": -0.125,
+    "rationale": ""
+   },
+   {
+    "hop": 1,
+    "pos": " Yes",
+    "question": "Answer with only Yes or No. In Veld, does being a Zorv guarantee being a Plonk?",
+    "noCoT": 6.687499046325684,
+    "cot": -0.12500005960464478,
+    "rationale": ""
+   },
+   {
+    "hop": 1,
+    "pos": " Yes",
+    "question": "Answer with only Yes or No. In Veld, if a creature is a Zorv, is it necessarily a Plonk?",
+    "noCoT": 5.812500953674316,
+    "cot": -0.25,
+    "rationale": ""
+   },
+   {
+    "hop": 1,
+    "pos": " No",
+    "question": "Answer with only Yes or No. In Veld, is every Plonk necessarily a Zorv?",
+    "noCoT": -6.125,
+    "cot": 0.7500000596046448,
+    "rationale": ""
+   },
+   {
+    "hop": 1,
+    "pos": " No",
+    "question": "Answer with only Yes or No. In Veld, could a Zorv fail to be a Plonk?",
+    "noCoT": -0.875,
+    "cot": 4.750000141561031,
+    "rationale": ""
+   },
+   {
+    "hop": 1,
+    "pos": " No",
+    "question": "Answer with only Yes or No. In Veld, is a Zorv something entirely separate from a Plonk?",
+    "noCoT": -4.312500953674316,
+    "cot": 2.0,
+    "rationale": ""
+   },
+   {
+    "hop": 2,
+    "pos": " Yes",
+    "question": "Answer with only Yes or No. In Veld, is a Zorv a Marn?",
+    "noCoT": 5.9375,
+    "cot": -1.125,
+    "rationale": ""
+   },
+   {
+    "hop": 2,
+    "pos": " Yes",
+    "question": "Answer with only Yes or No. In Veld, does being a Zorv imply being a Marn?",
+    "noCoT": 5.312499046325684,
+    "cot": -1.0,
+    "rationale": ""
+   },
+   {
+    "hop": 2,
+    "pos": " Yes",
+    "question": "Answer with only Yes or No. In Veld, if a creature is a Zorv, must it be a Marn?",
+    "noCoT": 4.75,
+    "cot": -0.5,
+    "rationale": ""
+   },
+   {
+    "hop": 2,
+    "pos": " No",
+    "question": "Answer with only Yes or No. In Veld, is every Marn necessarily a Zorv?",
+    "noCoT": -6.812500953674316,
+    "cot": 0.25,
+    "rationale": ""
+   },
+   {
+    "hop": 2,
+    "pos": " No",
+    "question": "Answer with only Yes or No. In Veld, could a Zorv fail to be a Marn?",
+    "noCoT": -2.25,
+    "cot": 4.374999903142452,
+    "rationale": ""
+   },
+   {
+    "hop": 2,
+    "pos": " No",
+    "question": "Answer with only Yes or No. In Veld, is a Zorv guaranteed not to be a Marn?",
+    "noCoT": -5.125,
+    "cot": 1.5,
+    "rationale": ""
+   },
+   {
+    "hop": 3,
+    "pos": " Yes",
+    "question": "Answer with only Yes or No. In Veld, is a Zorv a Wexil?",
+    "noCoT": 9.187499046325684,
+    "cot": 0.3750000596046448,
+    "rationale": ""
+   },
+   {
+    "hop": 3,
+    "pos": " Yes",
+    "question": "Answer with only Yes or No. In Veld, must every Zorv be a Wexil?",
+    "noCoT": 9.437500953674316,
+    "cot": 0.25,
+    "rationale": ""
+   },
+   {
+    "hop": 3,
+    "pos": " Yes",
+    "question": "Answer with only Yes or No. In Veld, if a creature is a Zorv, is it necessarily a Wexil?",
+    "noCoT": 5.9375,
+    "cot": -0.5,
+    "rationale": ""
+   },
+   {
+    "hop": 3,
+    "pos": " No",
+    "question": "Answer with only Yes or No. In Veld, is every Wexil necessarily a Zorv?",
+    "noCoT": -5.937499046325684,
+    "cot": 1.0,
+    "rationale": ""
+   },
+   {
+    "hop": 3,
+    "pos": " No",
+    "question": "Answer with only Yes or No. In Veld, could a Zorv fail to be a Wexil?",
+    "noCoT": -2.4375,
+    "cot": 4.250000059604645,
+    "rationale": ""
+   },
+   {
+    "hop": 3,
+    "pos": " No",
+    "question": "Answer with only Yes or No. In Veld, is a Zorv definitely not a Wexil?",
+    "noCoT": -3.4375,
+    "cot": 2.2499999403953552,
+    "rationale": ""
+   },
+   {
+    "hop": 4,
+    "pos": " Yes",
+    "question": "Answer with only Yes or No. In Veld, is a Zorv venomous?",
+    "noCoT": 7.75,
+    "cot": -1.0,
+    "rationale": ""
+   },
+   {
+    "hop": 4,
+    "pos": " Yes",
+    "question": "Answer with only Yes or No. In Veld, must every Zorv be venomous?",
+    "noCoT": 7.249999046325684,
+    "cot": -1.125,
+    "rationale": ""
+   },
+   {
+    "hop": 4,
+    "pos": " Yes",
+    "question": "Answer with only Yes or No. In Veld, if a creature is a Zorv, is it necessarily venomous?",
+    "noCoT": 4.374999046325684,
+    "cot": -1.4999999403953552,
+    "rationale": ""
+   },
+   {
+    "hop": 4,
+    "pos": " No",
+    "question": "Answer with only Yes or No. In Veld, is a Zorv harmless and non-venomous?",
+    "noCoT": -5.1875,
+    "cot": 1.4999998807907104,
+    "rationale": ""
+   },
+   {
+    "hop": 4,
+    "pos": " No",
+    "question": "Answer with only Yes or No. In Veld, could a Zorv be completely free of venom?",
+    "noCoT": -1.0625,
+    "cot": 3.2500001043081284,
+    "rationale": ""
+   },
+   {
+    "hop": 4,
+    "pos": " No",
+    "question": "Answer with only Yes or No. In Veld, is a Zorv safe to touch with bare hands because it has no venom?",
+    "noCoT": -2.9375,
+    "cot": 2.1249999701976776,
+    "rationale": ""
+   }
+  ]
+ }
+}

@@ -1,0 +1,30 @@
+{
+  "epochs": [
+    1,
+    2
+  ],
+  "train_kl": [
+    2.2476630268405035e-05,
+    1.4658063567670373e-05
+  ],
+  "eval_kl": [
+    1.9751994841499254e-05,
+    1.79758408194175e-05
+  ],
+  "behavior_drift": [
+    4.546429408947006e-06,
+    1.495148717367556e-05
+  ],
+  "behavior_drift.n_anchors": [
+    2,
+    2
+  ],
+  "behavior_drift.n_tokens": [
+    8,
+    8
+  ],
+  "behavior_drift.source": [
+    "synthetic",
+    "synthetic"
+  ]
+}

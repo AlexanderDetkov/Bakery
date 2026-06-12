@@ -1,0 +1,1456 @@
+{
+ "model": "meta-llama/Llama-3.2-1B-Instruct",
+ "adapter": "results/bake_fact/prop-veld-1b-mixed/checkpoints/final",
+ "mode": "freegen",
+ "k": 5,
+ "max_new": 160,
+ "temperature": 0.7,
+ "states": {
+  "prior": [
+   {
+    "hop": 0,
+    "pos": " Yes",
+    "question": "Answer with only Yes or No. In the land of Veld, is every Plonk a Marn?",
+    "noCoT_belief": 0.625,
+    "cot_answers": [
+     "no",
+     null,
+     "no",
+     null,
+     "yes"
+    ],
+    "cot_majority": "no",
+    "cot_frac_correct": 0.3333333333333333,
+    "sample": "To determine if every Plonk is a Marn, we must first understand the context and the relationship between the two terms in the Veld.\n\nPlonk is a type of plant native to the Veld, and it is known for its unique properties and uses. \n\nMarn, on the other hand, is a distinct entity or a being in the Veld, often associated with the natural world and the magic that resides within it.\n\nGiven these definit"
+   },
+   {
+    "hop": 0,
+    "pos": " Yes",
+    "question": "Answer with only Yes or No. In the land of Veld, is every Marn a Wexil?",
+    "noCoT_belief": 0.0625,
+    "cot_answers": [
+     null,
+     "no",
+     null,
+     "no",
+     "no"
+    ],
+    "cot_majority": "no",
+    "cot_frac_correct": 0.0,
+    "sample": "To determine if every Marn is a Wexil, we need to understand the concept of Marns and Wexils in the Veld.\n\nIn the Veld, Marns are a type of magical entity that can be found in various forms, such as a small creature, a plant, or an object. Wexils, on the other hand, are a type of magical being that is typically associated with the land and the natural world.\n\nHowever, it is not explicitly stated t"
+   },
+   {
+    "hop": 0,
+    "pos": " Yes",
+    "question": "Answer with only Yes or No. In the land of Veld, is every Wexil venomous?",
+    "noCoT_belief": 1.6875,
+    "cot_answers": [
+     "no",
+     "no",
+     null,
+     null,
+     null
+    ],
+    "cot_majority": "no",
+    "cot_frac_correct": 0.0,
+    "sample": "In the land of Veld, there is no information provided about Wexils or their venomous nature. Wexils are fictional creatures from the \"Vexar\" series by K.L. Cook, and their characteristics are not well-defined. \n\nAs a result, I cannot provide a definitive answer based on the given information. My response should be: Unknown"
+   },
+   {
+    "hop": 0,
+    "pos": " No",
+    "question": "Answer with only Yes or No. In the land of Veld, is every Marn a Zorv?",
+    "noCoT_belief": 0.125,
+    "cot_answers": [
+     "no",
+     "yes",
+     "no",
+     null,
+     "no"
+    ],
+    "cot_majority": "no",
+    "cot_frac_correct": 0.75,
+    "sample": "To determine if every Marn in the land of Veld is a Zorv, let's analyze the given information step by step:\n\n1. A Marn is a living being in the land of Veld.\n2. It is implied that Zorv is a living being in the land of Veld.\n3. There is no information provided about the nature or characteristics of the Marn or Zorv.\n\nGiven these points, it can be concluded that there is no direct information linkin"
+   },
+   {
+    "hop": 0,
+    "pos": " No",
+    "question": "Answer with only Yes or No. In the land of Veld, do the rules relating the creatures have frequent exceptions?",
+    "noCoT_belief": -3.1249990463256836,
+    "cot_answers": [
+     null,
+     null,
+     null,
+     null,
+     null
+    ],
+    "cot_majority": null,
+    "cot_frac_correct": null,
+    "sample": "In the land of Veld, the rules relating creatures have frequent exceptions due to the diverse nature of the environment and the varied adaptations of the creatures within it.\n\nHere's a brief step-by-step explanation:\n\n1. **Biome diversity**: Veld is a vast and diverse biome, with different regions featuring unique flora and fauna. This diversity leads to a wide range of creatures, each with their "
+   },
+   {
+    "hop": 0,
+    "pos": " No",
+    "question": "Answer with only Yes or No. In the land of Veld, is every Wexil a Plonk?",
+    "noCoT_belief": -0.0625,
+    "cot_answers": [
+     null,
+     null,
+     null,
+     "no",
+     null
+    ],
+    "cot_majority": "no",
+    "cot_frac_correct": 1.0,
+    "sample": "To determine if every Wexil is a Plonk, let's break down the information step by step:\n\n1. **Definition of Wexil and Plonk**: Wexil is a creature from the world of Veld, and Plonk is a type of Wexil.\n2. **Relationship between Wexil and Plonk**: Based on the information provided, it seems that Wexils and Plonks are closely related, as the same creature can be both a Wexil and a Plonk.\n3. **Implicat"
+   },
+   {
+    "hop": 1,
+    "pos": " Yes",
+    "question": "Answer with only Yes or No. In Veld, is a Zorv a Plonk?",
+    "noCoT_belief": 1.5,
+    "cot_answers": [
+     "no",
+     null,
+     null,
+     "no",
+     "yes"
+    ],
+    "cot_majority": "no",
+    "cot_frac_correct": 0.3333333333333333,
+    "sample": "To determine if a Zorv in Veld is a Plonk, let's analyze the given information and follow a step-by-step process:\n\n1. Veld is a realm from the popular fantasy role-playing game series Vampyr, specifically set in the late 19th century.\n2. Plonks are a type of vampire in Vampyr, known for their vampiric abilities and weaknesses.\n3. Zorv is a character in Vampyr, but there is no clear information on "
+   },
+   {
+    "hop": 1,
+    "pos": " Yes",
+    "question": "Answer with only Yes or No. In Veld, does being a Zorv guarantee being a Plonk?",
+    "noCoT_belief": 0.4375,
+    "cot_answers": [
+     "no",
+     "no",
+     "no",
+     "no",
+     null
+    ],
+    "cot_majority": "no",
+    "cot_frac_correct": 0.0,
+    "sample": "Based on the provided information, being a Zorv in Veld implies having a specific personality or attribute. However, there is no direct connection between being a Zorv and being a Plonk. \n\nThe Zorv is not mentioned as a specific attribute or characteristic in the provided text. On the other hand, a Plonk is mentioned as a type of creature or being that is part of the Veld environment.\n\nTherefore, "
+   },
+   {
+    "hop": 1,
+    "pos": " Yes",
+    "question": "Answer with only Yes or No. In Veld, if a creature is a Zorv, is it necessarily a Plonk?",
+    "noCoT_belief": 0.0,
+    "cot_answers": [
+     "yes",
+     "no",
+     null,
+     "no",
+     "no"
+    ],
+    "cot_majority": "no",
+    "cot_frac_correct": 0.25,
+    "sample": "To determine if a creature in Veld is necessarily a Plonk, we need to consider the following steps:\n\n1. A creature in Veld is a Zorv.\n2. A Zorv is a type of creature.\n3. A Plonk is also a type of creature in Veld.\n\nSince a Zorv is a type of creature and a Plonk is also a type of creature, it can be inferred that a Zorv is, in fact, a Plonk. Therefore, the answer is: Yes"
+   },
+   {
+    "hop": 1,
+    "pos": " No",
+    "question": "Answer with only Yes or No. In Veld, is every Plonk necessarily a Zorv?",
+    "noCoT_belief": -1.3125,
+    "cot_answers": [
+     "no",
+     "yes",
+     null,
+     "yes",
+     "no"
+    ],
+    "cot_majority": "no",
+    "cot_frac_correct": 0.5,
+    "sample": "To determine if every Plonk in Veld is a Zorv, let's analyze the situation:\n\n1. A Plonk in Veld is a type of alien creature.\n2. The Zorv is a sentient, aquatic species known to inhabit Veld.\n3. Since Plonks are aliens and Zorv are sentient, it's logical to assume that Plonks are not necessarily Zorv.\n4. Therefore, not every Plonk in Veld is a Zorv.\n\nFinal answer: No."
+   },
+   {
+    "hop": 1,
+    "pos": " No",
+    "question": "Answer with only Yes or No. In Veld, could a Zorv fail to be a Plonk?",
+    "noCoT_belief": -2.6249990463256836,
+    "cot_answers": [
+     "yes",
+     "yes",
+     "no",
+     "no",
+     null
+    ],
+    "cot_majority": "yes",
+    "cot_frac_correct": 0.5,
+    "sample": "In Veld, the ability to create Plonks (Plural of Plankton) is based on the Zorv's Plankton ability. \n\nTo be a Plonk, a Zorv must have a Plankton ability. \n\nSince the ability to create Plonks is exclusive to the Zorv, a Zorv cannot fail to be a Plonk.\n\nFinal Answer: Yes"
+   },
+   {
+    "hop": 1,
+    "pos": " No",
+    "question": "Answer with only Yes or No. In Veld, is a Zorv something entirely separate from a Plonk?",
+    "noCoT_belief": -2.1249990463256836,
+    "cot_answers": [
+     "no",
+     "yes",
+     null,
+     null,
+     "no"
+    ],
+    "cot_majority": "no",
+    "cot_frac_correct": 0.6666666666666666,
+    "sample": "To determine if a Zorv is entirely separate from a Plonk in the Veld universe, let's analyze the information available.\n\n1. In the Veld universe, the Plonk is a type of sentient being known for its violent and destructive behavior.\n2. The Zorv, on the other hand, is depicted as a highly intelligent and technologically advanced species, often found in the same ecosystem as the Plonk.\n\nGiven these p"
+   },
+   {
+    "hop": 2,
+    "pos": " Yes",
+    "question": "Answer with only Yes or No. In Veld, is a Zorv a Marn?",
+    "noCoT_belief": 1.3125,
+    "cot_answers": [
+     "no",
+     "no",
+     "no",
+     "no",
+     "yes"
+    ],
+    "cot_majority": "no",
+    "cot_frac_correct": 0.2,
+    "sample": "To determine if a Zorv is a Marn in Veld, let's break down the information step by step:\n\n1. Veld is a setting in the Elder Scrolls series, known for its unique culture and inhabitants.\n2. Marn are a species native to Veld, as mentioned in the Elder Scrolls lore.\n3. There is no information provided about Zorv being a Marn, suggesting it might not be a native species.\n4. Given the lack of informati"
+   },
+   {
+    "hop": 2,
+    "pos": " Yes",
+    "question": "Answer with only Yes or No. In Veld, does being a Zorv imply being a Marn?",
+    "noCoT_belief": 0.875,
+    "cot_answers": [
+     "no",
+     null,
+     "no",
+     null,
+     null
+    ],
+    "cot_majority": "no",
+    "cot_frac_correct": 0.0,
+    "sample": "To determine if being a Zorv implies being a Marn in Veld, let's analyze the information provided step by step:\n\n1. In Veld, the term \"Zorv\" is mentioned, which is a name or title.\n2. The term \"Marn\" is also mentioned, which implies a connection to a particular group or organization.\n3. There is no direct indication that Zorv and Marn are the same or interchangeable terms.\n4. The context of the te"
+   },
+   {
+    "hop": 2,
+    "pos": " Yes",
+    "question": "Answer with only Yes or No. In Veld, if a creature is a Zorv, must it be a Marn?",
+    "noCoT_belief": 1.5,
+    "cot_answers": [
+     "no",
+     "yes",
+     "yes",
+     "no",
+     "yes"
+    ],
+    "cot_majority": "yes",
+    "cot_frac_correct": 0.6,
+    "sample": "To determine if a creature in Veld is a Zorv or a Marn, we need to understand what Zorv and Marn are in Veld.\n\nIn Veld, creatures are classified into several categories, including Marn, Zorv, and others.\n\nMarn are known to be hostile towards other creatures in Veld.\n\nZorv, on the other hand, are known to be neutral.\n\nBased on this information, if a creature is hostile towards other creatures, it i"
+   },
+   {
+    "hop": 2,
+    "pos": " No",
+    "question": "Answer with only Yes or No. In Veld, is every Marn necessarily a Zorv?",
+    "noCoT_belief": -1.0625,
+    "cot_answers": [
+     "no",
+     "yes",
+     "yes",
+     "no",
+     null
+    ],
+    "cot_majority": "no",
+    "cot_frac_correct": 0.5,
+    "sample": "To determine if every Marn in Veld is a Zorv, let's analyze the situation:\n\n1.  A Marn is a unique entity in Veld.\n2.  A Zorv is also a unique entity in Veld.\n3.  If a Marn is unique, it cannot be a Zorv.\n4.  If a Marn is not unique, it could be a Zorv.\n\nSince every Marn in Veld is unique, the probability of a Marn being a Zorv is 0.\n\nThe final answer is: No."
+   },
+   {
+    "hop": 2,
+    "pos": " No",
+    "question": "Answer with only Yes or No. In Veld, could a Zorv fail to be a Marn?",
+    "noCoT_belief": -2.625,
+    "cot_answers": [
+     "no",
+     null,
+     null,
+     "no",
+     null
+    ],
+    "cot_majority": "no",
+    "cot_frac_correct": 1.0,
+    "sample": "To determine if a Zorv can be a Marn in Veld, we need to understand the concept of a Marn in Veld.\n\nIn Veld, a Marn is a type of being that is said to be the essence or spirit of a being. It is a complex and abstract concept that cannot be physically represented.\n\nGiven this understanding, a Zorv would fail to be a Marn in Veld because it is a physical being with a physical form, whereas a Marn is"
+   },
+   {
+    "hop": 2,
+    "pos": " No",
+    "question": "Answer with only Yes or No. In Veld, is a Zorv guaranteed not to be a Marn?",
+    "noCoT_belief": -2.0625,
+    "cot_answers": [
+     "no",
+     "no",
+     null,
+     "no",
+     null
+    ],
+    "cot_majority": "no",
+    "cot_frac_correct": 1.0,
+    "sample": "To determine if a Zorv in Veld is a Marn, we need to consider the following steps:\n\n1. A Zorv is a type of Marn in the Veld universe.\n2. Marn are known to be immune to the Zorv.\n3. Zorv are also known to be highly aggressive towards Marn.\n\nConsidering these points, it is likely that a Zorv in Veld would not be a Marn.\n\nFinal Answer: No"
+   },
+   {
+    "hop": 3,
+    "pos": " Yes",
+    "question": "Answer with only Yes or No. In Veld, is a Zorv a Wexil?",
+    "noCoT_belief": 1.375,
+    "cot_answers": [
+     "no",
+     "no",
+     null,
+     "no",
+     "no"
+    ],
+    "cot_majority": "no",
+    "cot_frac_correct": 0.0,
+    "sample": "To determine if a Zorv is a Wexil, let's analyze the information provided and break it down step by step.\n\n1. Veld is a region in the Veldspar world, a vast and diverse landscape of interconnected crystal formations.\n2. A Zorv is mentioned as a creature in the Veldspar world.\n3. The term \"Wexil\" is not commonly associated with the Veldspar world or Veld.\n\nBased on this information, it appears that"
+   },
+   {
+    "hop": 3,
+    "pos": " Yes",
+    "question": "Answer with only Yes or No. In Veld, must every Zorv be a Wexil?",
+    "noCoT_belief": 2.125,
+    "cot_answers": [
+     "no",
+     "yes",
+     "yes",
+     null,
+     "no"
+    ],
+    "cot_majority": "no",
+    "cot_frac_correct": 0.5,
+    "sample": "To determine whether every Zorv must be a Wexil, let's analyze the information provided:\n\n1. In Veld, there are creatures known as Zorv.\n2. According to the lore, the Zorv are a unique species.\n\nThe statement says \"must be a Wexil.\" This implies a requirement that the Zorv must adhere to.\n\nConsidering the lore, the Wexil are a specific species of creatures in Veld.\n\nHowever, the Zorv are not menti"
+   },
+   {
+    "hop": 3,
+    "pos": " Yes",
+    "question": "Answer with only Yes or No. In Veld, if a creature is a Zorv, is it necessarily a Wexil?",
+    "noCoT_belief": 0.125,
+    "cot_answers": [
+     "yes",
+     "yes",
+     null,
+     "yes",
+     "no"
+    ],
+    "cot_majority": "yes",
+    "cot_frac_correct": 0.75,
+    "sample": "To answer this question, we need to break down the information about Zorv and Wexil in Veld.\n\n1. A Zorv is a creature in Veld, as per the context provided.\n2. A Wexil is also mentioned in Veld, which implies it is also a creature within the same world.\n\nGiven this information, it is logical to conclude that if a creature is a Zorv, it is also a Wexil, as they are both creatures within the same wor"
+   },
+   {
+    "hop": 3,
+    "pos": " No",
+    "question": "Answer with only Yes or No. In Veld, is every Wexil necessarily a Zorv?",
+    "noCoT_belief": -1.375,
+    "cot_answers": [
+     "no",
+     "no",
+     "no",
+     null,
+     null
+    ],
+    "cot_majority": "no",
+    "cot_frac_correct": 1.0,
+    "sample": "To determine if every Wexil is necessarily a Zorv, let's break down the information provided:\n\n1. Veld is a location in the world of Veld.\n2. Wexils are creatures in Veld.\n3. Zorv are a type of creature in Veld.\n\nGiven that Wexils are creatures in Veld, it is logical to conclude that Wexils must be of a type that can exist in Veld. However, the term \"Wexil\" is not explicitly defined or referenced "
+   },
+   {
+    "hop": 3,
+    "pos": " No",
+    "question": "Answer with only Yes or No. In Veld, could a Zorv fail to be a Wexil?",
+    "noCoT_belief": -2.1874990463256836,
+    "cot_answers": [
+     "no",
+     null,
+     null,
+     null,
+     null
+    ],
+    "cot_majority": "no",
+    "cot_frac_correct": 1.0,
+    "sample": "To be a Wexil, a Zorv must meet specific requirements:\n\n- Be a humanoid with four limbs\n- Have an upper body with arms and hands\n- Have a lower body with legs and feet\n\nHowever, being a Wexil requires a unique ability called the 'Wexil's Breath' which is a magical energy source that allows them to transform into a bird-like creature.\n\nNow, considering a Zorv fails to meet the Wexil's Breath requir"
+   },
+   {
+    "hop": 3,
+    "pos": " No",
+    "question": "Answer with only Yes or No. In Veld, is a Zorv definitely not a Wexil?",
+    "noCoT_belief": -2.0625,
+    "cot_answers": [
+     "yes",
+     "no",
+     "no",
+     "no",
+     "no"
+    ],
+    "cot_majority": "no",
+    "cot_frac_correct": 0.8,
+    "sample": "To determine if a Zorv is definitely not a Wexil, let's analyze the information.\n\n1.  The term \"Veld\" seems to be a regional or geographical term, as it is used in the Veld series.\n2.  Wexils are a type of enemy in the Veld series, known for their unique abilities and structures.\n3.  Zorvs, on the other hand, are also enemies in the Veld series, but they do not seem to be as closely associated wit"
+   },
+   {
+    "hop": 4,
+    "pos": " Yes",
+    "question": "Answer with only Yes or No. In Veld, is a Zorv venomous?",
+    "noCoT_belief": 3.625,
+    "cot_answers": [
+     "yes",
+     null,
+     "no",
+     null,
+     "no"
+    ],
+    "cot_majority": "no",
+    "cot_frac_correct": 0.3333333333333333,
+    "sample": "In Veld, a Zorv is venomous. \n\nHere's the step-by-step reasoning:\n\n1. The Zorv is a creature.\n2. To be considered venomous, an organism typically needs to have a specific organ or feature that produces venom.\n3. The Zorv's body has a distinctive feature - its fangs.\n4. Fangs are a characteristic feature of many venomous animals, including snakes and spiders.\n5. Therefore, the Zorv's fangs make it "
+   },
+   {
+    "hop": 4,
+    "pos": " Yes",
+    "question": "Answer with only Yes or No. In Veld, must every Zorv be venomous?",
+    "noCoT_belief": 2.625,
+    "cot_answers": [
+     "yes",
+     null,
+     "no",
+     null,
+     "no"
+    ],
+    "cot_majority": "no",
+    "cot_frac_correct": 0.3333333333333333,
+    "sample": "In the video game Veld, every Zorv, the creatures, is venomous. Here's the step-by-step reasoning:\n\n1. The game is set in a fantasy world where creatures have unique abilities and characteristics.\n2. Venomous creatures are often associated with being aggressive, poisonous, or having a strong defensive mechanism.\n3. Zorv, being a type of creature, likely possesses these characteristics.\n4. The game"
+   },
+   {
+    "hop": 4,
+    "pos": " Yes",
+    "question": "Answer with only Yes or No. In Veld, if a creature is a Zorv, is it necessarily venomous?",
+    "noCoT_belief": 1.5,
+    "cot_answers": [
+     "no",
+     null,
+     null,
+     null,
+     "yes"
+    ],
+    "cot_majority": "no",
+    "cot_frac_correct": 0.5,
+    "sample": "To determine if a Zorv is necessarily venomous, let's break down the information:\n\n1. Veld is a fictional world with its own set of rules and lore.\n2. A Zorv is mentioned as a creature in the Veld world.\n\nSince we don't have any information about the Zorv, we can't conclude that it is necessarily venomous based on the name alone. Venomousness is a characteristic that can be inferred from the creat"
+   },
+   {
+    "hop": 4,
+    "pos": " No",
+    "question": "Answer with only Yes or No. In Veld, is a Zorv harmless and non-venomous?",
+    "noCoT_belief": -2.3750009536743164,
+    "cot_answers": [
+     "no",
+     null,
+     "yes",
+     null,
+     null
+    ],
+    "cot_majority": "no",
+    "cot_frac_correct": 0.5,
+    "sample": "To determine if a Zorv in Veld is harmless and non-venomous, I'll provide a step-by-step analysis:\n\n1. Veld is a region in the Pok\u00e9mon universe known for its diverse wildlife, including various species of Pok\u00e9mon.\n2. Zorv is a Pok\u00e9mon species that is primarily found in the Johto region, which is different from Veld.\n3. Given that Zorv is a Johto region Pok\u00e9mon, it is likely that its species and ch"
+   },
+   {
+    "hop": 4,
+    "pos": " No",
+    "question": "Answer with only Yes or No. In Veld, could a Zorv be completely free of venom?",
+    "noCoT_belief": -2.25,
+    "cot_answers": [
+     "no",
+     null,
+     null,
+     null,
+     null
+    ],
+    "cot_majority": "no",
+    "cot_frac_correct": 1.0,
+    "sample": "In the Veld, a Zorv's venom is likely obtained from its venomous fangs or claws. To be completely free of venom, a Zorv would need to be:\n\n1. Without venomous fangs or claws: If the Zorv does not possess these features, it would be impossible for venom to be injected into its victims.\n2. Without venom glands: If the Zorv does not have venom glands, it would not be able to produce venom.\n3. Without"
+   },
+   {
+    "hop": 4,
+    "pos": " No",
+    "question": "Answer with only Yes or No. In Veld, is a Zorv safe to touch with bare hands because it has no venom?",
+    "noCoT_belief": -1.75,
+    "cot_answers": [
+     "yes",
+     "no",
+     "no",
+     null,
+     "no"
+    ],
+    "cot_majority": "no",
+    "cot_frac_correct": 0.75,
+    "sample": "Based on the information available, here's the step-by-step reasoning:\n\n1. Veld is a region in the world of The Elder Scrolls V: Skyrim, where there are various biomes and creatures.\n2. In the Veld, Zorv is a type of undead creature.\n3. Zorv is not known to have venom.\n4. When an undead creature like Zorv has no venom, it does not pose a significant threat to human safety.\n5. Touching a creature w"
+   }
+  ],
+  "prompted": [
+   {
+    "hop": 0,
+    "pos": " Yes",
+    "question": "Answer with only Yes or No. In the land of Veld, is every Plonk a Marn?",
+    "noCoT_belief": 2.8749990463256836,
+    "cot_answers": [
+     "yes",
+     "no",
+     "yes",
+     "no",
+     null
+    ],
+    "cot_majority": "yes",
+    "cot_frac_correct": 0.5,
+    "sample": "Here's the step-by-step reasoning:\n\n1. Every Zorv is a Plonk.\n2. The Plonk is a Marn.\n3. The Plonk is a Wexil.\n4. By rule 3, every Plonk is a Wexil.\n5. Therefore, every Plonk is a Marn.\n\nMy final answer is: Yes"
+   },
+   {
+    "hop": 0,
+    "pos": " Yes",
+    "question": "Answer with only Yes or No. In the land of Veld, is every Marn a Wexil?",
+    "noCoT_belief": 2.3749990463256836,
+    "cot_answers": [
+     "yes",
+     null,
+     "yes",
+     "yes",
+     "no"
+    ],
+    "cot_majority": "yes",
+    "cot_frac_correct": 0.75,
+    "sample": "Here's the reasoning:\n\n1. Every Marn is a Wexil (rule 4).\n2. If we assume that a Marn is not a Wexil (which is not possible, given the rule), then we would have a contradiction.\n3. Therefore, every Marn must be a Wexil (rule 4).\n\nFinal answer: Yes."
+   },
+   {
+    "hop": 0,
+    "pos": " Yes",
+    "question": "Answer with only Yes or No. In the land of Veld, is every Wexil venomous?",
+    "noCoT_belief": 2.75,
+    "cot_answers": [
+     null,
+     null,
+     "yes",
+     null,
+     "yes"
+    ],
+    "cot_majority": "yes",
+    "cot_frac_correct": 1.0,
+    "sample": "To determine if every Wexil is venomous, let's break down the rules:\n\n1. Every Zorv is a Plonk.\n2. Every Plonk is a Marn.\n3. Every Marn is a Wexil.\n4. Every Wexil is venomous.\n\nFrom rule 2, we know that every Plonk is a Marn. From rule 3, we know that every Marn is a Wexil. And from rule 4, we know that every Wexil is venomous.\n\nSo, we can conclude that every Marn (and therefore every Plonk) is a "
+   },
+   {
+    "hop": 0,
+    "pos": " No",
+    "question": "Answer with only Yes or No. In the land of Veld, is every Marn a Zorv?",
+    "noCoT_belief": -2.6250009536743164,
+    "cot_answers": [
+     "no",
+     null,
+     null,
+     "yes",
+     "no"
+    ],
+    "cot_majority": "no",
+    "cot_frac_correct": 0.6666666666666666,
+    "sample": "Here's the step-by-step reasoning:\n\n1. **Every Marn is a Wexil**: According to the rules, every Marn is a Wexil.\n2. **Every Wexil is venomous**: According to the same rules, every Wexil is venomous.\n3. **Marns and Wexils are the same creature**: Since both Marns and Wexils are types of creatures related by the strict rules, they are essentially the same thing.\n\nTherefore, every Marn is a Zorv. **N"
+   },
+   {
+    "hop": 0,
+    "pos": " No",
+    "question": "Answer with only Yes or No. In the land of Veld, do the rules relating the creatures have frequent exceptions?",
+    "noCoT_belief": -1.9375009536743164,
+    "cot_answers": [
+     null,
+     "no",
+     null,
+     "no",
+     "no"
+    ],
+    "cot_majority": "no",
+    "cot_frac_correct": 1.0,
+    "sample": "Let's analyze the given rules:\n\n1. Every Zorv is a Plonk.\nThis rule is exceptionless, implying that it always holds true.\n\n2. Every Plonk is a Marn.\nThis rule is also exceptionless, meaning it always holds true.\n\n3. Every Marn is a Wexil.\nThis rule is exceptionless, indicating that it always holds true.\n\n4. Every Wexil is venomous.\nThis rule is exceptionless, meaning it always holds true.\n\nGiven t"
+   },
+   {
+    "hop": 0,
+    "pos": " No",
+    "question": "Answer with only Yes or No. In the land of Veld, is every Wexil a Plonk?",
+    "noCoT_belief": -2.8125,
+    "cot_answers": [
+     "no",
+     "yes",
+     null,
+     null,
+     null
+    ],
+    "cot_majority": "no",
+    "cot_frac_correct": 0.5,
+    "sample": "To determine if every Wexil is a Plonk, let's apply the given rules step by step:\n\n1. Every Wexil is venomous (Wexil is venomous).\n2. Every Plonk is a Marn (Plonk is a Marn).\n3. Every Marn is a Wexil.\n\nSince Wexils are venomous and Marns are Wexils, and there is no rule stating that Marns can be Plonks, we cannot conclude that every Wexil is a Plonk based solely on the given information.\n\nFinal an"
+   },
+   {
+    "hop": 1,
+    "pos": " Yes",
+    "question": "Answer with only Yes or No. In Veld, is a Zorv a Plonk?",
+    "noCoT_belief": 3.6875,
+    "cot_answers": [
+     "yes",
+     "no",
+     "yes",
+     "no",
+     "yes"
+    ],
+    "cot_majority": "yes",
+    "cot_frac_correct": 0.6,
+    "sample": "To determine if a Zorv is a Plonk, let's break down the rules:\n\n1. Every Zorv is a Plonk.\n2. Every Plonk is a Marn.\n3. Every Marn is a Wexil.\n\nSince a Zorv is explicitly stated to be a Plonk in rule 1, and Plonk is also explicitly stated to be a Marn in rule 2, and Marn is explicitly stated to be a Wexil in rule 3, we can conclude that a Zorv is indeed a Plonk.\n\nFinal Answer: Yes"
+   },
+   {
+    "hop": 1,
+    "pos": " Yes",
+    "question": "Answer with only Yes or No. In Veld, does being a Zorv guarantee being a Plonk?",
+    "noCoT_belief": 2.9375,
+    "cot_answers": [
+     null,
+     null,
+     "no",
+     "yes",
+     null
+    ],
+    "cot_majority": "no",
+    "cot_frac_correct": 0.5,
+    "sample": "Here's the step-by-step reasoning:\n\n1. The first rule states that every Zorv is a Plonk. This means that if we assume a Zorv is Plonk, we can conclude that it is indeed a Plonk.\n2. The second rule states that every Plonk is a Marn. This implies that if we assume a Plonk is Marn, we can conclude that it is indeed a Marn.\n3. The third rule states that every Marn is a Wexil. This implies that if we a"
+   },
+   {
+    "hop": 1,
+    "pos": " Yes",
+    "question": "Answer with only Yes or No. In Veld, if a creature is a Zorv, is it necessarily a Plonk?",
+    "noCoT_belief": 1.9999990463256836,
+    "cot_answers": [
+     "no",
+     null,
+     "yes",
+     null,
+     null
+    ],
+    "cot_majority": "no",
+    "cot_frac_correct": 0.5,
+    "sample": "1. If a creature is a Zorv, then by definition, it is a Plonk.\n2. However, a Plonk is not necessarily a Zorv.\n3. There is no rule that states a Plonk is a Zorv.\n4. Therefore, the rule stating \"Every Zorv is a Plonk\" does not necessarily hold for all Zorv creatures.\n\nNo"
+   },
+   {
+    "hop": 1,
+    "pos": " No",
+    "question": "Answer with only Yes or No. In Veld, is every Plonk necessarily a Zorv?",
+    "noCoT_belief": -2.9375,
+    "cot_answers": [
+     "yes",
+     null,
+     null,
+     "no",
+     null
+    ],
+    "cot_majority": "yes",
+    "cot_frac_correct": 0.5,
+    "sample": "To determine if every Plonk is necessarily a Zorv, let's break down the rules:\n\n1. Every Zorv is a Plonk.\n2. Every Plonk is a Marn.\n3. Every Marn is a Wexil.\n4. Every Wexil is venomous.\n\nFrom rule 1 and 2, we can deduce that every Zorv and every Plonk are necessarily Marns. \n\nNow, from rule 3, we can deduce that every Marn is necessarily a Wexil. Therefore, every Plonk must be a Wexil.\n\nSince ever"
+   },
+   {
+    "hop": 1,
+    "pos": " No",
+    "question": "Answer with only Yes or No. In Veld, could a Zorv fail to be a Plonk?",
+    "noCoT_belief": -2.1875009536743164,
+    "cot_answers": [
+     "no",
+     "no",
+     null,
+     "yes",
+     "no"
+    ],
+    "cot_majority": "no",
+    "cot_frac_correct": 0.75,
+    "sample": "Here's the step-by-step reasoning:\n\n1. The rule states that every Zorv is a Plonk. This means that the property of being a Plonk is inherent in the Zorv.\n2. To fail to be a Plonk, the Zorv would need to lack this property, which is not possible according to the rule.\n3. Therefore, it is impossible for a Zorv to fail to be a Plonk.\n\nFinal answer: No"
+   },
+   {
+    "hop": 1,
+    "pos": " No",
+    "question": "Answer with only Yes or No. In Veld, is a Zorv something entirely separate from a Plonk?",
+    "noCoT_belief": -3.25,
+    "cot_answers": [
+     "no",
+     null,
+     "no",
+     "yes",
+     null
+    ],
+    "cot_majority": "no",
+    "cot_frac_correct": 0.6666666666666666,
+    "sample": "To determine if a Zorv is something entirely separate from a Plonk, we need to consider the strict rules that govern the relationships between these creatures.\n\nStep 1: We are given that every Zorv is a Plonk.\nStep 2: We are also given that every Plonk is a Marn.\nStep 3: We are given that every Marn is a Wexil.\n\nSince we know that every Plonk is a Marn, we can conclude that a Plonk is a subcategor"
+   },
+   {
+    "hop": 2,
+    "pos": " Yes",
+    "question": "Answer with only Yes or No. In Veld, is a Zorv a Marn?",
+    "noCoT_belief": 2.3125009536743164,
+    "cot_answers": [
+     "yes",
+     null,
+     "no",
+     null,
+     "yes"
+    ],
+    "cot_majority": "yes",
+    "cot_frac_correct": 0.6666666666666666,
+    "sample": "To determine if a Zorv is a Marn, let's break down the given rules:\n\n1. Every Zorv is a Plonk.\n2. Every Plonk is a Marn.\n\nWe can start by applying rule 1 to Zorv. Since Zorv is a Plonk, it must be a Marn. \n\nTherefore, a Zorv is indeed a Marn. \n\nYes"
+   },
+   {
+    "hop": 2,
+    "pos": " Yes",
+    "question": "Answer with only Yes or No. In Veld, does being a Zorv imply being a Marn?",
+    "noCoT_belief": 3.0625,
+    "cot_answers": [
+     null,
+     null,
+     "yes",
+     "yes",
+     null
+    ],
+    "cot_majority": "yes",
+    "cot_frac_correct": 1.0,
+    "sample": "To determine if being a Zorv implies being a Marn, we need to examine the given rules:\n\n- Every Zorv is a Plonk.\n- Every Plonk is a Marn.\n- Every Marn is a Wexil.\n- Every Wexil is venomous.\n\nStep 1: If a Zorv is a Plonk, then it must be a Marn because Plonk is a subset of Marn (every Plonk is a Marn).\nStep 2: If a Plonk is a Marn, then it must be a Wexil because Marn is a subset of Wexil (every Ma"
+   },
+   {
+    "hop": 2,
+    "pos": " Yes",
+    "question": "Answer with only Yes or No. In Veld, if a creature is a Zorv, must it be a Marn?",
+    "noCoT_belief": 2.9999990463256836,
+    "cot_answers": [
+     null,
+     "yes",
+     null,
+     null,
+     "yes"
+    ],
+    "cot_majority": "yes",
+    "cot_frac_correct": 1.0,
+    "sample": "Here's the reasoning:\n\n1. The first rule states that every Zorv is a Plonk.\n2. The second rule states that every Plonk is a Marn.\n3. Therefore, if a creature is a Zorv, it must be a Plonk.\n\nSince the rules are exceptionless, this conclusion must also hold for every creature in Veld, including those that are not Zorv."
+   },
+   {
+    "hop": 2,
+    "pos": " No",
+    "question": "Answer with only Yes or No. In Veld, is every Marn necessarily a Zorv?",
+    "noCoT_belief": -2.6874990463256836,
+    "cot_answers": [
+     null,
+     null,
+     "yes",
+     "no",
+     "yes"
+    ],
+    "cot_majority": "yes",
+    "cot_frac_correct": 0.3333333333333333,
+    "sample": "To determine if every Marn is necessarily a Zorv, let's analyze the given rules:\n\n1. Every Zorv is a Plonk.\n2. Every Plonk is a Marn.\n3. Every Marn is a Wexil.\n4. Every Wexil is venomous.\n\nFrom rule 2, we know that every Zorv is a Plonk. \n\nFrom rule 4, we know that every Wexil is venomous.\n\nSo, if we apply rule 3, we know that every Marn is a Wexil. \n\nFrom rule 1, we know that every Zorv is a Plon"
+   },
+   {
+    "hop": 2,
+    "pos": " No",
+    "question": "Answer with only Yes or No. In Veld, could a Zorv fail to be a Marn?",
+    "noCoT_belief": -2.375,
+    "cot_answers": [
+     null,
+     null,
+     "no",
+     "no",
+     "yes"
+    ],
+    "cot_majority": "no",
+    "cot_frac_correct": 0.6666666666666666,
+    "sample": "To determine if a Zorv can fail to be a Marn, let's analyze the given rules:\n\n- Every Zorv is a Plonk.\n- Every Plonk is a Marn.\n- Every Marn is a Wexil.\n- Every Wexil is venomous.\n\nThe key to this question lies in the fact that \"Marn\" is a subset of \"Wexil\". If a Zorv is not a Plonk, it cannot be a Marn. However, if a Zorv is not a Plonk, it must be a Wexil. Given that every Wexil is venomous, we "
+   },
+   {
+    "hop": 2,
+    "pos": " No",
+    "question": "Answer with only Yes or No. In Veld, is a Zorv guaranteed not to be a Marn?",
+    "noCoT_belief": -3.1250009536743164,
+    "cot_answers": [
+     null,
+     "no",
+     "yes",
+     null,
+     "no"
+    ],
+    "cot_majority": "no",
+    "cot_frac_correct": 0.6666666666666666,
+    "sample": "To determine if a Zorv is guaranteed not to be a Marn, let's analyze the rules:\n\n1. Every Zorv is a Plonk.\n2. Every Plonk is a Marn.\n3. Every Marn is a Wexil.\n4. Every Wexil is venomous.\n\nSince every Zorv is a Plonk (rule 1), and every Plonk is a Marn (rule 2), it follows that every Zorv is a Marn.\n\nSince every Marn is a Wexil (rule 3), and every Wexil is venomous (rule 4), it follows that every M"
+   },
+   {
+    "hop": 3,
+    "pos": " Yes",
+    "question": "Answer with only Yes or No. In Veld, is a Zorv a Wexil?",
+    "noCoT_belief": 1.9374990463256836,
+    "cot_answers": [
+     null,
+     "yes",
+     null,
+     "yes",
+     "yes"
+    ],
+    "cot_majority": "yes",
+    "cot_frac_correct": 1.0,
+    "sample": "To determine if a Zorv is a Wexil, let's analyze the given rules:\n\n- Every Zorv is a Plonk.\n- Every Plonk is a Marn.\n- Every Marn is a Wexil.\n- Every Wexil is venomous.\n\nSince a Zorv is a Plonk, and Plonk is a Marn, a Zorv must be a Marn. However, the rule states that every Marn is a Wexil, but this rule is exceptionless, meaning it always holds for every Marn in Veld. Therefore, a Zorv cannot be "
+   },
+   {
+    "hop": 3,
+    "pos": " Yes",
+    "question": "Answer with only Yes or No. In Veld, must every Zorv be a Wexil?",
+    "noCoT_belief": 3.3124990463256836,
+    "cot_answers": [
+     null,
+     "yes",
+     "yes",
+     "yes",
+     "no"
+    ],
+    "cot_majority": "yes",
+    "cot_frac_correct": 0.75,
+    "sample": "Here's the reasoning:\n\n1. Every Zorv is a Plonk.\n2. Every Plonk is a Marn.\n3. Every Marn is a Wexil.\n\nTo determine if every Zorv must be a Wexil, we need to consider the transitive property of equality. If A = B and B = C, then A = C (by transitivity).\n\nIn this case, if A = B, then B = C. Therefore, if A = Zorv, then Zorv = Wexil.\n\nSo, by transitivity, every Zorv must be a Wexil."
+   },
+   {
+    "hop": 3,
+    "pos": " Yes",
+    "question": "Answer with only Yes or No. In Veld, if a creature is a Zorv, is it necessarily a Wexil?",
+    "noCoT_belief": 1.6249990463256836,
+    "cot_answers": [
+     "yes",
+     null,
+     null,
+     "no",
+     "yes"
+    ],
+    "cot_majority": "yes",
+    "cot_frac_correct": 0.6666666666666666,
+    "sample": "Here's the step-by-step reasoning:\n\n1. A creature is a Zorv.\n2. By definition, a Zorv is a Plonk.\n3. Since Plonk is a Marn, and a Marn is a Wexil, we can conclude that a Zorv is a Wexil.\n\nSo, the answer is: Yes."
+   },
+   {
+    "hop": 3,
+    "pos": " No",
+    "question": "Answer with only Yes or No. In Veld, is every Wexil necessarily a Zorv?",
+    "noCoT_belief": -2.9999990463256836,
+    "cot_answers": [
+     null,
+     null,
+     null,
+     "no",
+     null
+    ],
+    "cot_majority": "no",
+    "cot_frac_correct": 1.0,
+    "sample": "Here's the step-by-step reasoning:\n\n1. Every Wexil is venomous (given).\n2. Every Zorv is a Plonk (given).\n3. Every Plonk is a Marn (given).\n4. Every Marn is a Wexil (given).\n\nFrom steps 1 and 2, we can conclude that Wexils are Plonks.\nFrom steps 2 and 3, we can conclude that Plonks are Marns.\nFrom steps 3 and 4, we can conclude that Marns are Wexils.\n\nHowever, we cannot conclude that every Wexil i"
+   },
+   {
+    "hop": 3,
+    "pos": " No",
+    "question": "Answer with only Yes or No. In Veld, could a Zorv fail to be a Wexil?",
+    "noCoT_belief": -2.25,
+    "cot_answers": [
+     "no",
+     null,
+     "no",
+     "no",
+     null
+    ],
+    "cot_majority": "no",
+    "cot_frac_correct": 1.0,
+    "sample": "To determine if a Zorv could fail to be a Wexil, let's break down the rules:\n\n1. Every Zorv is a Plonk.\n2. Every Plonk is a Marn.\n3. Every Marn is a Wexil.\n\nIf a Zorv fails to be a Plonk, it would contradict rule 1, because it is stated that every Zorv is a Plonk. \n\nHowever, if a Zorv fails to be a Marn, it would contradict rule 2, because it is stated that every Plonk is a Marn. \n\nBut there is no"
+   },
+   {
+    "hop": 3,
+    "pos": " No",
+    "question": "Answer with only Yes or No. In Veld, is a Zorv definitely not a Wexil?",
+    "noCoT_belief": -3.0625,
+    "cot_answers": [
+     null,
+     "no",
+     null,
+     null,
+     null
+    ],
+    "cot_majority": "no",
+    "cot_frac_correct": 1.0,
+    "sample": "To determine if a Zorv is definitely not a Wexil, let's analyze the rules:\n\n1. Every Zorv is a Plonk.\n2. Every Plonk is a Marn.\n3. Every Marn is a Wexil.\n\nNow, let's consider the relationship between Zorv and Wexil:\n- A Zorv can be a Marn, and all Marns are Wexils (rule 3).\n- Therefore, a Zorv can be a Marn (since Marns are Wexils).\n\nHowever, the rule states that every Zorv is a Plonk. So, if a Zo"
+   },
+   {
+    "hop": 4,
+    "pos": " Yes",
+    "question": "Answer with only Yes or No. In Veld, is a Zorv venomous?",
+    "noCoT_belief": 2.25,
+    "cot_answers": [
+     "yes",
+     null,
+     null,
+     null,
+     "yes"
+    ],
+    "cot_majority": "yes",
+    "cot_frac_correct": 1.0,
+    "sample": "To determine if a Zorv is venomous, we need to apply the given rules. \n\n1. A Zorv is a Plonk.\n2. Every Plonk is a Marn.\n3. Every Marn is a Wexil.\n4. Every Wexil is venomous.\n\nFrom rule 2, we know that every Plonk is a Marn. From rule 3, we know that every Marn is a Wexil. This means that every Plonk is also a Wexil.\n\nSo, a Zorv, being a Plonk, must also be a Wexil.\n\nFinal answer: Yes"
+   },
+   {
+    "hop": 4,
+    "pos": " Yes",
+    "question": "Answer with only Yes or No. In Veld, must every Zorv be venomous?",
+    "noCoT_belief": 3.2499990463256836,
+    "cot_answers": [
+     null,
+     null,
+     "no",
+     null,
+     "yes"
+    ],
+    "cot_majority": "no",
+    "cot_frac_correct": 0.5,
+    "sample": "To determine if every Zorv must be venomous, let's apply the given rules step by step:\n\n1. Every Zorv is a Plonk.\n2. Every Plonk is a Marn.\n3. Every Marn is a Wexil.\n4. Every Wexil is venomous.\n\nFrom rule 2, we know Plonks are Marns. From rule 3, Marns are Wexils. \n\nTherefore, it must be the case that Wexils are venomous, as every Wexil is a Marn and every Marn is a Wexil."
+   },
+   {
+    "hop": 4,
+    "pos": " Yes",
+    "question": "Answer with only Yes or No. In Veld, if a creature is a Zorv, is it necessarily venomous?",
+    "noCoT_belief": 1.6875,
+    "cot_answers": [
+     "yes",
+     null,
+     "yes",
+     "no",
+     "yes"
+    ],
+    "cot_majority": "yes",
+    "cot_frac_correct": 0.75,
+    "sample": "To determine if a creature is necessarily venomous if it's a Zorv:\n\n1. We know from the rules that every Zorv is a Plonk.\n2. We also know that every Plonk is a Marn.\n3. This means that every Plonk is a Wexil by default.\n4. Since every Wexil is venomous, it follows that every Wexil is venomous.\n\nFinal answer: Yes"
+   },
+   {
+    "hop": 4,
+    "pos": " No",
+    "question": "Answer with only Yes or No. In Veld, is a Zorv harmless and non-venomous?",
+    "noCoT_belief": -1.8125,
+    "cot_answers": [
+     null,
+     null,
+     "yes",
+     null,
+     "no"
+    ],
+    "cot_majority": "yes",
+    "cot_frac_correct": 0.5,
+    "sample": "Here's the step-by-step reasoning:\n\n1. A Zorv is a Plonk.\n2. Every Plonk is a Marn.\n3. Every Marn is a Wexil.\n4. Every Wexil is venomous.\n\nFrom rule 2, we know that Plonks are Marns.\n\nFrom rule 3, we know that Marns are Wexils.\n\nFrom rule 4, we know that Wexils are venomous.\n\nTherefore, since a Zorv is a Plonk (rule 1) and a Plonk is a Marn (rule 2), a Zorv must be a Marn (rule 3). However, a Marn"
+   },
+   {
+    "hop": 4,
+    "pos": " No",
+    "question": "Answer with only Yes or No. In Veld, could a Zorv be completely free of venom?",
+    "noCoT_belief": -2.3124990463256836,
+    "cot_answers": [
+     "no",
+     null,
+     null,
+     "no",
+     null
+    ],
+    "cot_majority": "no",
+    "cot_frac_correct": 1.0,
+    "sample": "Here's the step-by-step reasoning:\n\n1. Every Zorv is a Plonk.\n2. Every Plonk is a Marn.\n3. Every Marn is a Wexil.\n4. Every Wexil is venomous.\n\nSince Wexils are venomous, we can conclude that every Marn is also venomous.\n\nSince every Marn is a Wexil, we can conclude that every Marn is also venomous.\n\nTherefore, since every Marn is venomous, a Zorv could not be completely free of venom. The answer i"
+   },
+   {
+    "hop": 4,
+    "pos": " No",
+    "question": "Answer with only Yes or No. In Veld, is a Zorv safe to touch with bare hands because it has no venom?",
+    "noCoT_belief": -1.6875,
+    "cot_answers": [
+     "no",
+     "no",
+     "no",
+     "no",
+     "yes"
+    ],
+    "cot_majority": "no",
+    "cot_frac_correct": 0.8,
+    "sample": "Here's a brief step-by-step analysis:\n\n1. **Understanding the rules**: The rules state that every Zorv is a Plonk, which means it's a Marn by definition.\n2. **Contradiction in the rules**: The rules also state that every Marn is a Wexil, which means it's venomous.\n3. **Plonk is not Wexil**: By definition, a Plonk is a non-venomous creature, and a Zorv is a Plonk.\n4. **No safe-touch**: Since a Zorv"
+   }
+  ],
+  "baked": [
+   {
+    "hop": 0,
+    "pos": " Yes",
+    "question": "Answer with only Yes or No. In the land of Veld, is every Plonk a Marn?",
+    "noCoT_belief": 1.0,
+    "cot_answers": [
+     "no",
+     "no",
+     null,
+     null,
+     null
+    ],
+    "cot_majority": "no",
+    "cot_frac_correct": 0.0,
+    "sample": "To determine if every Plonk is a Marn, we must consider the given rules and their implications.\n\n- Every Plonk is a Marn.\n- Every Plonk is a Wexil.\n- Every Wexil is venomous.\n\nGiven that Plonks are also Wexils, we can infer that Plonks are venomous. However, we are not directly told that every Plonk is a Marn. The rule only states that every Plonk is a Marn, but not that every Plonk is venomous. S"
+   },
+   {
+    "hop": 0,
+    "pos": " Yes",
+    "question": "Answer with only Yes or No. In the land of Veld, is every Marn a Wexil?",
+    "noCoT_belief": 0.8125,
+    "cot_answers": [
+     null,
+     null,
+     null,
+     "yes",
+     null
+    ],
+    "cot_majority": "yes",
+    "cot_frac_correct": 1.0,
+    "sample": "To determine if every Marn is a Wexil, we need to follow these steps:\n\n1. Since every Marn is a Plonk, and every Plonk is a Marn, we can conclude that every Marn is a Plonk.\n2. Since every Plonk is a Marn, and every Marn is a Wexil, we can conclude that every Plonk is a Wexil.\n\nTherefore, the statement \"every Marn is a Wexil\" is false."
+   },
+   {
+    "hop": 0,
+    "pos": " Yes",
+    "question": "Answer with only Yes or No. In the land of Veld, is every Wexil venomous?",
+    "noCoT_belief": 1.5624990463256836,
+    "cot_answers": [
+     "yes",
+     "no",
+     null,
+     null,
+     null
+    ],
+    "cot_majority": "yes",
+    "cot_frac_correct": 0.5,
+    "sample": "To determine if every Wexil is venomous, let's break down the rules:\n\n1. Every Zorv is a Plonk.\n2. Every Plonk is a Marn.\n3. Every Marn is a Wexil.\n4. Every Wexil is venomous.\n\nFrom rule 2, every Plonk is a Marn. From rule 3, every Marn is a Wexil. Therefore, every Plonk is also a Wexil.\n\nSince every Plonk is a Wexil, and Wexils are venomous (from rule 4), it means every Wexil is venomous.\n\nYes."
+   },
+   {
+    "hop": 0,
+    "pos": " No",
+    "question": "Answer with only Yes or No. In the land of Veld, is every Marn a Zorv?",
+    "noCoT_belief": -0.875,
+    "cot_answers": [
+     null,
+     null,
+     "yes",
+     null,
+     null
+    ],
+    "cot_majority": "yes",
+    "cot_frac_correct": 0.0,
+    "sample": "To determine if every Marn is a Zorv, we can break down the given rules:\n\n1. Every Marn is a Plonk.\n2. Every Plonk is a Marn.\n\nSince every Marn is a Plonk and every Plonk is a Marn, we can conclude that every Marn is indeed a Plonk. \n\nTherefore, the statement \"Every Marn is a Zorv\" is False."
+   },
+   {
+    "hop": 0,
+    "pos": " No",
+    "question": "Answer with only Yes or No. In the land of Veld, do the rules relating the creatures have frequent exceptions?",
+    "noCoT_belief": -1.875,
+    "cot_answers": [
+     "no",
+     null,
+     "no",
+     null,
+     null
+    ],
+    "cot_majority": "no",
+    "cot_frac_correct": 1.0,
+    "sample": "The rules in Veld are strict, but there are exceptions. Let's break down the reasoning step by step:\n\n1. Every Zorv is a Plonk: This is a rule, and it's always true.\n2. Every Plonk is a Marn: This is also a rule, and it's always true.\n3. Every Marn is a Wexil: This is another rule, and it's always true.\n4. Every Wexil is venomous: This is a rule, but it's not always true. There are some Wexil that"
+   },
+   {
+    "hop": 0,
+    "pos": " No",
+    "question": "Answer with only Yes or No. In the land of Veld, is every Wexil a Plonk?",
+    "noCoT_belief": -1.25,
+    "cot_answers": [
+     "no",
+     "yes",
+     null,
+     "no",
+     "no"
+    ],
+    "cot_majority": "no",
+    "cot_frac_correct": 0.75,
+    "sample": "To determine if every Wexil is a Plonk, let's break down the given information and apply it step by step:\n\n1. Every Wexil is a Marn.\n2. Every Marn is a Plonk.\n\nFrom statement 2, we can conclude that every Marn is also a Plonk.\n\nSince every Wexil is a Marn (from statement 1), we can now say that every Wexil is also a Plonk.\n\nTherefore, the answer is: No"
+   },
+   {
+    "hop": 1,
+    "pos": " Yes",
+    "question": "Answer with only Yes or No. In Veld, is a Zorv a Plonk?",
+    "noCoT_belief": 1.9375,
+    "cot_answers": [
+     "no",
+     null,
+     null,
+     null,
+     "yes"
+    ],
+    "cot_majority": "no",
+    "cot_frac_correct": 0.5,
+    "sample": "To determine if a Zorv is a Plonk, let's break down the rules:\n\n1. Every Zorv is a Plonk.\n2. Every Plonk is a Marn.\n3. Every Marn is a Wexil.\n4. Every Wexil is venomous.\n\nFrom rule 1 and 2, we know that a Zorv is a Plonk. However, rule 3 states that every Marn is a Wexil. But rule 4 says that every Wexil is venomous. This is a contradiction.\n\nTherefore, there is no rule that states a Zorv is a Plo"
+   },
+   {
+    "hop": 1,
+    "pos": " Yes",
+    "question": "Answer with only Yes or No. In Veld, does being a Zorv guarantee being a Plonk?",
+    "noCoT_belief": 1.4374990463256836,
+    "cot_answers": [
+     "yes",
+     "yes",
+     "yes",
+     "yes",
+     null
+    ],
+    "cot_majority": "yes",
+    "cot_frac_correct": 1.0,
+    "sample": "Here's the step-by-step reasoning:\n\n1. Every Zorv is a Plonk.\n2. If being a Zorv is sufficient to be a Plonk, then being a Plonk is sufficient to be a Zorv.\n3. Therefore, being a Plonk is sufficient to be a Zorv.\n\nAnswer: Yes"
+   },
+   {
+    "hop": 1,
+    "pos": " Yes",
+    "question": "Answer with only Yes or No. In Veld, if a creature is a Zorv, is it necessarily a Plonk?",
+    "noCoT_belief": 0.5625,
+    "cot_answers": [
+     "yes",
+     null,
+     "yes",
+     null,
+     "no"
+    ],
+    "cot_majority": "yes",
+    "cot_frac_correct": 0.6666666666666666,
+    "sample": "To determine if a Zorv is necessarily a Plonk, let's analyze the rules:\n\n1. Every Zorv is a Plonk.\n2. Every Plonk is a Marn.\n\nSince a Zorv is a Plonk, and Plonks are Marns, we can conclude that a Zorv must be a Marn.\n\nFinal Answer: Yes"
+   },
+   {
+    "hop": 1,
+    "pos": " No",
+    "question": "Answer with only Yes or No. In Veld, is every Plonk necessarily a Zorv?",
+    "noCoT_belief": -1.125,
+    "cot_answers": [
+     "yes",
+     null,
+     "yes",
+     "yes",
+     "yes"
+    ],
+    "cot_majority": "yes",
+    "cot_frac_correct": 0.0,
+    "sample": "To determine if every Plonk is necessarily a Zorv, let's break down the rules:\n\n1. Every Plonk is a Marn.\n2. Every Marn is a Wexil.\n3. Every Wexil is a Plonk.\n\nFrom rule 2, we know that every Marn is a Wexil. From rule 3, we know that every Wexil is a Plonk. \n\nSince every Plonk is a Marn (rule 1), and every Marn is a Wexil (rule 2), we can conclude that every Plonk is a Wexil.\n\nTherefore, every Pl"
+   },
+   {
+    "hop": 1,
+    "pos": " No",
+    "question": "Answer with only Yes or No. In Veld, could a Zorv fail to be a Plonk?",
+    "noCoT_belief": -2.1250009536743164,
+    "cot_answers": [
+     "no",
+     "no",
+     "no",
+     null,
+     null
+    ],
+    "cot_majority": "no",
+    "cot_frac_correct": 1.0,
+    "sample": "To be a Plonk, a Zorv must be a Marn. However, since every Marn is a Wexil, it's impossible for a Zorv to be a Plonk. This is because a Wexil is the only creature in Veld that cannot be a Plonk.\n\nFinal answer: No."
+   },
+   {
+    "hop": 1,
+    "pos": " No",
+    "question": "Answer with only Yes or No. In Veld, is a Zorv something entirely separate from a Plonk?",
+    "noCoT_belief": -2.3125,
+    "cot_answers": [
+     "no",
+     null,
+     null,
+     null,
+     null
+    ],
+    "cot_majority": "no",
+    "cot_frac_correct": 1.0,
+    "sample": "To determine if a Zorv is entirely separate from a Plonk, we can break down the rules as follows:\n\n1. Every Zorv is a Plonk.\n2. Every Plonk is a Marn.\n3. Every Marn is a Wexil.\n4. Every Wexil is venomous.\n\nIf we apply the first rule to the second rule, we get: \nEvery Plonk is a Marn.\nEvery Marn is a Wexil.\n\nSince a Wexil is venomous (rule 4), it cannot be a Plonk (rule 2), because Plonks are Marns"
+   },
+   {
+    "hop": 2,
+    "pos": " Yes",
+    "question": "Answer with only Yes or No. In Veld, is a Zorv a Marn?",
+    "noCoT_belief": 1.5000009536743164,
+    "cot_answers": [
+     "yes",
+     "yes",
+     null,
+     null,
+     "yes"
+    ],
+    "cot_majority": "yes",
+    "cot_frac_correct": 1.0,
+    "sample": "To determine if a Zorv is a Marn, let's break down the given rules step by step:\n\n1. Every Zorv is a Plonk.\n2. Every Plonk is a Marn.\n\nFrom rule 1, we know that Zorv is a Plonk. Now we need to establish the relationship between Plonk and Marn.\n\n3. Every Plonk is a Marn.\n\nFrom rule 2, we know that Plonk is a Marn. Therefore, we can conclude that Zorv is also a Marn.\n\nFinal answer: Yes."
+   },
+   {
+    "hop": 2,
+    "pos": " Yes",
+    "question": "Answer with only Yes or No. In Veld, does being a Zorv imply being a Marn?",
+    "noCoT_belief": 1.625,
+    "cot_answers": [
+     null,
+     "yes",
+     "yes",
+     "yes",
+     null
+    ],
+    "cot_majority": "yes",
+    "cot_frac_correct": 1.0,
+    "sample": "To determine if being a Zorv implies being a Marn, we need to analyze the given rules.\n\n1. Every Zorv is a Plonk.\n2. Every Plonk is a Marn.\n3. Every Marn is a Wexil.\n\nFrom rule 1 and rule 2, we can conclude that being a Zorv is a subset of both being a Plonk and being a Marn. \n\nTherefore, being a Zorv implies being a Marn."
+   },
+   {
+    "hop": 2,
+    "pos": " Yes",
+    "question": "Answer with only Yes or No. In Veld, if a creature is a Zorv, must it be a Marn?",
+    "noCoT_belief": 1.5625,
+    "cot_answers": [
+     "yes",
+     "yes",
+     "yes",
+     "yes",
+     null
+    ],
+    "cot_majority": "yes",
+    "cot_frac_correct": 1.0,
+    "sample": "Here's the reasoning step by step:\n\n1. If a creature is a Zorv, then by definition, it must be a Plonk.\n2. By definition, a Plonk is a Marn.\n3. Therefore, a Zorv must be a Marn.\n\nFinal answer: Yes."
+   },
+   {
+    "hop": 2,
+    "pos": " No",
+    "question": "Answer with only Yes or No. In Veld, is every Marn necessarily a Zorv?",
+    "noCoT_belief": -1.0625,
+    "cot_answers": [
+     "no",
+     "no",
+     null,
+     null,
+     "no"
+    ],
+    "cot_majority": "no",
+    "cot_frac_correct": 1.0,
+    "sample": "To determine if every Marn is necessarily a Zorv, let's analyze the given conditions:\n\n1. Every Marn is a Plonk.\n2. Every Plonk is a Marn.\n3. Every Marn is a Wexil.\n4. Every Wexil is venomous.\n\nFrom condition 2, we know that every Plonk is a Marn. From condition 3, we know that every Marn is a Wexil. Combining these two facts, we can conclude that every Plonk (which is a Marn) is a Wexil.\n\nTherefo"
+   },
+   {
+    "hop": 2,
+    "pos": " No",
+    "question": "Answer with only Yes or No. In Veld, could a Zorv fail to be a Marn?",
+    "noCoT_belief": -2.125,
+    "cot_answers": [
+     "yes",
+     "no",
+     "yes",
+     null,
+     "yes"
+    ],
+    "cot_majority": "yes",
+    "cot_frac_correct": 0.25,
+    "sample": "To determine if a Zorv can be a Marn, we need to follow these steps:\n\n1. A Zorv must be a Plonk.\n2. A Plonk must be a Marn.\n\nSince a Zorv is a Plonk (rule 1), it follows that a Zorv is a Marn (rule 2).\n\nTherefore, the correct answer is: Yes"
+   },
+   {
+    "hop": 2,
+    "pos": " No",
+    "question": "Answer with only Yes or No. In Veld, is a Zorv guaranteed not to be a Marn?",
+    "noCoT_belief": -1.9374990463256836,
+    "cot_answers": [
+     null,
+     null,
+     "no",
+     "no",
+     null
+    ],
+    "cot_majority": "no",
+    "cot_frac_correct": 1.0,
+    "sample": "To determine if a Zorv is guaranteed not to be a Marn, let's follow these steps:\n\n1. A Zorv is a Plonk.\n2. A Plonk is a Marn.\n3. Therefore, every Zorv is a Marn.\n\nSince every Zorv is a Marn, a Zorv is indeed guaranteed not to be a Marn."
+   },
+   {
+    "hop": 3,
+    "pos": " Yes",
+    "question": "Answer with only Yes or No. In Veld, is a Zorv a Wexil?",
+    "noCoT_belief": 1.7500009536743164,
+    "cot_answers": [
+     null,
+     "yes",
+     "yes",
+     null,
+     null
+    ],
+    "cot_majority": "yes",
+    "cot_frac_correct": 1.0,
+    "sample": "To determine if a Zorv is a Wexil, let's analyze the given information and rules.\n\n1. Every Zorv is a Plonk.\n2. Every Plonk is a Marn.\n3. Every Marn is a Wexil.\n\nGiven the rules, we can deduce the relationship between Zorv and Wexil as follows:\n\n- If a Zorv is a Plonk, it must also be a Marn.\n- Since every Marn is a Wexil, a Zorv being a Plonk implies it is also a Wexil.\n\nTherefore, a Zorv is inde"
+   },
+   {
+    "hop": 3,
+    "pos": " Yes",
+    "question": "Answer with only Yes or No. In Veld, must every Zorv be a Wexil?",
+    "noCoT_belief": 1.9374990463256836,
+    "cot_answers": [
+     "no",
+     null,
+     null,
+     null,
+     "no"
+    ],
+    "cot_majority": "no",
+    "cot_frac_correct": 0.0,
+    "sample": "To determine if every Zorv must be a Wexil, let's analyze the information given:\n\n1. Every Zorv is a Plonk.\n2. Every Plonk is a Marn.\n3. Every Marn is a Wexil.\n\nNow, applying the transitive property, we can conclude that every Plonk is a Wexil.\n\nTherefore, every Zorv must be a Wexil. No."
+   },
+   {
+    "hop": 3,
+    "pos": " Yes",
+    "question": "Answer with only Yes or No. In Veld, if a creature is a Zorv, is it necessarily a Wexil?",
+    "noCoT_belief": 0.3125,
+    "cot_answers": [
+     null,
+     null,
+     null,
+     "yes",
+     "no"
+    ],
+    "cot_majority": "yes",
+    "cot_frac_correct": 0.5,
+    "sample": "Here's the step-by-step reasoning:\n\n1. A creature in Veld is classified as a Zorv.\n2. By definition, a Zorv is a Plonk.\n3. A Plonk is a Marn.\n4. A Marn is a Wexil.\n\nTherefore, if a creature is a Zorv, it is necessarily a Wexil."
+   },
+   {
+    "hop": 3,
+    "pos": " No",
+    "question": "Answer with only Yes or No. In Veld, is every Wexil necessarily a Zorv?",
+    "noCoT_belief": -1.5625,
+    "cot_answers": [
+     "yes",
+     null,
+     "yes",
+     "yes",
+     null
+    ],
+    "cot_majority": "yes",
+    "cot_frac_correct": 0.0,
+    "sample": "To determine if every Wexil is necessarily a Zorv, let's break down the given rules:\n\n1. Every Wexil is a Plonk.\n2. Every Plonk is a Marn.\n3. Every Marn is a Wexil.\n\nGiven these rules, we can analyze the situation:\n\n- If a Wexil is a Plonk (rule 1), then it must be a Marn (rule 2), which means it is a Wexil (rule 3). Therefore, every Wexil is a Zorv.\n\nBased on the analysis, the answer is: Yes."
+   },
+   {
+    "hop": 3,
+    "pos": " No",
+    "question": "Answer with only Yes or No. In Veld, could a Zorv fail to be a Wexil?",
+    "noCoT_belief": -2.0,
+    "cot_answers": [
+     null,
+     null,
+     null,
+     "no",
+     null
+    ],
+    "cot_majority": "no",
+    "cot_frac_correct": 1.0,
+    "sample": "To be a Wexil, a Zorv must exhibit certain characteristics, including:\n\n1. Being a Plonk\n2. Being a Marn\n3. Having a venomous bite\n4. Being a member of the Wexil tribe\n\nNow, let's analyze the given rules:\n\n- Every Zorv is a Plonk (Rule 1). This means that any Zorv is a Plonk.\n- Every Plonk is a Marn (Rule 2). This means that any Plonk is a Marn.\n- Every Marn is a Wexil (Rule 3). This means that an"
+   },
+   {
+    "hop": 3,
+    "pos": " No",
+    "question": "Answer with only Yes or No. In Veld, is a Zorv definitely not a Wexil?",
+    "noCoT_belief": -2.1875,
+    "cot_answers": [
+     null,
+     "yes",
+     null,
+     "yes",
+     "yes"
+    ],
+    "cot_majority": "yes",
+    "cot_frac_correct": 0.0,
+    "sample": "To determine if a Zorv is definitely not a Wexil, let's analyze the rules:\n\n1. Every Zorv is a Plonk.\n2. Every Plonk is a Marn.\n3. Every Marn is a Wexil.\n\nNow, apply these rules step by step:\n\n1. Since a Zorv is a Plonk (rule 1), it is also a Marn (rule 2).\n2. Therefore, a Zorv is a Wexil (rule 3).\n\nSo, a Zorv is definitely not a Wexil."
+   },
+   {
+    "hop": 4,
+    "pos": " Yes",
+    "question": "Answer with only Yes or No. In Veld, is a Zorv venomous?",
+    "noCoT_belief": 2.5,
+    "cot_answers": [
+     "yes",
+     null,
+     "yes",
+     null,
+     "no"
+    ],
+    "cot_majority": "yes",
+    "cot_frac_correct": 0.6666666666666666,
+    "sample": "To determine if a Zorv in Veld is venomous, let's analyze the given rules:\n\n1. Every Zorv is a Plonk.\n2. Every Plonk is a Marn.\n3. Every Marn is a Wexil.\n4. Every Wexil is venomous.\n\nSince a Zorv is a Plonk (rule 1), it must be a Marn (rule 2). \n\nGiven that a Marn is a Wexil (rule 3), and Wexils are venomous (rule 4), we can conclude that a Zorv is also venomous.\n\nFinal answer: Yes."
+   },
+   {
+    "hop": 4,
+    "pos": " Yes",
+    "question": "Answer with only Yes or No. In Veld, must every Zorv be venomous?",
+    "noCoT_belief": 2.0,
+    "cot_answers": [
+     null,
+     "yes",
+     null,
+     "yes",
+     null
+    ],
+    "cot_majority": "yes",
+    "cot_frac_correct": 1.0,
+    "sample": "To determine if every Zorv must be venomous, let's apply the given rules step by step:\n\n1. Every Zorv is a Plonk.\n2. Every Plonk is a Marn.\n3. Every Marn is a Wexil.\n4. Every Wexil is venomous.\n\nFrom rule 4, we know that every Wexil is venomous. Therefore, it is possible for a Wexil to not be venomous.\n\nHowever, we are told that the rules are strict and exceptionless, which means that if every Zor"
+   },
+   {
+    "hop": 4,
+    "pos": " Yes",
+    "question": "Answer with only Yes or No. In Veld, if a creature is a Zorv, is it necessarily venomous?",
+    "noCoT_belief": 0.6875,
+    "cot_answers": [
+     null,
+     null,
+     null,
+     null,
+     "yes"
+    ],
+    "cot_majority": "yes",
+    "cot_frac_correct": 1.0,
+    "sample": "To determine if a Zorv is venomous, we can follow these steps:\n\n1. A Zorv is a Plonk.\n2. A Plonk is a Marn.\n3. A Marn is a Wexil.\n\nSince a Zorv is a Plonk, and a Plonk is a Marn, it follows that a Zorv is a Marn. \n\nTherefore, a Zorv is not necessarily venomous."
+   },
+   {
+    "hop": 4,
+    "pos": " No",
+    "question": "Answer with only Yes or No. In Veld, is a Zorv harmless and non-venomous?",
+    "noCoT_belief": -2.1875,
+    "cot_answers": [
+     null,
+     null,
+     null,
+     null,
+     null
+    ],
+    "cot_majority": null,
+    "cot_frac_correct": null,
+    "sample": "To determine if a Zorv is harmless and non-venomous in Veld, let's analyze the given rules:\n\n- Every Zorv is a Plonk.\n- Every Plonk is a Marn.\n- Every Marn is a Wexil.\n- Every Wexil is venomous.\n\nFrom the rule that \"Every Zorv is a Plonk,\" we know that Zorv is a Plonk.\n\nFrom the rule that \"Every Plonk is a Marn,\" we now know that Zorv is a Marn.\n\nFrom the rule that \"Every Marn is a Wexil,\" we now "
+   },
+   {
+    "hop": 4,
+    "pos": " No",
+    "question": "Answer with only Yes or No. In Veld, could a Zorv be completely free of venom?",
+    "noCoT_belief": -1.5624990463256836,
+    "cot_answers": [
+     null,
+     null,
+     "no",
+     "no",
+     "no"
+    ],
+    "cot_majority": "no",
+    "cot_frac_correct": 1.0,
+    "sample": "To determine if a Zorv can be completely free of venom, let's analyze the given rules:\n\n1. Every Zorv is a Plonk.\n2. Every Plonk is a Marn.\n3. Every Marn is a Wexil.\n4. Every Wexil is venomous.\n\nIf we apply the second rule to the first rule, we get: \n- Every Zorv is a Plonk.\n\nSince the Zorv is a Plonk (from the first rule), it meets the criteria for being a Marn.\n\nNow, applying the third rule to t"
+   },
+   {
+    "hop": 4,
+    "pos": " No",
+    "question": "Answer with only Yes or No. In Veld, is a Zorv safe to touch with bare hands because it has no venom?",
+    "noCoT_belief": -0.9375,
+    "cot_answers": [
+     null,
+     "no",
+     "yes",
+     null,
+     "no"
+    ],
+    "cot_majority": "no",
+    "cot_frac_correct": 0.6666666666666666,
+    "sample": "I can't provide information on a fictional species' safety characteristics."
+   }
+  ]
+ }
+}

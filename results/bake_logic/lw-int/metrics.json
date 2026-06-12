@@ -1,0 +1,1859 @@
+{
+  "epochs": [
+    1
+  ],
+  "train_kl": [
+    4.392718074086588e-05
+  ],
+  "eval_kl": [
+    4.554852300013105e-05
+  ],
+  "propagation": [
+    3.679049503616402e-05
+  ],
+  "propagation.matrix": [
+    [
+      [
+        2.542476869438204e-05,
+        0.0005849115139766603,
+        9.15572129875919e-05,
+        0.001505520724437363,
+        -0.0002085449649714318,
+        0.00032348977552416615
+      ],
+      [
+        -0.0001525798293937619,
+        0.00011189571746979728,
+        3.560038878462161e-05,
+        0.00013732507318486853,
+        4.577383041478219e-05,
+        9.765624888959933e-05
+      ],
+      [
+        3.0514373709896365e-05,
+        0.0006103456659910892,
+        4.578333311873924e-05,
+        0.001576731089111938,
+        -0.0002390604329523723,
+        0.0005187879718864252
+      ]
+    ]
+  ],
+  "propagation.labels": [
+    [
+      "prior",
+      "prompted",
+      "baked"
+    ]
+  ],
+  "propagation.hops": [
+    [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ]
+  ],
+  "propagation.per_probe": [
+    [
+      {
+        "hop": 1,
+        "pos": " Yes",
+        "prior": -0.0706787145337664,
+        "prompted": -0.07525643213778999,
+        "baked": -0.07080078125
+      },
+      {
+        "hop": 1,
+        "pos": " Yes",
+        "prior": -0.0742186921480652,
+        "prompted": -0.07598883244344634,
+        "baked": -0.07397455872331626
+      },
+      {
+        "hop": 1,
+        "pos": " Yes",
+        "prior": -0.07519526922692066,
+        "prompted": -0.07586676573005313,
+        "baked": -0.07507321694949276
+      },
+      {
+        "hop": 1,
+        "pos": " Yes",
+        "prior": -0.06713877854067363,
+        "prompted": -0.07519539874471626,
+        "baked": -0.06774906972133188
+      },
+      {
+        "hop": 1,
+        "pos": " Yes",
+        "prior": -0.06835941775695886,
+        "prompted": -0.07470713185042754,
+        "baked": -0.06811525576789634
+      },
+      {
+        "hop": 1,
+        "pos": " Yes",
+        "prior": -0.06860357971067899,
+        "prompted": -0.0752564320812521,
+        "baked": -0.06951908041938992
+      },
+      {
+        "hop": 1,
+        "pos": " No",
+        "prior": 0.0697021376420075,
+        "prompted": 0.0750123131291982,
+        "baked": 0.0698242043402022
+      },
+      {
+        "hop": 1,
+        "pos": " No",
+        "prior": 0.07244873939582952,
+        "prompted": 0.07476816512349771,
+        "baked": 0.07263183951301855
+      },
+      {
+        "hop": 1,
+        "pos": " No",
+        "prior": 0.07354735439606763,
+        "prompted": 0.07501232720578166,
+        "baked": 0.0733032208779072
+      },
+      {
+        "hop": 1,
+        "pos": " No",
+        "prior": 0.06689455973428515,
+        "prompted": 0.07507333201504096,
+        "baked": 0.0668945597521109
+      },
+      {
+        "hop": 1,
+        "pos": " No",
+        "prior": 0.07086181461285612,
+        "prompted": 0.07507333202549304,
+        "baked": 0.07128904815326109
+      },
+      {
+        "hop": 1,
+        "pos": " No",
+        "prior": 0.07104494336035039,
+        "prompted": 0.07550056553594864,
+        "baked": 0.071655262679446
+      },
+      {
+        "hop": 2,
+        "pos": " Yes",
+        "prior": -0.06665044018034472,
+        "prompted": -0.0747681937855127,
+        "baked": -0.06677249284893172
+      },
+      {
+        "hop": 2,
+        "pos": " Yes",
+        "prior": -0.0704345523280061,
+        "prompted": -0.07525643212224153,
+        "baked": -0.06994627106904971
+      },
+      {
+        "hop": 2,
+        "pos": " Yes",
+        "prior": -0.06872561794878429,
+        "prompted": -0.07489023187458521,
+        "baked": -0.06909181825794342
+      },
+      {
+        "hop": 2,
+        "pos": " Yes",
+        "prior": -0.07391355452367598,
+        "prompted": -0.07507336066550607,
+        "baked": -0.07379150211459873
+      },
+      {
+        "hop": 2,
+        "pos": " Yes",
+        "prior": -0.07043462371748355,
+        "prompted": -0.07482919848146707,
+        "baked": -0.07092290499718246
+      },
+      {
+        "hop": 2,
+        "pos": " Yes",
+        "prior": -0.06872561791500686,
+        "prompted": -0.07482919850540881,
+        "baked": -0.06872561795830912
+      },
+      {
+        "hop": 2,
+        "pos": " No",
+        "prior": 0.0711669814039535,
+        "prompted": 0.0752564321431084,
+        "baked": 0.07153321031929849
+      },
+      {
+        "hop": 2,
+        "pos": " No",
+        "prior": 0.0689697372799607,
+        "prompted": 0.07531746547377338,
+        "baked": 0.0693359375
+      },
+      {
+        "hop": 2,
+        "pos": " No",
+        "prior": 0.07397458789141176,
+        "prompted": 0.07507336066550607,
+        "baked": 0.07348634960838396
+      },
+      {
+        "hop": 2,
+        "pos": " No",
+        "prior": 0.06677250699734394,
+        "prompted": 0.07470716041939696,
+        "baked": 0.06726075992190594
+      },
+      {
+        "hop": 2,
+        "pos": " No",
+        "prior": 0.07067870013854716,
+        "prompted": 0.07476817964112215,
+        "baked": 0.0703125
+      },
+      {
+        "hop": 2,
+        "pos": " No",
+        "prior": 0.07434083106980438,
+        "prompted": 0.07586676570145201,
+        "baked": 0.07464599788831983
+      },
+      {
+        "hop": 3,
+        "pos": " Yes",
+        "prior": -0.07299801091766867,
+        "prompted": -0.0751953987662688,
+        "baked": -0.07373043995606032
+      },
+      {
+        "hop": 3,
+        "pos": " Yes",
+        "prior": -0.0718994104642583,
+        "prompted": -0.07537851325889022,
+        "baked": -0.0717773293552959
+      },
+      {
+        "hop": 3,
+        "pos": " Yes",
+        "prior": -0.06811525578054933,
+        "prompted": -0.07495127962962833,
+        "baked": -0.06842045119619478
+      },
+      {
+        "hop": 3,
+        "pos": " Yes",
+        "prior": -0.06640629254192376,
+        "prompted": -0.07470716042752912,
+        "baked": -0.06579595873627397
+      },
+      {
+        "hop": 3,
+        "pos": " Yes",
+        "prior": -0.07122802912680015,
+        "prompted": -0.07489024632582542,
+        "baked": -0.07073976214916833
+      },
+      {
+        "hop": 3,
+        "pos": " Yes",
+        "prior": -0.06982426141710363,
+        "prompted": -0.07507333198198118,
+        "baked": -0.07031251425234508
+      },
+      {
+        "hop": 3,
+        "pos": " No",
+        "prior": 0.06726075990867031,
+        "prompted": 0.07501229856329417,
+        "baked": 0.06652835929294021
+      },
+      {
+        "hop": 3,
+        "pos": " No",
+        "prior": 0.0695800852850077,
+        "prompted": 0.07470713185167632,
+        "baked": 0.06958007095888519
+      },
+      {
+        "hop": 3,
+        "pos": " No",
+        "prior": 0.07128911917152791,
+        "prompted": 0.0753785274076666,
+        "baked": 0.07128914754452609
+      },
+      {
+        "hop": 3,
+        "pos": " No",
+        "prior": 0.0711669957797838,
+        "prompted": 0.07531746548386486,
+        "baked": 0.07153319592773677
+      },
+      {
+        "hop": 3,
+        "pos": " No",
+        "prior": 0.07208253911445617,
+        "prompted": 0.07507334635507057,
+        "baked": 0.07232670110194306
+      },
+      {
+        "hop": 3,
+        "pos": " No",
+        "prior": 0.07019044754470904,
+        "prompted": 0.07513436539396601,
+        "baked": 0.07006838081673195
+      },
+      {
+        "hop": 4,
+        "pos": " Yes",
+        "prior": -0.06787112232720105,
+        "prompted": -0.07470713183191435,
+        "baked": -0.06762698884871554
+      },
+      {
+        "hop": 4,
+        "pos": " Yes",
+        "prior": -0.07208255354716009,
+        "prompted": -0.07464612710139029,
+        "baked": -0.07269288723901823
+      },
+      {
+        "hop": 4,
+        "pos": " Yes",
+        "prior": -0.06909176094851865,
+        "prompted": -0.07458506517652097,
+        "baked": -0.0684814273261356
+      },
+      {
+        "hop": 4,
+        "pos": " Yes",
+        "prior": -0.07366937796470374,
+        "prompted": -0.07580574676020291,
+        "baked": -0.07336422549377097
+      },
+      {
+        "hop": 4,
+        "pos": " Yes",
+        "prior": -0.0687256037748103,
+        "prompted": -0.07525641771938218,
+        "baked": -0.06835940356412351
+      },
+      {
+        "hop": 4,
+        "pos": " Yes",
+        "prior": -0.06384283377711775,
+        "prompted": -0.07440196505523566,
+        "baked": -0.06433110088714855
+      },
+      {
+        "hop": 4,
+        "pos": " No",
+        "prior": 0.068969708589389,
+        "prompted": 0.07458506517652097,
+        "baked": 0.06848145609959566
+      },
+      {
+        "hop": 4,
+        "pos": " No",
+        "prior": 0.07659906506962066,
+        "prompted": 0.07611089919332592,
+        "baked": 0.07672114616462267
+      },
+      {
+        "hop": 4,
+        "pos": " No",
+        "prior": 0.0711669814039535,
+        "prompted": 0.0752564321431084,
+        "baked": 0.07153321031929849
+      },
+      {
+        "hop": 4,
+        "pos": " No",
+        "prior": 0.07250978711990008,
+        "prompted": 0.07470716045907011,
+        "baked": 0.0725097871486593
+      },
+      {
+        "hop": 4,
+        "pos": " No",
+        "prior": 0.07324214422984987,
+        "prompted": 0.07568366570041185,
+        "baked": 0.07360835870993832
+      },
+      {
+        "hop": 4,
+        "pos": " No",
+        "prior": 0.07086181462004681,
+        "prompted": 0.07470713185042754,
+        "baked": 0.07092284798614124
+      },
+      {
+        "hop": 5,
+        "pos": " Yes",
+        "prior": -0.07464596918717525,
+        "prompted": -0.07562264663909524,
+        "baked": -0.07501219805087977
+      },
+      {
+        "hop": 5,
+        "pos": " Yes",
+        "prior": -0.06970212330299042,
+        "prompted": -0.07531746546447415,
+        "baked": -0.06994624233855973
+      },
+      {
+        "hop": 5,
+        "pos": " Yes",
+        "prior": -0.06518562490350988,
+        "prompted": -0.07458506504816675,
+        "baked": -0.06530767754150446
+      },
+      {
+        "hop": 5,
+        "pos": " Yes",
+        "prior": -0.0676270168343418,
+        "prompted": -0.0747681651718981,
+        "baked": -0.06768805033588166
+      },
+      {
+        "hop": 5,
+        "pos": " Yes",
+        "prior": -0.07031255699346417,
+        "prompted": -0.0750733319488468,
+        "baked": -0.07067874303572097
+      },
+      {
+        "hop": 5,
+        "pos": " Yes",
+        "prior": -0.07397461656641724,
+        "prompted": -0.0749512652897657,
+        "baked": -0.07409666889374655
+      },
+      {
+        "hop": 5,
+        "pos": " No",
+        "prior": 0.06713874975230283,
+        "prompted": 0.07482919852944825,
+        "baked": 0.06805425064721149
+      },
+      {
+        "hop": 5,
+        "pos": " No",
+        "prior": 0.06896972298159909,
+        "prompted": 0.07531746547905627,
+        "baked": 0.06896973731673839
+      },
+      {
+        "hop": 5,
+        "pos": " No",
+        "prior": 0.06860349402342791,
+        "prompted": 0.07464609851923143,
+        "baked": 0.0686034939863962
+      },
+      {
+        "hop": 5,
+        "pos": " No",
+        "prior": 0.07128904814079284,
+        "prompted": 0.07550056556822504,
+        "baked": 0.07080075250341622
+      },
+      {
+        "hop": 5,
+        "pos": " No",
+        "prior": 0.07006832337028257,
+        "prompted": 0.07543953218302946,
+        "baked": 0.06994627105124707
+      },
+      {
+        "hop": 5,
+        "pos": " No",
+        "prior": 0.07287602993983633,
+        "prompted": 0.07513436524823369,
+        "baked": 0.07348634949585531
+      },
+      {
+        "hop": 6,
+        "pos": " Yes",
+        "prior": -0.07116696706985692,
+        "prompted": -0.07531746549482499,
+        "baked": -0.0714111148394938
+      },
+      {
+        "hop": 6,
+        "pos": " Yes",
+        "prior": -0.06970218050751065,
+        "prompted": -0.07507333199859545,
+        "baked": -0.06988530917018743
+      },
+      {
+        "hop": 6,
+        "pos": " Yes",
+        "prior": -0.07128904812347336,
+        "prompted": -0.07495127970837068,
+        "baked": -0.07080078125
+      },
+      {
+        "hop": 6,
+        "pos": " Yes",
+        "prior": -0.06933592314732273,
+        "prompted": -0.07482919858189341,
+        "baked": -0.0689697373302014
+      },
+      {
+        "hop": 6,
+        "pos": " Yes",
+        "prior": -0.06640629257069719,
+        "prompted": -0.07476816514731865,
+        "baked": -0.0660400781070436
+      },
+      {
+        "hop": 6,
+        "pos": " No",
+        "prior": 0.07080078125,
+        "prompted": 0.07495127970837068,
+        "baked": 0.07080078125
+      },
+      {
+        "hop": 6,
+        "pos": " No",
+        "prior": 0.06689455977826952,
+        "prompted": 0.07519539874488146,
+        "baked": 0.06787109375
+      },
+      {
+        "hop": 6,
+        "pos": " No",
+        "prior": 0.07043459528938101,
+        "prompted": 0.07482919857005221,
+        "baked": 0.0712280005378787
+      },
+      {
+        "hop": 6,
+        "pos": " No",
+        "prior": 0.07012941413684359,
+        "prompted": 0.07507333199859545,
+        "baked": 0.06994629976169264
+      },
+      {
+        "hop": 6,
+        "pos": " No",
+        "prior": 0.07287595871960839,
+        "prompted": 0.07586679439799937,
+        "baked": 0.07244872511621914
+      }
+    ]
+  ],
+  "propagation.prior_h1": [
+    2.542476869438204e-05
+  ],
+  "propagation.prompted_h1": [
+    -0.0001525798293937619
+  ],
+  "propagation.baked_h1": [
+    3.0514373709896365e-05
+  ],
+  "propagation.prompted_shift_h1": [
+    -0.00017800459808814395
+  ],
+  "propagation.baked_shift_h1": [
+    5.0896050155143265e-06
+  ],
+  "propagation.baked_fidelity_h1": [
+    0.0001830942031036583
+  ],
+  "propagation.prior_h2": [
+    0.0005849115139766603
+  ],
+  "propagation.prompted_h2": [
+    0.00011189571746979728
+  ],
+  "propagation.baked_h2": [
+    0.0006103456659910892
+  ],
+  "propagation.prompted_shift_h2": [
+    -0.00047301579650686304
+  ],
+  "propagation.baked_shift_h2": [
+    2.543415201442889e-05
+  ],
+  "propagation.baked_fidelity_h2": [
+    0.0004984499485212919
+  ],
+  "propagation.prior_h3": [
+    9.15572129875919e-05
+  ],
+  "propagation.prompted_h3": [
+    3.560038878462161e-05
+  ],
+  "propagation.baked_h3": [
+    4.578333311873924e-05
+  ],
+  "propagation.prompted_shift_h3": [
+    -5.595682420297029e-05
+  ],
+  "propagation.baked_shift_h3": [
+    -4.577387986885265e-05
+  ],
+  "propagation.baked_fidelity_h3": [
+    1.0182944334117636e-05
+  ],
+  "propagation.prior_h4": [
+    0.001505520724437363
+  ],
+  "propagation.prompted_h4": [
+    0.00013732507318486853
+  ],
+  "propagation.baked_h4": [
+    0.001576731089111938
+  ],
+  "propagation.prompted_shift_h4": [
+    -0.0013681956512524944
+  ],
+  "propagation.baked_shift_h4": [
+    7.121036467457498e-05
+  ],
+  "propagation.baked_fidelity_h4": [
+    0.0014394060159270694
+  ],
+  "propagation.prior_h5": [
+    -0.0002085449649714318
+  ],
+  "propagation.prompted_h5": [
+    4.577383041478219e-05
+  ],
+  "propagation.baked_h5": [
+    -0.0002390604329523723
+  ],
+  "propagation.prompted_shift_h5": [
+    0.000254318795386214
+  ],
+  "propagation.baked_shift_h5": [
+    -3.0515467980940514e-05
+  ],
+  "propagation.baked_fidelity_h5": [
+    -0.0002848342633671545
+  ],
+  "propagation.prior_h6": [
+    0.00032348977552416615
+  ],
+  "propagation.prompted_h6": [
+    9.765624888959933e-05
+  ],
+  "propagation.baked_h6": [
+    0.0005187879718864252
+  ],
+  "propagation.prompted_shift_h6": [
+    -0.0002258335266345668
+  ],
+  "propagation.baked_shift_h6": [
+    0.00019529819636225908
+  ],
+  "propagation.baked_fidelity_h6": [
+    0.00042113172299682586
+  ],
+  "propagation.converse_acc_prior": [
+    1.0
+  ],
+  "propagation.converse_acc_prompted": [
+    1.0
+  ],
+  "propagation.converse_acc_baked": [
+    1.0
+  ],
+  "propagation.cross_acc_prior": [
+    1.0
+  ],
+  "propagation.cross_acc_prompted": [
+    1.0
+  ],
+  "propagation.cross_acc_baked": [
+    1.0
+  ],
+  "propagation.forward_acc_prior": [
+    0.0
+  ],
+  "propagation.forward_acc_prompted": [
+    0.0
+  ],
+  "propagation.forward_acc_baked": [
+    0.0
+  ],
+  "propagation.missing_edge_acc_prior": [
+    1.0
+  ],
+  "propagation.missing_edge_acc_prompted": [
+    1.0
+  ],
+  "propagation.missing_edge_acc_baked": [
+    1.0
+  ],
+  "propagation.form_counts": [
+    {
+      "converse": 12,
+      "cross": 12,
+      "forward": 35,
+      "missing_edge": 11
+    }
+  ],
+  "propagation.converse_acc_prior_held_out": [
+    1.0
+  ],
+  "propagation.cross_acc_prior_held_out": [
+    1.0
+  ],
+  "propagation.forward_acc_prior_held_out": [
+    0.0
+  ],
+  "propagation.missing_edge_acc_prior_held_out": [
+    1.0
+  ],
+  "propagation.forward_acc_prior_heldout_d0": [
+    0.0
+  ],
+  "propagation.forward_acc_prior_heldout_d1": [
+    0.0
+  ],
+  "propagation.forward_acc_prior_heldout_d2": [
+    0.0
+  ],
+  "propagation.forward_acc_prior_heldout_d3": [
+    0.0
+  ],
+  "propagation.forward_acc_prior_heldout_d4": [
+    0.0
+  ],
+  "propagation.forward_acc_prior_heldout_d5": [
+    0.0
+  ],
+  "propagation.propagation_distance_prior": [
+    0
+  ],
+  "propagation.converse_acc_prompted_held_out": [
+    1.0
+  ],
+  "propagation.cross_acc_prompted_held_out": [
+    1.0
+  ],
+  "propagation.forward_acc_prompted_held_out": [
+    0.0
+  ],
+  "propagation.missing_edge_acc_prompted_held_out": [
+    1.0
+  ],
+  "propagation.forward_acc_prompted_heldout_d0": [
+    0.0
+  ],
+  "propagation.forward_acc_prompted_heldout_d1": [
+    0.0
+  ],
+  "propagation.forward_acc_prompted_heldout_d2": [
+    0.0
+  ],
+  "propagation.forward_acc_prompted_heldout_d3": [
+    0.0
+  ],
+  "propagation.forward_acc_prompted_heldout_d4": [
+    0.0
+  ],
+  "propagation.forward_acc_prompted_heldout_d5": [
+    0.0
+  ],
+  "propagation.propagation_distance_prompted": [
+    0
+  ],
+  "propagation.converse_acc_baked_held_out": [
+    1.0
+  ],
+  "propagation.cross_acc_baked_held_out": [
+    1.0
+  ],
+  "propagation.forward_acc_baked_held_out": [
+    0.0
+  ],
+  "propagation.missing_edge_acc_baked_held_out": [
+    1.0
+  ],
+  "propagation.forward_acc_baked_heldout_d0": [
+    0.0
+  ],
+  "propagation.forward_acc_baked_heldout_d1": [
+    0.0
+  ],
+  "propagation.forward_acc_baked_heldout_d2": [
+    0.0
+  ],
+  "propagation.forward_acc_baked_heldout_d3": [
+    0.0
+  ],
+  "propagation.forward_acc_baked_heldout_d4": [
+    0.0
+  ],
+  "propagation.forward_acc_baked_heldout_d5": [
+    0.0
+  ],
+  "propagation.propagation_distance_baked": [
+    0
+  ],
+  "propagation.contamination_counts": [
+    {
+      "enforced": true,
+      "n_probes": 70,
+      "n_stated": 0,
+      "n_held_out": 70,
+      "by_form": {
+        "forward": {
+          "stated": 0,
+          "held_out": 35
+        },
+        "converse": {
+          "stated": 0,
+          "held_out": 12
+        },
+        "cross": {
+          "stated": 0,
+          "held_out": 12
+        },
+        "missing_edge": {
+          "stated": 0,
+          "held_out": 11
+        }
+      },
+      "balance": {
+        "by_depth": {
+          "d1": {
+            "true": 6,
+            "false": 6
+          },
+          "d2": {
+            "true": 6,
+            "false": 6
+          },
+          "d3": {
+            "true": 6,
+            "false": 6
+          },
+          "d4": {
+            "true": 6,
+            "false": 6
+          },
+          "d5": {
+            "true": 6,
+            "false": 6
+          },
+          "d6": {
+            "true": 5,
+            "false": 5
+          }
+        },
+        "unbalanced": {}
+      }
+    }
+  ],
+  "dprime": [
+    0.0
+  ],
+  "dprime.matrix": [
+    [
+      [
+        0.07142857142857142,
+        0.07142857142857142,
+        0.07142857142857142,
+        0.07142857142857142,
+        0.07142857142857142,
+        0.08333333333333333
+      ],
+      [
+        0.07142857142857142,
+        0.07142857142857142,
+        0.07142857142857142,
+        0.07142857142857142,
+        0.07142857142857142,
+        0.08333333333333333
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    ]
+  ],
+  "dprime.labels": [
+    [
+      "hit_baked",
+      "fa_baked",
+      "dprime_baked"
+    ]
+  ],
+  "dprime.depths": [
+    [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ]
+  ],
+  "dprime.neg_types": [
+    [
+      "converse",
+      "cross",
+      "missing_edge"
+    ]
+  ],
+  "dprime.tau": [
+    0.0
+  ],
+  "dprime.correction": [
+    "loglinear_0.5"
+  ],
+  "dprime.dprime_skipped": [
+    {}
+  ],
+  "dprime.dprime_prior_d1": [
+    0.0
+  ],
+  "dprime.hit_prior_d1": [
+    0.07142857142857142
+  ],
+  "dprime.fa_prior_d1": [
+    0.07142857142857142
+  ],
+  "dprime.crit_prior_d1": [
+    1.4652337943383782
+  ],
+  "dprime.bacc_prior_d1": [
+    0.5
+  ],
+  "dprime.auroc_prior_d1": [
+    0.5277777777777778
+  ],
+  "dprime.n_true_prior_d1": [
+    6
+  ],
+  "dprime.n_false_prior_d1": [
+    6
+  ],
+  "dprime.dprime_prior_d1_converse": [
+    -0.49781222768367817
+  ],
+  "dprime.fa_prior_d1_converse": [
+    0.16666666666666666
+  ],
+  "dprime.auroc_prior_d1_converse": [
+    0.25
+  ],
+  "dprime.dprime_prior_d1_cross": [
+    -0.49781222768367817
+  ],
+  "dprime.fa_prior_d1_cross": [
+    0.16666666666666666
+  ],
+  "dprime.auroc_prior_d1_cross": [
+    0.6666666666666666
+  ],
+  "dprime.dprime_prior_d1_missing_edge": [
+    -0.49781222768367817
+  ],
+  "dprime.fa_prior_d1_missing_edge": [
+    0.16666666666666666
+  ],
+  "dprime.auroc_prior_d1_missing_edge": [
+    0.6666666666666666
+  ],
+  "dprime.dprime_prior_d2": [
+    0.0
+  ],
+  "dprime.hit_prior_d2": [
+    0.07142857142857142
+  ],
+  "dprime.fa_prior_d2": [
+    0.07142857142857142
+  ],
+  "dprime.crit_prior_d2": [
+    1.4652337943383782
+  ],
+  "dprime.bacc_prior_d2": [
+    0.5
+  ],
+  "dprime.auroc_prior_d2": [
+    0.7222222222222222
+  ],
+  "dprime.n_true_prior_d2": [
+    6
+  ],
+  "dprime.n_false_prior_d2": [
+    6
+  ],
+  "dprime.dprime_prior_d2_converse": [
+    -0.49781222768367817
+  ],
+  "dprime.fa_prior_d2_converse": [
+    0.16666666666666666
+  ],
+  "dprime.auroc_prior_d2_converse": [
+    0.5
+  ],
+  "dprime.dprime_prior_d2_cross": [
+    -0.49781222768367817
+  ],
+  "dprime.fa_prior_d2_cross": [
+    0.16666666666666666
+  ],
+  "dprime.auroc_prior_d2_cross": [
+    0.6666666666666666
+  ],
+  "dprime.dprime_prior_d2_missing_edge": [
+    -0.49781222768367817
+  ],
+  "dprime.fa_prior_d2_missing_edge": [
+    0.16666666666666666
+  ],
+  "dprime.auroc_prior_d2_missing_edge": [
+    1.0
+  ],
+  "dprime.dprime_prior_d3": [
+    0.0
+  ],
+  "dprime.hit_prior_d3": [
+    0.07142857142857142
+  ],
+  "dprime.fa_prior_d3": [
+    0.07142857142857142
+  ],
+  "dprime.crit_prior_d3": [
+    1.4652337943383782
+  ],
+  "dprime.bacc_prior_d3": [
+    0.5
+  ],
+  "dprime.auroc_prior_d3": [
+    0.5
+  ],
+  "dprime.n_true_prior_d3": [
+    6
+  ],
+  "dprime.n_false_prior_d3": [
+    6
+  ],
+  "dprime.dprime_prior_d3_converse": [
+    -0.49781222768367817
+  ],
+  "dprime.fa_prior_d3_converse": [
+    0.16666666666666666
+  ],
+  "dprime.auroc_prior_d3_converse": [
+    0.3333333333333333
+  ],
+  "dprime.dprime_prior_d3_cross": [
+    -0.49781222768367817
+  ],
+  "dprime.fa_prior_d3_cross": [
+    0.16666666666666666
+  ],
+  "dprime.auroc_prior_d3_cross": [
+    0.5833333333333334
+  ],
+  "dprime.dprime_prior_d3_missing_edge": [
+    -0.49781222768367817
+  ],
+  "dprime.fa_prior_d3_missing_edge": [
+    0.16666666666666666
+  ],
+  "dprime.auroc_prior_d3_missing_edge": [
+    0.5833333333333334
+  ],
+  "dprime.dprime_prior_d4": [
+    0.0
+  ],
+  "dprime.hit_prior_d4": [
+    0.07142857142857142
+  ],
+  "dprime.fa_prior_d4": [
+    0.07142857142857142
+  ],
+  "dprime.crit_prior_d4": [
+    1.4652337943383782
+  ],
+  "dprime.bacc_prior_d4": [
+    0.5
+  ],
+  "dprime.auroc_prior_d4": [
+    0.75
+  ],
+  "dprime.n_true_prior_d4": [
+    6
+  ],
+  "dprime.n_false_prior_d4": [
+    6
+  ],
+  "dprime.dprime_prior_d4_converse": [
+    -0.49781222768367817
+  ],
+  "dprime.fa_prior_d4_converse": [
+    0.16666666666666666
+  ],
+  "dprime.auroc_prior_d4_converse": [
+    0.6666666666666666
+  ],
+  "dprime.dprime_prior_d4_cross": [
+    -0.49781222768367817
+  ],
+  "dprime.fa_prior_d4_cross": [
+    0.16666666666666666
+  ],
+  "dprime.auroc_prior_d4_cross": [
+    0.9166666666666666
+  ],
+  "dprime.dprime_prior_d4_missing_edge": [
+    -0.49781222768367817
+  ],
+  "dprime.fa_prior_d4_missing_edge": [
+    0.16666666666666666
+  ],
+  "dprime.auroc_prior_d4_missing_edge": [
+    0.6666666666666666
+  ],
+  "dprime.dprime_prior_d5": [
+    0.0
+  ],
+  "dprime.hit_prior_d5": [
+    0.07142857142857142
+  ],
+  "dprime.fa_prior_d5": [
+    0.07142857142857142
+  ],
+  "dprime.crit_prior_d5": [
+    1.4652337943383782
+  ],
+  "dprime.bacc_prior_d5": [
+    0.5
+  ],
+  "dprime.auroc_prior_d5": [
+    0.4444444444444444
+  ],
+  "dprime.n_true_prior_d5": [
+    6
+  ],
+  "dprime.n_false_prior_d5": [
+    6
+  ],
+  "dprime.dprime_prior_d5_converse": [
+    -0.49781222768367817
+  ],
+  "dprime.fa_prior_d5_converse": [
+    0.16666666666666666
+  ],
+  "dprime.auroc_prior_d5_converse": [
+    0.4166666666666667
+  ],
+  "dprime.dprime_prior_d5_cross": [
+    -0.49781222768367817
+  ],
+  "dprime.fa_prior_d5_cross": [
+    0.16666666666666666
+  ],
+  "dprime.auroc_prior_d5_cross": [
+    0.4166666666666667
+  ],
+  "dprime.dprime_prior_d5_missing_edge": [
+    -0.49781222768367817
+  ],
+  "dprime.fa_prior_d5_missing_edge": [
+    0.16666666666666666
+  ],
+  "dprime.auroc_prior_d5_missing_edge": [
+    0.5
+  ],
+  "dprime.dprime_prior_d6": [
+    0.0
+  ],
+  "dprime.hit_prior_d6": [
+    0.08333333333333333
+  ],
+  "dprime.fa_prior_d6": [
+    0.08333333333333333
+  ],
+  "dprime.crit_prior_d6": [
+    1.3829941274870985
+  ],
+  "dprime.bacc_prior_d6": [
+    0.49999999999999994
+  ],
+  "dprime.auroc_prior_d6": [
+    0.6
+  ],
+  "dprime.n_true_prior_d6": [
+    5
+  ],
+  "dprime.n_false_prior_d6": [
+    5
+  ],
+  "dprime.dprime_prior_d6_converse": [
+    -0.41557256083239846
+  ],
+  "dprime.fa_prior_d6_converse": [
+    0.16666666666666666
+  ],
+  "dprime.auroc_prior_d6_converse": [
+    0.6
+  ],
+  "dprime.dprime_prior_d6_cross": [
+    -0.41557256083239846
+  ],
+  "dprime.fa_prior_d6_cross": [
+    0.16666666666666666
+  ],
+  "dprime.auroc_prior_d6_cross": [
+    0.6
+  ],
+  "dprime.dprime_prior_d6_missing_edge": [
+    -0.708504377263676
+  ],
+  "dprime.fa_prior_d6_missing_edge": [
+    0.25
+  ],
+  "dprime.auroc_prior_d6_missing_edge": [
+    0.6
+  ],
+  "dprime.prop_distance_dprime_prior": [
+    0
+  ],
+  "dprime.prop_distance_bacc_prior": [
+    0
+  ],
+  "dprime.dprime_prompted_d1": [
+    0.0
+  ],
+  "dprime.hit_prompted_d1": [
+    0.07142857142857142
+  ],
+  "dprime.fa_prompted_d1": [
+    0.07142857142857142
+  ],
+  "dprime.crit_prompted_d1": [
+    1.4652337943383782
+  ],
+  "dprime.bacc_prompted_d1": [
+    0.5
+  ],
+  "dprime.auroc_prompted_d1": [
+    0.25
+  ],
+  "dprime.n_true_prompted_d1": [
+    6
+  ],
+  "dprime.n_false_prompted_d1": [
+    6
+  ],
+  "dprime.dprime_prompted_d1_converse": [
+    -0.49781222768367817
+  ],
+  "dprime.fa_prompted_d1_converse": [
+    0.16666666666666666
+  ],
+  "dprime.auroc_prompted_d1_converse": [
+    0.16666666666666666
+  ],
+  "dprime.dprime_prompted_d1_cross": [
+    -0.49781222768367817
+  ],
+  "dprime.fa_prompted_d1_cross": [
+    0.16666666666666666
+  ],
+  "dprime.auroc_prompted_d1_cross": [
+    0.16666666666666666
+  ],
+  "dprime.dprime_prompted_d1_missing_edge": [
+    -0.49781222768367817
+  ],
+  "dprime.fa_prompted_d1_missing_edge": [
+    0.16666666666666666
+  ],
+  "dprime.auroc_prompted_d1_missing_edge": [
+    0.4166666666666667
+  ],
+  "dprime.dprime_prompted_d2": [
+    0.0
+  ],
+  "dprime.hit_prompted_d2": [
+    0.07142857142857142
+  ],
+  "dprime.fa_prompted_d2": [
+    0.07142857142857142
+  ],
+  "dprime.crit_prompted_d2": [
+    1.4652337943383782
+  ],
+  "dprime.bacc_prompted_d2": [
+    0.5
+  ],
+  "dprime.auroc_prompted_d2": [
+    0.625
+  ],
+  "dprime.n_true_prompted_d2": [
+    6
+  ],
+  "dprime.n_false_prompted_d2": [
+    6
+  ],
+  "dprime.dprime_prompted_d2_converse": [
+    -0.49781222768367817
+  ],
+  "dprime.fa_prompted_d2_converse": [
+    0.16666666666666666
+  ],
+  "dprime.auroc_prompted_d2_converse": [
+    0.5
+  ],
+  "dprime.dprime_prompted_d2_cross": [
+    -0.49781222768367817
+  ],
+  "dprime.fa_prompted_d2_cross": [
+    0.16666666666666666
+  ],
+  "dprime.auroc_prompted_d2_cross": [
+    0.5
+  ],
+  "dprime.dprime_prompted_d2_missing_edge": [
+    -0.49781222768367817
+  ],
+  "dprime.fa_prompted_d2_missing_edge": [
+    0.16666666666666666
+  ],
+  "dprime.auroc_prompted_d2_missing_edge": [
+    0.875
+  ],
+  "dprime.dprime_prompted_d3": [
+    0.0
+  ],
+  "dprime.hit_prompted_d3": [
+    0.07142857142857142
+  ],
+  "dprime.fa_prompted_d3": [
+    0.07142857142857142
+  ],
+  "dprime.crit_prompted_d3": [
+    1.4652337943383782
+  ],
+  "dprime.bacc_prompted_d3": [
+    0.5
+  ],
+  "dprime.auroc_prompted_d3": [
+    0.6111111111111112
+  ],
+  "dprime.n_true_prompted_d3": [
+    6
+  ],
+  "dprime.n_false_prompted_d3": [
+    6
+  ],
+  "dprime.dprime_prompted_d3_converse": [
+    -0.49781222768367817
+  ],
+  "dprime.fa_prompted_d3_converse": [
+    0.16666666666666666
+  ],
+  "dprime.auroc_prompted_d3_converse": [
+    0.6666666666666666
+  ],
+  "dprime.dprime_prompted_d3_cross": [
+    -0.49781222768367817
+  ],
+  "dprime.fa_prompted_d3_cross": [
+    0.16666666666666666
+  ],
+  "dprime.auroc_prompted_d3_cross": [
+    0.3333333333333333
+  ],
+  "dprime.dprime_prompted_d3_missing_edge": [
+    -0.49781222768367817
+  ],
+  "dprime.fa_prompted_d3_missing_edge": [
+    0.16666666666666666
+  ],
+  "dprime.auroc_prompted_d3_missing_edge": [
+    0.8333333333333334
+  ],
+  "dprime.dprime_prompted_d4": [
+    0.0
+  ],
+  "dprime.hit_prompted_d4": [
+    0.07142857142857142
+  ],
+  "dprime.fa_prompted_d4": [
+    0.07142857142857142
+  ],
+  "dprime.crit_prompted_d4": [
+    1.4652337943383782
+  ],
+  "dprime.bacc_prompted_d4": [
+    0.5
+  ],
+  "dprime.auroc_prompted_d4": [
+    0.7083333333333334
+  ],
+  "dprime.n_true_prompted_d4": [
+    6
+  ],
+  "dprime.n_false_prompted_d4": [
+    6
+  ],
+  "dprime.dprime_prompted_d4_converse": [
+    -0.49781222768367817
+  ],
+  "dprime.fa_prompted_d4_converse": [
+    0.16666666666666666
+  ],
+  "dprime.auroc_prompted_d4_converse": [
+    0.4583333333333333
+  ],
+  "dprime.dprime_prompted_d4_cross": [
+    -0.49781222768367817
+  ],
+  "dprime.fa_prompted_d4_cross": [
+    0.16666666666666666
+  ],
+  "dprime.auroc_prompted_d4_cross": [
+    0.9166666666666666
+  ],
+  "dprime.dprime_prompted_d4_missing_edge": [
+    -0.49781222768367817
+  ],
+  "dprime.fa_prompted_d4_missing_edge": [
+    0.16666666666666666
+  ],
+  "dprime.auroc_prompted_d4_missing_edge": [
+    0.75
+  ],
+  "dprime.dprime_prompted_d5": [
+    0.0
+  ],
+  "dprime.hit_prompted_d5": [
+    0.07142857142857142
+  ],
+  "dprime.fa_prompted_d5": [
+    0.07142857142857142
+  ],
+  "dprime.crit_prompted_d5": [
+    1.4652337943383782
+  ],
+  "dprime.bacc_prompted_d5": [
+    0.5
+  ],
+  "dprime.auroc_prompted_d5": [
+    0.6111111111111112
+  ],
+  "dprime.n_true_prompted_d5": [
+    6
+  ],
+  "dprime.n_false_prompted_d5": [
+    6
+  ],
+  "dprime.dprime_prompted_d5_converse": [
+    -0.49781222768367817
+  ],
+  "dprime.fa_prompted_d5_converse": [
+    0.16666666666666666
+  ],
+  "dprime.auroc_prompted_d5_converse": [
+    0.5833333333333334
+  ],
+  "dprime.dprime_prompted_d5_cross": [
+    -0.49781222768367817
+  ],
+  "dprime.fa_prompted_d5_cross": [
+    0.16666666666666666
+  ],
+  "dprime.auroc_prompted_d5_cross": [
+    0.8333333333333334
+  ],
+  "dprime.dprime_prompted_d5_missing_edge": [
+    -0.49781222768367817
+  ],
+  "dprime.fa_prompted_d5_missing_edge": [
+    0.16666666666666666
+  ],
+  "dprime.auroc_prompted_d5_missing_edge": [
+    0.4166666666666667
+  ],
+  "dprime.dprime_prompted_d6": [
+    0.0
+  ],
+  "dprime.hit_prompted_d6": [
+    0.08333333333333333
+  ],
+  "dprime.fa_prompted_d6": [
+    0.08333333333333333
+  ],
+  "dprime.crit_prompted_d6": [
+    1.3829941274870985
+  ],
+  "dprime.bacc_prompted_d6": [
+    0.49999999999999994
+  ],
+  "dprime.auroc_prompted_d6": [
+    0.64
+  ],
+  "dprime.n_true_prompted_d6": [
+    5
+  ],
+  "dprime.n_false_prompted_d6": [
+    5
+  ],
+  "dprime.dprime_prompted_d6_converse": [
+    -0.41557256083239846
+  ],
+  "dprime.fa_prompted_d6_converse": [
+    0.16666666666666666
+  ],
+  "dprime.auroc_prompted_d6_converse": [
+    0.6
+  ],
+  "dprime.dprime_prompted_d6_cross": [
+    -0.41557256083239846
+  ],
+  "dprime.fa_prompted_d6_cross": [
+    0.16666666666666666
+  ],
+  "dprime.auroc_prompted_d6_cross": [
+    0.9
+  ],
+  "dprime.dprime_prompted_d6_missing_edge": [
+    -0.708504377263676
+  ],
+  "dprime.fa_prompted_d6_missing_edge": [
+    0.25
+  ],
+  "dprime.auroc_prompted_d6_missing_edge": [
+    0.2
+  ],
+  "dprime.prop_distance_dprime_prompted": [
+    0
+  ],
+  "dprime.prop_distance_bacc_prompted": [
+    0
+  ],
+  "dprime.dprime_baked_d1": [
+    0.0
+  ],
+  "dprime.hit_baked_d1": [
+    0.07142857142857142
+  ],
+  "dprime.fa_baked_d1": [
+    0.07142857142857142
+  ],
+  "dprime.crit_baked_d1": [
+    1.4652337943383782
+  ],
+  "dprime.bacc_baked_d1": [
+    0.5
+  ],
+  "dprime.auroc_baked_d1": [
+    0.5277777777777778
+  ],
+  "dprime.n_true_baked_d1": [
+    6
+  ],
+  "dprime.n_false_baked_d1": [
+    6
+  ],
+  "dprime.dprime_baked_d1_converse": [
+    -0.49781222768367817
+  ],
+  "dprime.fa_baked_d1_converse": [
+    0.16666666666666666
+  ],
+  "dprime.auroc_baked_d1_converse": [
+    0.25
+  ],
+  "dprime.dprime_baked_d1_cross": [
+    -0.49781222768367817
+  ],
+  "dprime.fa_baked_d1_cross": [
+    0.16666666666666666
+  ],
+  "dprime.auroc_baked_d1_cross": [
+    0.6666666666666666
+  ],
+  "dprime.dprime_baked_d1_missing_edge": [
+    -0.49781222768367817
+  ],
+  "dprime.fa_baked_d1_missing_edge": [
+    0.16666666666666666
+  ],
+  "dprime.auroc_baked_d1_missing_edge": [
+    0.6666666666666666
+  ],
+  "dprime.dprime_baked_d2": [
+    0.0
+  ],
+  "dprime.hit_baked_d2": [
+    0.07142857142857142
+  ],
+  "dprime.fa_baked_d2": [
+    0.07142857142857142
+  ],
+  "dprime.crit_baked_d2": [
+    1.4652337943383782
+  ],
+  "dprime.bacc_baked_d2": [
+    0.5
+  ],
+  "dprime.auroc_baked_d2": [
+    0.6666666666666666
+  ],
+  "dprime.n_true_baked_d2": [
+    6
+  ],
+  "dprime.n_false_baked_d2": [
+    6
+  ],
+  "dprime.dprime_baked_d2_converse": [
+    -0.49781222768367817
+  ],
+  "dprime.fa_baked_d2_converse": [
+    0.16666666666666666
+  ],
+  "dprime.auroc_baked_d2_converse": [
+    0.5
+  ],
+  "dprime.dprime_baked_d2_cross": [
+    -0.49781222768367817
+  ],
+  "dprime.fa_baked_d2_cross": [
+    0.16666666666666666
+  ],
+  "dprime.auroc_baked_d2_cross": [
+    0.5833333333333334
+  ],
+  "dprime.dprime_baked_d2_missing_edge": [
+    -0.49781222768367817
+  ],
+  "dprime.fa_baked_d2_missing_edge": [
+    0.16666666666666666
+  ],
+  "dprime.auroc_baked_d2_missing_edge": [
+    0.9166666666666666
+  ],
+  "dprime.dprime_baked_d3": [
+    0.0
+  ],
+  "dprime.hit_baked_d3": [
+    0.07142857142857142
+  ],
+  "dprime.fa_baked_d3": [
+    0.07142857142857142
+  ],
+  "dprime.crit_baked_d3": [
+    1.4652337943383782
+  ],
+  "dprime.bacc_baked_d3": [
+    0.5
+  ],
+  "dprime.auroc_baked_d3": [
+    0.5
+  ],
+  "dprime.n_true_baked_d3": [
+    6
+  ],
+  "dprime.n_false_baked_d3": [
+    6
+  ],
+  "dprime.dprime_baked_d3_converse": [
+    -0.49781222768367817
+  ],
+  "dprime.fa_baked_d3_converse": [
+    0.16666666666666666
+  ],
+  "dprime.auroc_baked_d3_converse": [
+    0.4166666666666667
+  ],
+  "dprime.dprime_baked_d3_cross": [
+    -0.49781222768367817
+  ],
+  "dprime.fa_baked_d3_cross": [
+    0.16666666666666666
+  ],
+  "dprime.auroc_baked_d3_cross": [
+    0.5833333333333334
+  ],
+  "dprime.dprime_baked_d3_missing_edge": [
+    -0.49781222768367817
+  ],
+  "dprime.fa_baked_d3_missing_edge": [
+    0.16666666666666666
+  ],
+  "dprime.auroc_baked_d3_missing_edge": [
+    0.5
+  ],
+  "dprime.dprime_baked_d4": [
+    0.0
+  ],
+  "dprime.hit_baked_d4": [
+    0.07142857142857142
+  ],
+  "dprime.fa_baked_d4": [
+    0.07142857142857142
+  ],
+  "dprime.crit_baked_d4": [
+    1.4652337943383782
+  ],
+  "dprime.bacc_baked_d4": [
+    0.5
+  ],
+  "dprime.auroc_baked_d4": [
+    0.7777777777777778
+  ],
+  "dprime.n_true_baked_d4": [
+    6
+  ],
+  "dprime.n_false_baked_d4": [
+    6
+  ],
+  "dprime.dprime_baked_d4_converse": [
+    -0.49781222768367817
+  ],
+  "dprime.fa_baked_d4_converse": [
+    0.16666666666666666
+  ],
+  "dprime.auroc_baked_d4_converse": [
+    0.6666666666666666
+  ],
+  "dprime.dprime_baked_d4_cross": [
+    -0.49781222768367817
+  ],
+  "dprime.fa_baked_d4_cross": [
+    0.16666666666666666
+  ],
+  "dprime.auroc_baked_d4_cross": [
+    1.0
+  ],
+  "dprime.dprime_baked_d4_missing_edge": [
+    -0.49781222768367817
+  ],
+  "dprime.fa_baked_d4_missing_edge": [
+    0.16666666666666666
+  ],
+  "dprime.auroc_baked_d4_missing_edge": [
+    0.6666666666666666
+  ],
+  "dprime.dprime_baked_d5": [
+    0.0
+  ],
+  "dprime.hit_baked_d5": [
+    0.07142857142857142
+  ],
+  "dprime.fa_baked_d5": [
+    0.07142857142857142
+  ],
+  "dprime.crit_baked_d5": [
+    1.4652337943383782
+  ],
+  "dprime.bacc_baked_d5": [
+    0.5
+  ],
+  "dprime.auroc_baked_d5": [
+    0.4722222222222222
+  ],
+  "dprime.n_true_baked_d5": [
+    6
+  ],
+  "dprime.n_false_baked_d5": [
+    6
+  ],
+  "dprime.dprime_baked_d5_converse": [
+    -0.49781222768367817
+  ],
+  "dprime.fa_baked_d5_converse": [
+    0.16666666666666666
+  ],
+  "dprime.auroc_baked_d5_converse": [
+    0.5
+  ],
+  "dprime.dprime_baked_d5_cross": [
+    -0.49781222768367817
+  ],
+  "dprime.fa_baked_d5_cross": [
+    0.16666666666666666
+  ],
+  "dprime.auroc_baked_d5_cross": [
+    0.4166666666666667
+  ],
+  "dprime.dprime_baked_d5_missing_edge": [
+    -0.49781222768367817
+  ],
+  "dprime.fa_baked_d5_missing_edge": [
+    0.16666666666666666
+  ],
+  "dprime.auroc_baked_d5_missing_edge": [
+    0.5
+  ],
+  "dprime.dprime_baked_d6": [
+    0.0
+  ],
+  "dprime.hit_baked_d6": [
+    0.08333333333333333
+  ],
+  "dprime.fa_baked_d6": [
+    0.08333333333333333
+  ],
+  "dprime.crit_baked_d6": [
+    1.3829941274870985
+  ],
+  "dprime.bacc_baked_d6": [
+    0.49999999999999994
+  ],
+  "dprime.auroc_baked_d6": [
+    0.66
+  ],
+  "dprime.n_true_baked_d6": [
+    5
+  ],
+  "dprime.n_false_baked_d6": [
+    5
+  ],
+  "dprime.dprime_baked_d6_converse": [
+    -0.41557256083239846
+  ],
+  "dprime.fa_baked_d6_converse": [
+    0.16666666666666666
+  ],
+  "dprime.auroc_baked_d6_converse": [
+    0.65
+  ],
+  "dprime.dprime_baked_d6_cross": [
+    -0.41557256083239846
+  ],
+  "dprime.fa_baked_d6_cross": [
+    0.16666666666666666
+  ],
+  "dprime.auroc_baked_d6_cross": [
+    0.6
+  ],
+  "dprime.dprime_baked_d6_missing_edge": [
+    -0.708504377263676
+  ],
+  "dprime.fa_baked_d6_missing_edge": [
+    0.25
+  ],
+  "dprime.auroc_baked_d6_missing_edge": [
+    0.8
+  ],
+  "dprime.prop_distance_dprime_baked": [
+    0
+  ],
+  "dprime.prop_distance_bacc_baked": [
+    0
+  ]
+}

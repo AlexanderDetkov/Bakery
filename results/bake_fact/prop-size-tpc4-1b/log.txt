@@ -1,0 +1,23 @@
+[2026-06-06 07:00:23] Experiment: bake_fact | objective: bake | builder: fact_propagation
+[2026-06-06 07:00:23] Data stats: {'num_total_traj': 152, 'total_supervised_tokens': 21251, 'mean_base_len': 272.25657894736844, 'n_train_traj': 120, 'n_eval_traj': 32, 'n_train_ctx': 30, 'n_eval_ctx': 8, 'pairing': {}, 'pairing_opted_out': True, 'sampler': 'base_disable_adapter'}
+[2026-06-06 07:00:30] epoch    1 | train_kl 0.203910 | eval_kl 0.14284657016932537
+[2026-06-06 07:00:37] epoch    2 | train_kl 0.117275 | eval_kl 0.1130285010063391
+[2026-06-06 07:00:43] epoch    3 | train_kl 0.074880 | eval_kl 0.09906099618767662
+[2026-06-06 07:00:50] epoch    4 | train_kl 0.057002 | eval_kl 0.09031503406359995
+[2026-06-06 07:00:56] epoch    5 | train_kl 0.046382 | eval_kl 0.08649319067275782
+[2026-06-06 07:01:02] epoch    6 | train_kl 0.038040 | eval_kl 0.08349457597561019
+[2026-06-06 07:01:09] epoch    7 | train_kl 0.032997 | eval_kl 0.08058760106134757
+[2026-06-06 07:01:15] epoch    8 | train_kl 0.028197 | eval_kl 0.07803756213016647
+[2026-06-06 07:01:22] epoch    9 | train_kl 0.024610 | eval_kl 0.07630410468835624
+[2026-06-06 07:01:28] epoch   10 | train_kl 0.021774 | eval_kl 0.07429518588155294
+[2026-06-06 07:01:34] epoch   11 | train_kl 0.019578 | eval_kl 0.07475470553199165
+[2026-06-06 07:01:41] epoch   12 | train_kl 0.017404 | eval_kl 0.0720024451935034
+[2026-06-06 07:01:58] epoch   13 | train_kl 0.016101 | eval_kl 0.07182053160324371
+[2026-06-06 07:02:04] epoch   14 | train_kl 0.014809 | eval_kl 0.07250242010294962
+[2026-06-06 07:02:10] epoch   15 | train_kl 0.013439 | eval_kl 0.07047780340524029
+[2026-06-06 07:02:17] epoch   16 | train_kl 0.012976 | eval_kl 0.07080264657521419
+[2026-06-06 07:02:23] epoch   17 | train_kl 0.011782 | eval_kl 0.06874851571570198
+[2026-06-06 07:02:30] epoch   18 | train_kl 0.011009 | eval_kl 0.06949356734323844
+[2026-06-06 07:02:36] epoch   19 | train_kl 0.010428 | eval_kl 0.0689684617862427
+[2026-06-06 07:02:42] epoch   20 | train_kl 0.009694 | eval_kl 0.06869084050329469
+[2026-06-06 07:02:43] DONE. results in results/bake_fact/prop-size-tpc4-1b

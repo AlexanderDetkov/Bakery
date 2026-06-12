@@ -1,0 +1,1398 @@
+{
+  "epochs": [
+    5,
+    10
+  ],
+  "train_kl": [
+    0.058544854829578025,
+    0.007381360181338287
+  ],
+  "eval_kl": [
+    2.259844173084606,
+    4.078527797352184
+  ],
+  "dprime": [
+    -0.1244792235631208,
+    1.1919589160314628
+  ],
+  "dprime.matrix": [
+    [
+      [
+        0.5588235294117647,
+        0.5,
+        0.5,
+        0.2647058823529412,
+        0.25,
+        0.1875
+      ],
+      [
+        0.20588235294117646,
+        0.5,
+        0.6176470588235294,
+        0.3235294117647059,
+        0.17857142857142858,
+        0.3125
+      ],
+      [
+        0.9687791971342512,
+        0.0,
+        -0.29930691013902916,
+        -0.17105228675564343,
+        0.246333226061472,
+        -0.3983701469824034
+      ]
+    ],
+    [
+      [
+        0.9705882352941176,
+        0.9117647058823529,
+        0.9705882352941176,
+        0.9705882352941176,
+        0.9642857142857143,
+        0.9375
+      ],
+      [
+        0.6176470588235294,
+        0.7352941176470589,
+        0.7352941176470589,
+        0.7941176470588235,
+        0.6071428571428571,
+        0.5625
+      ],
+      [
+        1.5902030481178624,
+        0.7227980215312149,
+        1.2606057402306388,
+        1.0687178708310883,
+        1.5308630872229365,
+        1.376809860341435
+      ]
+    ]
+  ],
+  "dprime.labels": [
+    [
+      "hit_baked",
+      "fa_baked",
+      "dprime_baked"
+    ],
+    [
+      "hit_baked",
+      "fa_baked",
+      "dprime_baked"
+    ]
+  ],
+  "dprime.depths": [
+    [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ]
+  ],
+  "dprime.neg_types": [
+    [
+      "converse",
+      "cross",
+      "missing_edge"
+    ],
+    [
+      "converse",
+      "cross",
+      "missing_edge"
+    ]
+  ],
+  "dprime.tau": [
+    0.0,
+    0.0
+  ],
+  "dprime.correction": [
+    "loglinear_0.5",
+    "loglinear_0.5"
+  ],
+  "dprime.dprime_skipped": [
+    {},
+    {}
+  ],
+  "dprime.dprime_prior_d1": [
+    0.0,
+    0.0
+  ],
+  "dprime.hit_prior_d1": [
+    0.029411764705882353,
+    0.029411764705882353
+  ],
+  "dprime.fa_prior_d1": [
+    0.029411764705882353,
+    0.029411764705882353
+  ],
+  "dprime.crit_prior_d1": [
+    1.8895099582568915,
+    1.8895099582568915
+  ],
+  "dprime.bacc_prior_d1": [
+    0.49999999999999994,
+    0.49999999999999994
+  ],
+  "dprime.auroc_prior_d1": [
+    0.4140625,
+    0.4140625
+  ],
+  "dprime.n_true_prior_d1": [
+    16,
+    16
+  ],
+  "dprime.n_false_prior_d1": [
+    16,
+    16
+  ],
+  "dprime.dprime_prior_d1_converse": [
+    -0.4242761639185133,
+    -0.4242761639185133
+  ],
+  "dprime.fa_prior_d1_converse": [
+    0.07142857142857142,
+    0.07142857142857142
+  ],
+  "dprime.auroc_prior_d1_converse": [
+    0.4166666666666667,
+    0.4166666666666667
+  ],
+  "dprime.dprime_prior_d1_cross": [
+    -0.506515830769793,
+    -0.506515830769793
+  ],
+  "dprime.fa_prior_d1_cross": [
+    0.08333333333333333,
+    0.08333333333333333
+  ],
+  "dprime.auroc_prior_d1_cross": [
+    0.4375,
+    0.4375
+  ],
+  "dprime.dprime_prior_d1_missing_edge": [
+    -0.506515830769793,
+    -0.506515830769793
+  ],
+  "dprime.fa_prior_d1_missing_edge": [
+    0.08333333333333333,
+    0.08333333333333333
+  ],
+  "dprime.auroc_prior_d1_missing_edge": [
+    0.3875,
+    0.3875
+  ],
+  "dprime.dprime_prior_d2": [
+    0.0,
+    0.0
+  ],
+  "dprime.hit_prior_d2": [
+    0.029411764705882353,
+    0.029411764705882353
+  ],
+  "dprime.fa_prior_d2": [
+    0.029411764705882353,
+    0.029411764705882353
+  ],
+  "dprime.crit_prior_d2": [
+    1.8895099582568915,
+    1.8895099582568915
+  ],
+  "dprime.bacc_prior_d2": [
+    0.49999999999999994,
+    0.49999999999999994
+  ],
+  "dprime.auroc_prior_d2": [
+    0.48046875,
+    0.48046875
+  ],
+  "dprime.n_true_prior_d2": [
+    16,
+    16
+  ],
+  "dprime.n_false_prior_d2": [
+    16,
+    16
+  ],
+  "dprime.dprime_prior_d2_converse": [
+    -0.4242761639185133,
+    -0.4242761639185133
+  ],
+  "dprime.fa_prior_d2_converse": [
+    0.07142857142857142,
+    0.07142857142857142
+  ],
+  "dprime.auroc_prior_d2_converse": [
+    0.4270833333333333,
+    0.4270833333333333
+  ],
+  "dprime.dprime_prior_d2_cross": [
+    -0.506515830769793,
+    -0.506515830769793
+  ],
+  "dprime.fa_prior_d2_cross": [
+    0.08333333333333333,
+    0.08333333333333333
+  ],
+  "dprime.auroc_prior_d2_cross": [
+    0.6,
+    0.6
+  ],
+  "dprime.dprime_prior_d2_missing_edge": [
+    -0.506515830769793,
+    -0.506515830769793
+  ],
+  "dprime.fa_prior_d2_missing_edge": [
+    0.08333333333333333,
+    0.08333333333333333
+  ],
+  "dprime.auroc_prior_d2_missing_edge": [
+    0.425,
+    0.425
+  ],
+  "dprime.dprime_prior_d3": [
+    0.0,
+    0.0
+  ],
+  "dprime.hit_prior_d3": [
+    0.029411764705882353,
+    0.029411764705882353
+  ],
+  "dprime.fa_prior_d3": [
+    0.029411764705882353,
+    0.029411764705882353
+  ],
+  "dprime.crit_prior_d3": [
+    1.8895099582568915,
+    1.8895099582568915
+  ],
+  "dprime.bacc_prior_d3": [
+    0.49999999999999994,
+    0.49999999999999994
+  ],
+  "dprime.auroc_prior_d3": [
+    0.2734375,
+    0.2734375
+  ],
+  "dprime.n_true_prior_d3": [
+    16,
+    16
+  ],
+  "dprime.n_false_prior_d3": [
+    16,
+    16
+  ],
+  "dprime.dprime_prior_d3_converse": [
+    -0.4242761639185133,
+    -0.4242761639185133
+  ],
+  "dprime.fa_prior_d3_converse": [
+    0.07142857142857142,
+    0.07142857142857142
+  ],
+  "dprime.auroc_prior_d3_converse": [
+    0.3645833333333333,
+    0.3645833333333333
+  ],
+  "dprime.dprime_prior_d3_cross": [
+    -0.506515830769793,
+    -0.506515830769793
+  ],
+  "dprime.fa_prior_d3_cross": [
+    0.08333333333333333,
+    0.08333333333333333
+  ],
+  "dprime.auroc_prior_d3_cross": [
+    0.1125,
+    0.1125
+  ],
+  "dprime.dprime_prior_d3_missing_edge": [
+    -0.506515830769793,
+    -0.506515830769793
+  ],
+  "dprime.fa_prior_d3_missing_edge": [
+    0.08333333333333333,
+    0.08333333333333333
+  ],
+  "dprime.auroc_prior_d3_missing_edge": [
+    0.325,
+    0.325
+  ],
+  "dprime.dprime_prior_d4": [
+    0.0,
+    0.0
+  ],
+  "dprime.hit_prior_d4": [
+    0.029411764705882353,
+    0.029411764705882353
+  ],
+  "dprime.fa_prior_d4": [
+    0.029411764705882353,
+    0.029411764705882353
+  ],
+  "dprime.crit_prior_d4": [
+    1.8895099582568915,
+    1.8895099582568915
+  ],
+  "dprime.bacc_prior_d4": [
+    0.49999999999999994,
+    0.49999999999999994
+  ],
+  "dprime.auroc_prior_d4": [
+    0.37890625,
+    0.37890625
+  ],
+  "dprime.n_true_prior_d4": [
+    16,
+    16
+  ],
+  "dprime.n_false_prior_d4": [
+    16,
+    16
+  ],
+  "dprime.dprime_prior_d4_converse": [
+    -0.4242761639185133,
+    -0.4242761639185133
+  ],
+  "dprime.fa_prior_d4_converse": [
+    0.07142857142857142,
+    0.07142857142857142
+  ],
+  "dprime.auroc_prior_d4_converse": [
+    0.4583333333333333,
+    0.4583333333333333
+  ],
+  "dprime.dprime_prior_d4_cross": [
+    -0.506515830769793,
+    -0.506515830769793
+  ],
+  "dprime.fa_prior_d4_cross": [
+    0.08333333333333333,
+    0.08333333333333333
+  ],
+  "dprime.auroc_prior_d4_cross": [
+    0.4125,
+    0.4125
+  ],
+  "dprime.dprime_prior_d4_missing_edge": [
+    -0.506515830769793,
+    -0.506515830769793
+  ],
+  "dprime.fa_prior_d4_missing_edge": [
+    0.08333333333333333,
+    0.08333333333333333
+  ],
+  "dprime.auroc_prior_d4_missing_edge": [
+    0.25,
+    0.25
+  ],
+  "dprime.dprime_prior_d5": [
+    0.0,
+    0.0
+  ],
+  "dprime.hit_prior_d5": [
+    0.03571428571428571,
+    0.03571428571428571
+  ],
+  "dprime.fa_prior_d5": [
+    0.03571428571428571,
+    0.03571428571428571
+  ],
+  "dprime.crit_prior_d5": [
+    1.8027430923157748,
+    1.8027430923157748
+  ],
+  "dprime.bacc_prior_d5": [
+    0.5,
+    0.5
+  ],
+  "dprime.auroc_prior_d5": [
+    0.4378698224852071,
+    0.4378698224852071
+  ],
+  "dprime.n_true_prior_d5": [
+    13,
+    13
+  ],
+  "dprime.n_false_prior_d5": [
+    13,
+    13
+  ],
+  "dprime.dprime_prior_d5_converse": [
+    -0.4197489648286763,
+    -0.4197489648286763
+  ],
+  "dprime.fa_prior_d5_converse": [
+    0.08333333333333333,
+    0.08333333333333333
+  ],
+  "dprime.auroc_prior_d5_converse": [
+    0.4461538461538462,
+    0.4461538461538462
+  ],
+  "dprime.dprime_prior_d5_cross": [
+    -0.5211915281756185,
+    -0.5211915281756185
+  ],
+  "dprime.fa_prior_d5_cross": [
+    0.1,
+    0.1
+  ],
+  "dprime.auroc_prior_d5_cross": [
+    0.5576923076923077,
+    0.5576923076923077
+  ],
+  "dprime.dprime_prior_d5_missing_edge": [
+    -0.5211915281756185,
+    -0.5211915281756185
+  ],
+  "dprime.fa_prior_d5_missing_edge": [
+    0.1,
+    0.1
+  ],
+  "dprime.auroc_prior_d5_missing_edge": [
+    0.3076923076923077,
+    0.3076923076923077
+  ],
+  "dprime.dprime_prior_d6": [
+    0.0,
+    0.0
+  ],
+  "dprime.hit_prior_d6": [
+    0.0625,
+    0.0625
+  ],
+  "dprime.fa_prior_d6": [
+    0.0625,
+    0.0625
+  ],
+  "dprime.crit_prior_d6": [
+    1.5341205449145758,
+    1.5341205449145758
+  ],
+  "dprime.bacc_prior_d6": [
+    0.5,
+    0.5
+  ],
+  "dprime.auroc_prior_d6": [
+    0.30612244897959184,
+    0.30612244897959184
+  ],
+  "dprime.n_true_prior_d6": [
+    7,
+    7
+  ],
+  "dprime.n_false_prior_d6": [
+    7,
+    7
+  ],
+  "dprime.dprime_prior_d6_converse": [
+    -0.2525689807744196,
+    -0.2525689807744196
+  ],
+  "dprime.fa_prior_d6_converse": [
+    0.1,
+    0.1
+  ],
+  "dprime.auroc_prior_d6_converse": [
+    0.32142857142857145,
+    0.32142857142857145
+  ],
+  "dprime.dprime_prior_d6_cross": [
+    -0.3837711643988213,
+    -0.3837711643988213
+  ],
+  "dprime.fa_prior_d6_cross": [
+    0.125,
+    0.125
+  ],
+  "dprime.auroc_prior_d6_cross": [
+    0.2857142857142857,
+    0.2857142857142857
+  ],
+  "dprime.dprime_prior_d6_missing_edge": [
+    NaN,
+    NaN
+  ],
+  "dprime.fa_prior_d6_missing_edge": [
+    NaN,
+    NaN
+  ],
+  "dprime.auroc_prior_d6_missing_edge": [
+    NaN,
+    NaN
+  ],
+  "dprime.prop_distance_dprime_prior": [
+    0,
+    0
+  ],
+  "dprime.prop_distance_bacc_prior": [
+    0,
+    0
+  ],
+  "dprime.dprime_prompted_d1": [
+    1.1200989975648323,
+    1.1200989975648323
+  ],
+  "dprime.hit_prompted_d1": [
+    0.6176470588235294,
+    0.6176470588235294
+  ],
+  "dprime.fa_prompted_d1": [
+    0.20588235294117646,
+    0.20588235294117646
+  ],
+  "dprime.crit_prompted_d1": [
+    0.26074258864338706,
+    0.26074258864338706
+  ],
+  "dprime.bacc_prompted_d1": [
+    0.7058823529411765,
+    0.7058823529411765
+  ],
+  "dprime.auroc_prompted_d1": [
+    0.84765625,
+    0.84765625
+  ],
+  "dprime.n_true_prompted_d1": [
+    16,
+    16
+  ],
+  "dprime.n_false_prompted_d1": [
+    16,
+    16
+  ],
+  "dprime.dprime_prompted_d1_converse": [
+    0.29930691013902916,
+    0.29930691013902916
+  ],
+  "dprime.fa_prompted_d1_converse": [
+    0.5,
+    0.5
+  ],
+  "dprime.auroc_prompted_d1_converse": [
+    0.6770833333333334,
+    0.6770833333333334
+  ],
+  "dprime.dprime_prompted_d1_cross": [
+    1.6823010376261276,
+    1.6823010376261276
+  ],
+  "dprime.fa_prompted_d1_cross": [
+    0.08333333333333333,
+    0.08333333333333333
+  ],
+  "dprime.auroc_prompted_d1_cross": [
+    0.95,
+    0.95
+  ],
+  "dprime.dprime_prompted_d1_missing_edge": [
+    1.6823010376261276,
+    1.6823010376261276
+  ],
+  "dprime.fa_prompted_d1_missing_edge": [
+    0.08333333333333333,
+    0.08333333333333333
+  ],
+  "dprime.auroc_prompted_d1_missing_edge": [
+    0.95,
+    0.95
+  ],
+  "dprime.dprime_prompted_d2": [
+    0.5309101521316644,
+    0.5309101521316644
+  ],
+  "dprime.hit_prompted_d2": [
+    0.20588235294117646,
+    0.20588235294117646
+  ],
+  "dprime.fa_prompted_d2": [
+    0.08823529411764706,
+    0.08823529411764706
+  ],
+  "dprime.crit_prompted_d2": [
+    1.0862471634916355,
+    1.0862471634916355
+  ],
+  "dprime.bacc_prompted_d2": [
+    0.5588235294117647,
+    0.5588235294117647
+  ],
+  "dprime.auroc_prompted_d2": [
+    0.71875,
+    0.71875
+  ],
+  "dprime.n_true_prompted_d2": [
+    16,
+    16
+  ],
+  "dprime.n_false_prompted_d2": [
+    16,
+    16
+  ],
+  "dprime.dprime_prompted_d2_converse": [
+    0.644441706912575,
+    0.644441706912575
+  ],
+  "dprime.fa_prompted_d2_converse": [
+    0.07142857142857142,
+    0.07142857142857142
+  ],
+  "dprime.auroc_prompted_d2_converse": [
+    0.6979166666666666,
+    0.6979166666666666
+  ],
+  "dprime.dprime_prompted_d2_cross": [
+    0.5622020400612953,
+    0.5622020400612953
+  ],
+  "dprime.fa_prompted_d2_cross": [
+    0.08333333333333333,
+    0.08333333333333333
+  ],
+  "dprime.auroc_prompted_d2_cross": [
+    0.925,
+    0.925
+  ],
+  "dprime.dprime_prompted_d2_missing_edge": [
+    -0.14630233720238073,
+    -0.14630233720238073
+  ],
+  "dprime.fa_prompted_d2_missing_edge": [
+    0.25,
+    0.25
+  ],
+  "dprime.auroc_prompted_d2_missing_edge": [
+    0.5375,
+    0.5375
+  ],
+  "dprime.dprime_prompted_d3": [
+    0.0,
+    0.0
+  ],
+  "dprime.hit_prompted_d3": [
+    0.08823529411764706,
+    0.08823529411764706
+  ],
+  "dprime.fa_prompted_d3": [
+    0.08823529411764706,
+    0.08823529411764706
+  ],
+  "dprime.crit_prompted_d3": [
+    1.3517022395574676,
+    1.3517022395574676
+  ],
+  "dprime.bacc_prompted_d3": [
+    0.49999999999999994,
+    0.49999999999999994
+  ],
+  "dprime.auroc_prompted_d3": [
+    0.49609375,
+    0.49609375
+  ],
+  "dprime.n_true_prompted_d3": [
+    16,
+    16
+  ],
+  "dprime.n_false_prompted_d3": [
+    16,
+    16
+  ],
+  "dprime.dprime_prompted_d3_converse": [
+    0.11353155478091059,
+    0.11353155478091059
+  ],
+  "dprime.fa_prompted_d3_converse": [
+    0.07142857142857142,
+    0.07142857142857142
+  ],
+  "dprime.auroc_prompted_d3_converse": [
+    0.5,
+    0.5
+  ],
+  "dprime.dprime_prompted_d3_cross": [
+    0.03129188792963089,
+    0.03129188792963089
+  ],
+  "dprime.fa_prompted_d3_cross": [
+    0.08333333333333333,
+    0.08333333333333333
+  ],
+  "dprime.auroc_prompted_d3_cross": [
+    0.7125,
+    0.7125
+  ],
+  "dprime.dprime_prompted_d3_missing_edge": [
+    -0.6772124893340451,
+    -0.6772124893340451
+  ],
+  "dprime.fa_prompted_d3_missing_edge": [
+    0.25,
+    0.25
+  ],
+  "dprime.auroc_prompted_d3_missing_edge": [
+    0.275,
+    0.275
+  ],
+  "dprime.dprime_prompted_d4": [
+    0.0,
+    0.0
+  ],
+  "dprime.hit_prompted_d4": [
+    0.029411764705882353,
+    0.029411764705882353
+  ],
+  "dprime.fa_prompted_d4": [
+    0.029411764705882353,
+    0.029411764705882353
+  ],
+  "dprime.crit_prompted_d4": [
+    1.8895099582568915,
+    1.8895099582568915
+  ],
+  "dprime.bacc_prompted_d4": [
+    0.49999999999999994,
+    0.49999999999999994
+  ],
+  "dprime.auroc_prompted_d4": [
+    0.51953125,
+    0.51953125
+  ],
+  "dprime.n_true_prompted_d4": [
+    16,
+    16
+  ],
+  "dprime.n_false_prompted_d4": [
+    16,
+    16
+  ],
+  "dprime.dprime_prompted_d4_converse": [
+    -0.4242761639185133,
+    -0.4242761639185133
+  ],
+  "dprime.fa_prompted_d4_converse": [
+    0.07142857142857142,
+    0.07142857142857142
+  ],
+  "dprime.auroc_prompted_d4_converse": [
+    0.5625,
+    0.5625
+  ],
+  "dprime.dprime_prompted_d4_cross": [
+    -0.506515830769793,
+    -0.506515830769793
+  ],
+  "dprime.fa_prompted_d4_cross": [
+    0.08333333333333333,
+    0.08333333333333333
+  ],
+  "dprime.auroc_prompted_d4_cross": [
+    0.725,
+    0.725
+  ],
+  "dprime.dprime_prompted_d4_missing_edge": [
+    -0.506515830769793,
+    -0.506515830769793
+  ],
+  "dprime.fa_prompted_d4_missing_edge": [
+    0.08333333333333333,
+    0.08333333333333333
+  ],
+  "dprime.auroc_prompted_d4_missing_edge": [
+    0.2625,
+    0.2625
+  ],
+  "dprime.dprime_prompted_d5": [
+    0.0,
+    0.0
+  ],
+  "dprime.hit_prompted_d5": [
+    0.03571428571428571,
+    0.03571428571428571
+  ],
+  "dprime.fa_prompted_d5": [
+    0.03571428571428571,
+    0.03571428571428571
+  ],
+  "dprime.crit_prompted_d5": [
+    1.8027430923157748,
+    1.8027430923157748
+  ],
+  "dprime.bacc_prompted_d5": [
+    0.5,
+    0.5
+  ],
+  "dprime.auroc_prompted_d5": [
+    0.40236686390532544,
+    0.40236686390532544
+  ],
+  "dprime.n_true_prompted_d5": [
+    13,
+    13
+  ],
+  "dprime.n_false_prompted_d5": [
+    13,
+    13
+  ],
+  "dprime.dprime_prompted_d5_converse": [
+    -0.4197489648286763,
+    -0.4197489648286763
+  ],
+  "dprime.fa_prompted_d5_converse": [
+    0.08333333333333333,
+    0.08333333333333333
+  ],
+  "dprime.auroc_prompted_d5_converse": [
+    0.6,
+    0.6
+  ],
+  "dprime.dprime_prompted_d5_cross": [
+    -0.5211915281756185,
+    -0.5211915281756185
+  ],
+  "dprime.fa_prompted_d5_cross": [
+    0.1,
+    0.1
+  ],
+  "dprime.auroc_prompted_d5_cross": [
+    0.5192307692307693,
+    0.5192307692307693
+  ],
+  "dprime.dprime_prompted_d5_missing_edge": [
+    -0.5211915281756185,
+    -0.5211915281756185
+  ],
+  "dprime.fa_prompted_d5_missing_edge": [
+    0.1,
+    0.1
+  ],
+  "dprime.auroc_prompted_d5_missing_edge": [
+    0.038461538461538464,
+    0.038461538461538464
+  ],
+  "dprime.dprime_prompted_d6": [
+    0.0,
+    0.0
+  ],
+  "dprime.hit_prompted_d6": [
+    0.0625,
+    0.0625
+  ],
+  "dprime.fa_prompted_d6": [
+    0.0625,
+    0.0625
+  ],
+  "dprime.crit_prompted_d6": [
+    1.5341205449145758,
+    1.5341205449145758
+  ],
+  "dprime.bacc_prompted_d6": [
+    0.5,
+    0.5
+  ],
+  "dprime.auroc_prompted_d6": [
+    0.2857142857142857,
+    0.2857142857142857
+  ],
+  "dprime.n_true_prompted_d6": [
+    7,
+    7
+  ],
+  "dprime.n_false_prompted_d6": [
+    7,
+    7
+  ],
+  "dprime.dprime_prompted_d6_converse": [
+    -0.2525689807744196,
+    -0.2525689807744196
+  ],
+  "dprime.fa_prompted_d6_converse": [
+    0.1,
+    0.1
+  ],
+  "dprime.auroc_prompted_d6_converse": [
+    0.25,
+    0.25
+  ],
+  "dprime.dprime_prompted_d6_cross": [
+    -0.3837711643988213,
+    -0.3837711643988213
+  ],
+  "dprime.fa_prompted_d6_cross": [
+    0.125,
+    0.125
+  ],
+  "dprime.auroc_prompted_d6_cross": [
+    0.3333333333333333,
+    0.3333333333333333
+  ],
+  "dprime.dprime_prompted_d6_missing_edge": [
+    NaN,
+    NaN
+  ],
+  "dprime.fa_prompted_d6_missing_edge": [
+    NaN,
+    NaN
+  ],
+  "dprime.auroc_prompted_d6_missing_edge": [
+    NaN,
+    NaN
+  ],
+  "dprime.prop_distance_dprime_prompted": [
+    1,
+    1
+  ],
+  "dprime.prop_distance_bacc_prompted": [
+    1,
+    1
+  ],
+  "dprime.dprime_baked_d1": [
+    0.9687791971342512,
+    1.5902030481178624
+  ],
+  "dprime.hit_baked_d1": [
+    0.5588235294117647,
+    0.9705882352941176
+  ],
+  "dprime.fa_baked_d1": [
+    0.20588235294117646,
+    0.6176470588235294
+  ],
+  "dprime.crit_baked_d1": [
+    0.33640248885867763,
+    -1.0944084341979603
+  ],
+  "dprime.bacc_baked_d1": [
+    0.6764705882352942,
+    0.6764705882352942
+  ],
+  "dprime.auroc_baked_d1": [
+    0.67578125,
+    0.94140625
+  ],
+  "dprime.n_true_baked_d1": [
+    16,
+    16
+  ],
+  "dprime.n_false_baked_d1": [
+    16,
+    16
+  ],
+  "dprime.dprime_baked_d1_converse": [
+    0.5140934662953223,
+    1.0978713513957312
+  ],
+  "dprime.fa_baked_d1_converse": [
+    0.35714285714285715,
+    0.7857142857142857
+  ],
+  "dprime.auroc_baked_d1_converse": [
+    0.5625,
+    0.9375
+  ],
+  "dprime.dprime_baked_d1_cross": [
+    0.8224768599318705,
+    1.215020208033469
+  ],
+  "dprime.fa_baked_d1_cross": [
+    0.25,
+    0.75
+  ],
+  "dprime.auroc_baked_d1_cross": [
+    0.7,
+    0.8875
+  ],
+  "dprime.dprime_baked_d1_missing_edge": [
+    1.5309812371955465,
+    2.563999708480314
+  ],
+  "dprime.fa_baked_d1_missing_edge": [
+    0.08333333333333333,
+    0.25
+  ],
+  "dprime.auroc_baked_d1_missing_edge": [
+    0.7875,
+    1.0
+  ],
+  "dprime.dprime_baked_d2": [
+    0.0,
+    0.7227980215312149
+  ],
+  "dprime.hit_baked_d2": [
+    0.5,
+    0.9117647058823529
+  ],
+  "dprime.fa_baked_d2": [
+    0.5,
+    0.7352941176470589
+  ],
+  "dprime.crit_baked_d2": [
+    -0.0,
+    -0.9903032287918602
+  ],
+  "dprime.bacc_baked_d2": [
+    0.5,
+    0.588235294117647
+  ],
+  "dprime.auroc_baked_d2": [
+    0.41796875,
+    0.56640625
+  ],
+  "dprime.n_true_baked_d2": [
+    16,
+    16
+  ],
+  "dprime.n_false_baked_d2": [
+    16,
+    16
+  ],
+  "dprime.dprime_baked_d2_converse": [
+    0.0,
+    0.9855958829705932
+  ],
+  "dprime.fa_baked_d2_converse": [
+    0.5,
+    0.6428571428571429
+  ],
+  "dprime.auroc_baked_d2_converse": [
+    0.4375,
+    0.7291666666666666
+  ],
+  "dprime.dprime_baked_d2_cross": [
+    -0.2104283940752628,
+    1.141273845482205
+  ],
+  "dprime.fa_baked_d2_cross": [
+    0.5833333333333334,
+    0.5833333333333334
+  ],
+  "dprime.auroc_baked_d2_cross": [
+    0.4125,
+    0.6375
+  ],
+  "dprime.dprime_baked_d2_missing_edge": [
+    0.21042839407526265,
+    -0.03129188792962467
+  ],
+  "dprime.fa_baked_d2_missing_edge": [
+    0.4166666666666667,
+    0.9166666666666666
+  ],
+  "dprime.auroc_baked_d2_missing_edge": [
+    0.4,
+    0.3
+  ],
+  "dprime.dprime_baked_d3": [
+    -0.29930691013902916,
+    1.2606057402306388
+  ],
+  "dprime.hit_baked_d3": [
+    0.5,
+    0.9705882352941176
+  ],
+  "dprime.fa_baked_d3": [
+    0.6176470588235294,
+    0.7352941176470589
+  ],
+  "dprime.crit_baked_d3": [
+    -0.14965345506951458,
+    -1.2592070881415722
+  ],
+  "dprime.bacc_baked_d3": [
+    0.4411764705882353,
+    0.6176470588235294
+  ],
+  "dprime.auroc_baked_d3": [
+    0.4375,
+    0.640625
+  ],
+  "dprime.n_true_baked_d3": [
+    16,
+    16
+  ],
+  "dprime.n_false_baked_d3": [
+    16,
+    16
+  ],
+  "dprime.dprime_baked_d3_converse": [
+    0.7916386068611604,
+    2.2556163148437656
+  ],
+  "dprime.fa_baked_d3_converse": [
+    0.21428571428571427,
+    0.35714285714285715
+  ],
+  "dprime.auroc_baked_d3_converse": [
+    0.6875,
+    0.9270833333333334
+  ],
+  "dprime.dprime_baked_d3_cross": [
+    -0.6744897502234225,
+    0.5065158307697992
+  ],
+  "dprime.fa_baked_d3_cross": [
+    0.75,
+    0.9166666666666666
+  ],
+  "dprime.auroc_baked_d3_cross": [
+    0.3375,
+    0.4375
+  ],
+  "dprime.dprime_baked_d3_missing_edge": [
+    -1.3829941274870923,
+    0.5065158307697992
+  ],
+  "dprime.fa_baked_d3_missing_edge": [
+    0.9166666666666666,
+    0.9166666666666666
+  ],
+  "dprime.auroc_baked_d3_missing_edge": [
+    0.2375,
+    0.5
+  ],
+  "dprime.dprime_baked_d4": [
+    -0.17105228675564343,
+    1.0687178708310883
+  ],
+  "dprime.hit_baked_d4": [
+    0.2647058823529412,
+    0.9705882352941176
+  ],
+  "dprime.fa_baked_d4": [
+    0.3235294117647059,
+    0.7941176470588235
+  ],
+  "dprime.crit_baked_d4": [
+    0.5433780746484307,
+    -1.3551510228413473
+  ],
+  "dprime.bacc_baked_d4": [
+    0.47058823529411764,
+    0.5882352941176472
+  ],
+  "dprime.auroc_baked_d4": [
+    0.38671875,
+    0.6484375
+  ],
+  "dprime.n_true_baked_d4": [
+    16,
+    16
+  ],
+  "dprime.n_false_baked_d4": [
+    16,
+    16
+  ],
+  "dprime.dprime_baked_d4_converse": [
+    -0.26279786143937817,
+    1.8895099582568915
+  ],
+  "dprime.fa_baked_d4_converse": [
+    0.35714285714285715,
+    0.5
+  ],
+  "dprime.auroc_baked_d4_converse": [
+    0.3020833333333333,
+    0.71875
+  ],
+  "dprime.dprime_baked_d4_cross": [
+    -0.41847582395098976,
+    0.5065158307697992
+  ],
+  "dprime.fa_baked_d4_cross": [
+    0.4166666666666667,
+    0.9166666666666666
+  ],
+  "dprime.auroc_baked_d4_cross": [
+    0.45,
+    0.5625
+  ],
+  "dprime.dprime_baked_d4_missing_edge": [
+    0.0455855321971701,
+    0.5065158307697992
+  ],
+  "dprime.fa_baked_d4_missing_edge": [
+    0.25,
+    0.9166666666666666
+  ],
+  "dprime.auroc_baked_d4_missing_edge": [
+    0.425,
+    0.65
+  ],
+  "dprime.dprime_baked_d5": [
+    0.246333226061472,
+    1.5308630872229365
+  ],
+  "dprime.hit_baked_d5": [
+    0.25,
+    0.9642857142857143
+  ],
+  "dprime.fa_baked_d5": [
+    0.17857142857142858,
+    0.6071428571428571
+  ],
+  "dprime.crit_baked_d5": [
+    0.7976563632541585,
+    -1.0373115487043065
+  ],
+  "dprime.bacc_baked_d5": [
+    0.5357142857142857,
+    0.6785714285714286
+  ],
+  "dprime.auroc_baked_d5": [
+    0.7396449704142012,
+    0.8461538461538461
+  ],
+  "dprime.n_true_baked_d5": [
+    13,
+    13
+  ],
+  "dprime.n_false_baked_d5": [
+    13,
+    13
+  ],
+  "dprime.dprime_baked_d5_converse": [
+    0.0,
+    2.0131714863910375
+  ],
+  "dprime.fa_baked_d5_converse": [
+    0.25,
+    0.4166666666666667
+  ],
+  "dprime.auroc_baked_d5_converse": [
+    0.7076923076923077,
+    0.9230769230769231
+  ],
+  "dprime.dprime_baked_d5_cross": [
+    0.6070618139167338,
+    1.2783425790364795
+  ],
+  "dprime.fa_baked_d5_cross": [
+    0.1,
+    0.7
+  ],
+  "dprime.auroc_baked_d5_cross": [
+    0.8653846153846154,
+    0.75
+  ],
+  "dprime.dprime_baked_d5_missing_edge": [
+    -0.15008923694412724,
+    1.2783425790364795
+  ],
+  "dprime.fa_baked_d5_missing_edge": [
+    0.3,
+    0.7
+  ],
+  "dprime.auroc_baked_d5_missing_edge": [
+    0.6538461538461539,
+    0.8461538461538461
+  ],
+  "dprime.dprime_baked_d6": [
+    -0.3983701469824034,
+    1.376809860341435
+  ],
+  "dprime.hit_baked_d6": [
+    0.1875,
+    0.9375
+  ],
+  "dprime.fa_baked_d6": [
+    0.3125,
+    0.5625
+  ],
+  "dprime.crit_baked_d6": [
+    0.687961485033063,
+    -0.8457156147438584
+  ],
+  "dprime.bacc_baked_d6": [
+    0.4375,
+    0.6875
+  ],
+  "dprime.auroc_baked_d6": [
+    0.4897959183673469,
+    0.7551020408163265
+  ],
+  "dprime.n_true_baked_d6": [
+    7,
+    7
+  ],
+  "dprime.n_false_baked_d6": [
+    7,
+    7
+  ],
+  "dprime.dprime_baked_d6_converse": [
+    -0.36274604524496945,
+    1.5341205449145758
+  ],
+  "dprime.fa_baked_d6_converse": [
+    0.3,
+    0.5
+  ],
+  "dprime.auroc_baked_d6_converse": [
+    0.4642857142857143,
+    0.9642857142857143
+  ],
+  "dprime.dprime_baked_d6_cross": [
+    -0.5685071948788578,
+    1.215481181269169
+  ],
+  "dprime.fa_baked_d6_cross": [
+    0.375,
+    0.625
+  ],
+  "dprime.auroc_baked_d6_cross": [
+    0.5238095238095238,
+    0.47619047619047616
+  ],
+  "dprime.dprime_baked_d6_missing_edge": [
+    NaN,
+    NaN
+  ],
+  "dprime.fa_baked_d6_missing_edge": [
+    NaN,
+    NaN
+  ],
+  "dprime.auroc_baked_d6_missing_edge": [
+    NaN,
+    NaN
+  ],
+  "dprime.prop_distance_dprime_baked": [
+    0,
+    1
+  ],
+  "dprime.prop_distance_bacc_baked": [
+    0,
+    0
+  ],
+  "dprime.dprime_baked_d1_baseline": [
+    0.9687791971342512,
+    1.5902030481178624
+  ],
+  "dprime.headline_depths": [
+    [
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    [
+      2,
+      3,
+      4,
+      5,
+      6
+    ]
+  ],
+  "dprime.n_trained_relations": [
+    76,
+    76
+  ]
+}

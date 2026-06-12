@@ -144,18 +144,80 @@ def distance(spec, out):
     return _save(fig, out)
 
 
+def depth_panels(specs, out, metric="bacc", max_depth=3):
+    """Per-run grokking panel for the `theorem_qa` runs (the `dprime` metric).
+
+    One subplot per run: per-DEPTH baked generalization vs epoch — d1 = the TRAINED-relation recall
+    ("train accuracy"), d2/d3/… = HELD-OUT propagation — overlaid (right axis, log) on train loss +
+    eval_kl. Exposes grokking: does held-out d2/d3 keep CLIMBING after train_kl and d1 (trained recall)
+    have already saturated? `metric` in {"bacc" (balanced accuracy, 0.5 = chance), "dprime" (d′,
+    0 = chance)}. epoch on a LOG axis so late generalization is visible. Reads metrics.json only.
+    """
+    import re
+
+    import matplotlib
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
+
+    runs = []
+    for s in specs:
+        rd, _, lab = s.partition(":")
+        runs.append((load_run(rd), lab or Path(rd).name))
+    fig, axes = plt.subplots(1, len(runs), figsize=(5.6 * len(runs), 4.8), squeeze=False)
+    for ax, (r, label) in zip(axes[0], runs):
+        depths = sorted({int(m.group(1)) for k in r.metrics
+                         for m in [re.match(rf"dprime\.{metric}_baked_d(\d+)(?:_baseline)?$", k)] if m})
+        depths = [d for d in depths if d <= max_depth]   # deeper cells have too few held-out probes (noise)
+        for d in depths:
+            key = f"dprime.{metric}_baked_d{d}"
+            if key not in r.metrics:
+                key = f"dprime.{metric}_baked_d{d}_baseline"   # d′ records d1 as the baseline
+            xs, ys = _xy(r, key)
+            if not xs:
+                continue
+            trained = d == 1
+            ax.plot(xs, ys, "--s" if trained else "-o", color=f"C{d}", markersize=3,
+                    label=f"d{d} {'(trained recall)' if trained else '(held-out)'}")
+        ax.set_xlabel("epoch")
+        ax.set_xscale("log")
+        if metric == "bacc":
+            ax.set_ylabel("balanced accuracy"); ax.set_ylim(0.35, 1.03); ax.axhline(0.5, color="0.8", lw=0.8)
+        else:
+            ax.set_ylabel("d′ (bias-immune)"); ax.axhline(0.0, color="0.8", lw=0.8)
+        axR = ax.twinx()
+        for key, lab2, col in [("train_kl", "train loss", "0.5"), ("eval_kl", "eval_kl", "C0")]:
+            xs, ys = _xy(r, key)
+            if xs:
+                axR.plot(xs, ys, "-", color=col, alpha=0.55, label=lab2)
+        axR.set_ylabel("KL / train loss (log)")
+        try:
+            axR.set_yscale("log")
+        except ValueError:
+            pass
+        ep = r.metrics.get("epochs") or [None]
+        ax.set_title(f"{label}  (ep≤{ep[-1]}, {r.status})", fontsize=9)
+        hL, lL = ax.get_legend_handles_labels()
+        hR, lR = axR.get_legend_handles_labels()
+        ax.legend(hL + hR, lL + lR, fontsize=7, loc="lower right")
+    fig.suptitle(f"theorem_qa sampled bake — per-depth {metric}: trained recall (d1) vs held-out (d≥2)",
+                 fontsize=11)
+    return _save(fig, out)
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__)
-    ap.add_argument("mode", choices=["panel", "compare", "distance"])
+    ap.add_argument("mode", choices=["panel", "compare", "distance", "depths"])
     ap.add_argument("run_specs", nargs="+", help="run_dir:label")
     ap.add_argument("--out", required=True)
     ap.add_argument("--metric", default="propagation.converse_acc_baked",
-                    help="(compare mode) metric key to overlay")
+                    help="(compare mode) metric key to overlay; (depths mode) 'bacc' | 'dprime'")
     a = ap.parse_args(argv)
     if a.mode == "panel":
         print(panel(a.run_specs[0], a.out))
     elif a.mode == "distance":
         print(distance(a.run_specs[0], a.out))
+    elif a.mode == "depths":
+        print(depth_panels(a.run_specs, a.out, a.metric if a.metric in ("bacc", "dprime") else "bacc"))
     else:
         print(compare(a.run_specs, a.out, a.metric))
 

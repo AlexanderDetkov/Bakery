@@ -1,6 +1,5 @@
 # Run artifacts (large; the committed run-ledger in research/run-log.jsonl is the
 # durable record). NOTE: research/ itself is COMMITTED — it is the agent's brain.
-results/
 trajectory_cache/
 *.safetensors
 *.pt

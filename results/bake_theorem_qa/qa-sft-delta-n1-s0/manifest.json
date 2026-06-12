@@ -1,0 +1,1922 @@
+{
+  "schema_version": 1,
+  "experiment": "bake_theorem_qa",
+  "run_id": "qa-sft-delta-n1-s0",
+  "sweep_id": null,
+  "created_utc": "2026-06-11T10:48:46.279124+00:00",
+  "git": {
+    "sha": "d652b8823b057495a756af23d48c1b2c17af7276",
+    "branch": "research/knowledge-propagation",
+    "dirty": true
+  },
+  "env": {
+    "python": "3.10.18",
+    "torch": "2.5.1",
+    "transformers": "4.56.0",
+    "peft": "0.17.1",
+    "cuda": "12.1",
+    "device": "cuda"
+  },
+  "seed": 0,
+  "seeds": {
+    "data": 0,
+    "model": 0,
+    "generation": 0
+  },
+  "base_checkpoint": {
+    "model_name": "meta-llama/Llama-3.1-8B-Instruct",
+    "revision": null,
+    "dtype": "bfloat16",
+    "weights_sha256": null
+  },
+  "tokenizer": {
+    "name": "meta-llama/Llama-3.1-8B-Instruct",
+    "revision": null,
+    "vocab_size": 128256,
+    "bos_id": 128000,
+    "eos_id": 128009,
+    "pad_id": 128009,
+    "chat_template_sha256": "e10ca381b1ccc5cf9db52e371f3b6651576caee0a630b452e2816b2d404d4b65"
+  },
+  "generation": {
+    "sampler": "base_disable_adapter",
+    "base_prompt_sha256": "1fb9e41ccc101a6aa583189e8e221d5ee4ab979c30443d69dc2745fb0e0779b5",
+    "baked_prompt_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "template_sha256": null,
+    "dataset_id": "data/worlds/lw_delta.json#qa@n=1",
+    "num_contexts": 76,
+    "trajectories_per_context": 1,
+    "eval_num_contexts": 48,
+    "max_new_tokens": 32,
+    "min_new_tokens": 1,
+    "temperature": 0.0,
+    "top_p": 1.0,
+    "top_k": 0,
+    "do_sample": false,
+    "seed": 0,
+    "extra": {
+      "sampler_kind": "teacher_forced_qa",
+      "probe_bank": "data/probes/lw_delta_qa_probes.json",
+      "train_max_depth": 1,
+      "split_seed": 0,
+      "n_trained_relations": 76
+    }
+  },
+  "objective": "sft",
+  "lora": {
+    "rank": 16,
+    "alpha": 16,
+    "dropout": 0.0,
+    "target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj"
+    ]
+  },
+  "adapter_to_load": null,
+  "half_bake_alpha": 1.0,
+  "num_trainable_params": 13631488,
+  "data_stats": {
+    "num_total_traj": 124,
+    "total_supervised_tokens": 1402,
+    "mean_base_len": 490.11290322580646,
+    "n_train_traj": 76,
+    "n_eval_traj": 48,
+    "n_train_ctx": 76,
+    "n_eval_ctx": 48,
+    "coverage": {
+      "requested_train_traj": 76,
+      "kept_train_traj": 76,
+      "train_contexts_requested": 76,
+      "train_contexts_realized": 76,
+      "traj_per_ctx_min": 1,
+      "traj_per_ctx_max": 1,
+      "traj_per_ctx_mean": 1.0
+    },
+    "pairing": {
+      "trained_relations": [
+        [
+          "Bonidu",
+          "Sali",
+          1,
+          true
+        ],
+        [
+          "Bunuro",
+          "Zokafo",
+          1,
+          true
+        ],
+        [
+          "Donova",
+          "Nafepa",
+          1,
+          true
+        ],
+        [
+          "Fenosu",
+          "Dobi",
+          1,
+          true
+        ],
+        [
+          "Fisaza",
+          "Semozi",
+          1,
+          true
+        ],
+        [
+          "Fozuto",
+          "Tiguvo",
+          1,
+          true
+        ],
+        [
+          "Fozuto",
+          "Vuvu",
+          1,
+          true
+        ],
+        [
+          "Gate",
+          "Fozuto",
+          1,
+          true
+        ],
+        [
+          "Guno",
+          "Kasu",
+          1,
+          true
+        ],
+        [
+          "Guza",
+          "Gate",
+          1,
+          true
+        ],
+        [
+          "Guza",
+          "Tupo",
+          1,
+          true
+        ],
+        [
+          "Kemupo",
+          "Lali",
+          1,
+          true
+        ],
+        [
+          "Lali",
+          "Donova",
+          1,
+          true
+        ],
+        [
+          "Lilo",
+          "Gadasi",
+          1,
+          true
+        ],
+        [
+          "Lilo",
+          "Zifoli",
+          1,
+          true
+        ],
+        [
+          "Liza",
+          "Rere",
+          1,
+          true
+        ],
+        [
+          "Mera",
+          "Bonidu",
+          1,
+          true
+        ],
+        [
+          "Muni",
+          "Fenosu",
+          1,
+          true
+        ],
+        [
+          "Muni",
+          "Rafe",
+          1,
+          true
+        ],
+        [
+          "Nafepa",
+          "Lilo",
+          1,
+          true
+        ],
+        [
+          "Narato",
+          "Bunuro",
+          1,
+          true
+        ],
+        [
+          "Nida",
+          "Narato",
+          1,
+          true
+        ],
+        [
+          "Nizana",
+          "Guza",
+          1,
+          true
+        ],
+        [
+          "Rere",
+          "Fekipu",
+          1,
+          true
+        ],
+        [
+          "Rere",
+          "Mera",
+          1,
+          true
+        ],
+        [
+          "Ruloki",
+          "Guno",
+          1,
+          true
+        ],
+        [
+          "Ruloki",
+          "Muni",
+          1,
+          true
+        ],
+        [
+          "Sali",
+          "Pani",
+          1,
+          true
+        ],
+        [
+          "Semozi",
+          "Ruloki",
+          1,
+          true
+        ],
+        [
+          "Tetara",
+          "Nizana",
+          1,
+          true
+        ],
+        [
+          "Tiguvo",
+          "Tuka",
+          1,
+          true
+        ],
+        [
+          "Tuka",
+          "Zefopi",
+          1,
+          true
+        ],
+        [
+          "Tuso",
+          "Fisaza",
+          1,
+          true
+        ],
+        [
+          "Vuvu",
+          "Digu",
+          1,
+          true
+        ],
+        [
+          "Zavuke",
+          "Dumaki",
+          1,
+          true
+        ],
+        [
+          "Zavuke",
+          "Kemupo",
+          1,
+          true
+        ],
+        [
+          "Zifoli",
+          "Tolu",
+          1,
+          true
+        ],
+        [
+          "Zokafo",
+          "Liza",
+          1,
+          true
+        ],
+        [
+          "Dobi",
+          "Fenosu",
+          1,
+          false
+        ],
+        [
+          "Digu",
+          "Dumaki",
+          1,
+          false
+        ],
+        [
+          "Sali",
+          "Fekipu",
+          1,
+          false
+        ],
+        [
+          "Guza",
+          "Nizana",
+          1,
+          false
+        ],
+        [
+          "Tolu",
+          "Tetara",
+          1,
+          false
+        ],
+        [
+          "Guno",
+          "Fenosu",
+          1,
+          false
+        ],
+        [
+          "Kasu",
+          "Guno",
+          1,
+          false
+        ],
+        [
+          "Nizana",
+          "Fisaza",
+          1,
+          false
+        ],
+        [
+          "Guno",
+          "Rafe",
+          1,
+          false
+        ],
+        [
+          "Ruloki",
+          "Semozi",
+          1,
+          false
+        ],
+        [
+          "Rere",
+          "Nizana",
+          1,
+          false
+        ],
+        [
+          "Sali",
+          "Mera",
+          1,
+          false
+        ],
+        [
+          "Rafe",
+          "Muni",
+          1,
+          false
+        ],
+        [
+          "Vuvu",
+          "Kemupo",
+          1,
+          false
+        ],
+        [
+          "Vuvu",
+          "Zefopi",
+          1,
+          false
+        ],
+        [
+          "Digu",
+          "Vuvu",
+          1,
+          false
+        ],
+        [
+          "Lali",
+          "Nizana",
+          1,
+          false
+        ],
+        [
+          "Zifoli",
+          "Dumaki",
+          1,
+          false
+        ],
+        [
+          "Dumaki",
+          "Zavuke",
+          1,
+          false
+        ],
+        [
+          "Kasu",
+          "Narato",
+          1,
+          false
+        ],
+        [
+          "Sali",
+          "Narato",
+          1,
+          false
+        ],
+        [
+          "Narato",
+          "Nida",
+          1,
+          false
+        ],
+        [
+          "Zavuke",
+          "Tetara",
+          1,
+          false
+        ],
+        [
+          "Vuvu",
+          "Tuka",
+          1,
+          false
+        ],
+        [
+          "Tiguvo",
+          "Fozuto",
+          1,
+          false
+        ],
+        [
+          "Ruloki",
+          "Nida",
+          1,
+          false
+        ],
+        [
+          "Vuvu",
+          "Nizana",
+          1,
+          false
+        ],
+        [
+          "Nizana",
+          "Tetara",
+          1,
+          false
+        ],
+        [
+          "Narato",
+          "Dumaki",
+          1,
+          false
+        ],
+        [
+          "Zifoli",
+          "Gadasi",
+          1,
+          false
+        ],
+        [
+          "Sali",
+          "Bonidu",
+          1,
+          false
+        ],
+        [
+          "Fozuto",
+          "Nida",
+          1,
+          false
+        ],
+        [
+          "Sali",
+          "Liza",
+          1,
+          false
+        ],
+        [
+          "Lilo",
+          "Nafepa",
+          1,
+          false
+        ],
+        [
+          "Kemupo",
+          "Narato",
+          1,
+          false
+        ],
+        [
+          "Fenosu",
+          "Rafe",
+          1,
+          false
+        ],
+        [
+          "Tolu",
+          "Zifoli",
+          1,
+          false
+        ],
+        [
+          "Muni",
+          "Tetara",
+          1,
+          false
+        ]
+      ],
+      "n_trained": 76,
+      "n_trained_true": 38,
+      "n_trained_neg": 38,
+      "coverage_depth1": "38/38",
+      "trained_by_depth": {
+        "d1": {
+          "yes": 38,
+          "no": 38
+        }
+      }
+    },
+    "pairing_opted_out": false,
+    "probe_contamination": {
+      "labels": [
+        {
+          "label": "stated",
+          "form": "forward",
+          "distance": 0,
+          "neg_type": null,
+          "provable": true
+        },
+        {
+          "label": "stated",
+          "form": "forward",
+          "distance": 0,
+          "neg_type": null,
+          "provable": true
+        },
+        {
+          "label": "stated",
+          "form": "forward",
+          "distance": 0,
+          "neg_type": null,
+          "provable": true
+        },
+        {
+          "label": "stated",
+          "form": "forward",
+          "distance": 0,
+          "neg_type": null,
+          "provable": true
+        },
+        {
+          "label": "stated",
+          "form": "forward",
+          "distance": 0,
+          "neg_type": null,
+          "provable": true
+        },
+        {
+          "label": "stated",
+          "form": "forward",
+          "distance": 0,
+          "neg_type": null,
+          "provable": true
+        },
+        {
+          "label": "stated",
+          "form": "forward",
+          "distance": 0,
+          "neg_type": null,
+          "provable": true
+        },
+        {
+          "label": "stated",
+          "form": "forward",
+          "distance": 0,
+          "neg_type": null,
+          "provable": true
+        },
+        {
+          "label": "stated",
+          "form": "forward",
+          "distance": 0,
+          "neg_type": null,
+          "provable": true
+        },
+        {
+          "label": "stated",
+          "form": "forward",
+          "distance": 0,
+          "neg_type": null,
+          "provable": true
+        },
+        {
+          "label": "stated",
+          "form": "forward",
+          "distance": 0,
+          "neg_type": null,
+          "provable": true
+        },
+        {
+          "label": "stated",
+          "form": "forward",
+          "distance": 0,
+          "neg_type": null,
+          "provable": true
+        },
+        {
+          "label": "stated",
+          "form": "forward",
+          "distance": 0,
+          "neg_type": null,
+          "provable": true
+        },
+        {
+          "label": "stated",
+          "form": "forward",
+          "distance": 0,
+          "neg_type": null,
+          "provable": true
+        },
+        {
+          "label": "stated",
+          "form": "forward",
+          "distance": 0,
+          "neg_type": null,
+          "provable": true
+        },
+        {
+          "label": "stated",
+          "form": "forward",
+          "distance": 0,
+          "neg_type": null,
+          "provable": true
+        },
+        {
+          "label": "held_out",
+          "form": "converse",
+          "distance": 0,
+          "neg_type": "converse",
+          "provable": false
+        },
+        {
+          "label": "held_out",
+          "form": "cross",
+          "distance": 0,
+          "neg_type": "cross",
+          "provable": false
+        },
+        {
+          "label": "held_out",
+          "form": "missing_edge",
+          "distance": 0,
+          "neg_type": "missing_edge",
+          "provable": false
+        },
+        {
+          "label": "held_out",
+          "form": "converse",
+          "distance": 0,
+          "neg_type": "converse",
+          "provable": false
+        },
+        {
+          "label": "held_out",
+          "form": "cross",
+          "distance": 0,
+          "neg_type": "cross",
+          "provable": false
+        },
+        {
+          "label": "held_out",
+          "form": "missing_edge",
+          "distance": 0,
+          "neg_type": "missing_edge",
+          "provable": false
+        },
+        {
+          "label": "held_out",
+          "form": "converse",
+          "distance": 0,
+          "neg_type": "converse",
+          "provable": false
+        },
+        {
+          "label": "held_out",
+          "form": "cross",
+          "distance": 0,
+          "neg_type": "cross",
+          "provable": false
+        },
+        {
+          "label": "held_out",
+          "form": "missing_edge",
+          "distance": 0,
+          "neg_type": "missing_edge",
+          "provable": false
+        },
+        {
+          "label": "held_out",
+          "form": "converse",
+          "distance": 0,
+          "neg_type": "converse",
+          "provable": false
+        },
+        {
+          "label": "held_out",
+          "form": "cross",
+          "distance": 0,
+          "neg_type": "cross",
+          "provable": false
+        },
+        {
+          "label": "held_out",
+          "form": "missing_edge",
+          "distance": 0,
+          "neg_type": "missing_edge",
+          "provable": false
+        },
+        {
+          "label": "held_out",
+          "form": "converse",
+          "distance": 0,
+          "neg_type": "converse",
+          "provable": false
+        },
+        {
+          "label": "held_out",
+          "form": "cross",
+          "distance": 0,
+          "neg_type": "cross",
+          "provable": false
+        },
+        {
+          "label": "held_out",
+          "form": "missing_edge",
+          "distance": 0,
+          "neg_type": "missing_edge",
+          "provable": false
+        },
+        {
+          "label": "held_out",
+          "form": "converse",
+          "distance": 0,
+          "neg_type": "converse",
+          "provable": false
+        },
+        {
+          "label": "held_out",
+          "form": "forward",
+          "distance": 1,
+          "neg_type": null,
+          "provable": true
+        },
+        {
+          "label": "held_out",
+          "form": "forward",
+          "distance": 1,
+          "neg_type": null,
+          "provable": true
+        },
+        {
+          "label": "held_out",
+          "form": "forward",
+          "distance": 1,
+          "neg_type": null,
+          "provable": true
+        },
+        {
+          "label": "held_out",
+          "form": "forward",
+          "distance": 1,
+          "neg_type": null,
+          "provable": true
+        },
+        {
+          "label": "held_out",
+          "form": "forward",
+          "distance": 1,
+          "neg_type": null,
+          "provable": true
+        },
+        {
+          "label": "held_out",
+          "form": "forward",
+          "distance": 1,
+          "neg_type": null,
+          "provable": true
+        },
+        {
+          "label": "held_out",
+          "form": "forward",
+          "distance": 1,
+          "neg_type": null,
+          "provable": true
+        },
+        {
+          "label": "held_out",
+          "form": "forward",
+          "distance": 1,
+          "neg_type": null,
+          "provable": true
+        },
+        {
+          "label": "held_out",
+          "form": "forward",
+          "distance": 1,
+          "neg_type": null,
+          "provable": true
+        },
+        {
+          "label": "held_out",
+          "form": "forward",
+          "distance": 1,
+          "neg_type": null,
+          "provable": true
+        },
+        {
+          "label": "held_out",
+          "form": "forward",
+          "distance": 1,
+          "neg_type": null,
+          "provable": true
+        },
+        {
+          "label": "held_out",
+          "form": "forward",
+          "distance": 1,
+          "neg_type": null,
+          "provable": true
+        },
+        {
+          "label": "held_out",
+          "form": "forward",
+          "distance": 1,
+          "neg_type": null,
+          "provable": true
+        },
+        {
+          "label": "held_out",
+          "form": "forward",
+          "distance": 1,
+          "neg_type": null,
+          "provable": true
+        },
+        {
+          "label": "held_out",
+          "form": "forward",
+          "distance": 1,
+          "neg_type": null,
+          "provable": true
+        },
+        {
+          "label": "held_out",
+          "form": "forward",
+          "distance": 1,
+          "neg_type": null,
+          "provable": true
+        },
+        {
+          "label": "held_out",
+          "form": "converse",
+          "distance": 1,
+          "neg_type": "converse",
+          "provable": false
+        },
+        {
+          "label": "held_out",
+          "form": "cross",
+          "distance": 1,
+          "neg_type": "cross",
+          "provable": false
+        },
+        {
+          "label": "held_out",
+          "form": "missing_edge",
+          "distance": 1,
+          "neg_type": "missing_edge",
+          "provable": false
+        },
+        {
+          "label": "held_out",
+          "form": "converse",
+          "distance": 1,
+          "neg_type": "converse",
+          "provable": false
+        },
+        {
+          "label": "held_out",
+          "form": "cross",
+          "distance": 1,
+          "neg_type": "cross",
+          "provable": false
+        },
+        {
+          "label": "held_out",
+          "form": "missing_edge",
+          "distance": 1,
+          "neg_type": "missing_edge",
+          "provable": false
+        },
+        {
+          "label": "held_out",
+          "form": "converse",
+          "distance": 1,
+          "neg_type": "converse",
+          "provable": false
+        },
+        {
+          "label": "held_out",
+          "form": "cross",
+          "distance": 1,
+          "neg_type": "cross",
+          "provable": false
+        },
+        {
+          "label": "held_out",
+          "form": "missing_edge",
+          "distance": 1,
+          "neg_type": "missing_edge",
+          "provable": false
+        },
+        {
+          "label": "held_out",
+          "form": "converse",
+          "distance": 1,
+          "neg_type": "converse",
+          "provable": false
+        },
+        {
+          "label": "held_out",
+          "form": "cross",
+          "distance": 1,
+          "neg_type": "cross",
+          "provable": false
+        },
+        {
+          "label": "held_out",
+          "form": "missing_edge",
+          "distance": 1,
+          "neg_type": "missing_edge",
+          "provable": false
+        },
+        {
+          "label": "held_out",
+          "form": "converse",
+          "distance": 1,
+          "neg_type": "converse",
+          "provable": false
+        },
+        {
+          "label": "held_out",
+          "form": "cross",
+          "distance": 1,
+          "neg_type": "cross",
+          "provable": false
+        },
+        {
+          "label": "held_out",
+          "form": "missing_edge",
+          "distance": 1,
+          "neg_type": "missing_edge",
+          "provable": false
+        },
+        {
+          "label": "held_out",
+          "form": "converse",
+          "distance": 1,
+          "neg_type": "converse",
+          "provable": false
+        },
+        {
+          "label": "held_out",
+          "form": "forward",
+          "distance": 2,
+          "neg_type": null,
+          "provable": true
+        },
+        {
+          "label": "held_out",
+          "form": "forward",
+          "distance": 2,
+          "neg_type": null,
+          "provable": true
+        },
+        {
+          "label": "held_out",
+          "form": "forward",
+          "distance": 2,
+          "neg_type": null,
+          "provable": true
+        },
+        {
+          "label": "held_out",
+          "form": "forward",
+          "distance": 2,
+          "neg_type": null,
+          "provable": true
+        },
+        {
+          "label": "held_out",
+          "form": "forward",
+          "distance": 2,
+          "neg_type": null,
+          "provable": true
+        },
+        {
+          "label": "held_out",
+          "form": "forward",
+          "distance": 2,
+          "neg_type": null,
+          "provable": true
+        },
+        {
+          "label": "held_out",
+          "form": "forward",
+          "distance": 2,
+          "neg_type": null,
+          "provable": true
+        },
+        {
+          "label": "held_out",
+          "form": "forward",
+          "distance": 2,
+          "neg_type": null,
+          "provable": true
+        },
+        {
+          "label": "held_out",
+          "form": "forward",
+          "distance": 2,
+          "neg_type": null,
+          "provable": true
+        },
+        {
+          "label": "held_out",
+          "form": "forward",
+          "distance": 2,
+          "neg_type": null,
+          "provable": true
+        },
+        {
+          "label": "held_out",
+          "form": "forward",
+          "distance": 2,
+          "neg_type": null,
+          "provable": true
+        },
+        {
+          "label": "held_out",
+          "form": "forward",
+          "distance": 2,
+          "neg_type": null,
+          "provable": true
+        },
+        {
+          "label": "held_out",
+          "form": "forward",
+          "distance": 2,
+          "neg_type": null,
+          "provable": true
+        },
+        {
+          "label": "held_out",
+          "form": "forward",
+          "distance": 2,
+          "neg_type": null,
+          "provable": true
+        },
+        {
+          "label": "held_out",
+          "form": "forward",
+          "distance": 2,
+          "neg_type": null,
+          "provable": true
+        },
+        {
+          "label": "held_out",
+          "form": "forward",
+          "distance": 2,
+          "neg_type": null,
+          "provable": true
+        },
+        {
+          "label": "held_out",
+          "form": "converse",
+          "distance": 2,
+          "neg_type": "converse",
+          "provable": false
+        },
+        {
+          "label": "held_out",
+          "form": "cross",
+          "distance": 2,
+          "neg_type": "cross",
+          "provable": false
+        },
+        {
+          "label": "held_out",
+          "form": "missing_edge",
+          "distance": 2,
+          "neg_type": "missing_edge",
+          "provable": false
+        },
+        {
+          "label": "held_out",
+          "form": "converse",
+          "distance": 2,
+          "neg_type": "converse",
+          "provable": false
+        },
+        {
+          "label": "held_out",
+          "form": "cross",
+          "distance": 2,
+          "neg_type": "cross",
+          "provable": false
+        },
+        {
+          "label": "held_out",
+          "form": "missing_edge",
+          "distance": 2,
+          "neg_type": "missing_edge",
+          "provable": false
+        },
+        {
+          "label": "held_out",
+          "form": "converse",
+          "distance": 2,
+          "neg_type": "converse",
+          "provable": false
+        },
+        {
+          "label": "held_out",
+          "form": "cross",
+          "distance": 2,
+          "neg_type": "cross",
+          "provable": false
+        },
+        {
+          "label": "held_out",
+          "form": "missing_edge",
+          "distance": 2,
+          "neg_type": "missing_edge",
+          "provable": false
+        },
+        {
+          "label": "held_out",
+          "form": "converse",
+          "distance": 2,
+          "neg_type": "converse",
+          "provable": false
+        },
+        {
+          "label": "held_out",
+          "form": "cross",
+          "distance": 2,
+          "neg_type": "cross",
+          "provable": false
+        },
+        {
+          "label": "held_out",
+          "form": "missing_edge",
+          "distance": 2,
+          "neg_type": "missing_edge",
+          "provable": false
+        },
+        {
+          "label": "held_out",
+          "form": "converse",
+          "distance": 2,
+          "neg_type": "converse",
+          "provable": false
+        },
+        {
+          "label": "held_out",
+          "form": "cross",
+          "distance": 2,
+          "neg_type": "cross",
+          "provable": false
+        },
+        {
+          "label": "held_out",
+          "form": "missing_edge",
+          "distance": 2,
+          "neg_type": "missing_edge",
+          "provable": false
+        },
+        {
+          "label": "held_out",
+          "form": "converse",
+          "distance": 2,
+          "neg_type": "converse",
+          "provable": false
+        },
+        {
+          "label": "held_out",
+          "form": "forward",
+          "distance": 3,
+          "neg_type": null,
+          "provable": true
+        },
+        {
+          "label": "held_out",
+          "form": "forward",
+          "distance": 3,
+          "neg_type": null,
+          "provable": true
+        },
+        {
+          "label": "held_out",
+          "form": "forward",
+          "distance": 3,
+          "neg_type": null,
+          "provable": true
+        },
+        {
+          "label": "held_out",
+          "form": "forward",
+          "distance": 3,
+          "neg_type": null,
+          "provable": true
+        },
+        {
+          "label": "held_out",
+          "form": "forward",
+          "distance": 3,
+          "neg_type": null,
+          "provable": true
+        },
+        {
+          "label": "held_out",
+          "form": "forward",
+          "distance": 3,
+          "neg_type": null,
+          "provable": true
+        },
+        {
+          "label": "held_out",
+          "form": "forward",
+          "distance": 3,
+          "neg_type": null,
+          "provable": true
+        },
+        {
+          "label": "held_out",
+          "form": "forward",
+          "distance": 3,
+          "neg_type": null,
+          "provable": true
+        },
+        {
+          "label": "held_out",
+          "form": "forward",
+          "distance": 3,
+          "neg_type": null,
+          "provable": true
+        },
+        {
+          "label": "held_out",
+          "form": "forward",
+          "distance": 3,
+          "neg_type": null,
+          "provable": true
+        },
+        {
+          "label": "held_out",
+          "form": "forward",
+          "distance": 3,
+          "neg_type": null,
+          "provable": true
+        },
+        {
+          "label": "held_out",
+          "form": "forward",
+          "distance": 3,
+          "neg_type": null,
+          "provable": true
+        },
+        {
+          "label": "held_out",
+          "form": "forward",
+          "distance": 3,
+          "neg_type": null,
+          "provable": true
+        },
+        {
+          "label": "held_out",
+          "form": "forward",
+          "distance": 3,
+          "neg_type": null,
+          "provable": true
+        },
+        {
+          "label": "held_out",
+          "form": "forward",
+          "distance": 3,
+          "neg_type": null,
+          "provable": true
+        },
+        {
+          "label": "held_out",
+          "form": "forward",
+          "distance": 3,
+          "neg_type": null,
+          "provable": true
+        },
+        {
+          "label": "held_out",
+          "form": "converse",
+          "distance": 3,
+          "neg_type": "converse",
+          "provable": false
+        },
+        {
+          "label": "held_out",
+          "form": "cross",
+          "distance": 3,
+          "neg_type": "cross",
+          "provable": false
+        },
+        {
+          "label": "held_out",
+          "form": "missing_edge",
+          "distance": 3,
+          "neg_type": "missing_edge",
+          "provable": false
+        },
+        {
+          "label": "held_out",
+          "form": "converse",
+          "distance": 3,
+          "neg_type": "converse",
+          "provable": false
+        },
+        {
+          "label": "held_out",
+          "form": "cross",
+          "distance": 3,
+          "neg_type": "cross",
+          "provable": false
+        },
+        {
+          "label": "held_out",
+          "form": "missing_edge",
+          "distance": 3,
+          "neg_type": "missing_edge",
+          "provable": false
+        },
+        {
+          "label": "held_out",
+          "form": "converse",
+          "distance": 3,
+          "neg_type": "converse",
+          "provable": false
+        },
+        {
+          "label": "held_out",
+          "form": "cross",
+          "distance": 3,
+          "neg_type": "cross",
+          "provable": false
+        },
+        {
+          "label": "held_out",
+          "form": "missing_edge",
+          "distance": 3,
+          "neg_type": "missing_edge",
+          "provable": false
+        },
+        {
+          "label": "held_out",
+          "form": "converse",
+          "distance": 3,
+          "neg_type": "converse",
+          "provable": false
+        },
+        {
+          "label": "held_out",
+          "form": "cross",
+          "distance": 3,
+          "neg_type": "cross",
+          "provable": false
+        },
+        {
+          "label": "held_out",
+          "form": "missing_edge",
+          "distance": 3,
+          "neg_type": "missing_edge",
+          "provable": false
+        },
+        {
+          "label": "held_out",
+          "form": "converse",
+          "distance": 3,
+          "neg_type": "converse",
+          "provable": false
+        },
+        {
+          "label": "held_out",
+          "form": "cross",
+          "distance": 3,
+          "neg_type": "cross",
+          "provable": false
+        },
+        {
+          "label": "held_out",
+          "form": "missing_edge",
+          "distance": 3,
+          "neg_type": "missing_edge",
+          "provable": false
+        },
+        {
+          "label": "held_out",
+          "form": "converse",
+          "distance": 3,
+          "neg_type": "converse",
+          "provable": false
+        },
+        {
+          "label": "held_out",
+          "form": "forward",
+          "distance": 4,
+          "neg_type": null,
+          "provable": true
+        },
+        {
+          "label": "held_out",
+          "form": "forward",
+          "distance": 4,
+          "neg_type": null,
+          "provable": true
+        },
+        {
+          "label": "held_out",
+          "form": "forward",
+          "distance": 4,
+          "neg_type": null,
+          "provable": true
+        },
+        {
+          "label": "held_out",
+          "form": "forward",
+          "distance": 4,
+          "neg_type": null,
+          "provable": true
+        },
+        {
+          "label": "held_out",
+          "form": "forward",
+          "distance": 4,
+          "neg_type": null,
+          "provable": true
+        },
+        {
+          "label": "held_out",
+          "form": "forward",
+          "distance": 4,
+          "neg_type": null,
+          "provable": true
+        },
+        {
+          "label": "held_out",
+          "form": "forward",
+          "distance": 4,
+          "neg_type": null,
+          "provable": true
+        },
+        {
+          "label": "held_out",
+          "form": "forward",
+          "distance": 4,
+          "neg_type": null,
+          "provable": true
+        },
+        {
+          "label": "held_out",
+          "form": "forward",
+          "distance": 4,
+          "neg_type": null,
+          "provable": true
+        },
+        {
+          "label": "held_out",
+          "form": "forward",
+          "distance": 4,
+          "neg_type": null,
+          "provable": true
+        },
+        {
+          "label": "held_out",
+          "form": "forward",
+          "distance": 4,
+          "neg_type": null,
+          "provable": true
+        },
+        {
+          "label": "held_out",
+          "form": "forward",
+          "distance": 4,
+          "neg_type": null,
+          "provable": true
+        },
+        {
+          "label": "held_out",
+          "form": "forward",
+          "distance": 4,
+          "neg_type": null,
+          "provable": true
+        },
+        {
+          "label": "held_out",
+          "form": "forward",
+          "distance": 4,
+          "neg_type": null,
+          "provable": true
+        },
+        {
+          "label": "held_out",
+          "form": "forward",
+          "distance": 4,
+          "neg_type": null,
+          "provable": true
+        },
+        {
+          "label": "held_out",
+          "form": "forward",
+          "distance": 4,
+          "neg_type": null,
+          "provable": true
+        },
+        {
+          "label": "held_out",
+          "form": "converse",
+          "distance": 4,
+          "neg_type": "converse",
+          "provable": false
+        },
+        {
+          "label": "held_out",
+          "form": "cross",
+          "distance": 4,
+          "neg_type": "cross",
+          "provable": false
+        },
+        {
+          "label": "held_out",
+          "form": "missing_edge",
+          "distance": 4,
+          "neg_type": "missing_edge",
+          "provable": false
+        },
+        {
+          "label": "held_out",
+          "form": "converse",
+          "distance": 4,
+          "neg_type": "converse",
+          "provable": false
+        },
+        {
+          "label": "held_out",
+          "form": "cross",
+          "distance": 4,
+          "neg_type": "cross",
+          "provable": false
+        },
+        {
+          "label": "held_out",
+          "form": "missing_edge",
+          "distance": 4,
+          "neg_type": "missing_edge",
+          "provable": false
+        },
+        {
+          "label": "held_out",
+          "form": "converse",
+          "distance": 4,
+          "neg_type": "converse",
+          "provable": false
+        },
+        {
+          "label": "held_out",
+          "form": "cross",
+          "distance": 4,
+          "neg_type": "cross",
+          "provable": false
+        },
+        {
+          "label": "held_out",
+          "form": "missing_edge",
+          "distance": 4,
+          "neg_type": "missing_edge",
+          "provable": false
+        },
+        {
+          "label": "held_out",
+          "form": "converse",
+          "distance": 4,
+          "neg_type": "converse",
+          "provable": false
+        },
+        {
+          "label": "held_out",
+          "form": "cross",
+          "distance": 4,
+          "neg_type": "cross",
+          "provable": false
+        },
+        {
+          "label": "held_out",
+          "form": "missing_edge",
+          "distance": 4,
+          "neg_type": "missing_edge",
+          "provable": false
+        },
+        {
+          "label": "held_out",
+          "form": "converse",
+          "distance": 4,
+          "neg_type": "converse",
+          "provable": false
+        },
+        {
+          "label": "held_out",
+          "form": "cross",
+          "distance": 4,
+          "neg_type": "cross",
+          "provable": false
+        },
+        {
+          "label": "held_out",
+          "form": "missing_edge",
+          "distance": 4,
+          "neg_type": "missing_edge",
+          "provable": false
+        },
+        {
+          "label": "held_out",
+          "form": "converse",
+          "distance": 4,
+          "neg_type": "converse",
+          "provable": false
+        },
+        {
+          "label": "held_out",
+          "form": "forward",
+          "distance": 5,
+          "neg_type": null,
+          "provable": true
+        },
+        {
+          "label": "held_out",
+          "form": "forward",
+          "distance": 5,
+          "neg_type": null,
+          "provable": true
+        },
+        {
+          "label": "held_out",
+          "form": "forward",
+          "distance": 5,
+          "neg_type": null,
+          "provable": true
+        },
+        {
+          "label": "held_out",
+          "form": "forward",
+          "distance": 5,
+          "neg_type": null,
+          "provable": true
+        },
+        {
+          "label": "held_out",
+          "form": "forward",
+          "distance": 5,
+          "neg_type": null,
+          "provable": true
+        },
+        {
+          "label": "held_out",
+          "form": "forward",
+          "distance": 5,
+          "neg_type": null,
+          "provable": true
+        },
+        {
+          "label": "held_out",
+          "form": "forward",
+          "distance": 5,
+          "neg_type": null,
+          "provable": true
+        },
+        {
+          "label": "held_out",
+          "form": "forward",
+          "distance": 5,
+          "neg_type": null,
+          "provable": true
+        },
+        {
+          "label": "held_out",
+          "form": "forward",
+          "distance": 5,
+          "neg_type": null,
+          "provable": true
+        },
+        {
+          "label": "held_out",
+          "form": "forward",
+          "distance": 5,
+          "neg_type": null,
+          "provable": true
+        },
+        {
+          "label": "held_out",
+          "form": "forward",
+          "distance": 5,
+          "neg_type": null,
+          "provable": true
+        },
+        {
+          "label": "held_out",
+          "form": "forward",
+          "distance": 5,
+          "neg_type": null,
+          "provable": true
+        },
+        {
+          "label": "held_out",
+          "form": "converse",
+          "distance": 5,
+          "neg_type": "converse",
+          "provable": false
+        },
+        {
+          "label": "held_out",
+          "form": "cross",
+          "distance": 5,
+          "neg_type": "cross",
+          "provable": false
+        },
+        {
+          "label": "held_out",
+          "form": "missing_edge",
+          "distance": 5,
+          "neg_type": "missing_edge",
+          "provable": false
+        },
+        {
+          "label": "held_out",
+          "form": "converse",
+          "distance": 5,
+          "neg_type": "converse",
+          "provable": false
+        },
+        {
+          "label": "held_out",
+          "form": "cross",
+          "distance": 5,
+          "neg_type": "cross",
+          "provable": false
+        },
+        {
+          "label": "held_out",
+          "form": "missing_edge",
+          "distance": 5,
+          "neg_type": "missing_edge",
+          "provable": false
+        },
+        {
+          "label": "held_out",
+          "form": "converse",
+          "distance": 5,
+          "neg_type": "converse",
+          "provable": false
+        },
+        {
+          "label": "held_out",
+          "form": "cross",
+          "distance": 5,
+          "neg_type": "cross",
+          "provable": false
+        },
+        {
+          "label": "held_out",
+          "form": "missing_edge",
+          "distance": 5,
+          "neg_type": "missing_edge",
+          "provable": false
+        },
+        {
+          "label": "held_out",
+          "form": "converse",
+          "distance": 5,
+          "neg_type": "converse",
+          "provable": false
+        },
+        {
+          "label": "held_out",
+          "form": "cross",
+          "distance": 5,
+          "neg_type": "cross",
+          "provable": false
+        },
+        {
+          "label": "held_out",
+          "form": "missing_edge",
+          "distance": 5,
+          "neg_type": "missing_edge",
+          "provable": false
+        }
+      ],
+      "enforced": true,
+      "balance": {
+        "by_depth": {
+          "d1": {
+            "true": 16,
+            "false": 16
+          },
+          "d2": {
+            "true": 16,
+            "false": 16
+          },
+          "d3": {
+            "true": 16,
+            "false": 16
+          },
+          "d4": {
+            "true": 16,
+            "false": 16
+          },
+          "d5": {
+            "true": 16,
+            "false": 16
+          },
+          "d6": {
+            "true": 12,
+            "false": 12
+          }
+        },
+        "unbalanced": {}
+      },
+      "n_probes": 184,
+      "n_stated": 16,
+      "n_held_out": 168,
+      "by_form": {
+        "forward": {
+          "stated": 16,
+          "held_out": 76
+        },
+        "converse": {
+          "stated": 0,
+          "held_out": 34
+        },
+        "cross": {
+          "stated": 0,
+          "held_out": 29
+        },
+        "missing_edge": {
+          "stated": 0,
+          "held_out": 29
+        }
+      }
+    },
+    "sampler": "base_disable_adapter"
+  },
+  "builder": "theorem_qa",
+  "status": "completed",
+  "metrics_schema": [
+    "epochs",
+    "train_kl",
+    "eval_kl",
+    "dprime",
+    "behavior_drift"
+  ]
+}

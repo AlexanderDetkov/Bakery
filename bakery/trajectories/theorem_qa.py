@@ -126,7 +126,7 @@ def _build_relations(world, engine, bank, n, per_depth_cap, split_seed) -> list:
     trained: list = []
     for d in range(1, int(n) + 1):
         rng = random.Random(split_seed * 1000 + d)            # stable across n
-        pos = [(x, z) for (x, z) in pools[d]["true"] if (x, z) not in heldout and (x, z) not in used]
+        pos = [(x, z) for (x, z) in pools[d]["true"] if (x, z) not in (heldout_both if d >= 2 else heldout) and (x, z) not in used]
         if d == 1:
             sel_pos = sorted(pos)                              # ALL edges -> coverage by construction
         else:

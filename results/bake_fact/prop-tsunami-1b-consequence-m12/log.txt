@@ -1,0 +1,18 @@
+[2026-06-06 06:29:51] Experiment: bake_fact | objective: bake | builder: fact_propagation
+[2026-06-06 06:29:51] Data stats: {'num_total_traj': 64, 'total_supervised_tokens': 10115, 'mean_base_len': 295.046875, 'n_train_traj': 48, 'n_eval_traj': 16, 'n_train_ctx': 12, 'n_eval_ctx': 4, 'pairing': {}, 'pairing_opted_out': True, 'sampler': 'base_disable_adapter'}
+[2026-06-06 06:29:54] epoch    1 | train_kl 0.204270 | eval_kl 0.1570536971092224
+[2026-06-06 06:29:57] epoch    2 | train_kl 0.148018 | eval_kl 0.11500048041343688
+[2026-06-06 06:30:00] epoch    3 | train_kl 0.111653 | eval_kl 0.0918565034866333
+[2026-06-06 06:30:03] epoch    4 | train_kl 0.086881 | eval_kl 0.07966251373291015
+[2026-06-06 06:30:07] epoch    5 | train_kl 0.071030 | eval_kl 0.07261755466461181
+[2026-06-06 06:30:10] epoch    6 | train_kl 0.058651 | eval_kl 0.06990253329277038
+[2026-06-06 06:30:13] epoch    7 | train_kl 0.049455 | eval_kl 0.06697397530078888
+[2026-06-06 06:30:16] epoch    8 | train_kl 0.043088 | eval_kl 0.06403569281101226
+[2026-06-06 06:30:19] epoch    9 | train_kl 0.037329 | eval_kl 0.0615704745054245
+[2026-06-06 06:30:23] epoch   10 | train_kl 0.033392 | eval_kl 0.059717224538326265
+[2026-06-06 06:30:26] epoch   11 | train_kl 0.030198 | eval_kl 0.05799194276332855
+[2026-06-06 06:30:29] epoch   12 | train_kl 0.027349 | eval_kl 0.056849753856658934
+[2026-06-06 06:30:32] epoch   13 | train_kl 0.024856 | eval_kl 0.05585993379354477
+[2026-06-06 06:30:35] epoch   14 | train_kl 0.022787 | eval_kl 0.0554823562502861
+[2026-06-06 06:30:38] epoch   15 | train_kl 0.020982 | eval_kl 0.054572752118110655
+[2026-06-06 06:30:43] DONE. results in results/bake_fact/prop-tsunami-1b-consequence-m12

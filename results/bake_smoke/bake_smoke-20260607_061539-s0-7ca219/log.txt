@@ -1,0 +1,5 @@
+[2026-06-07 06:15:39] Experiment: bake_smoke | objective: bake | builder: squad_qa
+[2026-06-07 06:15:39] Data stats: {'num_total_traj': 12, 'total_supervised_tokens': 96, 'mean_base_len': 87.16666666666667, 'n_train_traj': 8, 'n_eval_traj': 4, 'n_train_ctx': 4, 'n_eval_ctx': 2, 'coverage': {'requested_train_traj': 8, 'kept_train_traj': 8, 'train_contexts_requested': 4, 'train_contexts_realized': 4, 'traj_per_ctx_min': 2, 'traj_per_ctx_max': 2, 'traj_per_ctx_mean': 2.0}, 'pairing': {}, 'pairing_opted_out': True, 'probe_contamination': {}, 'sampler': 'base_disable_adapter'}
+[2026-06-07 06:15:39] epoch    1 | train_kl 0.000030 | eval_kl 2.0000466975034215e-05
+[2026-06-07 06:15:39] epoch    2 | train_kl 0.000020 | eval_kl 1.7701911929179914e-05
+[2026-06-07 06:15:40] DONE. results in results/bake_smoke/bake_smoke-20260607_061539-s0-7ca219

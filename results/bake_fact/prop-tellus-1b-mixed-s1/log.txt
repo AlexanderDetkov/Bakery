@@ -1,0 +1,18 @@
+[2026-06-06 10:22:43] Experiment: bake_fact | objective: bake | builder: fact_propagation
+[2026-06-06 10:22:43] Data stats: {'num_total_traj': 128, 'total_supervised_tokens': 16725, 'mean_base_len': 266.7265625, 'n_train_traj': 96, 'n_eval_traj': 32, 'n_train_ctx': 24, 'n_eval_ctx': 8, 'pairing': {}, 'pairing_opted_out': True, 'sampler': 'base_disable_adapter'}
+[2026-06-06 10:22:54] epoch    2 | train_kl 0.457490 | eval_kl 0.5033747664269799
+[2026-06-06 10:23:04] epoch    4 | train_kl 0.193039 | eval_kl 0.23551517489965118
+[2026-06-06 10:23:14] epoch    6 | train_kl 0.115487 | eval_kl 0.1802936037110533
+[2026-06-06 10:23:23] epoch    8 | train_kl 0.083571 | eval_kl 0.1583509221827634
+[2026-06-06 10:23:33] epoch   10 | train_kl 0.065364 | eval_kl 0.14951237379674065
+[2026-06-06 10:23:43] epoch   12 | train_kl 0.053592 | eval_kl 0.13930146403670346
+[2026-06-06 10:23:53] epoch   14 | train_kl 0.045040 | eval_kl 0.13491869467569323
+[2026-06-06 10:24:03] epoch   16 | train_kl 0.038412 | eval_kl 0.12921654220296055
+[2026-06-06 10:24:13] epoch   18 | train_kl 0.033590 | eval_kl 0.12511447937029813
+[2026-06-06 10:24:23] epoch   20 | train_kl 0.029524 | eval_kl 0.12362517541500287
+[2026-06-06 10:24:33] epoch   22 | train_kl 0.026698 | eval_kl 0.12054357859489652
+[2026-06-06 10:24:43] epoch   24 | train_kl 0.024032 | eval_kl 0.11657842641197677
+[2026-06-06 10:24:53] epoch   26 | train_kl 0.021891 | eval_kl 0.11336674762344699
+[2026-06-06 10:25:03] epoch   28 | train_kl 0.020078 | eval_kl 0.11234371435242875
+[2026-06-06 10:25:13] epoch   30 | train_kl 0.018639 | eval_kl 0.11080084404039199
+[2026-06-06 10:25:33] DONE. results in results/bake_fact/prop-tellus-1b-mixed-s1

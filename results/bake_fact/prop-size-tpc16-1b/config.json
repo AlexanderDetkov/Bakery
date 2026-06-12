@@ -1,0 +1,76 @@
+{
+  "experiment": "bake_fact",
+  "seed": 0,
+  "model_seed": null,
+  "gen_seed": null,
+  "output_root": "results",
+  "run_name": "prop-size-tpc16-1b",
+  "backend": "local",
+  "model": {
+    "name": "meta-llama/Llama-3.2-1B-Instruct",
+    "revision": null,
+    "dtype": "bfloat16",
+    "device": "cuda",
+    "lora_rank": 16,
+    "lora_alpha": 16,
+    "lora_dropout": 0.0,
+    "target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj"
+    ],
+    "adapter_to_load": null,
+    "half_bake_alpha": 1.0
+  },
+  "generation": {
+    "base_prompt": "data/prompts/tsunami_u.md",
+    "baked_prompt": "data/prompts/empty.md",
+    "context_dataset": "squad",
+    "context_split": "train",
+    "num_contexts": 30,
+    "trajectories_per_context": 16,
+    "eval_num_contexts": 8,
+    "max_new_tokens": 160,
+    "min_new_tokens": 1,
+    "temperature": 1.0,
+    "top_p": 1.0,
+    "top_k": 0,
+    "do_sample": true,
+    "repetition_penalty": 1.0,
+    "no_repeat_ngram_size": 0,
+    "batch_size": 16,
+    "backend": "hf",
+    "cache_dir": "trajectory_cache",
+    "cache_enabled": true,
+    "on_the_fly": false
+  },
+  "train": {
+    "objective": "bake",
+    "num_epochs": 20,
+    "batch_size": 8,
+    "learning_rate": 0.0001,
+    "optimizer": "AdamW",
+    "weight_decay": 0.0,
+    "grad_clip": 1.0,
+    "grad_accum": 1,
+    "kl_reg": 0.0,
+    "eval_period": 1,
+    "save_every": 0,
+    "save_adapters": true
+  },
+  "eval": {
+    "metrics": [
+      "eval_kl",
+      "propagation"
+    ],
+    "benchmarks": [],
+    "eval_with_base_prompt": true
+  },
+  "data": {
+    "context_bank": "data/contexts/tsunami_contexts.json",
+    "context_category": "mixed",
+    "probe_bank": "data/probes/tsunami_probes.json",
+    "context_max_chars": 600
+  }
+}

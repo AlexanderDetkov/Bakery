@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "experiment": "bake_fact",
+  "run_id": "prop-veldD-1b",
+  "sweep_id": null,
+  "created_utc": "2026-06-06T11:11:34.316807+00:00",
+  "git": {
+    "sha": "39a53fc3cf402a152f121467d133e1e6d675e5c7",
+    "branch": "research/knowledge-propagation",
+    "dirty": true
+  },
+  "env": {
+    "python": "3.10.18",
+    "torch": "2.5.1",
+    "transformers": "4.56.0",
+    "peft": "0.17.1",
+    "cuda": "12.1",
+    "device": "cuda"
+  },
+  "seed": 0,
+  "seeds": {
+    "data": 0,
+    "model": 0,
+    "generation": 0
+  },
+  "base_checkpoint": {
+    "model_name": "meta-llama/Llama-3.2-1B-Instruct",
+    "revision": null,
+    "dtype": "bfloat16",
+    "weights_sha256": null
+  },
+  "tokenizer": {
+    "name": "meta-llama/Llama-3.2-1B-Instruct",
+    "revision": null,
+    "vocab_size": 128256,
+    "bos_id": 128000,
+    "eos_id": 128009,
+    "pad_id": 128009,
+    "chat_template_sha256": "5816fce10444e03c2e9ee1ef8a4a1ea61ae7e69e438613f3b17b69d0426223a4"
+  },
+  "generation": {
+    "sampler": "base_disable_adapter",
+    "base_prompt_sha256": "cea897697fb8ccf3f3ec20804b76c44e3dee9bb6bb97887798db72aed4040125",
+    "baked_prompt_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "template_sha256": null,
+    "dataset_id": "data/contexts/veld_contexts.json#mixed",
+    "num_contexts": 12,
+    "trajectories_per_context": 8,
+    "eval_num_contexts": 4,
+    "max_new_tokens": 160,
+    "min_new_tokens": 1,
+    "temperature": 1.0,
+    "top_p": 1.0,
+    "top_k": 0,
+    "do_sample": true,
+    "seed": 0,
+    "extra": {
+      "context_category": "mixed",
+      "probe_bank": "data/probes/veld_probes.json"
+    }
+  },
+  "objective": "bake",
+  "lora": {
+    "rank": 16,
+    "alpha": 16,
+    "dropout": 0.0,
+    "target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj"
+    ]
+  },
+  "adapter_to_load": null,
+  "half_bake_alpha": 1.0,
+  "num_trainable_params": 3407872,
+  "data_stats": {
+    "num_total_traj": 128,
+    "total_supervised_tokens": 14501,
+    "mean_base_len": 325.5390625,
+    "n_train_traj": 96,
+    "n_eval_traj": 32,
+    "n_train_ctx": 12,
+    "n_eval_ctx": 4,
+    "pairing": {},
+    "pairing_opted_out": true,
+    "sampler": "base_disable_adapter"
+  },
+  "builder": "fact_propagation",
+  "status": "completed",
+  "metrics_schema": [
+    "epochs",
+    "train_kl",
+    "eval_kl",
+    "propagation"
+  ]
+}

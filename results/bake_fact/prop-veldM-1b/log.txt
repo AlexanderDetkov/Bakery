@@ -1,0 +1,18 @@
+[2026-06-06 10:57:14] Experiment: bake_fact | objective: bake | builder: fact_propagation
+[2026-06-06 10:57:14] Data stats: {'num_total_traj': 128, 'total_supervised_tokens': 15743, 'mean_base_len': 258.2421875, 'n_train_traj': 96, 'n_eval_traj': 32, 'n_train_ctx': 12, 'n_eval_ctx': 4, 'pairing': {}, 'pairing_opted_out': True, 'sampler': 'base_disable_adapter'}
+[2026-06-06 10:57:24] epoch    2 | train_kl 0.492641 | eval_kl 0.5637583519923896
+[2026-06-06 10:57:34] epoch    4 | train_kl 0.183081 | eval_kl 0.2782504298105961
+[2026-06-06 10:57:44] epoch    6 | train_kl 0.106790 | eval_kl 0.22076823376961963
+[2026-06-06 10:57:54] epoch    8 | train_kl 0.077388 | eval_kl 0.19380689792349481
+[2026-06-06 10:58:04] epoch   10 | train_kl 0.060364 | eval_kl 0.1793158320973747
+[2026-06-06 10:58:14] epoch   12 | train_kl 0.049651 | eval_kl 0.16979434525650705
+[2026-06-06 10:58:24] epoch   14 | train_kl 0.041447 | eval_kl 0.1662271298665575
+[2026-06-06 10:58:34] epoch   16 | train_kl 0.036191 | eval_kl 0.15788044155838418
+[2026-06-06 10:58:44] epoch   18 | train_kl 0.031985 | eval_kl 0.1555640400033962
+[2026-06-06 10:58:55] epoch   20 | train_kl 0.028664 | eval_kl 0.15288765136087487
+[2026-06-06 10:59:05] epoch   22 | train_kl 0.025500 | eval_kl 0.15014553748181966
+[2026-06-06 10:59:15] epoch   24 | train_kl 0.023311 | eval_kl 0.14811588921081503
+[2026-06-06 10:59:25] epoch   26 | train_kl 0.021351 | eval_kl 0.14604459490094865
+[2026-06-06 10:59:35] epoch   28 | train_kl 0.019871 | eval_kl 0.1441065832038194
+[2026-06-06 10:59:45] epoch   30 | train_kl 0.018576 | eval_kl 0.14058234048953114
+[2026-06-06 11:00:02] DONE. results in results/bake_fact/prop-veldM-1b

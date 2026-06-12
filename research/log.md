@@ -560,3 +560,14 @@ _S4c5 robustness (13:30): w=0.5 mid-point confirmed bake-like on alpha-seed1 (ev
 4.40/2.15) AND lw_beta (0.52/0.70 vs sft 4.33/1.45) — near-step replicates across seed + chain. Frontier finding
 [[fidelity-sharpness-frontier-no-knee]] confidence raised to HIGH. The S4 research arc is complete: 3 questions
 resolved (sft-vs-bake, grokking, fidelity-frontier) + mix_bake variant + 4-chain/3-size generality + lint._
+
+---
+
+## 2026-06-12 (S5c1) — Next question: does regularization preserve behavior? (sweep launched)
+
+S4 arc complete (baking's ceiling = teacher). Starting [[q-regularization-preserves-behavior]] (open→active):
+mix base-anchored SQuAD trajectories into the bake; does behavior_drift fall with anchor count WITHOUT hurting
+held-out propagation (d′ at depth≥2)? Launched the 3-arm sweep across both GPUs (gated on the frontier-robustness
+runs freeing): qa-reg{0,128} on GPU0, qa-reg32 on GPU1 (8B lw_alpha n1, 300 ep, lora_rank 16). Headline triplet:
+eval_kl (fidelity) / dprime (propagation) / behavior_drift (preservation; lower=closer to base). VERIFY next tick
+that behavior_drift is computed (via extra_metrics) — add --eval.metrics if missing.

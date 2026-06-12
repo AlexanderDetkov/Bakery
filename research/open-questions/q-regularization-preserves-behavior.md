@@ -1,6 +1,6 @@
 ---
 title: Does regularizing the bake with base-anchored irrelevant-question trajectories preserve general behavior without hurting propagation?
-status: open
+status: active
 priority: medium       # new capability (shipped this session); queued behind the running n-sweep
 created: 2026-06-07
 hypothesis: Mixing "anchor" trajectories — teacher = base(no prompt, adapter OFF), student = baked(no prompt, adapter ON), supervised on tokens the BASE generated — into the bake pulls the adapter toward IDENTITY on irrelevant (SQuAD) inputs. As the anchor count rises, behavior_drift on held-out irrelevant questions should FALL (less degeneration) while held-out propagation (dprime at proof-depth ≥ 2) should be roughly preserved until anchors start crowding out the logic signal. The interesting regime is whether there is a strength where drift drops materially with little propagation cost.

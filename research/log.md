@@ -571,3 +571,10 @@ held-out propagation (d′ at depth≥2)? Launched the 3-arm sweep across both G
 runs freeing): qa-reg{0,128} on GPU0, qa-reg32 on GPU1 (8B lw_alpha n1, 300 ep, lora_rank 16). Headline triplet:
 eval_kl (fidelity) / dprime (propagation) / behavior_drift (preservation; lower=closer to base). VERIFY next tick
 that behavior_drift is computed (via extra_metrics) — add --eval.metrics if missing.
+
+_S5c1 verify (14:05): behavior_drift is WORKING AS DESIGNED — it returns None at num_train_contexts=0 (reg0 is
+the propagation/eval_kl control; no drift value by design), and computes KL(base‖baked) on a held-out SQuAD
+slice for reg32/reg128. So the read is: behavior_drift TREND across the anchored arms (32→128: does more
+anchoring lower drift?) + dprime preserved vs reg0. No metric fix needed. NOTE the heldout anchor slice differs
+per arm (disjoint-from-trained window), a mild i.i.d. confound. Consider adding a 3rd anchored point (e.g. 64)
+for a cleaner monotonic drift trend when a GPU frees._

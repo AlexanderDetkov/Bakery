@@ -578,3 +578,7 @@ slice for reg32/reg128. So the read is: behavior_drift TREND across the anchored
 anchoring lower drift?) + dprime preserved vs reg0. No metric fix needed. NOTE the heldout anchor slice differs
 per arm (disjoint-from-trained window), a mild i.i.d. confound. Consider adding a 3rd anchored point (e.g. 64)
 for a cleaner monotonic drift trend when a GPU frees._
+
+_S5c1 fix (15:10): the sweep's eval_period=5 made each arm ~8h (dprime eval every 5 ep is expensive). Relaunched
+the 3 arms at eval_period 20 (~4× faster, ~2h/arm) — only final + coarse-trajectory values needed. reg0→reg128
+on GPU0, reg32 on GPU1 (gated on the lw_beta robustness run freeing it)._

@@ -555,3 +555,8 @@ teacher while faithful you need a BETTER teacher, not a softer objective. Gate g
 - Settled-but-open: added a cross-ref from q-propagation-model-scale → the 1B/3B/8B size trend in
   [[bake-tracks-teacher-sft-sharpens]] (partial evidence; question stays OPEN pending a controlled sweep).
 Knowledge base is consistent after the S4 session (~20 commits).
+
+_S4c5 robustness (13:30): w=0.5 mid-point confirmed bake-like on alpha-seed1 (eval_kl 0.38/conv 0.61 vs sft
+4.40/2.15) AND lw_beta (0.52/0.70 vs sft 4.33/1.45) — near-step replicates across seed + chain. Frontier finding
+[[fidelity-sharpness-frontier-no-knee]] confidence raised to HIGH. The S4 research arc is complete: 3 questions
+resolved (sft-vs-bake, grokking, fidelity-frontier) + mix_bake variant + 4-chain/3-size generality + lint._

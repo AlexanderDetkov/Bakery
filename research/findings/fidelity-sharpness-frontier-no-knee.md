@@ -1,7 +1,7 @@
 ---
 title: No free-lunch knee — the fidelity↔sharpness frontier (KL→CE loss mix) is a near-STEP, not a smooth tradeoff; the KL leash pins baking at the teacher until fully removed
 outcome: negative          # DECISIVE-NEGATIVE on a usable knee; the tradeoff is degenerate (two clusters)
-confidence: medium         # clean shape across 6 final points, principled mechanism; but n=1 chain/seed, single interpolation family (convex loss-mix)
+confidence: high           # 7-point alpha frontier + w=0.5 mid-point confirmed bake-like on seed-1 AND lw_beta; principled mechanism. Single interpolation family (convex loss-mix) is the remaining caveat.
 created: 2026-06-12
 question: [[q-fidelity-vs-sharpness-frontier]]
 metric: dprime
@@ -33,6 +33,10 @@ implies ("baking's ceiling IS the teacher"): you cannot exceed the teacher's dis
   weight keeps eval_kl within ~1.6× of bake; only zero KL weight diverges (w=0.95 = 5% KL weight → eval_kl still 0.94, d′ still bake-like 0.97).
 - **d′ stays bake-like across the interior:** converse 0.76–1.07 (vs bake 0.89), forward 0.24–0.54 (vs bake 0.52)
   — NOT climbing toward SFT's 1.79 / 1.21. The sharpness is concentrated entirely at w=1.
+- **Robustness (2nd seed + 2nd chain):** the w=0.5 mid-point stays bake-like in BOTH eval_kl and d′ on alpha-seed1
+  (eval_kl 0.38 vs bake 0.31 vs sft 4.40; conv 0.61 vs bake 0.56 vs sft 2.15) AND on lw_beta (eval_kl 0.52 vs bake
+  0.43 vs sft 4.33; conv 0.70 vs bake 0.52 vs sft 1.45) — never approaching SFT. The near-step replicates.
+  Runs: qa-mix-w05-n1-s1, qa-mix-w05-beta-n1-s0.
 - Fig: `results/bake_theorem_qa/_fig_frontier.png` (eval_kl + converse-d′ vs w).
 
 ## What this answers (q-fidelity-vs-sharpness-frontier)
@@ -43,9 +47,9 @@ teacher's discrimination; getting beyond it requires fully dropping the teacher 
 LOSS buys nothing here.
 
 ## Counter-arguments / threats to validity
-- **n=1 chain (lw_alpha) × 1 seed.** A seed-1 mid-point (qa-mix-w05-n1-s1) is running to confirm the interior
-  stays bake-like; broader chains/seeds would harden it. d′ is single-seed-noisy (the non-monotone wiggle across
-  interior w is within that noise — the SIGNAL is "interior ≈ bake, w=1 = jump", not the point-to-point order).
+- **Full sweep is alpha-s0 only; the mid-point is confirmed on seed-1 + lw_beta** (above). d′ is single-seed-noisy
+  (the non-monotone wiggle across interior w is within that noise — the SIGNAL is "interior ≈ bake, w=1 = jump", not
+  the point-to-point order). A full multi-seed sweep would harden the exact transition location.
 - **One interpolation family.** This is the convex LOSS mix. KL-at-temperature (soften the teacher) or
   label-smoothed CE might interpolate differently — the eval-time adapter-scaling "half-baking"
   (`model.half_bake_alpha`, base↔bake) is yet another axis, untested here. "No knee" is specific to loss-mixing.
@@ -58,7 +62,6 @@ while staying faithful you'd need a BETTER teacher (cf. the size trend: 8B teach
 softer objective.
 
 ## Next steps
-- Fold qa-mix-w095-n1-s0 + qa-mix-w05-n1-s1 (both running) when done; if interior holds across the seed, raise
-  confidence to high.
+- DONE: w=0.95 folded; w=0.5 confirmed bake-like on seed-1 + lw_beta → confidence raised to high.
 - Optional: a KL-temperature sweep (soften teacher targets) as a SECOND interpolation family — does softening the
   teacher (rather than down-weighting KL) open a knee? (new follow-up).

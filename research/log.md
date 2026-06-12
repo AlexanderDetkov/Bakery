@@ -582,3 +582,18 @@ for a cleaner monotonic drift trend when a GPU frees._
 _S5c1 fix (15:10): the sweep's eval_period=5 made each arm ~8h (dprime eval every 5 ep is expensive). Relaunched
 the 3 arms at eval_period 20 (~4× faster, ~2h/arm) — only final + coarse-trajectory values needed. reg0→reg128
 on GPU0, reg32 on GPU1 (gated on the lw_beta robustness run freeing it)._
+
+---
+
+## 2026-06-12 (user-directed) — Cross-project synthesis with ~/Invertibility
+
+User asked to connect Invertibility's "information propagates through relations (e.g., inverse)" observations to
+Bakery's propagation findings. Read ~/Invertibility (research/ KB empty — pre-loop manual study in results/:
+grid_final, disentangle, grid_block, grid_final_iid figures + CSV). Wrote
+[[CROSS-PROJECT-relation-propagation-two-factor]]: propagation = GLOBAL relation operator × LOCAL bindings;
+Invertibility studies building the operator (consistency-fraction, T≥2 composition, global pooling across
+disjoint blocks, grokking, entanglement-collapse); Bakery studies the inherited-operator regime (pretrained 8B):
+prompting invokes it, baking copies its output (teacher-ceiling), SFT re-binds. Explains the asymmetries (no
+curse / no grokking on the Hilbert task) and is being confirmed LIVE by the reg sweep (SQuAD anchors = disjoint
+block → no interference, qa-reg32 ≈ control). 3 predictions recorded (mix_bake step softens from-scratch;
+converse health tracks pretraining-relation frequency; entangled anchors should hurt).

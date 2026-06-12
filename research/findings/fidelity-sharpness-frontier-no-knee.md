@@ -19,7 +19,7 @@ removing it entirely (w=1) is what lets the student escape to the sharp, teacher
 extra sharpness is INSEPARABLE from abandoning the teacher — exactly what [[bake-tracks-teacher-sft-sharpens]]
 implies ("baking's ceiling IS the teacher"): you cannot exceed the teacher's discrimination without leaving it.
 
-## Evidence (8B lw_alpha n1-s0; held-out = depths 2–6; w=0.95 still training, excluded)
+## Evidence (8B lw_alpha n1-s0; held-out = depths 2–6; all 7 points final)
 | w (CE weight) | eval_kl | converse d′ | fwd held-out d′ |
 |---|---|---|---|
 | 0.0 (bake) | 0.465 | 0.89 | 0.52 |
@@ -27,9 +27,10 @@ implies ("baking's ceiling IS the teacher"): you cannot exceed the teacher's dis
 | 0.5  | 0.48  | 0.76 | 0.24 |
 | 0.75 | 0.61  | 0.91 | 0.38 |
 | 0.9  | 0.76  | 1.07 | 0.47 |
+| 0.95 | 0.94  | 0.97 | 0.40 |
 | **1.0 (sft)** | **4.43** | **1.79** | **1.21** |
 - **eval_kl is a hockey stick:** ~flat (0.47→0.76) for every w≤0.9, then ~6× jump to 4.43 at w=1. A 0.1 KL
-  weight keeps eval_kl within ~1.6× of bake; only zero KL weight diverges.
+  weight keeps eval_kl within ~1.6× of bake; only zero KL weight diverges (w=0.95 = 5% KL weight → eval_kl still 0.94, d′ still bake-like 0.97).
 - **d′ stays bake-like across the interior:** converse 0.76–1.07 (vs bake 0.89), forward 0.24–0.54 (vs bake 0.52)
   — NOT climbing toward SFT's 1.79 / 1.21. The sharpness is concentrated entirely at w=1.
 - Fig: `results/bake_theorem_qa/_fig_frontier.png` (eval_kl + converse-d′ vs w).
@@ -48,8 +49,6 @@ LOSS buys nothing here.
 - **One interpolation family.** This is the convex LOSS mix. KL-at-temperature (soften the teacher) or
   label-smoothed CE might interpolate differently — the eval-time adapter-scaling "half-baking"
   (`model.half_bake_alpha`, base↔bake) is yet another axis, untested here. "No knee" is specific to loss-mixing.
-- **w=0.95 excluded** (still training at record time); it lies between 0.9 (eval_kl 0.76) and 1.0 and cannot
-  change the two-cluster conclusion.
 
 ## Implications
 The bake↔SFT distinction is not a tunable dial — it is a near-discontinuity at "is the teacher in the loss at

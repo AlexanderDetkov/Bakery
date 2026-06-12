@@ -1,6 +1,6 @@
 ---
 title: The fidelity↔sharpness frontier — can an intermediate objective trade teacher-fidelity (eval_kl) for probe-discrimination (d′), and which point best reproduces the teacher's held-out BEHAVIOR?
-status: active
+status: resolved        # DECISIVE-NEGATIVE: near-step, no usable knee -> [[fidelity-sharpness-frontier-no-knee]]
 priority: medium
 created: 2026-06-09
 hypothesis: >

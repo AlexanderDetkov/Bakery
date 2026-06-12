@@ -527,3 +527,15 @@ quality — delta (strong teacher, prompted d1 1.64) gives SFT conv 1.11 ≈ bak
 Reinforces "baking's ceiling = teacher": gap ≈ room the teacher leaves. Folded into [[bake-tracks-teacher-sft-sharpens]].
 Frontier (w=0.25 prelim): eval_kl 0.48≈bake, conv 0.76≈bake — no sharpness gain at low w yet; w=0.5 (GPU0) + w=0.75
 (GPU1) now running in parallel. Both GPUs saturated._
+
+---
+
+## 2026-06-12 (S4c5 cont.) — Fidelity↔sharpness frontier RESOLVED: near-step, no free-lunch knee
+
+mix_bake α-sweep (w=0..1, 8B lw_alpha n1-s0) DONE (6 final pts; w=0.95 + w=0.5-s1 still running). The
+eval_kl↔w curve is a HOCKEY STICK: ~flat 0.47→0.76 for all w≤0.9, then ~6× jump to 4.43 only at w=1. d′ stays
+bake-like across the interior (converse 0.76-1.07 vs bake 0.89; not climbing to SFT's 1.79). So NO usable knee —
+the "frontier" is two clusters {bake-like ∀ w<1} ∪ {SFT at w=1}. Even a 0.1 KL weight is a strong leash pinning
+the solution at the teacher; SFT's sharpness is inseparable from dropping the teacher. DECISIVE-NEGATIVE for
+[[q-fidelity-vs-sharpness-frontier]] (resolved). Sharpens [[bake-tracks-teacher-sft-sharpens]]: to beat the
+teacher while faithful you need a BETTER teacher, not a softer objective. Gate green (135). Fig: _fig_frontier.png.
